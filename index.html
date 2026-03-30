@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>mach's ruhig — Vorsorge, Trauer & Bestattung</title>
+<meta name="description" content="Checkliste Todesfall, Bestattung planen, Trauerrede schreiben, Vorsorge regeln — Schritt für Schritt, in deinem Tempo. Kostenlos, ohne Anmeldung.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/">
+<meta property="og:title" content="mach's ruhig — Vorsorge, Trauer & Bestattung">
+<meta property="og:description" content="Checkliste Todesfall, Bestattung planen, Trauerrede schreiben — Schritt für Schritt, in deinem Tempo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machsruhig.de/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+/* === machsruhig v0.1 — Base Reset === */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+
+/* === CSS Variables (machsruhig Farbwelt) === */
+:root{
+  --mr-primary:#7A6B5D;
+  --mr-primary-hover:#5E5047;
+  --mr-warm:#A69279;
+  --mr-bg:#faf8f5;
+  --mr-bg-card:#FFFDF9;
+  --mr-border:#E8E0D6;
+  --mr-text:#2D2319;
+  --mr-text-muted:#8C7E6F;
+  --mr-accent:#B8956A;
+  --mr-safety:#FFFAF5;
+  --mr-radius:12px;
+}
+
+/* === Shared Modules === */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.cta-safety{display:inline-block;background:var(--mr-safety);color:var(--mr-text);border:2px solid var(--mr-border);padding:12px 28px;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none;margin:8px 0;transition:border-color 0.2s,color 0.2s}
+.cta-safety:hover{border-color:var(--mr-primary);color:var(--mr-primary)}
+
+.cta-primary{display:inline-block;background:var(--mr-primary);color:#fff;padding:14px 32px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s}
+.cta-primary:hover{background:var(--mr-primary-hover)}
+
+.snippet{background:var(--mr-safety);border:2px solid var(--mr-primary);border-radius:var(--mr-radius);padding:20px 24px;margin:0 0 24px 0;font-size:15px;line-height:1.6}
+.snippet strong{color:var(--mr-text)}
+
+.tip{background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-primary);border-radius:8px;padding:16px 20px;margin:16px 0;font-size:14px}
+
+@media print{.no-print,.cta,.cta-safety,.cta-primary,footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.print-only{display:block!important}}
+</style>
+</head>
+<body>
+<div id="root">
+  <!-- SEO Fallback -->
+  <div style="max-width:660px;margin:0 auto;padding:40px 16px;font-family:'DM Sans',sans-serif;color:#2D2319">
+    <h1 style="font-size:32px;font-weight:900;font-family:'Fraunces',serif">Wenn es soweit ist. Mach's ruhig.</h1>
+    <p style="font-size:16px;color:#8C7E6F;line-height:1.6;margin:12px 0 24px">Vorsorge, Trauer und Bestattung — Schritt für Schritt, in deinem Tempo. Nur was du wirklich brauchst, wenn du es brauchst.</p>
+    <h2>Unsere Themen</h2>
+    <ul>
+      <li><strong>Checkliste Todesfall</strong> — Was jetzt zu tun ist, Schritt für Schritt</li>
+      <li><strong>Bestattung planen</strong> — Ablauf, Kosten, Entscheidungen</li>
+      <li><strong>Trauerrede schreiben</strong> — Worte finden, wenn es schwerfällt</li>
+      <li><strong>Bestattungskosten</strong> — Was kostet eine Bestattung wirklich?</li>
+      <li><strong>Bestattungsarten</strong> — Erdbestattung, Feuerbestattung, Alternativen</li>
+      <li><strong>Bestatter finden</strong> — Vertrauensvolle Bestatter in deiner Nähe</li>
+    </ul>
+    <p style="margin-top:24px"><strong>Kostenlos. Keine Registrierung. In deinem Tempo.</strong></p>
+    <p style="margin-top:12px"><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></p>
+  </div>
+</div>
+<script type="text/babel">
+const{useState,useEffect}=React;
+
+const topics = [
+  {
+    id: "checkliste-todesfall",
+    title: "Checkliste Todesfall",
+    sub: "Was jetzt zu tun ist",
+    desc: "Die wichtigsten Schritte nach einem Todesfall — sortiert nach Dringlichkeit. Zum Abhaken, Ausdrucken, Teilen.",
+    cluster: "akutfall",
+    status: "coming",
+    href: "/checkliste-todesfall"
+  },
+  {
+    id: "trauerrede",
+    title: "Trauerrede schreiben",
+    sub: "Worte finden, wenn es schwerfällt",
+    desc: "Schritt für Schritt zur persönlichen Trauerrede. Mit Leitfragen, Textbausteinen und Beispielen.",
+    cluster: "trauer",
+    status: "coming",
+    href: "/trauerrede-schreiben"
+  },
+  {
+    id: "beerdigung-planen",
+    title: "Beerdigung planen",
+    sub: "Ablauf, Kosten, Entscheidungen",
+    desc: "Alles, was du für die Planung einer Beerdigung wissen musst — von der Bestattungsart bis zur Trauerfeier.",
+    cluster: "akutfall",
+    status: "coming",
+    href: "/beerdigung-planen"
+  },
+  {
+    id: "bestattungskosten",
+    title: "Bestattungskosten",
+    sub: "Was kostet eine Bestattung?",
+    desc: "Transparente Übersicht der Kosten — aufgeschlüsselt nach Bestattungsart, Region und Leistungen.",
+    cluster: "akutfall",
+    status: "coming",
+    href: "/bestattungskosten"
+  },
+  {
+    id: "bestattungsarten",
+    title: "Bestattungsarten",
+    sub: "Erd-, Feuer-, See- und Baumbestattung",
+    desc: "Welche Bestattungsarten gibt es? Ablauf, Kosten, Voraussetzungen — verständlich erklärt.",
+    cluster: "vorsorge",
+    status: "coming",
+    href: "/bestattungsarten"
+  },
+  {
+    id: "bestatter",
+    title: "Bestatter finden",
+    sub: "Vertrauensvoll und in deiner Nähe",
+    desc: "Bestatter in deiner Stadt — mit Leistungen, Erreichbarkeit und dem, was wirklich zählt.",
+    cluster: "lokal",
+    status: "coming",
+    href: "/bestatter"
+  }
+];
+
+const clusterLabels = {
+  akutfall: "Akutfall",
+  trauer: "Trauer & Abschied",
+  vorsorge: "Vorsorge",
+  lokal: "In deiner Nähe"
+};
+
+const clusterColors = {
+  akutfall: "#B8956A",
+  trauer: "#7A6B5D",
+  vorsorge: "#A69279",
+  lokal: "#5E5047"
+};
+
+function App() {
+  return (
+    <div style={{maxWidth:720,margin:'0 auto',padding:'48px 20px 80px'}}>
+      {/* Header */}
+      <header style={{marginBottom:48,animation:'fadeUp 0.6s ease-out'}}>
+        <p style={{fontSize:13,fontWeight:600,color:'#A69279',letterSpacing:'0.05em',textTransform:'uppercase',marginBottom:8}}>Vorsorge · Trauer · Bestattung</p>
+        <h1 style={{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,5vw,42px)',fontWeight:800,lineHeight:1.2,color:'#2D2319',marginBottom:16}}>
+          Wenn es soweit ist.<br/>Mach's ruhig.
+        </h1>
+        <p style={{fontSize:17,lineHeight:1.7,color:'#8C7E6F',maxWidth:540}}>
+          Schritt für Schritt, in deinem Tempo. Nur was du wirklich brauchst, wenn du es brauchst.
+        </p>
+      </header>
+
+      {/* Topic Cards */}
+      <section>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:16}}>
+          {topics.map((t,i) => (
+            <div key={t.id} style={{
+              background:'#FFFDF9',
+              border:'2px solid #E8E0D6',
+              borderRadius:12,
+              padding:'24px 24px 20px',
+              transition:'border-color 0.2s, transform 0.2s',
+              cursor:'default',
+              animation:`fadeUp 0.5s ease-out ${i*0.08}s both`
+            }}
+            onMouseEnter={e=>{e.currentTarget.style.borderColor='#7A6B5D';e.currentTarget.style.transform='translateY(-2px)'}}
+            onMouseLeave={e=>{e.currentTarget.style.borderColor='#E8E0D6';e.currentTarget.style.transform='translateY(0)'}}
+            >
+              <span style={{
+                display:'inline-block',
+                fontSize:11,
+                fontWeight:700,
+                color:clusterColors[t.cluster],
+                background:`${clusterColors[t.cluster]}15`,
+                padding:'3px 10px',
+                borderRadius:99,
+                marginBottom:10,
+                textTransform:'uppercase',
+                letterSpacing:'0.04em'
+              }}>{clusterLabels[t.cluster]}</span>
+              <h3 style={{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,color:'#2D2319',marginBottom:4}}>{t.title}</h3>
+              <p style={{fontSize:14,color:'#A69279',fontWeight:500,marginBottom:8}}>{t.sub}</p>
+              <p style={{fontSize:14,lineHeight:1.6,color:'#8C7E6F'}}>{t.desc}</p>
+              <p style={{marginTop:14,fontSize:13,color:'#B8956A',fontWeight:600}}>Bald verfügbar</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Trust Footer */}
+      <footer style={{marginTop:56,paddingTop:32,borderTop:'1px solid #E8E0D6',textAlign:'center'}}>
+        <p style={{fontSize:14,color:'#8C7E6F',lineHeight:1.6}}>
+          Kostenlos. Keine Registrierung. In deinem Tempo.
+        </p>
+        <p style={{fontSize:13,color:'#B8B0A6',marginTop:12}}>
+          Ein Projekt der mach's-Familie · <a href="/impressum" style={{color:'#A69279',textDecoration:'none'}}>Impressum</a> · <a href="/datenschutz" style={{color:'#A69279',textDecoration:'none'}}>Datenschutz</a>
+        </p>
+      </footer>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
