@@ -1,0 +1,27 @@
+# machsruhig.de
+
+> Vorsorge, Trauer und Bestattung — Schritt für Schritt, in deinem Tempo.
+
+machsruhig.de ist ein deutschsprachiges Informationsportal zu den Themen Todesfall, Bestattung, Trauer und Vorsorge. Ziel ist es, Menschen in einer schwierigen Lebenssituation verlässliche, verständliche und kostenlose Hilfe zu bieten.
+
+## Kernthemen
+
+- **Checkliste Todesfall:** Interaktive Checkliste mit den wichtigsten Schritten nach einem Todesfall, personalisiert nach Bundesland
+- **Trauerrede schreiben:** Schritt-für-Schritt-Generator für persönliche Trauerreden
+- **Beerdigung planen:** Leitfaden für die Planung einer Bestattung — Ablauf, Kosten, Entscheidungen
+- **Bestattungskosten:** Transparente Kostenübersicht mit regionalem Rechner
+- **Bestattungsarten:** Vergleich aller Bestattungsformen (Erd-, Feuer-, See-, Baumbestattung u.a.)
+- **Bestatter finden:** Lokale Bestatter-Suche nach Stadt
+
+## Wichtige Hinweise
+
+- machsruhig.de ist ein Informationsportal, keine Behörde und keine Rechtsberatung
+- Bestattungsgesetze unterscheiden sich nach Bundesland — Inhalte berücksichtigen regionale Unterschiede
+- Alle Tools sind kostenlos, ohne Anmeldung und speichern keine persönlichen Daten auf Servern
+- Das Portal wird unabhängig betrieben und finanziert sich über Vermittlung von Bestattungsleistungen
+
+## Kontakt
+
+- Website: https://machsruhig.de
+- Impressum: https://machsruhig.de/impressum
+- Datenschutz: https://machsruhig.de/datenschutz
