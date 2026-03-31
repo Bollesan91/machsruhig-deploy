@@ -6,22 +6,50 @@
 <title>Datenschutz — mach's ruhig</title>
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://machsruhig.de/datenschutz">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2')}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #E8E0D6;padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#2D2319;text-decoration:none}
+.mr-nav-logo span{color:#7A6B5D}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:#8C7E6F;text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:#2D2319;background:rgba(122,107,93,0.08)}
+@media(max-width:640px){.mr-nav-links{display:none}}
 .wrap{max-width:660px;margin:0 auto;padding:48px 20px 80px}
 h1{font-family:'Fraunces',serif;font-size:28px;font-weight:700;margin-bottom:24px}
 h2{font-size:18px;font-weight:700;margin:24px 0 8px}
+p{margin-bottom:12px}
 a{color:#7A6B5D}
+.mr-footer{background:#f4f0eb;border-top:1px solid #E8E0D6;margin-top:64px;padding:32px 20px 24px;text-align:center}
+.mr-footer p{font-size:12px;color:#B8B0A6;line-height:1.6}
+.mr-footer a{font-size:12px;color:#A69279;text-decoration:none}
 </style>
 </head>
 <body>
+<nav class="mr-nav">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <div class="mr-nav-links">
+      <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <a href="/bestatter">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
 <div class="wrap">
-  <p style="margin-bottom:24px"><a href="/" style="text-decoration:none;font-weight:600">&larr; Zurück zur Startseite</a></p>
   <h1>Datenschutzerklärung</h1>
   <p><em>Angaben folgen — Seite befindet sich im Aufbau.</em></p>
   <p style="margin-top:24px"><a href="/impressum">Impressum</a></p>
 </div>
+<footer class="mr-footer">
+  <p><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></p>
+  <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
+</footer>
 </body>
 </html>
