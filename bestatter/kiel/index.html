@@ -14,8 +14,12 @@
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2')}
 @font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2')}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;font-size:16px;line-height:1.6}
-:root{--mr-primary:#7A6B5D;--mr-primary-hover:#5E5047;--mr-warm:#A69279;--mr-bg:#faf8f5;--mr-bg-card:#FFFDF9;--mr-border:#E8E0D6;--mr-text:#2D2319;--mr-text-muted:#8C7E6F;--mr-accent:#B8956A;--mr-safety:#FFFAF5;--mr-radius:12px}
+:root{--mr-primary:#7A6B5D;--mr-primary-hover:#5E5047;--mr-warm:#7A6B5D;--mr-bg:#faf8f5;--mr-bg-card:#FFFDF9;--mr-border:#E8E0D6;--mr-text:#2D2319;--mr-text-muted:#73655A;--mr-accent:#866E45;--mr-safety:#FFFAF5;--mr-radius:12px}
 .mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}.mr-nav-logo span{color:var(--mr-primary)}.mr-nav-links{display:flex;gap:4px;align-items:center}.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s}.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
 .mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}.mr-footer-inner{max-width:720px;margin:0 auto}.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr}}
 .mr-content{max-width:720px;margin:0 auto;padding:0 20px}.mr-hero{padding:48px 0 32px}.mr-breadcrumb{font-size:13px;color:var(--mr-text-muted);margin-bottom:16px}.mr-hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;color:var(--mr-text);margin-bottom:12px}.mr-hero .lead{font-size:17px;color:var(--mr-text-muted)}
 .mr-keyfacts{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px 28px;margin:0 0 40px}.mr-keyfacts h2{font-size:18px;font-weight:700;margin-bottom:16px}.mr-keyfacts ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}.mr-keyfacts li{font-size:14px;padding-left:20px;position:relative}.mr-keyfacts li::before{content:'';position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:var(--mr-accent)}
@@ -26,16 +30,34 @@
 .mr-trust{text-align:center;padding:24px 0;margin-bottom:16px;font-size:13px;color:var(--mr-text-muted)}
 .mr-form-wrap{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0}.mr-form-wrap h3{font-size:20px;font-weight:700;margin-bottom:8px}.mr-form-wrap p{font-size:14px;color:var(--mr-text-muted);margin-bottom:20px}
 #lead-form-container{width:100%}
-@media print{.no-print,.mr-nav,.mr-footer{display:none}}
+@media print{.no-print,.mr-nav,
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
+.mr-footer{display:none}}
 </style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Bestatter in Kiel finden","description":"Vergleichen und finden Sie lokale Bestatter in Kiel. Informationen zu Friedhöfen, Gebühren und Bestattungsrecht None.","areaServed":{"@type":"City","name":"Kiel"},"serviceType":"Funeral Services"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestatter finden","item":"https://machsruhig.de/bestatter"},{"@type":"ListItem","position":3,"name":"Kiel","item":"https://machsruhig.de/bestatter/kiel"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was kostet eine Erdbestattung?","acceptedAnswer":{"@type":"Answer","text":"Die Friedhofsgebühren für Erdbestattungen variieren je nach Stadt und Friedhof. Hinzu kommen Bestatterleistungen und optional ein Grabstein."}},{"@type":"Question","name":"Gibt es günstigere Alternativen?","acceptedAnswer":{"@type":"Answer","text":"Ja, Urnengräber und Waldbestattungen sind oft günstiger und erfordern weniger Grabpflege."}},{"@type":"Question","name":"Wie lange dauert die Organisation?","acceptedAnswer":{"@type":"Answer","text":"Normalerweise 1–2 Wochen für eine vollständige Organisation einer Bestattung mit Trauerfeier."}},{"@type":"Question","name":"Können wir eine Trauerfeier organisieren?","acceptedAnswer":{"@type":"Answer","text":"Ja, Bestatter bieten umfassende Unterstützung bei der Organisation einer Trauerfeier."}}]}]}
+</script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
 <nav class="mr-nav no-print">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+        <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     <div class="mr-nav-links">
-      <a href="/bestatter" class="active">Bestatter finden</a>
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
     </div>
   </div>
 </nav>

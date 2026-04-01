@@ -36,13 +36,13 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 :root{
   --mr-primary:#7A6B5D;
   --mr-primary-hover:#5E5047;
-  --mr-warm:#A69279;
+  --mr-warm:#7A6B5D;
   --mr-bg:#faf8f5;
   --mr-bg-card:#FFFDF9;
   --mr-border:#E8E0D6;
   --mr-text:#2D2319;
-  --mr-text-muted:#8C7E6F;
-  --mr-accent:#B8956A;
+  --mr-text-muted:#73655A;
+  --mr-accent:#866E45;
   --mr-safety:#FFFAF5;
   --mr-radius:12px;
 }
@@ -92,7 +92,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
 .mr-footer a:hover{color:var(--mr-primary)}
 .mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
-.mr-footer-bottom p{font-size:12px;color:#B8B0A6}
+.mr-footer-bottom p{font-size:12px;color:#73655A}
 
 @media print{.no-print,.cta,.cta-safety,.cta-primary,.mr-nav,.mr-footer,[style*="position: fixed"],[style*="sticky"]{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}a{color:#000!important;text-decoration:none!important}.print-only{display:block!important}}
 </style>
@@ -127,7 +127,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   <!-- SEO Fallback -->
   <div style="max-width:660px;margin:0 auto;padding:40px 16px;font-family:'DM Sans',sans-serif;color:#2D2319">
     <h1 style="font-size:32px;font-weight:900;font-family:'Fraunces',serif">Wenn es soweit ist. Mach's ruhig.</h1>
-    <p style="font-size:16px;color:#8C7E6F;line-height:1.6;margin:12px 0 24px">Vorsorge, Trauer und Bestattung — Schritt für Schritt, in deinem Tempo. Nur was du wirklich brauchst, wenn du es brauchst.</p>
+    <p style="font-size:16px;color:#73655A;line-height:1.6;margin:12px 0 24px">Vorsorge, Trauer und Bestattung — Schritt für Schritt, in deinem Tempo. Nur was du wirklich brauchst, wenn du es brauchst.</p>
     <h2>Unsere Themen</h2>
     <ul>
       <li><strong>Checkliste Todesfall</strong> — Was jetzt zu tun ist, Schritt für Schritt</li>
@@ -209,9 +209,9 @@ const clusterLabels = {
 };
 
 const clusterColors = {
-  akutfall: "#B8956A",
+  akutfall: "#866E45",
   trauer: "#7A6B5D",
-  vorsorge: "#A69279",
+  vorsorge: "#7A6B5D",
   lokal: "#5E5047"
 };
 
@@ -229,11 +229,13 @@ function Nav() {
         <div className={`mr-nav-links ${open ? 'open' : ''}`}>
           <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
           <a href="/beerdigung-planen">Beerdigung planen</a>
-          <a href="/bestattungskosten">Bestattungskosten</a>
           <div className="mr-nav-divider"/>
           <a href="/trauerrede-schreiben">Trauerrede</a>
-          <a href="/bestattungsarten">Bestattungsarten</a>
+          <a href="/kondolenzschreiben">Kondolenz</a>
+          <a href="/trauersprueche">Trauersprüche</a>
           <div className="mr-nav-divider"/>
+          <a href="/tools/vorsorge-check">Vorsorge</a>
+          <a href="/bestattungsarten">Bestattungsarten</a>
           <a href="/bestatter/muenchen/">Bestatter finden</a>
         </div>
       </div>
@@ -255,7 +257,11 @@ function Footer() {
             <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
             <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
             <a href="/beerdigung-planen">Beerdigung planen</a>
-            <a href="/bestattungskosten">Bestattungskosten</a>
+            <a href="/kondolenzschreiben">Kondolenzschreiben</a>
+            <a href="/trauersprueche">Trauersprüche</a>
+            <a href="/tools/vorsorge-check">Vorsorge-Check</a>
+            <a href="/vorsorge/patientenverfuegung">Patientenverfügung</a>
+            <a href="/vorsorge/testament">Testament</a>
             <a href="/bestattungsarten">Bestattungsarten</a>
             <a href="/bestatter/muenchen/">Bestatter finden</a>
           </div>
@@ -281,11 +287,11 @@ function App() {
       <main id="main" style={{maxWidth:720,margin:'0 auto',padding:'48px 20px 0'}}>
         {/* Hero */}
         <header style={{marginBottom:48,animation:'fadeUp 0.6s ease-out'}}>
-          <p style={{fontSize:13,fontWeight:600,color:'#A69279',letterSpacing:'0.05em',textTransform:'uppercase',marginBottom:8}}>Vorsorge · Trauer · Bestattung</p>
+          <p style={{fontSize:13,fontWeight:600,color:'#7A6B5D',letterSpacing:'0.05em',textTransform:'uppercase',marginBottom:8}}>Vorsorge · Trauer · Bestattung</p>
           <h1 style={{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,5vw,42px)',fontWeight:800,lineHeight:1.2,color:'#2D2319',marginBottom:16}}>
             Wenn es soweit ist.<br/>Mach's ruhig.
           </h1>
-          <p style={{fontSize:17,lineHeight:1.7,color:'#8C7E6F',maxWidth:540}}>
+          <p style={{fontSize:17,lineHeight:1.7,color:'#73655A',maxWidth:540}}>
             Schritt für Schritt, in deinem Tempo. Nur was du wirklich brauchst, wenn du es brauchst.
           </p>
         </header>
@@ -319,9 +325,9 @@ function App() {
                   letterSpacing:'0.04em'
                 }}>{clusterLabels[t.cluster]}</span>
                 <h3 style={{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,color:'#2D2319',marginBottom:4}}>{t.title}</h3>
-                <p style={{fontSize:14,color:'#A69279',fontWeight:500,marginBottom:8}}>{t.sub}</p>
-                <p style={{fontSize:14,lineHeight:1.6,color:'#8C7E6F'}}>{t.desc}</p>
-                <p style={{marginTop:14,fontSize:13,color:'#B8956A',fontWeight:600}}>Bald verfügbar</p>
+                <p style={{fontSize:14,color:'#7A6B5D',fontWeight:500,marginBottom:8}}>{t.sub}</p>
+                <p style={{fontSize:14,lineHeight:1.6,color:'#73655A'}}>{t.desc}</p>
+                <p style={{marginTop:14,fontSize:13,color:'#866E45',fontWeight:600}}>Bald verfügbar</p>
               </div>
             ))}
           </div>
@@ -329,7 +335,7 @@ function App() {
 
         {/* Trust-Zeile */}
         <div style={{marginTop:48,textAlign:'center',padding:'24px 0'}}>
-          <p style={{fontSize:14,color:'#8C7E6F',lineHeight:1.6}}>
+          <p style={{fontSize:14,color:'#73655A',lineHeight:1.6}}>
             Kostenlos. Keine Registrierung. In deinem Tempo.
           </p>
         </div>

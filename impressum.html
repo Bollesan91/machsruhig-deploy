@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Impressum — mach's ruhig</title>
+<meta name="description" content="Impressum von machsruhig.de: Angaben zum Betreiber, Kontaktdaten und rechtliche Hinweise.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://machsruhig.de/impressum">
 <!-- Plausible Analytics (DSGVO-konform, cookieless) -->
@@ -20,16 +21,20 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#2D2319;text-decoration:none}
 .mr-nav-logo span{color:#7A6B5D}
 .mr-nav-links{display:flex;gap:4px;align-items:center}
-.mr-nav-links a{font-size:13px;font-weight:500;color:#8C7E6F;text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a{font-size:13px;font-weight:500;color:#73655A;text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
 .mr-nav-links a:hover{color:#2D2319;background:rgba(122,107,93,0.08)}
 @media(max-width:640px){.mr-nav-links{display:none}}
 .wrap{max-width:660px;margin:0 auto;padding:48px 20px 80px}
 h1{font-family:'Fraunces',serif;font-size:28px;font-weight:700;margin-bottom:24px}
 h2{font-size:18px;font-weight:700;margin:24px 0 8px}
 a{color:#7A6B5D}
+
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
 .mr-footer{background:#f4f0eb;border-top:1px solid #E8E0D6;margin-top:64px;padding:32px 20px 24px;text-align:center}
-.mr-footer p{font-size:12px;color:#B8B0A6;line-height:1.6}
-.mr-footer a{font-size:12px;color:#A69279;text-decoration:none}
+.mr-footer p{font-size:12px;color:#73655A;line-height:1.6}
+.mr-footer a{font-size:12px;color:#7A6B5D;text-decoration:none}
 </style>
 </head>
 <body>
@@ -37,10 +42,16 @@ a{color:#7A6B5D}
 <nav class="mr-nav">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+        <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     <div class="mr-nav-links">
       <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
       <a href="/beerdigung-planen">Beerdigung planen</a>
+      <div class="mr-nav-divider"></div>
       <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <a href="/bestatter/muenchen/">Bestatter finden</a>
     </div>
@@ -48,8 +59,41 @@ a{color:#7A6B5D}
 </nav>
 <main id="main" class="wrap">
   <h1>Impressum</h1>
-  <p><em>Angaben folgen — Seite befindet sich im Aufbau.</em></p>
-  <p style="margin-top:24px"><a href="/datenschutz">Datenschutz</a></p>
+
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    Marie-Therese Bollweg<br>
+    Immenseeweg 12a<br>
+    22149 Hamburg<br>
+    Deutschland
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>E-Mail: kontakt@machsruhig.de</p>
+
+  <h2>Umsatzsteuer</h2>
+  <p>Kleinunternehmerin gemäß § 19 UStG. Es wird keine Umsatzsteuer ausgewiesen.</p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>
+    Marie-Therese Bollweg<br>
+    Immenseeweg 12a<br>
+    22149 Hamburg
+  </p>
+
+  <h2>Redaktioneller Hinweis</h2>
+  <p>machsruhig.de ist ein unabhängiges Informationsportal zu den Themen Vorsorge, Trauer und Bestattung. Wir bieten keine Rechtsberatung, keine medizinische Beratung und keine Bestattungsdienstleistungen an. Alle Inhalte dienen der allgemeinen Information und ersetzen nicht die Beratung durch Fachpersonen (Bestatter, Notar, Rechtsanwalt).</p>
+
+  <h2>Streitschlichtung</h2>
+  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+  <h2>Haftung für Inhalte</h2>
+  <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
+
+  <h2>Haftung für Links</h2>
+  <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+  <p style="margin-top:32px;font-size:13px;color:#73655A">Stand: April 2026</p>
 </main>
 <footer class="mr-footer">
   <p><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></p>

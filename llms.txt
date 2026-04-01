@@ -6,12 +6,26 @@ machsruhig.de ist ein deutschsprachiges Informationsportal zu den Themen Todesfa
 
 ## Kernthemen
 
-- **Checkliste Todesfall:** Interaktive Checkliste mit den wichtigsten Schritten nach einem Todesfall, personalisiert nach Bundesland
-- **Trauerrede schreiben:** Schritt-für-Schritt-Generator für persönliche Trauerreden
-- **Beerdigung planen:** Leitfaden für die Planung einer Bestattung — Ablauf, Kosten, Entscheidungen
-- **Bestattungskosten:** Transparente Kostenübersicht mit regionalem Rechner
-- **Bestattungsarten:** Vergleich aller Bestattungsformen (Erd-, Feuer-, See-, Baumbestattung u.a.)
-- **Bestatter finden:** Lokale Bestatter-Suche nach Stadt
+### Akutfall
+- **Checkliste Todesfall:** Interaktive Checkliste mit den wichtigsten Schritten nach einem Todesfall, personalisiert nach Bundesland — /tools/checkliste-todesfall
+- **Beerdigung planen:** Leitfaden für die Planung einer Bestattung — Ablauf, Kosten, Entscheidungen — /beerdigung-planen
+- **Bestattungskosten:** Transparente Kostenübersicht mit regionalem Rechner — /bestattungskosten
+- **Bestattungsarten:** Vergleich aller Bestattungsformen (Erd-, Feuer-, See-, Baumbestattung u.a.) — /bestattungsarten
+
+### Trauer & Abschied
+- **Trauerrede schreiben:** Schritt-für-Schritt-Generator für persönliche Trauerreden — /trauerrede-schreiben
+- **Kondolenzschreiben:** Leitfaden für einfühlsame Beileidsbriefe und Trauerkarten — /kondolenzschreiben
+- **Trauersprüche:** Kuratierte Sammlung von Trauersprüchen, Zitaten und Bibelstellen (nur gemeinfreie Autoren) — /trauersprueche
+
+### Vorsorge
+- **Vorsorge-Check:** Interaktives Tool zur Prüfung des persönlichen Vorsorgestatus — /tools/vorsorge-check
+- **Patientenverfügung:** Informationsseite zu Patientenverfügungen nach § 1827 BGB — /vorsorge/patientenverfuegung
+- **Testament:** Übersicht zu Testamentsarten, Pflichtanteil und Formvorschriften — /vorsorge/testament
+- **Sterbegeldversicherung:** Vergleichsseite zu Sterbegeldversicherungen, Wartezeiten und Schonvermögen — /vorsorge/sterbegeldversicherung
+
+### Bestatter finden
+- **Lokale Bestatter-Suche:** 50 Stadtseiten mit Lead-Formular, Friedhöfen, Kostenübersicht und regionalem Bestattungsrecht — /bestatter/{stadt}
+- **Bestattungsrecht nach Bundesland:** 16 Bundesland-Seiten mit landesspezifischen Fristen, Vorschriften und Besonderheiten — /bestattung-in/{bundesland}
 
 ## Wichtige Hinweise
 
