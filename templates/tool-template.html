@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- === META: Anpassen pro Tool === -->
+<title>Bestattungskosten-Rechner — mach's ruhig</title>
+<meta name="description" content="Was kostet eine Bestattung? Berechne die voraussichtlichen Kosten — nach Bestattungsart, Region und Ausstattung. Kostenlos, anonym, ohne Anmeldung.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/tools/kostenrechner">
+<meta property="og:title" content="Bestattungskosten-Rechner — mach's ruhig">
+<meta property="og:description" content="Berechne die voraussichtlichen Bestattungskosten — nach Bestattungsart, Region und Ausstattung.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machsruhig.de/tools/kostenrechner">
+
+<!-- === SCHEMA: WebApplication + FAQ === -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Bestattungskosten-Rechner",
+      "description": "Berechne die voraussichtlichen Bestattungskosten nach Bestattungsart, Region und Ausstattung.",
+      "url": "https://machsruhig.de/tools/kostenrechner",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://machsruhig.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Bestattungskosten", "item": "https://machsruhig.de/bestattungskosten"},
+        {"@type": "ListItem", "position": 3, "name": "Kostenrechner", "item": "https://machsruhig.de/tools/kostenrechner"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie genau ist der Kostenrechner?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Der Rechner liefert Richtwerte auf Basis öffentlich verfügbarer Durchschnittsdaten. Die tatsächlichen Kosten können je nach Bestatter, Friedhof und individuellen Wünschen abweichen."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* Self-hosted fonts */
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Base Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+
+:root{
+  --mr-primary:#7A6B5D;--mr-primary-hover:#5E5047;--mr-warm:#A69279;
+  --mr-bg:#faf8f5;--mr-bg-card:#FFFDF9;--mr-border:#E8E0D6;
+  --mr-text:#2D2319;--mr-text-muted:#8C7E6F;--mr-accent:#B8956A;
+  --mr-safety:#FFFAF5;--mr-radius:12px;
+}
+
+/* Navigation */
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}
+.mr-nav-logo span{color:var(--mr-primary)}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,0.08)}
+.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){
+  .mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}
+  .mr-nav-links.open{display:flex}
+  .mr-nav-links a{padding:12px 8px;font-size:15px}
+  .mr-nav-divider{display:none}
+  .mr-nav-toggle{display:block}
+}
+
+/* Footer */
+.mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}
+.mr-footer-inner{max-width:720px;margin:0 auto}
+.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}
+.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
+.mr-footer a:hover{color:var(--mr-primary)}
+.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
+.mr-footer-bottom p{font-size:12px;color:#B8B0A6}
+
+/* === TOOL-SEITE: Spezifische Styles === */
+.mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.mr-hero{padding:48px 0 24px}
+.mr-breadcrumb{font-size:13px;color:var(--mr-text-muted);margin-bottom:16px}
+.mr-breadcrumb a{color:var(--mr-warm);text-decoration:none}
+.mr-breadcrumb a:hover{text-decoration:underline}
+.mr-hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;color:var(--mr-text);margin-bottom:12px}
+.mr-hero .lead{font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px}
+
+/* Datenschutz-Hinweis (VOR erster Eingabe) */
+.mr-privacy-note{background:var(--mr-safety);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin:0 0 32px;display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--mr-text-muted)}
+.mr-privacy-note svg{flex-shrink:0;margin-top:2px}
+.mr-privacy-note strong{color:var(--mr-text)}
+
+/* Tool-Container */
+.mr-tool{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin-bottom:32px}
+@media(max-width:480px){.mr-tool{padding:24px 16px}}
+
+/* Tool: Steps / Progress */
+.mr-tool-progress{display:flex;gap:8px;margin-bottom:28px}
+.mr-tool-step{flex:1;height:4px;border-radius:2px;background:var(--mr-border);transition:background 0.3s}
+.mr-tool-step.active{background:var(--mr-accent)}
+.mr-tool-step.done{background:var(--mr-primary)}
+
+/* Tool: Form Elements */
+.mr-tool h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:4px}
+.mr-tool .step-hint{font-size:14px;color:var(--mr-text-muted);margin-bottom:20px}
+.mr-tool label{display:block;font-size:14px;font-weight:600;color:var(--mr-text);margin-bottom:6px}
+.mr-tool select,.mr-tool input[type="text"],.mr-tool input[type="number"]{
+  width:100%;padding:12px 16px;font-size:15px;font-family:inherit;
+  border:2px solid var(--mr-border);border-radius:8px;background:#fff;
+  color:var(--mr-text);transition:border-color 0.2s;appearance:none;
+  -webkit-appearance:none;outline:none
+}
+.mr-tool select:focus,.mr-tool input:focus{border-color:var(--mr-primary)}
+.mr-tool select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%238C7E6F' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+
+.mr-tool .option-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+@media(max-width:480px){.mr-tool .option-grid{grid-template-columns:1fr}}
+.mr-tool .option-card{border:2px solid var(--mr-border);border-radius:8px;padding:14px 16px;cursor:pointer;transition:border-color 0.2s,background 0.2s;text-align:center}
+.mr-tool .option-card:hover{border-color:var(--mr-warm)}
+.mr-tool .option-card.selected{border-color:var(--mr-primary);background:rgba(122,107,93,0.06)}
+.mr-tool .option-card strong{display:block;font-size:15px;color:var(--mr-text)}
+.mr-tool .option-card span{font-size:13px;color:var(--mr-text-muted)}
+
+/* Tool: Navigation Buttons */
+.mr-tool-nav{display:flex;justify-content:space-between;margin-top:24px;gap:12px}
+.mr-tool-nav .btn-back{background:none;border:2px solid var(--mr-border);color:var(--mr-text-muted);padding:12px 24px;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;transition:border-color 0.2s}
+.mr-tool-nav .btn-back:hover{border-color:var(--mr-primary);color:var(--mr-text)}
+.mr-tool-nav .btn-next{background:var(--mr-primary);color:#fff;border:none;padding:12px 28px;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;transition:background 0.2s}
+.mr-tool-nav .btn-next:hover{background:var(--mr-primary-hover)}
+.mr-tool-nav .btn-next:disabled{opacity:0.4;cursor:not-allowed}
+
+/* Ergebnis */
+.mr-result{background:var(--mr-bg-card);border:2px solid var(--mr-primary);border-radius:var(--mr-radius);padding:32px 28px;margin-bottom:32px}
+.mr-result h2{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:8px}
+.mr-result .result-range{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--mr-primary);margin:16px 0}
+.mr-result .result-disclaimer{font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid var(--mr-border)}
+
+/* Export-Leiste */
+.mr-export{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.mr-export button{background:var(--mr-safety);border:2px solid var(--mr-border);color:var(--mr-text);padding:10px 20px;border-radius:99px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color 0.2s;font-family:inherit}
+.mr-export button:hover{border-color:var(--mr-primary)}
+
+/* Tipps */
+.mr-tips{margin:32px 0}
+.mr-tips h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)}
+.mr-tips .tip-card{background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:16px 20px;margin-bottom:8px}
+.mr-tips .tip-card strong{display:block;font-size:15px;margin-bottom:4px}
+.mr-tips .tip-card p{font-size:14px;color:var(--mr-text-muted);line-height:1.6;margin:0}
+
+/* CTA */
+.mr-cta-block{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center}
+.mr-cta-block h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.mr-cta-block p{font-size:15px;color:var(--mr-text-muted);margin-bottom:20px}
+.mr-cta-block a{display:inline-block;background:var(--mr-primary);color:#fff;padding:14px 32px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;transition:background 0.2s}
+.mr-cta-block a:hover{background:var(--mr-primary-hover)}
+
+/* FAQ */
+.mr-faq{margin:40px 0}
+.mr-faq h2{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)}
+.mr-faq details{border:1px solid var(--mr-border);border-radius:8px;margin-bottom:8px;background:var(--mr-bg-card)}
+.mr-faq summary{padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mr-faq summary::-webkit-details-marker{display:none}
+.mr-faq summary::after{content:'+';font-size:20px;color:var(--mr-warm);font-weight:300}
+.mr-faq details[open] summary::after{content:'\2212'}
+.mr-faq .faq-answer{padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--mr-text-muted)}
+
+/* Trust */
+.mr-trust{text-align:center;padding:24px 0;margin-bottom:16px}
+.mr-trust p{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-trust a{color:var(--mr-primary);text-decoration:none}
+
+/* Print */
+@media print{.no-print,.mr-nav,.mr-footer,.mr-cta-block,.mr-export{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}.mr-content{max-width:100%}.mr-tool,.mr-result{border-color:#ccc}}
+</style>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <div class="mr-nav-links">
+      <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <a href="/bestattungskosten" class="active">Bestattungskosten</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/bestatter">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mr-content">
+
+  <!-- === BLOCK 1: Hero === -->
+  <header class="mr-hero">
+    <div class="mr-breadcrumb">
+      <a href="/">Start</a> › <a href="/bestattungskosten">Bestattungskosten</a> › Kostenrechner
+    </div>
+    <h1>Bestattungskosten-Rechner</h1>
+    <p class="lead">Berechne die voraussichtlichen Kosten einer Bestattung — nach Bestattungsart, Region und Ausstattung. Du bekommst eine realistische Spanne, keine Phantasiezahl.</p>
+  </header>
+
+  <!-- === BLOCK 2: Datenschutz-Hinweis (VOR erster Eingabe!) === -->
+  <div class="mr-privacy-note">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A6B5D" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <div>
+      <strong>Deine Daten bleiben bei dir.</strong> Dieses Tool läuft vollständig in deinem Browser. Es werden keine Eingaben an Server übermittelt, gespeichert oder ausgewertet. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    </div>
+  </div>
+
+  <!-- === BLOCK 3–5: Tool (React-Bereich) === -->
+  <div id="tool-root"></div>
+
+</div>
+
+<!-- Footer -->
+<footer class="mr-footer no-print">
+  <div class="mr-footer-inner">
+    <div class="mr-footer-grid">
+      <div>
+        <h4>Über machsruhig.de</h4>
+        <p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p>
+      </div>
+      <div>
+        <h4>Themen</h4>
+        <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+        <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
+        <a href="/beerdigung-planen">Beerdigung planen</a>
+        <a href="/bestattungskosten">Bestattungskosten</a>
+        <a href="/bestattungsarten">Bestattungsarten</a>
+        <a href="/bestatter">Bestatter finden</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/methodik">Methodik</a>
+      </div>
+    </div>
+    <div class="mr-footer-bottom">
+      <p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung. Angaben zu Bestattungsrecht variieren nach Bundesland.</p>
+      <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
+    </div>
+  </div>
+</footer>
+
+<!-- === React Tool-Logik === -->
+<script type="text/babel">
+const {useState} = React;
+
+/* === Beispiel-Konfiguration (in Produktion: aus JSON-Datei laden) === */
+const STEPS = [
+  {
+    id: 'art',
+    title: 'Bestattungsart',
+    hint: 'Welche Bestattungsform wird gewünscht?',
+    type: 'options',
+    options: [
+      {value: 'erd', label: 'Erdbestattung', desc: 'Klassisch mit Sarg'},
+      {value: 'feuer', label: 'Feuerbestattung', desc: 'Kremation + Urne'},
+      {value: 'see', label: 'Seebestattung', desc: 'Urne auf See'},
+      {value: 'baum', label: 'Baumbestattung', desc: 'Urne im Wald'}
+    ]
+  },
+  {
+    id: 'region',
+    title: 'Region',
+    hint: 'In welcher Region findet die Bestattung statt?',
+    type: 'options',
+    options: [
+      {value: 'stadt', label: 'Großstadt', desc: 'Über 500.000 Einwohner'},
+      {value: 'mittel', label: 'Mittelstadt', desc: '50.000–500.000 Einwohner'},
+      {value: 'land', label: 'Ländlich', desc: 'Unter 50.000 Einwohner'}
+    ]
+  },
+  {
+    id: 'ausstattung',
+    title: 'Ausstattung',
+    hint: 'Welchen Rahmen stellst du dir vor?',
+    type: 'options',
+    options: [
+      {value: 'einfach', label: 'Einfach', desc: 'Schlicht und würdevoll'},
+      {value: 'mittel', label: 'Mittel', desc: 'Trauerfeier + Blumen'},
+      {value: 'gehoben', label: 'Gehoben', desc: 'Individuell gestaltet'}
+    ]
+  }
+];
+
+/* Vereinfachte Kostentabelle (Beispiel — in Produktion aus JSON) */
+const KOSTEN = {
+  erd:   {einfach: [4000,6000],  mittel: [6000,10000], gehoben: [10000,15000]},
+  feuer: {einfach: [2000,3500],  mittel: [3500,6000],  gehoben: [6000,9000]},
+  see:   {einfach: [2500,4000],  mittel: [4000,5500],  gehoben: [5500,7000]},
+  baum:  {einfach: [2500,4000],  mittel: [4000,6000],  gehoben: [5500,7500]}
+};
+const REGION_FACTOR = {stadt: 1.2, mittel: 1.0, land: 0.85};
+
+function Tool() {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [showResult, setShowResult] = useState(false);
+
+  const currentStep = STEPS[step];
+  const totalSteps = STEPS.length;
+
+  function select(value) {
+    setAnswers(prev => ({...prev, [currentStep.id]: value}));
+  }
+
+  function next() {
+    if (step < totalSteps - 1) {
+      setStep(step + 1);
+    } else {
+      setShowResult(true);
+    }
+  }
+
+  function back() {
+    if (showResult) { setShowResult(false); return; }
+    if (step > 0) setStep(step - 1);
+  }
+
+  function restart() {
+    setStep(0);
+    setAnswers({});
+    setShowResult(false);
+  }
+
+  function getResult() {
+    const base = KOSTEN[answers.art]?.[answers.ausstattung] || [3000, 7000];
+    const factor = REGION_FACTOR[answers.region] || 1.0;
+    return [Math.round(base[0] * factor / 100) * 100, Math.round(base[1] * factor / 100) * 100];
+  }
+
+  /* === Ergebnis-Ansicht === */
+  if (showResult) {
+    const [low, high] = getResult();
+    return (
+      <>
+        {/* Block 4: Ergebnis */}
+        <div className="mr-result">
+          <h2>Deine Kostenschätzung</h2>
+          <p style={{fontSize:14,color:'#8C7E6F'}}>Basierend auf deinen Angaben: {STEPS[0].options.find(o=>o.value===answers.art)?.label}, {STEPS[1].options.find(o=>o.value===answers.region)?.label}, {STEPS[2].options.find(o=>o.value===answers.ausstattung)?.label}</p>
+          <div className="result-range">{low.toLocaleString('de-DE')} – {high.toLocaleString('de-DE')} Euro</div>
+          <p className="result-disclaimer">
+            Diese Angabe ist ein Richtwert auf Basis öffentlich zugänglicher Durchschnittsdaten. Die tatsächlichen Kosten hängen vom gewählten Bestatter, Friedhof und individuellen Wünschen ab. Für ein verbindliches Angebot wende dich an einen Bestatter vor Ort.
+          </p>
+        </div>
+
+        {/* Block 5: Export */}
+        <div className="mr-export no-print">
+          <button onClick={() => window.print()}>Drucken / PDF</button>
+          <button onClick={restart}>Neue Berechnung</button>
+        </div>
+
+        {/* Block 6: Tipps */}
+        <div className="mr-tips">
+          <h2>Gut zu wissen</h2>
+          <div className="tip-card">
+            <strong>Vergleiche mehrere Angebote</strong>
+            <p>Die Preisunterschiede zwischen Bestattern können erheblich sein — auch bei gleicher Leistung. Mindestens zwei Angebote einholen lohnt sich fast immer.</p>
+          </div>
+          <div className="tip-card">
+            <strong>Grabpflege einkalkulieren</strong>
+            <p>Bei einer Erdbestattung kommen über die Ruhezeit (15–30 Jahre) Grabpflegekosten von mehreren tausend Euro hinzu. Bei Baum- oder Seebestattung entfällt das.</p>
+          </div>
+          <div className="tip-card">
+            <strong>Sterbegeld prüfen</strong>
+            <p>Manche Versicherungen, Gewerkschaften oder Arbeitgeber zahlen ein Sterbegeld. Prüfe, ob Ansprüche bestehen — das kann die finanzielle Belastung deutlich senken.</p>
+          </div>
+        </div>
+
+        {/* Block 7: CTA (soft!) */}
+        <div className="mr-cta-block no-print">
+          <h2>Nächster Schritt?</h2>
+          <p>Wenn du die Bestattung planst, hilft dir unser Planer weiter — Schritt für Schritt.</p>
+          <a href="/beerdigung-planen">Beerdigung planen</a>
+        </div>
+
+        {/* Block 8: FAQ */}
+        <section className="mr-faq">
+          <h2>Häufige Fragen</h2>
+          <details>
+            <summary>Wie genau ist der Kostenrechner?</summary>
+            <div className="faq-answer">
+              <p>Der Rechner liefert Richtwerte auf Basis öffentlich verfügbarer Durchschnittsdaten. Die tatsächlichen Kosten können je nach Bestatter, Friedhof und individuellen Wünschen abweichen. Für ein verbindliches Angebot ist immer ein konkretes Bestatter-Angebot nötig.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Welche Kosten sind nicht enthalten?</summary>
+            <div className="faq-answer">
+              <p>Der Rechner deckt die Kernkosten ab: Bestatterleistungen, Friedhofsgebühren, Sarg/Urne und Trauerfeier. Nicht enthalten sind z.B. Grabstein, langfristige Grabpflege, Trauerkarten, Blumenschmuck oder Leichenschmaus — diese können je nach Wunsch zusätzlich anfallen.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Gibt es finanzielle Hilfe bei den Bestattungskosten?</summary>
+            <div className="faq-answer">
+              <p>Ja. Wer die Kosten nicht tragen kann, hat Anspruch auf Sozialbestattung (§ 74 SGB XII). Der Antrag wird beim zuständigen Sozialamt gestellt. Auch Sterbegeldversicherungen oder Gewerkschaftsleistungen können helfen.</p>
+            </div>
+          </details>
+        </section>
+
+        {/* Block 9: Trust */}
+        <div className="mr-trust">
+          <p>Alle Angaben sind Richtwerte, keine verbindlichen Preise. Bestattungskosten variieren regional stark.<br/>
+          machsruhig.de ist ein unabhängiges Informationsportal, kein Bestattungsunternehmen. <a href="/methodik">Mehr zu unserer Methodik</a>.</p>
+        </div>
+      </>
+    );
+  }
+
+  /* === Tool-Schritte === */
+  return (
+    <div className="mr-tool">
+      {/* Progress */}
+      <div className="mr-tool-progress">
+        {STEPS.map((s, i) => (
+          <div key={s.id} className={`mr-tool-step ${i < step ? 'done' : ''} ${i === step ? 'active' : ''}`}/>
+        ))}
+      </div>
+
+      {/* Step Content */}
+      <h2>Schritt {step + 1}: {currentStep.title}</h2>
+      <p className="step-hint">{currentStep.hint}</p>
+
+      <div className="option-grid">
+        {currentStep.options.map(opt => (
+          <div
+            key={opt.value}
+            className={`option-card ${answers[currentStep.id] === opt.value ? 'selected' : ''}`}
+            onClick={() => select(opt.value)}
+          >
+            <strong>{opt.label}</strong>
+            <span>{opt.desc}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation */}
+      <div className="mr-tool-nav">
+        {step > 0
+          ? <button className="btn-back" onClick={back}>Zurück</button>
+          : <span/>}
+        <button
+          className="btn-next"
+          onClick={next}
+          disabled={!answers[currentStep.id]}
+        >
+          {step < totalSteps - 1 ? 'Weiter' : 'Berechnen'}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tool-root')).render(<Tool/>);
+</script>
+
+</body>
+</html>

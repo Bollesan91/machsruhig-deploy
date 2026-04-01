@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trauerrede schreiben — Schritt für Schritt | mach's ruhig</title>
+<meta name="description" content="Schreibe eine persönliche Trauerrede mit unserem kostenlosen Generator. 8 Leitfragen führen dich Schritt für Schritt — ohne Anmeldung, komplett in deinem Browser.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/tools/trauerrede">
+<meta property="og:title" content="Trauerrede schreiben — Schritt für Schritt">
+<meta property="og:description" content="Persönliche Trauerrede schreiben mit 8 Leitfragen. Kostenlos, anonym, in deinem Browser.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machsruhig.de/tools/trauerrede">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"WebApplication","name":"Trauerrede-Generator","description":"Schreibe eine persönliche Trauerrede mit 8 Leitfragen.","url":"https://machsruhig.de/tools/trauerrede","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},
+      {"@type":"ListItem","position":2,"name":"Trauerrede","item":"https://machsruhig.de/trauerrede"},
+      {"@type":"ListItem","position":3,"name":"Generator","item":"https://machsruhig.de/tools/trauerrede"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Wie lang sollte eine Trauerrede sein?","acceptedAnswer":{"@type":"Answer","text":"Die meisten Trauerreden dauern 5–10 Minuten (ca. 500–1.000 Wörter). Kürzer ist völlig in Ordnung."}},
+      {"@type":"Question","name":"Werden meine Eingaben gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Generator läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt."}}
+    ]}
+  ]
+}
+</script>
+
+<!-- Plausible Analytics -->
+<script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+<script defer src="/js/tracking.js"></script>
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+
+:root{
+  --mr-primary:#7A6B5D;--mr-primary-hover:#5E5047;--mr-warm:#A69279;
+  --mr-bg:#faf8f5;--mr-bg-card:#FFFDF9;--mr-border:#E8E0D6;
+  --mr-text:#2D2319;--mr-text-muted:#8C7E6F;--mr-accent:#B8956A;
+  --mr-safety:#FFFAF5;--mr-radius:12px;
+}
+
+/* Nav */
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}
+.mr-nav-logo span{color:var(--mr-primary)}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,0.08)}
+.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){
+  .mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}
+  .mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}
+}
+
+/* Content */
+.mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+.mr-hero{padding:48px 0 24px}
+.mr-breadcrumb{font-size:13px;color:var(--mr-text-muted);margin-bottom:16px}
+.mr-breadcrumb a{color:var(--mr-warm);text-decoration:none}
+.mr-hero h1{font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;color:var(--mr-text);margin-bottom:12px}
+.mr-hero .lead{font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px}
+
+/* Privacy */
+.mr-privacy{background:var(--mr-safety);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin:0 0 32px;display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:1.6;color:var(--mr-text-muted)}
+.mr-privacy svg{flex-shrink:0;margin-top:2px}
+.mr-privacy strong{color:var(--mr-text)}
+.mr-privacy a{color:var(--mr-primary)}
+
+/* Tool */
+.mr-tool{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin-bottom:32px}
+@media(max-width:480px){.mr-tool{padding:24px 16px}}
+.mr-progress{display:flex;gap:6px;margin-bottom:28px}
+.mr-progress-step{flex:1;height:4px;border-radius:2px;background:var(--mr-border);transition:background 0.3s}
+.mr-progress-step.done{background:var(--mr-primary)}
+.mr-progress-step.active{background:var(--mr-accent)}
+.mr-tool h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:4px}
+.mr-tool .step-hint{font-size:14px;color:var(--mr-text-muted);margin-bottom:20px}
+.mr-tool .step-counter{font-size:13px;color:var(--mr-warm);font-weight:600;margin-bottom:8px}
+
+/* Form */
+.mr-tool label{display:block;font-size:14px;font-weight:600;color:var(--mr-text);margin-bottom:6px}
+.mr-tool select,.mr-tool input[type="text"]{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:2px solid var(--mr-border);border-radius:8px;background:#fff;color:var(--mr-text);transition:border-color 0.2s;outline:none;appearance:none;-webkit-appearance:none}
+.mr-tool select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%238C7E6F' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.mr-tool textarea{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:2px solid var(--mr-border);border-radius:8px;background:#fff;color:var(--mr-text);transition:border-color 0.2s;outline:none;resize:vertical;min-height:100px;line-height:1.6}
+.mr-tool select:focus,.mr-tool input:focus,.mr-tool textarea:focus{border-color:var(--mr-primary)}
+.mr-tool .char-count{text-align:right;font-size:12px;color:var(--mr-text-muted);margin-top:4px}
+.mr-tool .help-text{font-size:13px;color:var(--mr-warm);margin-top:6px;font-style:italic}
+.mr-tool .optional{font-size:12px;color:var(--mr-text-muted);font-weight:400}
+
+/* Option Cards (for select with descriptions) */
+.mr-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+@media(max-width:480px){.mr-options{grid-template-columns:1fr}}
+.mr-option{border:2px solid var(--mr-border);border-radius:8px;padding:14px 16px;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.mr-option:hover{border-color:var(--mr-warm)}
+.mr-option.selected{border-color:var(--mr-primary);background:rgba(122,107,93,0.06)}
+.mr-option strong{display:block;font-size:15px;color:var(--mr-text)}
+.mr-option span{font-size:13px;color:var(--mr-text-muted)}
+
+/* Nav Buttons */
+.mr-tool-nav{display:flex;justify-content:space-between;margin-top:24px;gap:12px}
+.btn-back{background:none;border:2px solid var(--mr-border);color:var(--mr-text-muted);padding:12px 24px;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;transition:border-color 0.2s;font-family:inherit}
+.btn-back:hover{border-color:var(--mr-primary);color:var(--mr-text)}
+.btn-next{background:var(--mr-primary);color:#fff;border:none;padding:12px 28px;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;transition:background 0.2s;font-family:inherit}
+.btn-next:hover{background:var(--mr-primary-hover)}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed}
+
+/* Result */
+.mr-result{background:var(--mr-bg-card);border:2px solid var(--mr-primary);border-radius:var(--mr-radius);padding:32px 28px;margin-bottom:24px}
+.mr-result h2{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.mr-result .result-meta{font-size:13px;color:var(--mr-text-muted);margin-bottom:20px}
+.mr-result .rede-text{font-size:16px;line-height:1.8;color:var(--mr-text);white-space:pre-wrap}
+.mr-result .rede-text p{margin-bottom:16px}
+.mr-result .disclaimer{font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-top:20px;padding-top:16px;border-top:1px solid var(--mr-border)}
+
+/* Export */
+.mr-export{display:flex;gap:8px;margin-bottom:40px;flex-wrap:wrap}
+.mr-export button{background:var(--mr-safety);border:2px solid var(--mr-border);color:var(--mr-text);padding:10px 20px;border-radius:99px;font-size:14px;font-weight:600;cursor:pointer;transition:border-color 0.2s;font-family:inherit}
+.mr-export button:hover{border-color:var(--mr-primary)}
+
+/* Tips */
+.mr-tips{margin:40px 0}
+.mr-tips h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)}
+.tip-card{background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:16px 20px;margin-bottom:8px}
+.tip-card strong{display:block;font-size:15px;margin-bottom:4px}
+.tip-card p{font-size:14px;color:var(--mr-text-muted);line-height:1.6;margin:0}
+
+/* CTA */
+.mr-cta-block{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0}
+.mr-cta-block h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.mr-cta-block p{font-size:15px;color:var(--mr-text-muted);margin-bottom:16px}
+.mr-cta-links{display:flex;flex-direction:column;gap:8px}
+.mr-cta-links a{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border:1px solid var(--mr-border);border-radius:8px;text-decoration:none;color:var(--mr-text);transition:border-color 0.2s,background 0.2s}
+.mr-cta-links a:hover{border-color:var(--mr-primary);background:rgba(122,107,93,0.04)}
+.mr-cta-links a strong{font-size:15px}
+.mr-cta-links a span{font-size:13px;color:var(--mr-text-muted)}
+
+/* FAQ */
+.mr-faq{margin:40px 0}
+.mr-faq h2{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)}
+.mr-faq details{border:1px solid var(--mr-border);border-radius:8px;margin-bottom:8px;background:var(--mr-bg-card)}
+.mr-faq summary{padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.mr-faq summary::-webkit-details-marker{display:none}
+.mr-faq summary::after{content:'+';font-size:20px;color:var(--mr-warm);font-weight:300}
+.mr-faq details[open] summary::after{content:'\2212'}
+.mr-faq .faq-answer{padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--mr-text-muted)}
+.mr-faq .faq-answer a{color:var(--mr-primary)}
+
+/* Trust */
+.mr-trust{text-align:center;padding:24px 0;margin-bottom:16px}
+.mr-trust p{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-trust a{color:var(--mr-primary);text-decoration:none}
+
+/* Footer */
+.mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}
+.mr-footer-inner{max-width:720px;margin:0 auto}
+.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}
+.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
+.mr-footer a:hover{color:var(--mr-primary)}
+.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
+.mr-footer-bottom p{font-size:12px;color:#B8B0A6}
+
+@media print{
+  .no-print,.mr-nav,.mr-footer,.mr-export,.mr-cta-block,.mr-tips,.mr-faq,.mr-trust,.mr-privacy{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:13pt}
+  .mr-content{max-width:100%;padding:0 20px}
+  .mr-result{border-color:#ccc;padding:20px}
+  .mr-result .rede-text{font-size:14pt;line-height:2}
+}
+</style>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <div class="mr-nav-links">
+      <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <a href="/bestattungskosten">Bestattungskosten</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben" class="active">Trauerrede</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/bestatter">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mr-content">
+  <header class="mr-hero">
+    <div class="mr-breadcrumb">
+      <a href="/">Start</a> › <a href="/trauerrede-schreiben">Trauerrede</a> › Generator
+    </div>
+    <h1>Trauerrede schreiben</h1>
+    <p class="lead">Worte finden, wenn es schwerfällt. 8 Leitfragen helfen dir Schritt für Schritt zu einer persönlichen Rede — in deinem Tempo, ohne Anmeldung.</p>
+  </header>
+
+  <div class="mr-privacy no-print">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A6B5D" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <div><strong>Deine Worte bleiben bei dir.</strong> Dieses Tool läuft vollständig in deinem Browser. Deine Eingaben werden nicht an Server übermittelt, nicht gespeichert und nicht ausgewertet. <a href="/datenschutz">Datenschutzerklärung</a></div>
+  </div>
+
+  <div id="tool-root"></div>
+</div>
+
+<footer class="mr-footer no-print">
+  <div class="mr-footer-inner">
+    <div class="mr-footer-grid">
+      <div>
+        <h4>Über machsruhig.de</h4>
+        <p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p>
+      </div>
+      <div>
+        <h4>Themen</h4>
+        <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+        <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
+        <a href="/beerdigung-planen">Beerdigung planen</a>
+        <a href="/bestattungskosten">Bestattungskosten</a>
+        <a href="/bestattungsarten">Bestattungsarten</a>
+        <a href="/bestatter">Bestatter finden</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/methodik">Methodik</a>
+      </div>
+    </div>
+    <div class="mr-footer-bottom">
+      <p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p>
+      <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel">
+const {useState, useRef, useEffect} = React;
+
+/* === Konfiguration (aus trauerrede.json, hier inline für Standalone-Betrieb) === */
+const BEZIEHUNGEN = [
+  {value:'vater',label:'Mein Vater'},{value:'mutter',label:'Meine Mutter'},
+  {value:'oma',label:'Meine Oma'},{value:'opa',label:'Mein Opa'},
+  {value:'ehepartner',label:'Mein Ehepartner / Lebenspartner'},
+  {value:'geschwister',label:'Mein Bruder / Meine Schwester'},
+  {value:'freund',label:'Mein Freund / Meine Freundin'},
+  {value:'kollege',label:'Mein Kollege / Meine Kollegin'},
+  {value:'kind',label:'Mein Kind'},
+  {value:'andere',label:'Andere Person'}
+];
+
+const TOENE = [
+  {value:'warm',label:'Warm und persönlich',desc:'Nah, liebevoll, mit persönlichen Geschichten'},
+  {value:'wuerdevoll',label:'Würdevoll und ruhig',desc:'Gefasst, respektvoll, eher klassisch'},
+  {value:'lebendig',label:'Lebendig und lebensbejahend',desc:'Das Leben feiern, auch mit Humor'},
+  {value:'trostspendend',label:'Trostspendend und hoffnungsvoll',desc:'Trauer anerkennen, aber Hoffnung geben'}
+];
+
+const STEPS = [
+  {id:'beziehung',title:'Wer war der Mensch für dich?',hint:'Die Beziehung gibt der Rede ihren Rahmen.',type:'select',required:true},
+  {id:'name',title:'Wie hieß der Mensch?',hint:'Der Vorname oder der Name, den du im Alltag benutzt hast.',type:'text',required:true,placeholder:'z. B. Hans, Oma Liesel, Papa'},
+  {id:'eigenschaften',title:'Was hat diesen Menschen ausgemacht?',hint:'Welche Eigenschaften fallen dir ein? Auch kleine Dinge zählen.',type:'textarea',required:true,placeholder:'z. B. immer fröhlich, liebte seinen Garten, konnte gut zuhören…',max:800,help:'Schreib einfach drauflos — Stichpunkte reichen.'},
+  {id:'erinnerung',title:'Gibt es eine besondere Erinnerung?',hint:'Eine Geschichte, ein Moment, ein Satz — etwas, das den Menschen lebendig macht.',type:'textarea',required:false,placeholder:'z. B. Jeden Sonntag hat er Pfannkuchen gemacht…',max:1000,help:'Persönliche Geschichten machen eine Rede einzigartig. Wenn dir nichts einfällt, ist das auch okay.'},
+  {id:'bedeutung',title:'Was hat dieser Mensch dir bedeutet?',hint:'Was hast du von ihm oder ihr gelernt? Was wirst du vermissen?',type:'textarea',required:true,placeholder:'z. B. Er hat mir beigebracht, dass man den Humor nicht verlieren darf…',max:800},
+  {id:'werte',title:'Was war diesem Menschen wichtig?',hint:'Welche Werte hat er oder sie gelebt?',type:'textarea',required:false,placeholder:'z. B. Familie ging immer vor. Ehrlichkeit. Zusammenhalt…',max:600},
+  {id:'abschied',title:'Was möchtest du zum Abschied sagen?',hint:'Gibt es etwas, das du noch sagen möchtest?',type:'textarea',required:false,placeholder:'z. B. Ich bin dankbar für jede Minute. Du fehlst mir…',max:600},
+  {id:'ton',title:'Welchen Ton soll die Rede haben?',hint:'Jede Rede ist anders — genau wie jeder Mensch.',type:'tone',required:true}
+];
+
+const TIPS = [
+  {title:'Langsam sprechen',text:'Sprich deutlich langsamer als im Alltag. Pausen geben deinen Worten Gewicht und dir Zeit zum Atmen.'},
+  {title:'Groß drucken',text:'Drucke die Rede in mindestens 14pt aus. Hände können zittern, Augen können tränen — gut lesbare Vorlage hilft.'},
+  {title:'Tränen sind erlaubt',text:'Mach einfach eine Pause, atme durch und lies weiter. Niemand erwartet Perfektion.'},
+  {title:'Vorher laut lesen',text:'Lies die Rede mindestens zweimal laut vor. So merkst du, wo Sätze zu lang sind.'},
+  {title:'Wasser mitnehmen',text:'Ein Schluck Wasser ist eine natürliche Pause und hilft, wenn die Stimme versagt.'},
+  {title:'Plan B haben',text:'Bitte eine Vertrauensperson, die Rede notfalls weiterzulesen. Allein das Wissen nimmt Druck.'}
+];
+
+const FAQ = [
+  {q:'Wie lang sollte eine Trauerrede sein?',a:'Die meisten Trauerreden dauern 5–10 Minuten (ca. 500–1.000 Wörter). Kürzer ist völlig in Ordnung — lieber kurz und persönlich als lang und unpersönlich.'},
+  {q:'Muss ich die Rede selbst halten?',a:'Nein. Du kannst die Rede schreiben und von jemand anderem vortragen lassen — einem Freund, Pfarrer oder professionellen Trauerredner (ca. 150–400 €).'},
+  {q:'Darf man auch etwas Lustiges erzählen?',a:'Ja. Humor und schöne Erinnerungen haben in einer Trauerrede ihren Platz. Sie zeigen die Persönlichkeit des Verstorbenen und bringen Erleichterung.'},
+  {q:'Was, wenn ich beim Reden anfange zu weinen?',a:'Völlig normal. Mach eine Pause, atme durch, trink Wasser. Eine vorher besprochene Vertrauensperson kann notfalls einspringen.'},
+  {q:'Werden meine Eingaben gespeichert?',a:'Nein. Alles läuft in deinem Browser. Sobald du das Fenster schließt, sind die Eingaben weg. Deshalb: vorher drucken oder kopieren.'},
+  {q:'Ersetzt der Generator einen Trauerredner?',a:'Er hilft dir, deine Gedanken zu strukturieren. Ein professioneller Trauerredner kann den Entwurf als Grundlage nehmen oder die Rede für dich halten.'}
+];
+
+/* === Rede generieren === */
+function generateRede(a) {
+  const name = a.name || 'der Verstorbene';
+  const bezLabel = BEZIEHUNGEN.find(b => b.value === a.beziehung)?.label || '';
+  const tonObj = TOENE.find(t => t.value === a.ton);
+
+  let rede = [];
+
+  // Begrüßung
+  if (a.ton === 'wuerdevoll') {
+    rede.push('Sehr geehrte Trauergemeinde, liebe Angehörige und Freunde.\n\nWir haben uns heute hier versammelt, um Abschied zu nehmen von ' + name + ' — einem Menschen, der vielen von uns viel bedeutet hat.');
+  } else {
+    rede.push('Liebe Trauergemeinde, liebe Familie, liebe Freunde.\n\nEs fällt mir nicht leicht, heute hier zu stehen und über ' + name + ' zu sprechen. Aber ich möchte es tun — weil ' + name + ' es verdient hat, dass wir uns an das erinnern, was wirklich zählt.');
+  }
+
+  // Beziehung
+  const bezMap = {vater:'mein Vater',mutter:'meine Mutter',oma:'meine Oma',opa:'mein Opa',ehepartner:'mein Lebensmensch',geschwister:'mein Geschwister',freund:'mein Freund',kollege:'mein Kollege',kind:'mein Kind',andere:'ein Mensch, der mir sehr nahe stand'};
+  rede.push(name + ' war ' + (bezMap[a.beziehung] || 'ein besonderer Mensch') + '. Und auch wenn der Schmerz gerade groß ist, bin ich dankbar für die Zeit, die wir miteinander hatten.');
+
+  // Eigenschaften
+  if (a.eigenschaften) {
+    if (a.ton === 'lebendig') {
+      rede.push('Wer ' + name + ' kannte, weiß: ' + name + ' war ein Mensch, der Spuren hinterlassen hat. ' + a.eigenschaften);
+    } else {
+      rede.push('Was ' + name + ' ausgemacht hat, lässt sich nicht in wenige Worte fassen. Und doch möchte ich es versuchen: ' + a.eigenschaften);
+    }
+  }
+
+  // Werte
+  if (a.werte) {
+    rede.push(name + ' hat bestimmte Werte gelebt, die für uns alle ein Vorbild sein können: ' + a.werte);
+  }
+
+  // Erinnerung
+  if (a.erinnerung) {
+    rede.push('Es gibt eine Erinnerung, die mir besonders am Herzen liegt:\n\n' + a.erinnerung + '\n\nSolche Momente sind es, die bleiben.');
+  }
+
+  // Bedeutung
+  if (a.bedeutung) {
+    rede.push('Für mich persönlich hat ' + name + ' etwas Unbezahlbares hinterlassen: ' + a.bedeutung);
+  }
+
+  // Abschied
+  if (a.abschied) {
+    rede.push(a.abschied);
+  }
+
+  // Schluss je nach Ton
+  if (a.ton === 'trostspendend') {
+    rede.push('Auch wenn ' + name + ' nicht mehr bei uns ist — das, was ' + name + ' uns gegeben hat, bleibt. In unseren Erinnerungen, in unseren Herzen, in der Art, wie wir miteinander umgehen.\n\nLass uns ' + name + ' so in Erinnerung behalten: mit Liebe, mit Dankbarkeit und mit einem Lächeln.\n\nRuhe in Frieden.');
+  } else if (a.ton === 'lebendig') {
+    rede.push(name + ' hätte wahrscheinlich nicht gewollt, dass wir nur traurig sind. ' + name + ' hätte gewollt, dass wir uns an die guten Zeiten erinnern — und davon gab es viele.\n\nDanke für alles, ' + name + '. Wir werden dich nicht vergessen.');
+  } else if (a.ton === 'wuerdevoll') {
+    rede.push('Wir nehmen heute Abschied von einem Menschen, der unser aller Leben bereichert hat. ' + name + ' wird uns fehlen — aber die Erinnerung an das, was ' + name + ' uns gegeben hat, wird bleiben.\n\nRuhe in Frieden, ' + name + '.');
+  } else {
+    rede.push('Liebe' + (a.beziehung === 'vater' || a.beziehung === 'opa' || a.beziehung === 'ehepartner' ? 'r' : '') + ' ' + name + ', du fehlst mir jetzt schon. Aber ich bin unendlich dankbar, dass du Teil meines Lebens warst.\n\nMach\'s gut. Wir sehen uns.');
+  }
+
+  return rede.join('\n\n');
+}
+
+function wordCount(text) { return text.trim().split(/\s+/).filter(Boolean).length; }
+function readingMinutes(wc) { return Math.max(1, Math.round(wc / 120)); }
+
+/* === React App === */
+function TrauerredeGenerator() {
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [showResult, setShowResult] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const toolRef = useRef(null);
+
+  const current = STEPS[step];
+  const total = STEPS.length;
+
+  function update(field, value) {
+    setAnswers(prev => ({...prev, [field]: value}));
+  }
+
+  function canProceed() {
+    if (!current.required) return true;
+    const val = answers[current.id];
+    return val && val.trim && val.trim().length > 0;
+  }
+
+  function next() {
+    if (window.mrTrack) window.mrTrack.toolStep(current.id, step + 1);
+    if (step < total - 1) {
+      setStep(step + 1);
+      if (toolRef.current) toolRef.current.scrollIntoView({behavior:'smooth',block:'start'});
+    } else {
+      setShowResult(true);
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  }
+
+  function back() {
+    if (showResult) { setShowResult(false); return; }
+    if (step > 0) { setStep(step - 1); }
+  }
+
+  function restart() {
+    setStep(0);
+    setAnswers({});
+    setShowResult(false);
+    setCopied(false);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function handlePrint() {
+    if (window.mrTrack) window.mrTrack.toolExport('trauerrede', 'print');
+    window.print();
+  }
+
+  function handleCopy() {
+    const text = generateRede(answers);
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+    if (window.mrTrack) window.mrTrack.toolExport('trauerrede', 'copy');
+  }
+
+  /* === Ergebnis === */
+  if (showResult) {
+    const rede = generateRede(answers);
+    const wc = wordCount(rede);
+    const mins = readingMinutes(wc);
+
+    return (
+      <>
+        <div className="mr-result">
+          <h2>Dein Entwurf</h2>
+          <p className="result-meta">{wc} Wörter · Lesezeit ca. {mins} Minuten · Trauerreden sind idealerweise 5–10 Minuten lang</p>
+          <div className="rede-text">{rede}</div>
+          <p className="disclaimer">Dies ist ein Entwurf — eine Grundlage, die du nach deinen Wünschen anpassen kannst. Lies den Text in Ruhe durch, ergänze, kürze oder formuliere um. Deine eigenen Worte sind die besten.</p>
+        </div>
+
+        <div className="mr-export no-print">
+          <button onClick={handlePrint}>Drucken / PDF</button>
+          <button onClick={handleCopy}>{copied ? 'Kopiert!' : 'Text kopieren'}</button>
+          <button onClick={restart}>Neue Rede</button>
+        </div>
+
+        <div className="mr-tips no-print">
+          <h2>Tipps fürs Halten der Rede</h2>
+          {TIPS.map((tip, i) => (
+            <div key={i} className="tip-card">
+              <strong>{tip.title}</strong>
+              <p>{tip.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mr-cta-block no-print">
+          <h2>Was kommt als Nächstes?</h2>
+          <p>Du hast die Trauerrede geschrieben — ein wichtiger Schritt. Wenn du bei der weiteren Planung Unterstützung brauchst:</p>
+          <div className="mr-cta-links">
+            <a href="/checkliste-todesfall"><div><strong>Checkliste Todesfall</strong><br/><span>Was jetzt noch zu tun ist</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
+            <a href="/beerdigung-planen"><div><strong>Beerdigung planen</strong><br/><span>Schritt für Schritt zur Beerdigung</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
+            <a href="/bestatter"><div><strong>Bestatter finden</strong><br/><span>Vertrauensvolle Bestatter in deiner Nähe</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
+          </div>
+          <p style={{fontSize:13,color:'var(--mr-text-muted)',marginTop:16}}>Kein Druck, kein Zeitlimit. Alles in deinem Tempo.</p>
+        </div>
+
+        <section className="mr-faq no-print">
+          <h2>Häufige Fragen</h2>
+          {FAQ.map((f, i) => (
+            <details key={i}>
+              <summary>{f.q}</summary>
+              <div className="faq-answer"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </section>
+
+        <div className="mr-trust no-print">
+          <p>Dieser Generator erstellt einen Entwurf auf Basis deiner Angaben. Er ersetzt keine professionelle Trauerbegleitung.<br/>
+          machsruhig.de ist ein unabhängiges Informationsportal. <a href="/methodik">Mehr zu unserer Methodik</a>.</p>
+        </div>
+      </>
+    );
+  }
+
+  /* === Tool-Schritte === */
+  return (
+    <div className="mr-tool" ref={toolRef}>
+      <div className="mr-progress">
+        {STEPS.map((s, i) => (
+          <div key={s.id} className={`mr-progress-step ${i < step ? 'done' : ''} ${i === step ? 'active' : ''}`}/>
+        ))}
+      </div>
+
+      <p className="step-counter">Schritt {step + 1} von {total}</p>
+      <h2>{current.title}</h2>
+      <p className="step-hint">{current.hint} {!current.required && <span className="optional">(Optional)</span>}</p>
+
+      {/* Beziehung */}
+      {current.type === 'select' && (
+        <select
+          value={answers.beziehung || ''}
+          onChange={e => update('beziehung', e.target.value)}
+          style={{marginBottom:8}}
+        >
+          <option value="">Bitte wählen…</option>
+          {BEZIEHUNGEN.map(b => <option key={b.value} value={b.value}>{b.label}</option>)}
+        </select>
+      )}
+
+      {/* Name */}
+      {current.type === 'text' && (
+        <input
+          type="text"
+          value={answers[current.id] || ''}
+          onChange={e => update(current.id, e.target.value)}
+          placeholder={current.placeholder}
+          autoFocus
+        />
+      )}
+
+      {/* Textarea */}
+      {current.type === 'textarea' && (
+        <>
+          <textarea
+            value={answers[current.id] || ''}
+            onChange={e => update(current.id, e.target.value)}
+            placeholder={current.placeholder}
+            maxLength={current.max}
+            rows={5}
+            autoFocus
+          />
+          <div className="char-count">{(answers[current.id] || '').length} / {current.max}</div>
+          {current.help && <p className="help-text">{current.help}</p>}
+        </>
+      )}
+
+      {/* Ton */}
+      {current.type === 'tone' && (
+        <div className="mr-options">
+          {TOENE.map(t => (
+            <div
+              key={t.value}
+              className={`mr-option ${answers.ton === t.value ? 'selected' : ''}`}
+              onClick={() => update('ton', t.value)}
+            >
+              <strong>{t.label}</strong>
+              <span>{t.desc}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="mr-tool-nav">
+        {step > 0 ? <button className="btn-back" onClick={back}>Zurück</button> : <span/>}
+        <button
+          className="btn-next"
+          onClick={next}
+          disabled={current.required && !canProceed()}
+        >
+          {step < total - 1 ? 'Weiter' : 'Rede erstellen'}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tool-root')).render(<TrauerredeGenerator/>);
+</script>
+</body>
+</html>

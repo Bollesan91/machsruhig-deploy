@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastUpdated": "2026-04-01",
+    "description": "Konfiguration für den Trauerrede-Generator auf machsruhig.de",
+    "seoTitle": "Trauerrede schreiben — Schritt für Schritt zur persönlichen Rede",
+    "seoDescription": "Schreibe eine persönliche Trauerrede mit unserem kostenlosen Generator. 8 Leitfragen führen dich Schritt für Schritt — ohne Anmeldung, komplett in deinem Browser.",
+    "canonical": "/tools/trauerrede"
+  },
+
+  "privacy": {
+    "headline": "Deine Worte bleiben bei dir.",
+    "text": "Dieses Tool läuft vollständig in deinem Browser. Deine Eingaben werden nicht an Server übermittelt, nicht gespeichert und nicht ausgewertet. Niemand außer dir sieht, was du hier schreibst.",
+    "linkText": "Datenschutzerklärung",
+    "linkHref": "/datenschutz"
+  },
+
+  "intro": {
+    "headline": "Trauerrede schreiben",
+    "subline": "Worte finden, wenn es schwerfällt",
+    "description": "Dieser Generator hilft dir Schritt für Schritt, eine persönliche Trauerrede zu verfassen. Du beantwortest 8 Leitfragen — daraus entsteht ein Entwurf, den du anpassen, ausdrucken oder als PDF speichern kannst.",
+    "cta": "Jetzt starten",
+    "timeEstimate": "ca. 15–30 Minuten",
+    "hint": "Du kannst jederzeit pausieren und später weitermachen. Deine Eingaben bleiben in deinem Browser gespeichert, solange du das Fenster nicht schließt."
+  },
+
+  "steps": [
+    {
+      "id": "beziehung",
+      "stepNumber": 1,
+      "title": "Wer war der Mensch für dich?",
+      "hint": "Die Beziehung zum Verstorbenen gibt der Rede ihren Rahmen.",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "vater", "label": "Mein Vater"},
+        {"value": "mutter", "label": "Meine Mutter"},
+        {"value": "oma", "label": "Meine Oma"},
+        {"value": "opa", "label": "Mein Opa"},
+        {"value": "ehepartner", "label": "Mein Ehepartner / Lebenspartner"},
+        {"value": "geschwister", "label": "Mein Bruder / Meine Schwester"},
+        {"value": "freund", "label": "Mein Freund / Meine Freundin"},
+        {"value": "kollege", "label": "Mein Kollege / Meine Kollegin"},
+        {"value": "kind", "label": "Mein Kind"},
+        {"value": "andere", "label": "Andere Person"}
+      ]
+    },
+    {
+      "id": "name",
+      "stepNumber": 2,
+      "title": "Wie hieß der Mensch?",
+      "hint": "Der Vorname oder der Name, den du im Alltag benutzt hast. Wird in der Rede verwendet.",
+      "type": "text",
+      "required": true,
+      "placeholder": "z. B. Hans, Oma Liesel, Papa"
+    },
+    {
+      "id": "eigenschaften",
+      "stepNumber": 3,
+      "title": "Was hat diesen Menschen ausgemacht?",
+      "hint": "Welche Eigenschaften fallen dir als erstes ein? Was war typisch? Auch kleine Dinge zählen.",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "z. B. immer fröhlich, liebte seinen Garten, konnte gut zuhören, hatte einen trockenen Humor…",
+      "maxLength": 800,
+      "helpText": "Schreib einfach drauflos — Stichpunkte reichen. Es muss nicht perfekt sein."
+    },
+    {
+      "id": "erinnerung",
+      "stepNumber": 4,
+      "title": "Gibt es eine besondere Erinnerung?",
+      "hint": "Eine Geschichte, ein Moment, ein Satz — etwas, das den Menschen lebendig macht.",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "z. B. Jeden Sonntag hat er Pfannkuchen gemacht und dabei immer das gleiche Lied gesummt…",
+      "maxLength": 1000,
+      "helpText": "Persönliche Geschichten machen eine Trauerrede einzigartig. Aber wenn dir gerade nichts einfällt, ist das auch okay."
+    },
+    {
+      "id": "bedeutung",
+      "stepNumber": 5,
+      "title": "Was hat dieser Mensch dir bedeutet?",
+      "hint": "Was hast du von ihm oder ihr gelernt? Was wirst du vermissen?",
+      "type": "textarea",
+      "required": true,
+      "placeholder": "z. B. Er hat mir beigebracht, dass man auch in schweren Zeiten den Humor nicht verlieren darf…",
+      "maxLength": 800
+    },
+    {
+      "id": "werte",
+      "stepNumber": 6,
+      "title": "Was war diesem Menschen wichtig?",
+      "hint": "Welche Werte hat er oder sie gelebt? Was war der Antrieb?",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "z. B. Familie ging immer vor. Ehrlichkeit. Zusammenhalt. Dass man füreinander da ist…",
+      "maxLength": 600
+    },
+    {
+      "id": "abschied",
+      "stepNumber": 7,
+      "title": "Was möchtest du zum Abschied sagen?",
+      "hint": "Gibt es etwas, das du ihm oder ihr noch sagen möchtest? Oder etwas, das die Trauergemeinde mitnehmen soll?",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "z. B. Ich bin dankbar für jede Minute. Du fehlst mir jetzt schon. Wir werden dein Lachen nie vergessen…",
+      "maxLength": 600
+    },
+    {
+      "id": "ton",
+      "stepNumber": 8,
+      "title": "Welchen Ton soll die Rede haben?",
+      "hint": "Jede Rede ist anders — genau wie jeder Mensch.",
+      "type": "select",
+      "required": true,
+      "options": [
+        {"value": "warm", "label": "Warm und persönlich", "description": "Nah, liebevoll, mit persönlichen Geschichten"},
+        {"value": "wuerdevoll", "label": "Würdevoll und ruhig", "description": "Gefasst, respektvoll, eher klassisch"},
+        {"value": "lebendig", "label": "Lebendig und lebensbejahend", "description": "Das Leben feiern, auch mit Humor"},
+        {"value": "trostspendend", "label": "Trostspendend und hoffnungsvoll", "description": "Trauer anerkennen, aber Hoffnung geben"}
+      ]
+    }
+  ],
+
+  "result": {
+    "headline": "Dein Entwurf",
+    "disclaimer": "Dies ist ein Entwurf — eine Grundlage, die du nach deinen Wünschen anpassen kannst. Lies den Text in Ruhe durch, ergänze, kürze oder formuliere um. Deine eigenen Worte sind die besten.",
+    "readingTimeNote": "Lesezeit bei normaler Geschwindigkeit: ca. {minutes} Minuten (Trauerreden sind idealerweise 5–10 Minuten lang)",
+    "exportOptions": [
+      {"id": "print", "label": "Drucken / PDF", "icon": "printer"},
+      {"id": "copy", "label": "Text kopieren", "icon": "clipboard"},
+      {"id": "restart", "label": "Neue Rede beginnen", "icon": "refresh"}
+    ]
+  },
+
+  "redeStruktur": {
+    "description": "Die generierte Rede folgt dieser bewährten Struktur:",
+    "blocks": [
+      {
+        "id": "begruessung",
+        "label": "Begrüßung",
+        "description": "Anrede der Trauergemeinde, Einleitung",
+        "template": "Liebe Trauergemeinde, liebe Familie, liebe Freunde."
+      },
+      {
+        "id": "vorstellung",
+        "label": "Vorstellung & Beziehung",
+        "description": "Wer spricht, und in welcher Beziehung zum Verstorbenen",
+        "usesFields": ["beziehung", "name"]
+      },
+      {
+        "id": "wuerdigung",
+        "label": "Würdigung der Person",
+        "description": "Eigenschaften, was den Menschen ausgemacht hat",
+        "usesFields": ["eigenschaften", "werte"]
+      },
+      {
+        "id": "erinnerung",
+        "label": "Persönliche Erinnerung",
+        "description": "Eine Geschichte oder ein Moment, der die Person lebendig macht",
+        "usesFields": ["erinnerung"]
+      },
+      {
+        "id": "bedeutung",
+        "label": "Persönliche Bedeutung",
+        "description": "Was der Mensch einem bedeutet hat, was man von ihm gelernt hat",
+        "usesFields": ["bedeutung"]
+      },
+      {
+        "id": "abschied",
+        "label": "Abschied & Ausblick",
+        "description": "Letzte Worte, Dank, Trost für die Trauergemeinde",
+        "usesFields": ["abschied"]
+      }
+    ]
+  },
+
+  "supportContent": {
+    "tips": [
+      {
+        "id": "tempo",
+        "title": "Langsam sprechen",
+        "text": "Eine Trauerrede darf langsam sein. Sprich deutlich langsamer als im Alltag. Pausen sind nicht peinlich — sie geben deinen Worten Gewicht und dir Zeit zum Atmen."
+      },
+      {
+        "id": "druck",
+        "title": "Groß drucken",
+        "text": "Drucke die Rede in mindestens 14pt Schrift aus. Hände können zittern, Augen können tränen — eine gut lesbare Vorlage hilft enorm."
+      },
+      {
+        "id": "emotion",
+        "title": "Tränen sind erlaubt",
+        "text": "Es ist völlig in Ordnung, wenn du beim Sprechen weinen musst. Mach einfach eine Pause, atme durch und lies weiter, wenn du soweit bist. Niemand erwartet Perfektion."
+      },
+      {
+        "id": "ueben",
+        "title": "Vorher laut lesen",
+        "text": "Lies die Rede mindestens zweimal laut vor — allein oder vor einer Vertrauensperson. So merkst du, wo Sätze zu lang sind und wo du Pausen brauchst."
+      },
+      {
+        "id": "wasser",
+        "title": "Wasser mitnehmen",
+        "text": "Stell dir ein Glas Wasser ans Rednerpult. Ein Schluck Wasser ist eine natürliche Pause und hilft, wenn die Stimme versagt."
+      },
+      {
+        "id": "backup",
+        "title": "Plan B haben",
+        "text": "Bitte eine Vertrauensperson, die Rede notfalls für dich weiterzulesen. Allein das Wissen, dass jemand einspringen kann, nimmt enorm viel Druck."
+      }
+    ],
+    "examples": [
+      {
+        "id": "beispiel-vater",
+        "title": "Beispiel: Trauerrede für einen Vater",
+        "beziehung": "vater",
+        "ton": "warm",
+        "wordCount": 450,
+        "description": "Eine warme, persönliche Rede mit einer Kindheitserinnerung und einem Lebensmotto."
+      },
+      {
+        "id": "beispiel-mutter",
+        "title": "Beispiel: Trauerrede für eine Mutter",
+        "beziehung": "mutter",
+        "ton": "trostspendend",
+        "wordCount": 500,
+        "description": "Eine trostspendende Rede, die das Lebenswerk einer Mutter würdigt und den Angehörigen Kraft gibt."
+      },
+      {
+        "id": "beispiel-freund",
+        "title": "Beispiel: Trauerrede für einen Freund",
+        "beziehung": "freund",
+        "ton": "lebendig",
+        "wordCount": 400,
+        "description": "Eine lebensbejahende Rede, die das Lachen und die gemeinsamen Erlebnisse in den Vordergrund stellt."
+      }
+    ]
+  },
+
+  "trust": {
+    "disclaimer": "Dieser Generator erstellt einen Entwurf auf Basis deiner Angaben. Er ersetzt keine professionelle Trauerbegleitung. Die generierten Texte sind Vorschläge — passe sie an, damit sie wirklich zu dir und dem Menschen passen, von dem du Abschied nimmst.",
+    "methodik": "Mehr zu unserer Arbeitsweise findest du auf unserer Methodik-Seite.",
+    "methodikLink": "/methodik"
+  },
+
+  "cta": {
+    "afterExport": {
+      "headline": "Was kommt als Nächstes?",
+      "text": "Du hast die Trauerrede geschrieben — ein wichtiger Schritt. Wenn du bei der weiteren Planung Unterstützung brauchst:",
+      "links": [
+        {"label": "Checkliste Todesfall", "href": "/checkliste-todesfall", "description": "Was jetzt noch zu tun ist"},
+        {"label": "Beerdigung planen", "href": "/beerdigung-planen", "description": "Schritt für Schritt zur Beerdigung"},
+        {"label": "Bestatter finden", "href": "/bestatter", "description": "Vertrauensvolle Bestatter in deiner Nähe"}
+      ],
+      "note": "Kein Druck, kein Zeitlimit. Alles in deinem Tempo."
+    }
+  },
+
+  "faq": [
+    {
+      "question": "Wie lang sollte eine Trauerrede sein?",
+      "answer": "Die meisten Trauerreden dauern 5–10 Minuten (ca. 500–1.000 Wörter). Kürzer ist völlig in Ordnung — lieber kurz und persönlich als lang und unpersönlich."
+    },
+    {
+      "question": "Muss ich die Rede selbst halten?",
+      "answer": "Nein. Du kannst die Rede schreiben und von einer anderen Person vortragen lassen. Viele Menschen bitten einen Freund, Pfarrer oder professionellen Trauerredner, die Rede für sie zu halten."
+    },
+    {
+      "question": "Darf man in einer Trauerrede auch etwas Lustiges erzählen?",
+      "answer": "Ja, unbedingt. Humor und schöne Erinnerungen haben in einer Trauerrede absolut ihren Platz. Sie bringen Erleichterung und zeigen die Persönlichkeit des Verstorbenen. Achte nur darauf, dass es respektvoll bleibt."
+    },
+    {
+      "question": "Was, wenn ich beim Reden anfange zu weinen?",
+      "answer": "Das ist völlig normal und wird von niemandem als Schwäche empfunden. Mach eine Pause, atme durch, trink einen Schluck Wasser. Wenn du nicht weiterlesen kannst, kann eine vorher besprochene Vertrauensperson einspringen."
+    },
+    {
+      "question": "Werden meine Eingaben gespeichert oder versendet?",
+      "answer": "Nein. Der gesamte Generator läuft in deinem Browser. Es werden keine Daten an unsere Server übermittelt. Sobald du das Fenster schließt, sind deine Eingaben weg — deshalb empfehlen wir, den fertigen Text auszudrucken oder zu kopieren."
+    },
+    {
+      "question": "Ersetzt der Generator einen professionellen Trauerredner?",
+      "answer": "Der Generator hilft dir, deine eigenen Gedanken zu strukturieren und einen Entwurf zu erstellen. Wenn du möchtest, kann ein professioneller Trauerredner diesen Entwurf als Grundlage nehmen oder die Rede für dich halten. Die Kosten liegen bei 150–400 Euro."
+    }
+  ]
+}
