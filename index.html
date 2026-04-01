@@ -2,6 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>mach's ruhig — Vorsorge, Trauer & Bestattung</title>
 <meta name="description" content="Checkliste Todesfall, Bestattung planen, Trauerrede schreiben, Vorsorge regeln — Schritt für Schritt, in deinem Tempo. Kostenlos, ohne Anmeldung.">
@@ -151,17 +154,17 @@ const topics = [
     sub: "Was jetzt zu tun ist",
     desc: "Die wichtigsten Schritte nach einem Todesfall — sortiert nach Dringlichkeit. Zum Abhaken, Ausdrucken, Teilen.",
     cluster: "akutfall",
-    status: "coming",
-    href: "/checkliste-todesfall"
+    status: "live",
+    href: "/tools/checkliste-todesfall"
   },
   {
     id: "trauerrede",
     title: "Trauerrede schreiben",
-    sub: "Worte finden, wenn es schwerfällt",
-    desc: "Schritt für Schritt zur persönlichen Trauerrede. Mit Leitfragen, Textbausteinen und Beispielen.",
+    sub: "Persönliche Rede Schritt für Schritt",
+    desc: "Geführter Baukasten für deine Trauerrede — mit Leitfragen, Textbausteinen, Zitaten und Druckfunktion.",
     cluster: "trauer",
-    status: "coming",
-    href: "/trauerrede-schreiben"
+    status: "live",
+    href: "/tools/trauerrede"
   },
   {
     id: "beerdigung-planen",
@@ -169,17 +172,17 @@ const topics = [
     sub: "Ablauf, Kosten, Entscheidungen",
     desc: "Alles, was du für die Planung einer Beerdigung wissen musst — von der Bestattungsart bis zur Trauerfeier.",
     cluster: "akutfall",
-    status: "coming",
+    status: "live",
     href: "/beerdigung-planen"
   },
   {
     id: "bestattungskosten",
-    title: "Bestattungskosten",
+    title: "Bestattungskosten-Rechner",
     sub: "Was kostet eine Bestattung?",
-    desc: "Transparente Übersicht der Kosten — aufgeschlüsselt nach Bestattungsart, Region und Leistungen.",
+    desc: "Interaktiver Rechner mit detaillierter Kostenaufstellung — nach Bestattungsart, Region und Leistungen.",
     cluster: "akutfall",
-    status: "coming",
-    href: "/bestattungskosten"
+    status: "live",
+    href: "/tools/bestattungskosten-rechner"
   },
   {
     id: "bestattungsarten",
@@ -187,7 +190,7 @@ const topics = [
     sub: "Erd-, Feuer-, See- und Baumbestattung",
     desc: "Welche Bestattungsarten gibt es? Ablauf, Kosten, Voraussetzungen — verständlich erklärt.",
     cluster: "vorsorge",
-    status: "coming",
+    status: "live",
     href: "/bestattungsarten"
   },
   {
@@ -196,8 +199,8 @@ const topics = [
     sub: "Vertrauensvoll und in deiner Nähe",
     desc: "Bestatter in deiner Stadt — mit Leistungen, Erreichbarkeit und dem, was wirklich zählt.",
     cluster: "lokal",
-    status: "coming",
-    href: "/bestatter"
+    status: "live",
+    href: "/bestatter/muenchen/"
   }
 ];
 
@@ -306,11 +309,12 @@ function App() {
                 borderRadius:12,
                 padding:'24px 24px 20px',
                 transition:'border-color 0.2s, transform 0.2s',
-                cursor:'default',
+                cursor:'pointer',
                 animation:`fadeUp 0.5s ease-out ${i*0.08}s both`
               }}
               onMouseEnter={e=>{e.currentTarget.style.borderColor='#7A6B5D';e.currentTarget.style.transform='translateY(-2px)'}}
               onMouseLeave={e=>{e.currentTarget.style.borderColor='#E8E0D6';e.currentTarget.style.transform='translateY(0)'}}
+              onClick={()=>window.location.href=t.href}
               >
                 <span style={{
                   display:'inline-block',
@@ -327,7 +331,7 @@ function App() {
                 <h3 style={{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,color:'#2D2319',marginBottom:4}}>{t.title}</h3>
                 <p style={{fontSize:14,color:'#7A6B5D',fontWeight:500,marginBottom:8}}>{t.sub}</p>
                 <p style={{fontSize:14,lineHeight:1.6,color:'#73655A'}}>{t.desc}</p>
-                <p style={{marginTop:14,fontSize:13,color:'#866E45',fontWeight:600}}>Bald verfügbar</p>
+                <p style={{marginTop:14,fontSize:13,color:'#7A6B5D',fontWeight:600}}>Zum Thema →</p>
               </div>
             ))}
           </div>
