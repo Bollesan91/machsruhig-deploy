@@ -1,2 +1,17 @@
-/impressum  /impressum.html  200
-/datenschutz  /datenschutz.html  200
+# Trailing slash normalization for key pages
+/bestattungskosten/   /bestattungskosten   301
+/bestattungsarten/    /bestattungsarten    301
+/beerdigung-planen/   /beerdigung-planen   301
+/trauerrede-schreiben/ /trauerrede-schreiben 301
+/kondolenzschreiben/  /kondolenzschreiben  301
+/trauersprueche/      /trauersprueche      301
+/impressum/           /impressum           301
+/datenschutz/         /datenschutz         301
+/methodik/            /methodik            301
+
+# Old/broken links that might exist
+/checkliste-todesfall  /tools/checkliste-todesfall  301
+/bestatter             /bestatter/muenchen/         301
+/vorsorge-check        /tools/vorsorge-check        301
+/bestattungskosten-rechner /tools/bestattungskosten-rechner 301
+/trauerrede            /tools/trauerrede             301
