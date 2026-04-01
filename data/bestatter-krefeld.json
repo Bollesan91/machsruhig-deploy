@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-krefeld",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Krefeld",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "225.000",
+    "slug": "krefeld"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Krefeld",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Krefeld",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Krefeld Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1000,
+      "max": 1400,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 250,
+      "max": 350,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 550,
+      "max": 800,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Nordrhein-Westfalen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Krefeld bietet 3 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Nordrhein-Westfalen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Krefeld?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.000–1.400€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Krefeld?",
+      "antwort": "Ja. Urnengräber kosten nur 250–350€ und Baumbestattungen 550–800€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Krefeld?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Nordrhein-Westfalen?",
+      "antwort": "Nordrhein-Westfalen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Krefeld",
+    "description": "Bestatter in Krefeld: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Krefeld finden"
+  }
+}

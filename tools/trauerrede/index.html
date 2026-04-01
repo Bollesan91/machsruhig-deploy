@@ -94,9 +94,11 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
 /* Form */
 .mr-tool label{display:block;font-size:14px;font-weight:600;color:var(--mr-text);margin-bottom:6px}
-.mr-tool select,.mr-tool input[type="text"]{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:2px solid var(--mr-border);border-radius:8px;background:#fff;color:var(--mr-text);transition:border-color 0.2s;outline:none;appearance:none;-webkit-appearance:none}
+.mr-tool select,.mr-tool input[type="text"]{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:2px solid var(--mr-border);border-radius:8px;background:#fff;color:var(--mr-text);transition:border-color 0.2s,outline 0.2s;outline:none;appearance:none;-webkit-appearance:none}
+.mr-tool select:focus,.mr-tool input[type="text"]:focus{outline:2px solid var(--mr-primary);outline-offset:2px}
 .mr-tool select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%238C7E6F' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
-.mr-tool textarea{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:2px solid var(--mr-border);border-radius:8px;background:#fff;color:var(--mr-text);transition:border-color 0.2s;outline:none;resize:vertical;min-height:100px;line-height:1.6}
+.mr-tool textarea{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:2px solid var(--mr-border);border-radius:8px;background:#fff;color:var(--mr-text);transition:border-color 0.2s,outline 0.2s;outline:none;resize:vertical;min-height:100px;line-height:1.6}
+.mr-tool textarea:focus{outline:2px solid var(--mr-primary);outline-offset:2px}
 .mr-tool select:focus,.mr-tool input:focus,.mr-tool textarea:focus{border-color:var(--mr-primary)}
 .mr-tool .char-count{text-align:right;font-size:12px;color:var(--mr-text-muted);margin-top:4px}
 .mr-tool .help-text{font-size:13px;color:var(--mr-warm);margin-top:6px;font-style:italic}
@@ -191,24 +193,25 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
 
 <nav class="mr-nav no-print">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
     <div class="mr-nav-links">
-      <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
       <a href="/beerdigung-planen">Beerdigung planen</a>
       <a href="/bestattungskosten">Bestattungskosten</a>
       <div class="mr-nav-divider"></div>
       <a href="/trauerrede-schreiben" class="active">Trauerrede</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <div class="mr-nav-divider"></div>
-      <a href="/bestatter">Bestatter finden</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
     </div>
   </div>
 </nav>
 
-<div class="mr-content">
+<main id="main" class="mr-content">
   <header class="mr-hero">
     <div class="mr-breadcrumb">
       <a href="/">Start</a> › <a href="/trauerrede-schreiben">Trauerrede</a> › Generator
@@ -223,7 +226,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   </div>
 
   <div id="tool-root"></div>
-</div>
+</main>
 
 <footer class="mr-footer no-print">
   <div class="mr-footer-inner">
@@ -234,12 +237,12 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
       </div>
       <div>
         <h4>Themen</h4>
-        <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+        <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
         <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
         <a href="/beerdigung-planen">Beerdigung planen</a>
         <a href="/bestattungskosten">Bestattungskosten</a>
         <a href="/bestattungsarten">Bestattungsarten</a>
-        <a href="/bestatter">Bestatter finden</a>
+        <a href="/bestatter/muenchen/">Bestatter finden</a>
       </div>
       <div>
         <h4>Rechtliches</h4>
@@ -465,9 +468,9 @@ function TrauerredeGenerator() {
           <h2>Was kommt als Nächstes?</h2>
           <p>Du hast die Trauerrede geschrieben — ein wichtiger Schritt. Wenn du bei der weiteren Planung Unterstützung brauchst:</p>
           <div className="mr-cta-links">
-            <a href="/checkliste-todesfall"><div><strong>Checkliste Todesfall</strong><br/><span>Was jetzt noch zu tun ist</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
+            <a href="/tools/checkliste-todesfall"><div><strong>Checkliste Todesfall</strong><br/><span>Was jetzt noch zu tun ist</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
             <a href="/beerdigung-planen"><div><strong>Beerdigung planen</strong><br/><span>Schritt für Schritt zur Beerdigung</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
-            <a href="/bestatter"><div><strong>Bestatter finden</strong><br/><span>Vertrauensvolle Bestatter in deiner Nähe</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
+            <a href="/bestatter/muenchen/"><div><strong>Bestatter finden</strong><br/><span>Vertrauensvolle Bestatter in deiner Nähe</span></div><span style={{color:'var(--mr-warm)'}}>→</span></a>
           </div>
           <p style={{fontSize:13,color:'var(--mr-text-muted)',marginTop:16}}>Kein Druck, kein Zeitlimit. Alles in deinem Tempo.</p>
         </div>

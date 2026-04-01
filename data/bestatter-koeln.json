@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "id": "bestatter-koeln",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Köln",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "~1,1 Mio.",
+    "slug": "koeln"
+  },
+  "friedhoefe": [
+    {
+      "name": "Melaten-Friedhof",
+      "bezirk": "Lindenthal",
+      "groesse": "435.000 m²",
+      "besonderheit": "Einer der ältesten Friedhöfe Deutschlands (1810), kulturelle Sehenswürdigkeit mit bekannten Persönlichkeiten"
+    },
+    {
+      "name": "Nordfriedhof",
+      "bezirk": "Nippes",
+      "groesse": "~25 ha",
+      "besonderheit": "Moderner Friedhof mit vielfältigen Bestattungsformen, Baumbestattungen"
+    },
+    {
+      "name": "Südfriedhof",
+      "bezirk": "Zündorf",
+      "groesse": "~20 ha",
+      "besonderheit": "Neu renovierter Friedhof mit zeitgenössischen Anlagen und naturnahen Zonen"
+    }
+  ],
+  "gebuehren": {
+    "urnengrab": {
+      "min": 2400,
+      "max": 2800,
+      "laufzeit": "20 Jahre"
+    },
+    "erdwahlgrab": {
+      "min": 2800,
+      "max": 3200,
+      "laufzeit": "25-30 Jahre"
+    },
+    "baumbestattung": {
+      "min": 1600,
+      "max": 2200,
+      "laufzeit": "20 Jahre"
+    },
+    "hinweis": "Köln liegt im höheren Preissegment, ist aber günstiger als München. Die unterschiedlichen Friedhöfe haben unterschiedliche Gebührenmodelle. Der Melaten-Friedhof ist die historische Option mit kulturellem Wert."
+  },
+  "bestattungsrecht": {
+    "gesetz": "Gesetz über die Friedhöfe und das Bestattungswesen (Bestattungsgesetz) Nordrhein-Westfalen",
+    "ueberuehrungsfrist": "24 Stunden",
+    "bestattungsfristErd": "10 Tage",
+    "bestattungsfristFeuer": "6 Wochen nach Einäscherung",
+    "besonderheiten": [
+      "NRW hat die kürzeste Überführungsfrist (24 Stunden) unter den großen Bundesländern",
+      "Bestattungen müssen innerhalb von 10 Tagen erfolgen",
+      "Feuerbestattungen und Urnenbeisetzungen können bis zu 6 Wochen nach der Einäscherung stattfinden",
+      "Flexible Gestaltung von Trauerfeiern und alternativen Bestattungsformen"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Der Melaten-Friedhof wurde 1810 gegründet und ist einer der ältesten Friedhöfe Deutschlands — ein Ort mit großer kultureller und historischer Bedeutung.",
+    "Köln bietet Bestattungen im Rhein an — eine Besonderheit, die es nur wenigen Städten gibt.",
+    "Auf dem Melaten sind viele bekannte Kölner Künstler, Schriftsteller und Musiker bestattet."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Bestattung in Köln?",
+      "antwort": "Die Friedhofsgebühren liegen bei etwa 2.400–2.800 € für Urnengräber (20 Jahre) und 2.800–3.200 € für Erdwahlgräber (25-30 Jahre). Hinzu kommen Bestatterleistungen (1.200–2.500 €). Baumbestattungen sind eine günstigere Alternative (1.600–2.200 €)."
+    },
+    {
+      "frage": "Was ist das Besondere am Melaten-Friedhof?",
+      "antwort": "Der Melaten ist einer der ältesten Friedhöfe Deutschlands (gegründet 1810) und eine kulturelle Sehenswürdigkeit. Viele bekannte Künstler, Schriftsteller und Musiker sind hier bestattet. Führungen und Informationen sind erhältlich."
+    },
+    {
+      "frage": "Wie schnell muss eine Beerdigung in Köln stattfinden?",
+      "antwort": "In Nordrhein-Westfalen ist eine Überführung innerhalb von 24 Stunden erforderlich (die kürzeste Frist im Bundesvergleich). Eine Erdbestattung muss spätestens nach 10 Tagen durchgeführt sein."
+    },
+    {
+      "frage": "Kann man sich in Köln im Rhein bestatten lassen?",
+      "antwort": "Ja, Köln bietet die Möglichkeit von Seebestattungen im Rhein an. Dies ist eine einzigartige Alternative zur traditionellen Friedhofsbestattung mit symbolischem Bezug zur Stadt."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Köln — Melaten, Kosten & Bestattungsrecht",
+    "description": "Bestattungen in Köln: Melaten-Friedhof, Nordfriedhof, Südfriedhof. Kosten für Erd- und Urnenbestattungen. Infos zu NRW-Bestattungsrecht und Rhein-Bestattungen.",
+    "h1": "Bestatter in Köln finden"
+  }
+}

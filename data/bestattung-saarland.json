@@ -1,0 +1,76 @@
+{
+  "name": "Saarland",
+  "slug": "saarland",
+  "region": "Westdeutschland",
+  "bestattungsgesetz": {
+    "name": "Bestattungsgesetz Saarland (BestG)",
+    "short": "BestG SL",
+    "reference": "BestG",
+    "link": "https://www.saarland.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "6 Tage",
+    "ausnahmen": "Kürzeste Frist im Süden Deutschlands!"
+  },
+  "friedhofspflicht": {
+    "besteht": true,
+    "ausnahmen": "Waldbestattung, teilweise Urnenherausgabe"
+  },
+  "zweite_leichenschau_kremation": true,
+  "sargpflicht": {
+    "besteht": true,
+    "ausnahmen": "Nicht bei Kremation"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Nicht möglich",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Saarland hat eine der kürzesten Bestattungsfristen (6 Tage)",
+    "Waldbestattung in der schönen Saar-Region beliebt",
+    "Französischer Einfluss auf Bestattungskultur",
+    "Relativ kleine, überschaubare Friedhöfe",
+    "Günstiger als Rheinland-Pfalz oder Baden-Württemberg",
+    "Grüne Friedhöfe und naturnahe Bestattung werden promoted"
+  ],
+  "major_cities": [
+    {
+      "name": "Saarbrücken",
+      "slug": "saarbruecken",
+      "has_page": false
+    },
+    {
+      "name": "Neunkirchen",
+      "slug": "neunkirchen",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Wie lange nach dem Tod muss die Beerdigung sein?",
+      "answer": "Mindestens 24 Stunden müssen vergehen. Die Beerdigung muss spätestens 6 Tage später erfolgen — eine der kürzesten Fristen in Deutschland!"
+    },
+    {
+      "question": "Gibt es Waldbestattung im Saarland?",
+      "answer": "Ja, mehrere FriedWald-Standorte sind in der Saar-Region verfügbar. Die Landschaft ist wunderschön. Kosten: ca. 1.200–3.500 € je nach Baum und Standort."
+    },
+    {
+      "question": "Besteht Sargpflicht?",
+      "answer": "Ja, im Saarland ist Sargpflicht für Erdbestattungen erforderlich. Der Sarg muss zugelassen sein. Bei Kremation ist ein Verbrennungssarg vorgeschrieben."
+    },
+    {
+      "question": "Kann ich die Urne zu Hause aufbewahren?",
+      "answer": "Nein, im Saarland besteht Friedhofszwang für Urnen. Waldbestattung ist eine beliebte Alternative zur Aufbewahrung zu Hause."
+    }
+  ],
+  "sources": [
+    "Bestattungsgesetz Saarland",
+    "Ministerium für Arbeit, Soziales, Frauen und Gesundheit Saarland",
+    "Verbraucherzentrale Saarland"
+  ]
+}

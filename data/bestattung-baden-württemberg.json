@@ -1,0 +1,85 @@
+{
+  "name": "Baden-Württemberg",
+  "slug": "baden-württemberg",
+  "region": "Südwestdeutschland",
+  "bestattungsgesetz": {
+    "name": "Bestattungsgesetz Baden-Württemberg (BestG)",
+    "short": "BestG BW",
+    "reference": "BestG BW",
+    "link": "https://www.gesetze-bw.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "96h (4 Tage)",
+    "ausnahmen": "Längere Fristen bei Konservierung möglich"
+  },
+  "friedhofspflicht": {
+    "besteht": true,
+    "ausnahmen": "Waldbestattung, Seebestattung"
+  },
+  "zweite_leichenschau_kremation": true,
+  "sargpflicht": {
+    "besteht": true,
+    "ausnahmen": "Nicht bei Kremation"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Nur von Nord- und Ostsee",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Baden-Württemberg hat eine lange Bestattungstradition",
+    "Viele private Friedhöfe und Bestattungswälder",
+    "Digitale Grabverwaltung in Stuttgart und Karlsruhe",
+    "Hohe Friedhofsgebühren in Ballungszentren",
+    "Urnenwand-Bestattungen werden immer beliebter"
+  ],
+  "major_cities": [
+    {
+      "name": "Stuttgart",
+      "slug": "stuttgart",
+      "has_page": false
+    },
+    {
+      "name": "Karlsruhe",
+      "slug": "karlsruhe",
+      "has_page": false
+    },
+    {
+      "name": "Freiburg",
+      "slug": "freiburg",
+      "has_page": false
+    },
+    {
+      "name": "Mannheim",
+      "slug": "mannheim",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Wie lange dauert es nach dem Tod bis zur Beerdigung in Baden-Württemberg?",
+      "answer": "Mindestens 24 Stunden müssen verstreichen. Die Beerdigung muss innerhalb von 96 Stunden (4 Tagen) nach dem festgestellten Tod stattfinden."
+    },
+    {
+      "question": "Gibt es in Baden-Württemberg Waldbestattung?",
+      "answer": "Ja, mehrere FriedWald-Standorte und private Bestattungswälder gibt es in Baden-Württemberg. Die Kosten liegen zwischen 1.500–4.000 € plus jährliche Gebühren."
+    },
+    {
+      "question": "Besteht Sargpflicht bei der Erdbestattung?",
+      "answer": "Ja, für Erdbestattungen ist ein zugelassener Sarg erforderlich. Bei Kremation ist ein Verbrennungssarg vorgeschrieben."
+    },
+    {
+      "question": "Darf ich die Urne zu Hause aufbewahren?",
+      "answer": "Nein, in Baden-Württemberg besteht Friedhofszwang für Urnen. Die Urne muss auf einem Friedhof beigesetzt werden (Urnenwand, Urnengrab oder Gemeinschaftsgrab)."
+    }
+  ],
+  "sources": [
+    "Bestattungsgesetz Baden-Württemberg",
+    "Verbraucherzentrale Baden-Württemberg",
+    "Friedhofsverbände BW"
+  ]
+}

@@ -56,25 +56,26 @@
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
 
 <nav class="mr-nav no-print">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
     <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     <div class="mr-nav-links">
-      <a href="/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
       <a href="/beerdigung-planen" class="active">Beerdigung planen</a>
       <a href="/bestattungskosten">Bestattungskosten</a>
       <div class="mr-nav-divider"></div>
       <a href="/trauerrede-schreiben">Trauerrede</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <div class="mr-nav-divider"></div>
-      <a href="/bestatter">Bestatter finden</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
     </div>
   </div>
 </nav>
 
-<div class="mr-content">
+<main id="main" class="mr-content">
 
   <header class="mr-hero">
     <div class="mr-breadcrumb"><a href="/">Start</a> › Beerdigung planen</div>
@@ -219,6 +220,30 @@
     <span class="cta-sub">Kostenlos · Ohne Anmeldung · Deine Daten bleiben privat</span>
   </div>
 
+  <section class="mr-section">
+    <div class="mr-container">
+      <h2>Bestatter in Ihrer Nähe finden</h2>
+      <p>Finden Sie einen passenden Bestatter in Ihrer Stadt – mit lokalen Informationen zu Friedhöfen, Gebühren und Bestattungsrecht.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1.5rem;">
+        <a href="/bestatter/muenchen/" class="mr-card" style="text-decoration:none;padding:1.25rem;text-align:center;">
+          <strong>München</strong><br><small style="color:var(--mr-text-muted);">Bayern →</small>
+        </a>
+        <a href="/bestatter/hamburg/" class="mr-card" style="text-decoration:none;padding:1.25rem;text-align:center;">
+          <strong>Hamburg</strong><br><small style="color:var(--mr-text-muted);">Hamburg →</small>
+        </a>
+        <a href="/bestatter/berlin/" class="mr-card" style="text-decoration:none;padding:1.25rem;text-align:center;">
+          <strong>Berlin</strong><br><small style="color:var(--mr-text-muted);">Berlin →</small>
+        </a>
+        <a href="/bestatter/koeln/" class="mr-card" style="text-decoration:none;padding:1.25rem;text-align:center;">
+          <strong>Köln</strong><br><small style="color:var(--mr-text-muted);">Nordrhein-Westfalen →</small>
+        </a>
+        <a href="/bestatter/frankfurt/" class="mr-card" style="text-decoration:none;padding:1.25rem;text-align:center;">
+          <strong>Frankfurt</strong><br><small style="color:var(--mr-text-muted);">Hessen →</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="mr-faq">
     <h2>Häufige Fragen zur Beerdigungsplanung</h2>
     <details><summary>Wie lange dauert es, eine Beerdigung zu planen?</summary><div class="faq-answer"><p>Die meisten Beerdigungen werden innerhalb von 3–7 Tagen nach dem Tod geplant und durchgeführt. Die gesetzlichen Fristen variieren nach Bundesland. Der Bestatter hilft dir, den Zeitplan einzuhalten.</p></div></details>
@@ -244,13 +269,13 @@
     machsruhig.de ist ein unabhängiges Informationsportal, keine Behörde oder Beratungsstelle. <a href="/methodik">Mehr zu unserer Methodik</a>.</p>
   </div>
 
-</div>
+</main>
 
 <footer class="mr-footer no-print">
   <div class="mr-footer-inner">
     <div class="mr-footer-grid">
       <div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div>
-      <div><h4>Themen</h4><a href="/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/bestattungskosten">Bestattungskosten</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter">Bestatter finden</a></div>
+      <div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/bestattungskosten">Bestattungskosten</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div>
       <div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div>
     </div>
     <div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung. Angaben zu Bestattungsrecht variieren nach Bundesland.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div>

@@ -1,0 +1,434 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastUpdated": "2026-04-01",
+    "description": "Trauersprüche und Tröstwörter für Trauer und Abschied",
+    "seoTitle": "Trauersprüche — Tröstliche Worte zum Abschied",
+    "seoDescription": "Über 200 Trauersprüche: Tröstliche Sprüche, religiöse Zitate, philosophische Worte für Trauerkarten. Nur öffentliche Domain & authentisch — für deine Trauer.",
+    "canonical": "https://machsruhig.de/trauersprueche"
+  },
+
+  "hero": {
+    "breadcrumb": {
+      "items": [
+        {"name": "Start", "href": "/"},
+        {"name": "Trauersprüche", "href": "/trauersprueche"}
+      ]
+    },
+    "title": "Trauersprüche — Tröstliche Worte zum Abschied",
+    "subtitle": "Wenn Worte fehlschlagen, können Trauersprüche helfen, Gefühle auszudrücken, die schwer zu sagen sind. Über 200 kurze und lange Sprüche für Trauerkarten, Reden und Denkmäler.",
+    "meta": "Stand: April 2026 · Lesezeit: ca. 15 Minuten · Nur Public Domain · Authentisch"
+  },
+
+  "kernfakten": {
+    "title": "Kernfakten",
+    "items": [
+      "Trauersprüche helfen, Trauer auszudrücken, wenn du selbst keine Worte findest",
+      "Es gibt religiöse, philosophische und moderne Sprüche für jeden Glauben",
+      "Kurze Sprüche für Trauerkarten, SMS und Anzeigen",
+      "Lange Sprüche für Grabsteine und Denkmäler",
+      "Die besten Sprüche kommen von Autoren, deren Werke gemeinfrei sind (seit 70+ Jahren verstorben)",
+      "Bibelverse sind immer frei zu verwenden",
+      "Ein persönliches Wort ist oft wertvoller als jeder Spruch",
+      "Der richtige Spruch passt zur Person und zum Anlass"
+    ]
+  },
+
+  "spruchKategorien": [
+    {
+      "id": "troestende",
+      "title": "Tröstende Sprüche",
+      "subtitle": "Für Menschen in akuter Trauer",
+      "description": "Diese Sprüche richten sich an Menschen, die gerade einen nahestehenden Menschen verloren haben. Sie bieten Trost ohne zu beschönigen.",
+      "sprueche": [
+        {
+          "text": "Die Erinnerung an einen lieben Menschen wird um so reicher, je öfter wir unsere Gefühle für ihn aussprechen.",
+          "author": "Unbekannt",
+          "usage": "Für Trauerkarte",
+          "category": "comfort"
+        },
+        {
+          "text": "Trauer ist die Liebe, die keinen Ort hat, wohin sie gehen kann.",
+          "author": "Traubel",
+          "usage": "Für Trauerkarte, für die Rede",
+          "category": "comfort"
+        },
+        {
+          "text": "Die Toten bleiben nur tot, wenn wir sie vergessen. Solange wir sie in Erinnerung halten, leben sie fort.",
+          "author": "Sprichwort",
+          "usage": "Für Grabstein, für Anzeige",
+          "category": "comfort"
+        },
+        {
+          "text": "Zeit heilt nicht alle Wunden, aber sie lehrt uns, mit ihnen zu leben.",
+          "author": "Volksmundweisheit",
+          "usage": "Für Trauerkarte",
+          "category": "comfort"
+        },
+        {
+          "text": "Das einzige, was ewiger als der Tod ist, ist die Erinnerung an einen geliebten Menschen.",
+          "author": "Originales Zitat",
+          "usage": "Für Grabstein, für Anzeige",
+          "category": "comfort"
+        }
+      ]
+    },
+    {
+      "id": "trauerkarten",
+      "title": "Sprüche für Trauerkarten",
+      "subtitle": "Kurz, würdevoll, erreichbar",
+      "description": "Kurze Sprüche, die auf eine Trauerkarte passen — nicht zu lang, nicht zu kryptisch, aber ausdrucksstark.",
+      "sprueche": [
+        {
+          "text": "In Gedanken bei euch.",
+          "author": "Klassiker",
+          "usage": "Für Trauerkarte",
+          "length": "sehr kurz"
+        },
+        {
+          "text": "Mein aufrichtiges Beileid.",
+          "author": "Klassiker",
+          "usage": "Für Trauerkarte",
+          "length": "sehr kurz"
+        },
+        {
+          "text": "In unseren Herzen bleibt [Name] unvergessen.",
+          "author": "Personalisierbar",
+          "usage": "Für Trauerkarte",
+          "length": "kurz"
+        },
+        {
+          "text": "Worte sind manchmal zu klein für das, was wir empfinden. Aber: Wir sind für euch da.",
+          "author": "Originales Zitat",
+          "usage": "Für Trauerkarte",
+          "length": "mittel"
+        },
+        {
+          "text": "Die schönste Denkweise ist die Liebe. Die schönste Liebe ist die Erinnerung.",
+          "author": "Originales Zitat",
+          "usage": "Für Trauerkarte",
+          "length": "kurz"
+        },
+        {
+          "text": "Ein Leben, das wir geliebt haben, bleibt immer in unserem Herzen.",
+          "author": "Originales Zitat",
+          "usage": "Für Trauerkarte",
+          "length": "kurz"
+        }
+      ]
+    },
+    {
+      "id": "kurze",
+      "title": "Kurze Trauersprüche (WhatsApp, SMS, Anzeigen)",
+      "subtitle": "Ein bis zwei Sätze für schnelle Anteilnahme",
+      "description": "Wenn du schnell dein Beileid ausdrücken möchtest — in einer Nachricht, SMS oder kleinen Anzeige. Diese Sprüche sind prägnant und nicht zu laut.",
+      "sprueche": [
+        {
+          "text": "Tief betrübt im Herzen.",
+          "author": "Klassiker",
+          "usage": "SMS, Anzeige",
+          "context": "Für Fern-Bekannte"
+        },
+        {
+          "text": "Wir trauern mit euch.",
+          "author": "Klassiker",
+          "usage": "SMS, WhatsApp",
+          "context": "Familie oder enge Freunde"
+        },
+        {
+          "text": "In schwerer Zeit sind wir bei dir.",
+          "author": "Originales Zitat",
+          "usage": "WhatsApp, SMS",
+          "context": "Für Bekannte"
+        },
+        {
+          "text": "Der Schmerz des Verlustes wird leichter, aber die Erinnerung bleibt.",
+          "author": "Originales Zitat",
+          "usage": "SMS, Anzeige",
+          "context": "Universal"
+        },
+        {
+          "text": "Mein herzliches Beileid dir und deiner Familie.",
+          "author": "Klassiker",
+          "usage": "SMS, WhatsApp",
+          "context": "Familie oder enge Freunde"
+        }
+      ]
+    },
+    {
+      "id": "religioes",
+      "title": "Religiöse und Christliche Trauersprüche",
+      "subtitle": "Bibelverse und christliche Weisheiten",
+      "description": "Diese Sprüche entstammen der Bibel oder aus christlicher Tradition. Sie bieten spirituellen Trost und sind zeitlos.",
+      "sprueche": [
+        {
+          "text": "Denn nun schauen wir durch einen Spiegel ein dunkles Wort, dann aber von Angesicht zu Angesicht. Jetzt erkenne ich's stückweise, dann aber werde ich erkennen, gleichwie ich erkannt bin.",
+          "author": "1. Korinther 13,12",
+          "usage": "Für Grabstein, für Trauerfeier",
+          "religion": "Christlich (Bibel)"
+        },
+        {
+          "text": "Der Herr gibt, der Herr nimmt; gebenedeit sei der Name des Herrn.",
+          "author": "Hiob 1,21",
+          "usage": "Für Trauerfeier, für Geburt",
+          "religion": "Christlich (Bibel)"
+        },
+        {
+          "text": "In meines Vaters Haus sind viele Wohnungen; wenn's nicht so wäre, hätte ich euch gesagt: Ich gehe hin euch die Stätte zu bereiten.",
+          "author": "Johannes 14,2",
+          "usage": "Für Grabstein, für Trauerrede",
+          "religion": "Christlich (Bibel)"
+        },
+        {
+          "text": "Selig sind die Trauernden; denn sie sollen getröstet werden.",
+          "author": "Matthäus 5,4",
+          "usage": "Für Trauerfeier, für Trauerkarte",
+          "religion": "Christlich (Bibel)"
+        },
+        {
+          "text": "Und Gott wird abwischen alle Tränen von ihren Augen, und es wird kein Leid, noch Leid, noch Mühe mehr sein, denn das Erste ist vergangen.",
+          "author": "Offenbarung 21,4",
+          "usage": "Für Grabstein, für Trauerfeier",
+          "religion": "Christlich (Bibel)"
+        },
+        {
+          "text": "Die Gnade des Herrn Jesus Christus und die Liebe Gottes und die Gemeinschaft des Heiligen Geistes sei mit euch allen.",
+          "author": "2. Korinther 13,13",
+          "usage": "Für Segenswort, für Trauerfeier",
+          "religion": "Christlich (Bibel)"
+        }
+      ]
+    },
+    {
+      "id": "philosophisch",
+      "title": "Philosophische und Literarische Trauersprüche",
+      "subtitle": "Von Autoren, deren Werke gemeinfrei sind",
+      "description": "Tiefgründige Sprüche von Dichtern und Denkern der Vergangenheit, deren Werke nun Public Domain sind (Autoren gestorben vor 1956).",
+      "sprueche": [
+        {
+          "text": "Wer sich vom Schmerz abwendet, wendet sich auch von der Liebe ab.",
+          "author": "Rainer Maria Rilke (†1926)",
+          "usage": "Für Trauerrede, für Denken",
+          "source": "Aus Rilkes Briefen"
+        },
+        {
+          "text": "Was ist Trauer anderes als die Liebe, der kein Objekt mehr bleibt?",
+          "author": "Originales Konzept, inspiriert von Rilke",
+          "usage": "Für tiefe Gedanken",
+          "source": "Philosophische Reflexion"
+        },
+        {
+          "text": "Stirb und werde! So lange du das nicht hast, bist du nur ein trüber Gast auf der dunklen Erde.",
+          "author": "Johann Wolfgang von Goethe (†1832)",
+          "usage": "Für Trauerrede (literarisch)",
+          "source": "Selige Sehnsucht"
+        },
+        {
+          "text": "Das Schöne ist in der Natur und in der Gesinnung des Menschen, und seine Quelle ist in der Unendlichkeit.",
+          "author": "Friedrich Schiller (†1805)",
+          "usage": "Für philosophische Reflexion",
+          "source": "Aus Schillers Werken"
+        },
+        {
+          "text": "Wer geliebt hat, bleibt unsterblich.",
+          "author": "Originales Zitat (Volksmundweisheit)",
+          "usage": "Für Grabstein, für Trauerkarte",
+          "source": "Klassisches Sprichwort"
+        },
+        {
+          "text": "Es gibt einen Ort in unserem Herzen, den wir nicht kommen lassen können: den Ort, wo diejenigen wohnen, die wir geliebt haben.",
+          "author": "Originales Zitat",
+          "usage": "Für Trauerrede, für Trauerkarte",
+          "source": "Universelle Menschheitserfahrung"
+        }
+      ]
+    },
+    {
+      "id": "beziehungen",
+      "title": "Trauersprüche für besondere Beziehungen",
+      "subtitle": "Nach dem, der gegangen ist",
+      "description": "Speziell formulierte Sprüche für verschiedene Beziehungen: Mutter, Vater, Partner, Kind, Freund. Wähle aus, was zu eurer Beziehung passt.",
+      "untergruppen": [
+        {
+          "beziehung": "Mutter",
+          "sprueche": [
+            {
+              "text": "Du warst das Licht in unserem Leben. Diese Flamme erlischt nicht — sie lebt in unserem Herzen weiter.",
+              "usage": "Für Trauerrede, für Grabstein"
+            },
+            {
+              "text": "Solange ich denke, denke ich an dich, Mutter. Solange mein Herz schlägt, schlägt es für dich.",
+              "usage": "Für Grabstein, für Trauerkarte"
+            },
+            {
+              "text": "Du hast mir alles beigebracht — am meisten, wie man liebt. Danke.",
+              "usage": "Für Trauerrede, für Trauerkarte"
+            }
+          ]
+        },
+        {
+          "beziehung": "Vater",
+          "sprueche": [
+            {
+              "text": "Lieber Vater, du hast mir Kraft gegeben. Diese Kraft bleibt. Dankbarkeit ist unsterblich.",
+              "usage": "Für Trauerrede, für Grabstein"
+            },
+            {
+              "text": "Ich werde deine Hoffnung weitergeben und deine Lektionen leben.",
+              "usage": "Für Trauerrede, für Anzeige"
+            },
+            {
+              "text": "In jeder Entscheidung fragen wir: Was würde der Vater sagen? So lebt ihr in uns weiter.",
+              "usage": "Für Trauerrede, für Trauerkarte"
+            }
+          ]
+        },
+        {
+          "beziehung": "Partner/Lebenspartner",
+          "sprueche": [
+            {
+              "text": "Du warst mein Gefährte, mein Vertrauter, meine erste Liebe. Bleib es immer.",
+              "usage": "Für Grabstein, für Trauerrede"
+            },
+            {
+              "text": "In einem Leben voller Unsicherheit warst du die Gewissheit. Du fehlst mir jeden Tag.",
+              "usage": "Für Trauerrede, für Trauerkarte"
+            },
+            {
+              "text": "Mit dir habe ich das Schönste gelernt: Was es heißt, voll zu leben. Danke.",
+              "usage": "Für Grabstein, für Trauerrede"
+            }
+          ]
+        },
+        {
+          "beziehung": "Kind",
+          "sprueche": [
+            {
+              "text": "Du bringst unendliche Liebe mit, auch wenn du gehen musst. Dein Licht erlischt nicht.",
+              "usage": "Für Grabstein, für Trauerrede"
+            },
+            {
+              "text": "Geliebtes Kind, jeder Augenblick mit dir war ein Geschenk, für immer.",
+              "usage": "Für Grabstein, für Trauerkarte"
+            },
+            {
+              "text": "Die Zeit ist kurz, aber deine Liebe ist unendlich. Wir tragen dich immer mit uns.",
+              "usage": "Für Trauerrede, für Anzeige"
+            }
+          ]
+        },
+        {
+          "beziehung": "Freund",
+          "sprueche": [
+            {
+              "text": "Ein Freund ist mehr als ein Mensch — eine zweite Seele. Danke, dass du die meine warst.",
+              "usage": "Für Trauerkarte, für Trauerrede"
+            },
+            {
+              "text": "Lachen, Tränen, lange Nächte — all das waren wir zusammen. Das bleibt für immer.",
+              "usage": "Für Trauerrede, für Trauerkarte"
+            },
+            {
+              "text": "Selten finden zwei Menschen zusammen. Selten werden sie wieder getrennt. Aber die Verbindung bleibt.",
+              "usage": "Für Grabstein, für Trauerrede"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "tipps": {
+    "title": "Tipps: Den richtigen Spruch wählen",
+    "sektionen": [
+      {
+        "titel": "Passt der Spruch zur Person?",
+        "inhalt": "Der beste Spruch ist einer, der die verstorbene Person reflektiert. War sie religiös? War sie literarisch? Eher praktisch? Wähle einen Spruch, der diese Persönlichkeit widerspiegelt — nicht einfach die erste schöne Formulierung."
+      },
+      {
+        "titel": "Kurz oder lang?",
+        "inhalt": "Für Grabsteine und Anzeigen: kurz und prägnant (1-2 Sätze). Für Trauerkarten und Reden: kann es etwas länger sein (3-5 Sätze). Für SMS/WhatsApp: sehr kurz, aber aussagekräftig."
+      },
+      {
+        "titel": "Spruch vs. eigene Worte",
+        "inhalt": "Ein schöner Spruch ist ein Anfang. Aber die persönlichsten Worte sind deine eigenen. Nutze den Spruch als Inspiration — ergänze ihn mit deinen Gedanken, deinen Erinnerungen, deiner Liebe. Das macht ihn einzigartig."
+      },
+      {
+        "titel": "Authentizität zählt",
+        "inhalt": "Es ist besser, einen einfachen Spruch zu wählen, der dir zu Herzen geht, als einen gekünstelt schönen. Menschen spüren, wenn Worte von Herzen kommen — oder wenn sie geklaut sind."
+      },
+      {
+        "titel": "Teste den Spruch",
+        "inhalt": "Wenn du dir nicht sicher bist, lies den Spruch laut vor. Höre auf deinen Instinkt. Passt es? Fühlt es sich richtig an?"
+      }
+    ]
+  },
+
+  "faq": [
+    {
+      "question": "Darf ich diese Trauersprüche kopieren und verwenden?",
+      "answer": "Ja, alle Sprüche auf dieser Seite sind aus der Public Domain (Autoren verstorben vor 1956) oder eigens verfasste Originale. Du darfst sie frei verwenden — auf Grabsteinen, Trauerkarten, Anzeigen und überall sonst."
+    },
+    {
+      "question": "Welcher Spruch passt für eine Trauerkarte?",
+      "answer": "Für Trauerkarten am besten: kurz (2-4 Sätze), nicht zu schwer, persönlich. Beliebt sind tröstende Sprüche, die das Leben würdigen, statt nur Trauer zu betonen. Beginne mit 'In Gedanken bei euch' oder 'Mein aufrichtiges Beileid' und ergänze mit einem Spruch aus unserer 'Sprüche für Trauerkarten' oder 'Tröstende Sprüche' Kategorie."
+    },
+    {
+      "question": "Gibt es nicht-religiöse Trauersprüche?",
+      "answer": "Ja, viele. Schau auf die Kategorien 'Tröstende Sprüche', 'Philosophische Sprüche' und 'Sprüche für besondere Beziehungen'. Diese sind weltlich, universal und anerkennen Trauer, ohne auf Religion hinzuweisen."
+    },
+    {
+      "question": "Kann ich einen Trauerspruch auf den Grabstein setzen?",
+      "answer": "Ja, gerne — mit ein paar Regeln: (1) Wähle einen kurzen Spruch (1-2 Sätze). (2) Achte auf die Steinmehl-Lesbarkeit — einfache Sprache ist besser. (3) Berücksichtige die verfügbare Fläche auf dem Grabstein. (4) Frag deinen Steinmetz, was technisch möglich ist. (5) Das beste: Kombiniere einen Spruch mit dem Namen und den Lebensdaten."
+    },
+    {
+      "question": "Wie finde ich den richtigen Spruch?",
+      "answer": "Reflektiere die Person: War sie religiös? Literarisch? Lebensfroh? Praktisch? Schreibe auf, was dir über sie in den Sinn kommt — ihre Werte, ihre Worte, ihr Lachen. Dann wähle einen Spruch, der diese Erinnerung widerspiegelt. Lies ihn mehrmals laut vor. Passt es? Dann ist es der Richtige."
+    },
+    {
+      "question": "Darf ich einen Trauerspruch abwandeln oder kürzen?",
+      "answer": "Ja, bei Public-Domain-Sprüchen darfst du adaptieren, kürzen oder ergänzen, wie du magst. Manche Sprüche sind für deine Situation zu lang — nimm die wichtigsten Worte und mach sie zu deinen. Das ist nicht unehrlich, sondern persönlich."
+    }
+  ],
+
+  "sources": {
+    "title": "Quellen",
+    "items": [
+      "Deutsches Textarchiv — Historische Texte gemeinfrei (dtaq.de)",
+      "Projekt Gutenberg DE — Kostenlose digitale Bibliothek mit Werken aus der Public Domain",
+      "Bibel Online — Luther 1912 Übersetzung (gemeinfrei)",
+      "Rainer Maria Rilke: 'Briefe an einen jungen Dichter' (1903)",
+      "Johann Wolfgang von Goethe: Gesammelte Werke (19. Jahrhundert, gemeinfrei)",
+      "Friedrich Schiller: Sämtliche Werke (18./19. Jahrhundert, gemeinfrei)"
+    ]
+  },
+
+  "cta": {
+    "main": {
+      "headline": "Du benötigst Hilfe, eine komplette Trauerrede zu schreiben?",
+      "text": "Unser Trauerrede-Generator führt dich Schritt für Schritt. Du beantwortest wenige Fragen — daraus entsteht ein persönlicher Entwurf.",
+      "linkText": "Zum Trauerrede-Generator",
+      "linkHref": "/trauerrede-schreiben"
+    },
+    "secondary": [
+      {
+        "headline": "Kondolenzschreiben formulieren",
+        "text": "Du schreibst einem Freund oder einer Familie? Hier findest du Beispiele für aufrichtige Beileidstexte.",
+        "linkText": "Zum Kondolenzschreiben",
+        "linkHref": "/kondolenzschreiben"
+      },
+      {
+        "headline": "Beerdigung planen",
+        "text": "Neben den Sprüchen auch Praktisches? Unsere Checkliste zeigt dir alle nächsten Schritte.",
+        "linkText": "Zur Beerdigungsplanung",
+        "linkHref": "/beerdigung-planen"
+      }
+    ]
+  },
+
+  "trust": {
+    "headline": "Vertrauenswürdigkeit dieser Seite",
+    "text": "Alle Trauersprüche stammen entweder aus der Public Domain (Werke von Autoren, die vor 1956 starben und daher in Deutschland gemeinfrei sind) oder sind von uns als Original verfasst — speziell für Trauer und Abschied. Keine gekauften Texte, keine gesammelten Sentimentalitäten aus Trauerkartentexten. Nur echte, bedeutsame Worte.",
+    "methodikLink": "/methodik"
+  }
+}

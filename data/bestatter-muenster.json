@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-muenster",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Münster",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "315.000",
+    "slug": "muenster"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Münster",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Münster",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Münster Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1000,
+      "max": 1400,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 240,
+      "max": 340,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 550,
+      "max": 800,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Nordrhein-Westfalen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Münster bietet 5 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Nordrhein-Westfalen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Münster?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.000–1.400€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Münster?",
+      "antwort": "Ja. Urnengräber kosten nur 240–340€ und Baumbestattungen 550–800€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Münster?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Nordrhein-Westfalen?",
+      "antwort": "Nordrhein-Westfalen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Münster",
+    "description": "Bestatter in Münster: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Münster finden"
+  }
+}

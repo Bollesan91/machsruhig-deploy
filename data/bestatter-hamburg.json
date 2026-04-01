@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "id": "bestatter-hamburg",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Hamburg",
+    "bundesland": "Hamburg",
+    "einwohner": "~1,8 Mio.",
+    "slug": "hamburg"
+  },
+  "friedhoefe": [
+    {
+      "name": "Ohlsdorf",
+      "bezirk": "Ohlsdorf",
+      "groesse": "391 ha",
+      "besonderheit": "Weltgrößter Parkfriedhof, Parklandschaft mit über 650.000 Grabstellen"
+    },
+    {
+      "name": "Öjendorf",
+      "bezirk": "Billstedt",
+      "groesse": "~80 ha",
+      "besonderheit": "Moderner Friedhof mit Baumbestattungen und zeitgenössischen Grabanlagen"
+    },
+    {
+      "name": "Langenbek",
+      "bezirk": "Schnelsen",
+      "groesse": "~65 ha",
+      "besonderheit": "Waldfriedhof-ähnliche Anlage mit naturnahen Baumbestattungen"
+    }
+  ],
+  "gebuehren": {
+    "sargwahlgrab": {
+      "min": 2800,
+      "max": 3195,
+      "laufzeit": "25 Jahre"
+    },
+    "urnenwahlgrab": {
+      "min": 2000,
+      "max": 2230,
+      "laufzeit": "20 Jahre"
+    },
+    "anonymBeisetzung": {
+      "min": 1250,
+      "max": 1420,
+      "laufzeit": "15 Jahre"
+    },
+    "baumbestattung": {
+      "min": 2550,
+      "max": 2850,
+      "laufzeit": "20 Jahre"
+    },
+    "hinweis": "Hamburg hat im bundesweiten Vergleich moderate Friedhofsgebühren. Der Ohlsdorf als weltgrößter Parkfriedhof bietet eine einzigartige Vielfalt an Bestattungsmöglichkeiten mit hohem Erlebniswert."
+  },
+  "bestattungsrecht": {
+    "gesetz": "Hamburger Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "10 Tage",
+    "bestattungsfristFeuer": "6 Wochen nach Einäscherung",
+    "besonderheiten": [
+      "Bestattungsfrist von maximal 10 Tagen für Erdbestattungen (flexibler als andere Bundesländer)",
+      "Anonyme Beisetzungen sind auf ausgewiesenen Arealen möglich",
+      "Seebestattungen in Nord- und Ostsee sind erlaubt und werden von Hamburg aus organisiert"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Der Ohlsdorf ist mit 391 Hektar und über 650.000 Grabstellen der weltgrößte Parkfriedhof und eine Sehenswürdigkeit.",
+    "Hamburg als Hafenstadt bietet auch Seebestattungen an, die von der Elbe oder der Nordsee durchgeführt werden.",
+    "Die Bestattungskultur in Hamburg ist geprägt von Vielfalt: traditionelle Gräber, moderne Urnengärten und naturnahe Waldbestattungen nebeneinander."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Bestattung in Hamburg?",
+      "antwort": "Die Friedhofsgebühren für ein Sargwahlgrab liegen bei 2.800–3.195 € (25 Jahre). Ein Urnenwahlgrab kostet 2.000–2.230 €. Hinzu kommen Bestatterleistungen (1.200–2.500 €). Eine anonyme Beisetzung ist mit 1.250–1.420 € die günstigste Option."
+    },
+    {
+      "frage": "Ist der Ohlsdorf offen für Besucher?",
+      "antwort": "Ja, der Ohlsdorf ist ein öffentlicher Friedhof und eine beliebte Parkanlage. Viele Hamburger besuchen ihn zum Spazieren und zur Grabpflege. Es gibt Führungen und Informationszentren."
+    },
+    {
+      "frage": "Kann man in Hamburg eine Seebestattung durchführen lassen?",
+      "antwort": "Ja, Hamburg bietet Seebestattungen an. Die Urne wird von einem Schiff aus in Nord- oder Ostsee beigesetzt. Kosten liegen typischerweise bei 3.000–5.000 € (Einäscherung, Schiffsfahrt, Urne). Es fallen keine Friedhofsgebühren an."
+    },
+    {
+      "frage": "Wie lange habe ich Zeit, eine Bestattung zu organisieren?",
+      "antwort": "Die Überführung muss innerhalb von 36 Stunden erfolgen. Eine Erdbestattung muss spätestens nach 10 Tagen durchgeführt sein. Das gibt mehr Zeit zur Organisation als in anderen Bundesländern."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Hamburg — Ohlsdorf, Kosten & Seebestattungen",
+    "description": "Bestattungen in Hamburg: Friedhöfe wie Ohlsdorf, Öjendorf und Langenbek. Kosten für Erd-, Urnen- und Baumbestattungen. Infos zu Seebestattungen und Hamburgs Bestattungsrecht.",
+    "h1": "Bestatter in Hamburg finden"
+  }
+}

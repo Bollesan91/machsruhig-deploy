@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-gelsenkirchen",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Gelsenkirchen",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "255.000",
+    "slug": "gelsenkirchen"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Gelsenkirchen",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Gelsenkirchen",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Gelsenkirchen Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 900,
+      "max": 1300,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 220,
+      "max": 320,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 500,
+      "max": 750,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Nordrhein-Westfalen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Gelsenkirchen bietet 3 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Nordrhein-Westfalen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Gelsenkirchen?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 900–1.300€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Gelsenkirchen?",
+      "antwort": "Ja. Urnengräber kosten nur 220–320€ und Baumbestattungen 500–750€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Gelsenkirchen?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Nordrhein-Westfalen?",
+      "antwort": "Nordrhein-Westfalen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Gelsenkirchen",
+    "description": "Bestatter in Gelsenkirchen: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Gelsenkirchen finden"
+  }
+}

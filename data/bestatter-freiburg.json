@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-freiburg",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Freiburg",
+    "bundesland": "Baden-Württemberg",
+    "einwohner": "235.000",
+    "slug": "freiburg"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Freiburg",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Freiburg",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Freiburg Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1400,
+      "max": 1800,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 350,
+      "max": 450,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 850,
+      "max": 1200,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Baden-Württemberg Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Freiburg bietet 3 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Baden-Württemberg."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Freiburg?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.400–1.800€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Freiburg?",
+      "antwort": "Ja. Urnengräber kosten nur 350–450€ und Baumbestattungen 850–1.200€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Freiburg?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Baden-Württemberg?",
+      "antwort": "Baden-Württemberg erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Freiburg",
+    "description": "Bestatter in Freiburg: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Freiburg finden"
+  }
+}

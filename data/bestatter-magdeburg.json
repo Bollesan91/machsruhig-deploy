@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-magdeburg",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Magdeburg",
+    "bundesland": "Sachsen-Anhalt",
+    "einwohner": "230.000",
+    "slug": "magdeburg"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Magdeburg",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Magdeburg",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Magdeburg Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 800,
+      "max": 1200,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 200,
+      "max": 300,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 450,
+      "max": 650,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Sachsen-Anhalt Bestattungsgesetz",
+    "ueberuehrungsfrist": "48 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 48 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Magdeburg bietet 4 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Sachsen-Anhalt."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Magdeburg?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 800–1.200€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Magdeburg?",
+      "antwort": "Ja. Urnengräber kosten nur 200–300€ und Baumbestattungen 450–650€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Magdeburg?",
+      "antwort": "Überführungsfrist: 48 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Sachsen-Anhalt?",
+      "antwort": "Sachsen-Anhalt erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Magdeburg",
+    "description": "Bestatter in Magdeburg: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Magdeburg finden"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-bremen",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Bremen",
+    "bundesland": "Bremen",
+    "einwohner": "570.000",
+    "slug": "bremen"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Bremen",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Bremen",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Bremen Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1300,
+      "max": 1700,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 300,
+      "max": 400,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 700,
+      "max": 950,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Bremen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Bremen bietet 5 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Bremen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Bremen?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.300–1.700€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Bremen?",
+      "antwort": "Ja. Urnengräber kosten nur 300–400€ und Baumbestattungen 700–950€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Bremen?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Bremen?",
+      "antwort": "Bremen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Bremen",
+    "description": "Bestatter in Bremen: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Bremen finden"
+  }
+}

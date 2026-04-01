@@ -1,0 +1,81 @@
+{
+  "name": "Brandenburg",
+  "slug": "brandenburg",
+  "region": "Ostdeutschland",
+  "bestattungsgesetz": {
+    "name": "Brandenburgisches Bestattungsgesetz",
+    "short": "BestG BB",
+    "reference": "BestG",
+    "link": "https://bravors.brandenburg.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "8 Tage",
+    "ausnahmen": "Erwerbstätigengruppe kann schneller beigesetzt werden"
+  },
+  "friedhofspflicht": {
+    "besteht": true,
+    "ausnahmen": "Seebestattung, Waldbestattung"
+  },
+  "zweite_leichenschau_kremation": true,
+  "sargpflicht": {
+    "besteht": false,
+    "ausnahmen": "Biologisch abbaubar ist erlaubt"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Nicht möglich (kein Meerezugang)",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Brandenburg hat modernisierte Bestattungsgesetze",
+    "Friedhofsvielfalt: städtische, private und Waldbestattungen",
+    "Günstiger als Bayern oder Baden-Württemberg",
+    "Viele ländliche Gemeindegräber noch vorhanden",
+    "FriedWald-Anlagen in mehreren Regionen",
+    "Digitale Grabnachweise in größeren Friedhöfen"
+  ],
+  "major_cities": [
+    {
+      "name": "Potsdam",
+      "slug": "potsdam",
+      "has_page": false
+    },
+    {
+      "name": "Cottbus",
+      "slug": "cottbus",
+      "has_page": false
+    },
+    {
+      "name": "Brandenburg an der Havel",
+      "slug": "brandenburg-ad-havel",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Wie lange dauert es in Brandenburg bis zur Beerdigung?",
+      "answer": "Nach dem festgestellten Tod müssen mindestens 24 Stunden verstreichen. Die Beerdigung muss spätestens 8 Tage später erfolgen."
+    },
+    {
+      "question": "Besteht Sargpflicht in Brandenburg?",
+      "answer": "Nein, nicht streng. Biologisch abbaubare Materialien sind erlaubt. Ein klassischer Holzsarg ist nicht zwingend erforderlich."
+    },
+    {
+      "question": "Kann ich die Asche zu Hause lagern?",
+      "answer": "Nein, in Brandenburg besteht Friedhofszwang für Urnen. Sie müssen auf einem Friedhof, in einem Urnenwand-Feld oder durch Waldbestattung beigesetzt werden."
+    },
+    {
+      "question": "Gibt es Waldbestattung in Brandenburg?",
+      "answer": "Ja, mehrere FriedWald-Standorte und private Bestattungswälder sind vorhanden. Die Preise sind oft günstiger als in süddeutschen Bundesländern (ab 900 € + Gebühren)."
+    }
+  ],
+  "sources": [
+    "Brandenburgisches Bestattungsgesetz",
+    "Verbraucherzentrale Brandenburg",
+    "Friedhöfe Berlin-Brandenburg"
+  ]
+}

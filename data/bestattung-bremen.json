@@ -1,0 +1,80 @@
+{
+  "name": "Bremen",
+  "slug": "bremen",
+  "region": "Norddeutschland",
+  "bestattungsgesetz": {
+    "name": "Bremenisches Bestattungsgesetz (BremBestG)",
+    "short": "BremBestG",
+    "reference": "BremBestG",
+    "link": "https://www.gesetze.bremen.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "5 Tage",
+    "ausnahmen": "Seit 2015: Urnenherausgabe nach Kremation — revolutionär liberal!"
+  },
+  "friedhofspflicht": {
+    "besteht": false,
+    "ausnahmen": "Urnenherausgabe nach Kremation seit 2015! Asche darf zu Hause aufbewahrt werden."
+  },
+  "zweite_leichenschau_kremation": false,
+  "sargpflicht": {
+    "besteht": false,
+    "ausnahmen": "Auch Naturbestattungen in biologisch abbaubaren Materialien möglich"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Ja, von der Nordseeküste",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner/Lebenspartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Bremen hat seit 2015 eine der liberalsten Urnenregelungen: Urnenherausgabe möglich!",
+    "Bestattet im FriedWald in der Region",
+    "Seebestattung ist eine beliebte Option (Nordsee)",
+    "Sehr kurze Bestattungsfrist (5 Tage) — schnell organisierbar",
+    "Kleine, aber moderne Friedhöfe",
+    "Hohe Bestattungsquoten für Feuerbestattung"
+  ],
+  "major_cities": [
+    {
+      "name": "Bremen",
+      "slug": "bremen",
+      "has_page": false
+    },
+    {
+      "name": "Bremerhaven",
+      "slug": "bremerhaven",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Darf ich die Urne in Bremen zu Hause aufbewahren?",
+      "answer": "Ja! Seit 2015 ist Urnenherausgabe in Bremen erlaubt. Sie können die Asche zu Hause aufbewahren, verstreuen oder mit zu Reisen nehmen — eine der liberalsten Regelungen in Deutschland."
+    },
+    {
+      "question": "Wie lange muss ich in Bremen nach dem Tod warten?",
+      "answer": "Mindestens 24 Stunden. Die Beerdigung oder Kremation muss spätestens 5 Tage später erfolgen — eine der kürzesten Fristen in Deutschland."
+    },
+    {
+      "question": "Ist Seebestattung von Bremen aus möglich?",
+      "answer": "Ja, von Bremerhaven aus können Sie eine Seebestattung in der Nordsee durchführen lassen. Kosten liegen bei 800–2.000 € plus Überführung."
+    },
+    {
+      "question": "Gibt es Waldbestattung in Bremen?",
+      "answer": "Ja, FriedWald-Standorte sind in der Umgebung (z.B. Oldenburg, Diepholz) verfügbar. Sie erhalten einen festen Ort im Wald unter einem Baum."
+    },
+    {
+      "question": "Was kostet eine Cremation in Bremen?",
+      "answer": "Eine Kremation kostet etwa 400–800 €, plus Friedhofsgebühren oder Optional Urnenherausgabe kostet extra (ca. 100–300 €). Sie können die Asche dann selbst bestatten oder aufbewahren."
+    }
+  ],
+  "sources": [
+    "Bremenisches Bestattungsgesetz (2015 Reform)",
+    "Senatskanzlei Bremen",
+    "Verbraucherzentrale Bremen"
+  ]
+}
