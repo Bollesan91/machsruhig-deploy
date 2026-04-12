@@ -1,0 +1,67 @@
+{
+  "page": "vorsorge-hub",
+  "title": "Vorsorge — Alles regeln, bevor es nötig wird",
+  "description": "Patientenverfügung, Testament, Bestattungsvorsorge, Sterbegeldversicherung: Alle Vorsorge-Themen auf einen Blick.",
+  "canonical": "https://machsruhig.de/vorsorge/",
+  "cluster": "vorsorge",
+  "pageType": "hub",
+  "lastmod": "2026-04-12",
+  "topics": [
+    {
+      "id": "patientenverfuegung",
+      "title": "Patientenverfügung",
+      "description": "Bestimme selbst, welche medizinischen Maßnahmen du im Notfall wünschst — und welche nicht.",
+      "href": "/vorsorge/patientenverfuegung",
+      "icon": "medical",
+      "priority": 1
+    },
+    {
+      "id": "vorsorgevollmacht",
+      "title": "Vorsorgevollmacht & Betreuungsverfügung",
+      "description": "Bestimme eine Person deines Vertrauens, die im Ernstfall für dich entscheiden darf.",
+      "href": "/vorsorge/vorsorge-ordner",
+      "icon": "document",
+      "priority": 2
+    },
+    {
+      "id": "testament",
+      "title": "Testament",
+      "description": "Regele deinen Nachlass — Pflichtanteil, Testamentsarten, Formvorschriften verständlich erklärt.",
+      "href": "/vorsorge/testament",
+      "icon": "legal",
+      "priority": 3
+    },
+    {
+      "id": "bestattungsvorsorge",
+      "title": "Bestattungsvorsorge",
+      "description": "Lege deine Bestattungswünsche verbindlich fest und sichere die Finanzierung — mit Vorsorgevertrag oder Sterbegeldversicherung.",
+      "href": "/vorsorge/bestattungsvorsorge",
+      "icon": "shield",
+      "priority": 4,
+      "featured": true
+    },
+    {
+      "id": "sterbegeldversicherung",
+      "title": "Sterbegeldversicherung",
+      "description": "Schütze deine Angehörigen vor hohen Bestattungskosten — mit der richtigen Versicherung.",
+      "href": "/vorsorge/sterbegeldversicherung",
+      "icon": "insurance",
+      "priority": 5,
+      "featured": true
+    },
+    {
+      "id": "vorsorge-ordner",
+      "title": "Vorsorge-Ordner",
+      "description": "Alle wichtigen Dokumente an einem Ort — damit deine Angehörigen im Ernstfall alles finden.",
+      "href": "/vorsorge/vorsorge-ordner",
+      "icon": "folder",
+      "priority": 6
+    }
+  ],
+  "statistics": [
+    {"fact": "Nur 36 % der Deutschen haben eine Patientenverfügung", "source": "Forsa 2023"},
+    {"fact": "Durchschnittliche Bestattungskosten: 6.000–8.000 €", "source": "Stiftung Warentest"},
+    {"fact": "Das gesetzliche Sterbegeld wurde 2004 abgeschafft", "source": "GKV-Modernisierungsgesetz"},
+    {"fact": "Bestattungsvorsorge ist Schonvermögen (§ 90 SGB XII)", "source": "Sozialgesetzbuch"}
+  ]
+}

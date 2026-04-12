@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fristen-Radar Todesfall — Alle Fristen auf einen Blick | mach's ruhig</title>
+<meta name="description" content="Fristen nach dem Todesfall: Geben Sie das Sterbedatum ein und sehen Sie alle wichtigen Fristen — Erbausschlagung, Rentenantrag, Kündigungsfristen. Kostenlos.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/tools/fristen-radar">
+<meta property="og:title" content="Fristen-Radar Todesfall — Alle Fristen auf einen Blick">
+<meta property="og:description" content="Fristen nach dem Todesfall: Geben Sie das Sterbedatum ein und sehen Sie alle wichtigen Fristen — Erbausschlagung, Rentenantrag, Kündigungsfristen. Kostenlos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machsruhig.de/tools/fristen-radar">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"WebApplication","name":"Fristen-Radar Todesfall","description":"Alle wichtigen Fristen nach dem Todesfall berechnen: Geben Sie das Sterbedatum ein und sehen Sie Erbausschlagung, Rentenantrag, Kündigungsfristen auf einen Blick.","url":"https://machsruhig.de/tools/fristen-radar","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},
+      {"@type":"ListItem","position":2,"name":"Fristen-Radar","item":"https://machsruhig.de/tools/fristen-radar"}
+    ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Was passiert, wenn ich eine Frist verpasse?","acceptedAnswer":{"@type":"Answer","text":"Das kommt auf die Frist an. Bei der Erbausschlagung ist es besonders kritisch: Nach 6 Wochen gilt das Erbe als angenommen — auch mit Schulden. Bei Versicherungsmeldungen kann der Anspruch verfallen. Bei Behördenfristen drohen Ordnungswidrigkeiten."}},
+      {"@type":"Question","name":"Gelten die Fristen ab dem Todestag?","acceptedAnswer":{"@type":"Answer","text":"In den meisten Fällen ja. Bei der Erbausschlagung beginnt die 6-Wochen-Frist allerdings erst ab dem Zeitpunkt, zu dem der Erbe vom Todesfall und seiner Erbenstellung Kenntnis erlangt hat."}},
+      {"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Erledigte Fristen werden lokal in deinem Browser gespeichert."}},
+      {"@type":"Question","name":"Kann der Bestatter Fristen für mich einhalten?","acceptedAnswer":{"@type":"Answer","text":"Einige ja — zum Beispiel die Anzeige beim Standesamt oder die Organisation der Bestattung innerhalb der gesetzlichen Fristen. Aber wichtige Fristen wie Erbausschlagung, Versicherungsmeldungen oder Rentenanträge müssen Sie selbst einhalten."}},
+      {"@type":"Question","name":"Was ist die wichtigste Frist nach einem Todesfall?","acceptedAnswer":{"@type":"Answer","text":"Die 6-Wochen-Frist zur Erbausschlagung ist die kritischste. Wird sie versäumt, gilt das Erbe als angenommen — inklusive aller Schulden. Das ist nicht mehr rückgängig zu machen."}}
+    ]}
+  ]
+}
+</script>
+
+<script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+<script defer src="/js/tracking.js"></script>
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+:root{--mr-primary:#7A6B5D;--mr-primary-hover:#5E5047;--mr-warm:#7A6B5D;--mr-bg:#faf8f5;--mr-bg-card:#FFFDF9;--mr-border:#E8E0D6;--mr-text:#2D2319;--mr-text-muted:#73655A;--mr-accent:#866E45;--mr-safety:#FFFAF5;--mr-radius:12px;--mr-success:#5a8a5a;--mr-urgent:#c45e3a;--fr-red:#c45e3a;--fr-orange:#d4852e;--fr-yellow:#b8960a;--fr-green:#5a8a5a}
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}
+.mr-nav-logo span{color:var(--mr-primary)}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,0.08)}
+.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
+.mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}
+.mr-footer-inner{max-width:720px;margin:0 auto}
+.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}
+.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
+.mr-footer a:hover{color:var(--mr-primary)}
+.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
+.mr-footer-bottom p{font-size:12px;color:#73655A}
+.mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+@media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt}.mr-content{max-width:100%;padding:0}.fr-card.done{opacity:0.5}.fr-card.done .fr-card-title{text-decoration:line-through;color:#999}.fr-controls,.fr-input-section button[onclick]{display:none!important}.fr-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
+
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+    <div class="mr-nav-links">
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mr-content">
+  <main id="main"><div id="app"></div></main>
+</div>
+
+<footer class="mr-footer no-print">
+  <div class="mr-footer-inner">
+    <div class="mr-footer-grid">
+      <div>
+        <h4>Über machsruhig.de</h4>
+        <p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p>
+      </div>
+      <div>
+        <h4>Themen</h4>
+        <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+        <a href="/tools/fristen-radar">Fristen-Radar</a>
+        <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
+        <a href="/beerdigung-planen">Beerdigung planen</a>
+        <a href="/bestattungskosten">Bestattungskosten</a>
+        <a href="/bestatter/muenchen/">Bestatter finden</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/methodik">Methodik</a>
+      </div>
+    </div>
+    <div class="mr-footer-bottom">
+      <p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung. Angaben ohne Gewähr.</p>
+      <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+/* ========== DATA ========== */
+const DEADLINES = [
+  {
+    id: "unfallversicherung",
+    name: "Unfallversicherung melden",
+    days: 2,
+    category: "versicherung",
+    consequence: "Anspruch auf Todesfallleistung kann verfallen",
+    link: "/vertraege-kuendigen",
+    hint: "Prüfe, ob eine Unfallversicherung mit Todesfallleistung bestand"
+  },
+  {
+    id: "standesamt",
+    name: "Standesamt — Sterbefall anzeigen",
+    days: 3,
+    category: "behoerde",
+    consequence: "Ordnungswidrigkeit, Bestattung kann sich verzögern",
+    link: "/tools/checkliste-todesfall",
+    hint: "Der Bestatter übernimmt das oft — frage nach"
+  },
+  {
+    id: "lebensversicherung",
+    name: "Lebensversicherung melden",
+    days: 3,
+    category: "versicherung",
+    consequence: "Verzögerung der Auszahlung",
+    link: "/vertraege-kuendigen",
+    hint: "Vertragsnummer und Sterbeurkunde bereithalten"
+  },
+  {
+    id: "sterbegeld",
+    name: "Sterbegeldversicherung melden",
+    days: 3,
+    category: "versicherung",
+    consequence: "Verzögerung der Auszahlung",
+    link: "/vorsorge/sterbegeldversicherung",
+    hint: "Policennummer suchen, Sterbeurkunde beifügen"
+  },
+  {
+    id: "krankenkasse",
+    name: "Krankenkasse informieren",
+    days: 14,
+    category: "behoerde",
+    consequence: "Beiträge laufen weiter",
+    link: "/vertraege-kuendigen",
+    hint: "Familienversicherung für Angehörige prüfen"
+  },
+  {
+    id: "sterbevierteljahr",
+    name: "Sterbevierteljahr beantragen",
+    days: 30,
+    category: "finanzen",
+    consequence: "Vorschuss auf 3 Monate volle Rente geht verloren",
+    link: "#",
+    hint: "Beim Renten-Service der Deutschen Post beantragen — gilt nur für Ehepartner",
+    showIf: "spouse"
+  },
+  {
+    id: "mietvertrag",
+    name: "Mietvertrag — Sonderkündigung",
+    days: 30,
+    category: "wohnung",
+    consequence: "Normaler Kündigungsschutz greift (ggf. 3+ Monate extra Miete)",
+    link: "/vertraege-kuendigen",
+    hint: "§ 580 BGB: Sonderkündigungsrecht innerhalb 1 Monat, dann 3 Monate Frist",
+    showIf: "rental"
+  },
+  {
+    id: "erbausschlagung",
+    name: "Erbausschlagung",
+    days: 42,
+    category: "recht",
+    consequence: "Erbe gilt als ANGENOMMEN — auch Schulden! Nicht mehr rückgängig zu machen",
+    link: "/vorsorge/testament",
+    hint: "KRITISCH: Prüfe ob Schulden vorhanden sind. Ausschlagung beim Nachlassgericht erklären"
+  },
+  {
+    id: "erbschaftsteuer",
+    name: "Erbschaftsteuer — Anzeige beim Finanzamt",
+    days: 90,
+    category: "finanzen",
+    consequence: "Ordnungswidrigkeit, Steuerzuschläge möglich",
+    link: "#",
+    hint: "Pflicht unabhängig von der Höhe. Freibeträge: 500.000 € (Ehepartner), 400.000 € (Kinder)"
+  },
+  {
+    id: "witwenrente",
+    name: "Witwenrente beantragen",
+    days: 365,
+    category: "finanzen",
+    consequence: "Rückwirkende Zahlung nur innerhalb 12 Monaten möglich",
+    link: "#",
+    hint: "Große Witwenrente: 55% der Rente. Kleine Witwenrente: 25% (max. 2 Jahre)",
+    showIf: "spouse"
+  },
+  {
+    id: "steuererklaerung",
+    name: "Letzte Steuererklärung abgeben",
+    days: 540,
+    category: "finanzen",
+    consequence: "Verspätungszuschläge, Schätzung durch Finanzamt",
+    link: "#",
+    hint: "Frist: 31. Juli des Folgejahres. Mit Steuerberater: verlängerte Fristen"
+  }
+];
+
+const CATEGORIES = {
+  behoerde:      { label: "Behörde",       icon: "M3 21V7l9-4 9 4v14H3zm2-2h14V8.3L12 5.1 5 8.3V19zm2-2h4v-5H7v5zm6 0h4v-3h-4v3zM9 11h8M9 14h4" },
+  versicherung:  { label: "Versicherung",  icon: "M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z" },
+  finanzen:      { label: "Finanzen",      icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h1c.55 0 1 .45 1 1v3c0 .55-.45 1-1 1h-3v1h4v2h-2v2h-2v-2h-1c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h3v-1H9V9h2V7z" },
+  recht:         { label: "Recht",         icon: "M12 2L4 7v2h16V7l-8-5zM5 21h14v-2H5v2zm0-4h14v-6H5v6zm2-4h2v2H7v0zm4 0h2v2h-2v0zm4 0h2v2h-2v0z" },
+  wohnung:       { label: "Wohnung",       icon: "M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" }
+};
+
+const FAQ = [
+  { q: "Was passiert, wenn ich eine Frist verpasse?", a: "Das kommt auf die Frist an. Bei der Erbausschlagung ist es besonders kritisch: Nach 6 Wochen gilt das Erbe als angenommen — auch mit Schulden. Bei Versicherungsmeldungen kann der Anspruch verfallen. Bei Behördenfristen drohen Ordnungswidrigkeiten." },
+  { q: "Gelten die Fristen ab dem Todestag?", a: "In den meisten Fällen ja. Bei der Erbausschlagung beginnt die 6-Wochen-Frist allerdings erst ab dem Zeitpunkt, zu dem der Erbe vom Todesfall und seiner Erbenstellung Kenntnis erlangt hat." },
+  { q: "Werden meine Daten gespeichert?", a: "Nein. Der Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert." },
+  { q: "Kann der Bestatter Fristen für mich einhalten?", a: "Einige ja — zum Beispiel die Anzeige beim Standesamt oder die Organisation der Bestattung innerhalb der gesetzlichen Fristen. Aber wichtige Fristen wie Erbausschlagung, Versicherungsmeldungen oder Rentenanträge musst du selbst einhalten." },
+  { q: "Was ist die wichtigste Frist?", a: "Die 6-Wochen-Frist zur Erbausschlagung — danach gibt es kein Zurück. Wird sie versäumt, gilt das Erbe als angenommen, inklusive aller Schulden." }
+];
+
+/* ========== HELPERS ========== */
+function formatDate(date) {
+  return date.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+}
+
+function addDays(date, days) {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+}
+
+function daysBetween(a, b) {
+  const msPerDay = 86400000;
+  return Math.ceil((b - a) / msPerDay);
+}
+
+function getUrgency(daysRemaining) {
+  if (daysRemaining <= 3) return { level: 'red', label: 'DRINGEND', color: 'var(--fr-red)' };
+  if (daysRemaining <= 14) return { level: 'orange', label: 'BALD', color: 'var(--fr-orange)' };
+  if (daysRemaining <= 42) return { level: 'yellow', label: 'WICHTIG', color: 'var(--fr-yellow)' };
+  return { level: 'green', label: 'LANGFRISTIG', color: 'var(--fr-green)' };
+}
+
+function todayString() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+
+function loadDone() {
+  try { return JSON.parse(localStorage.getItem('fr-done') || '{}'); } catch(e) { return {}; }
+}
+function saveDone(done) {
+  try { localStorage.setItem('fr-done', JSON.stringify(done)); } catch(e) {}
+}
+
+/* ========== COMPONENTS ========== */
+
+function PrivacyNotice() {
+  return React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'0 0 24px',fontSize:14,lineHeight:1.6}},
+    React.createElement('strong', {style:{color:'var(--mr-text)'}}, 'Deine Daten bleiben bei dir.'),
+    ' Dieser Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. ',
+    React.createElement('a', {href:'/datenschutz',style:{color:'var(--mr-primary)'}}, 'Datenschutzerklärung')
+  );
+}
+
+function CategoryIcon({ category, size }) {
+  const s = size || 20;
+  const cat = CATEGORIES[category];
+  if (!cat) return null;
+  if (category === 'behoerde') {
+    return React.createElement('svg', {width:s,height:s,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.5,strokeLinecap:'round',strokeLinejoin:'round'},
+      React.createElement('path', {d:'M3 21h18M4 21V9l8-5 8 5v12M9 21v-6h6v6M9 12h.01M15 12h.01'})
+    );
+  }
+  if (category === 'versicherung') {
+    return React.createElement('svg', {width:s,height:s,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.5,strokeLinecap:'round',strokeLinejoin:'round'},
+      React.createElement('path', {d:'M12 2l7 4v6c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V6l7-4z'}),
+      React.createElement('path', {d:'M9 12l2 2 4-4'})
+    );
+  }
+  if (category === 'finanzen') {
+    return React.createElement('svg', {width:s,height:s,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.5,strokeLinecap:'round',strokeLinejoin:'round'},
+      React.createElement('circle', {cx:12,cy:12,r:10}),
+      React.createElement('path', {d:'M15 9.5c0-.83-.67-1.5-1.5-1.5H10c-.83 0-1.5.67-1.5 1.5S9.17 11 10 11h4c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-4.5c-.83 0-1.5-.67-1.5-1.5'}),
+      React.createElement('path', {d:'M12 6v2M12 16v2'})
+    );
+  }
+  if (category === 'recht') {
+    return React.createElement('svg', {width:s,height:s,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.5,strokeLinecap:'round',strokeLinejoin:'round'},
+      React.createElement('path', {d:'M12 3v18M5 7l7-2 7 2M5 7l-1 7h6L9 7M19 7l1 7h-6l1-7M3 21h18'})
+    );
+  }
+  if (category === 'wohnung') {
+    return React.createElement('svg', {width:s,height:s,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:1.5,strokeLinecap:'round',strokeLinejoin:'round'},
+      React.createElement('path', {d:'M3 12l9-8 9 8M5 11v8h14v-8'}),
+      React.createElement('path', {d:'M10 21v-5h4v5'})
+    );
+  }
+  return null;
+}
+
+function InputForm({ onCalculate }) {
+  const [deathDate, setDeathDate] = useState(todayString());
+  const [isSpouse, setIsSpouse] = useState(false);
+  const [hasMinors, setHasMinors] = useState(false);
+  const [hasRental, setHasRental] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!deathDate) return;
+    onCalculate({ deathDate: new Date(deathDate + 'T00:00:00'), isSpouse, hasMinors, hasRental });
+    if (typeof plausible !== 'undefined') {
+      plausible('Fristen-Radar: Berechnung');
+    }
+  };
+
+  return React.createElement('div', {className:'fr-input-section'},
+    React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:28,fontWeight:700,color:'var(--mr-text)',marginBottom:8,lineHeight:1.3}}, 'Fristen-Radar Todesfall'),
+    React.createElement('p', {style:{fontSize:16,color:'var(--mr-text-muted)',marginBottom:32,lineHeight:1.6}}, 'Gib das Sterbedatum ein und erfahre alle wichtigen Fristen — damit du nichts verpasst, was Geld oder Rechte kosten kann.'),
+
+    React.createElement(PrivacyNotice),
+
+    React.createElement('form', {onSubmit:handleSubmit,style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:24}},
+      React.createElement('div', {style:{marginBottom:20}},
+        React.createElement('label', {htmlFor:'deathDate',style:{display:'block',fontWeight:600,fontSize:15,marginBottom:8,color:'var(--mr-text)'}}, 'Wann ist die Person verstorben?'),
+        React.createElement('input', {
+          type:'date', id:'deathDate', value:deathDate,
+          onChange: (e) => setDeathDate(e.target.value),
+          max: todayString(),
+          required: true,
+          style:{width:'100%',maxWidth:240,padding:'10px 14px',borderRadius:8,border:'1px solid var(--mr-border)',fontSize:16,fontFamily:'inherit',background:'#fff',color:'var(--mr-text)'}
+        })
+      ),
+
+      React.createElement('div', {style:{display:'flex',flexDirection:'column',gap:12,marginBottom:24}},
+        React.createElement('label', {style:{display:'flex',alignItems:'center',gap:10,fontSize:15,cursor:'pointer',color:'var(--mr-text)'}},
+          React.createElement('input', {type:'checkbox',checked:isSpouse,onChange:(e)=>setIsSpouse(e.target.checked),style:{width:18,height:18,accentColor:'var(--mr-primary)',cursor:'pointer'}}),
+          React.createElement('span', null, 'Sind Sie Ehepartner/in des Verstorbenen?')
+        ),
+        React.createElement('label', {style:{display:'flex',alignItems:'center',gap:10,fontSize:15,cursor:'pointer',color:'var(--mr-text)'}},
+          React.createElement('input', {type:'checkbox',checked:hasMinors,onChange:(e)=>setHasMinors(e.target.checked),style:{width:18,height:18,accentColor:'var(--mr-primary)',cursor:'pointer'}}),
+          React.createElement('span', null, 'Gibt es minderjährige Kinder?')
+        ),
+        React.createElement('label', {style:{display:'flex',alignItems:'center',gap:10,fontSize:15,cursor:'pointer',color:'var(--mr-text)'}},
+          React.createElement('input', {type:'checkbox',checked:hasRental,onChange:(e)=>setHasRental(e.target.checked),style:{width:18,height:18,accentColor:'var(--mr-primary)',cursor:'pointer'}}),
+          React.createElement('span', null, 'Gibt es einen Mietvertrag des Verstorbenen?')
+        )
+      ),
+
+      React.createElement('button', {
+        type:'submit',
+        style:{background:'var(--mr-primary)',color:'#fff',border:'none',borderRadius:8,padding:'12px 32px',fontSize:16,fontWeight:600,cursor:'pointer',fontFamily:'inherit',transition:'background 0.2s'},
+        onMouseOver:(e)=>{e.target.style.background='var(--mr-primary-hover)'},
+        onMouseOut:(e)=>{e.target.style.background='var(--mr-primary)'}
+      }, 'Fristen berechnen')
+    )
+  );
+}
+
+function DeadlineCard({ deadline, deathDate, doneMap, onToggleDone }) {
+  const deadlineDate = addDays(deathDate, deadline.days);
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const remaining = daysBetween(today, deadlineDate);
+  const isPast = remaining < 0;
+  const urgency = isPast ? { level:'red', label:'VERPASST', color:'var(--fr-red)' } : getUrgency(remaining);
+  const isDone = doneMap[deadline.id] || false;
+  const cat = CATEGORIES[deadline.category] || {};
+
+  const cardStyle = {
+    background: isDone ? '#f5f3f0' : 'var(--mr-bg-card)',
+    border: '1px solid ' + (isDone ? 'var(--mr-border)' : (urgency.level === 'red' ? 'var(--fr-red)' : 'var(--mr-border)')),
+    borderLeft: '4px solid ' + (isDone ? '#bbb' : urgency.color),
+    borderRadius: 'var(--mr-radius)',
+    padding: '20px 20px 16px',
+    opacity: isDone ? 0.65 : 1,
+    transition: 'opacity 0.3s, border-color 0.3s'
+  };
+
+  const badgeStyle = {
+    display: 'inline-block',
+    background: isDone ? '#ddd' : urgency.color,
+    color: '#fff',
+    fontSize: 11,
+    fontWeight: 700,
+    padding: '3px 10px',
+    borderRadius: 20,
+    letterSpacing: '0.03em',
+    whiteSpace: 'nowrap'
+  };
+
+  const daysLabel = isPast
+    ? 'vor ' + Math.abs(remaining) + (Math.abs(remaining) === 1 ? ' Tag' : ' Tagen') + ' abgelaufen'
+    : (remaining === 0 ? 'HEUTE' : (remaining === 1 ? 'noch 1 Tag' : 'noch ' + remaining + ' Tage'));
+
+  return React.createElement('div', {className:'fr-card' + (isDone ? ' done' : ''),style:cardStyle},
+    React.createElement('div', {style:{display:'flex',alignItems:'flex-start',justifyContent:'space-between',gap:12,marginBottom:8,flexWrap:'wrap'}},
+      React.createElement('div', {style:{display:'flex',alignItems:'center',gap:10,flex:1,minWidth:0}},
+        React.createElement('label', {style:{display:'flex',alignItems:'center',cursor:'pointer',flexShrink:0},title:isDone?'Als offen markieren':'Als erledigt markieren'},
+          React.createElement('input', {
+            type:'checkbox',
+            checked: isDone,
+            onChange: () => onToggleDone(deadline.id),
+            style:{width:20,height:20,accentColor:'var(--mr-success)',cursor:'pointer'}
+          })
+        ),
+        React.createElement('div', {style:{color:isDone?'#999':'var(--mr-text-muted)',flexShrink:0,display:'flex',alignItems:'center'}},
+          React.createElement(CategoryIcon, {category:deadline.category,size:20})
+        ),
+        React.createElement('span', {className:'fr-card-title',style:{fontWeight:600,fontSize:15,color:isDone?'#999':'var(--mr-text)',textDecoration:isDone?'line-through':'none'}}, deadline.name)
+      ),
+      React.createElement('span', {className:'fr-badge',style:badgeStyle}, urgency.label)
+    ),
+
+    React.createElement('div', {style:{display:'flex',alignItems:'center',gap:16,fontSize:14,color:'var(--mr-text-muted)',marginBottom:10,marginLeft:30,flexWrap:'wrap'}},
+      React.createElement('span', null, 'Frist: ', React.createElement('strong', {style:{color:'var(--mr-text)'}}, formatDate(deadlineDate))),
+      React.createElement('span', {style:{color:isPast?'var(--fr-red)':'var(--mr-text-muted)',fontWeight:isPast?600:'normal'}}, daysLabel)
+    ),
+
+    React.createElement('div', {style:{marginLeft:30}},
+      React.createElement('div', {style:{fontSize:13,color:isPast||urgency.level==='red'?'var(--fr-red)':'var(--mr-text-muted)',marginBottom:6,lineHeight:1.5}},
+        React.createElement('strong', null, 'Wenn verpasst: '),
+        deadline.consequence
+      ),
+      React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)',lineHeight:1.5,marginBottom:deadline.link&&deadline.link!=='#'?8:0}},
+        React.createElement('span', {style:{color:'var(--mr-accent)'}}, 'Tipp: '),
+        deadline.hint
+      ),
+      deadline.link && deadline.link !== '#' && React.createElement('a', {href:deadline.link,style:{fontSize:13,color:'var(--mr-primary)',textDecoration:'none',fontWeight:500}}, 'Mehr erfahren \u2192')
+    )
+  );
+}
+
+function ResultsView({ config, onReset }) {
+  const [doneMap, setDoneMap] = useState(loadDone());
+  const [hideDone, setHideDone] = useState(false);
+  const [sortBy, setSortBy] = useState('urgency');
+
+  const toggleDone = (id) => {
+    const newDone = { ...doneMap, [id]: !doneMap[id] };
+    setDoneMap(newDone);
+    saveDone(newDone);
+  };
+
+  const filtered = DEADLINES.filter(d => {
+    if (d.showIf === 'spouse' && !config.isSpouse) return false;
+    if (d.showIf === 'rental' && !config.hasRental) return false;
+    return true;
+  });
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  const sorted = [...filtered].sort((a, b) => {
+    if (sortBy === 'category') {
+      const catOrder = ['behoerde','versicherung','recht','finanzen','wohnung'];
+      const ca = catOrder.indexOf(a.category);
+      const cb = catOrder.indexOf(b.category);
+      if (ca !== cb) return ca - cb;
+      return a.days - b.days;
+    }
+    return a.days - b.days;
+  });
+
+  const visible = hideDone ? sorted.filter(d => !doneMap[d.id]) : sorted;
+
+  const doneCount = sorted.filter(d => doneMap[d.id]).length;
+  const totalCount = sorted.length;
+
+  const urgentCount = sorted.filter(d => {
+    if (doneMap[d.id]) return false;
+    const rem = daysBetween(today, addDays(config.deathDate, d.days));
+    return rem <= 3;
+  }).length;
+
+  return React.createElement('div', null,
+    React.createElement('div', {style:{marginBottom:24}},
+      React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:26,fontWeight:700,color:'var(--mr-text)',marginBottom:4,lineHeight:1.3}}, 'Dein Fristen-Radar'),
+      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',marginBottom:16}},
+        'Sterbedatum: ', React.createElement('strong', null, formatDate(config.deathDate)),
+        config.isSpouse ? ' \u00B7 Ehepartner' : '',
+        config.hasMinors ? ' \u00B7 Minderjährige Kinder' : '',
+        config.hasRental ? ' \u00B7 Mietvertrag' : ''
+      ),
+
+      urgentCount > 0 && React.createElement('div', {style:{background:'#fef2ee',border:'1px solid var(--fr-red)',borderRadius:8,padding:'12px 16px',marginBottom:16,fontSize:14,color:'var(--fr-red)',fontWeight:600}},
+        '\u26A0 ', urgentCount, urgentCount === 1 ? ' Frist ist dringend' : ' Fristen sind dringend', ' — bitte sofort kümmern!'
+      ),
+
+      React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:8,padding:'10px 16px',marginBottom:16,fontSize:14}},
+        React.createElement('div', {style:{display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:8}},
+          React.createElement('span', {style:{color:'var(--mr-text-muted)'}},
+            React.createElement('strong', {style:{color:'var(--mr-text)'}}, doneCount), ' von ', totalCount, ' Fristen erledigt'
+          ),
+          React.createElement('div', {style:{width:'100%',maxWidth:200,height:6,background:'var(--mr-border)',borderRadius:3,overflow:'hidden'}},
+            React.createElement('div', {style:{width:(doneCount/totalCount*100)+'%',height:'100%',background:'var(--mr-success)',borderRadius:3,transition:'width 0.3s'}})
+          )
+        )
+      )
+    ),
+
+    React.createElement('div', {className:'fr-controls no-print',style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12,marginBottom:20,flexWrap:'wrap'}},
+      React.createElement('label', {style:{display:'flex',alignItems:'center',gap:8,fontSize:14,cursor:'pointer',color:'var(--mr-text-muted)'}},
+        React.createElement('input', {type:'checkbox',checked:hideDone,onChange:(e)=>setHideDone(e.target.checked),style:{width:16,height:16,accentColor:'var(--mr-primary)',cursor:'pointer'}}),
+        'Alle erledigten ausblenden'
+      ),
+      React.createElement('div', {style:{display:'flex',alignItems:'center',gap:8}},
+        React.createElement('span', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, 'Sortierung:'),
+        React.createElement('select', {
+          value:sortBy,
+          onChange:(e)=>setSortBy(e.target.value),
+          style:{padding:'6px 10px',borderRadius:6,border:'1px solid var(--mr-border)',fontSize:13,fontFamily:'inherit',background:'#fff',color:'var(--mr-text)',cursor:'pointer'}
+        },
+          React.createElement('option', {value:'urgency'}, 'Nach Dringlichkeit'),
+          React.createElement('option', {value:'category'}, 'Nach Kategorie')
+        )
+      )
+    ),
+
+    React.createElement('div', {style:{display:'flex',flexDirection:'column',gap:12,marginBottom:32}},
+      visible.length === 0 && React.createElement('div', {style:{textAlign:'center',padding:'32px 20px',color:'var(--mr-text-muted)',fontSize:15}},
+        React.createElement('p', null, 'Alle Fristen erledigt! Gut gemacht.')
+      ),
+      visible.map(d =>
+        React.createElement(DeadlineCard, {key:d.id, deadline:d, deathDate:config.deathDate, doneMap:doneMap, onToggleDone:toggleDone})
+      )
+    ),
+
+    React.createElement('div', {className:'no-print',style:{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap',marginBottom:32}},
+      React.createElement('button', {
+        onClick:()=>window.print(),
+        style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:8,padding:'10px 20px',fontSize:14,fontWeight:500,cursor:'pointer',fontFamily:'inherit',color:'var(--mr-text)',display:'flex',alignItems:'center',gap:8,transition:'border-color 0.2s'},
+        onMouseOver:(e)=>{e.currentTarget.style.borderColor='var(--mr-primary)'},
+        onMouseOut:(e)=>{e.currentTarget.style.borderColor='var(--mr-border)'}
+      },
+        React.createElement('svg', {width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},
+          React.createElement('path', {d:'M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2'}),
+          React.createElement('rect', {x:6,y:14,width:12,height:8})
+        ),
+        'Fristen drucken'
+      ),
+      React.createElement('button', {
+        onClick:onReset,
+        style:{background:'transparent',border:'1px solid var(--mr-border)',borderRadius:8,padding:'10px 20px',fontSize:14,fontWeight:500,cursor:'pointer',fontFamily:'inherit',color:'var(--mr-text-muted)',transition:'border-color 0.2s'},
+        onMouseOver:(e)=>{e.currentTarget.style.borderColor='var(--mr-primary)'},
+        onMouseOut:(e)=>{e.currentTarget.style.borderColor='var(--mr-border)'}
+      }, 'Neues Sterbedatum eingeben')
+    ),
+
+    React.createElement(PrivacyNotice),
+
+    React.createElement('div', {style:{marginTop:32,marginBottom:24}},
+      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,color:'var(--mr-text)',marginBottom:6}}, 'Weiterführende Hilfe'),
+      React.createElement('p', {style:{fontSize:14,color:'var(--mr-text-muted)',marginBottom:16}}, 'Diese Tools helfen dir bei den nächsten Schritten:'),
+      React.createElement('div', {style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12}},
+        [{title:'Checkliste Todesfall',desc:'Schritt-für-Schritt durch die ersten Tage',href:'/tools/checkliste-todesfall'},
+         {title:'Verträge kündigen',desc:'Welche Verträge sofort gekündigt werden müssen',href:'/vertraege-kuendigen'},
+         {title:'Bestattungskosten',desc:'Mit welchen Kosten du rechnen musst',href:'/bestattungskosten'},
+         {title:'Beerdigung planen',desc:'Ablauf und Organisation der Bestattung',href:'/beerdigung-planen'}
+        ].map((link,i) =>
+          React.createElement('a', {key:i,href:link.href,style:{display:'block',background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:8,padding:'14px 16px',textDecoration:'none',transition:'border-color 0.2s',cursor:'pointer'},
+            onMouseOver:(e)=>{e.currentTarget.style.borderColor='var(--mr-primary)'},
+            onMouseOut:(e)=>{e.currentTarget.style.borderColor='var(--mr-border)'}
+          },
+            React.createElement('div', {style:{fontWeight:600,fontSize:14,color:'var(--mr-text)',marginBottom:4}}, link.title),
+            React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)',lineHeight:1.4}}, link.desc)
+          )
+        )
+      )
+    )
+  );
+}
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  return React.createElement('div', {style:{marginTop:48,marginBottom:32}},
+    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,color:'var(--mr-text)',marginBottom:20}}, 'Häufige Fragen'),
+    React.createElement('div', {style:{display:'flex',flexDirection:'column',gap:0}},
+      FAQ.map((item, i) =>
+        React.createElement('div', {key:i,style:{borderBottom:'1px solid var(--mr-border)'}},
+          React.createElement('button', {
+            onClick:()=>setOpenIndex(openIndex===i?null:i),
+            'aria-expanded':openIndex===i,
+            style:{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%',padding:'16px 4px',background:'none',border:'none',cursor:'pointer',fontSize:15,fontWeight:600,color:'var(--mr-text)',fontFamily:'inherit',textAlign:'left',gap:12,lineHeight:1.4}
+          },
+            React.createElement('span', null, item.q),
+            React.createElement('svg', {width:18,height:18,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,style:{flexShrink:0,transform:openIndex===i?'rotate(180deg)':'rotate(0)',transition:'transform 0.2s'}},
+              React.createElement('path', {d:'M6 9l6 6 6-6'})
+            )
+          ),
+          openIndex === i && React.createElement('div', {style:{padding:'0 4px 16px',fontSize:14,color:'var(--mr-text-muted)',lineHeight:1.7}}, item.a)
+        )
+      )
+    )
+  );
+}
+
+/* ========== APP ========== */
+function App() {
+  const [config, setConfig] = useState(null);
+
+  return React.createElement('div', {style:{paddingTop:32,paddingBottom:24}},
+    !config
+      ? React.createElement(React.Fragment, null,
+          React.createElement(InputForm, {onCalculate:setConfig}),
+          React.createElement(FAQSection)
+        )
+      : React.createElement(React.Fragment, null,
+          React.createElement(ResultsView, {config:config, onReset:()=>setConfig(null)}),
+          React.createElement(FAQSection)
+        ),
+
+    React.createElement('div', {style:{textAlign:'center',padding:'24px 0',marginBottom:16}},
+      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',lineHeight:1.6}},
+        'Alle Angaben ohne Gewähr. Gesetzliche Fristen können sich ändern. Diese Übersicht ersetzt keine Rechtsberatung.',
+        React.createElement('br'),
+        'machsruhig.de ist ein unabhängiges Informationsportal. ',
+        React.createElement('a', {href:'/methodik',style:{color:'var(--mr-primary)',textDecoration:'none'}}, 'Mehr zu unserer Methodik'), '.'
+      )
+    )
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(App));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brief an meine Liebsten — Persönliche Worte hinterlassen | mach's ruhig</title>
+<meta name="description" content="Einen persönlichen Brief an deine Angehörigen schreiben. Geführte Vorlage mit Leitfragen — für Worte, die bleiben. Kostenlos, privat, in deinem Tempo.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/tools/abschiedsbrief">
+<meta property="og:title" content="Brief an meine Liebsten — Persönliche Worte hinterlassen">
+<meta property="og:description" content="Einen persönlichen Brief an deine Angehörigen schreiben. Geführte Vorlage mit Leitfragen — für Worte, die bleiben. Kostenlos, privat, in deinem Tempo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machsruhig.de/tools/abschiedsbrief">
+
+<!-- Plausible Analytics -->
+<script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+<script defer src="/js/tracking.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Brief an meine Liebsten",
+      "description": "Einen persönlichen Brief an deine Angehörigen schreiben. Geführte Vorlage mit Leitfragen — für Worte, die bleiben.",
+      "url": "https://machsruhig.de/tools/abschiedsbrief",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://machsruhig.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Vorsorge", "item": "https://machsruhig.de/vorsorge"},
+        {"@type": "ListItem", "position": 3, "name": "Brief an meine Liebsten", "item": "https://machsruhig.de/tools/abschiedsbrief"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Muss ich alles ausfüllen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Schreib nur das, was sich richtig anfühlt. Ein einzelner Satz kann genauso wertvoll sein wie ein ganzer Brief. Es gibt kein Richtig oder Falsch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werden meine Worte gespeichert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dein Entwurf wird nur in deinem Browser gespeichert (localStorage). Nichts wird an einen Server gesendet oder anderweitig übertragen. Deine Worte bleiben auf deinem Gerät."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo bewahre ich den Brief auf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Im Vorsorge-Ordner zu Hause, beim Notar oder bei einer Vertrauensperson. Wichtig ist, dass deine Liebsten den Brief finden können, wenn es soweit ist."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich den Brief später ändern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, dein Entwurf bleibt im Browser gespeichert. Du kannst jederzeit zurückkommen und weiterschreiben oder Änderungen vornehmen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist das ein Testament?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Dieser Brief hat keine rechtliche Wirkung. Er ist ein persönliches Schreiben an deine Angehörigen. Für ein rechtsgültiges Testament besuche unsere Seite zum Thema Testament."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+
+:root{
+  --mr-primary:#7A6B5D;
+  --mr-primary-hover:#5E5047;
+  --mr-warm:#7A6B5D;
+  --mr-bg:#faf8f5;
+  --mr-bg-card:#FFFDF9;
+  --mr-border:#E8E0D6;
+  --mr-text:#2D2319;
+  --mr-text-muted:#73655A;
+  --mr-accent:#866E45;
+  --mr-safety:#FFFAF5;
+  --mr-radius:12px;
+}
+
+/* Navigation */
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}
+.mr-nav-logo span{color:var(--mr-primary)}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,0.08)}
+.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){
+  .mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}
+  .mr-nav-links.open{display:flex}
+  .mr-nav-links a{padding:12px 8px;font-size:15px}
+  .mr-nav-divider{display:none}
+  .mr-nav-toggle{display:block}
+}
+
+/* Footer */
+.mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}
+.mr-footer-inner{max-width:720px;margin:0 auto}
+.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}
+.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
+.mr-footer a:hover{color:var(--mr-primary)}
+.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
+.mr-footer-bottom p{font-size:12px;color:#73655A}
+
+/* Content */
+.mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* Tool-specific styles */
+.brief-intro{text-align:center;padding:48px 0 40px}
+.brief-intro h1{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--mr-text);margin-bottom:16px;line-height:1.3}
+@media(max-width:640px){.brief-intro h1{font-size:22px}}
+.brief-intro .lead{font-size:17px;color:var(--mr-text-muted);line-height:1.7;max-width:560px;margin:0 auto}
+@media(max-width:640px){.brief-intro .lead{font-size:15px}}
+
+/* Section cards */
+.brief-section{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin-bottom:24px;transition:border-color 0.2s}
+.brief-section:hover{border-color:rgba(134,110,69,0.3)}
+.brief-section-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;cursor:pointer;user-select:none}
+.brief-section-number{width:36px;height:36px;border-radius:50%;background:var(--mr-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+.brief-section-title{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--mr-text)}
+@media(max-width:640px){
+  .brief-section{padding:24px 20px}
+  .brief-section-title{font-size:17px}
+}
+
+/* Recipient select */
+.recipient-options{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.recipient-chip{padding:8px 16px;border:1px solid var(--mr-border);background:var(--mr-bg);border-radius:99px;font-size:14px;cursor:pointer;transition:background 0.2s,border-color 0.2s,color 0.2s;color:var(--mr-text-muted);font-weight:500}
+.recipient-chip:hover{border-color:var(--mr-accent);color:var(--mr-text)}
+.recipient-chip.selected{background:var(--mr-accent);color:#fff;border-color:var(--mr-accent)}
+
+/* Writing areas */
+.writing-block{margin-bottom:20px}
+.writing-block:last-child{margin-bottom:0}
+.writing-block-label{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.writing-prompts{font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-bottom:10px;font-style:italic}
+.writing-prompts span{display:block;margin-bottom:2px}
+.writing-textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--mr-border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--mr-text);background:var(--mr-bg);line-height:1.6;resize:vertical;transition:border-color 0.2s,box-shadow 0.2s}
+.writing-textarea:focus{outline:none;border-color:var(--mr-accent);box-shadow:0 0 0 3px rgba(134,110,69,0.1)}
+.writing-textarea::placeholder{color:#b5a99a;font-style:italic}
+
+/* Name input */
+.name-input{width:100%;padding:10px 14px;border:1px solid var(--mr-border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--mr-text);background:var(--mr-bg);transition:border-color 0.2s}
+.name-input:focus{outline:none;border-color:var(--mr-accent);box-shadow:0 0 0 3px rgba(134,110,69,0.1)}
+.name-input::placeholder{color:#b5a99a}
+
+/* Preview */
+.preview-letter{background:#FFFDF9;border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:40px 36px;font-family:'Fraunces',serif;font-size:16px;line-height:1.8;color:var(--mr-text);position:relative}
+.preview-letter::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(255,253,249,0) 0%,rgba(244,240,235,0.15) 100%);border-radius:var(--mr-radius);pointer-events:none}
+@media(max-width:640px){.preview-letter{padding:28px 22px;font-size:15px}}
+.preview-greeting{font-size:18px;font-weight:700;margin-bottom:24px;color:var(--mr-text)}
+.preview-section{margin-bottom:24px}
+.preview-section h4{font-size:14px;font-weight:600;color:var(--mr-text-muted);margin-bottom:8px;font-family:'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:0.5px}
+.preview-section p{white-space:pre-wrap;word-wrap:break-word}
+.preview-closing{margin-top:32px;font-style:italic;color:var(--mr-text-muted)}
+.preview-empty{text-align:center;padding:40px 20px;color:var(--mr-text-muted);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border:none;border-radius:99px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:background 0.2s,color 0.2s,border 0.2s,transform 0.1s;text-decoration:none}
+.btn:active{transform:scale(0.98)}
+.btn-primary{background:var(--mr-primary);color:#fff}
+.btn-primary:hover{background:var(--mr-primary-hover)}
+.btn-secondary{background:var(--mr-bg);border:1px solid var(--mr-border);color:var(--mr-text-muted)}
+.btn-secondary:hover{border-color:var(--mr-accent);color:var(--mr-text)}
+.export-buttons{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.export-buttons .btn{flex:1;min-width:150px}
+@media(max-width:520px){
+  .export-buttons{flex-direction:column}
+  .export-buttons .btn{flex:none;width:100%}
+}
+
+/* Privacy notice */
+.privacy-notice{background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6}
+.privacy-notice strong{color:var(--mr-text)}
+.privacy-notice p{margin:6px 0 0;color:var(--mr-text-muted)}
+
+/* Toast notification */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--mr-text);color:#fff;padding:12px 24px;border-radius:99px;font-size:14px;font-weight:500;z-index:200;transition:transform 0.3s ease;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* Storage hint */
+.storage-hint{background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px;margin-top:16px;font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+
+/* FAQ */
+.faq-section{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0}
+.faq-section h2{font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:24px}
+.faq-item{margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--mr-border)}
+.faq-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.faq-item h3{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:8px}
+.faq-item p{font-size:14px;color:var(--mr-text-muted);line-height:1.7;margin:0}
+.faq-item a{color:var(--mr-accent);text-decoration:none}
+.faq-item a:hover{text-decoration:underline}
+
+/* Cross-links */
+.cross-links{margin:40px 0}
+.cross-links h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:16px}
+.cross-links-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.cross-links-grid{grid-template-columns:1fr}}
+.cross-link-card{display:block;padding:16px 20px;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;transition:border-color 0.2s,transform 0.2s}
+.cross-link-card:hover{border-color:var(--mr-accent);transform:translateY(-2px)}
+.cross-link-card strong{display:block;font-size:14px;color:var(--mr-text);margin-bottom:4px}
+.cross-link-card span{font-size:13px;color:var(--mr-text-muted)}
+
+/* Print styles */
+@media print{
+  .no-print,.mr-nav,.mr-footer,.export-buttons,.brief-section,.privacy-notice,.faq-section,.cross-links,.toast,.brief-intro{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:12pt;line-height:1.7}
+  .mr-content{max-width:100%;padding:0}
+  .print-only{display:block!important}
+  .preview-letter{border:none;padding:0;background:#fff;box-shadow:none}
+  .preview-letter::before{display:none}
+  .preview-greeting{font-size:16pt;margin-bottom:20pt}
+  .preview-section{margin-bottom:16pt}
+  .preview-section h4{font-size:10pt;margin-bottom:6pt}
+  .preview-section p{font-size:12pt}
+  .preview-closing{margin-top:24pt}
+}
+.print-only{display:none}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
+
+<!-- Navigation -->
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+    <div class="mr-nav-links">
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="mr-content">
+  <main id="main">
+    <div id="app"></div>
+  </main>
+</div>
+
+<!-- Footer -->
+<footer class="mr-footer no-print">
+  <div class="mr-footer-inner">
+    <div class="mr-footer-grid">
+      <div>
+        <h4>Über machsruhig.de</h4>
+        <p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p>
+      </div>
+      <div>
+        <h4>Themen</h4>
+        <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+        <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
+        <a href="/beerdigung-planen">Beerdigung planen</a>
+        <a href="/kondolenzschreiben">Kondolenzschreiben</a>
+        <a href="/trauersprueche">Trauersprüche</a>
+        <a href="/tools/vorsorge-check">Vorsorge-Check</a>
+        <a href="/vorsorge/patientenverfuegung">Patientenverfügung</a>
+        <a href="/vorsorge/testament">Testament</a>
+        <a href="/bestattungsarten">Bestattungsarten</a>
+        <a href="/bestatter/muenchen/">Bestatter finden</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/methodik">Methodik</a>
+      </div>
+    </div>
+    <div class="mr-footer-bottom">
+      <p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p>
+      <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel">
+const {useState, useEffect, useRef, useCallback} = React;
+
+const STORAGE_KEY = 'machsruhig-abschiedsbrief';
+
+const RECIPIENTS = [
+  {id: 'partner', label: 'Partner/in'},
+  {id: 'kinder', label: 'Kinder'},
+  {id: 'eltern', label: 'Eltern'},
+  {id: 'geschwister', label: 'Geschwister'},
+  {id: 'freunde', label: 'Freunde'},
+  {id: 'alle', label: 'Alle Angehörigen'}
+];
+
+const WRITING_BLOCKS = [
+  {
+    id: 'sagen',
+    label: 'Was ich euch sagen möchte',
+    prompts: [
+      'Was wolltest du schon immer sagen, hast es aber nie getan?',
+      'Wofür bist du dankbar?',
+      'Was war das Schönste, das ihr zusammen erlebt habt?'
+    ],
+    placeholder: 'Was wolltest du schon immer sagen, hast es aber nie getan? Wofür bist du dankbar? Was war das Schönste, das ihr zusammen erlebt habt?'
+  },
+  {
+    id: 'wichtig',
+    label: 'Was mir im Leben wichtig war',
+    prompts: [
+      'Welche Werte sollen weiterleben?',
+      'Was hat dich geprägt?',
+      'Welchen Rat möchtest du mitgeben?'
+    ],
+    placeholder: 'Welche Werte sollen weiterleben? Was hat dich geprägt? Welchen Rat möchtest du mitgeben?'
+  },
+  {
+    id: 'praktisches',
+    label: 'Praktisches — Wo ihr alles findet',
+    prompts: [
+      'Wo sind wichtige Dokumente? (Testament, Versicherungen, Ordner)',
+      'Welche Passwörter/Zugänge sind wichtig?',
+      'Gibt es offene Angelegenheiten?'
+    ],
+    placeholder: 'Wo sind wichtige Dokumente? Welche Passwörter/Zugänge sind wichtig? Gibt es offene Angelegenheiten?'
+  },
+  {
+    id: 'wuensche',
+    label: 'Was ich mir für euch wünsche',
+    prompts: [
+      'Was wünschst du deinen Liebsten für die Zukunft?',
+      'Wie soll an dich erinnert werden?',
+      'Gibt es etwas, das du dir für die Beerdigung wünschst?'
+    ],
+    placeholder: 'Was wünschst du deinen Liebsten für die Zukunft? Wie soll an dich erinnert werden? Gibt es etwas, das du dir für die Beerdigung wünschst?'
+  }
+];
+
+const FAQ = [
+  {
+    frage: 'Muss ich alles ausfüllen?',
+    antwort: 'Nein. Schreib nur das, was sich richtig anfühlt. Ein einzelner Satz kann genauso wertvoll sein wie ein ganzer Brief. Es gibt kein Richtig oder Falsch.'
+  },
+  {
+    frage: 'Werden meine Worte gespeichert?',
+    antwort: 'Dein Entwurf wird nur in deinem Browser gespeichert (localStorage). Nichts wird an einen Server gesendet oder anderweitig übertragen. Deine Worte bleiben auf deinem Gerät.'
+  },
+  {
+    frage: 'Wo bewahre ich den Brief auf?',
+    antwort: 'Im Vorsorge-Ordner zu Hause, beim Notar oder bei einer Vertrauensperson. Wichtig ist, dass deine Liebsten den Brief finden können, wenn es soweit ist.',
+    link: {url: '/vorsorge/vorsorge-ordner', label: 'Mehr zum Vorsorge-Ordner'}
+  },
+  {
+    frage: 'Kann ich den Brief später ändern?',
+    antwort: 'Ja, dein Entwurf bleibt im Browser gespeichert. Du kannst jederzeit zurückkommen und weiterschreiben oder Änderungen vornehmen.'
+  },
+  {
+    frage: 'Ist das ein Testament?',
+    antwort: 'Nein. Dieser Brief hat keine rechtliche Wirkung. Er ist ein persönliches Schreiben an deine Angehörigen. Für ein rechtsgültiges Testament besuche unsere Seite:',
+    link: {url: '/vorsorge/testament', label: 'Testament erstellen'}
+  }
+];
+
+const CROSS_LINKS = [
+  {url: '/vorsorge/vorsorge-ordner', title: 'Vorsorge-Ordner', desc: 'Alle wichtigen Dokumente an einem Ort'},
+  {url: '/vorsorge/testament', title: 'Testament', desc: 'Deinen letzten Willen festhalten'},
+  {url: '/vorsorge/patientenverfuegung', title: 'Patientenverfügung', desc: 'Medizinische Wünsche dokumentieren'},
+  {url: '/tools/vorsorge-check', title: 'Vorsorge-Check', desc: 'Welche Dokumente brauchst du?'},
+  {url: '/tools/notfallkarte', title: 'Notfallkarte', desc: 'Wichtige Infos immer dabei'}
+];
+
+function Toast({message, visible}) {
+  return React.createElement('div', {
+    className: 'toast' + (visible ? ' show' : ''),
+    'aria-live': 'polite'
+  }, message);
+}
+
+function PrivacyNotice() {
+  return React.createElement('div', {className: 'privacy-notice'},
+    React.createElement('strong', null, 'Deine Worte bleiben auf deinem Gerät.'),
+    React.createElement('p', null, 'Nichts wird gespeichert oder gesendet. Alles läuft in deinem Browser — deine Gedanken gehören nur dir.')
+  );
+}
+
+function RecipientSection({recipient, recipientName, onRecipientChange, onNameChange}) {
+  return React.createElement('div', {className: 'brief-section'},
+    React.createElement('div', {className: 'brief-section-header'},
+      React.createElement('div', {className: 'brief-section-number'}, '1'),
+      React.createElement('h2', {className: 'brief-section-title'}, 'An wen richtet sich dein Brief?')
+    ),
+    React.createElement('div', {className: 'recipient-options'},
+      RECIPIENTS.map(r =>
+        React.createElement('button', {
+          key: r.id,
+          className: 'recipient-chip' + (recipient === r.id ? ' selected' : ''),
+          onClick: () => onRecipientChange(r.id),
+          type: 'button',
+          'aria-pressed': recipient === r.id
+        }, r.label)
+      )
+    ),
+    React.createElement('div', {style: {marginTop: 16}},
+      React.createElement('label', {
+        htmlFor: 'recipient-name',
+        style: {display: 'block', fontSize: 14, fontWeight: 600, color: 'var(--mr-text)', marginBottom: 6}
+      }, 'Name(n) der Empfänger (optional)'),
+      React.createElement('input', {
+        id: 'recipient-name',
+        type: 'text',
+        className: 'name-input',
+        placeholder: 'z.\u00a0B. Anna, Max und Sophie',
+        value: recipientName,
+        onChange: e => onNameChange(e.target.value)
+      })
+    )
+  );
+}
+
+function WritingSection({texts, onTextChange}) {
+  return React.createElement('div', {className: 'brief-section'},
+    React.createElement('div', {className: 'brief-section-header'},
+      React.createElement('div', {className: 'brief-section-number'}, '2'),
+      React.createElement('h2', {className: 'brief-section-title'}, 'Was möchtest du sagen?')
+    ),
+    React.createElement('p', {style: {fontSize: 14, color: 'var(--mr-text-muted)', marginBottom: 24, lineHeight: 1.6}},
+      'Nimm dir so viel Zeit wie du brauchst. Du musst nicht alles ausfüllen — schreib nur das, was sich richtig anfühlt.'
+    ),
+    WRITING_BLOCKS.map(block =>
+      React.createElement('div', {key: block.id, className: 'writing-block'},
+        React.createElement('label', {
+          className: 'writing-block-label',
+          htmlFor: 'text-' + block.id
+        }, block.label),
+        React.createElement('div', {className: 'writing-prompts'},
+          block.prompts.map((prompt, i) =>
+            React.createElement('span', {key: i}, prompt)
+          )
+        ),
+        React.createElement('textarea', {
+          id: 'text-' + block.id,
+          className: 'writing-textarea',
+          placeholder: block.placeholder,
+          value: texts[block.id] || '',
+          onChange: e => onTextChange(block.id, e.target.value),
+          rows: 5
+        })
+      )
+    )
+  );
+}
+
+function PreviewSection({recipient, recipientName, texts, onCopy, onPrint, onSave}) {
+  const hasContent = Object.values(texts).some(t => t && t.trim());
+  const recipientLabel = RECIPIENTS.find(r => r.id === recipient)?.label || '';
+
+  function getGreeting() {
+    if (recipientName && recipientName.trim()) {
+      return 'Liebe/r ' + recipientName.trim() + ',';
+    }
+    if (recipient === 'partner') return 'Mein Liebster, meine Liebste,';
+    if (recipient === 'kinder') return 'Meine lieben Kinder,';
+    if (recipient === 'eltern') return 'Liebe Mama, lieber Papa,';
+    if (recipient === 'geschwister') return 'Meine lieben Geschwister,';
+    if (recipient === 'freunde') return 'Meine lieben Freunde,';
+    if (recipient === 'alle') return 'An meine Liebsten,';
+    return 'An meine Liebsten,';
+  }
+
+  function buildLetterText() {
+    let letter = getGreeting() + '\n\n';
+    if (texts.sagen && texts.sagen.trim()) {
+      letter += texts.sagen.trim() + '\n\n';
+    }
+    if (texts.wichtig && texts.wichtig.trim()) {
+      letter += texts.wichtig.trim() + '\n\n';
+    }
+    if (texts.praktisches && texts.praktisches.trim()) {
+      letter += texts.praktisches.trim() + '\n\n';
+    }
+    if (texts.wuensche && texts.wuensche.trim()) {
+      letter += texts.wuensche.trim() + '\n\n';
+    }
+    letter += 'In Liebe';
+    return letter;
+  }
+
+  return React.createElement('div', {className: 'brief-section'},
+    React.createElement('div', {className: 'brief-section-header'},
+      React.createElement('div', {className: 'brief-section-number'}, '3'),
+      React.createElement('h2', {className: 'brief-section-title'}, 'Dein Brief')
+    ),
+    !hasContent
+      ? React.createElement('div', {className: 'preview-empty'},
+          React.createElement('p', null, 'Sobald du oben etwas schreibst, erscheint dein Brief hier.'),
+          React.createElement('p', {style: {marginTop: 8, fontSize: 13}}, 'Lass dir Zeit. Es gibt kein Richtig oder Falsch.')
+        )
+      : React.createElement(React.Fragment, null,
+          React.createElement('div', {className: 'preview-letter', id: 'letter-preview'},
+            React.createElement('div', {className: 'preview-greeting'}, getGreeting()),
+            texts.sagen && texts.sagen.trim() &&
+              React.createElement('div', {className: 'preview-section'},
+                React.createElement('p', null, texts.sagen.trim())
+              ),
+            texts.wichtig && texts.wichtig.trim() &&
+              React.createElement('div', {className: 'preview-section'},
+                React.createElement('p', null, texts.wichtig.trim())
+              ),
+            texts.praktisches && texts.praktisches.trim() &&
+              React.createElement('div', {className: 'preview-section'},
+                React.createElement('h4', null, 'Praktisches'),
+                React.createElement('p', null, texts.praktisches.trim())
+              ),
+            texts.wuensche && texts.wuensche.trim() &&
+              React.createElement('div', {className: 'preview-section'},
+                React.createElement('p', null, texts.wuensche.trim())
+              ),
+            React.createElement('div', {className: 'preview-closing'}, 'In Liebe')
+          ),
+          React.createElement('div', {className: 'export-buttons'},
+            React.createElement('button', {
+              className: 'btn btn-primary',
+              onClick: () => onCopy(buildLetterText()),
+              type: 'button'
+            },
+              React.createElement('svg', {width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},
+                React.createElement('rect', {x:9,y:9,width:13,height:13,rx:2,ry:2}),
+                React.createElement('path', {d:'M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1'})
+              ),
+              'Kopieren'
+            ),
+            React.createElement('button', {
+              className: 'btn btn-secondary',
+              onClick: onPrint,
+              type: 'button'
+            },
+              React.createElement('svg', {width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},
+                React.createElement('polyline', {points:'6 9 6 2 18 2 18 9'}),
+                React.createElement('path', {d:'M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2'}),
+                React.createElement('rect', {x:6,y:14,width:12,height:8})
+              ),
+              'Drucken'
+            ),
+            React.createElement('button', {
+              className: 'btn btn-secondary',
+              onClick: onSave,
+              type: 'button'
+            },
+              React.createElement('svg', {width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},
+                React.createElement('path', {d:'M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z'}),
+                React.createElement('polyline', {points:'17 21 17 13 7 13 7 21'}),
+                React.createElement('polyline', {points:'7 3 7 8 15 8'})
+              ),
+              'Im Browser speichern'
+            )
+          ),
+          React.createElement('div', {className: 'storage-hint'},
+            'Bewahre den fertigen Brief im Vorsorge-Ordner auf oder gib ihn einer Vertrauensperson. So stellen deine Liebsten sicher, dass sie ihn finden.'
+          )
+        )
+  );
+}
+
+function FAQSection() {
+  return React.createElement('div', {className: 'faq-section'},
+    React.createElement('h2', null, 'Häufig gefragt'),
+    FAQ.map((item, i) =>
+      React.createElement('div', {key: i, className: 'faq-item'},
+        React.createElement('h3', null, item.frage),
+        React.createElement('p', null, item.antwort,
+          item.link && React.createElement(React.Fragment, null,
+            ' ',
+            React.createElement('a', {href: item.link.url}, item.link.label)
+          )
+        )
+      )
+    )
+  );
+}
+
+function CrossLinks() {
+  return React.createElement('div', {className: 'cross-links'},
+    React.createElement('h2', null, 'Das könnte dich auch interessieren'),
+    React.createElement('div', {className: 'cross-links-grid'},
+      CROSS_LINKS.map((link, i) =>
+        React.createElement('a', {key: i, href: link.url, className: 'cross-link-card'},
+          React.createElement('strong', null, link.title),
+          React.createElement('span', null, link.desc)
+        )
+      )
+    )
+  );
+}
+
+function App() {
+  const [recipient, setRecipient] = useState('');
+  const [recipientName, setRecipientName] = useState('');
+  const [texts, setTexts] = useState({sagen: '', wichtig: '', praktisches: '', wuensche: ''});
+  const [toast, setToast] = useState({message: '', visible: false});
+  const [draftLoaded, setDraftLoaded] = useState(false);
+  const saveTimerRef = useRef(null);
+
+  // Load from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const data = JSON.parse(saved);
+        if (data.recipient) setRecipient(data.recipient);
+        if (data.recipientName) setRecipientName(data.recipientName);
+        if (data.texts) setTexts(prev => ({...prev, ...data.texts}));
+        const hasAnyContent = data.recipientName || data.recipient ||
+          (data.texts && Object.values(data.texts).some(t => t && t.trim()));
+        if (hasAnyContent) {
+          setDraftLoaded(true);
+          showToast('Entwurf geladen');
+        }
+      }
+    } catch (e) {}
+  }, []);
+
+  // Auto-save with debounce
+  useEffect(() => {
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      try {
+        const data = {recipient, recipientName, texts, savedAt: new Date().toISOString()};
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {}
+    }, 1000);
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    };
+  }, [recipient, recipientName, texts]);
+
+  function showToast(message) {
+    setToast({message, visible: true});
+    setTimeout(() => setToast(prev => ({...prev, visible: false})), 2500);
+  }
+
+  function handleTextChange(blockId, value) {
+    setTexts(prev => ({...prev, [blockId]: value}));
+  }
+
+  function handleCopy(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('Brief in die Zwischenablage kopiert');
+      if (window.plausible) window.plausible('Abschiedsbrief: Kopiert');
+    }).catch(() => {
+      showToast('Kopieren nicht möglich — bitte manuell markieren');
+    });
+  }
+
+  function handlePrint() {
+    if (window.plausible) window.plausible('Abschiedsbrief: Gedruckt');
+    window.print();
+  }
+
+  function handleSave() {
+    try {
+      const data = {recipient, recipientName, texts, savedAt: new Date().toISOString()};
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      showToast('Entwurf im Browser gespeichert');
+      if (window.plausible) window.plausible('Abschiedsbrief: Gespeichert');
+    } catch (e) {
+      showToast('Speichern nicht möglich');
+    }
+  }
+
+  return React.createElement(React.Fragment, null,
+    // Intro
+    React.createElement('div', {className: 'brief-intro'},
+      React.createElement('h1', null, 'Brief an meine Liebsten'),
+      React.createElement('p', {className: 'lead'},
+        'Manche Dinge möchte man den Menschen sagen, die einem am wichtigsten sind. Aber manchmal fehlen die Worte — oder der richtige Moment. Dieser Brief ist für genau das: Deine Gedanken, deine Erinnerungen, deine Wünsche. In deinem Tempo, in deinen Worten.'
+      )
+    ),
+
+    // Privacy notice
+    React.createElement(PrivacyNotice),
+
+    // Section 1: Recipient
+    React.createElement(RecipientSection, {
+      recipient,
+      recipientName,
+      onRecipientChange: setRecipient,
+      onNameChange: setRecipientName
+    }),
+
+    // Section 2: Writing
+    React.createElement(WritingSection, {
+      texts,
+      onTextChange: handleTextChange
+    }),
+
+    // Section 3: Preview & Export
+    React.createElement(PreviewSection, {
+      recipient,
+      recipientName,
+      texts,
+      onCopy: handleCopy,
+      onPrint: handlePrint,
+      onSave: handleSave
+    }),
+
+    // FAQ
+    React.createElement(FAQSection),
+
+    // Cross-links
+    React.createElement(CrossLinks),
+
+    // Toast
+    React.createElement(Toast, toast)
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(App));
+</script>
+</body>
+</html>

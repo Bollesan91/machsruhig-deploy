@@ -110,7 +110,54 @@
         city: city || '',
         page: window.location.pathname
       });
+    },
+    // Affiliate-Klick-Tracking (Monetarisierung)
+    affiliateClick: function(provider, product, position) {
+      track('affiliate_click', {
+        provider: provider || '',
+        product: product || '',
+        position: position || '',
+        page: window.location.pathname
+      });
+    },
+    // Vorsorge-Conversion-Tracking
+    vorsorgeStart: function(toolName) {
+      track('vorsorge_start', {
+        tool: toolName || '',
+        page: window.location.pathname
+      });
+    },
+    // Cross-Link-Tracking (interne Verlinkung)
+    crossLink: function(from, to) {
+      track('cross_link', {
+        from: from || window.location.pathname,
+        to: to || '',
+        page: window.location.pathname
+      });
     }
   };
+
+  // === Affiliate-Link Tracking (automatisch) ===
+  // Trackt Klicks auf externe Links mit data-affiliate oder rel="sponsored"
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('[data-affiliate], [rel="sponsored"], .mr-affiliate-link');
+    if (el) {
+      window.mrTrack.affiliateClick(
+        el.getAttribute('data-affiliate') || '',
+        el.getAttribute('data-product') || el.textContent.trim().substring(0, 40),
+        el.getAttribute('data-position') || ''
+      );
+    }
+  });
+
+  // === Vorsorge CTA Tracking ===
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('.mr-vorsorge-cta a, [data-track="vorsorge"]');
+    if (el) {
+      window.mrTrack.vorsorgeStart(
+        el.getAttribute('data-tool') || el.textContent.trim().substring(0, 40)
+      );
+    }
+  });
 
 })();

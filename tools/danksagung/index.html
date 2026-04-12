@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="preload" href="/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Danksagung nach Beerdigung — Textvorlagen & Generator | mach's ruhig</title>
+<meta name="description" content="Danksagung nach der Beerdigung: Persönliche Danksagungstexte erstellen. Vorlagen für Trauerkarten, Zeitungsanzeigen und persönliche Briefe. Kostenlos.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/tools/danksagung">
+<meta property="og:title" content="Danksagung nach Beerdigung — Textvorlagen & Generator">
+<meta property="og:description" content="Kostenloser Danksagungs-Generator: Persönliche Texte für Trauerkarten, Zeitungsanzeigen und Briefe. Alles läuft in deinem Browser — deine Daten bleiben privat.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://machsruhig.de/tools/danksagung">
+
+<!-- Plausible Analytics -->
+<script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+<script defer src="/js/tracking.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Danksagungs-Generator",
+      "description": "Persönliche Danksagungstexte nach einer Beerdigung erstellen — für Trauerkarten, Zeitungsanzeigen, Briefe und digitale Nachrichten.",
+      "url": "https://machsruhig.de/tools/danksagung",
+      "applicationCategory": "LifestyleApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://machsruhig.de/"},
+        {"@type": "ListItem", "position": 2, "name": "Danksagung nach Beerdigung", "item": "https://machsruhig.de/tools/danksagung"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wann verschickt man eine Danksagung nach der Beerdigung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine Danksagung wird in der Regel 2 bis 4 Wochen nach der Beerdigung verschickt. Es gibt aber keine strenge Frist — viele Menschen brauchen etwas mehr Zeit, und das ist völlig in Ordnung. Wichtig ist, dass die Danksagung von Herzen kommt, nicht dass sie schnell kommt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was schreibt man in eine Danksagung nach der Beerdigung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In einer Danksagung bedankt man sich für die Anteilnahme, für Blumen, Spenden, tröstende Worte und die Begleitung bei der Trauerfeier. Man kann auch erwähnen, was einem besonders gutgetan hat — zum Beispiel die vielen persönlichen Erinnerungen oder die Unterstützung im Alltag."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss man jedem einzeln danken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein, eine allgemeine Danksagung — zum Beispiel als Trauerkarte oder Zeitungsanzeige — ist üblich und wird von niemandem als unhöflich empfunden. Bei besonders engen Freunden oder Menschen, die viel geholfen haben, kann ein persönlicher Brief oder eine kurze Nachricht eine schöne Geste sein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Darf man per WhatsApp oder E-Mail danken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, bei engeren Freunden und Bekannten ist eine Danksagung per WhatsApp oder E-Mail durchaus akzeptabel. Besonders bei jüngeren Generationen ist das inzwischen verbreitet. Für formellere Anlässe oder ältere Empfänger ist eine gedruckte Karte oder ein Brief passender."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+
+:root{
+  --mr-primary:#7A6B5D;
+  --mr-primary-hover:#5E5047;
+  --mr-warm:#7A6B5D;
+  --mr-bg:#faf8f5;
+  --mr-bg-card:#FFFDF9;
+  --mr-border:#E8E0D6;
+  --mr-text:#2D2319;
+  --mr-text-muted:#73655A;
+  --mr-accent:#866E45;
+  --mr-safety:#FFFAF5;
+  --mr-radius:12px;
+}
+
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}
+.mr-nav-logo span{color:var(--mr-primary)}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,0.08)}
+.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){
+  .mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}
+  .mr-nav-links.open{display:flex}
+  .mr-nav-links a{padding:12px 8px;font-size:15px}
+  .mr-nav-divider{display:none}
+  .mr-nav-toggle{display:block}
+}
+
+.mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}
+.mr-footer-inner{max-width:720px;margin:0 auto}
+.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}
+.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
+.mr-footer a:hover{color:var(--mr-primary)}
+.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
+.mr-footer-bottom p{font-size:12px;color:#73655A}
+
+.mr-content{max-width:720px;margin:0 auto;padding:40px 20px}
+
+/* Wizard Container */
+.wizard-container{background:var(--mr-bg-card);border-radius:var(--mr-radius);padding:40px;margin:20px 0;border:1px solid var(--mr-border)}
+
+/* Progress Bar */
+.progress-bar{display:flex;gap:8px;margin-bottom:32px;align-items:center}
+.progress-bar span{font-size:13px;color:var(--mr-text-muted);font-weight:600}
+.progress-steps{display:flex;gap:8px;flex:1}
+.progress-step{flex:1;height:4px;background:var(--mr-border);border-radius:99px;transition:background 0.3s}
+.progress-step.active{background:var(--mr-accent)}
+.progress-step.done{background:var(--mr-primary)}
+
+/* Form Elements */
+.form-group{margin-bottom:24px}
+.form-group label{display:block;font-weight:600;margin-bottom:8px;color:var(--mr-text);font-size:15px}
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:12px 16px;
+  border:1px solid var(--mr-border);
+  border-radius:8px;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  color:var(--mr-text);
+  background:var(--mr-bg);
+  transition:border-color 0.2s;
+  line-height:1.6;
+}
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  outline:none;
+  border-color:var(--mr-accent);
+  box-shadow:0 0 0 3px rgba(134,110,69,0.1);
+}
+.form-group textarea{resize:vertical;min-height:100px}
+
+.form-group .hint{font-size:13px;color:var(--mr-text-muted);margin-top:6px}
+
+/* Radio Buttons */
+.radio-group{display:flex;flex-direction:column;gap:12px;margin:12px 0}
+
+.radio-option{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:16px 20px;
+  background:var(--mr-bg);
+  border:1px solid var(--mr-border);
+  border-radius:8px;
+  cursor:pointer;
+  transition:border-color 0.2s,background 0.2s;
+}
+.radio-option:hover{
+  border-color:var(--mr-accent);
+  background:rgba(134,110,69,0.04);
+}
+.radio-option input[type="radio"]{
+  margin-top:3px;
+  width:18px;
+  height:18px;
+  cursor:pointer;
+  flex-shrink:0;
+  accent-color:var(--mr-accent);
+}
+.radio-label{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  cursor:pointer;
+}
+.radio-label strong{
+  font-size:15px;
+  color:var(--mr-text);
+}
+.radio-label span{
+  font-size:13px;
+  color:var(--mr-text-muted);
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  padding:12px 24px;
+  border:none;
+  border-radius:99px;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.2s,color 0.2s,border 0.2s;
+  text-decoration:none;
+}
+.btn-primary{background:var(--mr-primary);color:#fff}
+.btn-primary:hover{background:var(--mr-primary-hover)}
+.btn-primary:disabled{opacity:0.5;cursor:not-allowed}
+.btn-secondary{background:var(--mr-bg);border:1px solid var(--mr-border);color:var(--mr-text-muted)}
+.btn-secondary:hover{border-color:var(--mr-accent);color:var(--mr-text)}
+.btn-group{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn-group .btn{flex:1;min-width:140px}
+@media(max-width:520px){
+  .btn-group{flex-direction:column}
+  .btn-group .btn{flex:none;width:100%}
+}
+
+/* Tip Boxes */
+.tip{background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-primary);border-radius:8px;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.6}
+.tip strong{color:var(--mr-text)}
+
+/* Text Output Sections */
+.text-section{background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px;margin-bottom:24px}
+.text-section h3{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.text-section .section-hint{font-size:13px;color:var(--mr-text-muted);font-style:italic;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--mr-border)}
+
+.text-output{
+  width:100%;
+  min-height:160px;
+  padding:16px;
+  border:1px solid var(--mr-border);
+  border-radius:8px;
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  line-height:1.8;
+  color:var(--mr-text);
+  background:var(--mr-bg-card);
+  resize:vertical;
+  transition:border-color 0.2s;
+}
+.text-output:focus{
+  outline:none;
+  border-color:var(--mr-accent);
+  box-shadow:0 0 0 3px rgba(134,110,69,0.1);
+}
+
+/* Export Controls */
+.export-controls{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+.export-controls .btn{flex:1;min-width:160px}
+@media(max-width:520px){
+  .export-controls{flex-direction:column}
+  .export-controls .btn{flex:none;width:100%}
+}
+
+/* Copy Feedback */
+.copy-feedback{
+  display:inline-block;
+  margin-left:8px;
+  font-size:13px;
+  color:var(--mr-accent);
+  font-weight:600;
+  opacity:0;
+  transition:opacity 0.3s;
+}
+.copy-feedback.visible{opacity:1}
+
+/* Privacy Notice */
+.privacy-notice{background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:16px;margin:20px 0;font-size:13px;color:var(--mr-text-muted);line-height:1.6;text-align:center}
+.privacy-notice strong{color:var(--mr-text)}
+
+/* Info Box */
+.info-box{background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:16px;margin:20px 0;font-size:14px;line-height:1.6}
+.info-box strong{color:var(--mr-text)}
+.info-box ul{margin-top:12px;margin-left:20px;font-size:13px;color:var(--mr-text-muted);line-height:1.8}
+
+/* FAQ Section */
+.faq-section{margin-top:48px}
+.faq-section h2{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--mr-text);margin-bottom:24px}
+.faq-item{border:1px solid var(--mr-border);border-radius:8px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{padding:16px 20px;font-weight:600;font-size:15px;color:var(--mr-text);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;background:var(--mr-bg-card);transition:background 0.2s}
+.faq-item summary:hover{background:var(--mr-safety)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:20px;font-weight:400;color:var(--mr-text-muted);transition:transform 0.2s}
+.faq-item[open] summary::after{content:'-'}
+.faq-item .faq-answer{padding:16px 20px;font-size:14px;color:var(--mr-text-muted);line-height:1.7;border-top:1px solid var(--mr-border)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+@media print{
+  .no-print,.mr-nav,.mr-footer,.wizard-buttons,.export-controls,.btn-group,.btn-secondary,.faq-section{display:none!important}
+  body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.6}
+  .mr-content{max-width:100%;padding:0}
+  .wizard-container{border:none;background:#fff;padding:0}
+  .text-section{page-break-inside:avoid;margin-bottom:16px}
+  .text-output{border:none;background:#fff;padding:0}
+  .tip{background:#f5f5f5;border:1px solid #ccc}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
+
+<!-- Navigation -->
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü">&#8942;</button>
+    <div class="mr-nav-links">
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="mr-content" id="main">
+  <div id="app"></div>
+</div>
+
+<!-- Footer -->
+<footer class="mr-footer no-print">
+  <div class="mr-footer-inner">
+    <div class="mr-footer-grid">
+      <div>
+        <h4>mach's ruhig</h4>
+        <p>Deine Anlaufstelle für Trauer, Vorsorge und Bestattung. Unabhängig, kostenlos, in deinem Tempo.</p>
+      </div>
+      <div>
+        <h4>Schnelllinks</h4>
+        <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
+        <a href="/tools/vorsorge-check">Vorsorge-Check</a>
+        <a href="/bestattungsarten">Bestattungsarten</a>
+      </div>
+      <div>
+        <h4>Rechtlich</h4>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
+    </div>
+    <div class="mr-footer-bottom">
+      <p>&copy; 2026 mach's ruhig. Alle Rechte vorbehalten.</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/babel">
+const {useState, useCallback} = React;
+
+// Relationship options
+const RELATIONSHIPS = [
+  {value:'mutter',label:'Mutter',possessive:'meiner Mutter',family:'Die Familie'},
+  {value:'vater',label:'Vater',possessive:'meinem Vater',family:'Die Familie'},
+  {value:'partner',label:'Partner/in',possessive:'meinem Partner/meiner Partnerin',family:'In stiller Trauer'},
+  {value:'grosseltern',label:'Grosseltern',possessive:'meiner Grossmutter/meinem Grossvater',family:'Die Familie'},
+  {value:'kind',label:'Kind',possessive:'unserem Kind',family:'Die Familie'},
+  {value:'geschwister',label:'Geschwister',possessive:'meiner Schwester/meinem Bruder',family:'Die Familie'},
+  {value:'freund',label:'Freund/in',possessive:'meinem Freund/meiner Freundin',family:'In Dankbarkeit'},
+];
+
+// Format types
+const FORMATS = [
+  {value:'trauerkarte',label:'Trauerkarte',desc:'Gedruckte Karte an den Bekanntenkreis'},
+  {value:'zeitungsanzeige',label:'Zeitungsanzeige',desc:'Kurze, formelle Anzeige in der Zeitung'},
+  {value:'brief',label:'Persönlicher Brief',desc:'Ausführlicher, persönlicher Dank'},
+  {value:'digital',label:'E-Mail / WhatsApp',desc:'Kurze, herzliche Nachricht für den engeren Kreis'},
+];
+
+// Generate the three text variants
+function generateTexts(data) {
+  const name = data.name || '[Name]';
+  const rel = RELATIONSHIPS.find(r => r.value === data.relationship);
+  const possessive = rel ? rel.possessive : 'unserem/unserer Verstorbenen';
+  const family = rel ? rel.family : 'Die Angehörigen';
+  const ceremony = data.ceremony ? data.ceremony.trim() : '';
+
+  // Formal variant
+  let formal = `Danksagung\n\n`;
+  formal += `Für die herzliche Anteilnahme beim Abschied von\n\n${name}\n\n`;
+  formal += `möchten wir uns von Herzen bedanken. `;
+  formal += `Euer Mitgefühl, die tröstenden Worte und die liebevolle Begleitung haben uns in dieser schweren Zeit Kraft gegeben.`;
+  if (ceremony) {
+    formal += `\n\n${ceremony}`;
+  }
+  formal += `\n\nIn stiller Trauer\n${family}`;
+
+  // Personal variant
+  let personal = `Liebe Freunde, liebe Familie,\n\n`;
+  personal += `der Abschied von ${possessive} ${name} hat uns tief bewegt. `;
+  personal += `Umso dankbarer sind wir für eure Nähe und euer Mitgefühl.\n\n`;
+  personal += `Eure Worte, eure Umarmungen und eure stille Anwesenheit haben uns getragen — mehr als ihr vielleicht ahnt.`;
+  if (ceremony) {
+    personal += `\n\n${ceremony}`;
+  }
+  personal += `\n\nDanke, dass ihr da wart.\n${family}`;
+
+  // Short variant
+  let short = `Danke für eure Anteilnahme beim Abschied von ${name}. `;
+  short += `Eure Worte und eure Nähe haben uns sehr gutgetan.`;
+  if (ceremony) {
+    short += ` ${ceremony}`;
+  }
+  short += `\n\n${family}`;
+
+  return { formal, personal, short };
+}
+
+// Main App Component
+function DanksagungGenerator() {
+  const [step, setStep] = useState(0);
+  const [formData, setFormData] = useState({
+    format: '',
+    name: '',
+    date: '',
+    relationship: '',
+    ceremony: '',
+  });
+
+  const [texts, setTexts] = useState({
+    formal: '',
+    personal: '',
+    short: '',
+  });
+
+  const [copyFeedback, setCopyFeedback] = useState({formal: false, personal: false, short: false});
+
+  const updateFormData = (field, value) => {
+    setFormData(prev => ({...prev, [field]: value}));
+  };
+
+  const handleNext = () => {
+    if (step < 2) {
+      setStep(step + 1);
+      if (window.mrTrack) window.mrTrack('toolStep', {tool: 'danksagung', step: step + 1});
+    }
+    if (step === 1) {
+      // Generate texts when moving to step 3
+      const generated = generateTexts(formData);
+      setTexts(generated);
+    }
+  };
+
+  const handleBack = () => {
+    if (step > 0) setStep(step - 1);
+  };
+
+  const copyText = useCallback((variant) => {
+    const text = texts[variant];
+    if (!text) return;
+    navigator.clipboard.writeText(text).then(() => {
+      setCopyFeedback(prev => ({...prev, [variant]: true}));
+      setTimeout(() => setCopyFeedback(prev => ({...prev, [variant]: false})), 2000);
+      if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'copy', variant});
+    });
+  }, [texts]);
+
+  const handlePrint = () => {
+    if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'print'});
+    window.print();
+  };
+
+  const reset = () => {
+    setStep(0);
+    setFormData({
+      format: '',
+      name: '',
+      date: '',
+      relationship: '',
+      ceremony: '',
+    });
+    setTexts({formal: '', personal: '', short: ''});
+  };
+
+  // Validation
+  const canProceedStep0 = formData.format !== '';
+  const canProceedStep1 = formData.name.trim() !== '' && formData.relationship !== '';
+
+  return (
+    <>
+      {/* Page Intro */}
+      <div style={{marginBottom:8}}>
+        <h1 style={{fontFamily:"'Fraunces',serif",fontSize:28,fontWeight:700,marginBottom:12,color:'var(--mr-text)'}}>
+          Danksagung nach der Beerdigung
+        </h1>
+        <p style={{fontSize:16,color:'var(--mr-text-muted)',lineHeight:1.7,marginBottom:4}}>
+          Nach einem Abschied bleibt oft die Frage: Wie bedanke ich mich bei all den Menschen, die da waren? Dieser Assistent hilft dir, die richtigen Worte zu finden — Schritt für Schritt, in deinem Tempo.
+        </p>
+      </div>
+
+      {step < 2 ? (
+        <div className="wizard-container">
+          {/* Progress Bar */}
+          <div className="progress-bar">
+            <div className="progress-steps">
+              {[0,1,2].map(i => (
+                <div
+                  key={i}
+                  className={`progress-step ${i < step ? 'done' : i === step ? 'active' : ''}`}
+                ></div>
+              ))}
+            </div>
+            <span>Schritt {step + 1} von 3</span>
+          </div>
+
+          {/* Step 1: Format Selection */}
+          {step === 0 && (
+            <div>
+              <h2 style={{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,marginBottom:8,color:'var(--mr-text)'}}>
+                Für wen ist die Danksagung?
+              </h2>
+              <p style={{fontSize:14,color:'var(--mr-text-muted)',marginBottom:24,lineHeight:1.6}}>
+                Je nach Empfänger und Anlass passt ein anderes Format. Wähle, was am besten zu deiner Situation passt.
+              </p>
+
+              <div className="form-group">
+                <label style={{marginBottom:16}}>Welches Format möchtest du verwenden?</label>
+                <div className="radio-group">
+                  {FORMATS.map(format => (
+                    <label key={format.value} className="radio-option">
+                      <input
+                        type="radio"
+                        name="format"
+                        value={format.value}
+                        checked={formData.format === format.value}
+                        onChange={e => updateFormData('format', e.target.value)}
+                      />
+                      <span className="radio-label">
+                        <strong>{format.label}</strong>
+                        <span>{format.desc}</span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="tip">
+                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format hilft uns, die Texte auf die passende Länge und den richtigen Ton abzustimmen.
+              </div>
+            </div>
+          )}
+
+          {/* Step 2: Details */}
+          {step === 1 && (
+            <div>
+              <h2 style={{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,marginBottom:8,color:'var(--mr-text)'}}>
+                Details zur verstorbenen Person
+              </h2>
+              <p style={{fontSize:14,color:'var(--mr-text-muted)',marginBottom:24,lineHeight:1.6}}>
+                Ein paar Angaben genügen, um die Danksagung persönlich zu gestalten. Nur der Name ist notwendig — alles andere ist optional.
+              </p>
+
+              <div className="form-group">
+                <label htmlFor="name">Name der verstorbenen Person</label>
+                <input
+                  id="name"
+                  type="text"
+                  value={formData.name}
+                  onChange={e => updateFormData('name', e.target.value)}
+                  placeholder="Vorname und/oder Nachname"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="date">Datum der Beerdigung oder des Todes (optional)</label>
+                <input
+                  id="date"
+                  type="text"
+                  value={formData.date}
+                  onChange={e => updateFormData('date', e.target.value)}
+                  placeholder="z.B. 15. März 2026"
+                />
+                <div className="hint">Wird nicht in den Text eingefügt, hilft aber bei der Einordnung.</div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="relationship">Deine Beziehung zur verstorbenen Person</label>
+                <select
+                  id="relationship"
+                  value={formData.relationship}
+                  onChange={e => updateFormData('relationship', e.target.value)}
+                >
+                  <option value="">— Bitte auswählen —</option>
+                  {RELATIONSHIPS.map(rel => (
+                    <option key={rel.value} value={rel.value}>{rel.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="ceremony">Was war besonders an der Trauerfeier? (optional)</label>
+                <textarea
+                  id="ceremony"
+                  value={formData.ceremony}
+                  onChange={e => updateFormData('ceremony', e.target.value)}
+                  placeholder="z.B. Die vielen persönlichen Worte haben uns sehr berührt. / Besonderer Dank gilt dem Chor der Gemeinde. / Die Blumenspenden waren überwältigend."
+                  style={{minHeight:80}}
+                />
+                <div className="hint">Dieser Satz wird in den Text eingefügt, wenn du möchtest.</div>
+              </div>
+
+              <div className="tip">
+                <strong>Nimm dir Zeit.</strong> Es gibt keinen Druck. Du kannst die Texte anschliessend noch bearbeiten und anpassen — so oft du möchtest.
+              </div>
+            </div>
+          )}
+
+          {/* Navigation Buttons */}
+          <div className="btn-group" style={{marginTop:32}}>
+            {step > 0 && (
+              <button className="btn btn-secondary" onClick={handleBack}>
+                &larr; Zurück
+              </button>
+            )}
+            <button
+              className="btn btn-primary"
+              onClick={handleNext}
+              disabled={step === 0 ? !canProceedStep0 : !canProceedStep1}
+            >
+              {step === 1 ? 'Danksagung erstellen' : 'Weiter'}
+            </button>
+          </div>
+        </div>
+      ) : (
+        /* Step 3: Output */
+        <div>
+          <h2 style={{fontFamily:"'Fraunces',serif",fontSize:24,fontWeight:700,marginBottom:8,color:'var(--mr-text)'}}>
+            Deine Danksagungstexte
+          </h2>
+          <p style={{fontSize:15,color:'var(--mr-text-muted)',marginBottom:24,lineHeight:1.7}}>
+            Hier sind drei Varianten für dich. Du kannst jeden Text direkt bearbeiten — klicke einfach in das Textfeld und schreibe nach deinen Wünschen um. Kopiere anschliessend die Version, die am besten passt.
+          </p>
+
+          <div className="privacy-notice">
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben bleiben in deinem Browser. Nichts wird gespeichert oder an einen Server übertragen.
+          </div>
+
+          {/* Formal variant */}
+          <div className="text-section">
+            <h3>Formelle Variante</h3>
+            <div className="section-hint">
+              Passend für Zeitungsanzeigen, gedruckte Karten oder offizielle Danksagungen.
+            </div>
+            <textarea
+              className="text-output"
+              value={texts.formal}
+              onChange={e => setTexts(prev => ({...prev, formal: e.target.value}))}
+              rows={8}
+            />
+            <div style={{marginTop:12,display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}}>
+              <button className="btn btn-secondary" onClick={() => copyText('formal')} style={{padding:'8px 20px',fontSize:14}}>
+                Kopieren
+              </button>
+              <span className={`copy-feedback ${copyFeedback.formal ? 'visible' : ''}`}>Kopiert!</span>
+            </div>
+          </div>
+
+          {/* Personal variant */}
+          <div className="text-section">
+            <h3>Persönliche Variante</h3>
+            <div className="section-hint">
+              Für Briefe, Karten an enge Freunde oder persönliche Nachrichten.
+            </div>
+            <textarea
+              className="text-output"
+              value={texts.personal}
+              onChange={e => setTexts(prev => ({...prev, personal: e.target.value}))}
+              rows={8}
+            />
+            <div style={{marginTop:12,display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}}>
+              <button className="btn btn-secondary" onClick={() => copyText('personal')} style={{padding:'8px 20px',fontSize:14}}>
+                Kopieren
+              </button>
+              <span className={`copy-feedback ${copyFeedback.personal ? 'visible' : ''}`}>Kopiert!</span>
+            </div>
+          </div>
+
+          {/* Short variant */}
+          <div className="text-section">
+            <h3>Kurze Variante</h3>
+            <div className="section-hint">
+              Für WhatsApp, E-Mail oder eine kurze Nachricht an den engeren Kreis.
+            </div>
+            <textarea
+              className="text-output"
+              value={texts.short}
+              onChange={e => setTexts(prev => ({...prev, short: e.target.value}))}
+              rows={4}
+            />
+            <div style={{marginTop:12,display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}}>
+              <button className="btn btn-secondary" onClick={() => copyText('short')} style={{padding:'8px 20px',fontSize:14}}>
+                Kopieren
+              </button>
+              <span className={`copy-feedback ${copyFeedback.short ? 'visible' : ''}`}>Kopiert!</span>
+            </div>
+          </div>
+
+          {/* Export Controls */}
+          <div className="export-controls">
+            <button className="btn btn-primary" onClick={handlePrint}>
+              Drucken / Als PDF speichern
+            </button>
+            <button className="btn btn-secondary" onClick={reset}>
+              Noch einmal anfangen
+            </button>
+          </div>
+
+          <div className="info-box">
+            <strong>Hinweise zum Verschicken:</strong>
+            <ul>
+              <li>Eine Danksagung wird üblicherweise 2 bis 4 Wochen nach der Beerdigung verschickt</li>
+              <li>Es gibt keinen festen Zeitrahmen — nimm dir so viel Zeit, wie du brauchst</li>
+              <li>Eine allgemeine Danksagung ist völlig in Ordnung, du musst nicht jedem einzeln schreiben</li>
+              <li>Bei sehr engen Freunden kann eine kurze persönliche Nachricht eine schöne Geste sein</li>
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* FAQ Section */}
+      <div className="faq-section">
+        <h2>Häufige Fragen zur Danksagung nach der Beerdigung</h2>
+
+        <details className="faq-item">
+          <summary>Wann verschickt man eine Danksagung nach der Beerdigung?</summary>
+          <div className="faq-answer">
+            Eine Danksagung wird in der Regel <strong>2 bis 4 Wochen nach der Beerdigung</strong> verschickt. Es gibt aber keine strenge Frist. Viele Menschen brauchen etwas mehr Zeit, und das ist völlig in Ordnung. Wichtig ist, dass die Danksagung von Herzen kommt — nicht, dass sie schnell kommt. Niemand wird es dir übel nehmen, wenn du etwas länger brauchst.
+          </div>
+        </details>
+
+        <details className="faq-item">
+          <summary>Was schreibt man in eine Danksagung?</summary>
+          <div className="faq-answer">
+            In einer Danksagung bedankt man sich für die <strong>Anteilnahme, Blumen, Spenden, tröstende Worte</strong> und die Begleitung bei der Trauerfeier. Du kannst auch erwähnen, was dir besonders gutgetan hat — zum Beispiel die persönlichen Erinnerungen, die geteilt wurden, oder die praktische Hilfe im Alltag. Es muss nicht lang sein. Ein paar ehrliche Sätze reichen.
+          </div>
+        </details>
+
+        <details className="faq-item">
+          <summary>Muss man jedem einzeln danken?</summary>
+          <div className="faq-answer">
+            <strong>Nein.</strong> Eine allgemeine Danksagung — zum Beispiel als Trauerkarte oder Zeitungsanzeige — ist üblich und wird von niemandem als unhöflich empfunden. Bei besonders engen Freunden oder Menschen, die viel geholfen haben, kann ein persönlicher Brief oder eine kurze Nachricht eine schöne zusätzliche Geste sein. Aber es ist keine Pflicht.
+          </div>
+        </details>
+
+        <details className="faq-item">
+          <summary>Darf man per WhatsApp oder E-Mail danken?</summary>
+          <div className="faq-answer">
+            <strong>Ja, bei engem Kreis ist das absolut akzeptabel.</strong> Besonders bei jüngeren Generationen ist eine digitale Danksagung inzwischen verbreitet und wird nicht als respektlos empfunden. Für formellere Anlässe — etwa bei Arbeitskollegen oder älteren Empfängern — ist eine gedruckte Karte oder ein Brief weiterhin die passendere Wahl.
+          </div>
+        </details>
+      </div>
+    </>
+  );
+}
+
+// Render the app
+ReactDOM.createRoot(document.getElementById('app')).render(<DanksagungGenerator />);
+</script>
+</body>
+</html>

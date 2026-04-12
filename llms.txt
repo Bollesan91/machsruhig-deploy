@@ -1,41 +1,74 @@
 # machsruhig.de
 
-> Vorsorge, Trauer und Bestattung — Schritt für Schritt, in deinem Tempo.
+> Vorsorge, Trauer und Bestattung — Schritt fuer Schritt, in deinem Tempo.
 
-machsruhig.de ist ein deutschsprachiges Informationsportal zu den Themen Todesfall, Bestattung, Trauer und Vorsorge. Ziel ist es, Menschen in einer schwierigen Lebenssituation verlässliche, verständliche und kostenlose Hilfe zu bieten.
+machsruhig.de ist ein deutschsprachiges Informationsportal zu den Themen Todesfall, Bestattung, Trauer und Vorsorge. Ziel ist es, Menschen in einer schwierigen Lebenssituation verlaessliche, verstaendliche und kostenlose Hilfe zu bieten.
 
 ## Kernthemen
 
 ### Akutfall
 - **Checkliste Todesfall:** Interaktive Checkliste mit den wichtigsten Schritten nach einem Todesfall, personalisiert nach Bundesland — /tools/checkliste-todesfall
-- **Beerdigung planen:** Leitfaden für die Planung einer Bestattung — Ablauf, Kosten, Entscheidungen — /beerdigung-planen
-- **Bestattungskosten:** Transparente Kostenübersicht mit regionalem Rechner — /bestattungskosten
+- **Beerdigung planen:** Leitfaden fuer die Planung einer Bestattung — Ablauf, Kosten, Entscheidungen — /beerdigung-planen
+- **Bestattungskosten:** Transparente Kostenuebersicht mit regionalem Rechner — /bestattungskosten
 - **Bestattungsarten:** Vergleich aller Bestattungsformen (Erd-, Feuer-, See-, Baumbestattung u.a.) — /bestattungsarten
+- **Bestattungskosten-Rechner:** Interaktiver Rechner fuer regionale Bestattungskosten — /tools/bestattungskosten-rechner
+- **Beerdigungsplaner:** Tool zur strukturierten Planung einer Beerdigung — /tools/beerdigungsplaner
 
 ### Trauer & Abschied
-- **Trauerrede schreiben:** Schritt-für-Schritt-Generator für persönliche Trauerreden — /trauerrede-schreiben
-- **Kondolenzschreiben:** Leitfaden für einfühlsame Beileidsbriefe und Trauerkarten — /kondolenzschreiben
-- **Trauersprüche:** Kuratierte Sammlung von Trauersprüchen, Zitaten und Bibelstellen (nur gemeinfreie Autoren) — /trauersprueche
+- **Trauerrede schreiben:** Schritt-fuer-Schritt-Anleitung fuer persoenliche Trauerreden — /trauerrede-schreiben
+- **Trauerrede-Generator:** Interaktiver 5-Schritt-Baukasten fuer Trauerreden — /tools/trauerrede
+- **Kondolenzschreiben:** Leitfaden fuer einfuehlsame Beileidsbriefe und Trauerkarten — /kondolenzschreiben
+- **Trauerspueche:** Kuratierte Sammlung von Trauerspruechen, Zitaten und Bibelstellen (nur gemeinfreie Autoren) — /trauersprueche
+- **Danksagung nach Beerdigung:** Textgenerator fuer Danksagungskarten und -briefe — /tools/danksagung
+- **Kindern den Tod erklaeren:** Altersgerechte Gespraechsleitfaeden fuer Eltern (3-5, 6-9, 10-13, 14+) — /kindern-tod-erklaeren
+- **Brief an meine Liebsten:** Gefuehrte Vorlage fuer persoenliche Abschiedsbriefe an Angehoerige — /tools/abschiedsbrief
 
 ### Vorsorge
-- **Vorsorge-Check:** Interaktives Tool zur Prüfung des persönlichen Vorsorgestatus — /tools/vorsorge-check
-- **Patientenverfügung:** Informationsseite zu Patientenverfügungen nach § 1827 BGB — /vorsorge/patientenverfuegung
-- **Testament:** Übersicht zu Testamentsarten, Pflichtanteil und Formvorschriften — /vorsorge/testament
-- **Sterbegeldversicherung:** Vergleichsseite zu Sterbegeldversicherungen, Wartezeiten und Schonvermögen — /vorsorge/sterbegeldversicherung
+- **Vorsorge-Uebersicht:** Zentrale Einstiegsseite fuer alle Vorsorge-Themen — /vorsorge/
+- **Vorsorge-Check:** Interaktives Tool zur Pruefung des persoenlichen Vorsorgestatus — /tools/vorsorge-check
+- **Bestattungsvorsorge:** Umfassender Leitfaden zu Bestattungsvorsorge, Vorsorgevertrag und Finanzierung — /vorsorge/bestattungsvorsorge
+- **Sterbegeldversicherung:** Vergleichsseite zu Sterbegeldversicherungen, Wartezeiten und Schonvermoegen — /vorsorge/sterbegeldversicherung
+- **Patientenverfuegung:** Informationsseite zu Patientenverfuegungen nach § 1827 BGB — /vorsorge/patientenverfuegung
+- **Testament:** Uebersicht zu Testamentsarten, Pflichtanteil und Formvorschriften — /vorsorge/testament
+- **Vorsorge-Ordner:** Anleitung zum Anlegen eines persoenlichen Vorsorge-Ordners — /vorsorge/vorsorge-ordner
+- **Digitaler Nachlass:** Was passiert mit Online-Konten im Todesfall? Checkliste und Plattform-Anleitungen — /vorsorge/digitaler-nachlass
+- **Sorgerechtsverfuegung:** Leitfaden fuer Eltern: Wer bekommt das Sorgerecht? Mit Muster und Entscheidungshilfe — /vorsorge/sorgerechtsverfuegung
+- **Was passiert ohne Vorsorge?** Konsequenzen erklaert: ohne Patientenverfuegung, Testament, Vollmacht — /vorsorge/ohne-vorsorge
+
+### Praktische Hilfe nach dem Todesfall
+- **Vertraege kuendigen nach Todesfall:** Komplette Checkliste mit Musterschreiben und Fristen — /vertraege-kuendigen
+- **Notfallkarte Generator:** Druckbare Portemonnaie-Karte mit Notfallkontakten und Dokumenten-Standorten — /tools/notfallkarte
 
 ### Bestatter finden
-- **Lokale Bestatter-Suche:** 50 Stadtseiten mit Lead-Formular, Friedhöfen, Kostenübersicht und regionalem Bestattungsrecht — /bestatter/{stadt}
+- **Lokale Bestatter-Suche:** 50 Stadtseiten mit Lead-Formular, Friedhoefen, Kostenuebersicht und regionalem Bestattungsrecht — /bestatter/{stadt}
 - **Bestattungsrecht nach Bundesland:** 16 Bundesland-Seiten mit landesspezifischen Fristen, Vorschriften und Besonderheiten — /bestattung-in/{bundesland}
+
+## Tools (alle kostenlos, ohne Anmeldung)
+
+| Tool | URL | Beschreibung |
+|------|-----|-------------|
+| Checkliste Todesfall | /tools/checkliste-todesfall | Personalisierte Schritt-fuer-Schritt-Checkliste |
+| Bestattungskosten-Rechner | /tools/bestattungskosten-rechner | Kostenberechnung nach Region und Bestattungsart |
+| Trauerrede-Generator | /tools/trauerrede | 5-Schritt-Baukasten mit Tonalitaetswahl |
+| Vorsorge-Check | /tools/vorsorge-check | Persoenlicher Vorsorgestatus in 3 Minuten |
+| Beerdigungsplaner | /tools/beerdigungsplaner | Strukturierte Beerdigungsplanung |
+| Danksagung-Generator | /tools/danksagung | Textvorlagen fuer Danksagungskarten nach der Beerdigung |
+| Notfallkarte | /tools/notfallkarte | Druckbare Portemonnaie-Karte mit Notfalldaten |
+| Brief an meine Liebsten | /tools/abschiedsbrief | Gefuehrte Vorlage fuer persoenliche Abschiedsbriefe |
+| Fristen-Radar | /tools/fristen-radar | Alle Fristen nach dem Todesfall auf einen Blick (Erbausschlagung, Kuendigungen, Steuer) |
+| Kostenrechner | /tools/kostenrechner | Schneller Kostenueberblick |
 
 ## Wichtige Hinweise
 
-- machsruhig.de ist ein Informationsportal, keine Behörde und keine Rechtsberatung
-- Bestattungsgesetze unterscheiden sich nach Bundesland — Inhalte berücksichtigen regionale Unterschiede
-- Alle Tools sind kostenlos, ohne Anmeldung und speichern keine persönlichen Daten auf Servern
-- Das Portal wird unabhängig betrieben und finanziert sich über Vermittlung von Bestattungsleistungen
+- machsruhig.de ist ein Informationsportal, keine Behoerde und keine Rechtsberatung
+- Bestattungsgesetze unterscheiden sich nach Bundesland — Inhalte beruecksichtigen regionale Unterschiede
+- Alle Tools sind kostenlos, ohne Anmeldung und speichern keine persoenlichen Daten auf Servern
+- Das Portal wird unabhaengig betrieben
+- Alle Preisangaben sind Richtwerte und koennen regional variieren
 
 ## Kontakt
 
 - Website: https://machsruhig.de
 - Impressum: https://machsruhig.de/impressum
 - Datenschutz: https://machsruhig.de/datenschutz
+- Methodik: https://machsruhig.de/methodik

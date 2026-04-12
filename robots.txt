@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 Disallow: /templates/
+Disallow: /_dev/
+Disallow: /data/
+Disallow: /.claude/
 Crawl-delay: 1
 User-agent: AhrefsBot
 Crawl-delay: 10

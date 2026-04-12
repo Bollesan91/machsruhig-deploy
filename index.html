@@ -138,7 +138,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
       <li><strong>Trauerrede schreiben</strong> — Worte finden, wenn es schwerfällt</li>
       <li><strong>Bestattungskosten</strong> — Was kostet eine Bestattung wirklich?</li>
       <li><strong>Bestattungsarten</strong> — Erdbestattung, Feuerbestattung, Alternativen</li>
+      <li><strong>Vorsorge</strong> — Patientenverfügung, Testament, Bestattungsvorsorge</li>
       <li><strong>Bestatter finden</strong> — Vertrauensvolle Bestatter in deiner Nähe</li>
+      <li><strong>Kondolenz & Trauersprüche</strong> — Die richtigen Worte finden</li>
     </ul>
     <p style="margin-top:24px"><strong>Kostenlos. Keine Registrierung. In deinem Tempo.</strong></p>
     <p style="margin-top:12px"><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a> · <a href="/bestatter/muenchen/">Bestatter finden</a></p>
@@ -194,6 +196,15 @@ const topics = [
     href: "/bestattungsarten"
   },
   {
+    id: "vorsorge",
+    title: "Vorsorge",
+    sub: "Alles regeln, bevor es nötig wird",
+    desc: "Patientenverfügung, Testament, Bestattungsvorsorge, Sterbegeldversicherung — in Ruhe und selbstbestimmt.",
+    cluster: "vorsorge",
+    status: "live",
+    href: "/vorsorge/"
+  },
+  {
     id: "bestatter",
     title: "Bestatter finden",
     sub: "Vertrauensvoll und in deiner Nähe",
@@ -201,6 +212,15 @@ const topics = [
     cluster: "lokal",
     status: "live",
     href: "/bestatter/muenchen/"
+  },
+  {
+    id: "kondolenz",
+    title: "Kondolenz & Trauersprüche",
+    sub: "Die richtigen Worte finden",
+    desc: "Beileid ausdrücken: Kondolenzschreiben, Trauersprüche und Zitate — einfühlsam und authentisch.",
+    cluster: "trauer",
+    status: "live",
+    href: "/kondolenzschreiben"
   }
 ];
 
@@ -262,9 +282,9 @@ function Footer() {
             <a href="/beerdigung-planen">Beerdigung planen</a>
             <a href="/kondolenzschreiben">Kondolenzschreiben</a>
             <a href="/trauersprueche">Trauersprüche</a>
-            <a href="/tools/vorsorge-check">Vorsorge-Check</a>
-            <a href="/vorsorge/patientenverfuegung">Patientenverfügung</a>
-            <a href="/vorsorge/testament">Testament</a>
+            <a href="/vorsorge/">Vorsorge</a>
+            <a href="/vorsorge/bestattungsvorsorge">Bestattungsvorsorge</a>
+            <a href="/vorsorge/sterbegeldversicherung">Sterbegeldversicherung</a>
             <a href="/bestattungsarten">Bestattungsarten</a>
             <a href="/bestatter/muenchen/">Bestatter finden</a>
           </div>

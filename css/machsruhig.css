@@ -1,0 +1,1460 @@
+/* ==========================================================================
+   machsruhig.css — Shared Stylesheet for machsruhig.de
+   Version: 1.0
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. FONT-FACE DECLARATIONS (Self-hosted, DSGVO-konform)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 700;
+  src: url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 800;
+  src: url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* ==========================================================================
+   2. CSS CUSTOM PROPERTIES (machsruhig Farbwelt)
+   ========================================================================== */
+
+:root {
+  --mr-primary: #7A6B5D;
+  --mr-primary-hover: #5E5047;
+  --mr-warm: #7A6B5D;
+  --mr-bg: #faf8f5;
+  --mr-bg-card: #FFFDF9;
+  --mr-border: #E8E0D6;
+  --mr-text: #2D2319;
+  --mr-text-muted: #73655A;
+  --mr-accent: #866E45;
+  --mr-safety: #FFFAF5;
+  --mr-radius: 12px;
+}
+
+
+/* ==========================================================================
+   3. CSS RESET & BASE STYLES
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #e8ddd0;
+  color: #1a1a1a;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #faf8f5;
+  color: #2D2319;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   4. ANIMATIONS
+   ========================================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================================
+   5. SKIP LINK (Accessibility)
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--mr-primary);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.3s;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+
+/* ==========================================================================
+   6. NAVIGATION (.mr-nav)
+   ========================================================================== */
+
+.mr-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--mr-border);
+  padding: 0 20px;
+}
+
+.mr-nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.mr-nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--mr-text);
+  text-decoration: none;
+}
+
+.mr-nav-logo span {
+  color: var(--mr-primary);
+}
+
+.mr-nav-links {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.mr-nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mr-text-muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.mr-nav-links a:hover {
+  color: var(--mr-text);
+  background: rgba(122, 107, 93, 0.08);
+}
+
+.mr-nav-links a.active {
+  color: var(--mr-primary);
+  font-weight: 600;
+}
+
+.mr-nav-divider {
+  width: 1px;
+  height: 16px;
+  background: var(--mr-border);
+  margin: 0 4px;
+}
+
+/* Mobile Nav Toggle */
+.mr-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--mr-text);
+}
+
+
+/* ==========================================================================
+   7. CONTENT AREA (.mr-content)
+   ========================================================================== */
+
+.mr-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ==========================================================================
+   8. HERO SECTION (.mr-hero, .mr-breadcrumb)
+   ========================================================================== */
+
+.mr-hero {
+  padding: 48px 0 32px;
+}
+
+.mr-breadcrumb {
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  margin-bottom: 16px;
+}
+
+.mr-breadcrumb a {
+  color: var(--mr-warm);
+  text-decoration: none;
+}
+
+.mr-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.mr-hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(26px, 4.5vw, 36px);
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--mr-text);
+  margin-bottom: 12px;
+}
+
+.mr-hero .lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--mr-text-muted);
+  max-width: 600px;
+}
+
+.mr-hero .meta {
+  font-size: 13px;
+  color: var(--mr-warm);
+  margin-top: 16px;
+}
+
+
+/* ==========================================================================
+   9. KEY FACTS BOX (.mr-keyfacts)
+   ========================================================================== */
+
+.mr-keyfacts {
+  background: var(--mr-bg-card);
+  border: 2px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 24px 28px;
+  margin: 0 0 40px;
+}
+
+.mr-keyfacts h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.mr-keyfacts ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mr-keyfacts li {
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 20px;
+  position: relative;
+}
+
+.mr-keyfacts li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mr-accent);
+}
+
+
+/* ==========================================================================
+   10. SECTION STYLES (.mr-section)
+   ========================================================================== */
+
+.mr-section {
+  margin-bottom: 40px;
+}
+
+.mr-section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--mr-border);
+}
+
+.mr-section h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin: 24px 0 8px;
+}
+
+.mr-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mr-text);
+  margin-bottom: 12px;
+}
+
+
+/* ==========================================================================
+   11. HINT / TIP BOXES (.mr-hint, .tip)
+   ========================================================================== */
+
+.mr-hint {
+  background: var(--mr-safety);
+  border: 1px solid var(--mr-border);
+  border-left: 4px solid var(--mr-accent);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mr-hint strong {
+  color: var(--mr-text);
+}
+
+.tip {
+  background: var(--mr-safety);
+  border: 1px solid var(--mr-border);
+  border-left: 4px solid var(--mr-primary);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+
+/* ==========================================================================
+   12. TABLE STYLES (.mr-table-wrap, .mr-table)
+   ========================================================================== */
+
+.mr-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 24px;
+  border-radius: var(--mr-radius);
+  border: 1px solid var(--mr-border);
+}
+
+.mr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.mr-table th {
+  background: #f4f0eb;
+  font-weight: 700;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--mr-border);
+}
+
+.mr-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--mr-border);
+  vertical-align: top;
+}
+
+.mr-table tr:last-child td {
+  border-bottom: none;
+}
+
+.mr-table tr:hover td {
+  background: var(--mr-safety);
+}
+
+
+/* ==========================================================================
+   13. CTA BLOCKS & BUTTONS (.mr-cta-block, .cta-primary, .cta-safety)
+   ========================================================================== */
+
+.cta-primary {
+  display: inline-block;
+  background: var(--mr-primary);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cta-primary:hover {
+  background: var(--mr-primary-hover);
+}
+
+.cta-safety {
+  display: inline-block;
+  background: var(--mr-safety);
+  color: var(--mr-text);
+  border: 2px solid var(--mr-border);
+  padding: 12px 28px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 8px 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cta-safety:hover {
+  border-color: var(--mr-primary);
+  color: var(--mr-primary);
+}
+
+.mr-cta-block {
+  background: var(--mr-bg-card);
+  border: 2px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 32px 28px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.mr-cta-block h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.mr-cta-block p {
+  font-size: 15px;
+  color: var(--mr-text-muted);
+  margin-bottom: 20px;
+}
+
+.mr-cta-block a.cta-primary {
+  display: inline-block;
+  background: var(--mr-primary);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.mr-cta-block a.cta-primary:hover {
+  background: var(--mr-primary-hover);
+}
+
+.mr-cta-block .cta-sub {
+  display: block;
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  margin-top: 12px;
+}
+
+
+/* ==========================================================================
+   14. FAQ ACCORDION (.mr-faq)
+   ========================================================================== */
+
+.mr-faq {
+  margin: 40px 0;
+}
+
+.mr-faq h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--mr-border);
+}
+
+.mr-faq details {
+  border: 1px solid var(--mr-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: var(--mr-bg-card);
+}
+
+.mr-faq summary {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mr-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.mr-faq summary::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--mr-warm);
+  font-weight: 300;
+}
+
+.mr-faq details[open] summary::after {
+  content: '\2212';
+}
+
+.mr-faq .faq-answer {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--mr-text-muted);
+}
+
+
+/* ==========================================================================
+   15. SOURCES SECTION (.mr-sources)
+   ========================================================================== */
+
+.mr-sources {
+  background: #f4f0eb;
+  border-radius: var(--mr-radius);
+  padding: 24px 28px;
+  margin: 40px 0;
+}
+
+.mr-sources h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.mr-sources ul {
+  list-style: none;
+}
+
+.mr-sources li {
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  padding: 4px 0 4px 16px;
+  position: relative;
+}
+
+.mr-sources li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--mr-warm);
+}
+
+
+/* ==========================================================================
+   16. TRUST SECTION (.mr-trust)
+   ========================================================================== */
+
+.mr-trust {
+  text-align: center;
+  padding: 24px 0;
+  margin-bottom: 16px;
+}
+
+.mr-trust p {
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  line-height: 1.6;
+}
+
+.mr-trust a {
+  color: var(--mr-primary);
+  text-decoration: none;
+}
+
+.mr-trust a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   17. COMPARISON BOXES (.mr-comparison-box)
+   ========================================================================== */
+
+.mr-comparison-box {
+  background: var(--mr-bg-card);
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.mr-comparison-box h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 8px;
+}
+
+.mr-comparison-box .subtitle {
+  font-size: 13px;
+  color: var(--mr-warm);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.mr-comparison-box ul {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--mr-text-muted);
+  margin-bottom: 12px;
+}
+
+.mr-comparison-box li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.mr-comparison-box li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--mr-primary);
+  font-weight: 700;
+}
+
+.mr-comparison-box .example {
+  background: var(--mr-safety);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 12px;
+  border-left: 3px solid var(--mr-accent);
+}
+
+.mr-comparison-box .example strong {
+  color: var(--mr-text);
+}
+
+
+/* ==========================================================================
+   17b. TOPIC GRID (.mr-topic-grid, .mr-topic-card)
+   ========================================================================== */
+
+.mr-topic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.mr-topic-card {
+  background: var(--mr-bg-card);
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 24px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.mr-topic-card:hover {
+  border-color: var(--mr-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.mr-topic-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--mr-text);
+}
+
+.mr-topic-card p {
+  font-size: 14px;
+  color: var(--mr-text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.mr-topic-card .card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mr-primary);
+}
+
+.mr-topic-card.featured {
+  border-color: var(--mr-accent);
+  border-width: 2px;
+}
+
+@media (max-width: 520px) {
+  .mr-topic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   17c. CHECKLIST (.mr-checklist)
+   ========================================================================== */
+
+.mr-checklist {
+  list-style: none;
+  margin: 16px 0 24px;
+  padding: 0;
+}
+
+.mr-checklist li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mr-text);
+  padding: 8px 0 8px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--mr-border);
+}
+
+.mr-checklist li:last-child {
+  border-bottom: none;
+}
+
+.mr-checklist li::before {
+  content: '\2610';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 16px;
+  color: var(--mr-accent);
+}
+
+
+/* ==========================================================================
+   18. STEPS (.mr-steps, .mr-step)
+   ========================================================================== */
+
+.mr-steps {
+  counter-reset: step;
+  margin: 20px 0 24px;
+}
+
+.mr-step {
+  position: relative;
+  padding: 16px 20px 16px 56px;
+  margin-bottom: 12px;
+  background: var(--mr-bg-card);
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  counter-increment: step;
+}
+
+.mr-step::before {
+  content: counter(step);
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--mr-accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mr-step strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.mr-step p {
+  font-size: 14px;
+  color: var(--mr-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   19. SNIPPET & QUOTE BLOCKS (.snippet, .mr-quote)
+   ========================================================================== */
+
+.snippet {
+  background: var(--mr-safety);
+  border: 2px solid var(--mr-primary);
+  border-radius: var(--mr-radius);
+  padding: 20px 24px;
+  margin: 0 0 24px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.snippet strong {
+  color: var(--mr-text);
+}
+
+.mr-quote {
+  background: var(--mr-bg-card);
+  border-left: 4px solid var(--mr-accent);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.mr-quote p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--mr-text);
+  margin: 0;
+}
+
+.mr-quote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  font-style: normal;
+}
+
+.mr-quote-group {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+
+/* ==========================================================================
+   20. TIPS GRID (.mr-tips-grid)
+   ========================================================================== */
+
+.mr-tips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 24px;
+}
+
+.mr-tips-grid .tip-card {
+  background: var(--mr-bg-card);
+  border: 1px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mr-tips-grid .tip-card h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 8px;
+}
+
+
+/* ==========================================================================
+   21. FOOTER (.mr-footer)
+   ========================================================================== */
+
+.mr-footer {
+  background: #f4f0eb;
+  border-top: 1px solid var(--mr-border);
+  margin-top: 64px;
+  padding: 40px 20px 32px;
+}
+
+.mr-footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.mr-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.mr-footer h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 8px;
+}
+
+.mr-footer p,
+.mr-footer a {
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  line-height: 1.6;
+}
+
+.mr-footer a {
+  text-decoration: none;
+  display: block;
+  padding: 2px 0;
+  transition: color 0.2s;
+}
+
+.mr-footer a:hover {
+  color: var(--mr-primary);
+}
+
+.mr-footer-bottom {
+  border-top: 1px solid var(--mr-border);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.mr-footer-bottom p {
+  font-size: 12px;
+  color: #73655A;
+}
+
+
+/* ==========================================================================
+   22. NEW UTILITY CLASSES
+   ========================================================================== */
+
+/* ---------- Affiliate Badge (.mr-affiliate-badge) ----------
+   Small "Werbung" indicator next to affiliate links.
+   Usage: <span class="mr-affiliate-badge">Werbung</span>
+   ----------------------------------------------------------- */
+
+.mr-affiliate-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--mr-text-muted);
+  background: var(--mr-safety);
+  border: 1px solid var(--mr-border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  margin-left: 6px;
+  line-height: 1.4;
+}
+
+
+/* ---------- Vorsorge CTA (.mr-vorsorge-cta) ----------
+   Warmer, more inviting CTA for Vorsorge conversion boxes.
+   Usage: <div class="mr-vorsorge-cta">...</div>
+   ----------------------------------------------------- */
+
+.mr-vorsorge-cta {
+  background: linear-gradient(135deg, #FFFDF9 0%, #FFF7EE 100%);
+  border: 2px solid var(--mr-accent);
+  border-radius: var(--mr-radius);
+  padding: 32px 28px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.mr-vorsorge-cta h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 8px;
+}
+
+.mr-vorsorge-cta p {
+  font-size: 15px;
+  color: var(--mr-text-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.mr-vorsorge-cta .cta-primary {
+  background: var(--mr-accent);
+}
+
+.mr-vorsorge-cta .cta-primary:hover {
+  background: #735D3A;
+}
+
+.mr-vorsorge-cta .cta-sub {
+  display: block;
+  font-size: 13px;
+  color: var(--mr-text-muted);
+  margin-top: 12px;
+}
+
+
+/* ---------- Lead Form (.mr-lead-form) ----------
+   Form styling for lead generation forms.
+   Usage: <form class="mr-lead-form">...</form>
+   ----------------------------------------------- */
+
+.mr-lead-form {
+  background: var(--mr-bg-card);
+  border: 2px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 28px 24px;
+  margin: 32px 0;
+}
+
+.mr-lead-form h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 16px;
+}
+
+.mr-lead-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mr-text);
+  margin-bottom: 6px;
+}
+
+.mr-lead-form input[type="text"],
+.mr-lead-form input[type="email"],
+.mr-lead-form input[type="tel"],
+.mr-lead-form input[type="number"],
+.mr-lead-form select,
+.mr-lead-form textarea {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 10px 14px;
+  border: 1px solid var(--mr-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--mr-text);
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.mr-lead-form input:focus,
+.mr-lead-form select:focus,
+.mr-lead-form textarea:focus {
+  outline: none;
+  border-color: var(--mr-primary);
+  box-shadow: 0 0 0 3px rgba(122, 107, 93, 0.12);
+}
+
+.mr-lead-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.mr-lead-form .form-hint {
+  font-size: 12px;
+  color: var(--mr-text-muted);
+  margin-top: -12px;
+  margin-bottom: 16px;
+}
+
+.mr-lead-form button[type="submit"] {
+  display: inline-block;
+  background: var(--mr-primary);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mr-lead-form button[type="submit"]:hover {
+  background: var(--mr-primary-hover);
+}
+
+.mr-lead-form .form-privacy {
+  font-size: 12px;
+  color: var(--mr-text-muted);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+
+/* ---------- Cost Disclaimer (.mr-cost-disclaimer) ----------
+   Disclaimer styling for cost information.
+   Usage: <div class="mr-cost-disclaimer">...</div>
+   ----------------------------------------------------------- */
+
+.mr-cost-disclaimer {
+  background: var(--mr-safety);
+  border: 1px solid var(--mr-border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--mr-text-muted);
+}
+
+.mr-cost-disclaimer strong {
+  color: var(--mr-text);
+  font-weight: 600;
+}
+
+.mr-cost-disclaimer::before {
+  content: '\2139\FE0F';
+  margin-right: 6px;
+}
+
+
+/* ---------- Comparison Grid (.mr-comparison-grid) ----------
+   Grid layout for comparing products/services side by side.
+   Usage: <div class="mr-comparison-grid">
+            <div class="mr-comparison-card">...</div>
+          </div>
+   ----------------------------------------------------------- */
+
+.mr-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.mr-comparison-grid .mr-comparison-card {
+  background: var(--mr-bg-card);
+  border: 2px solid var(--mr-border);
+  border-radius: var(--mr-radius);
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.mr-comparison-grid .mr-comparison-card:hover {
+  border-color: var(--mr-primary);
+}
+
+.mr-comparison-grid .mr-comparison-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--mr-text);
+  margin-bottom: 8px;
+}
+
+.mr-comparison-grid .mr-comparison-card .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--mr-accent);
+  margin-bottom: 12px;
+}
+
+.mr-comparison-grid .mr-comparison-card ul {
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--mr-text-muted);
+}
+
+.mr-comparison-grid .mr-comparison-card li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.mr-comparison-grid .mr-comparison-card li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--mr-primary);
+  font-weight: 700;
+}
+
+.mr-comparison-grid .mr-comparison-card.highlighted {
+  border-color: var(--mr-accent);
+  box-shadow: 0 2px 12px rgba(134, 110, 69, 0.1);
+}
+
+
+/* ---------- Step Indicator (.mr-step-indicator) ----------
+   Step progress indicator for multi-step tools/wizards.
+   Usage: <div class="mr-step-indicator">
+            <div class="step active">1</div>
+            <div class="step completed">2</div>
+            <div class="step">3</div>
+          </div>
+   -------------------------------------------------------- */
+
+.mr-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 24px 0;
+  padding: 16px 0;
+}
+
+.mr-step-indicator .step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--mr-bg-card);
+  border: 2px solid var(--mr-border);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mr-text-muted);
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.mr-step-indicator .step.active {
+  background: var(--mr-primary);
+  border-color: var(--mr-primary);
+  color: #fff;
+}
+
+.mr-step-indicator .step.completed {
+  background: var(--mr-accent);
+  border-color: var(--mr-accent);
+  color: #fff;
+}
+
+.mr-step-indicator .step + .step::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 32px;
+  height: 2px;
+  background: var(--mr-border);
+  transform: translateY(-50%);
+}
+
+.mr-step-indicator .step.active + .step::before,
+.mr-step-indicator .step.completed + .step::before {
+  background: var(--mr-accent);
+}
+
+.mr-step-indicator .step-label {
+  display: block;
+  font-size: 11px;
+  color: var(--mr-text-muted);
+  text-align: center;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.mr-step-indicator .step.active .step-label {
+  color: var(--mr-primary);
+  font-weight: 600;
+}
+
+
+/* ---------- Trust Badges (.mr-trust-badges) ----------
+   Trust signals: review stars, certifications, seals.
+   Usage: <div class="mr-trust-badges">
+            <div class="badge">...</div>
+          </div>
+   ----------------------------------------------------- */
+
+.mr-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 0;
+  margin: 24px 0;
+}
+
+.mr-trust-badges .badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mr-bg-card);
+  border: 1px solid var(--mr-border);
+  border-radius: 99px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mr-text-muted);
+}
+
+.mr-trust-badges .badge svg,
+.mr-trust-badges .badge img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.mr-trust-badges .badge .stars {
+  color: var(--mr-accent);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.mr-trust-badges .badge strong {
+  color: var(--mr-text);
+  font-weight: 600;
+}
+
+
+/* ==========================================================================
+   23. PRINT STYLES
+   ========================================================================== */
+
+@media print {
+  .no-print,
+  .cta,
+  .cta-safety,
+  .cta-primary,
+  .mr-nav,
+  .mr-footer,
+  .mr-cta-block,
+  .mr-vorsorge-cta,
+  .mr-affiliate-badge,
+  .mr-trust-badges,
+  .mr-step-indicator,
+  [style*="position: fixed"],
+  [style*="sticky"] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  .mr-content {
+    max-width: 100%;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+
+/* ==========================================================================
+   24. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* --- Small screens (max-width: 640px) --- */
+
+@media (max-width: 640px) {
+  .mr-nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--mr-bg);
+    border-bottom: 1px solid var(--mr-border);
+    flex-direction: column;
+    padding: 8px 16px 16px;
+    gap: 0;
+  }
+
+  .mr-nav-links.open {
+    display: flex;
+  }
+
+  .mr-nav-links a {
+    padding: 12px 8px;
+    font-size: 15px;
+  }
+
+  .mr-nav-divider {
+    display: none;
+  }
+
+  .mr-nav-toggle {
+    display: block;
+  }
+
+  .mr-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mr-trust-badges {
+    gap: 10px;
+  }
+
+  .mr-trust-badges .badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* --- Extra small screens (max-width: 520px) --- */
+
+@media (max-width: 520px) {
+  .mr-keyfacts ul {
+    grid-template-columns: 1fr;
+  }
+
+  .mr-tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mr-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mr-step-indicator .step {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .mr-step-indicator .step + .step::before {
+    width: 20px;
+  }
+}

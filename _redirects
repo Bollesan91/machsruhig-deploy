@@ -15,3 +15,17 @@
 /vorsorge-check        /tools/vorsorge-check        301
 /bestattungskosten-rechner /tools/bestattungskosten-rechner 301
 /trauerrede            /tools/trauerrede             301
+
+# Vorsorge shortcuts
+/vorsorge              /vorsorge/                    301
+/sterbegeldversicherung /vorsorge/sterbegeldversicherung 301
+/patientenverfuegung   /vorsorge/patientenverfuegung  301
+/bestattungsvorsorge   /vorsorge/bestattungsvorsorge  301
+/testament             /vorsorge/testament            301
+/sorgerechtsverfuegung /vorsorge/sorgerechtsverfuegung 301
+/digitaler-nachlass    /vorsorge/digitaler-nachlass    301
+/danksagung            /tools/danksagung               301
+/notfallkarte          /tools/notfallkarte             301
+/abschiedsbrief        /tools/abschiedsbrief           301
+/fristen-radar         /tools/fristen-radar            301
+/fristen               /tools/fristen-radar            301
