@@ -16,6 +16,8 @@ Stand: 23. April 2026
 
 ## A) Inhaltliche Sachrichtigkeit (BLOCKER)
 
+- [ ] **Automatischer Re-Check durchlaufen:**
+      `python3 _dev/bundesland-recheck.py <pfad>` → 0 Blocker
 - [ ] **Jede Rechtsaussage** ist mit einem konkreten Paragraphen belegt
       (z.B. "§ 15 BestattG M-V", nicht "laut Gesetz")
 - [ ] **Jede Jahreszahl, jeder Flächen-/Mengenwert, jede Kostenspanne**
@@ -29,6 +31,9 @@ Stand: 23. April 2026
       MV-Nachbarort statt korrekt SH)
 - [ ] **Aktualität**: Gesetzes-Stände, Friedhofssatzungen und Kostenwerte
       sind nicht älter als 2 Jahre oder mit dieser Einschränkung versehen
+- [ ] **Begriffspräzision**: Wörter aus Primärquellen nicht umformulieren,
+      ohne die Bedeutungsverschiebung zu prüfen (z.B. "Grabanlagen" ≠
+      "Grabstätten" in Erfurt-Primärquelle)
 
 ## B) Ethischer YMYL-Check (BLOCKER)
 
@@ -109,3 +114,27 @@ Bis alle 16 Bundesländer-Seiten live sind, gilt:
 2. Für jede Bundesland-Seite wird dieser Checklisten-Durchlauf dokumentiert
 3. Nach Phase F wird PRE_LAUNCH_MODE im Audit-Skript auf False gesetzt
    — dann spiegeln die Scores wieder die volle Monetarisierungs-Realität
+
+## Workflow für jede neue Bundesländer-Überarbeitung
+
+Der erprobte Ablauf aus BW/MV/LSA/TH:
+
+1. **Recherche** (primärquellengestützt, 3-5 Web-Suchen):
+   - Landesbestattungsgesetz (landesrecht-<BL>.de)
+   - Gesetzesänderungen und Reformen (Presseportale der Landesregierung)
+   - Städte-Primärquellen (Friedhofsverwaltung, Stadtportale)
+   - Aeternitas-Übersicht und Wikipedia zum Gegencheck
+2. **Content schreiben** — strikt mit §-Referenz zu jeder Rechtsaussage
+3. **Struktur + Schema + Meta-Tags** auf BW/MV/LSA/TH-Niveau bringen
+4. **Audit-Score** via `python3 _dev/audit-all-pages.py` prüfen
+5. **Automatischer Re-Check** via `python3 _dev/bundesland-recheck.py <pfad>`
+   — muss 0 Blocker zeigen
+6. **Manueller Re-Check**: Ich lese die Seite gegen die Primärquellen nochmal
+   kritisch durch und suche aktiv nach folgenden Fallen:
+   - Wortabweichungen von der Primärquelle (z.B. "Grabstätten" statt "Grabanlagen")
+   - Unbelegte Superlative ("erstes", "einzige", "strengste")
+   - Sekundärquellen (Bestatter-Verzeichnisse) als Primärquellen getarnt
+   - Annahmen als Fakten ("tendenziell moderater als süddeutsch")
+7. **Stufe-1 Quality Gate** via `bash validate-all.sh`
+8. **Commit** mit `[skip netlify]` — kein Auto-Deploy
+9. Warten auf explizites "ende deploy" von Bolle
