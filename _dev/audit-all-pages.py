@@ -28,6 +28,14 @@ ROOT = Path(__file__).resolve().parent.parent
 SKIP_DIRS = {".git", "_dev", "node_modules"}
 SKIP_FILES = {"404.html"}  # Wird separat als "legal" behandelt
 
+# --- Projektphase ----------------------------------------------------------
+# PRE_LAUNCH_MODE: In der Pre-Launch-Phase (vor Phase F Monetarisierungs-
+# Rollout) wird fehlende Monetarisierung bei bundesland- und content-Seiten
+# als Warnung statt als Issue gewertet und nicht penalisiert. Stadt/Vorsorge/
+# Hub bleiben kritisch (dort ist Monetarisierung konzeptionell unverzichtbar).
+# Auf False setzen, sobald Phase F produktiv läuft.
+PRE_LAUNCH_MODE = True
+
 # --- Kategorisierung -------------------------------------------------------
 
 def categorize(rel_path: str) -> str:
@@ -467,7 +475,7 @@ def audit_page(path: Path, rel: str) -> PageAudit:
         "homepage": (600, 1200),
         "hub": (1000, 2500),
         "stadt": (500, 1200),
-        "bundesland": (400, 1000),
+        "bundesland": (400, 2500),   # YMYL-Rechtsseiten dürfen ausführlich sein
         "tool": (250, 800),           # Tools dürfen schlanker sein
         "tool-content": (800, 2500),
         "vorsorge": (1500, 4000),     # Vorsorge = Monetarisierung = Tiefe!
@@ -548,8 +556,23 @@ def audit_page(path: Path, rel: str) -> PageAudit:
     monetize_expected = category in ("homepage", "hub", "stadt", "bundesland",
                                       "vorsorge", "content", "tool-content")
 
+    # Phase-Flag: In Pre-Launch-Phase (vor Phase F Monetarisierungs-Rollout) wird
+    # fehlende Monetarisierung bei Bundesland- und Content-Seiten nicht penalty-
+    # relevant gewertet, sondern als Warnung. Stadt/Vorsorge/Hub bleiben kritisch,
+    # weil dort Monetarisierung konzeptionell unverzichtbar ist. Begründung:
+    # Content-Qualität soll die Score-Skala dominieren, nicht Business-Modell-Phase.
+    # Siehe STRATEGIE.md Phase F sowie BACKLOG Ticket F.*
+    pre_launch_exempt_categories = ("bundesland", "content")
+
     if not monetize_expected:
         score += 15  # Tools/Legal müssen nicht monetarisieren
+    elif PRE_LAUNCH_MODE and category in pre_launch_exempt_categories and not has_monetization:
+        # Pre-Launch-Ausnahme: volle Punkte, aber Warnung (nicht Issue)
+        score += 15
+        audit.warnings.append(
+            "Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). "
+            "Penalty temporär ausgesetzt."
+        )
     else:
         if has_monetization:
             score += 10; audit.wins.append("Monetarisierungs-Element vorhanden")
