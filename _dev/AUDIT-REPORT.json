@@ -1,0 +1,4909 @@
+{
+  "meta": {
+    "pages": 98,
+    "avg_score": 59.04,
+    "by_category": {
+      "legal": {
+        "count": 4,
+        "avg_score": 76.25
+      },
+      "hub": {
+        "count": 2,
+        "avg_score": 66.5
+      },
+      "stadt": {
+        "count": 50,
+        "avg_score": 58.82
+      },
+      "bundesland": {
+        "count": 16,
+        "avg_score": 59.44
+      },
+      "content": {
+        "count": 7,
+        "avg_score": 64.0
+      },
+      "homepage": {
+        "count": 1,
+        "avg_score": 39.0
+      },
+      "tool-content": {
+        "count": 4,
+        "avg_score": 36.0
+      },
+      "tool": {
+        "count": 6,
+        "avg_score": 49.67
+      },
+      "vorsorge": {
+        "count": 8,
+        "avg_score": 65.88
+      }
+    }
+  },
+  "pages": [
+    {
+      "path": "404.html",
+      "category": "legal",
+      "size_bytes": 10164,
+      "word_count": 150,
+      "score": 78,
+      "max_score": 100,
+      "issues": [
+        "Canonical-Link fehlt"
+      ],
+      "warnings": [
+        "OG-Image fehlt",
+        "Nur 1 H2 - Struktur ausbaufähig"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 144,
+      "h1_count": 1,
+      "h2_count": 1,
+      "internal_links": 13,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [],
+      "images_missing_alt": 0,
+      "has_canonical": false,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "beerdigung-planen.html",
+      "category": "hub",
+      "size_bytes": 29311,
+      "word_count": 1290,
+      "score": 65,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Title zu lang (69 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Sehr viele Inline-Styles: 26"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1290 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 69,
+      "meta_desc_len": 148,
+      "h1_count": 1,
+      "h2_count": 12,
+      "internal_links": 23,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestatter/aachen/index.html",
+      "category": "stadt",
+      "size_bytes": 16683,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 34,
+      "meta_desc_len": 105,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/augsburg/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/berlin/index.html",
+      "category": "stadt",
+      "size_bytes": 42690,
+      "word_count": 1733,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (18 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (84 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content sehr lang (1733 Wörter) - evtl. splitten",
+        "Viel Inline-JS: 7640 Bytes",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 84,
+      "meta_desc_len": 155,
+      "h1_count": 1,
+      "h2_count": 9,
+      "internal_links": 16,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/bielefeld/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/bochum/index.html",
+      "category": "stadt",
+      "size_bytes": 16683,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 34,
+      "meta_desc_len": 105,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/bonn/index.html",
+      "category": "stadt",
+      "size_bytes": 16649,
+      "word_count": 343,
+      "score": 59,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (103 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "H1 und Title nur gering überlappend"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 32,
+      "meta_desc_len": 103,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/braunschweig/index.html",
+      "category": "stadt",
+      "size_bytes": 16785,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (111 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 40,
+      "meta_desc_len": 111,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/bremen/index.html",
+      "category": "stadt",
+      "size_bytes": 16710,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 34,
+      "meta_desc_len": 105,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/chemnitz/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/darmstadt/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/dortmund/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/dresden/index.html",
+      "category": "stadt",
+      "size_bytes": 16700,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/duesseldorf/index.html",
+      "category": "stadt",
+      "size_bytes": 16768,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 38,
+      "meta_desc_len": 109,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/duisburg/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/erfurt/index.html",
+      "category": "stadt",
+      "size_bytes": 16683,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 34,
+      "meta_desc_len": 105,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/essen/index.html",
+      "category": "stadt",
+      "size_bytes": 16666,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 33,
+      "meta_desc_len": 104,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/frankfurt/index.html",
+      "category": "stadt",
+      "size_bytes": 39479,
+      "word_count": 1405,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (18 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (98 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content sehr lang (1405 Wörter) - evtl. splitten",
+        "Viel Inline-JS: 7646 Bytes",
+        "16 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 98,
+      "meta_desc_len": 160,
+      "h1_count": 1,
+      "h2_count": 9,
+      "internal_links": 16,
+      "external_links": 7,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/freiburg/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/gelsenkirchen/index.html",
+      "category": "stadt",
+      "size_bytes": 16802,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (112 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 41,
+      "meta_desc_len": 112,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/hagen/index.html",
+      "category": "stadt",
+      "size_bytes": 16666,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 33,
+      "meta_desc_len": 104,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/halle/index.html",
+      "category": "stadt",
+      "size_bytes": 16666,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 33,
+      "meta_desc_len": 104,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/hamburg/index.html",
+      "category": "stadt",
+      "size_bytes": 45522,
+      "word_count": 2156,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (18 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (72 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content sehr lang (2156 Wörter) - evtl. splitten",
+        "Viel Inline-JS: 7642 Bytes",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 72,
+      "meta_desc_len": 152,
+      "h1_count": 1,
+      "h2_count": 9,
+      "internal_links": 16,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/hannover/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/heidelberg/index.html",
+      "category": "stadt",
+      "size_bytes": 16751,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 38,
+      "meta_desc_len": 109,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/karlsruhe/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/kassel/index.html",
+      "category": "stadt",
+      "size_bytes": 16683,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 34,
+      "meta_desc_len": 105,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/kiel/index.html",
+      "category": "stadt",
+      "size_bytes": 16649,
+      "word_count": 343,
+      "score": 59,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (103 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "H1 und Title nur gering überlappend"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 32,
+      "meta_desc_len": 103,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/koeln/index.html",
+      "category": "stadt",
+      "size_bytes": 41840,
+      "word_count": 1743,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (18 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (80 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content sehr lang (1743 Wörter) - evtl. splitten",
+        "Viel Inline-JS: 7644 Bytes",
+        "16 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 80,
+      "meta_desc_len": 147,
+      "h1_count": 1,
+      "h2_count": 9,
+      "internal_links": 16,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/krefeld/index.html",
+      "category": "stadt",
+      "size_bytes": 16700,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/leipzig/index.html",
+      "category": "stadt",
+      "size_bytes": 16700,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/leverkusen/index.html",
+      "category": "stadt",
+      "size_bytes": 16751,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 38,
+      "meta_desc_len": 109,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/luebeck/index.html",
+      "category": "stadt",
+      "size_bytes": 16700,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 34,
+      "meta_desc_len": 105,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/magdeburg/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/mainz/index.html",
+      "category": "stadt",
+      "size_bytes": 16666,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 33,
+      "meta_desc_len": 104,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/mannheim/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/moenchengladbach/index.html",
+      "category": "stadt",
+      "size_bytes": 16853,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (114 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 43,
+      "meta_desc_len": 114,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/muelheim/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/muenchen/index.html",
+      "category": "stadt",
+      "size_bytes": 42345,
+      "word_count": 1839,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (18 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (74 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content sehr lang (1839 Wörter) - evtl. splitten",
+        "Viel Inline-JS: 7642 Bytes",
+        "16 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 74,
+      "meta_desc_len": 156,
+      "h1_count": 1,
+      "h2_count": 9,
+      "internal_links": 17,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/muenster/index.html",
+      "category": "stadt",
+      "size_bytes": 16717,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/nuernberg/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 36,
+      "meta_desc_len": 107,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/oberhausen/index.html",
+      "category": "stadt",
+      "size_bytes": 16751,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 38,
+      "meta_desc_len": 109,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/oldenburg/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/osnabrueck/index.html",
+      "category": "stadt",
+      "size_bytes": 16751,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/potsdam/index.html",
+      "category": "stadt",
+      "size_bytes": 16700,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/regensburg/index.html",
+      "category": "stadt",
+      "size_bytes": 16751,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 38,
+      "meta_desc_len": 109,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/rostock/index.html",
+      "category": "stadt",
+      "size_bytes": 16700,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 35,
+      "meta_desc_len": 106,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/saarbruecken/index.html",
+      "category": "stadt",
+      "size_bytes": 16785,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (110 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 39,
+      "meta_desc_len": 110,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/stuttgart/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/wiesbaden/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestatter/wuppertal/index.html",
+      "category": "stadt",
+      "size_bytes": 16734,
+      "word_count": 343,
+      "score": 61,
+      "max_score": 100,
+      "issues": [
+        "noindex gesetzt (category=stadt)"
+      ],
+      "warnings": [
+        "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, City, BreadcrumbList, Question, Service, Answer, Li",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 37,
+      "meta_desc_len": 108,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Service",
+        "City",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "bestattung-in/baden-württemberg/index.html",
+      "category": "bundesland",
+      "size_bytes": 17492,
+      "word_count": 373,
+      "score": 54,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (88 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (168 Zeichen)",
+        "OG-Image fehlt",
+        "Content dünn: 373 Wörter (Ziel ≥ 400)",
+        "18 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 88,
+      "meta_desc_len": 168,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/bayern/index.html",
+      "category": "bundesland",
+      "size_bytes": 19470,
+      "word_count": 507,
+      "score": 66,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (77 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "18 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (507 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 77,
+      "meta_desc_len": 151,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/berlin/index.html",
+      "category": "bundesland",
+      "size_bytes": 18563,
+      "word_count": 461,
+      "score": 66,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (77 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (461 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 77,
+      "meta_desc_len": 150,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/brandenburg/index.html",
+      "category": "bundesland",
+      "size_bytes": 17450,
+      "word_count": 374,
+      "score": 56,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (82 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content dünn: 374 Wörter (Ziel ≥ 400)",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 82,
+      "meta_desc_len": 154,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/bremen/index.html",
+      "category": "bundesland",
+      "size_bytes": 18071,
+      "word_count": 444,
+      "score": 66,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (77 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "18 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (444 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 77,
+      "meta_desc_len": 156,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/hamburg/index.html",
+      "category": "bundesland",
+      "size_bytes": 17299,
+      "word_count": 390,
+      "score": 56,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (78 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content dünn: 390 Wörter (Ziel ≥ 400)",
+        "18 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 78,
+      "meta_desc_len": 155,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/hessen/index.html",
+      "category": "bundesland",
+      "size_bytes": 17976,
+      "word_count": 425,
+      "score": 65,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (77 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Sehr viele Inline-Styles: 20"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (425 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 77,
+      "meta_desc_len": 151,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/mecklenburg-vorpommern/index.html",
+      "category": "bundesland",
+      "size_bytes": 17547,
+      "word_count": 364,
+      "score": 54,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (93 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (170 Zeichen)",
+        "OG-Image fehlt",
+        "Content dünn: 364 Wörter (Ziel ≥ 400)",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 93,
+      "meta_desc_len": 170,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/niedersachsen/index.html",
+      "category": "bundesland",
+      "size_bytes": 17944,
+      "word_count": 396,
+      "score": 55,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (84 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content dünn: 396 Wörter (Ziel ≥ 400)",
+        "Sehr viele Inline-Styles: 20"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 84,
+      "meta_desc_len": 156,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/nordrhein-westfalen/index.html",
+      "category": "bundesland",
+      "size_bytes": 18468,
+      "word_count": 415,
+      "score": 63,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (90 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (176 Zeichen)",
+        "OG-Image fehlt",
+        "Sehr viele Inline-Styles: 21"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (415 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 90,
+      "meta_desc_len": 176,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/rheinland-pfalz/index.html",
+      "category": "bundesland",
+      "size_bytes": 18428,
+      "word_count": 430,
+      "score": 65,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (86 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Sehr viele Inline-Styles: 20"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (430 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 86,
+      "meta_desc_len": 164,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/saarland/index.html",
+      "category": "bundesland",
+      "size_bytes": 17293,
+      "word_count": 380,
+      "score": 56,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (79 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content dünn: 380 Wörter (Ziel ≥ 400)",
+        "18 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 79,
+      "meta_desc_len": 150,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/sachsen/index.html",
+      "category": "bundesland",
+      "size_bytes": 17117,
+      "word_count": 365,
+      "score": 56,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (78 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content dünn: 365 Wörter (Ziel ≥ 400)",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 78,
+      "meta_desc_len": 157,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/sachsen-anhalt/index.html",
+      "category": "bundesland",
+      "size_bytes": 17310,
+      "word_count": 364,
+      "score": 54,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (85 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (166 Zeichen)",
+        "OG-Image fehlt",
+        "Content dünn: 364 Wörter (Ziel ≥ 400)",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 85,
+      "meta_desc_len": 166,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/schleswig-holstein/index.html",
+      "category": "bundesland",
+      "size_bytes": 18055,
+      "word_count": 410,
+      "score": 64,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (89 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (179 Zeichen)",
+        "OG-Image fehlt",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (410 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 89,
+      "meta_desc_len": 179,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattung-in/thüringen/index.html",
+      "category": "bundesland",
+      "size_bytes": 17766,
+      "word_count": 389,
+      "score": 55,
+      "max_score": 100,
+      "issues": [
+        "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
+      ],
+      "warnings": [
+        "Title zu lang (80 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Content dünn: 389 Wörter (Ziel ≥ 400)",
+        "Sehr viele Inline-Styles: 20"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 80,
+      "meta_desc_len": 156,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 12,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattungsarten.html",
+      "category": "content",
+      "size_bytes": 31077,
+      "word_count": 1556,
+      "score": 66,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Title zu lang (71 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "19 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1556 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 71,
+      "meta_desc_len": 163,
+      "h1_count": 1,
+      "h2_count": 14,
+      "internal_links": 22,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "bestattungskosten.html",
+      "category": "content",
+      "size_bytes": 31785,
+      "word_count": 1356,
+      "score": 57,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "OG-Image fehlt",
+        "Content dünn: 1356 Wörter (Ziel ≥ 1500)",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "Sehr viele Inline-Styles: 23"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 62,
+      "meta_desc_len": 139,
+      "h1_count": 1,
+      "h2_count": 13,
+      "internal_links": 21,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "datenschutz.html",
+      "category": "legal",
+      "size_bytes": 9989,
+      "word_count": 556,
+      "score": 72,
+      "max_score": 100,
+      "issues": [
+        "H1 und Title haben keine Keyword-Überlappung"
+      ],
+      "warnings": [
+        "Title sehr kurz (26 Zeichen, Ziel 50-60)",
+        "Meta-Description zu kurz (115 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "6 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 26,
+      "meta_desc_len": 115,
+      "h1_count": 1,
+      "h2_count": 11,
+      "internal_links": 11,
+      "external_links": 1,
+      "affiliate_links": 0,
+      "jsonld_types": [],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "impressum.html",
+      "category": "legal",
+      "size_bytes": 6862,
+      "word_count": 255,
+      "score": 74,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Title sehr kurz (24 Zeichen, Ziel 50-60)",
+        "Meta-Description zu kurz (89 Zeichen, Ziel 140-160)",
+        "Open-Graph-Tags unvollständig",
+        "H1 und Title nur gering überlappend"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 24,
+      "meta_desc_len": 89,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": false,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "index.html",
+      "category": "homepage",
+      "size_bytes": 18226,
+      "word_count": 101,
+      "score": 39,
+      "max_score": 100,
+      "issues": [
+        "<main>-Landmark fehlt",
+        "Content extrem dünn: 101 Wörter (Ziel ≥ 600)",
+        "Zu wenig interne Links: 3 (Ziel ≥ 10)",
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (29 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "OG-Image fehlt",
+        "<footer> fehlt",
+        "Nur 1 H2 - Struktur ausbaufähig",
+        "Kein Monetarisierungs-Hook",
+        "Viel Inline-JS: 8898 Bytes",
+        "6 Inline-Style-Attribute",
+        "H1 und Title nur gering überlappend"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: WebSite, Organization"
+      ],
+      "title_len": 44,
+      "meta_desc_len": 145,
+      "h1_count": 1,
+      "h2_count": 1,
+      "internal_links": 3,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Organization",
+        "WebSite",
+        "Organization"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "kindern-tod-erklaeren.html",
+      "category": "content",
+      "size_bytes": 40646,
+      "word_count": 2116,
+      "score": 64,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Title zu lang (73 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (174 Zeichen)",
+        "OG-Image fehlt",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "8 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2116 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 73,
+      "meta_desc_len": 174,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 16,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "kondolenzschreiben.html",
+      "category": "content",
+      "size_bytes": 35269,
+      "word_count": 1953,
+      "score": 65,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Meta-Description zu lang (175 Zeichen)",
+        "OG-Image fehlt",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "Sehr viele Inline-Styles: 70"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1953 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 60,
+      "meta_desc_len": 175,
+      "h1_count": 1,
+      "h2_count": 13,
+      "internal_links": 15,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "methodik.html",
+      "category": "legal",
+      "size_bytes": 16262,
+      "word_count": 648,
+      "score": 81,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Meta-Description zu kurz (100 Zeichen, Ziel 140-160)",
+        "OG-Image fehlt"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 30,
+      "meta_desc_len": 100,
+      "h1_count": 1,
+      "h2_count": 6,
+      "internal_links": 13,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/abschiedsbrief/index.html",
+      "category": "tool-content",
+      "size_bytes": 36529,
+      "word_count": 70,
+      "score": 37,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 70 Wörter (Ziel ≥ 800)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "Title zu lang (71 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Schema vorhanden aber nicht ideal: ['WebApplication', 'Offer', 'BreadcrumbList', 'ListItem', 'ListItem', 'ListItem', 'FAQPage', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer']",
+        "Kein Monetarisierungs-Hook",
+        "Viel Inline-JS: 17605 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 71,
+      "meta_desc_len": 150,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/beerdigungsplaner/index.html",
+      "category": "tool",
+      "size_bytes": 25689,
+      "word_count": 70,
+      "score": 55,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 70 Wörter (Ziel ≥ 250)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "Title zu lang (72 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Viel Inline-JS: 17148 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: WebApplication, Offer, BreadcrumbList, ListItem"
+      ],
+      "title_len": 72,
+      "meta_desc_len": 151,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/bestattungskosten-rechner/index.html",
+      "category": "tool",
+      "size_bytes": 45905,
+      "word_count": 67,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 67 Wörter (Ziel ≥ 250)",
+        "Keine H2-Gliederung",
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (132 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (70 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (179 Zeichen)",
+        "OG-Image fehlt",
+        "Sehr viel Inline-JS: 28570 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, Offer, BreadcrumbList, Question, WebApplication, An"
+      ],
+      "title_len": 70,
+      "meta_desc_len": 179,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 13,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/checkliste-todesfall/index.html",
+      "category": "tool",
+      "size_bytes": 39439,
+      "word_count": 72,
+      "score": 56,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 72 Wörter (Ziel ≥ 250)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "OG-Image fehlt",
+        "Sehr viel Inline-JS: 29164 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, Offer, BreadcrumbList, Question, WebApplication, An"
+      ],
+      "title_len": 58,
+      "meta_desc_len": 156,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 13,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/danksagung/index.html",
+      "category": "tool-content",
+      "size_bytes": 34822,
+      "word_count": 46,
+      "score": 35,
+      "max_score": 100,
+      "issues": [
+        "<main>-Landmark fehlt",
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 46 Wörter (Ziel ≥ 800)",
+        "Keine H2-Gliederung",
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (66 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (68 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Schema vorhanden aber nicht ideal: ['WebApplication', 'Offer', 'BreadcrumbList', 'ListItem', 'ListItem', 'FAQPage', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer']",
+        "Kein Monetarisierungs-Hook",
+        "Viel Inline-JS: 17932 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 68,
+      "meta_desc_len": 150,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/fristen-radar/index.html",
+      "category": "tool-content",
+      "size_bytes": 38826,
+      "word_count": 69,
+      "score": 36,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 69 Wörter (Ziel ≥ 800)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "Title zu lang (69 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Schema vorhanden aber nicht ideal: ['WebApplication', 'Offer', 'BreadcrumbList', 'ListItem', 'ListItem', 'FAQPage', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer']",
+        "Kein Monetarisierungs-Hook",
+        "Sehr viel Inline-JS: 28200 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 69,
+      "meta_desc_len": 157,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/kostenrechner/index.html",
+      "category": "tool",
+      "size_bytes": 28858,
+      "word_count": 70,
+      "score": 55,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 70 Wörter (Ziel ≥ 250)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "Title zu lang (70 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Viel Inline-JS: 18987 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, Offer, BreadcrumbList, Question, WebApplication, An"
+      ],
+      "title_len": 70,
+      "meta_desc_len": 156,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/notfallkarte/index.html",
+      "category": "tool-content",
+      "size_bytes": 39268,
+      "word_count": 70,
+      "score": 36,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 70 Wörter (Ziel ≥ 800)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "Title zu lang (70 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Schema vorhanden aber nicht ideal: ['WebApplication', 'Offer', 'BreadcrumbList', 'ListItem', 'ListItem', 'ListItem', 'FAQPage', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer']",
+        "Kein Monetarisierungs-Hook",
+        "Sehr viel Inline-JS: 27398 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt"
+      ],
+      "title_len": 70,
+      "meta_desc_len": 158,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/trauerrede/index.html",
+      "category": "tool",
+      "size_bytes": 51581,
+      "word_count": 46,
+      "score": 40,
+      "max_score": 100,
+      "issues": [
+        "<main>-Landmark fehlt",
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 46 Wörter (Ziel ≥ 250)",
+        "Keine H2-Gliederung",
+        "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (110 JSX-Leaks). Google sieht kein H1, keinen Content."
+      ],
+      "warnings": [
+        "Title zu lang (84 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (221 Zeichen)",
+        "OG-Image fehlt",
+        "Sehr viel Inline-JS: 35734 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: WebApplication, Offer, BreadcrumbList, ListItem"
+      ],
+      "title_len": 84,
+      "meta_desc_len": 221,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 11,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "tools/vorsorge-check/index.html",
+      "category": "tool",
+      "size_bytes": 31991,
+      "word_count": 70,
+      "score": 52,
+      "max_score": 100,
+      "issues": [
+        "Kein H1 vorhanden",
+        "Content extrem dünn: 70 Wörter (Ziel ≥ 250)",
+        "Keine H2-Gliederung"
+      ],
+      "warnings": [
+        "Title zu lang (66 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (167 Zeichen)",
+        "OG-Image fehlt",
+        "Sehr viel Inline-JS: 22116 Bytes"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: FAQPage, Offer, BreadcrumbList, Question, WebApplication, An"
+      ],
+      "title_len": 66,
+      "meta_desc_len": 167,
+      "h1_count": 0,
+      "h2_count": 0,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebApplication",
+        "Offer",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "trauerrede-schreiben.html",
+      "category": "content",
+      "size_bytes": 32907,
+      "word_count": 1674,
+      "score": 64,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Title zu lang (67 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (168 Zeichen)",
+        "OG-Image fehlt",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "10 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1674 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 67,
+      "meta_desc_len": 168,
+      "h1_count": 1,
+      "h2_count": 11,
+      "internal_links": 17,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "trauersprueche.html",
+      "category": "content",
+      "size_bytes": 34918,
+      "word_count": 2134,
+      "score": 66,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Meta-Description zu lang (179 Zeichen)",
+        "OG-Image fehlt",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "9 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2134 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 60,
+      "meta_desc_len": 179,
+      "h1_count": 1,
+      "h2_count": 13,
+      "internal_links": 16,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vertraege-kuendigen.html",
+      "category": "content",
+      "size_bytes": 39738,
+      "word_count": 2249,
+      "score": 66,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "Title zu lang (70 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Kein Monetarisierungs-Hook (Cross-Sell/Affiliate)",
+        "10 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2249 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 70,
+      "meta_desc_len": 133,
+      "h1_count": 1,
+      "h2_count": 12,
+      "internal_links": 18,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/bestattungsvorsorge/index.html",
+      "category": "vorsorge",
+      "size_bytes": 50388,
+      "word_count": 2989,
+      "score": 65,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Title zu lang (67 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Sehr viele Inline-Styles: 26"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2989 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 67,
+      "meta_desc_len": 153,
+      "h1_count": 1,
+      "h2_count": 14,
+      "internal_links": 19,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/digitaler-nachlass/index.html",
+      "category": "vorsorge",
+      "size_bytes": 41865,
+      "word_count": 2463,
+      "score": 66,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Title zu lang (69 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "9 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2463 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 69,
+      "meta_desc_len": 146,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 19,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/index.html",
+      "category": "hub",
+      "size_bytes": 32573,
+      "word_count": 1529,
+      "score": 68,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "OG-Image fehlt",
+        "9 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1529 Wörter)",
+        "Schema: WebPage, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 59,
+      "meta_desc_len": 155,
+      "h1_count": 1,
+      "h2_count": 8,
+      "internal_links": 18,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "WebPage",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/ohne-vorsorge/index.html",
+      "category": "vorsorge",
+      "size_bytes": 33893,
+      "word_count": 1935,
+      "score": 65,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Title zu lang (68 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "Sehr viele Inline-Styles: 21"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1935 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 68,
+      "meta_desc_len": 155,
+      "h1_count": 1,
+      "h2_count": 11,
+      "internal_links": 21,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/patientenverfuegung/index.html",
+      "category": "vorsorge",
+      "size_bytes": 37593,
+      "word_count": 2399,
+      "score": 82,
+      "max_score": 100,
+      "issues": [],
+      "warnings": [
+        "OG-Image fehlt",
+        "10 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2399 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An",
+        "Monetarisierungs-Element vorhanden"
+      ],
+      "title_len": 57,
+      "meta_desc_len": 164,
+      "h1_count": 1,
+      "h2_count": 12,
+      "internal_links": 17,
+      "external_links": 1,
+      "affiliate_links": 1,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
+      "path": "vorsorge/sorgerechtsverfuegung/index.html",
+      "category": "vorsorge",
+      "size_bytes": 39169,
+      "word_count": 2611,
+      "score": 68,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "OG-Image fehlt",
+        "10 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2611 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 62,
+      "meta_desc_len": 142,
+      "h1_count": 1,
+      "h2_count": 11,
+      "internal_links": 18,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/sterbegeldversicherung/index.html",
+      "category": "vorsorge",
+      "size_bytes": 40924,
+      "word_count": 2382,
+      "score": 66,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Title zu lang (67 Zeichen, Ziel 50-60)",
+        "OG-Image fehlt",
+        "16 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2382 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 67,
+      "meta_desc_len": 145,
+      "h1_count": 1,
+      "h2_count": 15,
+      "internal_links": 19,
+      "external_links": 1,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/testament/index.html",
+      "category": "vorsorge",
+      "size_bytes": 41429,
+      "word_count": 2871,
+      "score": 66,
+      "max_score": 100,
+      "issues": [
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Meta-Description zu lang (172 Zeichen)",
+        "OG-Image fehlt",
+        "13 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (2871 Wörter)",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 60,
+      "meta_desc_len": 172,
+      "h1_count": 1,
+      "h2_count": 14,
+      "internal_links": 17,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    },
+    {
+      "path": "vorsorge/vorsorge-ordner/index.html",
+      "category": "vorsorge",
+      "size_bytes": 20962,
+      "word_count": 686,
+      "score": 49,
+      "max_score": 100,
+      "issues": [
+        "Content extrem dünn: 686 Wörter (Ziel ≥ 1500)",
+        "Keine Affiliate/Lead-Integration - Vorsorge ist KERN-Monetarisierung"
+      ],
+      "warnings": [
+        "Title zu lang (70 Zeichen, Ziel 50-60)",
+        "Meta-Description zu lang (193 Zeichen)",
+        "OG-Image fehlt",
+        "6 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Schema: Article, FAQPage, BreadcrumbList, Question, Organization, An"
+      ],
+      "title_len": 70,
+      "meta_desc_len": 193,
+      "h1_count": 1,
+      "h2_count": 6,
+      "internal_links": 17,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "Article",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer",
+        "Question",
+        "Answer"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": false
+    }
+  ]
+}
