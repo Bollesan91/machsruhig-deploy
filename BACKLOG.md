@@ -1,8 +1,10 @@
-# machsruhig.de — BACKLOG (Masterplan)
+# machsruhig.de — BACKLOG (Operativer Masterplan)
 
-> **Single Source of Truth.** Dieser Plan integriert drei Audits:
+> **Operative Tickets** — strategische Grundlagen siehe [STRATEGIE.md](./STRATEGIE.md), Session-Gedächtnis siehe [SESSION-NOTES.md](./SESSION-NOTES.md).
+>
+> Dieser Plan integriert drei Audits:
 > 1. **Internes Vollaudit** (`_dev/audit-all-pages.py`, 714 Zeilen, 98 Seiten, 9 Kategorien, Ø 59.0/100)
-> 2. **Substanzanalyse Stadtseiten** (`stadt-quality-analysis.py`, Tier-Klassifizierung GOLD/SILVER/BRONZE/GENERIC)
+> 2. **Substanzanalyse Stadtseiten** (`_dev/stadt-quality-analysis.py`, Tier-Klassifizierung GOLD/SILVER/BRONZE/GENERIC)
 > 3. **Externes strategisches Audit** (6,6/10, Schwerpunkt E-E-A-T, Authority vor Leadgen)
 >
 > Stand: 23. April 2026
@@ -14,14 +16,19 @@
 1. [Strategische Leitplanken](#strategische-leitplanken)
 2. [Status Quo](#status-quo)
 3. [Phasen-Roadmap](#phasen-roadmap)
-4. [Phase A — Deploy-Blocker entschärfen (AKUT)](#phase-a--deploy-blocker-entschärfen)
-5. [Phase B — Trust-Layer sitewide (parallel)](#phase-b--trust-layer-sitewide)
+4. [Phase A — Deploy-Blocker entschärfen (AKUT)](#phase-a--deploy-blocker-entschärfen-akut)
+5. [Phase B — Trust-Layer sitewide](#phase-b--trust-layer-sitewide)
 6. [Phase C — Authority-Content Cluster](#phase-c--authority-content-cluster)
+   - C.1 Akutfall · C.2 Kosten · C.3 Recht (Bundesländer) · C.4 Entscheidung
+   - C.5 Trauer · C.6 Bürokratie · C.7 Neue Tools · C.8 Vorsorge-Detail
 7. [Phase D — Strukturelle SEO-Fixes](#phase-d--strukturelle-seo-fixes)
 8. [Phase E — Top-10-Städte auf Gold-Niveau](#phase-e--top-10-städte-auf-gold-niveau)
 9. [Phase F — Monetarisierung aktivieren](#phase-f--monetarisierung-aktivieren)
-10. [Anti-Patterns](#anti-patterns)
-11. [Offene Entscheidungen](#offene-entscheidungen)
+10. [Quality-Gates (vor jedem Go-Live)](#quality-gates-vor-jedem-go-live)
+11. [Anti-Patterns](#anti-patterns)
+12. [Offene Entscheidungen](#offene-entscheidungen)
+13. [Metriken & Akzeptanzkriterien](#metriken--akzeptanzkriterien)
+14. [Ticket-Übersicht (komplett)](#ticket-übersicht-komplett)
 
 ---
 
@@ -548,6 +555,146 @@ Trauerpsychologische Dimension ernst nehmen. Studien zu Trauerarbeit zitieren. E
 
 ---
 
+### Cluster C.5 — Trauer (eigener Phase-1-Wachstumshebel)
+
+**Strategischer Hintergrund:** Trauer-Content ist die größte SEO-Goldgrube mit niedrigster Konkurrenz, weil viele Wettbewerber sich nicht an die Pietät trauen oder es zu kommerziell angehen. Gleichzeitig **null Monetarisierung** auf diesem Cluster — siehe Trauer-Schutz in STRATEGIE.md.
+
+**Bestehende Trauer-Seiten:**
+- `/trauerrede-schreiben` (Score 64, Info)
+- `/tools/trauerrede` (Score 40, CSR-Blocker)
+- `/kondolenzschreiben` (Score 64, Info)
+- `/trauersprueche` (Score 64, Info)
+- `/kindern-tod-erklaeren` (Score 60, Info)
+
+#### C.5.1 — Erstes Jahr nach dem Tod (12-Monats-Begleiter)
+
+**URL:** `/trauer/erstes-jahr`
+
+**Konzept:** Monat-für-Monat-Begleiter. Was Trauer im Monat 1 ist (Funktionieren), Monat 3 (Erschöpfung), Monat 6 (Wellen), Monat 9 (Anniversaries), Monat 12 (Neuanfang). Jeweils mit konkreten Hinweisen, was normal ist, was Hilfe braucht, was Angehörige tun können.
+
+**Keyword-Targets:** "erstes Jahr nach Tod", "Trauer Phasen", "wie lange trauert man"
+
+**Pflicht-Bausteine:**
+- 2.000+ Wörter
+- Quellen aus Trauerforschung (Kübler-Ross, Bonanno, Worden)
+- Keine Pathologisierung — Trauer ist kein Krankheit
+- Stichwort: Pietät-Gate 7 (verbindlich)
+
+**Aufwand:** 6h
+
+#### C.5.2 — Zurück zur Arbeit nach Trauerfall
+
+**URL:** `/trauer/zurueck-zur-arbeit`
+
+**Konzept:** Aus Arbeitnehmer-Perspektive (nicht HR). Sonderurlaub, Wiedereingliederung, was sage ich Kollegen, wann ist es zu früh, Rechtliches.
+
+**Keyword-Targets:** "Trauer Arbeitsplatz", "Sonderurlaub Trauerfall", "zurück zur Arbeit nach Tod"
+
+**Aufwand:** 4h
+
+#### C.5.3 — Saisonaler Trauer-Content
+
+Externes Audit-Hinweis: Saisonale Trauer-Suchanfragen explodieren ab Herbst.
+
+| URL | Veröffentlichung | Aufwand |
+|---|---|---|
+| `/trauer/weihnachten` | Anfang November | 4h |
+| `/trauer/silvester` | Mitte Dezember | 3h |
+| `/trauer/muttertag` | Anfang Mai | 3h |
+| `/trauer/vatertag` | Anfang Juni | 3h |
+| `/trauer/totensonntag` | Anfang November | 3h |
+| `/trauer/allerheiligen` | Mitte Oktober | 3h |
+| `/trauer/jahrestag` | Evergreen | 4h |
+| `/trauer/engelsgeburtstag` | Evergreen | 3h |
+
+#### C.5.4 — Beileid digital (WhatsApp, SMS, Mail)
+
+**URL:** `/beileid-whatsapp`
+
+**Konzept:** Wie kondoliert man digital ohne Pietät zu verletzen? Welche Formulierungen funktionieren, was geht gar nicht. Vorlagen für WhatsApp, SMS, E-Mail.
+
+**Keyword-Targets:** "Beileid WhatsApp", "Kondolenz digital", "Beileid SMS"
+
+**Aufwand:** 3h
+
+### Cluster C.6 — Bürokratie & Behörden (Mittelfristig)
+
+**Hintergrund:** Aus content-plan.md — solide SEO-Keywords, mittlere Konkurrenz, klare Utility.
+
+#### C.6.1 — Erbschein beantragen
+
+**URL:** `/erbschein` (neu) — Schritt-für-Schritt mit Kosten, Wann brauche ich einen, wann nicht
+
+**Aufwand:** 4h
+
+#### C.6.2 — Witwenrente beantragen
+
+**URL:** `/witwenrente` — Anleitung + Tool (kleine vs. große Witwenrente, Einkommensanrechnung)
+
+**Aufwand:** 5h (Content + Tool)
+
+#### C.6.3 — Sozialbestattung — eigene Seite
+
+Aus C.2.3 ausgelagert in eigenen Cluster: dies ist ein eigenständiges SEO-Thema, nicht nur ein Kosten-Aspekt.
+
+**URL:** `/sozialbestattung` — Anspruchsprüfung, Antrag, Pauschalen pro Bundesland
+
+**Aufwand:** 4h
+
+#### C.6.4 — Verträge kündigen nach Todesfall
+
+**Status:** `/vertraege-kuendigen` existiert (Score 64). Aufrüsten:
+- Musterschreiben pro Vertragsart (Strom, Gas, Telefon, Streaming, Versicherungen)
+- Sonderkündigungsrecht-Hinweise mit Fristen
+- Tabelle mit Standardfristen pro Anbieter
+
+**Aufwand:** 3h Aufrüstung
+
+#### C.6.5 — Dokumenten-Matrix
+
+**URL:** `/dokumente-matrix` (neu)
+
+**Konzept:** Welche Dokumente brauche ich für welchen Behördengang? Tabellen-Tool, das nach Anliegen filtert (Standesamt, Rente, Bank, Versicherung etc.) und die nötigen Unterlagen anzeigt.
+
+**Keyword-Targets:** "Todesfall Unterlagen", "welche Dokumente nach Todesfall"
+
+**Aufwand:** 5h (Content + simple Filter-Logik)
+
+### Cluster C.7 — Neue Tools (nach Trust-Layer)
+
+Aus content-plan.md, hierher verschoben weil sie Trust-Layer brauchen.
+
+| Tool-URL | Keyword | Unique Angle | Aufwand |
+|---|---|---|---|
+| `/tools/trauerfeier-planer` | "Trauerfeier planen" | Ablauf-Builder + Musik-Vorschläge | 6h |
+| `/tools/sterbeurkunden-rechner` | "wie viele Sterbeurkunden" | Rechner basierend auf Verträgen/Konten | 3h |
+| `/tools/erbschaftssteuer-rechner` | "Erbschaftssteuer Rechner" | Steuerklasse + Freibetrag + progressive Sätze | 5h |
+| `/tools/witwenrente-rechner` | "Witwenrente Rechner" | Große/kleine Rente + Einkommensanrechnung | 5h |
+| `/tools/trauer-tagebuch` | "Trauertagebuch" | 52 Wochen Schreibimpulse als PDF | 4h |
+| `/tools/digitaler-nachlass-inventar` | "Digitaler Nachlass" | Online-Konten katalogisieren ohne Passwörter | 5h |
+
+**Wichtig:** Alle neuen Tools als Static Shell + Widget (siehe Phase A.3), kein @babel/standalone mehr.
+
+### Cluster C.8 — Bestehende Vorsorge-Seiten als eigene URLs
+
+Aus content-plan.md Prio B:
+
+#### C.8.1 — Vorsorgevollmacht
+
+**URL:** `/vorsorge/vorsorgevollmacht` (neu, aktuell nur im Vorsorge-Ordner enthalten)
+
+**Aufwand:** 4h
+
+#### C.8.2 — Betreuungsverfügung
+
+**URL:** `/vorsorge/betreuungsverfuegung` (neu)
+
+**Konzept:** Klare Abgrenzung zur Vorsorgevollmacht — viele User wissen den Unterschied nicht.
+
+**Aufwand:** 4h
+
+---
+
 ## Phase D — Strukturelle SEO-Fixes
 
 **Parallel zu C laufend.** Kleine Fixes, große Hebel.
@@ -683,6 +830,42 @@ Wenn A–E solide:
 
 ---
 
+## Quality-Gates (vor jedem Go-Live)
+
+Jede neue Seite muss alle 7 Gates bestehen. Verbindlich. Kompakt-Übersicht hier, Details in [STRATEGIE.md → Quality-Gates](./STRATEGIE.md#quality-gates-vor-jedem-go-live).
+
+| Gate | Name | Blocker? |
+|---|---|---|
+| 1 | Intent-Fit (Title + H1 matchen Suchintention) | Ja |
+| 2 | Utility (konkreter Output oder echte Hilfe) | Ja |
+| 3 | Differenzierung (besser als Top-3-Konkurrenz) | Nein* |
+| 4 | Conversion-Klarheit (1 Primär-CTA pro Bereich) | Ja |
+| 5 | Brand-Fit (Design, Tonalität) | Ja |
+| 6 | Programmatic-Sauberkeit (keine Platzhalter, 404-Links) | Ja |
+| 7 | **Pietät-Check** | **Ja** |
+
+**QA-Workflow pro Seite:**
+1. Automatisierte Checks: `python3 _dev/audit-all-pages.py`
+2. Substanzprüfung (bei Stadtseiten): `python3 _dev/stadt-quality-analysis.py`
+3. Manuelle Gates 1-5
+4. Gate 7 als letzter Check
+5. Erst dann `noindex` entfernen / live gehen
+
+**Vorlage pro Seite:**
+```
+Seite: ___ URL: ___ Typ: ___ Datum: ___
+Gate 1 (Intent-Fit):          [ ] PASS  [ ] FAIL
+Gate 2 (Utility):             [ ] PASS  [ ] FAIL
+Gate 3 (Differenzierung):     [ ] PASS  [ ] WARN
+Gate 4 (Conversion-Klarheit): [ ] PASS  [ ] FAIL
+Gate 5 (Brand-Fit):           [ ] PASS  [ ] FAIL
+Gate 6 (Programmatic):        [ ] PASS  [ ] FAIL
+Gate 7 (Pietät):              [ ] PASS  [ ] FAIL
+Ergebnis: [ ] GO LIVE  [ ] ÜBERARBEITEN  [ ] BLOCKIERT
+```
+
+---
+
 ## Anti-Patterns
 
 Diese Entscheidungen ausdrücklich **nicht** treffen, sonst kippt Authority-Phase:
@@ -799,7 +982,7 @@ Diese Fragen blockieren Phase B und damit viele Folge-Arbeiten. **Antworten nöt
 | 21 | C.1.4 | Standesamt-Seite | 3h | — |
 | 22 | C.2.1 | Erdbestattung-Kosten-Detail | 5h | — |
 | 23 | C.2.2 | Kostenvergleich | 3h | C.2.1 |
-| 24 | C.2.3 | Sozialbestattung | 4h | — |
+| 24 | C.2.3 | Sozialbestattung (kurz, in C.6.3 vertieft) | 4h | — |
 | 25 | C.2.4 | Wer zahlt? | 3h | — |
 | 26 | C.2.5 | Sparoptionen | 3h | — |
 | 27 | C.3 | Bundesland NRW | 3–4h | Entscheidung 3 |
@@ -811,27 +994,62 @@ Diese Fragen blockieren Phase B und damit viele Folge-Arbeiten. **Antworten nöt
 | 33 | C.4.1 | Erd- oder Feuer | 4h | — |
 | 34 | C.4.2 | Anonym oder mit Grab | 4h | — |
 | 35 | C.4.3 | Religion und Bestattung | 4h | — |
-| 36 | D.1 | OG-Image Master + Varianten | 3h | — |
-| 37 | D.2 | Schema.org Upgrades | 10–15h | — |
-| 38 | D.3 | Interne Linkstruktur | 10h | — |
-| 39 | D.4 | Title-Normalisierung | 1h | — |
-| 40 | D.5 | Meta-Description-Normalisierung | 1h | — |
-| 41 | E.1 | Gold-Template dokumentieren | 2h | — |
-| 42 | E.2 | Stuttgart auf Gold | 4–6h | E.1 |
-| 43 | E.2 | Düsseldorf auf Gold | 4–6h | E.1 |
-| 44 | E.2 | Leipzig auf Gold | 4–6h | E.1 |
-| 45 | E.2 | Dortmund auf Gold | 4–6h | E.1 |
-| 46 | E.2 | Essen auf Gold | 4–6h | E.1 |
-| 47 | F.1 | DELA/SOLIDAR/Afilio-Anträge | 2–3h | kann parallel |
-| 48 | F.2 | Lead-Backend wählen + bauen | 4–6h | Entscheidung 5 |
-| 49 | F.3 | Lead-Funnel | groß | F.2 |
+| 36 | C.5.1 | Trauer: Erstes Jahr (12-Monats-Begleiter) | 6h | B.2 |
+| 37 | C.5.2 | Trauer: Zurück zur Arbeit | 4h | — |
+| 38 | C.5.3 | Trauer-Saisonal: Weihnachten | 4h | timing-kritisch |
+| 39 | C.5.3 | Trauer-Saisonal: Silvester | 3h | — |
+| 40 | C.5.3 | Trauer-Saisonal: Muttertag | 3h | — |
+| 41 | C.5.3 | Trauer-Saisonal: Vatertag | 3h | — |
+| 42 | C.5.3 | Trauer-Saisonal: Totensonntag | 3h | timing-kritisch |
+| 43 | C.5.3 | Trauer-Saisonal: Allerheiligen | 3h | timing-kritisch |
+| 44 | C.5.3 | Trauer-Evergreen: Jahrestag | 4h | — |
+| 45 | C.5.3 | Trauer-Evergreen: Engelsgeburtstag | 3h | — |
+| 46 | C.5.4 | Beileid digital (WhatsApp/SMS/Mail) | 3h | — |
+| 47 | C.6.1 | Erbschein beantragen | 4h | — |
+| 48 | C.6.2 | Witwenrente beantragen + Tool | 5h | — |
+| 49 | C.6.3 | Sozialbestattung (vertieft) | 4h | C.2.3 |
+| 50 | C.6.4 | Verträge kündigen aufrüsten | 3h | — |
+| 51 | C.6.5 | Dokumenten-Matrix | 5h | — |
+| 52 | C.7 | Tool: Trauerfeier-Planer | 6h | A.3 |
+| 53 | C.7 | Tool: Sterbeurkunden-Rechner | 3h | A.3 |
+| 54 | C.7 | Tool: Erbschaftssteuer-Rechner | 5h | A.3 |
+| 55 | C.7 | Tool: Witwenrente-Rechner | 5h | A.3, C.6.2 |
+| 56 | C.7 | Tool: Trauer-Tagebuch (52 Wochen PDF) | 4h | — |
+| 57 | C.7 | Tool: Digitaler-Nachlass-Inventar | 5h | A.3 |
+| 58 | C.8.1 | Vorsorgevollmacht (eigene Seite) | 4h | — |
+| 59 | C.8.2 | Betreuungsverfügung | 4h | C.8.1 |
+| 60 | D.1 | OG-Image Master + Varianten | 3h | — |
+| 61 | D.2 | Schema.org Upgrades | 10–15h | — |
+| 62 | D.3 | Interne Linkstruktur | 10h | — |
+| 63 | D.4 | Title-Normalisierung | 1h | — |
+| 64 | D.5 | Meta-Description-Normalisierung | 1h | — |
+| 65 | E.1 | Gold-Template dokumentieren | 2h | — |
+| 66 | E.2 | Stuttgart auf Gold | 4–6h | E.1 |
+| 67 | E.2 | Düsseldorf auf Gold | 4–6h | E.1 |
+| 68 | E.2 | Leipzig auf Gold | 4–6h | E.1 |
+| 69 | E.2 | Dortmund auf Gold | 4–6h | E.1 |
+| 70 | E.2 | Essen auf Gold | 4–6h | E.1 |
+| 71 | F.1 | DELA/SOLIDAR/Afilio-Anträge | 2–3h | kann parallel |
+| 72 | F.2 | Lead-Backend wählen + bauen | 4–6h | Entscheidung 5 |
+| 73 | F.3 | Lead-Funnel | groß | F.2 |
 
 **Gesamt-Aufwand (grobe Schätzung):**
 - Phase A: 30–45h (AKUT)
 - Phase B: 10–15h
-- Phase C: 70–110h
+- Phase C.1-C.4: 70–110h (Akutfall, Kosten, Recht, Entscheidung)
+- Phase C.5: 39h (Trauer-Cluster — niedrige Konkurrenz, hoher Hebel)
+- Phase C.6: 21h (Bürokratie & Behörden)
+- Phase C.7: 28h (neue Tools)
+- Phase C.8: 8h (Vorsorge-Detail-Seiten)
 - Phase D: 25–30h
 - Phase E: 20–30h
 - Phase F: 15–25h + groß F.3
 
-**Kritischer Pfad:** A → B → C.1 → C.2 → C.3 Runde 1 → D parallel → E → F
+**Kritischer Pfad:** A → B → C.1 → C.2 → C.3 Runde 1 → D parallel → C.5/C.6/C.7 nach Bedarf → E → F
+
+**Saisonale Trigger** (timing-kritisch im Jahresverlauf):
+- Mitte Oktober: Allerheiligen-Content live
+- Anfang November: Totensonntag + Weihnachten-Content live
+- Mitte Dezember: Silvester-Content live
+- Anfang Mai: Muttertag-Content live
+- Anfang Juni: Vatertag-Content live

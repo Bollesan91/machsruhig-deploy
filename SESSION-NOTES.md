@@ -28,19 +28,37 @@
 - Reversibel via sed
 - **Noch offen in Phase A:** Homepage + 5 Gold-Städte + 9 Tools aus CSR-Hölle retten
 
-### Backlog komplett neu gebaut
+### Doku-Konsolidierung (NEU am Ende der Session)
 
-- `BACKLOG.md` (837 Zeilen) — Single Source of Truth
-- 6 Phasen: A (Deploy-Blocker AKUT) → B (Trust-Layer) → C (Authority-Content) → D (Strukturelle SEO) → E (Top-10-Städte Gold) → F (Monetarisierung)
-- 49 konkrete Tickets mit Aufwand, Abhängigkeiten, Akzeptanzkriterien
-- 6 offene Entscheidungen explizit markiert
+Doppelte/parallele Strategie-Dokumente waren entstanden. Nach Vorbild machsleicht aufgeräumt:
 
-### Aufräumarbeiten
+**Vorher:**
+- 7 separate Strategie-Dokumente in `_dev/docs/` (content-klassen, seitentypen, cta-hierarchie, linklogik, monetarisierung, qa-gates, content-plan)
+- Plus alter `.claude/session-notiz.md` (01.04.2026, stale)
+- Plus `BACKLOG.md` im Root (837 Zeilen, neu)
+
+**Nachher (gemäß Doku-Regel analog machsleicht):**
+- `STRATEGIE.md` (Root, 472 Zeilen) — synthetisiert die 7 _dev/docs Dokumente + externe Audit-Erkenntnisse
+- `BACKLOG.md` (Root, 1.055 Zeilen) — erweitert um Cluster C.5 Trauer, C.6 Bürokratie, C.7 neue Tools, C.8 Vorsorge-Detail
+- `SESSION-NOTES.md` (Root) — Session-Gedächtnis
+- `_dev/archiv/` — alle 7 originalen Strategie-Dokumente plus README.md mit Konsolidierungs-Mapping
+- `.claude/session-notiz.md` gelöscht (stale)
+
+**Backlog wuchs von 49 auf 73 Tickets** durch Integration der content-plan-Inhalte:
+- Trauer-Cluster (Erstes Jahr, Zurück zur Arbeit, 8 saisonale Seiten, Beileid digital) = 11 Tickets
+- Bürokratie (Erbschein, Witwenrente, Sozialbestattung vertieft, Verträge kündigen, Dokumenten-Matrix) = 5 Tickets
+- Neue Tools (Trauerfeier-Planer, Sterbeurkunden-Rechner, Erbschaftssteuer, Witwenrente, Trauer-Tagebuch, Digitaler-Nachlass-Inventar) = 6 Tickets
+- Vorsorge-Detail (Vorsorgevollmacht, Betreuungsverfügung als eigene Seiten) = 2 Tickets
+- Quality-Gates-Sektion ergänzt (vorher fehlte das im Backlog)
+
+### Aufräumarbeiten Detail
 
 - Alte Roadmap-Dateien entfernt (von BACKLOG.md ersetzt)
 - Dupliziertes Audit-Skript im Root entfernt (canonisch: `_dev/audit-all-pages.py`)
 - Stadt-Quality-Tools nach `_dev/` verschoben
-- Root aufgeräumt: nur noch `BACKLOG.md` + `SESSION-NOTES.md`
+- 7 Strategie-Dokumente von `_dev/docs/` nach `_dev/archiv/` verschoben
+- Stale `.claude/session-notiz.md` gelöscht
+- Root jetzt sauber: nur `BACKLOG.md` + `STRATEGIE.md` + `SESSION-NOTES.md`
 
 ## Nächste Schritte
 
@@ -61,6 +79,12 @@
 7. OG-Image für alle 98 Seiten (Master + 4-5 Varianten) — 3h
 8. LocalBusiness/FuneralHome-Schema für 5 Gold-Städte — 2-3h
 
+**Saisonale Trigger im Auge behalten:**
+
+- **Mitte Oktober:** Allerheiligen-Content live
+- **Anfang November:** Totensonntag + Weihnachten-Content live
+- **Mitte Dezember:** Silvester-Content live
+
 ## Offene Fragen (blockieren Folge-Arbeiten)
 
 1. **Autoren-Modell:** Klarname (du) / Redaktions-Pseudonym / Hybrid? → blockiert Phase B
@@ -75,3 +99,4 @@
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 20, 21, 22
 + Monetarisierungs-Basis, Vorsorge-Cluster, 9 neue Tools/Seiten (März/April 2026)
 + Audit + Backlog + Phase A teilweise (noindex 45 Generic-Städte) + Schema-Parser-Bug-Fix (23.04.2026)
++ Doku-Konsolidierung: STRATEGIE.md + BACKLOG erweitert + _dev/docs archiviert (23.04.2026)
