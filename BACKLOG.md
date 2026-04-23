@@ -44,7 +44,7 @@
 | # | Ticket | Aufwand | Akzeptanz |
 |---:|---|---:|---|
 | 1 | **Homepage statisch neu bauen** (A.1) | 4-6h | Audit-Score ≥75, kein @babel/standalone, Lighthouse ≥90, `<main>` sichtbar im View-Source |
-| 2 | **5 Gold-Städte statisch ausliefern** (A.2) | 10-15h, parallel zu #3-#5 möglich | Pro Stadt: Audit-Score ≥85, FuneralHome-Schema, kein JSX-Leak |
+| 2 | **5 Gold-Städte statisch ausliefern** (A.2) — **STAGE 1 DONE (23.04.)** | 10-15h | Stage 1 ✅: Score 75, kein JSX-Leak, für Google sichtbar. Stage 2 (Score ≥85 + FuneralHome-Schema) → Ticket **D.2.1** |
 | 3 | **Über-uns-Seite live** (B.1) | 3-4h | Haltung sichtbar, Reviewer-Pool-Erwähnung, verlinkt von Homepage + Methodik |
 | 4 | **Autorenblock + Methodik-Verlinkung sitewide** (B.2 + B.3) | 4h | "Redaktion machsruhig.de" + "Fachlich geprüft von" auf allen YMYL-Seiten, Methodik-Link prominent |
 | 5 | **Akutfall-Hauptseite "Erste 24 Stunden"** (C.1.1) | 6-8h | 2.000+ Wörter, 5+ Gesetzes-Paragrafen, 3+ Quellen, Audit-Score ≥90, Pietät-Gate bestanden |
@@ -212,6 +212,10 @@ Den bereits existierenden Gold-Content **statisch** ausliefern. Entweder:
 
 **Aufwand:** 2–3h pro Stadt, parallelisierbar. Gesamt: 10–15h für alle 5.
 
+**Status (23.04.2026):** Stage 1 abgeschlossen. React + `@babel/standalone` entfernt, statisches HTML mit H1, Content, Kostentabellen, Friedhofs-Übersicht, FAQ, Mobile-Nav als Vanilla-JS, OG-Image als PNG. **Audit-Score pro Stadt: 75.** Für Google vollständig sichtbar.
+
+**Offen (Stage 2, verschoben nach D.2.1):** FuneralHome/LocalBusiness-Schema, H2-Count-Optimierung, Monetarisierungs-Warning (nachdem Lead-Form in Phase F zurückkommt). Ziel: Score ≥85 pro Stadt.
+
 ---
 
 ### A.3 — Tool-Seiten: Static Shell + Interactive Widget
@@ -270,6 +274,18 @@ Wenn Option A aus A.2 gewählt wird: ein kleines Node-Script, das nach `npm run 
 **URL:** `/ueber-uns` (neu)
 
 **Aufwand:** 3h Text + 1h Bau
+
+**Status (23.04.2026):** Sprint #3 umgesetzt. `ueber-uns.html` live, 1050 Wörter, Score 75, AboutPage+Organization-Schema, Fachpool-Rollen als "im Aufbau" transparent gekennzeichnet, verlinkt von Homepage + Methodik + Sitemap.
+
+**Nachschärfung bei Traffic (B.1.1 — kein akuter Handlungsbedarf):** Die Seite ist solide, hat aber bekannte Qualitätspunkte, die erst bei relevantem Traffic gefixt werden:
+- Redundanz zur Methodik-Seite (~40% Überlapp bei Haltung + Finanzierung) — kürzen und auf Methodik verweisen
+- Title/H1 schärfen ("Über uns" → "Über machsruhig — unabhängiges Portal für Vorsorge und Bestattung") — löst auch das Audit-Issue "H1/Title keine Keyword-Überlappung"
+- Fachpool-Cards: Aufbau-Status VOR die Rollen-Karten ziehen, nicht darunter als small-print
+- Konkurrenz-Abgrenzung mit konkreten Namen/Belegen unterfüttern, statt abstrakter Behauptungen
+- Eigene Fachpool-Kontaktadresse statt nur Impressum-Verweis
+- Floskel-Diät: "Unser Leitsatz"/"Unser Versprechen"/"Wir helfen dir" runterdrehen
+
+**Trigger für Nachschärfung:** Sobald die Seite >50 Besuche/Monat hat oder Phase D/E relevante Referenz-Qualität verlangt.
 
 ---
 
@@ -747,6 +763,27 @@ Aus content-plan.md Prio B:
 - Einmal im Build-Prozess per `og:image`-Meta einbinden
 
 **Aufwand:** 2h Design + 1h Einbau = 3h
+
+### D.2.1 — 5 Gold-Städte auf Score ≥85 heben (Stage 2 von A.2)
+
+**Herkunft:** Rest-Arbeit aus Ticket A.2 / Sprint #2. Stage 1 ist am 23.04.2026 abgeschlossen (Score 75, statisch sichtbar). Stage 2 bündelt die restlichen ≥85-Kriterien.
+
+**Betroffen:** Berlin, Frankfurt, Hamburg, Köln, München.
+
+**Was fehlt zu ≥85:**
+1. **FuneralHome/LocalBusiness-Schema** pro Stadt (siehe D.2-Matrix unten)
+2. **H2-Count** teils unter Ziel — Gliederung nachschärfen
+3. **Monetarisierungs-Warning** aufräumen, sobald Lead-Form aus Phase F zurück ist
+
+**Abhängigkeit:** Punkt 3 setzt Phase F-Aktivierung voraus. Punkte 1 + 2 sind jetzt machbar und bringen den Score isoliert auf ~80–82.
+
+**Empfohlene Ausführung:** Gebündelt mit dem Rest von D.2, wenn Phase D drankommt. Nicht isoliert nach Sprint #3 ziehen — Halbarbeit.
+
+**Aufwand:** 3–4h für Punkte 1 + 2 (5 Städte × ~30–40 Min). Punkt 3 kommt automatisch mit Phase F.
+
+**Akzeptanz:** Pro Stadt Audit-Score ≥85, `FuneralHome` oder `LocalBusiness` im Schema-Graph erkennbar, validate-all.sh grün.
+
+---
 
 ### D.2 — Schema.org Upgrades pro Kategorie
 

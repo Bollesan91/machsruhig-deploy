@@ -1,100 +1,84 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 23. April 2026
-**Deploy:** Ja (Ende der Session mit "ende deploy")
+**Datum:** 23. April 2026 (Abend, Sprint #3)
+**Deploy:** Ja (mit "ende deploy")
 
-## Sprint-Status
+## Was wurde gemacht
 
-### ✅ Sprint #1 — Homepage statisch neu bauen — ERLEDIGT
+### ✅ Sprint #3 — Über-uns-Seite live (B.1) — ERLEDIGT
 
-**Audit-Score:** 39 → **80/100**
-- 642 sichtbare Wörter (vorher 101)
-- 1 H1, 4 H2, 15 interne Links
-- `<main id="main">`-Landmark
-- Schema.org Organization + WebSite + SiteNavigationElement
-- Mobile-Nav als Vanilla-JS, kein React, kein @babel/standalone
-- OG-Image als PNG eingebunden
+Neue Seite `ueber-uns.html`:
+- 353 Zeilen, **1050 sichtbare Wörter**
+- **Audit-Score: 75/100**
+- 0 HTML-Strukturfehler
+- Schema.org: **AboutPage + Organization + BreadcrumbList**, mit `foundingDate`, `knowsAbout`, `publishingPrinciples` → `/methodik`
+- Vanilla-JS Mobile-Nav, OG-Image als PNG, Skip-Link als CSS-Klasse, sauberes `</main>`-Closing (kein Copy-Paste-Fehler aus Methodik-Vorlage)
+- Print-Styles vorhanden
 
-### ✅ Sprint #2 — 5 Gold-Städte statisch — ERLEDIGT (teilweise)
+Inhaltliche Abschnitte:
+- Warum gibt es machsruhig (Branchenkritik + Haltung)
+- Wer steht dahinter (Redaktion + Fachpool-Rollen als "im Aufbau" transparent gekennzeichnet)
+- Redaktionelle Haltung (4 Prinzipien-Cards)
+- Finanzierung (Bestatter-Vermittlung + Vorsorge + "Was wir nicht tun")
+- Abgrenzung zu Branchenportalen
+- Unabhängigkeit
+- Kontakt & Feedback
 
-**Audit-Score pro Stadt:** 40 → 75
-- Berlin: 1766 Wörter
-- Frankfurt: 1438 Wörter
-- Hamburg: 2189 Wörter
-- Köln: 1776 Wörter
-- München: 1872 Wörter
+### Begleitende Anpassungen
 
-**Was gemacht:**
-- React + ReactDOM + @babel/standalone entfernt
-- Lead-Form durch statischen Trust-Hint-Block ersetzt (Lead-Integration kommt in Phase F)
-- Mobile-Nav als Vanilla-JS
-- OG-Image-Tags ergänzt (PNG + image:type + image:alt)
-- Skip-Link: Inline-Style → CSS-Klasse
-- Methodik-Link in Hauptnavigation
-- HTML-Strukturfehler behoben: `</div>` → `</main>`
+- **index.html:** Footer-Link auf `/ueber-uns` als erster Eintrag im "Über uns"-Block
+- **methodik.html:** Inhaltlicher Querverweis auf `/ueber-uns` im "Wer wir sind"-Abschnitt + Footer-Link ergänzt
+- **_redirects:** Trailing-Slash-Normalisierung `/ueber-uns/` → `/ueber-uns` 301
+- **sitemap.xml:** Neuer Eintrag für `/ueber-uns` (Priorität 0.6, changefreq monthly)
 
-**Akzeptanzkriterium ≥85 noch nicht voll erreicht.** Delta zu 85:
-- LocalBusiness/FuneralHome-Schema fehlt noch (geplant Phase D.2)
-- Monetarisierungs-Warning (Lead-Form raus, kommt in Phase F zurück)
-- H2-Count teils unter Ziel
+### Sitewide-Änderung: machsleicht-Verbindung entfernt
 
-Die Seiten sind aber **für Google vollständig sichtbar** — das war das Sprint-Ziel. Die Feinarbeit auf ≥85 kommt mit Phase D/E.
+Entscheidung in dieser Session: **Keine sichtbare Verbindung zwischen machsruhig und machsleicht auf der Seite.** Vier Stellen bereinigt:
+- ueber-uns.html Unabhängigkeits-Abschnitt (umformuliert zu "eigenständiges Projekt")
+- ueber-uns.html Footer ("Unabhängiges Informationsportal" statt "Projekt der mach's-Familie")
+- methodik.html "Wer wir sind"-Absatz (Schwestermarke-Satz entfernt)
+- methodik.html Footer (analog)
 
-### Neu: validate-all.sh Quality Gate (Stufe 1)
+### Backlog-Aufräumen (davor in dieser Session)
 
-6 automatische Checks vor Push:
-1. HTML-Syntax-Validität
-2. Keine Platzhalter
-3. Audit-Score-Prüfung (inkl. Homepage ≥75)
-4. Kaputte interne Links
-5. Sitemap-Konsistenz
-6. OG-Image-Referenzen
-
-3-Stufen-Workflow analog machsleicht:
-- Stufe 1: `bash validate-all.sh` → PASSED
-- Stufe 2: Elite Check manuell (Content, UX, Pietät, Blast-Radius)
-- Stufe 3: "Was habe ich NICHT gecheckt?" explizit benennen
-
-### Neu: Audit-Skript erweitert
-
-Neue Checks im `_dev/audit-all-pages.py`:
-- OG-Image-Format-Warning (SVG → Warning, PNG/JPEG bevorzugt)
-- @babel/standalone-Warning auf Content-Seiten (auch ohne 5+ Leaks)
-- skip-link-Accessibility-Check
-- `check_internal_links()`: aggregierte Link-Validität, Ergebnis im JSON-Report
+- **Sprint #2** von "teilweise ERLEDIGT" auf **STAGE 1 DONE** umklassifiziert
+- Neues Ticket **D.2.1** angelegt: "5 Gold-Städte auf Score ≥85 heben (Stage 2 von A.2)" — gebündelt mit Phase D.2 Schema-Upgrades
+- **B.1** um Status-Block + Nachschärf-Notizen (B.1.1) ergänzt: Redundanz zur Methodik kürzen, Title/H1 schärfen, Fachpool-Cards-Reihenfolge, Floskel-Diät — Trigger: wenn >50 Besuche/Monat oder Phase D/E
 
 ## Gesamt-Site-Score-Entwicklung
 
-- Session-Start: 59.0
-- Nach Sprint #1: 59.5
-- Nach Sprint #2: **61.2**
-- Deploy-Blocker: 9 → 3 (6 entschärft)
+- Session-Start: 61.2
+- Nach Sprint #3: **61.37** (leichter Anstieg durch neue Seite mit Score 75)
 
-## 🔄 Sprint #3-5 — noch ausstehend
+## 🔄 Sprint #4-5 — noch ausstehend
 
 | # | Ticket | Aufwand | Priorität |
 |---|---|---|---|
-| 3 | Über-uns-Seite live | 3-4h | Nächste Session |
-| 4 | Autorenblock + Methodik-Verlinkung sitewide | 4h | Nach Sprint #3 |
-| 5 | Akutfall-Hauptseite "Erste 24 Stunden" | 6-8h | Nach Sprint #4 |
+| 4 | Autorenblock + Methodik-Verlinkung sitewide (B.2 + B.3) | 4h | Nächste Session |
+| 5 | Akutfall-Hauptseite "Erste 24 Stunden" (C.1.1) | 6-8h | Nach Sprint #4 |
 
 ## Nächste Schritte
 
-**Sprint #3: Über-uns-Seite live**
+**Sprint #4: Autorenblock + Methodik-Verlinkung sitewide**
 
 Konzept:
-- URL: `/ueber-uns` (neu)
-- Inhalt: Haltung, Redaktion, Reviewer-Pool, Finanzierung, Unabhängigkeit
-- Basis: Festgelegte Entscheidung 1 — "machsruhig Redaktion" + Fachpool-Reviewer
-- Schema.org AboutPage + Organization
-- Prominent verlinkt von Homepage, Footer, Methodik
+- "Redaktion machsruhig.de" + ggf. "Fachlich geprüft von: [Name], [Rolle]" als sichtbarer Block auf allen YMYL-Seiten
+- Methodik-Link prominent auf jeder Content-Seite
+- Schema.org `author` referenziert "Organization machsruhig.de"
+- Schema.org `reviewedBy` referenziert Person-URLs (sobald Fachpool existiert)
 
-**Offene Punkte für später:**
-- methodik.html + trauerrede-schreiben.html: HTML-Strukturfehler (je 2) — nicht kritisch
-- LocalBusiness/FuneralHome-Schema für 5 Gold-Städte (Phase D.2)
-- Sitemap.xml stale: hat noch 45 noindex-Städte drin (Phase D)
-- 17 kaputte interne Links (`/bestattung` 16×, `/tools/brief-an-meine-liebsten` 1×)
+## Offene Punkte für später
+
+- **methodik.html + trauerrede-schreiben.html: HTML-Strukturfehler** (je 2) — vorbekannt, nicht kritisch, nicht in Sprint #3 adressiert
+- **LocalBusiness/FuneralHome-Schema** für 5 Gold-Städte (Ticket D.2.1)
+- **Sitemap.xml stale:** hat noch 45 noindex-Städte drin (Phase D)
+- **17 kaputte interne Links** (`/bestattung` 16×, `/tools/brief-an-meine-liebsten` 1×)
+- **B.1.1 Über-uns-Nachschärfung** wenn Traffic kommt (siehe BACKLOG)
+
+## PAT-Status
+
+**⚠️ GitHub PAT läuft am 25.04.2026 ab** — in 2 Tagen. Rotation planen bevor's beim nächsten Push scheitert.
 
 ## Saisonale Trigger im Auge behalten
 
@@ -114,4 +98,5 @@ Konzept:
 + Monetarisierungs-Basis, Vorsorge-Cluster, 9 neue Tools/Seiten (März/April 2026)
 + 23.04.2026 Vormittag: Audit + Backlog + Phase A teilweise (noindex 45 Generic-Städte) + Schema-Parser-Bug-Fix + Doku-Konsolidierung + 3 Schlüssel-Entscheidungen + Markteroberungs-Erweiterung + 7-Tage-Sprint
 + 23.04.2026 Nachmittag: **Sprint #1 Homepage (Score 39→80)** + Audit-Skript-Erweiterung + validate-all.sh + OG-Image als PNG
-+ 23.04.2026 Abend: **Sprint #2 5 Gold-Städte (Score 40→75)** + Deploy
++ 23.04.2026 Abend (früh): **Sprint #2 5 Gold-Städte (Score 40→75)** + Deploy
++ 23.04.2026 Abend (spät): **Sprint #3 Über-uns (B.1, Score 75)** + Backlog-Umklassifizierung Sprint #2 → D.2.1 + sitewide machsleicht-Entkopplung + Deploy

@@ -1,11 +1,11 @@
 {
   "meta": {
-    "pages": 98,
-    "avg_score": 61.24,
+    "pages": 99,
+    "avg_score": 61.37,
     "by_category": {
       "legal": {
         "count": 4,
-        "avg_score": 76.25
+        "avg_score": 76.0
       },
       "hub": {
         "count": 2,
@@ -34,6 +34,10 @@
       "tool": {
         "count": 6,
         "avg_score": 49.67
+      },
+      "other": {
+        "count": 1,
+        "avg_score": 75.0
       },
       "vorsorge": {
         "count": 8,
@@ -110,7 +114,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1290 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 69,
       "meta_desc_len": 148,
@@ -163,7 +167,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -213,7 +217,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -260,7 +264,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 84,
@@ -310,7 +314,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -360,7 +364,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -411,7 +415,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 32,
@@ -461,7 +465,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 40,
@@ -511,7 +515,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -561,7 +565,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -611,7 +615,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -661,7 +665,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -711,7 +715,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -761,7 +765,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -811,7 +815,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -861,7 +865,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -911,7 +915,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -958,7 +962,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 98,
@@ -1008,7 +1012,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -1058,7 +1062,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 41,
@@ -1108,7 +1112,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -1158,7 +1162,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -1205,7 +1209,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 72,
@@ -1255,7 +1259,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -1305,7 +1309,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -1355,7 +1359,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -1405,7 +1409,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -1456,7 +1460,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 32,
@@ -1503,7 +1507,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 80,
@@ -1553,7 +1557,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -1603,7 +1607,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -1653,7 +1657,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -1703,7 +1707,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -1753,7 +1757,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -1803,7 +1807,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -1853,7 +1857,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -1903,7 +1907,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 43,
@@ -1953,7 +1957,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2000,7 +2004,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 74,
@@ -2050,7 +2054,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2100,7 +2104,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -2150,7 +2154,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -2200,7 +2204,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2250,7 +2254,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2300,7 +2304,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2350,7 +2354,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -2400,7 +2404,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2450,7 +2454,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 39,
@@ -2500,7 +2504,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2550,7 +2554,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2600,7 +2604,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, BreadcrumbList, Question, ListItem, Service, City, ",
+        "Schema: ListItem, Service, BreadcrumbList, Question, Answer, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2651,7 +2655,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 88,
       "meta_desc_len": 168,
@@ -2701,7 +2705,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (507 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 77,
       "meta_desc_len": 151,
@@ -2755,7 +2759,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (461 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 77,
       "meta_desc_len": 150,
@@ -2807,7 +2811,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 82,
       "meta_desc_len": 154,
@@ -2857,7 +2861,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (444 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 77,
       "meta_desc_len": 156,
@@ -2909,7 +2913,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 78,
       "meta_desc_len": 155,
@@ -2959,7 +2963,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (425 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 77,
       "meta_desc_len": 151,
@@ -3012,7 +3016,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 93,
       "meta_desc_len": 170,
@@ -3062,7 +3066,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 84,
       "meta_desc_len": 156,
@@ -3115,7 +3119,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (415 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 90,
       "meta_desc_len": 176,
@@ -3167,7 +3171,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (430 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 86,
       "meta_desc_len": 164,
@@ -3219,7 +3223,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 79,
       "meta_desc_len": 150,
@@ -3269,7 +3273,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 78,
       "meta_desc_len": 157,
@@ -3320,7 +3324,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 85,
       "meta_desc_len": 166,
@@ -3371,7 +3375,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (410 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 89,
       "meta_desc_len": 179,
@@ -3423,7 +3427,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 80,
       "meta_desc_len": 156,
@@ -3474,7 +3478,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1556 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 71,
       "meta_desc_len": 163,
@@ -3525,7 +3529,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 62,
       "meta_desc_len": 139,
@@ -3625,23 +3629,23 @@
     {
       "path": "index.html",
       "category": "homepage",
-      "size_bytes": 21554,
-      "word_count": 642,
+      "size_bytes": 21604,
+      "word_count": 644,
       "score": 80,
       "max_score": 100,
       "issues": [],
       "warnings": [],
       "wins": [
         "lang-Attribut korrekt",
-        "Content-Tiefe passend (642 Wörter)",
-        "Schema: SiteNavigationElement, Organization, WebSite",
+        "Content-Tiefe passend (644 Wörter)",
+        "Schema: WebSite, SiteNavigationElement, Organization",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 65,
       "meta_desc_len": 136,
       "h1_count": 1,
       "h2_count": 4,
-      "internal_links": 15,
+      "internal_links": 16,
       "external_links": 0,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3673,7 +3677,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2116 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 73,
       "meta_desc_len": 174,
@@ -3725,7 +3729,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1953 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 60,
       "meta_desc_len": 175,
@@ -3763,14 +3767,15 @@
     {
       "path": "methodik.html",
       "category": "legal",
-      "size_bytes": 16262,
-      "word_count": 648,
-      "score": 81,
+      "size_bytes": 16431,
+      "word_count": 662,
+      "score": 80,
       "max_score": 100,
       "issues": [],
       "warnings": [
         "Meta-Description zu kurz (100 Zeichen, Ziel 140-160)",
-        "OG-Image fehlt"
+        "OG-Image fehlt",
+        "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt"
@@ -3779,7 +3784,7 @@
       "meta_desc_len": 100,
       "h1_count": 1,
       "h2_count": 6,
-      "internal_links": 13,
+      "internal_links": 14,
       "external_links": 0,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3867,7 +3872,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebApplication, Offer, ListItem, BreadcrumbList"
+        "Schema: BreadcrumbList, Offer, ListItem, WebApplication"
       ],
       "title_len": 72,
       "meta_desc_len": 151,
@@ -3910,7 +3915,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, FAQPage, BreadcrumbList, WebApplication, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Offer, Question, WebApplication, A"
       ],
       "title_len": 70,
       "meta_desc_len": 179,
@@ -3959,7 +3964,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, FAQPage, BreadcrumbList, WebApplication, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Offer, Question, WebApplication, A"
       ],
       "title_len": 58,
       "meta_desc_len": 156,
@@ -4117,7 +4122,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, FAQPage, BreadcrumbList, WebApplication, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Offer, Question, WebApplication, A"
       ],
       "title_len": 70,
       "meta_desc_len": 156,
@@ -4221,7 +4226,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebApplication, Offer, ListItem, BreadcrumbList"
+        "Schema: BreadcrumbList, Offer, ListItem, WebApplication"
       ],
       "title_len": 84,
       "meta_desc_len": 221,
@@ -4263,7 +4268,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, FAQPage, BreadcrumbList, WebApplication, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Offer, Question, WebApplication, A"
       ],
       "title_len": 66,
       "meta_desc_len": 167,
@@ -4312,7 +4317,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1674 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 67,
       "meta_desc_len": 168,
@@ -4364,7 +4369,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2134 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 60,
       "meta_desc_len": 179,
@@ -4400,6 +4405,45 @@
       "has_monetization_cta": false
     },
     {
+      "path": "ueber-uns.html",
+      "category": "other",
+      "size_bytes": 22584,
+      "word_count": 1124,
+      "score": 75,
+      "max_score": 100,
+      "issues": [
+        "H1 und Title haben keine Keyword-Überlappung"
+      ],
+      "warnings": [
+        "Title sehr kurz (23 Zeichen, Ziel 50-60)",
+        "Schema vorhanden aber nicht ideal: ['AboutPage', 'Organization', 'Organization', 'BreadcrumbList', 'ListItem', 'ListItem']",
+        "6 Inline-Style-Attribute"
+      ],
+      "wins": [
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (1124 Wörter)"
+      ],
+      "title_len": 23,
+      "meta_desc_len": 137,
+      "h1_count": 1,
+      "h2_count": 7,
+      "internal_links": 14,
+      "external_links": 0,
+      "affiliate_links": 0,
+      "jsonld_types": [
+        "AboutPage",
+        "Organization",
+        "Organization",
+        "BreadcrumbList",
+        "ListItem",
+        "ListItem"
+      ],
+      "images_missing_alt": 0,
+      "has_canonical": true,
+      "has_og": true,
+      "has_monetization_cta": true
+    },
+    {
       "path": "vertraege-kuendigen.html",
       "category": "content",
       "size_bytes": 39738,
@@ -4416,7 +4460,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2249 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 70,
       "meta_desc_len": 133,
@@ -4469,7 +4513,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2989 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 67,
       "meta_desc_len": 153,
@@ -4527,7 +4571,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2463 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 69,
       "meta_desc_len": 146,
@@ -4584,7 +4628,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1529 Wörter)",
-        "Schema: Organization, FAQPage, BreadcrumbList, Question, WebPage, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, WebPage, FAQPage"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -4640,7 +4684,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1935 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 68,
       "meta_desc_len": 155,
@@ -4689,7 +4733,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2399 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li",
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 57,
@@ -4743,7 +4787,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2611 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 62,
       "meta_desc_len": 142,
@@ -4797,7 +4841,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2382 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 67,
       "meta_desc_len": 145,
@@ -4853,7 +4897,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2871 Wörter)",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 60,
       "meta_desc_len": 172,
@@ -4908,7 +4952,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Organization, FAQPage, Article, BreadcrumbList, Question, Li"
+        "Schema: ListItem, BreadcrumbList, Question, Answer, Article, FAQPage"
       ],
       "title_len": 70,
       "meta_desc_len": 193,
