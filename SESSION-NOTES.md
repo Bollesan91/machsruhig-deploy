@@ -78,11 +78,25 @@ Reviewer-Zeile heute bewusst **nicht** eingebaut: Fachpool leer, Platzhalter wä
 - OG-Images valide
 - Warnungen: 17 kaputte Links (Phase D), Sitemap stale 45 noindex-Städte (Phase D), 3 Deploy-Blocker (Phase A.3 Tool-Shells)
 
-## 🔄 Sprint #4 Teil 2 — offen
+## 🔄 Sprint #4 Teil 2 — abgeschlossen (25 von 35 Seiten)
 
-Das eigentliche Sprint #4-Ticket sieht 48 YMYL-Seiten vor. Heute sind 13 gemacht (SEO-Impact-Top). Offen:
-- **B.2.1:** Autoren-Block auf die restlichen 35 Seiten — 10 Tools, 9 Vorsorge, 16 Bundesländer. Skripte existieren, nur Target-Liste erweitern + Apply. Aufwand ~1.5h.
-- **B.2.2:** Reviewer-Zeile aktivieren sobald Fachpool einen ersten Namen hat.
+Autoren-Block auf weitere 25 YMYL-Seiten ausgerollt:
+- **16 Bundesländer** (`bestattung-in/*/index.html`): Standard-Pattern, identisch zu Teil 1
+- **8 Vorsorge-Seiten mit Meta-Zeile**: Standard-Pattern
+- **1 Vorsorge-Seite ohne Meta** (`vorsorge/vorsorge-ordner/index.html`): Fallback-Modus — Block nach `<p class="lead">` eingefügt, Stand=April 2026 ohne Lesezeit
+
+Technisch:
+- Skript `_dev/apply-author-block-part2.py` mit Dry-Run + Apply-Mode
+- Fallback-Modus für Seiten ohne `<p class="meta">`
+- Zentrale `.mr-article-meta`-CSS-Regel lokal pro Seite eingefügt
+- 0 Strukturfehler auf allen 25 neuen Seiten
+- Stufe 1 Quality Gate sitewide: ✅ PASSED
+
+**Spot-Check erfolgreich** auf 6 Stichproben-Seiten (Bayern, NRW, Testament, Patientenverfügung, Vorsorge-Ordner, Vorsorge-Hub) — alle H1 + Meta-Block korrekt.
+
+**Nicht angefasst: 10 Tools** (`tools/*/index.html`) — alle React-Shells mit `@babel/standalone`, keine statische H1/Hero-Struktur. Einbau hier wäre Flickschusterei, bis Phase A.3 die Static Shells baut. Als Ticket **B.2.1a** abgelegt (30 Min nach A.3).
+
+**Gesamt B.2 (Autoren-Block): 38 von 48 YMYL-Seiten erledigt.** Offen bleiben die 10 Tools, warten auf A.3.
 
 ## 🔄 Sprint #5 — noch ausstehend
 
@@ -121,4 +135,5 @@ Sprint #5 — Akutfall-Hauptseite "Erste 24 Stunden" (C.1.1), 6-8h. Geplant für
 + 23.04.2026 Nachmittag: **Sprint #1 Homepage (Score 39→80)** + Audit-Skript-Erweiterung + validate-all.sh + OG-Image als PNG
 + 23.04.2026 Abend (früh): **Sprint #2 5 Gold-Städte (Score 40→75)** + Deploy
 + 23.04.2026 Abend (Mitte): **Sprint #3 Über-uns (B.1, Score 75)** + Backlog-Umklassifizierung Sprint #2 → D.2.1 + sitewide machsleicht-Entkopplung + Deploy
-+ 23.04.2026 Abend (spät): **Sprint #4 Teil 1: Methodik geschärft (B.3, Score 79, 1415 Wörter) + Autoren-Block auf 13 YMYL-Seiten (B.2) + trauerrede-Altlast weg + Stufe-1-Quality-Gate erstmals PASSED**
++ 23.04.2026 Abend (spät): **Sprint #4 Teil 1: Methodik geschärft (B.3, Score 79, 1415 Wörter) + Autoren-Block auf 13 YMYL-Seiten (B.2) + trauerrede-Altlast weg + Stufe-1-Quality-Gate erstmals PASSED** + Deploy
++ 23.04.2026 Nacht: **Sprint #4 Teil 2: Autoren-Block auf weitere 25 YMYL-Seiten (16 Bundesländer + 9 Vorsorge)** — 38 von 48 YMYL-Seiten nun mit Block, 10 Tools als B.2.1a auf A.3-Abhängigkeit ausgeklammert

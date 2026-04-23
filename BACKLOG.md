@@ -350,6 +350,13 @@ Auf jeder YMYL-Seite ein sichtbarer Autoren-Block:
 - 16 Bundesland-Seiten
 - Aufwand: ~1.5h, Skripte existieren und funktionieren — Zielverzeichnisse ergänzen + Apply
 
+**Status B.2.1 (23.04.2026 Nacht, Sprint #4 Teil 2):** 25 der 35 Seiten erledigt — 16 Bundesländer + 9 Vorsorge-Seiten. Einbau via `_dev/apply-author-block-part2.py` (Dry-Run + Apply, mit Fallback-Modus für Seiten ohne `<p class="meta">`). Zentrale `.mr-article-meta`-CSS-Regel lokal pro Seite im `<style>`-Block. Stufe 1 Quality Gate sitewide PASSED. **Ausgenommen:** 10 Tool-Seiten — alle sind React-Shells mit `@babel/standalone`, ohne statische H1/Hero/Meta-Struktur. Autoren-Block hier einzubauen wäre Flickschusterei, weil Phase A.3 diese Tools ohnehin als "Static Shell + Widget"-Hybrid neu baut. → siehe **B.2.1a**.
+
+**Offen: B.2.1a — Autoren-Block auf die 10 Tool-Seiten nachziehen**
+- Voraussetzung: Phase A.3 hat die Static Shells gebaut (H1 + Intro + FAQ statisch, Widget im abgegrenzten `<div>`)
+- Danach: Gleiches Muster wie B.2.1 — Skript erweitern, Apply
+- Aufwand: 30 Min nach A.3
+
 **Offen: B.2.2 — Reviewer-Zeile integrieren wenn Fachpool real existiert**
 - Nach erstem echten Reviewer auf einer Seite: Zeile "Fachlich geprüft von: [Name], [Rolle]" im Block aktivieren
 - Schema.org `reviewedBy: Person` ergänzen
