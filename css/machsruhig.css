@@ -1458,3 +1458,48 @@ body {
     width: 20px;
   }
 }
+
+
+/* ==========================================================================
+   ARTICLE AUTHOR META BLOCK (.mr-article-meta)
+   ========================================================================== */
+
+.mr-article-meta {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--mr-warm);
+  line-height: 1.6;
+}
+
+.mr-article-meta > div {
+  display: block;
+}
+
+.mr-article-meta > div + div {
+  margin-top: 4px;
+}
+
+.mr-article-meta strong {
+  color: var(--mr-text);
+  font-weight: 600;
+}
+
+.mr-article-meta a {
+  color: var(--mr-warm);
+  text-decoration: underline;
+}
+
+.mr-article-meta a:hover {
+  color: var(--mr-primary);
+}
+
+.mr-article-meta .mr-meta-sep {
+  opacity: 0.6;
+}
+
+@media (max-width: 380px) {
+  .mr-article-meta .mr-meta-sep {
+    /* On narrow screens, break cleanly */
+    display: inline;
+  }
+}

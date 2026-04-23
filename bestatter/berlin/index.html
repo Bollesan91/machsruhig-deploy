@@ -30,14 +30,15 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@graph":[
-    {"@type":"Service","name":"Bestatter in Berlin finden","description":"Vergleichen und finden Sie lokale Bestatter in Berlin. Informationen zu 224 Friedhöfen, günstigen Gebühren und moderner Bestattungsgesetzgebung.","areaServed":{"@type":"City","name":"Berlin"},"serviceType":"Funeral Services"},
+    {"@type":"Service","name":"Bestatter in Berlin finden","description":"Vergleichen und finden Sie lokale Bestatter in Berlin. Informationen zu 224 Friedhöfen, günstigen Gebühren und moderner Bestattungsgesetzgebung.","areaServed":{"@type":"City","name":"Berlin"},"serviceType":"Funeral Services","provider":{"@id":"https://machsruhig.de/#org"}},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestatter finden","item":"https://machsruhig.de/bestatter"},{"@type":"ListItem","position":3,"name":"Berlin","item":"https://machsruhig.de/bestatter/berlin"}]},
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"Was kostet eine Bestattung in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Die Kosten in Berlin sind günstiger als in anderen Großstädten. Urnengräber kosten etwa 450–1.200 € (20 Jahre), Erdgräber 1.000–3.500 € (25-30 Jahre). Bestatterleistungen kommen hinzu (ca. 1.200–2.500 €). Berlin bietet ein gutes Preis-Leistungs-Verhältnis."}},
       {"@type":"Question","name":"Warum hat Berlin so viele Friedhöfe?","acceptedAnswer":{"@type":"Answer","text":"Mit etwa 224 öffentlichen Friedhöfen verfügt Berlin über das größte Friedhofsnetzwerk in Deutschland. Dies ist bedingt durch die historische Größe der Stadt, das Bevölkerungswachstum im 20. Jahrhundert und die dezentrale Struktur Berlins."}},
       {"@type":"Question","name":"Was hat sich durch die 2020er Reform?","acceptedAnswer":{"@type":"Answer","text":"Die Reform 2020 vereinfachte Bestattungsverfahren erheblich: Die 48-Stunden-Wartefrist vor Feuerbestattung wurde abgeschafft, Fristen wurden flexibler gestaltet. Dies ermöglicht schnellere Bestattungen und mehr Planungssicherheit."}},
       {"@type":"Question","name":"Gibt es naturnahe Bestattungen in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Ja. Der Waldfriedhof Stahnsdorf südlich Berlins bietet naturnahe Waldbestattungen. Viele Berliner Friedhöfe haben auch Baumbestattungszonen mit modernen Urnengartenkonzepten."}}
-    ]}
+    ]},
+    {"@type":"Organization","@id":"https://machsruhig.de/#org","name":"machsruhig.de","url":"https://machsruhig.de","description":"Unabhängiges Informationsportal für Vorsorge, Trauer und Bestattung in Deutschland.","publishingPrinciples":"https://machsruhig.de/methodik"}
   ]
 }
 </script>
@@ -64,6 +65,14 @@
 .mr-form-wrap{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0}.mr-form-wrap h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:8px;color:var(--mr-text)}.mr-form-wrap p{font-size:14px;color:var(--mr-text-muted);margin-bottom:20px}
 #lead-form-container{width:100%}
 @media print{.no-print,.mr-nav,.mr-footer,.mr-cta-block,.mr-form-wrap{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}.mr-content{max-width:100%}}
+
+.mr-article-meta{margin-top:16px;font-size:13px;color:var(--mr-warm);line-height:1.6}
+.mr-article-meta>div{display:block}
+.mr-article-meta>div+div{margin-top:4px}
+.mr-article-meta strong{color:var(--mr-text);font-weight:600}
+.mr-article-meta a{color:var(--mr-warm);text-decoration:underline}
+.mr-article-meta a:hover{color:var(--mr-primary)}
+.mr-article-meta .mr-meta-sep{opacity:0.6}
 </style>
 </head>
 <body>
@@ -96,7 +105,7 @@
     <div class="mr-breadcrumb"><a href="/">Start</a> › <a href="/bestatter">Bestatter finden</a> › Berlin</div>
     <h1>Bestatter in Berlin finden — 224 Friedhöfe, günstige Kosten & moderne Regeln</h1>
     <p class="lead">Berlin hat das größte Friedhofsnetzwerk Deutschlands mit 224 öffentlichen Friedhöfen. Die Bestattungskosten sind günstiger als in anderen Großstädten, und die 2020er-Reform machte Berlins Bestattungsrecht vorbildlich flexibel. Hier findest du alles über Friedhöfe, Gebühren und die neuesten Regelungen.</p>
-    <p class="meta">Stand: April 2026 · Lesezeit: ca. 8 Minuten</p>
+    <div class="mr-article-meta"><div><strong>Redaktion machsruhig.de</strong><span class="mr-meta-sep" aria-hidden="true"> · </span><span>Stand: 23. April 2026</span></div><div><a href="/methodik">Wie entstehen unsere Inhalte?</a><span class="mr-meta-sep" aria-hidden="true"> · </span><span>Lesezeit: ca. 8 Minuten</span></div></div>
   </header>
 
   <div class="mr-keyfacts">

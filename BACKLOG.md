@@ -342,6 +342,19 @@ Auf jeder YMYL-Seite ein sichtbarer Autoren-Block:
 
 **Aufwand:** 2h Entscheidung/Aufbau + pro Artikel 5 Min Autor-Block einfügen
 
+**Status (23.04.2026, Sprint #4 Teil 1):** Sichtbarer Autoren-Block auf 13 YMYL-Seiten live — 8 Content-Root + 5 Gold-Städte. Format: "Redaktion machsruhig.de · Stand: <Datum>" / "Wie entstehen unsere Inhalte? · Lesezeit: ca. X Minuten". Einbau via `_dev/apply-author-block.py` (Dry-Run + Apply-Mode), Cleanup via `_dev/apply-author-block-cleanup.py` (Inline-Styles → zentrale `.mr-article-meta`-Klasse, lokal pro Seite im `<style>`-Block). `.mr-article-meta` auch in `css/machsruhig.css` für Seiten, die diese Datei laden. Gold-Städte Schema erweitert um `Organization`-Knoten + `provider`-Referenz im Service-Block. Reviewer-Zeile heute bewusst **nicht** eingebaut (Fachpool leer, Platzhalter wäre Selbstschwächung). Ehrliche Handhabung: Nur Berlin hat "Stand: 23. April 2026" (heute tatsächlich redaktionell angefasst), die anderen 12 behalten "April 2026".
+
+**Offen: B.2.1 — Autoren-Block auf die restlichen 35 YMYL-Seiten ausrollen**
+- 10 Tool-Seiten (React-Shells — Einbau-Position in Static Shell von A.3 klären)
+- 9 Vorsorge-Seiten
+- 16 Bundesland-Seiten
+- Aufwand: ~1.5h, Skripte existieren und funktionieren — Zielverzeichnisse ergänzen + Apply
+
+**Offen: B.2.2 — Reviewer-Zeile integrieren wenn Fachpool real existiert**
+- Nach erstem echten Reviewer auf einer Seite: Zeile "Fachlich geprüft von: [Name], [Rolle]" im Block aktivieren
+- Schema.org `reviewedBy: Person` ergänzen
+- Design-Komponente ist gebaut, nur CSS + Template-Variante fehlt
+
 ---
 
 ### B.3 — Methodik prominenter machen
@@ -359,6 +372,10 @@ Auf jeder YMYL-Seite ein sichtbarer Autoren-Block:
   - Konflikt-of-Interest-Statement (falls Affiliate in Phase F aktiv)
 
 **Aufwand:** 2h
+
+**Status (23.04.2026, Sprint #4 Teil 1):** Methodik-Seite substanziell geschärft — Lead neu (rechtfertigt die Seite statt Floskel), Quellenhierarchie als Fließtext (Primär/Sekundär/Erfahrungswerte) mit Inline-Verlinkungen zu Destatis, Stiftung Warentest, Aeternitas, BDB, Verbraucherzentrale; rechtliche Quellen konkret verlinkt (gesetze-im-internet.de, BGB § 1922, PStG, Bayerisches BestG, NRW BestG); Update-Rhythmen als Tabelle (Sofort/Halbjährlich/Jährlich); Interessenkonflikts-Regeln als 4-Punkte-Liste; neue FAQ-Sektion (5 Fragen mit ehrlichen Antworten, u.a. "Warum nennt ihr keine Reviewer-Namen? — Weil wir noch keine haben."); Änderungslog sichtbar am Seitenende; Schema um FAQPage-Entity erweitert. HTML-Altlast gefixt (`</div>` → `</main>`). Audit-Score 79, 0 Strukturfehler, 1415 Wörter. Autor-Block-Verlinkung auf 13 YMYL-Seiten via Ticket B.2 live.
+
+**Offen in B.3:** Header-Nav-Link zu Methodik (optional — aktuell nur Footer + Autor-Block). Header-Prominenz entscheiden wenn mehr Traffic da.
 
 ---
 
