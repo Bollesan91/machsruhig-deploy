@@ -2,7 +2,7 @@
 
 ## Letzte Session
 **Datum:** 23. April 2026 (Abend, Sprints #3 + #4 Teil 1)
-**Deploy-Status:** Sprint #3 deployed. Sprint #4 Teil 1 committed mit `[skip netlify]` — wartet auf `ende deploy`.
+**Deploy-Status:** Sprint #3 + Methodik-Schärfung + Sprint #4 Teil 1 deployed mit "ende deploy".
 
 ## Was wurde gemacht
 
