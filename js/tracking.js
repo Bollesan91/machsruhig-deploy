@@ -4,8 +4,9 @@
  * Plausible Analytics (cookieless, DSGVO-konform)
  * + Custom Events für erweiterte Analyse
  *
- * Setup-Hinweis: Plausible-Script wird separat im <head> eingebunden.
- * Diese Datei enthält nur die Custom-Event-Logik.
+ * Diese Datei enthält:
+ *  - Plausible-Queue-Init (vormals Inline-Script im HTML, zentralisiert)
+ *  - Custom-Event-Logik
  *
  * Events (PBI-19):
  * - cta_click: Klick auf einen CTA-Button/Link
@@ -15,6 +16,9 @@
  * - lead_qualified: Lead-Formular abgeschickt
  * - faq_open: FAQ-Akkordeon geöffnet
  */
+
+// Plausible Queue-Init (wenn Plausible-Script noch nicht geladen ist, puffern wir Events)
+window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments); };
 
 (function() {
   'use strict';
