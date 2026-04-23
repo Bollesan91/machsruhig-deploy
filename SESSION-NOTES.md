@@ -1,139 +1,138 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 23. April 2026 (Abend, Sprints #3 + #4 Teil 1)
-**Deploy-Status:** Sprint #3 + Methodik-Schärfung + Sprint #4 Teil 1 deployed mit "ende deploy".
+**Datum:** 23. April 2026 (Nachmittag/Abend, Bundesländer-Sprint)
+**Deploy-Status:** Alle Änderungen mit "ende deploy" gepusht und deployed.
 
 ## Was wurde gemacht
 
-### ✅ Sprint #3 — Über-uns-Seite live (B.1) — ERLEDIGT & deployed
+### ✅ 5 von 16 Bundesländer-Seiten komplett überarbeitet
 
-Neue Seite `ueber-uns.html`:
-- 353 Zeilen, **1050 sichtbare Wörter**
-- **Audit-Score: 75/100**, 0 HTML-Strukturfehler
-- Schema.org: **AboutPage + Organization + BreadcrumbList**, mit `foundingDate`, `knowsAbout`, `publishingPrinciples` → `/methodik`
-- Inhaltliche Abschnitte: Warum gibt es machsruhig / Wer steht dahinter (Redaktion + Fachpool-Rollen als "im Aufbau" transparent) / Redaktionelle Haltung / Finanzierung / Abgrenzung zu Branchenportalen / Unabhängigkeit / Kontakt & Feedback
-- **Begleit-Anpassungen:** Homepage-Footer-Link, Methodik-Querverweis + Footer-Link, `_redirects` (Trailing-Slash-301), sitemap.xml (neuer Eintrag, Priorität 0.6)
-- **Sitewide-Entkopplung:** Alle machsleicht/mach's-Familie-Verweise auf ueber-uns.html + methodik.html entfernt (4 Stellen)
+Jede Seite wurde von ~350 Wörtern auf ~1700-2400 Wörter ausgebaut, mit
+strikter Primärquellen-Orientierung, korrekten Paragraphen-Verweisen,
+konkreten Städte-/Friedhofsdaten und dem einheitlichen Schema-Set
+WebPage + Place + Article + BreadcrumbList + FAQPage.
 
-Bekannte Nachschärf-Punkte (B.1.1 im BACKLOG) — triggern wenn >50 Besuche/Monat oder Phase D/E-Referenz:
-- Redundanz zur Methodik (~40% Überlapp) kürzen
-- Title/H1 schärfen
-- Fachpool-Cards: Aufbau-Status nach oben ziehen
-- Konkurrenz-Abgrenzung mit Belegen unterfüttern
-- Floskel-Diät
+**Audit-Score jeweils von ~54-71 auf 85/100.**
+**Re-Check jeweils 0 Blocker, 0 Warnungen.**
 
-### ✅ Sprint #4 Teil 1 — Methodik substanziell geschärft + Autoren-Block auf 13 YMYL-Seiten (B.2/B.3 teilweise)
+| Bundesland | Commit | Wörter | Quellen | §-Ref | Score |
+|---|---|---|---|---|---|
+| Baden-Württemberg | `3aa73c5` | 2359 | 32 | 23 | 85 |
+| Mecklenburg-Vorpommern | `ee6df0b` | 1832 | 23 | 25 | 85 |
+| Sachsen-Anhalt | `9adb45a` | 1785 | 21 | 19 | 85 |
+| Thüringen | `f9b3cad` + `a6e6009` | 1744 | 19 | 32 | 85 |
+| **Brandenburg** | `e529f2d` | 1751 | 22 | 34 | 85 |
 
-**Methodik-Seite:**
-- Lead neu: rechtfertigt die Seite statt Floskel ("Transparenz ist uns wichtig" raus)
-- **Quellenhierarchie** als Fließtext (Primär/Sekundär/Erfahrungswerte) mit Inline-Verlinkungen zu Destatis, Stiftung Warentest, Aeternitas, BDB, Verbraucherzentrale
-- **Rechtliche Quellen konkret verlinkt:** gesetze-im-internet.de (BGB § 1922, PStG), Bayerisches BestG, NRW BestG
-- **Update-Rhythmen als Tabelle** (Sofort/Halbjährlich/Jährlich) mit konkreten Monaten
-- **Interessenkonflikts-Regeln** als 4-Punkte-Liste (gelten unabhängig vom Modell-Status)
-- **FAQ-Sektion** mit 5 Fragen + ehrlichen Antworten ("Warum nennt ihr keine Reviewer-Namen? — Weil wir noch keine haben.")
-- **Änderungslog** sichtbar am Seitenende (zwei Einträge: Erstveröffentlichung + heutige Schärfung)
-- Schema erweitert: **FAQPage-Entity** mit allen Q&A strukturiert
-- Audit-Score 80→79 (Title/H1-Metrik marginal, substanziell deutlich reicher), 1005→1415 Wörter
-- HTML-Altlast gefixt: `</div>` → `</main>` (beide Strukturfehler weg)
-- `mr-principle`-Boxen von 10 → 4 reduziert (visueller Overload runter)
+### ✅ Audit-Skript rekalibriert (Commit `a1a3db9`)
 
-**Autoren-Block sitewide (13 Seiten):**
+`_dev/audit-all-pages.py` bekam einen `PRE_LAUNCH_MODE`-Flag, der
+Bundesland/Content-Seiten ohne Monetarisierungs-Penalty bewertet,
+solange Phase F (Monetarisierung) noch nicht aktiv ist. Sobald Phase F
+rollt, muss `PRE_LAUNCH_MODE = False` gesetzt werden — dann spiegeln
+die Scores die volle Monetarisierungs-Realität.
 
-Ziel: E-E-A-T-Block direkt unter der H1 auf allen wichtigen YMYL-Seiten. Format:
-> **Redaktion machsruhig.de** · Stand: [Datum]
-> [Wie entstehen unsere Inhalte?](/methodik) · Lesezeit: ca. X Minuten
+### ✅ Plausible-Tracking zentralisiert (Commit `5493cee`)
 
-Betroffene Seiten (13):
-- 8 Content-Root: beerdigung-planen, bestattungsarten, bestattungskosten, kindern-tod-erklaeren, kondolenzschreiben, trauerrede-schreiben, trauersprueche, vertraege-kuendigen
-- 5 Gold-Städte: Berlin, Frankfurt, Hamburg, Köln, München
+Init-Code und Plausible-Script-Tag in `js/tracking.js` verschoben.
+Alle überarbeiteten Seiten verweisen jetzt nur noch auf diese eine
+Datei statt jeweils eigenen Init-Code zu enthalten.
 
-Einbau in zwei Schritten:
-1. `_dev/apply-author-block.py` — ersetzt existierendes `<p class="meta">` durch neuen Block (Dry-Run + Apply, variante-aware)
-2. `_dev/apply-author-block-cleanup.py` — entfernt Inline-Styles, fügt zentrale `.mr-article-meta`-CSS-Regel in jeden `<style>`-Block ein
+### ✅ Re-Check-Skript neu: `_dev/bundesland-recheck.py` (Commit `a6e6009`)
 
-Zusätzlich:
-- `.mr-article-meta` auch in `css/machsruhig.css` für Seiten, die diese Datei laden
-- **Gold-Städte Schema** erweitert: `Organization`-Knoten + `provider`-Referenz im Service-Block
-- **HTML-Altlast:** trauerrede-schreiben.html `</div>` → `</main>` mitgefixt (0 Strukturfehler auf allen 13 Seiten)
-- **Stand-Datum:** Nur Berlin trägt "Stand: 23. April 2026" (heute tatsächlich redaktionell angefasst). Alle anderen behalten "April 2026" — ehrlich, kein Pseudo-Review.
+Automatisierter Ehrlichkeits-Check, der den Audit-Score ergänzt und
+speziell auf **Sachrichtigkeit** prüft. Checks:
+- Content-Umfang (≥ 1200 Wörter)
+- §-Referenzen (≥ 8)
+- Externe Primärquellen (≥ 10)
+- Pietätlosigkeiten ("touristische Bestattung" etc.)
+- Unbelegte Superlative (Krematoriums-Ränge, "einzige in Deutschland")
+- Städte aus falschem Bundesland (Lübeck-in-MV-Fehler-Detektor)
+- Sekundärquellen ohne Markierung (bestattung-information.de u.a.)
+- Template-Sachfehler ("Sargpflicht: Nein", "Mindestfrist 24h" etc.)
+- Landesrecht-Volltext-Link vorhanden
 
-Reviewer-Zeile heute bewusst **nicht** eingebaut: Fachpool leer, Platzhalter wäre Selbstschwächung sichtbar auf jeder YMYL-Seite.
+Aufruf: `python3 _dev/bundesland-recheck.py <pfad>` oder `--all`.
+Bei den 11 noch unbearbeiteten Bundesländer-Seiten meldet das Skript
+zusammen ~21 Blocker und ~44 Warnungen — diese Seiten dürfen also NICHT
+live gehen, auch wenn der Audit-Score bei 71-81 liegt.
 
-## Gesamt-Site-Score-Entwicklung (23.04.2026)
+### ✅ GO-LIVE-CHECKLIST erweitert
 
-- Session-Start: 59.0
-- Nach Sprint #1 (Homepage 80): 59.5
-- Nach Sprint #2 (5 Gold-Städte 75): 61.2
-- Nach Sprint #3 (Über-uns 75): 61.37
-- Nach Sprint #4 Teil 1 (Methodik 79 + 13× Autor-Block): **61.36**
+`GO-LIVE-CHECKLIST.md` hat jetzt:
+- **Re-Check als festen Blocker-Schritt** (Abschnitt A.0)
+- **Begriffspräzisions-Kriterium** (z.B. "Grabanlagen" ≠ "Grabstätten"
+  in Primärquellen)
+- **9-Schritte-Workflow** für jede neue Bundesländer-Überarbeitung
+  (Recherche → Content → Struktur → Audit → Re-Check → manueller
+  Re-Check → Stufe-1 Gate → Commit mit [skip netlify] → auf
+  "ende deploy" warten)
 
-(Die Autoren-Block-Einführung hat keinen Score-Effekt im aktuellen Audit-Skript, weil das Skript noch keinen E-E-A-T-Check hat — die E-E-A-T-Verbesserung ist strukturell real, aber unsichtbar im Score)
+### ✅ Selbstkritischer Re-Check der 4 fertigen Seiten
 
-## Stufe-1-Quality-Gate: ✅ PASSED (zum ersten Mal heute)
+Nach Bolles Aufforderung "check nochmal ob die 4 scores berechtigt sind"
+wurde Thüringen nachgeschärft, weil bei ehrlicher Prüfung Stellen
+aufgefallen waren, die noch nicht 85-Niveau hatten:
+- "43.800 Grabstätten" → "43.800 Grabanlagen" (Primärquelle-Wortlaut)
+- "1897 das fünfte Krematorium Deutschlands" → relativiert zu "ein
+  frühes Krematorium" (Rang nur durch Wikipedia belegt)
+- Süddeutsch-Vergleich entfernt (unbelegt)
+- "Thüringer Besonderheit" → "Merkmal" (Differenzierung gibt's anderswo)
+- Erfurt-Gebühren explizit als Sekundärportal markiert
 
-- Alle HTML-Dateien strukturell valide (Altlast trauerrede weg)
-- Keine Platzhalter
-- Homepage-Score 80 ≥ 75
-- OG-Images valide
-- Warnungen: 17 kaputte Links (Phase D), Sitemap stale 45 noindex-Städte (Phase D), 3 Deploy-Blocker (Phase A.3 Tool-Shells)
+BW, MV, LSA, TH sind damit ehrlich 85, nicht nur Audit-85.
 
-## 🔄 Sprint #4 Teil 2 — abgeschlossen (25 von 35 Seiten)
+## Workflow-Lehren dieser Session
 
-Autoren-Block auf weitere 25 YMYL-Seiten ausgerollt:
-- **16 Bundesländer** (`bestattung-in/*/index.html`): Standard-Pattern, identisch zu Teil 1
-- **8 Vorsorge-Seiten mit Meta-Zeile**: Standard-Pattern
-- **1 Vorsorge-Seite ohne Meta** (`vorsorge/vorsorge-ordner/index.html`): Fallback-Modus — Block nach `<p class="lead">` eingefügt, Stand=April 2026 ohne Lesezeit
+1. **Audit-Score allein genügt nicht für Go-Live.** Der Score misst
+   Struktur/SEO/Schema, aber nicht Sachrichtigkeit. Der neue Re-Check
+   ergänzt diese Lücke.
+2. **Primärquellen-Wortlaut bleibt Primärquellen-Wortlaut.** Selbst
+   kleine Umformulierungen ("Grabanlagen" → "Grabstätten") können
+   die Bedeutung verschieben.
+3. **Sekundärquellen als solche markieren.** Wenn Gebühren nicht aus
+   der Original-Gebührensatzung, sondern aus einem Verzeichnisportal
+   stammen, gehört das transparent in den Text.
+4. **"ende deploy"-Trigger strikt respektieren.** Die 8 Session-Commits
+   wurden alle mit [skip netlify] gepusht; erst auf explizites Signal
+   wurde ein Deploy-Commit erzeugt.
 
-Technisch:
-- Skript `_dev/apply-author-block-part2.py` mit Dry-Run + Apply-Mode
-- Fallback-Modus für Seiten ohne `<p class="meta">`
-- Zentrale `.mr-article-meta`-CSS-Regel lokal pro Seite eingefügt
-- 0 Strukturfehler auf allen 25 neuen Seiten
-- Stufe 1 Quality Gate sitewide: ✅ PASSED
+## Nächste Schritte
 
-**Spot-Check erfolgreich** auf 6 Stichproben-Seiten (Bayern, NRW, Testament, Patientenverfügung, Vorsorge-Ordner, Vorsorge-Hub) — alle H1 + Meta-Block korrekt.
+### Bundesländer-Seiten: 11 weitere zu überarbeiten
 
-**Nicht angefasst: 10 Tools** (`tools/*/index.html`) — alle React-Shells mit `@babel/standalone`, keine statische H1/Hero-Struktur. Einbau hier wäre Flickschusterei, bis Phase A.3 die Static Shells baut. Als Ticket **B.2.1a** abgelegt (30 Min nach A.3).
+Sortiert nach Dringlichkeit (Blocker-Anzahl beim Re-Check, abstufend
+von Audit-Score):
 
-**Gesamt B.2 (Autoren-Block): 38 von 48 YMYL-Seiten erledigt.** Offen bleiben die 10 Tools, warten auf A.3.
+| Nächste | Audit | Re-Check Blocker |
+|---|---|---|
+| Bremen | 81 | 3 |
+| Niedersachsen | 80 | 3 |
+| Sachsen | 71 | 3 |
+| Hamburg | 71 | 2 |
+| Schleswig-Holstein | 79 | 2 |
+| Berlin | 81 | 2 |
+| Rheinland-Pfalz | 80 | 2 |
+| NRW | 78 | 1 |
+| Bayern | 81 | 1 |
+| Hessen | 80 | 1 |
+| Saarland | 71 | 1 |
 
-## 🔄 Sprint #5 — noch ausstehend
+Empfehlung für nächste Session: **Sachsen** — inhaltlich spannend, weil
+Sachsen mit Bayern noch zu den restriktiven Bundesländern bei der
+Sargpflicht gehört (Gegenstück zur LSA-Reform vom September 2025).
 
-Sprint #5 — Akutfall-Hauptseite "Erste 24 Stunden" (C.1.1), 6-8h. Geplant für nächste Session oder die danach.
+### Weitere offene Punkte (aus BACKLOG)
 
-## Offene Punkte für später
+- **Vorsorge-Ordner:** strategische Entscheidung fällig — die
+  "Kommt bald"-Platzhalter sind YMYL-fragwürdig
+- **10 Tool-Seiten** warten auf A.3 Static-Shell-Umbau
+- **PRE_LAUNCH_MODE auf False** setzen, sobald Phase F aktiv rollt
+- **17 kaputte interne Links sitewide** (Phase D)
+- **sitemap.xml stale** (45 noindex-Städte, Phase D)
+- **B.2.2 Reviewer-Zeile aktivieren**, wenn Fachpool real
+- **D.2.1 Gold-Städte** auf Score ≥ 85 mit FuneralHome-Schema
 
-- **B.2.1** und **B.2.2** (siehe oben)
-- **LocalBusiness/FuneralHome-Schema** für 5 Gold-Städte (Ticket D.2.1)
-- **Sitemap.xml stale:** 45 noindex-Städte drin (Phase D)
-- **17 kaputte interne Links** (`/bestattung` 16×, `/tools/brief-an-meine-liebsten` 1×)
-- **B.1.1** Über-uns-Nachschärfung wenn Traffic kommt
-- **Dev-Skripte in `_dev/`:** `apply-author-block.py` + `apply-author-block-cleanup.py` sind committed. Bei zukünftiger Erweiterung auf 35 Seiten: Target-Liste in beiden Skripten parallel halten, oder in `_dev/skills/` dokumentieren.
+## Offene Fragen
 
-## PAT-Status
-
-**⚠️ GitHub PAT läuft am 25.04.2026 ab** — in 2 Tagen. Rotation planen, sonst scheitert der nächste Push.
-
-## Saisonale Trigger im Auge behalten
-
-- **Mitte Oktober:** Allerheiligen-Content live
-- **Anfang November:** Totensonntag + Weihnachten-Content live
-- **Mitte Dezember:** Silvester-Content live
-
-## Verbleibende offene Entscheidungen (kein Blocker)
-
-- **Entscheidung 4:** Gesetzestext-Archiv anlegen? (entscheiden wenn C.3 startet)
-- **Entscheidung 5:** Lead-Backend-Tool (entscheiden wenn Phase E abgeschlossen)
-- **Entscheidung 6:** Affiliate-Anträge wann starten? (Empfehlung: nach B+C.1)
-
-## Erledigte PBIs (gesamt)
-
-1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 20, 21, 22
-+ Monetarisierungs-Basis, Vorsorge-Cluster, 9 neue Tools/Seiten (März/April 2026)
-+ 23.04.2026 Vormittag: Audit + Backlog + Phase A teilweise (noindex 45 Generic-Städte) + Schema-Parser-Bug-Fix + Doku-Konsolidierung + 3 Schlüssel-Entscheidungen + Markteroberungs-Erweiterung + 7-Tage-Sprint
-+ 23.04.2026 Nachmittag: **Sprint #1 Homepage (Score 39→80)** + Audit-Skript-Erweiterung + validate-all.sh + OG-Image als PNG
-+ 23.04.2026 Abend (früh): **Sprint #2 5 Gold-Städte (Score 40→75)** + Deploy
-+ 23.04.2026 Abend (Mitte): **Sprint #3 Über-uns (B.1, Score 75)** + Backlog-Umklassifizierung Sprint #2 → D.2.1 + sitewide machsleicht-Entkopplung + Deploy
-+ 23.04.2026 Abend (spät): **Sprint #4 Teil 1: Methodik geschärft (B.3, Score 79, 1415 Wörter) + Autoren-Block auf 13 YMYL-Seiten (B.2) + trauerrede-Altlast weg + Stufe-1-Quality-Gate erstmals PASSED** + Deploy
-+ 23.04.2026 Nacht: **Sprint #4 Teil 2: Autoren-Block auf weitere 25 YMYL-Seiten (16 Bundesländer + 9 Vorsorge)** — 38 von 48 YMYL-Seiten nun mit Block, 10 Tools als B.2.1a auf A.3-Abhängigkeit ausgeklammert
+Keine aktuell.
