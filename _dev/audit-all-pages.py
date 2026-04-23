@@ -426,6 +426,12 @@ def audit_page(path: Path, rel: str) -> PageAudit:
         score += 2
         if parser.og_image:
             score += 1
+            # OG-Image-Format prüfen: Social-Crawler rendern SVG nicht zuverlässig
+            if parser.og_image.lower().endswith(".svg"):
+                audit.warnings.append(
+                    "OG-Image ist SVG - viele Social-Crawler (Facebook, LinkedIn) rendern SVG nicht. "
+                    "PNG/JPEG empfohlen."
+                )
         else:
             audit.warnings.append("OG-Image fehlt")
     else:
@@ -618,8 +624,24 @@ def audit_page(path: Path, rel: str) -> PageAudit:
             f"({jsx_leak_count} JSX-Leaks). Google sieht kein H1, keinen Content."
         )
         audit.score = min(audit.score, 40)
+    elif has_babel_standalone:
+        # Neu: @babel/standalone ohne viele Leaks ist auch schon Warning
+        # (Tools dürfen Widgets via Babel rendern, aber Content-Seiten nicht)
+        if category in ("homepage", "hub", "stadt", "bundesland", "content", "vorsorge"):
+            audit.warnings.append(
+                "@babel/standalone auf Content-Seite - Performance-Einbuße. "
+                "Entweder Static Shell oder Build-Schritt nutzen."
+            )
     elif jsx_leak_count >= 2:
         audit.warnings.append(f"{jsx_leak_count} JSX-Leaks im HTML - evtl. Build-Problem")
+
+    # Accessibility-Check: skip-link für Tastatur-Navigation
+    if category not in ("legal", "other") and not parser.has_skip_link:
+        audit.warnings.append("skip-link (Sprungmarke) fehlt - Accessibility-Lücke")
+
+    # Interne Link-Validität (neuer Check, nur Mini-Sample für Performance)
+    # Wir prüfen nur, ob die wichtigsten Haupt-Links zu existierenden Dateien führen
+    # Das macht der Audit-Report nicht file-by-file, sondern aggregiert am Ende.
 
     return audit
 
@@ -636,6 +658,41 @@ def collect_pages(root: Path) -> list[Path]:
             continue  # Templates nicht auditieren
         pages.append(p)
     return sorted(pages)
+
+
+def check_internal_links(results: list[PageAudit]) -> dict:
+    """Aggregierte Prüfung: Führen interne Links zu existierenden Dateien?"""
+    existing = set()
+    for p in ROOT.rglob("*.html"):
+        rel = p.relative_to(ROOT).as_posix()
+        if any(part in SKIP_DIRS for part in rel.split("/")):
+            continue
+        existing.add("/" + rel)
+        if rel.endswith("/index.html"):
+            existing.add("/" + rel[:-len("index.html")])
+        if rel.endswith(".html"):
+            existing.add("/" + rel[:-len(".html")])
+
+    broken_links = {}
+    for audit_result in results:
+        try:
+            html = (ROOT / audit_result.path).read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        hrefs = re.findall(r'href="(/[^"#?]+)', html)
+        for h in hrefs:
+            target = h.split("#")[0].split("?")[0]
+            if not target or target == "/":
+                continue
+            if target not in existing:
+                variants = [target, target + ".html", target + "index.html",
+                            target.rstrip("/") + ".html", target.rstrip("/") + "/index.html"]
+                if not any(v in existing for v in variants):
+                    fs_check = (ROOT / target.lstrip("/")).exists()
+                    if not fs_check:
+                        key = f"{audit_result.path} → {target}"
+                        broken_links[key] = broken_links.get(key, 0) + 1
+    return broken_links
 
 
 def main():
@@ -700,6 +757,25 @@ def main():
         for iss, cnt in sorted(cat_issues.items(), key=lambda x: -x[1])[:8]:
             print(f"    [{cnt:3d}x] {iss}")
 
+    # Broken-Links-Check (neu)
+    broken = check_internal_links(results)
+    print()
+    print("=" * 78)
+    print("INTERNE LINKS")
+    print("=" * 78)
+    if broken:
+        # Gruppiere nach Ziel-URL
+        target_counts = {}
+        for key, cnt in broken.items():
+            _, target = key.split(" → ", 1)
+            target_counts[target] = target_counts.get(target, 0) + cnt
+        print(f"Kaputte interne Links gefunden: {len(broken)} Vorkommnisse auf {len(target_counts)} eindeutigen Zielen")
+        print("TOP 10 KAPUTTE ZIELE:")
+        for target, cnt in sorted(target_counts.items(), key=lambda x: -x[1])[:10]:
+            print(f"  [{cnt:3d}x] {target}")
+    else:
+        print("✅ Alle internen Links führen zu existierenden Seiten")
+
     # JSON-Report für Backlog
     report_path = ROOT / "_dev" / "AUDIT-REPORT.json"
     report = {
@@ -713,7 +789,9 @@ def main():
                 }
                 for cat, items in by_cat.items()
             },
+            "broken_internal_links": len(broken),
         },
+        "broken_links": broken,
         "pages": [asdict(r) for r in results],
     }
     report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")

@@ -39,7 +39,27 @@
         "count": 8,
         "avg_score": 65.88
       }
-    }
+    },
+    "broken_internal_links": 17
+  },
+  "broken_links": {
+    "bestattung-in/baden-württemberg/index.html → /bestattung": 1,
+    "bestattung-in/bayern/index.html → /bestattung": 1,
+    "bestattung-in/berlin/index.html → /bestattung": 1,
+    "bestattung-in/brandenburg/index.html → /bestattung": 1,
+    "bestattung-in/bremen/index.html → /bestattung": 1,
+    "bestattung-in/hamburg/index.html → /bestattung": 1,
+    "bestattung-in/hessen/index.html → /bestattung": 1,
+    "bestattung-in/mecklenburg-vorpommern/index.html → /bestattung": 1,
+    "bestattung-in/niedersachsen/index.html → /bestattung": 1,
+    "bestattung-in/nordrhein-westfalen/index.html → /bestattung": 1,
+    "bestattung-in/rheinland-pfalz/index.html → /bestattung": 1,
+    "bestattung-in/saarland/index.html → /bestattung": 1,
+    "bestattung-in/sachsen/index.html → /bestattung": 1,
+    "bestattung-in/sachsen-anhalt/index.html → /bestattung": 1,
+    "bestattung-in/schleswig-holstein/index.html → /bestattung": 1,
+    "bestattung-in/thüringen/index.html → /bestattung": 1,
+    "vorsorge/ohne-vorsorge/index.html → /tools/brief-an-meine-liebsten": 1
   },
   "pages": [
     {
@@ -90,7 +110,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1290 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 69,
       "meta_desc_len": 148,
@@ -138,11 +158,12 @@
       "warnings": [
         "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -187,11 +208,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -242,7 +264,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 84,
@@ -287,11 +309,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -336,11 +359,12 @@
       "warnings": [
         "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -386,11 +410,12 @@
         "Meta-Description zu kurz (103 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
         "Content dünn: 343 Wörter (Ziel ≥ 500)",
-        "H1 und Title nur gering überlappend"
+        "H1 und Title nur gering überlappend",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 32,
@@ -435,11 +460,12 @@
       "warnings": [
         "Meta-Description zu kurz (111 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 40,
@@ -484,11 +510,12 @@
       "warnings": [
         "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -533,11 +560,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -582,11 +610,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -631,11 +660,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -680,11 +710,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -729,11 +760,12 @@
       "warnings": [
         "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -778,11 +810,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -827,11 +860,12 @@
       "warnings": [
         "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -876,11 +910,12 @@
       "warnings": [
         "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -931,7 +966,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 98,
@@ -976,11 +1011,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -1025,11 +1061,12 @@
       "warnings": [
         "Meta-Description zu kurz (112 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 41,
@@ -1074,11 +1111,12 @@
       "warnings": [
         "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -1123,11 +1161,12 @@
       "warnings": [
         "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -1178,7 +1217,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 72,
@@ -1223,11 +1262,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -1272,11 +1312,12 @@
       "warnings": [
         "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -1321,11 +1362,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -1370,11 +1412,12 @@
       "warnings": [
         "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -1420,11 +1463,12 @@
         "Meta-Description zu kurz (103 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
         "Content dünn: 343 Wörter (Ziel ≥ 500)",
-        "H1 und Title nur gering überlappend"
+        "H1 und Title nur gering überlappend",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 32,
@@ -1475,7 +1519,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 80,
@@ -1520,11 +1564,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -1569,11 +1614,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -1618,11 +1664,12 @@
       "warnings": [
         "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -1667,11 +1714,12 @@
       "warnings": [
         "Meta-Description zu kurz (105 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -1716,11 +1764,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -1765,11 +1814,12 @@
       "warnings": [
         "Meta-Description zu kurz (104 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 33,
@@ -1814,11 +1864,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -1863,11 +1914,12 @@
       "warnings": [
         "Meta-Description zu kurz (114 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 43,
@@ -1912,11 +1964,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -1967,7 +2020,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 74,
@@ -2012,11 +2065,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2061,11 +2115,12 @@
       "warnings": [
         "Meta-Description zu kurz (107 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 36,
@@ -2110,11 +2165,12 @@
       "warnings": [
         "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -2159,11 +2215,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2208,11 +2265,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2257,11 +2315,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2306,11 +2365,12 @@
       "warnings": [
         "Meta-Description zu kurz (109 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 38,
@@ -2355,11 +2415,12 @@
       "warnings": [
         "Meta-Description zu kurz (106 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 35,
@@ -2404,11 +2465,12 @@
       "warnings": [
         "Meta-Description zu kurz (110 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 39,
@@ -2453,11 +2515,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2502,11 +2565,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2551,11 +2615,12 @@
       "warnings": [
         "Meta-Description zu kurz (108 Zeichen, Ziel 140-160)",
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 343 Wörter (Ziel ≥ 500)"
+        "Content dünn: 343 Wörter (Ziel ≥ 500)",
+        "@babel/standalone auf Content-Seite - Performance-Einbuße. Entweder Static Shell oder Build-Schritt nutzen."
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: City, Question, Answer, Service, ListItem, FAQPage, Breadcru",
+        "Schema: BreadcrumbList, Service, Answer, Question, FAQPage, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 37,
@@ -2606,7 +2671,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 88,
       "meta_desc_len": 168,
@@ -2656,7 +2721,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (507 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 77,
       "meta_desc_len": 151,
@@ -2710,7 +2775,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (461 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 77,
       "meta_desc_len": 150,
@@ -2762,7 +2827,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 82,
       "meta_desc_len": 154,
@@ -2812,7 +2877,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (444 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 77,
       "meta_desc_len": 156,
@@ -2864,7 +2929,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 78,
       "meta_desc_len": 155,
@@ -2914,7 +2979,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (425 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 77,
       "meta_desc_len": 151,
@@ -2967,7 +3032,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 93,
       "meta_desc_len": 170,
@@ -3017,7 +3082,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 84,
       "meta_desc_len": 156,
@@ -3070,7 +3135,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (415 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 90,
       "meta_desc_len": 176,
@@ -3122,7 +3187,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (430 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 86,
       "meta_desc_len": 164,
@@ -3174,7 +3239,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 79,
       "meta_desc_len": 150,
@@ -3224,7 +3289,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 78,
       "meta_desc_len": 157,
@@ -3275,7 +3340,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 85,
       "meta_desc_len": 166,
@@ -3326,7 +3391,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (410 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 89,
       "meta_desc_len": 179,
@@ -3378,7 +3443,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 80,
       "meta_desc_len": 156,
@@ -3429,7 +3494,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1556 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 71,
       "meta_desc_len": 163,
@@ -3480,7 +3545,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 62,
       "meta_desc_len": 139,
@@ -3580,7 +3645,7 @@
     {
       "path": "index.html",
       "category": "homepage",
-      "size_bytes": 21412,
+      "size_bytes": 21554,
       "word_count": 642,
       "score": 80,
       "max_score": 100,
@@ -3589,7 +3654,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (642 Wörter)",
-        "Schema: WebSite, SiteNavigationElement, Organization",
+        "Schema: WebSite, Organization, SiteNavigationElement",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 65,
@@ -3628,7 +3693,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2116 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 73,
       "meta_desc_len": 174,
@@ -3680,7 +3745,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1953 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 60,
       "meta_desc_len": 175,
@@ -3822,7 +3887,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, ListItem, BreadcrumbList, WebApplication"
+        "Schema: Offer, ListItem, WebApplication, BreadcrumbList"
       ],
       "title_len": 72,
       "meta_desc_len": 151,
@@ -3865,7 +3930,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, WebApplication, Offer, ListItem, FAQPage, "
+        "Schema: BreadcrumbList, Answer, Question, WebApplication, FAQPage, O"
       ],
       "title_len": 70,
       "meta_desc_len": 179,
@@ -3914,7 +3979,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, WebApplication, Offer, ListItem, FAQPage, "
+        "Schema: BreadcrumbList, Answer, Question, WebApplication, FAQPage, O"
       ],
       "title_len": 58,
       "meta_desc_len": 156,
@@ -4072,7 +4137,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, WebApplication, Offer, ListItem, FAQPage, "
+        "Schema: BreadcrumbList, Answer, Question, WebApplication, FAQPage, O"
       ],
       "title_len": 70,
       "meta_desc_len": 156,
@@ -4176,7 +4241,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, ListItem, BreadcrumbList, WebApplication"
+        "Schema: Offer, ListItem, WebApplication, BreadcrumbList"
       ],
       "title_len": 84,
       "meta_desc_len": 221,
@@ -4218,7 +4283,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, WebApplication, Offer, ListItem, FAQPage, "
+        "Schema: BreadcrumbList, Answer, Question, WebApplication, FAQPage, O"
       ],
       "title_len": 66,
       "meta_desc_len": 167,
@@ -4267,7 +4332,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1674 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 67,
       "meta_desc_len": 168,
@@ -4319,7 +4384,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2134 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 60,
       "meta_desc_len": 179,
@@ -4371,7 +4436,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2249 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 70,
       "meta_desc_len": 133,
@@ -4424,7 +4489,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2989 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 67,
       "meta_desc_len": 153,
@@ -4482,7 +4547,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2463 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 69,
       "meta_desc_len": 146,
@@ -4539,7 +4604,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1529 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, WebPage, FAQ"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -4595,7 +4660,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1935 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 68,
       "meta_desc_len": 155,
@@ -4644,7 +4709,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2399 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA",
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 57,
@@ -4698,7 +4763,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2611 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 62,
       "meta_desc_len": 142,
@@ -4752,7 +4817,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2382 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 67,
       "meta_desc_len": 145,
@@ -4808,7 +4873,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2871 Wörter)",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 60,
       "meta_desc_len": 172,
@@ -4863,7 +4928,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Question, Answer, ListItem, BreadcrumbList, Organization, FA"
+        "Schema: Organization, BreadcrumbList, Answer, Question, FAQPage, Lis"
       ],
       "title_len": 70,
       "meta_desc_len": 193,
