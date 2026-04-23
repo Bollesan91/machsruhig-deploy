@@ -3,100 +3,101 @@
 ## Letzte Session
 **Datum:** 23. April 2026
 
-## Was wurde gemacht
+## Zusammenfassung dieser Session
 
-### Triple-Audit durchgeführt (intern + Substanz + extern)
+Aus Audit wurde Strategie wurde Plan. **Drei strategische Entscheidungen gefällt, 7-Tage-Sprint definiert, Markteroberungs-Komponente ergänzt.** Bereit für Umsetzung ab nächster Session.
 
-- **Bestehendes Audit-Skript** `_dev/audit-all-pages.py` (714 Zeilen, 9 Kategorien) gelaufen
-- **Bug-Fix:** `jsonld_types()` las @graph-Wrapper nicht rekursiv → Schema-Werte waren fälschlich leer. Nach Fix: Gesamt-Score 54.7 → 59.0
-- **Neue Substanz-Analyse** `_dev/stadt-quality-analysis.py` — misst echte lokale Tiefe (Friedhofs-Eigennamen, Eurozahlen, Generic-Floskeln)
-- **Externes strategisches Audit** (6,6/10) integriert
+## Festgelegte Entscheidungen (verbindlich)
 
-### Harte Erkenntnisse
+### Entscheidung 1 — Autorenmodell
+**"machsruhig Redaktion" + Fachpool-Reviewer.**
+Kein Klarname. Sicheres Modell, skalierbar, E-E-A-T-Signal über namentliche Reviewer (Bestatter, Jurist, Trauerbegleiter, Seelsorger). Aufgabe: Fachpool aufbauen.
 
-- **Gesamt-Score 59.0/100** (98 Seiten)
-- **Bimodale Stadt-Qualität:** 5 GOLD (Berlin, Frankfurt, Hamburg, Köln, München) + 45 GENERIC (identisches Template, 349 Wörter, 0 Euro-Zahlen, 4 Floskeln)
-- **9 Deploy-Blocker:** @babel/standalone rendert JSX clientseitig → Google sieht praktisch keinen Content. Betroffen: Homepage (Score 39!), 5 Gold-Städte (Score 40!), 3 weitere Tools
-- **Bitterste Pointe:** Die 5 Gold-Städte sind inhaltlich Gold, aber SEO-unsichtbar wegen CSR. Das erklärt, warum externes Audit "München nur knapp am Ziel" sagte
-- **OG-Image fehlt auf 98/98 Seiten**
-- **Schema.org: vorhanden, aber falsche Typen** für Stadtseiten (haben FAQPage/Service, fehlt LocalBusiness/FuneralHome)
+### Entscheidung 2 — CSR-Fix-Strategie
+**Hybrid:** Homepage + 5 Gold-Städte komplett statisch ausliefern, 9 Tools als Static Shell + React-Widget im Container. Babel-Standalone raus aus Content-Seiten, bleibt nur in Tool-Widgets.
+
+### Entscheidung 3 — Wochenkapazität
+**6-8 h/Woche.** machsruhig wird Hauptprojekt. Realistische Marker:
+- Q2 2026 (Mai-Juni): Phase A + B fertig
+- Q3 2026: Phase C läuft, saisonaler Trauer-Content rechtzeitig
+- Q4 2026: Phase F-Aktivierung (Affiliate, Lead-Funnel)
+
+## Was passierte in dieser Session
+
+### Triple-Audit + Bug-Fix
+- Internes Vollaudit mit Bug-Fix (jsonld_types() las @graph nicht rekursiv) → Score 54.7 → 59.0
+- Substanzanalyse Stadtseiten: 5 GOLD + 45 GENERIC, bimodal, kein Mittelbau
+- Externes strategisches Audit (6,6/10) integriert
+- 9 Deploy-Blocker identifiziert: Homepage Score 39, 5 Gold-Städte Score 40, 3 weitere Tools — alle wegen @babel/standalone CSR
 
 ### Phase A teilweise umgesetzt
+- 45 Generic-Stadtseiten auf `noindex,follow` gesetzt
+- HTML-Kommentar mit Datum + Verweis auf BACKLOG.md
+- Gold-Städte (Berlin, Frankfurt, Hamburg, Köln, München) bleiben indexiert
 
-- **45 Generic-Stadtseiten auf `noindex,follow` gesetzt** (alle außer Berlin, Frankfurt, Hamburg, Köln, München)
-- Jede Seite mit HTML-Kommentar dokumentiert (Datum + Verweis auf BACKLOG.md)
-- Reversibel via sed
-- **Noch offen in Phase A:** Homepage + 5 Gold-Städte + 9 Tools aus CSR-Hölle retten
+### Doku-Konsolidierung
+- 7 _dev/docs Dokumente nach `_dev/archiv/` verschoben + README mit Mapping
+- STRATEGIE.md (Master-Strategie) im Root erstellt
+- BACKLOG.md (operative Tickets) im Root erweitert
+- Stale .claude/session-notiz.md gelöscht
+- Doku-Regel analog machsleicht: nur STRATEGIE.md + BACKLOG.md + SESSION-NOTES.md im Root
 
-### Doku-Konsolidierung (NEU am Ende der Session)
+### Backlog-Erweiterung
+- Cluster C.5 Trauer (11 Tickets, inkl. saisonale Seiten)
+- Cluster C.6 Bürokratie (5 Tickets)
+- Cluster C.7 Neue Tools (6 Tickets)
+- Cluster C.8 Vorsorge-Detail (2 Tickets)
+- Quality-Gates-Sektion im Backlog
+- Saisonale Trigger-Liste
 
-Doppelte/parallele Strategie-Dokumente waren entstanden. Nach Vorbild machsleicht aufgeräumt:
+### Bewertungs-Diskurs (intern + ChatGPT)
+- Erste Bewertung: 6,5/10 für Markteroberung — Plan zu defensiv
+- Zweite Bewertung: 8,2/10 für Authority-Aufbau, 6,8/10 für Markteroberung — fairer Frame
+- ChatGPT: "Jetzt loslegen, aber 3 Entscheidungen vorher festzurren"
+- Ergebnis: 5 Markteroberungs-Sektionen ergänzt (M.1 Off-Page, M.2 Distribution, M.3 Kronjuwelen, M.4 Markt-KPIs, M.5 Moats) — als Vorlauf für Phase D-E, nicht als Blocker für Start
 
-**Vorher:**
-- 7 separate Strategie-Dokumente in `_dev/docs/` (content-klassen, seitentypen, cta-hierarchie, linklogik, monetarisierung, qa-gates, content-plan)
-- Plus alter `.claude/session-notiz.md` (01.04.2026, stale)
-- Plus `BACKLOG.md` im Root (837 Zeilen, neu)
+### 7-Tage-Sprint definiert
+Erstes Element im BACKLOG. Klare Reihenfolge:
+1. Homepage statisch neu bauen (4-6h)
+2. 5 Gold-Städte statisch ausliefern (10-15h, parallel)
+3. Über-uns-Seite live (3-4h)
+4. Autorenblock + Methodik-Verlinkung sitewide (4h)
+5. Akutfall-Hauptseite "Erste 24 Stunden" (6-8h)
 
-**Nachher (gemäß Doku-Regel analog machsleicht):**
-- `STRATEGIE.md` (Root, 472 Zeilen) — synthetisiert die 7 _dev/docs Dokumente + externe Audit-Erkenntnisse
-- `BACKLOG.md` (Root, 1.055 Zeilen) — erweitert um Cluster C.5 Trauer, C.6 Bürokratie, C.7 neue Tools, C.8 Vorsorge-Detail
-- `SESSION-NOTES.md` (Root) — Session-Gedächtnis
-- `_dev/archiv/` — alle 7 originalen Strategie-Dokumente plus README.md mit Konsolidierungs-Mapping
-- `.claude/session-notiz.md` gelöscht (stale)
+Gesamt: 12-18h sinnvoll arbeitbar. Bei 6-8h/Woche realistisch in 7 Arbeitstagen mit Puffer.
 
-**Backlog wuchs von 49 auf 73 Tickets** durch Integration der content-plan-Inhalte:
-- Trauer-Cluster (Erstes Jahr, Zurück zur Arbeit, 8 saisonale Seiten, Beileid digital) = 11 Tickets
-- Bürokratie (Erbschein, Witwenrente, Sozialbestattung vertieft, Verträge kündigen, Dokumenten-Matrix) = 5 Tickets
-- Neue Tools (Trauerfeier-Planer, Sterbeurkunden-Rechner, Erbschaftssteuer, Witwenrente, Trauer-Tagebuch, Digitaler-Nachlass-Inventar) = 6 Tickets
-- Vorsorge-Detail (Vorsorgevollmacht, Betreuungsverfügung als eigene Seiten) = 2 Tickets
-- Quality-Gates-Sektion ergänzt (vorher fehlte das im Backlog)
+## Nächste Schritte (in Reihenfolge)
 
-### Aufräumarbeiten Detail
+**Diese Session beendet.** Nächste Session ist Umsetzung Sprint-Item #1.
 
-- Alte Roadmap-Dateien entfernt (von BACKLOG.md ersetzt)
-- Dupliziertes Audit-Skript im Root entfernt (canonisch: `_dev/audit-all-pages.py`)
-- Stadt-Quality-Tools nach `_dev/` verschoben
-- 7 Strategie-Dokumente von `_dev/docs/` nach `_dev/archiv/` verschoben
-- Stale `.claude/session-notiz.md` gelöscht
-- Root jetzt sauber: nur `BACKLOG.md` + `STRATEGIE.md` + `SESSION-NOTES.md`
+1. **Sprint #1: Homepage statisch neu bauen** — 4-6h
+   - React/Babel-Standalone raus
+   - H1 statisch, ≥4 H2-Blöcke, ≥10 interne Links
+   - Schema.org Organization + WebSite + SiteNavigationElement
+   - `<main>`-Landmark sichtbar
+   - Akzeptanz: Audit-Score ≥75, Lighthouse ≥90
 
-## Nächste Schritte
+2. **Sprint #2: 5 Gold-Städte statisch** — 10-15h, kann parallel
+   - Bestehender Gold-Content statisch ausliefern
+   - FuneralHome-Schema ergänzen
+   - Akzeptanz: Score ≥85 pro Stadt
 
-**Höchste Priorität — Phase A (Deploy-Blocker):**
+3-5: Über-uns-Seite, Autorenblock, Akutfall-Hauptseite (siehe BACKLOG → 7-Tage-Sprint)
 
-1. **Homepage statisch neu bauen** (aktuell Score 39, nur 101 Wörter für Google sichtbar) — 4-6h
-2. **5 Gold-Städte statisch rendern** (aktuell Score 40, Content existiert aber unsichtbar) — 10-15h
-3. **9 Tool-Seiten mit Static Shell versehen** (H1, Intro, FAQ als statisches HTML, Tool als Widget) — 18-27h
-
-**Parallel Phase B — Trust-Layer:**
-
-4. Über-uns-Seite mit Haltung — blockiert durch Entscheidung 1 (Autoren-Modell)
-5. Autoren-System sitewide einführen — blockiert durch Entscheidung 1
-6. Methodik prominenter, Disclaimer einheitlich — 4h
-
-**Quick-Wins aus Phase D:**
-
-7. OG-Image für alle 98 Seiten (Master + 4-5 Varianten) — 3h
-8. LocalBusiness/FuneralHome-Schema für 5 Gold-Städte — 2-3h
-
-**Saisonale Trigger im Auge behalten:**
+## Saisonale Trigger im Auge behalten
 
 - **Mitte Oktober:** Allerheiligen-Content live
 - **Anfang November:** Totensonntag + Weihnachten-Content live
 - **Mitte Dezember:** Silvester-Content live
 
-## Offene Fragen (blockieren Folge-Arbeiten)
+## Verbleibende offene Entscheidungen (kein Blocker für Sprint)
 
-1. **Autoren-Modell:** Klarname (du) / Redaktions-Pseudonym / Hybrid? → blockiert Phase B
-2. **Content-Kapazität:** Stunden pro Woche realistisch? Research selbst oder Agent?
-3. **Gesetzestext-Archiv:** Zentrale `_dev/gesetze/`-Struktur anlegen?
-4. **CSR-Fix-Strategie:** Pre-Rendering (Build-Script) / Static Rewrite / Hybrid?
-5. **Lead-Backend:** Netlify Forms / Formspree / eigener Worker?
-6. **Affiliate-Anträge:** Jetzt starten (4 Wochen Bearbeitungszeit) oder warten?
+- **Entscheidung 4:** Gesetzestext-Archiv anlegen? (entscheiden wenn C.3 startet)
+- **Entscheidung 5:** Lead-Backend-Tool (entscheiden wenn Phase E abgeschlossen)
+- **Entscheidung 6:** Affiliate-Anträge wann starten? (Empfehlung: nach B+C.1)
 
 ## Erledigte PBIs (gesamt)
 
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 20, 21, 22
 + Monetarisierungs-Basis, Vorsorge-Cluster, 9 neue Tools/Seiten (März/April 2026)
-+ Audit + Backlog + Phase A teilweise (noindex 45 Generic-Städte) + Schema-Parser-Bug-Fix (23.04.2026)
-+ Doku-Konsolidierung: STRATEGIE.md + BACKLOG erweitert + _dev/docs archiviert (23.04.2026)
++ 23.04.2026: Audit + Backlog + Phase A teilweise (noindex 45 Generic-Städte) + Schema-Parser-Bug-Fix + Doku-Konsolidierung + 3 Schlüssel-Entscheidungen + Markteroberungs-Erweiterung + 7-Tage-Sprint

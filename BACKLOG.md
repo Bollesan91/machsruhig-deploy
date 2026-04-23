@@ -13,6 +13,7 @@
 
 ## Inhalt
 
+0. [🚀 7-Tage-Sprint (ab 24.04.2026)](#-7-tage-sprint-ab-24042026)
 1. [Strategische Leitplanken](#strategische-leitplanken)
 2. [Status Quo](#status-quo)
 3. [Phasen-Roadmap](#phasen-roadmap)
@@ -29,6 +30,43 @@
 12. [Offene Entscheidungen](#offene-entscheidungen)
 13. [Metriken & Akzeptanzkriterien](#metriken--akzeptanzkriterien)
 14. [Ticket-Übersicht (komplett)](#ticket-übersicht-komplett)
+
+---
+
+## 🚀 7-Tage-Sprint (ab 24.04.2026)
+
+> Aus Strategie wird Umsetzung. Schluss mit Planen. Diese 5 Tickets sind die Reihenfolge der nächsten 7 Arbeitstage. Klar abgegrenzt von langfristiger Backlog-Pflege.
+
+**Wochenkapazität:** 6-8h (Entscheidung 3 in STRATEGIE.md). Sprint umfasst 5 Tickets mit ~12-18h Aufwand → realistisch in 7 Arbeitstagen, mit Puffer für Pannen und Reviews.
+
+**Reihenfolge ist nicht verhandelbar.** Jedes Ticket entblockiert das nächste.
+
+| # | Ticket | Aufwand | Akzeptanz |
+|---:|---|---:|---|
+| 1 | **Homepage statisch neu bauen** (A.1) | 4-6h | Audit-Score ≥75, kein @babel/standalone, Lighthouse ≥90, `<main>` sichtbar im View-Source |
+| 2 | **5 Gold-Städte statisch ausliefern** (A.2) | 10-15h, parallel zu #3-#5 möglich | Pro Stadt: Audit-Score ≥85, FuneralHome-Schema, kein JSX-Leak |
+| 3 | **Über-uns-Seite live** (B.1) | 3-4h | Haltung sichtbar, Reviewer-Pool-Erwähnung, verlinkt von Homepage + Methodik |
+| 4 | **Autorenblock + Methodik-Verlinkung sitewide** (B.2 + B.3) | 4h | "Redaktion machsruhig.de" + "Fachlich geprüft von" auf allen YMYL-Seiten, Methodik-Link prominent |
+| 5 | **Akutfall-Hauptseite "Erste 24 Stunden"** (C.1.1) | 6-8h | 2.000+ Wörter, 5+ Gesetzes-Paragrafen, 3+ Quellen, Audit-Score ≥90, Pietät-Gate bestanden |
+
+**Definition Sprint-Ende:**
+- Homepage und 5 Gold-Städte sehen für Google nicht mehr aus wie leere SPAs
+- Trust-Layer ist sitewide sichtbar
+- Erste echte Authority-Seite (Akutfall-Hauptseite) ist Beweis für YMYL-Standard
+- Audit-Gesamtscore steigt von 59.0 auf ≥70 (Schätzung)
+
+**Was im Sprint NICHT gemacht wird** (sonst Verzettelung):
+- Keine neuen Tools
+- Keine weiteren Stadtseiten aufrüsten
+- Keine Bundeslandseiten
+- Keine Trauer-Cluster-Seiten (außer wenn vor Allerheiligen-Deadline reaktiviert wird)
+- Keine Affiliate-Anträge
+- Keine Distribution-Kanäle aufsetzen (Newsletter, Pinterest = Phase D-E)
+- Keine STRATEGIE.md-Änderungen
+
+**Nach dem Sprint:** Status-Review in SESSION-NOTES.md, dann Übergang zu Phase A.3 (Tool-Static-Shells) und Phase B.4-B.5 (Disclaimer + Stand-Templates).
+
+---
 
 ---
 
@@ -884,37 +922,40 @@ Diese Entscheidungen ausdrücklich **nicht** treffen, sonst kippt Authority-Phas
 
 ## Offene Entscheidungen
 
-Diese Fragen blockieren Phase B und damit viele Folge-Arbeiten. **Antworten nötig:**
+3 Entscheidungen wurden am 23.04.2026 getroffen (siehe [STRATEGIE.md → Festgelegte Entscheidungen](./STRATEGIE.md#festgelegte-entscheidungen-23042026)). 3 verbleiben.
 
-### Entscheidung 1 — Autoren-Modell (B.2)
+### ✅ Entscheidung 1 — Autoren-Modell — ERLEDIGT
 
-- [ ] Option 1: Du selbst als Klarname-Autor
-- [ ] Option 2: "machsruhig Redaktion" + namentliche Reviewer
-- [ ] Option 3: Hybrid (Redakteur pro Artikel + Fachpool)
+Gewählt: **"machsruhig Redaktion" + Fachpool-Reviewer** (Option 2).
+Konsequenz: B.2 jetzt umsetzbar (Fachpool aufbauen, Redaktion-Block auf YMYL-Seiten).
 
-### Entscheidung 2 — Content-Kapazität
+### ✅ Entscheidung 2 — CSR-Fix Strategie — ERLEDIGT
 
-- [ ] Wie viele Stunden pro Woche realistisch für machsruhig?
-- [ ] Research selbst machen oder delegieren (z.B. an Research-Agent für Bundesland-Gesetze)?
+Gewählt: **Hybrid (Option C)** — Homepage + Gold-Städte statisch, Tools = Static Shell + Widget.
+Konsequenz: A.1, A.2, A.3 jetzt eindeutig umsetzbar.
 
-### Entscheidung 3 — Gesetzestext-Archiv
+### ✅ Entscheidung 3 — Realistische Kapazität — ERLEDIGT
+
+Gewählt: **6-8 h/Woche** (machsruhig wird Hauptprojekt).
+Konsequenz: Phase A+B realistisch in 7-9 Wochen abgeschlossen, Q4 2026 = Phase F-Aktivierung.
+
+### ⏳ Entscheidung 4 — Gesetzestext-Archiv
 
 - [ ] Brauchen wir eine zentrale `_dev/gesetze/`-Struktur mit Bestattungsgesetzen pro Bundesland, damit nicht jeder Artikel neu recherchiert?
 
-### Entscheidung 4 — CSR-Fix Strategie (A.1–A.3)
+**Empfehlung:** Ja, anlegen sobald C.3 (Bundesländer) startet. Spart Doppelarbeit. Aber **kein Blocker** für Phase A.
 
-- [ ] Option A: Pre-Rendering per Build-Script
-- [ ] Option B: React → statisches HTML umschreiben
-- [ ] Option C: Hybrid (kritische Seiten Option B, Tools Option A)
-
-### Entscheidung 5 — Lead-Backend (F.2)
+### ⏳ Entscheidung 5 — Lead-Backend (F.2)
 
 - [ ] Netlify Forms / Formspree / Eigener Worker
 
-### Entscheidung 6 — Monetarisierungs-Antragsstart (F.1)
+**Empfehlung später:** Erst entscheiden wenn Phase E abgeschlossen ist und Bestatter-Lead-Funnel real wird.
+
+### ⏳ Entscheidung 6 — Monetarisierungs-Antragsstart (F.1)
 
 - [ ] Jetzt schon DELA/SOLIDAR/Afilio beantragen (4 Wochen Bearbeitungszeit nutzen)?
-- [ ] Oder erst wenn Trust-Layer steht?
+
+**Empfehlung:** Erst Anträge starten wenn Trust-Layer (Phase B) live und Akutfall-Cluster (C.1) ankommt — nicht früher, weil Affiliate-Programme den Domain-Trust prüfen.
 
 ---
 

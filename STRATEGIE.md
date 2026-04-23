@@ -23,6 +23,10 @@
 10. [Wettbewerb & USP](#wettbewerb--usp)
 11. [Tonalität & Pietät](#tonalität--pietät)
 12. [Strategische Leitplanken](#strategische-leitplanken)
+13. [Festgelegte Entscheidungen (23.04.2026)](#festgelegte-entscheidungen-23042026)
+14. [Markteroberungs-Erweiterung (Roadmap für Phase D-E)](#markteroberungs-erweiterung-roadmap-für-phase-d-e)
+    - M.1 Off-Page-SEO & PR · M.2 Distribution (Newsletter + Pinterest)
+    - M.3 Kronjuwelen · M.4 Markt-KPIs · M.5 Moats
 
 ---
 
@@ -460,6 +464,226 @@ Diese Regeln gelten über alle Phasen. Verstoß = Qualitätsschaden.
 6. **Trauer-Schutz absolut.** Keine Diskussion, keine Ausnahme.
 7. **Keine Bestatter-Leadgen bauen, bis Authority steht.** Lead-Funnel bleibt liegen bis Phase F.
 8. **Gold-Standard vor Skalierung.** 10 echt gute Stadtseiten > 50 mittelmäßige.
+
+---
+
+## Festgelegte Entscheidungen (23.04.2026)
+
+Drei strategische Entscheidungen, die Folgearbeit blockierten, sind jetzt gefällt. Diese gelten verbindlich.
+
+### Entscheidung 1 — Autorenmodell: "machsruhig Redaktion" + Fachpool-Reviewer
+
+**Gewählt:** "machsruhig Redaktion" als Autor-Identität auf allen YMYL-Seiten, ergänzt durch namentlich genannte Reviewer aus einem Fachpool (zu rekrutieren: Bestatter, Jurist, Trauerbegleiter, Seelsorger).
+
+**Begründung:**
+- Sicheres Modell ohne persönliche Exposition (keine LinkedIn/Foto-Pflicht)
+- Skalierbar — neue Inhalte brauchen keinen neuen Klarnamen
+- Rechtliche Angreifbarkeit bleibt im Rahmen (Impressum führt rechtlich verantwortliche Person)
+- Reviewer-Namen liefern E-E-A-T-Signal trotz Pseudonym-Autor
+
+**Konsequenz für Implementierung:**
+- Sichtbarer Block auf jeder YMYL-Seite mit "Redaktion machsruhig.de" + ggf. "Fachlich geprüft von: [Name], [Rolle]"
+- `/team`-Seite mit Reviewer-Profilen (Kurz-Bio, Qualifikation)
+- Schema.org `author` referenziert "Organization machsruhig.de"
+- Schema.org `reviewedBy` referenziert Person-URLs
+
+**Aufgabe Fachpool aufbauen** — siehe BACKLOG B.2.
+
+### Entscheidung 2 — CSR-Fix-Strategie: Hybrid (Static Content + Widget für Tools)
+
+**Gewählt:** Homepage und 5 Gold-Städte werden komplett statisch ausgeliefert. Die 9 Tool-Seiten bekommen eine Static Shell (H1, Intro 200-400 Wörter, Methodik, FAQ als statisches HTML) plus das React-Widget in einem klar abgegrenzten Container.
+
+**Begründung:**
+- Pre-Rendering (Option A) hätte Babel-Standalone im Bundle behalten — Performance bleibt schlecht, Build-Pipeline aufwändig
+- Komplett-Rewrite (Option B) wäre 30-50h Arbeit, hätte Phase B blockiert
+- Hybrid passt zur Leitplanke 4: Content statisch, Interaktion clientseitig
+
+**Konsequenz für Implementierung:**
+- Homepage: React/Babel-Standalone raus, statisches HTML mit echten H1/H2/Content/Schema/Internal-Links
+- 5 Gold-Städte: bestehender Gold-Content statisch ausliefern, ggf. FAQ-Akkordeon als Progressive Enhancement
+- 9 Tools: jeweils 200-400 Wörter statische Shell oben drüber/drumherum, Widget bleibt in `<div id="widget">`
+- Build-Script (Phase A.4) optional, nur wenn nötig
+
+### Entscheidung 3 — Realistische Kapazität: 6-8 h/Woche (machsruhig wird Hauptprojekt)
+
+**Gewählt:** 6-8 Stunden pro Woche dediziert für machsruhig.de. Damit wird machsruhig zum priorisierten Projekt neben Advergy und vor machsleicht-Wachstumsfeatures.
+
+**Konsequenz für Zeitplanung:**
+
+Bei 7h/Woche Mittelwert:
+- **Phase A (30-45h):** ca. **5-7 Wochen** (Mai bis Mitte Juni 2026)
+- **Phase B (10-15h):** ca. **2 Wochen**, parallel zu A
+- **Phase C.1+C.2 (50-60h):** ca. **8-9 Wochen** (Juni-August 2026)
+- **Phase D (25-30h):** parallel laufend, plus 4 Wochen konzentriert
+- **Phase C.5 saisonale Trauer-Seiten:** Allerheiligen-Content muss bis 10.10. live sein → harte Deadline
+- **Phase E (20-30h):** ca. **3-4 Wochen** (September 2026)
+- **Phase F (15-25h):** Aktivierung Oktober/November 2026
+
+**Realistische Marker für 2026:**
+- Q2 (Mai-Juni): Phase A + B fertig, Authority-Cluster begonnen
+- Q3 (Juli-September): Phase C läuft, saisonaler Trauer-Content rechtzeitig live, Phase E gestartet
+- Q4 (Oktober-Dezember): Phase F-Aktivierung, erste Affiliate-Erträge
+
+**Pufferregel:** Bei Verzögerungen wird Skalierung (Phase E) zugunsten Authority (Phase C) verschoben — niemals umgekehrt.
+
+---
+
+## Markteroberungs-Erweiterung (Roadmap für Phase D-E)
+
+> Hinweis: Die folgenden Sektionen sind **strategischer Vorlauf für Phase D-E**, nicht Bedingung für den Start in Phase A. Sie ergänzen den defensiven Authority-Plan um die offensive Markt-Komponente.
+>
+> Hintergrund: Eine externe strategische Bewertung sah den Plan als 8,2/10 für Authority-Aufbau, aber nur 6,8/10 für aktive Markteroberung. Die folgenden 5 Sektionen schließen diese Lücke — werden aber **erst nach Phase A+B operationalisiert**.
+
+### M.1 — Off-Page-SEO & PR (Aktivierung Phase D)
+
+**Ziel:** 30-50 verlinkende qualitativ relevante Domains aufbauen, plus Brand-Erwähnungen ohne Link.
+
+**Ziel-Kategorien für Outreach:**
+
+| Kategorie | Beispiele | Outreach-Ansatz |
+|---|---|---|
+| Verbraucherportale | Verbraucherzentrale (Bundesländer), Stiftung Warentest, Aeternitas e.V. | Faktencheck-Dossiers anbieten |
+| Hospize & Trauerbegleitung | Deutscher Kinderhospizverein, Bundesverband Trauerbegleitung, lokale Hospize | Tool-Empfehlungen (Trauer-Tagebuch etc.) |
+| Kirchen & Seelsorge | EKD, Caritas, Diakonie, einzelne Bistümer | Kondolenz-Ratgeber, Trauer-Begleitung |
+| Bestatterkammern | Bundesverband Deutscher Bestatter (BDB), Landesinnungsverbände | Kosten-Transparenz, Wahl-Hilfe für Verbraucher |
+| Behörden | Standesämter, Versorgungsämter (Sozialbestattung) | Anleitungen, FAQ-Verlinkung |
+| Anwalts-/Notarverzeichnisse | Anwaltsauskunft DAV, Notar-Suche | Erbrecht-Themen, Patientenverfügung |
+| Medien (Lokal- & Fachpresse) | Lokalzeitungen, Bestattungswelt, ZE Bestattungen | Datenstories aus Audit (Bestattungskosten-Vergleich) |
+| Frauen-/Familien-Portale | Mama-Blogs, Familien-Magazine | "Kindern Tod erklären"-Cluster |
+
+**Outreach-Formate:**
+- Datenstory-Pitches (z.B. "Bestattungskosten 2026 nach Bundesland")
+- Tool-Demonstrationen (Erbschaftssteuer-Rechner für Anwaltsblogs)
+- Gastbeiträge (sehr selektiv, max. 3-5 pro Jahr)
+- Faktenchecks für Redaktionen
+- Saisonale PR-Anlässe (Totensonntag, Allerheiligen, Weihnachten)
+
+**KPI:** 20+ Referring Domains bis Q4 2026, 50+ bis Q2 2027.
+
+### M.2 — Distribution außerhalb Google: Newsletter + Pinterest
+
+**Bewusste Beschränkung auf 2 Kanäle.** Nicht TikTok, nicht YouTube, nicht Reddit — solo-machbar nicht.
+
+#### M.2.1 — Newsletter
+
+**Warum:** Trauer-Begleitung ist mehrwöchig (siehe C.5.1 "Erstes Jahr"). Newsletter ist das einzige Format, das Mehrwochen-Begleitung leistet, ohne dass User ständig zurück auf die Seite müssen.
+
+**Format:** Wöchentlich, aber Subscriber wählen Pfad ("Begleitung im 1. Jahr nach Verlust" / "Vorsorge-Roadmap" / "Akutfall-Checklisten").
+
+**Lead-Magnets als Eintritt:**
+- "Vorsorge-Ordner als PDF" (vorhandene Seite)
+- "52 Wochen Trauerbegleitung" (Trauer-Tagebuch-Tool, geplant in C.7)
+- "Bestattungskosten-Spickzettel" (1-Pager PDF aus Kosten-Cluster)
+
+**Tool:** ConvertKit oder Mailerlite (DSGVO-tauglich, niedrigschwellig).
+
+**KPI:** 500 Subscriber bis Q4 2026, 2000 bis Q2 2027.
+
+#### M.2.2 — Pinterest
+
+**Warum:** Trauersprüche/Trauerzitate dominieren Pinterest. Visuelle Pinnable-Cards zu Quotes plus Verlinkung zur Quelle = großer Traffic-Hebel mit wenig Aufwand. Funktioniert auch für Vorsorge-Checklisten und Akutfall-Anleitungen.
+
+**Format:** Pin-Vorlagen in Markenfarben + Fraunces-Schrift erstellen. Pro Trauersprüche-Kategorie (Tod Mutter, Tod Vater, Tod Kind, Tod Partner) eigene Pinnwand.
+
+**Cadence:** 5-10 neue Pins pro Woche in den ersten 3 Monaten, danach 3-5/Woche.
+
+**Tool:** Pinterest Business Account + ggf. Tailwind für Scheduling.
+
+**KPI:** 10k Monthly Viewers bis Q4 2026, 50k bis Q2 2027. **Wichtig:** Pinterest-Traffic gilt nicht als Backlink-Signal, aber als Brand-Search-Treiber.
+
+**Anti-Pattern:** Keine Trauer-Pins mit dramatischen Bildern. Keine Schockbilder. Keine "10 Sätze die jeden Trauernden trösten"-Clickbait. Pietät-Gate gilt auch hier.
+
+### M.3 — Kronjuwelen (3 Assets, die unverhältnismäßig viel ziehen sollen)
+
+**Definition:** Drei Seiten/Tools, in die überproportional viel Energie fließt, weil sie maximale Backlinks, Brand-Searches und Empfehlungen generieren sollen.
+
+#### Kronjuwel 1 — Akutfall-Hauptseite "Erste 24 Stunden" (`/erste-24-stunden`)
+
+**Warum:** Höchster emotionaler Hebel + höchste Empfehlungsrate. Wer in akuter Krise echte Hilfe bekommt, empfiehlt das radikal. Gleichzeitig: SERP-Lücke zwischen Bestatter-Verkaufsseiten und trockenen Behörden-PDFs.
+
+**Standard:** *Der* deutsche Notfall-Guide. 3.000+ Wörter, mit allen Bundesland-Frist-Unterschieden, Quellen aus Bestattungsgesetzen, eingebettetem PDF-Download für Akutsituationen, Audio-Version für Menschen die in Schock nicht lesen können (in Phase E).
+
+**Backlink-Hooks:**
+- PDF "Erste-24-Stunden-Checkliste" zum Drucken (Verbraucherzentrale, Hospize verlinken)
+- Audio-Version (Barrierefreiheit, Verbände verlinken)
+- Datenstory: "Bestattungsfristen pro Bundesland" als Tabelle (Medien zitieren)
+
+**KPI:** Top-3 für "was tun wenn jemand stirbt" und "todesfall checkliste" bis Q4 2026.
+
+#### Kronjuwel 2 — Bestattungskosten-Rechner mit echter regionaler Datenbank
+
+**Warum:** Kostenrechner sind das meistverlinkte Tool-Format in der Bestattungsbranche. Die existierenden sind alle generisch oder Bestatter-getrieben. Wenn machsruhig **echte regionale Friedhofsgebühren** in einer Datenbank hat (50 Städte als Anfang), wird das Tool zur Standard-Referenz.
+
+**Standard:** Eingabe (Stadt, Bestattungsart, Sarg/Urne, Zeremoniewunsch) → Aufschlüsselung nach Posten mit echten Zahlen aus der Stadt-Datenbank. **Datenbank ist der Moat.**
+
+**Backlink-Hooks:**
+- "Bestattungskosten-Rechner machsruhig.de" als verlinkbares Tool (Lokalzeitungen, Verbraucherportale)
+- Quartals-Studie "Wo ist Bestatten am teuersten/günstigsten?" mit Daten aus der Datenbank (PR-Anlass)
+- Embed-Code für Bestatterkammer-Websites (langfristig)
+
+**KPI:** Top-3 für "bestattungskosten rechner" bis Q1 2027.
+
+#### Kronjuwel 3 — Trauerrede-Generator (KI-gestützt, mit Pietät-Gate)
+
+**Warum:** Trauerreden sind eine massive Schmerz-Suchanfrage ("trauerrede vorlage", "rede beerdigung"). Existierende Tools sind generisch oder schlechte KI-Outputs. Mit Pietät-Gate-Validierung und thematischer Personalisierung (Beziehung zum Verstorbenen, kurze Erinnerung, Charakter) wird das ein Tool, das Menschen nach dem Nutzen *teilen*.
+
+**Standard:** Chat-artige Eingabe ("Wer war diese Person für Sie?" → 3-4 Folgefragen) → fertige Rede in 2 Stilen (formal/persönlich), Export als PDF/Text/WhatsApp-Share-Karte.
+
+**Backlink-Hooks:**
+- WhatsApp-Share-Karte: "Ich habe meine Trauerrede mit machsruhig erstellt" (organische Social-Verbreitung)
+- Hospize, Trauerbegleiter empfehlen das Tool
+- Bestatter empfehlen es Angehörigen (selbst wenn sie eigene Bestatter-Reden haben)
+
+**KPI:** 1000 Tool-Nutzungen pro Monat bis Q1 2027.
+
+**Wichtig:** Pietät-Gate 7 ist hier **harter Blocker** — Output muss durch Pietät-Filter, der Floskeln und Trivialisierungen rauswirft.
+
+### M.4 — Markt-KPIs (zusätzlich zu Build-KPIs)
+
+**Build-KPIs** (bereits in Backlog) misst Code-Qualität. **Markt-KPIs** misst tatsächliche Marktposition.
+
+| KPI | Q3 2026 | Q4 2026 | Q2 2027 | Q4 2027 |
+|---|---:|---:|---:|---:|
+| Organischer Traffic / Monat | 5k | 15k | 50k | 150k |
+| Top-3-Rankings (Kern-Keywords) | 5 | 15 | 40 | 100 |
+| Top-10-Rankings | 25 | 60 | 150 | 300 |
+| Referring Domains | 10 | 25 | 60 | 150 |
+| Domain Rating (Ahrefs) | DR 8 | DR 15 | DR 25 | DR 35 |
+| Brand Search / Monat | 50 | 200 | 1.000 | 5.000 |
+| Newsletter-Subscriber | 100 | 500 | 2.000 | 8.000 |
+| Pinterest Monthly Viewers | 1k | 10k | 50k | 200k |
+| Affiliate-Umsatz / Monat | — | — | 2.000 € | 12.000 € |
+| Lead-Conversions / Monat | — | — | 50 | 300 |
+
+**Tracking-Setup:**
+- Google Search Console (kostenlos)
+- Ahrefs Lite oder Ubersuggest für Backlinks und Domain Rating
+- Plausible Analytics (DSGVO, bereits installiert)
+- ConvertKit/Mailerlite für Newsletter-KPIs
+- Pinterest Business Analytics (kostenlos)
+
+**Cadence:** Quartalsweise Review im SESSION-NOTES.md, OKR-Anpassung wenn Werte 30%+ unter Ziel.
+
+**Definition Markt-Erfolg (Q4 2027):**
+- 150k organische Visits/Monat = Top-3 unter den DACH-Bestattungs-Info-Portalen (geschätzt nach SimilarWeb-Vergleichen)
+- 100+ Top-3-Rankings = thematische Autorität für YMYL-Bestattung in DE
+
+### M.5 — Moats (was wird monatlich uneinholbarer)
+
+Moats sind die Aktiva, die mit jedem Monat schwerer kopierbar werden. Aktuell hat machsruhig **null harte Moats**. Diese sind aufzubauen:
+
+| Moat | Wie aufbauen | Ab Phase | Schwer kopierbar weil |
+|---|---|---|---|
+| **Friedhofsgebühren-Datenbank** | Pro Stadt-Aufrüstung in Phase E die offiziellen Gebühren-Daten kuratieren, in strukturierter DB ablegen | E | Wettbewerber müsste 50+ Städte einzeln recherchieren |
+| **Newsletter-Liste** | Lead-Magnets aus Phase B+C, Begleitformate aus C.5 | B fortlaufend | Vertrauensbasis ist nicht mit Geld kaufbar |
+| **Reviewer-Fachpool** | Bestatter, Juristen, Trauerbegleiter aus Outreach (M.1) für Reviews gewinnen, mit Names sichtbar machen | B fortlaufend | Persönliche Beziehungen, schwer abzuwerben |
+| **Bundesland-Recht-Wissen** | Aus Phase C.3 strukturierte Datenbank zu Bestattungsfristen, Sargpflicht, Aschestreuung etc. pro Bundesland | C.3 | Gesetze ändern sich ständig, Pflege-Aufwand schreckt Kopisten ab |
+| **Tool-Nutzungssignale** | Anonymisierte Aggregat-Daten ("Was rechnen User in Stadt X für Bestattung aus?") zur Content-Verbesserung | C.7 | Datennetzwerk-Effekt: je mehr Nutzer, desto besser die Aggregate |
+| **Saisonaler Trauer-Content (C.5)** | Allerheiligen, Totensonntag, Weihnachten etc. — jährlich gepflegt, Backlinks akkumulieren | C.5 | Pinterest- und Backlink-Stock ist erst nach Jahren skalierbar |
+| **Brand-Stärke "machsruhig"** | Konsequente Tonalität, kein Push, Empfehlung durch Hospize/Bestatter | A-F | Brand-Building ist Jahre-Investment, nicht Monate |
+| **YMYL-Compliance-History** | Konsequente Quality-Gates über Jahre = Google-Vertrauen | A fortlaufend | Trust ist linear-zeitabhängig, nicht beschleunigbar |
+
+**Strategische Konsequenz:** Moats sind das, was Wettbewerber mit 500k Euro **nicht** kopieren können. Du baust sie unbewusst durch konsequente Phase-A-bis-F-Umsetzung — aber wenn du sie **bewusst** aufbaust (z.B. Datenbank von Anfang an strukturiert, nicht nur in HTML), wird Phase F um Faktoren wertvoller.
 
 ---
 
