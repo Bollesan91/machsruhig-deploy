@@ -26,11 +26,42 @@
     {
       "@type": "Article",
       "headline": "Unsere Methodik",
-      "description": "So arbeiten wir: Quellen, Datengrundlage, redaktionelle Standards und Transparenz.",
+      "description": "So arbeiten wir: Quellenhierarchie, Update-Zyklen, Interessenkonflikts-Regeln und Transparenz bei machsruhig.de.",
       "author": {"@type": "Organization", "name": "machsruhig.de"},
       "publisher": {"@type": "Organization", "name": "machsruhig.de"},
       "datePublished": "2026-04-01",
-      "dateModified": "2026-04-01"
+      "dateModified": "2026-04-23",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was passiert genau, wenn jemand einen Fehler meldet?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Wir prüfen die Meldung gegen die zitierten Quellen. Ist der Fehler bestätigt, korrigieren wir ihn und setzen das Stand-Datum am Seitenende neu. Bei substanziellen Änderungen ergänzen wir das Änderungslog auf der Methodik-Seite."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wer prüft die Inhalte aktuell?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Aktuell prüft die Redaktion ihre Inhalte intern im Zwei-Augen-Prinzip. Für Rechts- und Vorsorgethemen bauen wir einen externen Reviewer-Fachpool auf. Namen werden sichtbar, sobald Inhalte tatsächlich extern gegengelesen wurden."}
+        },
+        {
+          "@type": "Question",
+          "name": "Warum keine konkreten Preise für Bestattungen, sondern nur Spannen?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Bestattungskosten hängen von zu vielen Variablen ab (Bestattungsart, Friedhof, Grabart, Ausstattung, Region). Punktpreise verschleiern mehr, als sie klären. Wir arbeiten deshalb mit realistischen Spannen und benennen die wichtigsten preistreibenden Variablen."}
+        },
+        {
+          "@type": "Question",
+          "name": "Wie aktuell sind die Rechtsaussagen?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Das Bestattungsrecht ist Ländersache — 16 Landesbestattungsgesetze mit jeweils eigenem Änderungsrhythmus. Wir prüfen diese mindestens halbjährlich auf Änderungen und verweisen immer auf das jeweilige Bundesland."}
+        },
+        {
+          "@type": "Question",
+          "name": "Warum nennt ihr keine Reviewer-Namen?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Weil wir noch keine haben. Wir bauen den Fachpool aktuell auf und ergänzen Namen, sobald reale Personen Inhalte tatsächlich gegengelesen haben — statt Namen zu nennen, die nur als Schmuck dienen."}
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -144,7 +175,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
       <a href="/">Start</a> › Methodik
     </div>
     <h1>Unsere Methodik</h1>
-    <p class="lead">Transparenz ist uns wichtig — besonders bei einem Thema, das Vertrauen erfordert. Hier erklären wir, wie wir arbeiten, woher unsere Daten stammen und wie wir Geld verdienen.</p>
+    <p class="lead">Wer über Tod, Bestattung und Vorsorge schreibt, trifft Menschen in einer Ausnahmesituation und bewegt sich auf einem Feld mit klaren rechtlichen Rahmen. Auf dieser Seite legen wir offen, woher unsere Informationen stammen, wie wir mit Unsicherheit umgehen, was an Qualitätssicherung installiert ist und wie wir uns finanzieren — damit Leser prüfen können, ob sie uns vertrauen wollen.</p>
   </header>
 
   <!-- Wer wir sind -->
@@ -160,12 +191,12 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
     <div class="mr-principle">
       <strong>Verlässlichkeit vor Geschwindigkeit</strong>
-      <p>Jede Seite enthält eine Quellenbox und ein Stand-Datum. Wir veröffentlichen nur, was wir mit öffentlich zugänglichen, seriösen Quellen belegen können. Wenn wir uns bei einem Thema unsicher sind, sagen wir das.</p>
+      <p>Unser Standard für Content-Seiten: Quellenbox mit den herangezogenen Belegen und ein sichtbares Stand-Datum am Ende. Wir veröffentlichen nur, was sich mit öffentlich zugänglichen, seriösen Quellen belegen lässt. Wenn wir uns bei einem Thema unsicher sind, sagen wir das.</p>
     </div>
 
     <div class="mr-principle">
       <strong>Keine Pseudo-Präzision</strong>
-      <p>Kostenangaben sind immer Spannen, nie Einzelwerte. Rechtliche Hinweise nennen immer das Bundesland, für das sie gelten. Fristen und Regelungen werden mit Stand-Datum versehen.</p>
+      <p>Kostenangaben weisen wir als Spannen aus, nicht als exakte Einzelpreise. Rechtliche Hinweise nennen das Bundesland, für das sie gelten. Fristen und Regelungen werden mit Stand-Datum versehen.</p>
     </div>
 
     <div class="mr-principle">
@@ -182,20 +213,56 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   <!-- Quellen & Daten -->
   <section class="mr-section">
     <h2>Unsere Quellen</h2>
-    <p>Wir stützen uns auf öffentlich zugängliche Daten und Fachinformationen. Die wichtigsten Quellkategorien:</p>
+    <p>Wir stützen uns auf öffentlich zugängliche Daten und Fachinformationen. Dabei gewichten wir nach einer klaren Hierarchie:</p>
 
-    <h3>Rechtliche Informationen</h3>
-    <p>Bestattungsgesetze der einzelnen Bundesländer in der jeweils aktuellen Fassung, Friedhofssatzungen der Kommunen, Veröffentlichungen der Verbraucherzentralen und juristische Fachliteratur. Bestattungsrecht ist Ländersache — wir nennen immer das jeweilige Bundesland.</p>
+    <h3>Quellenhierarchie</h3>
+    <p>Nicht alle Quellen sind gleich belastbar. Wir gewichten entlang einer klaren Dreistufung:</p>
+    <p><strong>Primärquellen</strong> sind Originaltexte und Originalerhebungen — Landesbestattungsgesetze im Wortlaut (abrufbar über <a href="https://www.gesetze-im-internet.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">gesetze-im-internet.de</a> oder die jeweiligen Landesportale), Friedhofssatzungen der Kommunen (Kommunal-Amtsblätter), Bestattungskostenerhebungen der <a href="https://www.test.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Stiftung Warentest</a> und amtliche Statistiken von <a href="https://www.destatis.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Destatis</a>. Wenn wir eine Zahl oder Regelung nennen, stammt sie nach Möglichkeit aus einer solchen Primärquelle.</p>
+    <p><strong>Sekundärquellen</strong> ordnen ein: Fachverbände wie der <a href="https://www.bestatter.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Bundesverband Deutscher Bestatter</a> und die <a href="https://www.aeternitas.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Aeternitas e.V.</a> (Verbraucherinitiative Bestattungskultur), die <a href="https://www.verbraucherzentrale.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Verbraucherzentralen</a> der Länder, einschlägige Fachliteratur zum Bestattungs- und Erbrecht. Sie helfen uns, abstrakte Primärquellen in Alltagssprache zu übersetzen.</p>
+    <p><strong>Erfahrungswerte</strong> kommen dort ins Spiel, wo keine Statistik greift — typische Kondolenzformulierungen, übliche Trauerredeaufbauten, regionale Bräuche. Wir kennzeichnen sie als solche und stellen sie nie gleichrangig neben Primärdaten.</p>
 
-    <h3>Kostendaten</h3>
-    <p>Erhebungen der Stiftung Warentest, Daten des Bundesverbands Deutscher Bestatter (BDB), Gebührenverzeichnisse kommunaler Friedhöfe und Erfahrungswerte aus der Branche. Kostenangaben sind immer als Richtwerte gekennzeichnet.</p>
+    <h3>Konkret zitierte Quellen</h3>
+    <p>Im Folgenden die wichtigsten Quellenkategorien, aus denen wir unsere Inhalte ableiten. Auf den jeweiligen Content-Seiten steht am Ende eine Quellenbox mit den konkret für diese Seite herangezogenen Belegen.</p>
 
-    <h3>Statistische Daten</h3>
-    <p>Statistisches Bundesamt, Bevölkerungsstatistiken der Landesämter, Branchenreports des BDB und der Aeternitas e.V. (Verbraucherinitiative Bestattungskultur).</p>
+    <h4 style="font-size:16px;font-weight:700;color:var(--mr-text);margin:20px 0 8px">Rechtliche Informationen</h4>
+    <p>Die sechzehn Landesbestattungsgesetze — z.B. das <a href="https://www.gesetze-bayern.de/Content/Document/BayBestG" rel="noopener" target="_blank" style="color:var(--mr-primary)">Bayerische Bestattungsgesetz</a>, das <a href="https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=36220110914100654580" rel="noopener" target="_blank" style="color:var(--mr-primary)">Bestattungsgesetz NRW</a> oder das Hamburgische Bestattungsgesetz — die jeweils aktuellen Friedhofssatzungen der betreffenden Kommunen, das Bürgerliche Gesetzbuch für erbrechtliche Fragen (<a href="https://www.gesetze-im-internet.de/bgb/__1922.html" rel="noopener" target="_blank" style="color:var(--mr-primary)">§ 1922 BGB</a> und folgende zur Gesamtrechtsnachfolge), das <a href="https://www.gesetze-im-internet.de/pstg/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Personenstandsgesetz</a> (PStG) für Sterbefall-Anzeigepflichten sowie Veröffentlichungen der <a href="https://www.verbraucherzentrale.de/" rel="noopener" target="_blank" style="color:var(--mr-primary)">Verbraucherzentralen</a>. Bestattungsrecht ist Ländersache — wir nennen deshalb immer das jeweilige Bundesland.</p>
+
+    <h4 style="font-size:16px;font-weight:700;color:var(--mr-text);margin:20px 0 8px">Kostendaten</h4>
+    <p>Erhebungen der Stiftung Warentest (zuletzt größere Veröffentlichung 2023), Daten des Bundesverbands Deutscher Bestatter (BDB), Gebührenverzeichnisse kommunaler Friedhöfe (direkt aus den Amtsblättern der Städte abgerufen) sowie Branchenreports der Aeternitas e.V. Kostenangaben werden als Richtwerte und Spannen gekennzeichnet.</p>
+
+    <h4 style="font-size:16px;font-weight:700;color:var(--mr-text);margin:20px 0 8px">Statistische Daten</h4>
+    <p>Statistisches Bundesamt (Destatis — Sterbefälle, Bevölkerungsstatistiken), Bevölkerungsstatistiken der Landesämter für Statistik sowie Branchenreports des BDB und der Aeternitas e.V.</p>
 
     <div class="mr-hint">
-      <strong>Wichtig:</strong> Jede unserer Seiten enthält am Ende eine Quellenbox mit den konkreten Quellen, die für den jeweiligen Inhalt herangezogen wurden. So kannst du die Informationen selbst nachprüfen.
+      <strong>Quellenbox pro Seite:</strong> Jede unserer Content-Seiten enthält am Ende einen Quellenblock mit den konkreten, für diesen Inhalt herangezogenen Primär- und Sekundärquellen. So kannst du die Aussagen einzeln nachprüfen.
     </div>
+  </section>
+
+  <!-- Update-Zyklus -->
+  <section class="mr-section">
+    <h2>Wie und wann wir Inhalte aktualisieren</h2>
+    <p>Inhalte zum Thema Bestattung, Vorsorge und Trauer altern unterschiedlich schnell. Rechtstexte ändern sich regelmäßig, Kostendaten jährlich, redaktionelle Orientierungstexte selten. Unser Zielprozess sieht drei Update-Rhythmen vor:</p>
+
+    <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);overflow:hidden;margin:20px 0">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:0;border-bottom:1px solid var(--mr-border);background:#f4f0eb;padding:10px 16px;font-size:13px;font-weight:700;color:var(--mr-text)">
+        <div>Rhythmus</div>
+        <div>Was geschieht</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:0;padding:14px 16px;border-bottom:1px solid var(--mr-border);font-size:14px;line-height:1.6">
+        <div><strong>Sofort</strong><br><span style="font-size:12px;color:var(--mr-text-muted)">bei Bedarf</span></div>
+        <div>Bei Gesetzesänderungen, offensichtlichen Fehlern oder gemeldeten Ungenauigkeiten. Bei dringenden Rechtsfehlern zeitnah, sonst üblicherweise innerhalb weniger Wochen.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:0;padding:14px 16px;border-bottom:1px solid var(--mr-border);font-size:14px;line-height:1.6">
+        <div><strong>Halbjährlich</strong><br><span style="font-size:12px;color:var(--mr-text-muted)">~April / Oktober</span></div>
+        <div>Review aller Inhalte mit Rechtsbezug und aller Kostendaten. Das Stand-Datum am Seitenende zeigt, wann die letzte Prüfung stattgefunden hat.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:0;padding:14px 16px;font-size:14px;line-height:1.6">
+        <div><strong>Jährlich</strong><br><span style="font-size:12px;color:var(--mr-text-muted)">Jan / Feb</span></div>
+        <div>Grundrevision aller Content-Seiten: Statistiken aktualisieren, Quellen auf Aktualität prüfen, Formulierungen nachschärfen.</div>
+      </div>
+    </div>
+
+    <p style="font-size:14px;color:var(--mr-text-muted)">Größere Aktualisierungen dokumentieren wir am Ende der Seite im Änderungslog. So können Leser nachvollziehen, was sich gegenüber einer früheren Version substanziell geändert hat.</p>
   </section>
 
   <!-- Wie wir Geld verdienen -->
@@ -212,6 +279,16 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     <div class="mr-hint">
       <strong>Unser Versprechen:</strong> Die Informationsseiten und Tools sind und bleiben kostenlos und werbefrei. Wenn auf einer Seite kommerzielle Verweise enthalten sind, kennzeichnen wir das deutlich. Unsere redaktionelle Arbeit ist unabhängig von der Vermittlung.
     </div>
+
+    <h3>Umgang mit Interessenkonflikten</h3>
+    <p>Dort, wo redaktionelle Empfehlungen und provisionierte Verweise auf derselben Seite erscheinen, halten wir vier Regeln ein:</p>
+    <ul>
+      <li><strong>Trennung:</strong> Redaktionelle Empfehlungen und kommerzielle Verweise sind optisch und textlich voneinander getrennt. Kein Mischen in derselben Aussage.</li>
+      <li><strong>Kennzeichnung:</strong> Provisionierte Links werden als solche kenntlich gemacht — bei Affiliate-Links mit "Partner-Link", bei Bestatter-Vermittlung mit einem klaren Vermittlungshinweis am Formular.</li>
+      <li><strong>Keine Anbieter-Rankings nach Provision:</strong> Wenn wir mehrere Anbieter nebeneinander zeigen, sortieren wir nicht nach Provisionshöhe. Die Reihenfolge folgt sachlichen Kriterien (Preis, regionale Verfügbarkeit, Leistungsumfang).</li>
+      <li><strong>Keine Bezahlung für Empfehlungen:</strong> Kein Anbieter kann sich Empfehlungstexte, Bewertungen oder Platzierungen kaufen. Wenn wir einen Anbieter nennen, geschieht das aus redaktionellen Gründen.</li>
+    </ul>
+    <p style="margin-top:12px;font-size:14px;color:var(--mr-text-muted)">Diese Regeln gelten unabhängig davon, ob ein Vermittlungs- oder Affiliate-Modell gerade aktiv ist oder nicht.</p>
   </section>
 
   <!-- Tools & Datenschutz -->
@@ -229,7 +306,46 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     <p>Wir nehmen jede Rückmeldung ernst und aktualisieren unsere Inhalte regelmäßig.</p>
   </section>
 
-</div>
+  <!-- FAQ -->
+  <section class="mr-section">
+    <h2>Häufige Fragen zur Methodik</h2>
+
+    <h3>Was passiert genau, wenn jemand einen Fehler meldet?</h3>
+    <p>Wir prüfen die Meldung gegen die zitierten Quellen. Ist der Fehler bestätigt, korrigieren wir ihn und setzen das Stand-Datum am Seitenende neu. Bei substanziellen Änderungen (z.B. falsche Gesetzesaussage, falsche Kostenangabe) ergänzen wir das Änderungslog weiter unten auf dieser Methodik-Seite. Rückmeldungen ohne klare Quelle prüfen wir trotzdem — aber ohne Änderung, wenn sich die ursprüngliche Aussage belegen lässt.</p>
+
+    <h3>Wer prüft die Inhalte aktuell?</h3>
+    <p>Aktuell prüft die Redaktion ihre Inhalte intern im Zwei-Augen-Prinzip. Für fachlich anspruchsvolle Seiten — insbesondere Rechts- und Vorsorgethemen — bauen wir einen externen Reviewer-Fachpool auf (Bestatter, Juristen, Trauerbegleiter). Sobald Inhalte durch einen externen Reviewer gegengelesen wurden, wird der Name des Reviewers auf der betreffenden Seite sichtbar. Mehr dazu auf der Seite <a href="/ueber-uns" style="color:var(--mr-primary)">Über uns</a>.</p>
+
+    <h3>Warum keine konkreten Preise für Bestattungen, sondern nur Spannen?</h3>
+    <p>Bestattungskosten hängen von zu vielen Variablen ab — Bestattungsart, Friedhof, Grabart, Ausstattung, Region —, als dass ein einzelner Punktpreis aussagekräftig wäre. Eine „Erdbestattung ab 899 €"-Angabe verschleiert mehr, als sie klärt. Wir nennen deshalb realistische Spannen und benennen die wichtigsten Variablen, die den konkreten Preis treiben.</p>
+
+    <h3>Wie aktuell sind die Rechtsaussagen?</h3>
+    <p>Das Bestattungsrecht liegt in Ländersache — 16 Landesbestattungsgesetze, alle mit eigenem Änderungsrhythmus. Wir prüfen diese Gesetze mindestens halbjährlich auf Änderungen und verweisen immer auf das jeweilige Bundesland, für das eine Aussage gilt. Bei konkreten Rechtsfragen im Einzelfall ersetzen unsere Inhalte keine anwaltliche Beratung — das steht in jedem Disclaimer.</p>
+
+    <h3>Warum nennt ihr keine Reviewer-Namen?</h3>
+    <p>Weil wir noch keine haben. Wir bauen den Fachpool aktuell auf. Anstatt Namen zu nennen, die (noch) nicht existieren oder die nur als Schmuck dienen, arbeiten wir zunächst sichtbar ohne externe Reviewer und ergänzen Namen, sobald reale Personen Inhalte tatsächlich gegengelesen haben.</p>
+  </section>
+
+  <!-- Änderungslog -->
+  <section class="mr-section">
+    <h2>Änderungslog dieser Methodik-Seite</h2>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">Wir dokumentieren substanzielle Änderungen an dieser Methodik-Seite chronologisch. Redaktionelle Feinschliffe ohne Aussage-Änderung werden nicht einzeln gelistet.</p>
+
+    <div style="border-left:3px solid var(--mr-border);padding:4px 0 4px 20px;margin-left:4px">
+      <div style="margin-bottom:20px">
+        <div style="font-size:13px;color:var(--mr-primary);font-weight:600;margin-bottom:4px">23. April 2026</div>
+        <p style="font-size:14px;margin:0;line-height:1.6">Methodik geschärft: Quellenhierarchie (Primär-/Sekundärquellen/Erfahrungswerte) eingeführt, konkrete Gesetzesquellen mit Verlinkung ergänzt (BGB, PStG, Landesbestattungsgesetze), Update-Rhythmen als Tabelle dargestellt, Interessenkonflikts-Regeln als eigener Unterabschnitt, FAQ-Sektion neu, Änderungslog neu.</p>
+      </div>
+      <div>
+        <div style="font-size:13px;color:var(--mr-primary);font-weight:600;margin-bottom:4px">1. April 2026</div>
+        <p style="font-size:14px;margin:0;line-height:1.6">Erstveröffentlichung der Methodik-Seite mit den vier Grundsätzen (Verlässlichkeit, keine Pseudo-Präzision, Respekt, Datenschutz), Quellen-Grundkategorien und Geschäftsmodell-Erklärung.</p>
+      </div>
+    </div>
+  </section>
+
+  <p style="font-size:13px;color:var(--mr-text-muted);border-top:1px solid var(--mr-border);padding-top:20px;margin-top:40px"><strong>Stand:</strong> 23. April 2026 &nbsp;·&nbsp; <strong>Nächste turnusmäßige Überprüfung:</strong> spätestens Oktober 2026</p>
+
+</main>
 
 <footer class="mr-footer no-print">
   <div class="mr-footer-inner">
