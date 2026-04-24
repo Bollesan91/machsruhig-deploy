@@ -1,114 +1,82 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 23. April 2026 (Nachmittag/Abend, Bundesländer-Sprint)
-**Deploy-Status:** Alle Änderungen mit "ende deploy" gepusht und deployed.
+**Datum:** 24. April 2026 (Sachsen-Sprint, mit Deploy)
+**Deploy-Status:** Mit „ende deploy" gepusht und deployed.
 
 ## Was wurde gemacht
 
-### ✅ 5 von 16 Bundesländer-Seiten komplett überarbeitet
+### ✅ Sachsen — 6. von 16 Bundesländer-Seiten auf Elite-Niveau
 
-Jede Seite wurde von ~350 Wörtern auf ~1700-2400 Wörter ausgebaut, mit
-strikter Primärquellen-Orientierung, korrekten Paragraphen-Verweisen,
-konkreten Städte-/Friedhofsdaten und dem einheitlichen Schema-Set
-WebPage + Place + Article + BreadcrumbList + FAQPage.
+| Metrik | Vorher | Nachher |
+|---|---|---|
+| Audit-Score | 37/100 | **85/100** |
+| Wortzahl | ~321 | **2.250** |
+| §-Referenzen | 0 | **19** |
+| Externe Quellen | 0 | **22** |
+| Re-Check Blocker | 3 | **0** |
+| Re-Check Warnungen | 4 | **0** |
 
-**Audit-Score jeweils von ~54-71 auf 85/100.**
-**Re-Check jeweils 0 Blocker, 0 Warnungen.**
+### 🚨 DER inhaltliche Kerngewinn
 
-| Bundesland | Commit | Wörter | Quellen | §-Ref | Score |
-|---|---|---|---|---|---|
-| Baden-Württemberg | `3aa73c5` | 2359 | 32 | 23 | 85 |
-| Mecklenburg-Vorpommern | `ee6df0b` | 1832 | 23 | 25 | 85 |
-| Sachsen-Anhalt | `9adb45a` | 1785 | 21 | 19 | 85 |
-| Thüringen | `f9b3cad` + `a6e6009` | 1744 | 19 | 32 | 85 |
-| **Brandenburg** | `e529f2d` | 1751 | 22 | 34 | 85 |
+Die alte Seite log mit „Sargpflicht: Nein" — Sachsen gehört in Wahrheit
+zusammen mit **Bayern** zu den letzten beiden Bundesländern mit
+**durchgängiger Sargpflicht** (LSA-Reform 11.09.2025 hat den dritten
+Sarg-Staat raus). Belegt mit drei Paragraphen:
+- § 18a SächsBestG (Erdbestattung nur in Särgen)
+- § 20 Abs. 1 Satz 4 SächsBestG (Einäscherung nur im umweltverträglichen Sarg)
+- § 16 Abs. 1 SächsBestG (Einsargung zur Beförderung)
 
-### ✅ Audit-Skript rekalibriert (Commit `a1a3db9`)
+### Weitere Sachsen-spezifische Korrekturen gegen das alte Template
 
-`_dev/audit-all-pages.py` bekam einen `PRE_LAUNCH_MODE`-Flag, der
-Bundesland/Content-Seiten ohne Monetarisierungs-Penalty bewertet,
-solange Phase F (Monetarisierung) noch nicht aktiv ist. Sobald Phase F
-rollt, muss `PRE_LAUNCH_MODE = False` gesetzt werden — dann spiegeln
-die Scores die volle Monetarisierungs-Realität.
+- **8 Werktage** Höchstfrist (nicht „8 Tage" — § 19 Abs. 1, von Dresden.de bestätigt)
+- **6 Monate** Urnenbeisetzung (§ 19 Abs. 2, sanktioniert via § 23 Abs. 1 Nr. 16)
+- **20 Jahre auch für Aschen** (§ 6 Abs. 2 Satz 2 — Sachsen-spezifisch, in Brandenburg z.B. nur 15 J.)
+- Friedhofsdaten Dresden: 58 Friedhöfe, 4 kommunale (dresden.de Primärquelle)
+- Heidefriedhof 54 ha, 1936 (Wikipedia)
+- Johannisfriedhof 1881, 2011 „Schönster Friedhof Deutschlands" (Denkmalfort)
+- Trinitatisfriedhof als historischer Seuchenfriedhof
+- Leipzig Südfriedhof 78 ha (leipzig.de Primärquelle)
+- Krematorium Leipzig 14.01.1910 als 18. dt. Krematorium (leipzig.de wörtlich)
+- Chemnitz: Eigenbetrieb der Stadt (NICHT GmbH — friedhof-chemnitz.de Primärquelle)
 
-### ✅ Plausible-Tracking zentralisiert (Commit `5493cee`)
+### Selbstkritischer Re-Check vor Deploy
 
-Init-Code und Plausible-Script-Tag in `js/tracking.js` verschoben.
-Alle überarbeiteten Seiten verweisen jetzt nur noch auf diese eine
-Datei statt jeweils eigenen Init-Code zu enthalten.
+Bolle hat „check alles nochmal" angeordnet — der ehrliche Stufe-1-Gate
+hat 6 Korrekturen gefunden:
 
-### ✅ Re-Check-Skript neu: `_dev/bundesland-recheck.py` (Commit `a6e6009`)
-
-Automatisierter Ehrlichkeits-Check, der den Audit-Score ergänzt und
-speziell auf **Sachrichtigkeit** prüft. Checks:
-- Content-Umfang (≥ 1200 Wörter)
-- §-Referenzen (≥ 8)
-- Externe Primärquellen (≥ 10)
-- Pietätlosigkeiten ("touristische Bestattung" etc.)
-- Unbelegte Superlative (Krematoriums-Ränge, "einzige in Deutschland")
-- Städte aus falschem Bundesland (Lübeck-in-MV-Fehler-Detektor)
-- Sekundärquellen ohne Markierung (bestattung-information.de u.a.)
-- Template-Sachfehler ("Sargpflicht: Nein", "Mindestfrist 24h" etc.)
-- Landesrecht-Volltext-Link vorhanden
-
-Aufruf: `python3 _dev/bundesland-recheck.py <pfad>` oder `--all`.
-Bei den 11 noch unbearbeiteten Bundesländer-Seiten meldet das Skript
-zusammen ~21 Blocker und ~44 Warnungen — diese Seiten dürfen also NICHT
-live gehen, auch wenn der Audit-Score bei 71-81 liegt.
-
-### ✅ GO-LIVE-CHECKLIST erweitert
-
-`GO-LIVE-CHECKLIST.md` hat jetzt:
-- **Re-Check als festen Blocker-Schritt** (Abschnitt A.0)
-- **Begriffspräzisions-Kriterium** (z.B. "Grabanlagen" ≠ "Grabstätten"
-  in Primärquellen)
-- **9-Schritte-Workflow** für jede neue Bundesländer-Überarbeitung
-  (Recherche → Content → Struktur → Audit → Re-Check → manueller
-  Re-Check → Stufe-1 Gate → Commit mit [skip netlify] → auf
-  "ende deploy" warten)
-
-### ✅ Selbstkritischer Re-Check der 4 fertigen Seiten
-
-Nach Bolles Aufforderung "check nochmal ob die 4 scores berechtigt sind"
-wurde Thüringen nachgeschärft, weil bei ehrlicher Prüfung Stellen
-aufgefallen waren, die noch nicht 85-Niveau hatten:
-- "43.800 Grabstätten" → "43.800 Grabanlagen" (Primärquelle-Wortlaut)
-- "1897 das fünfte Krematorium Deutschlands" → relativiert zu "ein
-  frühes Krematorium" (Rang nur durch Wikipedia belegt)
-- Süddeutsch-Vergleich entfernt (unbelegt)
-- "Thüringer Besonderheit" → "Merkmal" (Differenzierung gibt's anderswo)
-- Erfurt-Gebühren explizit als Sekundärportal markiert
-
-BW, MV, LSA, TH sind damit ehrlich 85, nicht nur Audit-85.
+1. **Mathematik:** „13 andere Bundesländer" → „die übrigen 14" (16 - SN - BY = 14)
+2. **Tippfehler:** „fünfgrößten" → „fünftgrößten" Friedhof
+3. **Sachfehler Chemnitz:** „GmbH" → korrekt „Eigenbetrieb"
+4. **Falsch attribuierte Höhe:** Glockenturm „63 m laut Wikipedia" raus
+   (Wikipedia sagt 60 m, andere 63 m — Quellen-Konflikt) →
+   konservativer formuliert ohne Höhenangabe
+5. **6-Monats-Frist:** schwammigen Vergleich ersetzt durch Dresden-Beleg
+   + § 23 Abs. 1 Nr. 16 (Ordnungswidrigkeit)
+6. **Aschenruhezeit-Vergleich:** „manche andere BL" → präzises
+   Brandenburg-Beispiel (15 J.)
 
 ## Workflow-Lehren dieser Session
 
-1. **Audit-Score allein genügt nicht für Go-Live.** Der Score misst
-   Struktur/SEO/Schema, aber nicht Sachrichtigkeit. Der neue Re-Check
-   ergänzt diese Lücke.
-2. **Primärquellen-Wortlaut bleibt Primärquellen-Wortlaut.** Selbst
-   kleine Umformulierungen ("Grabanlagen" → "Grabstätten") können
-   die Bedeutung verschieben.
-3. **Sekundärquellen als solche markieren.** Wenn Gebühren nicht aus
-   der Original-Gebührensatzung, sondern aus einem Verzeichnisportal
-   stammen, gehört das transparent in den Text.
-4. **"ende deploy"-Trigger strikt respektieren.** Die 8 Session-Commits
-   wurden alle mit [skip netlify] gepusht; erst auf explizites Signal
-   wurde ein Deploy-Commit erzeugt.
+1. **Mathematische Plausibilitätsprüfung gehört in den Re-Check.**
+   „13 von 16 minus 2" hätte ich vorher rechnen sollen.
+2. **Quellen-Konflikte explizit notieren.** Beim Glockenturm gab es
+   60 m vs. 63 m — saubere Lösung war, die Zahl rauszunehmen, statt
+   eine Quelle willkürlich zu wählen.
+3. **Rechtsformen niemals raten.** „GmbH" hatte ich im Chemnitz-Absatz
+   reflexhaft gesetzt — der Eigenbetrieb-Status hätte direkt geprüft
+   werden müssen.
 
 ## Nächste Schritte
 
-### Bundesländer-Seiten: 11 weitere zu überarbeiten
+### Bundesländer-Seiten: 10 weitere zu überarbeiten
 
-Sortiert nach Dringlichkeit (Blocker-Anzahl beim Re-Check, abstufend
-von Audit-Score):
+Sortiert nach Re-Check-Blocker-Anzahl (Stand vor Sachsen):
 
 | Nächste | Audit | Re-Check Blocker |
 |---|---|---|
 | Bremen | 81 | 3 |
 | Niedersachsen | 80 | 3 |
-| Sachsen | 71 | 3 |
 | Hamburg | 71 | 2 |
 | Schleswig-Holstein | 79 | 2 |
 | Berlin | 81 | 2 |
@@ -118,20 +86,31 @@ von Audit-Score):
 | Hessen | 80 | 1 |
 | Saarland | 71 | 1 |
 
-Empfehlung für nächste Session: **Sachsen** — inhaltlich spannend, weil
-Sachsen mit Bayern noch zu den restriktiven Bundesländern bei der
-Sargpflicht gehört (Gegenstück zur LSA-Reform vom September 2025).
+Empfehlung für nächste Session: **Bremen oder Niedersachsen** (3
+Blocker, Hansestadt-Besonderheiten) — oder **Hamburg/Schleswig-Holstein**
+(Bolles Region, also persönlicher Bezug).
 
-### Weitere offene Punkte (aus BACKLOG)
+**Bayern interessant nach Sachsen:** Beide letzten Sarg-Länder, Sachsen
+hat jetzt einen sauberen Rahmen — Bayern könnte direkt auf die gleiche
+Argumentationslinie aufgesetzt werden.
+
+### Weitere offene Punkte (aus BACKLOG, unverändert)
 
 - **Vorsorge-Ordner:** strategische Entscheidung fällig — die
-  "Kommt bald"-Platzhalter sind YMYL-fragwürdig
+  „Kommt bald"-Platzhalter sind YMYL-fragwürdig
 - **10 Tool-Seiten** warten auf A.3 Static-Shell-Umbau
 - **PRE_LAUNCH_MODE auf False** setzen, sobald Phase F aktiv rollt
 - **17 kaputte interne Links sitewide** (Phase D)
 - **sitemap.xml stale** (45 noindex-Städte, Phase D)
 - **B.2.2 Reviewer-Zeile aktivieren**, wenn Fachpool real
 - **D.2.1 Gold-Städte** auf Score ≥ 85 mit FuneralHome-Schema
+
+### Mail-Infrastruktur (aus Mail-Session 24.04.)
+
+- 🗓️ **08.05.2026:** Migadu-Trial-Ende — Entscheidung Mini ($90/J)
+  vs. Micro ($19/J)
+- GMX-IMAP-Einbindung der beiden Mailboxen offen
+- DMARC machsleicht.de aktuell `p=none`, langfristig auf `p=quarantine`
 
 ## Offene Fragen
 
