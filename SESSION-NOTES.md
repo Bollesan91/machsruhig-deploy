@@ -1,71 +1,79 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 24. April 2026 (Schleswig-Holstein-Sprint, mit Deploy)
+**Datum:** 24. April 2026 (Quality-Pass über alle 12 fertigen BL-Seiten, mit Deploy)
 **Deploy-Status:** Mit „ende deploy" gepusht und deployed.
 
 ## Was wurde gemacht
 
-### ✅ Schleswig-Holstein — 11. von 16 Bundesländer-Seiten auf Elite-Niveau
+### ✅ Vollständige Konsistenz-Prüfung aller 12 fertigen BL-Seiten
 
-| Metrik | Vorher | Nachher |
-|---|---|---|
-| Audit-Score | 79/100 | **85/100** |
-| Wortzahl | 366 | **2.040** |
-| §-Refs | 0 | **8+** |
-| Externe Quellen | 0 | **16** |
-| Re-Check Blocker | 2 | **0** |
-| Re-Check Warnungen | 4 | **0** |
+**Metrik-Kohärenz (alle 12):**
+- Score **85** bei allen
+- **0 Issues, 0 Warnungen** bei allen
+- **12 interne Links** identisch (Nav byte-identisch, Hash `6531f63e`)
+- **Alle JSON-LD-Schemas** identische Typen und valide
+- **Wortzahl 1.800–2.400** im Zielkorridor
+- **H2-Count 11–12** kohärent
+- Canonical-URLs sauber (Umlaute für BW/TH bewusst, externe Links in ASCII korrekt)
 
-### 🚨 DER inhaltliche Kerngewinn
+### 🟡 3 kleine Drift-Korrekturen (Template-Angleichung)
 
-Die alte Seite hatte **zwei Standard-Sachfehler** (Sargpflicht: Nein, Mindestfrist 24h). 
+1. **Baden-Württemberg**: H2 `Auf einen Blick` → `Kernfakten` (ältere Seite angeglichen)
+2. **Mecklenburg-Vorpommern**: H2 `Auf einen Blick` → `Kernfakten` (ältere Seite angeglichen)
+3. **Brandenburg: Stahnsdorf-Ergänzung** — echter inhaltlicher Gap geschlossen
 
-**Schleswig-Holsteins ganz neue Story — Reform 13.12.2024 (in Kraft 31.12.2024):**
-1. **Sargpflicht-Lockerung** (§ 26 Abs. 4): Bestattung im Leichentuch ist jetzt grundsätzlich erlaubt auf den Willen der verstorbenen Person hin — nicht mehr nur aus religiösen oder weltanschaulichen Gründen.
-2. **Asche-Verstreuung auf Friedhöfen** (§ 26 Abs. 3 Nr. 3) neu möglich.
-3. **Urnen-Frist auf 3 Monate verlängert** (§ 16 Abs. 3) — vorher 1 Monat.
-4. **Strengere Seebestattung** — nur noch durch zugelassene Schiffe.
-5. **Reerdigung-Pilotprojekt** (Humus-Transformation in 40 Tagen) auf Grundlage § 15a.
+### 🔴 → 🟢 Echter inhaltlicher Gap geschlossen: Stahnsdorf auf der Brandenburg-Seite
 
-### Schleswig-Holstein-Spezifika belegt
-- **BestattG vom 4.2.2005** (GVOBl. Schl.-H. S. 70), Reform 13.12.2024 (in Kraft 31.12.2024), frühere Änderung 29.1.2024
-- **§ 16 Abs. 1**: 48h Mindestfrist + 9 Tage Höchstfrist (Soll-Vorschrift)
-- **§ 16 Abs. 3** (neu 2024): Urnen 3 Monate nach Einäscherung
-- **§ 23 Abs. 1, 2**: Mindestruhezeit durch Friedhofsträger
-- **§ 26 Abs. 4**: Sargpflicht-Ausnahme auf Willen
-- **§ 26 Abs. 3 Nr. 3**: Asche-Verstreuung auf Friedhöfen neu
-- **§ 15a**: Erprobungsklausel (Reerdigung läuft hier)
-- **§ 2 Nr. 12**: Reihenfolge Bestattungspflichtige
-- **Vorwerker Friedhof Lübeck**: 53 ha, größter der 6 städtischen Lübecker, erstes staatliches Krematorium SH (Verbrennungskirche), in Kiel erst 1916 in Betrieb
-- **Lübeck Bestattung im Leichentuch nur Vorwerk und Waldhusen** (Friedhofssatzung)
-- Schleswig-Holstein hat den **größten Anteil aller Seebestattungen Deutschlands**
+Der Südwestkirchhof Stahnsdorf ist mit 206 Hektar **Deutschlands zweitgrößter Friedhof** nach Ohlsdorf und weltweit einer der zehn größten. Er liegt geografisch in der brandenburgischen Gemeinde Stahnsdorf, wird aber in der öffentlichen Wahrnehmung meist Berlin zugeordnet.
 
-### Korrekturen aus Stufe-1-Gate vor Deploy
-1. **Geografie-Fehler:** Rostock (in MV) als SH-Hafen erwähnt — durch Travemünde ersetzt. Gut, dass Re-Check-Skript das fängt.
-2. **Lübeck-Ruhefrist „1. Lebensjahr 15 Jahre" entschärft** — die Spezifizierung war geraten, der Friedhofssatzungs-Snippet zeigte zwar „15 Jahre", aber ohne klares Subjekt. Defensive Formulierung: nur noch die Existenz von kürzeren Fristen für Kinder erwähnen, ohne konkrete Zahl.
-3. **Title gekürzt** auf 52 Zeichen.
-4. **Meta-Description gekürzt** auf 156 Zeichen.
+**Vorher:** Brandenburg-Seite erwähnte Stahnsdorf nicht (!). Nur Berlin-Seite hatte es mit korrekter geografischer Präzisierung.
 
-## Status: 11/16 Bundesländer auf Elite-Niveau
+**Jetzt:** Brandenburg-Seite hat einen H3-Block „Südwestkirchhof Stahnsdorf — Deutschlands zweitgrößter Friedhof" mit:
+- 206 ha, 1909 von Evangelischer Kirche eingerichtet
+- Bedeutung: größter Waldfriedhof Deutschlands, weltweit Top-10
+- S-Bahn-Anschluss 1913
+- 15.000 Grabstätten-Umbettung bis 1940 wegen „Germania"-Planung
+- Prominente: Werner von Siemens, Heinrich Zille, Engelbert Humperdinck, Manfred Krug, Dieter Thomas Heck
+- Norwegische Holzkirche im Jugendstil, bekannt aus Netflix „Dark"
+- Quellen: suedwestkirchhof.de + Wikipedia (2 neue Einträge in der Quellenliste)
 
-**Fertig:** BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, **SH**
+**Brandenburg-Metriken nach Ergänzung:**
+- Words: 1.805 → 1.969 (+164)
+- External Links: 13 → 15
+- Score 85 gehalten
 
+### Querverweis-Logik Berlin ↔ Brandenburg jetzt sauber
+
+Berlin-Seite sagt: „liegt allerdings nicht in Berlin, sondern... in der brandenburgischen Gemeinde Stahnsdorf"  
+Brandenburg-Seite sagt: „Eine internationale Besonderheit liegt im Berliner Umland: Der Südwestkirchhof Stahnsdorf..."
+
+Beide Seiten verweisen geografisch korrekt aufeinander und jede bringt ihre eigene Perspektive. **Für SEO:** Beide Seiten ranken jetzt für Stahnsdorf-Queries mit unterschiedlichen Nutzungsszenarien (Berliner, die nach Stahnsdorf suchen — Brandenburger, die ihren BL-Friedhof kennenlernen wollen).
+
+## Status: 12/16 Bundesländer auf Elite-Niveau
+
+**Fertig, alle template-konform, alle primärquellen-belegt:**
+BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, SH, B
+
+**Offen (4):**
 | Nächste | Audit | Re-Check Blocker |
 |---|---|---|
-| Berlin | 81 | 2 |
 | Rheinland-Pfalz | 80 | 2 |
 | NRW | 78 | 1 |
 | Hessen | 80 | 1 |
 | Saarland | 71 | 1 |
 
-**Empfehlung nächste Session:** **Berlin** (Score 81, sollte schnell auf 85 zu bringen sein, Stadtstaat wie HB/HH — Drei-Stadtstaaten-Trilogie wäre dann komplett!) oder **Rheinland-Pfalz** (hat 2025er Reform mit Aushändigung der Urne, Teilung der Asche, Aschebeisetzung in Flüssen — deutlich liberaler als SH; eine starke Story).
+**Empfehlung nächste Session:** **Rheinland-Pfalz** (2025er Reform mit Aushändigung der Urne, Teilung der Asche, Aschebeisetzung in Flüssen — bisher liberalstes BL Deutschlands, sehr starke Story)
 
 ## Workflow-Lehren dieser Session
 
-1. **Geografie-Skript fängt Bundesland-Verwechslungen sehr zuverlässig.** Rostock-in-SH fiel sofort auf — wäre ohne das Skript live gegangen. Das Skript ist ein verlässlicher Wächter gegen genau diese Fehlerklasse.
-2. **„Stadt-X-Friedhofssatzung sagt..."-Aussagen nur mit hochwertigem Wörtlich-Beleg.** Der Lübeck-Satzungs-Snippet war zu fragmentiert, um den 15-Jahre-Wert sicher dem 1. Lebensjahr zuzuordnen. Defensiv weglassen statt raten.
-3. **Bei brandaktuellen Reformen explizit Stand-Datum nennen** (in Kraft seit 31.12.2024) — das gibt dem User Vertrauen und schützt uns gegen veraltete Konkurrenz-Inhalte.
+1. **Umlaute-URLs sind ein Falle für Automatisierung.** Mein erster Audit hatte nur 10 BL gefunden, weil die bash-for-Schleifen ASCII-Namen nutzten. `baden-wuerttemberg` existiert nicht, der Ordner heißt `baden-württemberg`. Das Skript `audit-all-pages.py` fand sie aber, weil es im Dateisystem direkt liest. **Lektion:** Beim Regression-Test IMMER direkt aus der Verzeichnisliste iterieren, nicht aus dem Kopf geraten.
+
+2. **Nav-Byte-Identity-Check als Quality-Gate.** Md5-Hash über den gesamten Nav-Block aller 12 BL verglichen — alle identisch. Das ist der billigste strukturelle Drift-Test, der funktioniert. Sollte als Pre-Commit-Check aufgenommen werden: `python3 _dev/check-nav-consistency.py`.
+
+3. **Cross-Referenz-Gaps zwischen BL-Seiten sind die echten inhaltlichen Drift-Indikatoren.** Die Sachfehler-Blocker fängt das Skript. Aber ein Stahnsdorf, der auf der Berlin-Seite erwähnt wird und auf der Brandenburg-Seite fehlt — das erwischt man nur durch menschliche Inhalts-Prüfung. Nächste Idee: ein Quer-Verweis-Skript, das prüft, ob prominente Städte/Friedhöfe, die in einer BL-Seite genannt werden, auch in der geografisch korrekten BL-Seite vorkommen.
+
+4. **Stufe-2-Check: Metrik-Uniformität als Vertrauenssignal.** Wenn alle 12 Seiten auf Score 85 sind mit 11-12 H2s und 12 Nav-Links und identischen Schemas, ist das ein starkes Signal dafür, dass der Autor-Workflow konsistent lief. Abweichungen würden sofort auffallen.
 
 ## Weitere offene Punkte (aus BACKLOG, unverändert)
 
@@ -76,6 +84,7 @@ Die alte Seite hatte **zwei Standard-Sachfehler** (Sargpflicht: Nein, Mindestfri
 - **sitemap.xml stale** (45 noindex-Städte, Phase D)
 - **B.2.2 Reviewer-Zeile aktivieren**, wenn Fachpool real
 - **D.2.1 Gold-Städte** auf Score ≥ 85 mit FuneralHome-Schema
+- **Quer-Verweis-Skript BL-Seiten** (neue Idee aus dieser Session)
 
 ## Mail-Infrastruktur (unverändert)
 
