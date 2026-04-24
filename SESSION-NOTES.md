@@ -1,58 +1,55 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 24. April 2026 (Niedersachsen-Sprint, mit Deploy)
+**Datum:** 24. April 2026 (Hamburg-Sprint, mit Deploy)
 **Deploy-Status:** Mit „ende deploy" gepusht und deployed.
 
 ## Was wurde gemacht
 
-### ✅ Niedersachsen — 9. von 16 Bundesländer-Seiten auf Elite-Niveau
+### ✅ Hamburg — 10. von 16 Bundesländer-Seiten auf Elite-Niveau
 
 | Metrik | Vorher | Nachher |
 |---|---|---|
-| Audit-Score | 80/100 | **85/100** |
-| Wortzahl | 352 | **1.967** |
-| §-Refs | 0 | **9** |
+| Audit-Score | 71/100 | **85/100** |
+| Wortzahl | 346 | **2.067** |
+| §-Refs | 0 | **6+** |
 | Externe Quellen | 0 | **18** |
-| Re-Check Blocker | 3 | **0** |
+| Re-Check Blocker | 2 | **0** |
 | Re-Check Warnungen | 4 | **0** |
 
 ### 🚨 DER inhaltliche Kerngewinn
 
-Die alte Seite hatte **drei fundamentale Fehler**:
-1. **Geografie-Fehler:** „Bremen" als Region in Niedersachsen erwähnt — Bremen ist eigenes Bundesland (Stadtstaat)
-2. „Sargpflicht: Nein" → korrekt: **§ 11 Abs. 1 BestattG** Sargpflicht (Ausnahme über untere Gesundheitsbehörde nach § 11 S. 2)
-3. „Mindestfrist 24h" → korrekt: **48 Stunden** nach § 9 Abs. 1
+Die alte Seite hatte **zwei fundamentale Fehler**:
+1. „Sargpflicht: Nein" → korrekt: **Sargpflicht ja**, Ausnahmen für muslimische Bestattungen möglich
+2. „Mindestfrist 24h" → **Hamburg hat überhaupt keine starre 48h-Mindestfrist** (Sondersituation!)
 
-### Niedersachsen-Spezifika belegt
-- **BestattG vom 8.12.2005** (Nds. GVBl. S. 381), zuletzt geändert 23.02.2022 (in Kraft 02.03.2022)
-- **§ 9 Abs. 1**: 48h Mindestfrist
-- **§ 9 Abs. 2**: 8 Tage Höchstfrist (Soll-Vorschrift, gemeindefreie Tage zählen nicht mit)
-- **§ 9 Abs. 2 S. 4**: Urne 1 Monat
-- **§ 11 Abs. 1**: Sargpflicht-Volltext + Ausnahmemöglichkeit
-- **§ 14**: Mindestruhezeit 20 Jahre (für alle Bestattungen, untere Gesundheitsbehörde kann ändern)
-- **§ 13a Abs. 2**: Naturstein-Klausel (keine Kinderarbeit, ILO-182-Bezug) — eine soziapolitische Besonderheit
-- **Stadtfriedhof Engesohde**: 1864 als erster kommunaler Großfriedhof, 21,7 ha, Eingangsbau Droste 1873, Kapelle Barnstorf 1910 (Wikipedia)
-- **Stadtfriedhof Stöcken**: 1891 eröffnet, 55 ha, ~170.000 Bestattungen seit 1891, Bauabschnitt Rowald + Narten 1889–1892
-- **Stadtfriedhof Seelhorst**: 1920 eröffnet, **63 ha (Stadt Hannover) bzw. 68,5 ha (Wikipedia)** — Quellenkonflikt explizit erwähnt
-- **Seelwald**: erster städtischer Bestattungswald in Hannover, 2005
-- **Friedhofsmuseum**: seit 2006 im alten Krematorium, 300 m²
-- **5 große + 14 kleinere städtische Friedhöfe** in Hannover (hannover.gov.de offiziell)
-- **FriedWald**: 15 Standorte in Niedersachsen (friedwald.de offiziell)
-- **Träger**: Fachbereich Umwelt und Stadtgrün der Landeshauptstadt Hannover
+**Hamburgs Doppel-Story:**
+1. **Mensch-Tier-Bestattung** (seit 1.3.2020 in Kraft) — Hamburg ist das **erste Bundesland** Deutschlands mit dieser gesetzlichen Regelung. Erstes Grabfeld auf Ohlsdorf, bis zu 1 Hektar. Tier muss in Tierkrematorium eingeäschert werden.
+2. **Friedhof Ohlsdorf** — der **größte Parkfriedhof der Welt** (389 ha), Deutschlands größter Friedhof, weltweit Platz 4 nach dem Wadi as-Salam in Nadschaf/Irak (917 ha).
 
-### Korrekturen aus Stufe-1-Gate vor Deploy
-1. **„Beverstedt" als FriedWald-Standort entfernt** — nicht durch Primärquelle belegt. Korrekt: 15 FriedWald-Standorte mit Bramsche (erster), Hasbruch, Lüneburger Heide etc. — verifiziert über friedwald.de offiziell.
-2. **Quellenkonflikt Seelhorst-Fläche explizit erwähnt** — Stadt Hannover sagt 63 ha, Wikipedia 68,5 ha; ich erkläre die Differenz mit späteren Erweiterungen.
-3. **Title gekürzt** auf 59 Zeichen (vorher 68).
+### Hamburg-Spezifika belegt
+- **BestattG vom 30.10.2019** (HmbGVBl. Nr. 42, S. 379), Stand 1.2.2024 — komplette Modernisierung des Vorgängergesetzes von 1988
+- **§ 10 Abs. 1**: 10-Tages-Anzeigepflicht statt starrer Höchstfrist
+- **§ 6**: Überführung in Leichenhalle innerhalb 36h
+- **KEINE explizite 48h-Mindestfrist** im Hamburger BestattG (anders als in den meisten BL!)
+- **Hamburger Friedhöfe – Anstalt öffentlichen Rechts** (HFG vom 8.11.1995): betreibt Ohlsdorf, Öjendorf, Volksdorf, Wohldorf + Finkenwerder (alt+neu), Finkenriek, Kirchdorf-Amtshof
+- **Hamburger Krematorium GmbH** (100%-Tochter): Krematorien Ohlsdorf + Öjendorf
+- **Ohlsdorf**: 1.7.1877 eröffnet, 389 ha (größte Ausdehnung 1930: 400 ha), 235.000 Grabstellen, 1,4 Mio Beisetzungen seit Gründung, 4.500/Jahr; Architekt Wilhelm Cordes; 1900 Grand Prix Pariser Weltausstellung; 2015 Nutzfläche reduziert auf 200 ha; 36.000 Bäume, 450 Gehölzarten, 800 Skulpturen, 15 Teiche
+- **Öjendorf**: 14.07.1966 eröffnet, 98,7 ha, zweitgrößter Hamburger Parkfriedhof, seit 1978 separate islamische Grabanlagen
+- **Volksdorf**: 1959-2012 vom Bezirksamt Wandsbek verwaltet, ab 2013 unter Hamburger Friedhöfe AöR
+- **Lutz Rehkopf** ist Sprecher der Hamburger Friedhöfe (mehrfach in Quellen belegt)
 
-## Status: 9/16 Bundesländer auf Elite-Niveau
+### 2 Korrekturen + 1 technischer Fix
+1. **Marketing-Vokabel „Angebot" entfernt** — Re-Check-Heuristik fängt das in YMYL-Kontext zurecht. „Spektrum" als pietätsneutrale Alternative.
+2. **JSON-LD Anführungszeichen-Konflikt:** `„Hamburger Friedhöfe"` im Schema-Text brach das JSON, weil das `"` als String-Ende interpretiert wurde. Defensiv: deutsche Anführungszeichen entfernt im JSON-LD (im sichtbaren HTML-Text bleiben sie). Schema-Test: PARSE_ERROR → grün.
+3. **Title gekürzt** auf 52 Zeichen.
 
-**Fertig:** BW, MV, LSA, TH, BB, SN, BY, HB, **NI**
+## Status: 10/16 Bundesländer auf Elite-Niveau
+
+**Fertig:** BW, MV, LSA, TH, BB, SN, BY, HB, NI, **HH**
 
 | Nächste | Audit | Re-Check Blocker |
 |---|---|---|
-| Hamburg | 71 | 2 |
 | Schleswig-Holstein | 79 | 2 |
 | Berlin | 81 | 2 |
 | Rheinland-Pfalz | 80 | 2 |
@@ -60,13 +57,14 @@ Die alte Seite hatte **drei fundamentale Fehler**:
 | Hessen | 80 | 1 |
 | Saarland | 71 | 1 |
 
-**Empfehlung nächste Session:** **Hamburg** (Stadtstaat, Score am niedrigsten 71, Ohlsdorf als größter Friedhof Deutschlands wäre eine starke Story) oder **Berlin** (Score schon 81, geht schneller).
+**Empfehlung nächste Session:** **Schleswig-Holstein** (geografisch direkter Nachbar Hamburgs, Synergien bei Recherche; oder Berlin, ist Score-mäßig nahe an 85)
 
 ## Workflow-Lehren dieser Session
 
-1. **Erinnerungen sind keine Quellen — Wiederholungslektion.** „Beverstedt" hatte ich auswendig im Kopf — friedwald.de hat es nicht; Bramsche, Hasbruch sind die wirklichen Pionier-Standorte. Konkrete Standorte IMMER live recherchieren, NIE aus dem Kopf zitieren.
-2. **Quellenkonflikte transparent machen.** Bei Seelhorst-Fläche habe ich die Stadt-Hannover-PDF und Wikipedia direkt nebeneinander zitiert — das ist ehrlicher und User-freundlicher als willkürliche Auswahl.
-3. **Title-Länge ist ein einfacher Score-Hebel.** Mit „Recht & Friedhöfe" statt „Recht, Fristen & Friedhöfe" auf <60 Zeichen kommen.
+1. **Deutsche Anführungszeichen im JSON-LD-Schema sind ein Fallstrick.** Wenn das geschlossene `"` (ASCII) in einem JSON-Strinng-Wert steht, bricht das JSON. Entweder als HTML-Entity codieren ODER deutsche Sonderzeichen ganz weglassen im Schema (im sichtbaren HTML-Text bleiben sie). Sollte ich automatisch im Skript prüfen können.
+2. **„Angebot" / „bietet" / „leistet" sind pietätsensibel** in YMYL-Bestattungs-Kontext. Re-Check fängt das automatisch — gut. Mein Wording-Fix: „Spektrum", „umfasst", „verfügbar".
+3. **Hamburg hat KEINE 48h-Mindestfrist im Gesetz** — das ist eine echte Sondersituation, die ich selbst nicht erwartet hatte. Sekundärquellen widersprechen sich (anwalt-Plattform sagt richtig „keine starre Frist", Bestattungs-Aggregator sagt fälschlich „48h für alle 16"). **Lokale Bestattungs-Quelle ist immer näher dran** als überregionale Aggregator-Seiten.
+4. **Stufe-1-Gate war diesmal komplett grün ohne Korrekturen.** Saubere Recherche zahlt sich aus — alle 26 Behauptungen wörtlich primärquellen-belegt.
 
 ## Weitere offene Punkte (aus BACKLOG, unverändert)
 
