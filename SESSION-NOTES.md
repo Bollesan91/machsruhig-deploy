@@ -1,70 +1,71 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 24. April 2026 (Hamburg-Sprint, mit Deploy)
+**Datum:** 24. April 2026 (Schleswig-Holstein-Sprint, mit Deploy)
 **Deploy-Status:** Mit „ende deploy" gepusht und deployed.
 
 ## Was wurde gemacht
 
-### ✅ Hamburg — 10. von 16 Bundesländer-Seiten auf Elite-Niveau
+### ✅ Schleswig-Holstein — 11. von 16 Bundesländer-Seiten auf Elite-Niveau
 
 | Metrik | Vorher | Nachher |
 |---|---|---|
-| Audit-Score | 71/100 | **85/100** |
-| Wortzahl | 346 | **2.067** |
-| §-Refs | 0 | **6+** |
-| Externe Quellen | 0 | **18** |
+| Audit-Score | 79/100 | **85/100** |
+| Wortzahl | 366 | **2.040** |
+| §-Refs | 0 | **8+** |
+| Externe Quellen | 0 | **16** |
 | Re-Check Blocker | 2 | **0** |
 | Re-Check Warnungen | 4 | **0** |
 
 ### 🚨 DER inhaltliche Kerngewinn
 
-Die alte Seite hatte **zwei fundamentale Fehler**:
-1. „Sargpflicht: Nein" → korrekt: **Sargpflicht ja**, Ausnahmen für muslimische Bestattungen möglich
-2. „Mindestfrist 24h" → **Hamburg hat überhaupt keine starre 48h-Mindestfrist** (Sondersituation!)
+Die alte Seite hatte **zwei Standard-Sachfehler** (Sargpflicht: Nein, Mindestfrist 24h). 
 
-**Hamburgs Doppel-Story:**
-1. **Mensch-Tier-Bestattung** (seit 1.3.2020 in Kraft) — Hamburg ist das **erste Bundesland** Deutschlands mit dieser gesetzlichen Regelung. Erstes Grabfeld auf Ohlsdorf, bis zu 1 Hektar. Tier muss in Tierkrematorium eingeäschert werden.
-2. **Friedhof Ohlsdorf** — der **größte Parkfriedhof der Welt** (389 ha), Deutschlands größter Friedhof, weltweit Platz 4 nach dem Wadi as-Salam in Nadschaf/Irak (917 ha).
+**Schleswig-Holsteins ganz neue Story — Reform 13.12.2024 (in Kraft 31.12.2024):**
+1. **Sargpflicht-Lockerung** (§ 26 Abs. 4): Bestattung im Leichentuch ist jetzt grundsätzlich erlaubt auf den Willen der verstorbenen Person hin — nicht mehr nur aus religiösen oder weltanschaulichen Gründen.
+2. **Asche-Verstreuung auf Friedhöfen** (§ 26 Abs. 3 Nr. 3) neu möglich.
+3. **Urnen-Frist auf 3 Monate verlängert** (§ 16 Abs. 3) — vorher 1 Monat.
+4. **Strengere Seebestattung** — nur noch durch zugelassene Schiffe.
+5. **Reerdigung-Pilotprojekt** (Humus-Transformation in 40 Tagen) auf Grundlage § 15a.
 
-### Hamburg-Spezifika belegt
-- **BestattG vom 30.10.2019** (HmbGVBl. Nr. 42, S. 379), Stand 1.2.2024 — komplette Modernisierung des Vorgängergesetzes von 1988
-- **§ 10 Abs. 1**: 10-Tages-Anzeigepflicht statt starrer Höchstfrist
-- **§ 6**: Überführung in Leichenhalle innerhalb 36h
-- **KEINE explizite 48h-Mindestfrist** im Hamburger BestattG (anders als in den meisten BL!)
-- **Hamburger Friedhöfe – Anstalt öffentlichen Rechts** (HFG vom 8.11.1995): betreibt Ohlsdorf, Öjendorf, Volksdorf, Wohldorf + Finkenwerder (alt+neu), Finkenriek, Kirchdorf-Amtshof
-- **Hamburger Krematorium GmbH** (100%-Tochter): Krematorien Ohlsdorf + Öjendorf
-- **Ohlsdorf**: 1.7.1877 eröffnet, 389 ha (größte Ausdehnung 1930: 400 ha), 235.000 Grabstellen, 1,4 Mio Beisetzungen seit Gründung, 4.500/Jahr; Architekt Wilhelm Cordes; 1900 Grand Prix Pariser Weltausstellung; 2015 Nutzfläche reduziert auf 200 ha; 36.000 Bäume, 450 Gehölzarten, 800 Skulpturen, 15 Teiche
-- **Öjendorf**: 14.07.1966 eröffnet, 98,7 ha, zweitgrößter Hamburger Parkfriedhof, seit 1978 separate islamische Grabanlagen
-- **Volksdorf**: 1959-2012 vom Bezirksamt Wandsbek verwaltet, ab 2013 unter Hamburger Friedhöfe AöR
-- **Lutz Rehkopf** ist Sprecher der Hamburger Friedhöfe (mehrfach in Quellen belegt)
+### Schleswig-Holstein-Spezifika belegt
+- **BestattG vom 4.2.2005** (GVOBl. Schl.-H. S. 70), Reform 13.12.2024 (in Kraft 31.12.2024), frühere Änderung 29.1.2024
+- **§ 16 Abs. 1**: 48h Mindestfrist + 9 Tage Höchstfrist (Soll-Vorschrift)
+- **§ 16 Abs. 3** (neu 2024): Urnen 3 Monate nach Einäscherung
+- **§ 23 Abs. 1, 2**: Mindestruhezeit durch Friedhofsträger
+- **§ 26 Abs. 4**: Sargpflicht-Ausnahme auf Willen
+- **§ 26 Abs. 3 Nr. 3**: Asche-Verstreuung auf Friedhöfen neu
+- **§ 15a**: Erprobungsklausel (Reerdigung läuft hier)
+- **§ 2 Nr. 12**: Reihenfolge Bestattungspflichtige
+- **Vorwerker Friedhof Lübeck**: 53 ha, größter der 6 städtischen Lübecker, erstes staatliches Krematorium SH (Verbrennungskirche), in Kiel erst 1916 in Betrieb
+- **Lübeck Bestattung im Leichentuch nur Vorwerk und Waldhusen** (Friedhofssatzung)
+- Schleswig-Holstein hat den **größten Anteil aller Seebestattungen Deutschlands**
 
-### 2 Korrekturen + 1 technischer Fix
-1. **Marketing-Vokabel „Angebot" entfernt** — Re-Check-Heuristik fängt das in YMYL-Kontext zurecht. „Spektrum" als pietätsneutrale Alternative.
-2. **JSON-LD Anführungszeichen-Konflikt:** `„Hamburger Friedhöfe"` im Schema-Text brach das JSON, weil das `"` als String-Ende interpretiert wurde. Defensiv: deutsche Anführungszeichen entfernt im JSON-LD (im sichtbaren HTML-Text bleiben sie). Schema-Test: PARSE_ERROR → grün.
+### Korrekturen aus Stufe-1-Gate vor Deploy
+1. **Geografie-Fehler:** Rostock (in MV) als SH-Hafen erwähnt — durch Travemünde ersetzt. Gut, dass Re-Check-Skript das fängt.
+2. **Lübeck-Ruhefrist „1. Lebensjahr 15 Jahre" entschärft** — die Spezifizierung war geraten, der Friedhofssatzungs-Snippet zeigte zwar „15 Jahre", aber ohne klares Subjekt. Defensive Formulierung: nur noch die Existenz von kürzeren Fristen für Kinder erwähnen, ohne konkrete Zahl.
 3. **Title gekürzt** auf 52 Zeichen.
+4. **Meta-Description gekürzt** auf 156 Zeichen.
 
-## Status: 10/16 Bundesländer auf Elite-Niveau
+## Status: 11/16 Bundesländer auf Elite-Niveau
 
-**Fertig:** BW, MV, LSA, TH, BB, SN, BY, HB, NI, **HH**
+**Fertig:** BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, **SH**
 
 | Nächste | Audit | Re-Check Blocker |
 |---|---|---|
-| Schleswig-Holstein | 79 | 2 |
 | Berlin | 81 | 2 |
 | Rheinland-Pfalz | 80 | 2 |
 | NRW | 78 | 1 |
 | Hessen | 80 | 1 |
 | Saarland | 71 | 1 |
 
-**Empfehlung nächste Session:** **Schleswig-Holstein** (geografisch direkter Nachbar Hamburgs, Synergien bei Recherche; oder Berlin, ist Score-mäßig nahe an 85)
+**Empfehlung nächste Session:** **Berlin** (Score 81, sollte schnell auf 85 zu bringen sein, Stadtstaat wie HB/HH — Drei-Stadtstaaten-Trilogie wäre dann komplett!) oder **Rheinland-Pfalz** (hat 2025er Reform mit Aushändigung der Urne, Teilung der Asche, Aschebeisetzung in Flüssen — deutlich liberaler als SH; eine starke Story).
 
 ## Workflow-Lehren dieser Session
 
-1. **Deutsche Anführungszeichen im JSON-LD-Schema sind ein Fallstrick.** Wenn das geschlossene `"` (ASCII) in einem JSON-Strinng-Wert steht, bricht das JSON. Entweder als HTML-Entity codieren ODER deutsche Sonderzeichen ganz weglassen im Schema (im sichtbaren HTML-Text bleiben sie). Sollte ich automatisch im Skript prüfen können.
-2. **„Angebot" / „bietet" / „leistet" sind pietätsensibel** in YMYL-Bestattungs-Kontext. Re-Check fängt das automatisch — gut. Mein Wording-Fix: „Spektrum", „umfasst", „verfügbar".
-3. **Hamburg hat KEINE 48h-Mindestfrist im Gesetz** — das ist eine echte Sondersituation, die ich selbst nicht erwartet hatte. Sekundärquellen widersprechen sich (anwalt-Plattform sagt richtig „keine starre Frist", Bestattungs-Aggregator sagt fälschlich „48h für alle 16"). **Lokale Bestattungs-Quelle ist immer näher dran** als überregionale Aggregator-Seiten.
-4. **Stufe-1-Gate war diesmal komplett grün ohne Korrekturen.** Saubere Recherche zahlt sich aus — alle 26 Behauptungen wörtlich primärquellen-belegt.
+1. **Geografie-Skript fängt Bundesland-Verwechslungen sehr zuverlässig.** Rostock-in-SH fiel sofort auf — wäre ohne das Skript live gegangen. Das Skript ist ein verlässlicher Wächter gegen genau diese Fehlerklasse.
+2. **„Stadt-X-Friedhofssatzung sagt..."-Aussagen nur mit hochwertigem Wörtlich-Beleg.** Der Lübeck-Satzungs-Snippet war zu fragmentiert, um den 15-Jahre-Wert sicher dem 1. Lebensjahr zuzuordnen. Defensiv weglassen statt raten.
+3. **Bei brandaktuellen Reformen explizit Stand-Datum nennen** (in Kraft seit 31.12.2024) — das gibt dem User Vertrauen und schützt uns gegen veraltete Konkurrenz-Inhalte.
 
 ## Weitere offene Punkte (aus BACKLOG, unverändert)
 
