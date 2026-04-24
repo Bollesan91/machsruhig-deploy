@@ -202,10 +202,12 @@ def check_page(path: Path) -> list[CheckFinding]:
 
     # --- CHECK 8: Falsche Absolutaussagen zu Sargpflicht/Fristen ---
     # Häufige Sachfehler, die gerne ins Template rutschen
+    # Hinweis: '8 Tage' ist in Bayern (§ 19 BestV) und Sachsen (§ 19 SächsBestG, "Werktage") gesetzlich korrekt!
+    # Wir flaggen daher nur '7 Tage' und nur dann, wenn KEIN BestV/SächsBestG-Beleg in der Nähe steht.
     fehler_templates = [
         (r"Sargpflicht[:.\s]+Nein[^a-z]", "'Sargpflicht: Nein' — in den meisten Bundesländern FALSCH"),
         (r"Mindestfrist[:.\s]+24\s*h", "'Mindestfrist 24h' — nur in einigen BL korrekt (z.B. nicht TH/LSA)"),
-        (r"Höchstfrist[:.\s]+[78]\s*Tag", "'Höchstfrist 7-8 Tage' — meist 10 Tage"),
+        (r"Höchstfrist[:.\s]+7\s*Tag", "'Höchstfrist 7 Tage' — meist 10 Tage; in BY/SN gilt 8 Tage"),
     ]
     for pattern, desc in fehler_templates:
         if re.search(pattern, body_text, re.IGNORECASE):
