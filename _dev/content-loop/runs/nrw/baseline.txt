@@ -1,0 +1,19 @@
+
+[1m=== Re-Check: bestattung-in\nordrhein-westfalen\index.html ===[0m
+
+[91m[1m🚫 1 BLOCKER[0m
+  [91m❌ [Template-Sachfehler] Verdächtige Template-Formulierung: 'Mindestfrist 24h' — nur in einigen BL korrekt (z.B. nicht TH/LSA)[0m
+
+[93m[1m⚠  4 WARNUNG[0m
+  [93m! [Content-Umfang] Nur 371 Wörter — für Bundesland-Seite eher dünn (BW/MV/LSA/TH liegen bei 1700-2400).[0m
+  [93m! [§-Referenzen] Nur 0 §-Referenzen — YMYL-Rechtsseite sollte ≥ 8 konkrete Paragraphen belegen.[0m
+  [93m! [Primärquellen] Nur 0 externe Verlinkungen — Ziel: ≥ 10 Primärquellen.[0m
+  [93m! [Landesrecht-Link] Kein Link zum Landesrecht-Portal gefunden. Landesrecht-Volltext sollte verlinkt sein.[0m
+
+[1mManuell immer noch zu prüfen:[0m
+  · Sachrichtigkeit jeder §-Referenz gegen Original-Gesetzestext
+  · Friedhofsflächen/Eröffnungsjahre gegen Primärquelle der Stadt
+  · Ob Aussagen wie 'als einziges Bundesland' wirklich durch Quelle gedeckt
+  · Ton: würde ein Angehöriger das als respektvoll empfinden?
+
+[1mZusammenfassung: 1 Blocker, 4 Warnungen[0m
