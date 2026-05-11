@@ -1,108 +1,75 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 11. Mai 2026 (Content-Loop Pilot — Saarland + Hessen + NRW via Multi-Chat-Methode)
-**Deploy-Status:** Alle 3 Pages mit Deploy gepusht. **16/16 BL fertig.**
+**Datum:** 11. Mai 2026 (Multi-Chat-Pipeline auf 5 Top-Städte, dann Welle-1-Start)
+**Deploy-Status:** ✅ 5 Top-Stadt-Pages live (Netlify auto-deploy)
 
 ## Was wurde gemacht
 
-### 🎯 Content-Loop-Methode (Multi-Chat) erfolgreich validiert + auf 3 BL angewandt
+### 🚀 Top-5 Stadt-Pages durch Multi-Chat-V2-Pipeline → LIVE
 
-Manueller Pilot der 3-Chat-Architektur (Writer A / Reviewer B / Adversarial C) mit drei Bundesland-Pages durchlaufen — alle drei auf Recheck-grün gebracht, Hessen erreicht das Score-85-Ziel.
+Multi-Chat-Architektur mit echter Sycophancy-Isolation: **Chat A (Writer) + Chat B (Reviewer) + Chat C (Adversarial)** in separaten claude.ai Browser-Tabs via Chrome-MCP. Branch-Trick: jeder Chat fetcht raw-URLs aus `content-loop-pipeline`-Branch statt chunked-paste.
 
-| Bundesland | Audit vorher | Audit nachher | Recheck | Tool-Fix-Versuche |
+| Stadt | Wortzahl | Review-Score | Adversarial | Status |
 |---|---|---|---|---|
-| **Saarland** | 71 + 1 Blocker | **83** | 0/0 ✓ | 4 (Plateau bei 83 — Schönarbeit) |
-| **Hessen** | 80 + 1 Blocker | **85** | 0/0 ✓ | 2 (Ziel erreicht ohne Eskalation) |
-| **NRW** | 78 + 1 Blocker | **83** | 0/0 ✓ | 2 (Plateau bei 83 — Stopp-Regel akzeptiert) |
+| **München** | 5590 | 72% | 78% | v1→v2→v3 live |
+| **Frankfurt** | 3264 | 74% | 76% | v1→v2→v3 live |
+| **Berlin** | 3482 | 74% | 79% | v1→v2→v3 live |
+| **Hamburg** | 3600 | 72% | 78% | v1→v3 live (Artifact-Workaround) |
+| **Köln** | 1708 | 76% | 79% | v1→v2→v3 live |
 
-**Vorher-Findings:**
-- Saarland: Template-Sachfehler „Mindestfrist 24h", 0 §-Refs, 0 Primärquellen
-- Hessen: Template-Sachfehler „Sargpflicht: Nein" (laut FBG 2025 FALSCH — Sargpflicht JA mit religiöser Ausnahme § 18 Abs. 2)
+**Pipeline-Beweis (Branch-Trick funktioniert):**
+- Chat C (Adversarial) fand bei München v2: **"Hessen-Quelle für Bayern-BestV"** = Copy-Paste-Halluzination — Chat A allein hätte das nie gesehen
+- Chat C bei München v2: **§ 17 BestV / 1.1.2023** = doppelter erfundener Paragraph + Datum
+- Alle 3 Halluzinations-Verdachte in v3 korrigiert
 
-### 🎯 Branch-Trick als V2-Methodik-Durchbruch
+**Layout/Schema konsistent:**
+- mr-Klassen (mr-nav, mr-content, mr-hero, mr-keyfacts, etc.)
+- DM Sans + Fraunces Fonts
+- Schema.org: Article, FAQPage, BreadcrumbList, WebPage, Place pro Friedhof
+- Skip-Link, Footer mit Cross-Links
 
-V1 (Saarland) mit chunked-paste pro Page-Übergabe: ~90 Min Wall-Clock, 12+ Tool-Calls pro Round, 4 Tool-Fix-Versuche → Score 83.
+### 🗺️ Sitemap aufgeräumt
+- 45 Thin-Content-Städte aus Sitemap entfernt (haben noindex,follow seit 23.04.)
+- 5 Top-Städte mit priority 0.7
 
-V2 (Hessen) mit Branch-Trick (Files auf `content-loop-pipeline` gepusht, Worker fetcht via raw-URL): ~50 Min Wall-Clock, **0 chunked-Operations**, 2 Tool-Fix-Versuche → Score 85.
-
-Plus: **Quellen-Pack via WebSearch vorab recherchiert** und auf Branch gepusht — eliminiert das Round-1-MISSING-Problem komplett.
-
-### 🎯 Konsistenz-Check + Restruktur-Pattern
-
-Nach erfolgreichem 3-Page-Pilot: Konsistenz-Check über alle 16 BL ergab — **15/16 strukturell konsistent**, Saarland v7 als Outlier (eigene CSS-Klassen statt mr-*, nur 6 H2 statt 11-14, abweichendes Schema-Set Cemetery+GeoCoordinates statt City+ImageObject).
-
-**Restruktur-Pattern entwickelt:** 1 Round, 1 Prompt mit 2 URLs (CONTENT = Saarland v7, LAYOUT = Hessen v5), Worker gießt Inhalt in Standard-Struktur. Resultat **Saarland v8** — 100% strukturell konsistent mit anderen 15 BL, Score bleibt 83 (Plateau). **Effizienz:** 5 Min total statt voller Pipeline-Run.
-
-Status finale Konsistenz:
-- 16/16 mit mr-Layout-Klassen ✓
-- 16/16 mit identischem Schema-Set (Article, FAQPage, BreadcrumbList, WebPage, Place, City, ImageObject, Organization, PostalAddress, ListItem, Question, Answer) ✓
-- 16/16 mit Standard-Sektions-Reihenfolge (Kernfakten → Recht → Fristen → Sargpflicht → Ruhezeiten → Formen → Friedhöfe → Kosten → Hilfe → Was tun → FAQ → Quellen) ✓
-- 16/16 mit DM Sans + Fraunces Fonts, skip-link, mr-breadcrumb ✓
-- 16/16 Recheck grün (0 Blocker, 0 Warnungen) ✓
-
-### V2-Methodologie als Repo-Doku
-
-Komplette V2-Pipeline-Doku jetzt in `_dev/content-loop/V2-METHODOLOGY.md` — überlebt Memory-Verlust, ist für künftige Pilot-Runs (Stadt-Pages, Tool-Pages) referenzierbar. Enthält: Architektur, Phasen-Workflow, Stopp-Regel „Basics vs Schönarbeit", Konsistenz-Patterns, Restruktur-Pattern, Wakeup-Mechanismen, Token-Effizienz-Daten.
-
-### Hessen-Story (FBG 2025)
-
-- **Neues Friedhofs- und Bestattungsgesetz** vom Hessischen Landtag am 30.09.2025 verabschiedet, GVBl. Nr. 64 (06.10.2025)
-- Höchstfrist Erdbestattung: **4 → 10 Tage** (zentrale Reform-Neuerung)
-- § 18 FBG regelt Sargpflicht (religiöse Ausnahme nach Abs. 2)
-- Friedhofszwang bleibt strikt — Bestattung im Garten ausgeschlossen
-- **3 Friedhöfe mit Hidden-Gem-Stories:**
-  - Frankfurt Hauptfriedhof 1828, 70 ha, Goethe-„Suleika"/Alzheimer/Schopenhauer/Adorno/Struwwelpeter
-  - Kassel Hauptfriedhof 1843, 40 ha + **Künstler-Nekropole** (documenta-Verbindung — einzigartig in Deutschland)
-  - Wiesbaden Nordfriedhof 1877, 14,5 ha, Helmut Schön/Volker Kriegel
-
-### Saarland-Status (V1-Methodik, Plateau)
-
-- Sargpflicht nun korrekt: SBestG mit religiöser Ausnahme via Friedhofssatzung
-- 2 Friedhöfe Hidden-Gem: Hauptfriedhof Saarbrücken (Memotransfront-Projekt, deutsch-französische Grenzgräber 1870/71 + Weltkriege), Friedhof St. Johann (Willi-Graf-Ehrengrab Weiße Rose)
-- FBG-Reform 2021 dokumentiert: Höchstfrist 7→10 Tage, Hermann-Scharf-Zitat zum Friedhofszwang
-
-### 🛠️ Methodik-Findings für V3-Iteration
-
-**Stopp-Regel „Basics vs Schönarbeit":**
-- Weiter-iterieren wenn: Recheck-Blocker, Halluzinations-Verdacht, Major Audit-Issues (Schema fehlt, Title falsch, OG fehlt), Score-Gewinn ≥ 3 P pro Versuch
-- Akzeptieren wenn: Recheck grün UND Score ≥ 82 UND letzte 2 Versuche < 3 P Gewinn (Plateau)
-
-**Quellen-Pack-Pflicht im Task-Prompt:** ohne vorrecherchierten Pack endet Round 1 in MISSING (so wie Saarland v1).
-
-**Branch-Trick:** für künftige Runs Standard. Erspart Chunking, ermöglicht Cross-File-Referenzen (RP-Page als Stil-Anker, Quellen-Pack, vorherige v-Versionen).
-
-## Status 16/16 Bundesländer auf Elite-Niveau
-
-**FERTIG — alle 16 BL template-konform, alle primärquellen-belegt:**
-BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, SH, B, RP, **Saarland**, **Hessen**, **NRW**
-
-### NRW-Story (§ 4a + Ruhrgebiet)
-
-- BestG NRW vom 17.06.2003, Novelle 01.10.2014, letzte Änderung 01.02.2022
-- Höchstfrist Erdbestattung: **10 Tage** (von 8 verlängert), Urnenbeisetzung: 6 Wochen
-- **§ 4a BestG NRW** — Grabsteine ohne Kinderarbeit (ILO-Konvention 182), sozialpolitischer Vorreiter
-- 3 Friedhöfe Hidden-Gem: **Köln-Melaten** (1810, 43,5 ha, Otto-Motor/Farina/Birgel/Adorno), **Düsseldorf-Nord** (1884, 70 ha, Millionenhügel mit Henkel/Haniel/Poensgen), **Dortmund-Haupt** (1921, **118 ha — einer der größten Deutschlands**, Expressionismus)
-- Ruhrgebiet: Bergmanns-Bestattungskultur, Knappschaftsvereine
-- Bevölkerungsreichstes BL → höchste Friedhofs/Krematoriumsdichte Deutschlands
+### 📋 Welle 1 vorbereitet
+- **Stuttgart Quellen-Pack** bereits geschrieben (Welle 1 erste Stadt)
+- **STADT-QUEUE.md** mit allen 45 Städten in 3 Wellen (Top-15/Mid-15/Tail-15)
+- **MASS-PIPELINE-RECIPE.md** als Schritt-für-Schritt-Anleitung
+- **LOOP-TRIGGER.md** mit Slash-Command für autonomen `/loop`
 
 ## Nächste Schritte
 
-- **Stadt-Pages** in Angriff nehmen (45 Thin-Content-Stadtseiten auf noindex, Top-5 ausbauen)
-- **Methodik-V3 codifizieren:** Stopp-Regel „Basics vs Schönarbeit" als Standard für künftige Runs
-- **Quellen-Pack-Generator** als Subagent — automatisiert die Vorab-Recherche
-- **Auto-Pilot V1 erwägen** — drei API-Conversations statt Browser-Chats für Geschwindigkeit (jetzt ~50 min pro Page, API würde 10 min schaffen)
+### 🔄 /loop für 45 Städte aktivieren
 
-## Mail-Infrastruktur (unverändert)
+**Im Claude-Code-CLI tippen:**
 
-- 🗓️ Migadu-Trial: Entscheidung Mini ($90/J) vs. Micro ($19/J) — Entscheidung steht noch aus
-- GMX-IMAP-Einbindung der beiden Mailboxen offen
-- DMARC machsleicht.de aktuell `p=none`, langfristig auf `p=quarantine`
+```
+/loop arbeite die naechste unmarkierte Stadt aus _dev/content-loop/STADT-QUEUE.md ab nach MASS-PIPELINE-RECIPE.md. Vollstaendige V2-Pipeline pro Stadt (Quellen-Pack, Chat A, B, C, Final-Fix, deploy). ScheduleWakeup zwischen Staedten 1200s. Stopp wenn alle 45 abgehakt.
+```
+
+### Welle 1 (15 Städte, höchste Priorität)
+Stuttgart, Düsseldorf, Leipzig, Dortmund, Essen, Bremen, Dresden, Hannover, Nürnberg, Duisburg, Bochum, Wuppertal, Bielefeld, Bonn, Münster
+
+Stuttgart Quellen-Pack bereits fertig — Pipeline kann direkt mit Chat A v1 starten.
+
+### Welle 2 (Mid-15)
+Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mainz, Kiel, Magdeburg, Saarbrücken, Potsdam, Erfurt, Freiburg, Lübeck, Oldenburg, Rostock, Kassel
+
+### Welle 3 (Tail-15)
+Mönchengladbach, Gelsenkirchen, Braunschweig, Chemnitz, Halle, Krefeld, Heidelberg, Regensburg, Hagen, Oberhausen, Osnabrück, Mülheim, Leverkusen, Darmstadt, Aachen
+
+### Deploy-Strategie
+- Nach Welle 1 (15 Pages): main commit + netlify deploy
+- Nach Welle 2 (30 Pages): dito
+- Nach Welle 3 (45 Pages): final + 100% Coverage erreicht
 
 ## Offene Fragen
 
-- Soll NRW direkt im Anschluss laufen, oder erst Methodik-V3 schärfen?
-- Branch `content-loop-pipeline` — long-living lassen oder pro Page deleten?
+- Soll Welle 2/3 in Priorität anders gewichtet werden? (z.B. nach Hauptstadt-Status)
+- Stadt-Page-Variante für Stadtstaaten (Bremen) — Differenzierung wie bei Berlin/Hamburg?
+- Sitemap auto-add nach jeder Welle: priority 0.6 → 0.7 + lastmod = heute?
 
 ## Erledigte PBIs (gesamt)
 
@@ -111,3 +78,4 @@ BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, SH, B, RP, **Saarland**, **Hessen**, **
 + Audit + Roadmap „Authority-first" (22.04.2026)
 + RP Elite-Niveau (24.04.2026)
 + **Content-Loop-Pilot Saarland + Hessen** (11.05.2026)
++ **Content-Loop V2 Multi-Chat-Pipeline (Chrome-MCP) Top-5 Stadt-Pages LIVE** (11.05.2026)
