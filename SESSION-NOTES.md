@@ -1,19 +1,20 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 11. Mai 2026 (Content-Loop Pilot — Saarland + Hessen via Multi-Chat-Methode)
-**Deploy-Status:** Saarland + Hessen mit Deploy gepusht.
+**Datum:** 11. Mai 2026 (Content-Loop Pilot — Saarland + Hessen + NRW via Multi-Chat-Methode)
+**Deploy-Status:** Alle 3 Pages mit Deploy gepusht. **16/16 BL fertig.**
 
 ## Was wurde gemacht
 
-### 🎯 Content-Loop-Methode (Multi-Chat) erfolgreich validiert
+### 🎯 Content-Loop-Methode (Multi-Chat) erfolgreich validiert + auf 3 BL angewandt
 
-Manueller Pilot der 3-Chat-Architektur (Writer A / Reviewer B / Adversarial C) mit zwei Bundesland-Pages durchlaufen — beide Pages auf Recheck-grün gebracht, Hessen erreicht das Score-85-Ziel.
+Manueller Pilot der 3-Chat-Architektur (Writer A / Reviewer B / Adversarial C) mit drei Bundesland-Pages durchlaufen — alle drei auf Recheck-grün gebracht, Hessen erreicht das Score-85-Ziel.
 
 | Bundesland | Audit vorher | Audit nachher | Recheck | Tool-Fix-Versuche |
 |---|---|---|---|---|
-| **Saarland** | 71 + 1 Blocker | **83** | 0/0 ✓ | 4 (Plateau bei 83 — Schönarbeit, nicht Substanz) |
+| **Saarland** | 71 + 1 Blocker | **83** | 0/0 ✓ | 4 (Plateau bei 83 — Schönarbeit) |
 | **Hessen** | 80 + 1 Blocker | **85** | 0/0 ✓ | 2 (Ziel erreicht ohne Eskalation) |
+| **NRW** | 78 + 1 Blocker | **83** | 0/0 ✓ | 2 (Plateau bei 83 — Stopp-Regel akzeptiert) |
 
 **Vorher-Findings:**
 - Saarland: Template-Sachfehler „Mindestfrist 24h", 0 §-Refs, 0 Primärquellen
@@ -54,18 +55,26 @@ Plus: **Quellen-Pack via WebSearch vorab recherchiert** und auf Branch gepusht �
 
 **Branch-Trick:** für künftige Runs Standard. Erspart Chunking, ermöglicht Cross-File-Referenzen (RP-Page als Stil-Anker, Quellen-Pack, vorherige v-Versionen).
 
-## Status 15/16 Bundesländer auf Elite-Niveau
+## Status 16/16 Bundesländer auf Elite-Niveau
 
-**Fertig (alle template-konform, alle primärquellen-belegt):**
-BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, SH, B, RP, **Saarland**, **Hessen**
+**FERTIG — alle 16 BL template-konform, alle primärquellen-belegt:**
+BW, MV, LSA, TH, BB, SN, BY, HB, NI, HH, SH, B, RP, **Saarland**, **Hessen**, **NRW**
 
-**Offen (nur noch 1!):**
-- NRW (Audit 78, 1 Recheck-Blocker)
+### NRW-Story (§ 4a + Ruhrgebiet)
+
+- BestG NRW vom 17.06.2003, Novelle 01.10.2014, letzte Änderung 01.02.2022
+- Höchstfrist Erdbestattung: **10 Tage** (von 8 verlängert), Urnenbeisetzung: 6 Wochen
+- **§ 4a BestG NRW** — Grabsteine ohne Kinderarbeit (ILO-Konvention 182), sozialpolitischer Vorreiter
+- 3 Friedhöfe Hidden-Gem: **Köln-Melaten** (1810, 43,5 ha, Otto-Motor/Farina/Birgel/Adorno), **Düsseldorf-Nord** (1884, 70 ha, Millionenhügel mit Henkel/Haniel/Poensgen), **Dortmund-Haupt** (1921, **118 ha — einer der größten Deutschlands**, Expressionismus)
+- Ruhrgebiet: Bergmanns-Bestattungskultur, Knappschaftsvereine
+- Bevölkerungsreichstes BL → höchste Friedhofs/Krematoriumsdichte Deutschlands
 
 ## Nächste Schritte
 
-- **NRW** als finale BL-Page → Score-Ziel 85+. Mit V2-Methodik (Branch-Trick + Quellen-Pack vorab).
-- **Methodik-V3:** Stopp-Regel „Basics vs Schönarbeit" einbauen — verhindert die 4 Versuche, die bei Saarland nur 2 P Gewinn pro 2 Versuche brachten.
+- **Stadt-Pages** in Angriff nehmen (45 Thin-Content-Stadtseiten auf noindex, Top-5 ausbauen)
+- **Methodik-V3 codifizieren:** Stopp-Regel „Basics vs Schönarbeit" als Standard für künftige Runs
+- **Quellen-Pack-Generator** als Subagent — automatisiert die Vorab-Recherche
+- **Auto-Pilot V1 erwägen** — drei API-Conversations statt Browser-Chats für Geschwindigkeit (jetzt ~50 min pro Page, API würde 10 min schaffen)
 
 ## Mail-Infrastruktur (unverändert)
 
