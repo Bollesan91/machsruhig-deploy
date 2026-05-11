@@ -12,6 +12,6 @@ chats:
     role: "Round 2 SCORE als fremder Reviewer"
     opened_at: "2026-05-11T08:40"
   C_adversarial:
-    url: ""
+    url: "https://claude.ai/chat/4feefc31-7e5f-4090-80cc-aa267265ab77"
     role: "Round 4 ADVERSARIAL als feindlicher Reviewer"
-    opened_at: ""
+    opened_at: "2026-05-11T09:00"
