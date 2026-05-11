@@ -28,6 +28,23 @@ V2 (Hessen) mit Branch-Trick (Files auf `content-loop-pipeline` gepusht, Worker 
 
 Plus: **Quellen-Pack via WebSearch vorab recherchiert** und auf Branch gepusht — eliminiert das Round-1-MISSING-Problem komplett.
 
+### 🎯 Konsistenz-Check + Restruktur-Pattern
+
+Nach erfolgreichem 3-Page-Pilot: Konsistenz-Check über alle 16 BL ergab — **15/16 strukturell konsistent**, Saarland v7 als Outlier (eigene CSS-Klassen statt mr-*, nur 6 H2 statt 11-14, abweichendes Schema-Set Cemetery+GeoCoordinates statt City+ImageObject).
+
+**Restruktur-Pattern entwickelt:** 1 Round, 1 Prompt mit 2 URLs (CONTENT = Saarland v7, LAYOUT = Hessen v5), Worker gießt Inhalt in Standard-Struktur. Resultat **Saarland v8** — 100% strukturell konsistent mit anderen 15 BL, Score bleibt 83 (Plateau). **Effizienz:** 5 Min total statt voller Pipeline-Run.
+
+Status finale Konsistenz:
+- 16/16 mit mr-Layout-Klassen ✓
+- 16/16 mit identischem Schema-Set (Article, FAQPage, BreadcrumbList, WebPage, Place, City, ImageObject, Organization, PostalAddress, ListItem, Question, Answer) ✓
+- 16/16 mit Standard-Sektions-Reihenfolge (Kernfakten → Recht → Fristen → Sargpflicht → Ruhezeiten → Formen → Friedhöfe → Kosten → Hilfe → Was tun → FAQ → Quellen) ✓
+- 16/16 mit DM Sans + Fraunces Fonts, skip-link, mr-breadcrumb ✓
+- 16/16 Recheck grün (0 Blocker, 0 Warnungen) ✓
+
+### V2-Methodologie als Repo-Doku
+
+Komplette V2-Pipeline-Doku jetzt in `_dev/content-loop/V2-METHODOLOGY.md` — überlebt Memory-Verlust, ist für künftige Pilot-Runs (Stadt-Pages, Tool-Pages) referenzierbar. Enthält: Architektur, Phasen-Workflow, Stopp-Regel „Basics vs Schönarbeit", Konsistenz-Patterns, Restruktur-Pattern, Wakeup-Mechanismen, Token-Effizienz-Daten.
+
 ### Hessen-Story (FBG 2025)
 
 - **Neues Friedhofs- und Bestattungsgesetz** vom Hessischen Landtag am 30.09.2025 verabschiedet, GVBl. Nr. 64 (06.10.2025)
