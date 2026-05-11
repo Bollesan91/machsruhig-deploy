@@ -4,9 +4,9 @@ branch: content-loop-pipeline
 strategy: branch-trick (raw URLs), V2-methodology
 chats:
   A_writer:
-    url: ""
+    url: "https://claude.ai/chat/a5358f83-3cb1-4e23-bc5b-5d1119ef6788"
     role: "schreibt v1, v2, v3, alle Fixes"
-    opened_at: ""
+    opened_at: "2026-05-11T09:35"
   B_reviewer:
     url: ""
     role: "Round 2 SCORE als fremder Reviewer"
