@@ -1,0 +1,1 @@
+Naechste Page bitte reviewen: Koeln v1. Selbes Format wie zuvor (SCORE + GAP-Punkte). URL: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/_dev/content-loop/runs/koeln/v1-from-chat-A.html
