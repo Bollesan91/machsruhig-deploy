@@ -1,0 +1,17 @@
+task: hessen
+started_at: "2026-05-11T08:05"
+branch: content-loop-pipeline
+strategy: branch-trick (raw URLs)
+chats:
+  A_writer:
+    url: ""
+    role: "schreibt v1, v2, v3, alle Fixes"
+    opened_at: ""
+  B_reviewer:
+    url: ""
+    role: "Round 2 SCORE als fremder Reviewer"
+    opened_at: ""
+  C_adversarial:
+    url: ""
+    role: "Round 4 ADVERSARIAL als feindlicher Reviewer"
+    opened_at: ""
