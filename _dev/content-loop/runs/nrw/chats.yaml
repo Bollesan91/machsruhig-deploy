@@ -8,9 +8,9 @@ chats:
     role: "schreibt v1, v2, v3, alle Fixes"
     opened_at: "2026-05-11T09:35"
   B_reviewer:
-    url: ""
+    url: "https://claude.ai/chat/a4459017-8771-4868-ad43-4b2e6d2babda"
     role: "Round 2 SCORE als fremder Reviewer"
-    opened_at: ""
+    opened_at: "2026-05-11T10:00"
   C_adversarial:
     url: ""
     role: "Round 4 ADVERSARIAL als feindlicher Reviewer"
