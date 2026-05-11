@@ -4,13 +4,13 @@ branch: content-loop-pipeline
 strategy: branch-trick (raw URLs)
 chats:
   A_writer:
-    url: ""
+    url: "https://claude.ai/chat/c3fd84df-1d6d-4345-a477-a8530e488315"
     role: "schreibt v1, v2, v3, alle Fixes"
-    opened_at: ""
+    opened_at: "2026-05-11T08:30"
   B_reviewer:
-    url: ""
+    url: "https://claude.ai/chat/427e785e-c307-4f79-8b59-fe37fbf9b4e9"
     role: "Round 2 SCORE als fremder Reviewer"
-    opened_at: ""
+    opened_at: "2026-05-11T08:40"
   C_adversarial:
     url: ""
     role: "Round 4 ADVERSARIAL als feindlicher Reviewer"
