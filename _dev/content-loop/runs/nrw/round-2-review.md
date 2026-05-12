@@ -1,0 +1,21 @@
+SCORE: 78%
+
+GAP:
+
+Bestattungskosten-Sektion liefert NUR den bundesweiten 7.000–8.000 EUR-Range von Stiftung Warentest — keine konkreten NRW-Preisspannen. Pflichtangaben fehlen: Grabgebühren Reihengrab Köln vs. Düsseldorf vs. Dortmund vs. ländliche Gemeinde, Urnenwand-Gebühren, Krematoriumskosten. Stadt-vs-Umland-Spannen werden nur behauptet ("erheblich"), nicht beziffert.
+Sterbefall-Statistik "rund 200.000 Personen im langjährigen Mittel" ohne Stand-Jahr und ohne präzise Zahl. Die anderen 14 Bundesland-Pages haben Destatis/Landesamt-Zahlen mit konkretem Jahr (z.B. "2023: 214.xxx"). Hier nur vage Größenordnung.
+Einwohnerzahl "rund 18 Millionen" ohne Stand-Jahr und ohne Quellverknüpfung am Wort selbst. IT.NRW wird zwar verlinkt, aber nicht spezifisch zur Bevölkerungsangabe.
+§ 4a BestG NRW wird ausführlich beschrieben, aber kein Verweis darauf, WANN § 4a in das Gesetz eingefügt wurde (war es bereits 2003 oder erst Novelle 2014?). Der Text suggeriert Novelle 2014 ("Die Regelung war seit der Novelle 2014 Vorbild"), ist aber unscharf. Tatsächlich wurde § 4a 2014 eingefügt — das gehört explizit benannt.
+Friedhofs-Highlight Dortmund: Hidden-Gem-Element fehlt. Melaten hat Millionenallee + Wildlife-Kontrast, Nordfriedhof hat Millionenhügel — Dortmund bekommt nur Architektur und Größe, keine vergleichbare Hidden-Gem-Geschichte (z.B. Mahnmale, prominente Gräber, Besonderheit der Gartenarchitektur Allingers).
+Mindestruhezeiten-Sektion ist mit einem Absatz unterdimensioniert und ohne Quelle. Konkrete Beispiele aus Friedhofssatzungen Köln/Düsseldorf/Dortmund fehlen — was sind die tatsächlichen Ruhezeiten dort? "Typischerweise 20–30 Jahre" ist Plausibilität, nicht Recherche.
+"Friedhofsverwaltung Essen" wird im Kostentext erwähnt, aber NICHT verlinkt — Bruch mit dem Verlinkungsmuster der drei anderen Großstädte direkt davor.
+FAQ zur Urnen-Aufbewahrung: "§ 14 BestG NRW kennt einzelne Ausnahmen für bestimmte Konstellationen" — keinerlei Konkretisierung, welche Konstellationen. Im Fließtext wiederholt sich diese vage Formulierung wortgleich. Welche Ausnahmen meint § 14? Das gehört konkret oder die Aussage zurückgenommen.
+Wortzahl: rund 1.450 Wörter im Fließtext (ohne FAQ-Wiederholung) — unter dem 2000–2500-Korridor. FAQ-Antworten sind weitgehend Wortwiederholungen aus dem Fließtext und liefern keine zusätzliche Tiefe.
+Bergmanns-Bestattungskultur ist farbig erzählt, aber unbequellt. Steigerlied, Knappschaftsbräuche, Grubenmotive auf Grabsteinen — alles Behauptungen ohne Beleg. Mindestens eine Knappschaft- oder Bergbau-Quelle zur Trauertradition fehlt.
+Cross-Links zu Stadt-Bestatterseiten (Köln, Düsseldorf, Dortmund, Essen, Bochum) sind vorhanden — aber Gelsenkirchen und Duisburg, die im Fließtext als muslimisch geprägte Ruhrgebietsstädte explizit genannt werden, fehlen in der Verlinkung. Inkonsistenz zwischen Inhalt und Cross-Linking.
+§ 13 Abs. 3 wird zitiert für die Einäscherungsfrist — § 13 Abs. 1/2 für Erdbestattung wird nicht entsprechend zitiert. Paragrafen-Tiefe inkonsistent.
+Aleviten werden am Ende erwähnt ("muslimischer und alevitischer Bestattungen"), aber alevitische Bestattungspraxis wird nicht weiter ausgeführt — entweder streichen oder einen Satz zur Praxis (Cem-Haus, andere Riten) ergänzen.
+Friedhofs-Geschichte Melaten: "Dompfarrer Michael Joseph Dumont während der französischen Besatzung Kölns" — Datum 29. Juni 1810 ist korrekt, Kontext "französische Besatzung" ist faktisch knapp; Köln war zu diesem Zeitpunkt Teil des französischen Kaiserreichs (Département de la Roer). Präziser Begriff fehlt.
+Keine Erwähnung des § 9 BestG NRW (Bestattungspflicht der Angehörigen) und der Reihenfolge der Bestattungspflichtigen — eine in der Praxis sehr häufig nachgefragte Information, die in vergleichbaren Bundesland-Pages typischerweise vorkommt.
+Headline "Bestattung in NRW: BestG, § 4a Grabsteine, Friedhöfe" im title-Tag ist mit 56 Zeichen okay, aber die Klammer-Kombination "§ 4a Grabsteine" liest sich verkürzt — eine klare Klartext-Variante (z.B. "Recht, Friedhöfe, Kosten") würde besser greifen.
+Abrufen von raw.githubusercontent.com

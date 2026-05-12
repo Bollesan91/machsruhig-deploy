@@ -1,0 +1,13 @@
+SAARLAND_SCORE: 81
+WORD_COUNT: 2652
+Internal: 9 External: 14
+Title: 48 Meta: 135
+JSON-LD types: ['Article', 'Organization', 'Organization', 'WebPage', 'BreadcrumbList', 'ListItem', 'ListItem', 'ListItem', 'Place', 'PostalAddress', 'GeoCoordinates', 'Cemetery', 'PostalAddress', 'GeoCoordinates', 'FAQPage', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer', 'Question', 'Answer']
+
+ISSUES:
+WARNINGS:
+ - Content sehr lang (2652 Wörter) - evtl. splitten
+ - Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). Penalty temporär ausgesetzt.
+WINS:
+ - lang-Attribut korrekt
+ - Schema: WebPage, Place, Cemetery, Organization, PostalAddress, GeoCo

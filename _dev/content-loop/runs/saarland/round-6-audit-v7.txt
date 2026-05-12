@@ -1,0 +1,12 @@
+SAARLAND_SCORE: 83
+WORD_COUNT: 2381
+Internal: 9 External: 14
+Title: 48 Meta: 135
+
+ISSUES:
+WARNINGS:
+ - Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). Penalty temporär ausgesetzt.
+WINS:
+ - lang-Attribut korrekt
+ - Content-Tiefe passend (2381 Wörter)
+ - Schema: Place, PostalAddress, ListItem, Question, GeoCoordinates, Br
