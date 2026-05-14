@@ -1,0 +1,39 @@
+Ich lese beide Dateien.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/_dev/content-loop/briefings/C-adversarial.md
+Web durchsucht
+
+Ich gehe die Page jetzt feindlich durch. Ziel: drei substantielle Schwächen finden.
+
+Was mir beim Lesen sticht:
+
+§ 13 Abs. 3 BestG NRW wird im FAQ und im Body als Grundlage für die Fristen (24h/10 Tage/6 Wochen) zitiert. Ist Abs. 3 wirklich der richtige Absatz? Das BestG NRW hat in § 13 mehrere Absätze, die Fristen sind teils auf verschiedene Absätze verteilt — die Page nutzt § 13 Abs. 3 sowohl für 10 Tage Erdbestattung als auch für 6 Wochen Urne. Riecht nach Halluzination/falscher Absatzzuordnung (Kat. 6/12).
+§ 13 Abs. 1 BestG NRW = "Überführungsfrist 36 Stunden" — das ist in NRW eigentlich § 9 oder § 13 Abs. 2 BestG NRW, nicht Abs. 1. Abs. 1 regelt typischerweise allgemein die Bestattungspflicht/-formen. Auch hier riecht es nach §-Halluzination.
+Kostenkorridor ist auffällig vage. "Niedriger vierstelliger Bereich", "deutlich höher", "mittlerer vierstelliger Bereich" — fünf Aufzählungspunkte ohne eine einzige konkrete Zahl, obwohl in den Quellen die Aachener Gebührensatzung verlinkt ist. Der UNSURE-Kommentar gesteht ein, dass die konkrete Tabelle fehlt. Für eine Seite, die Bestattungskosten als H2 prominent führt, ist das eine inhaltliche Lücke (Kat. 8).
+Ostfriedhof "ausschließlich Urnenbeisetzungen seit 1980" — wird per UNSURE-Kommentar selbst als unbelegt markiert, steht aber trotzdem im Fließtext. Reviewer-Sicht: entweder mit Primärquelle belegen oder weicher formulieren ohne Wikipedia-Verweis im Body.
+Friedhof Hüls vs. Krematorium Hüls — die Page nennt einerseits "Krematorium auf der Hüls" (Stadtteil), andererseits "Friedhof Hüls" mit 20 Jahren Ruhezeit. In der Friedhofsübersicht wird "Hüls" nicht klar als eigener Friedhof eingeführt. Reader-Verwirrung möglich.
+"Heini Mercks", "Lipette Jungbecker", "Thomas R. Kraus", "Anton Kurze", "Joseph Lingens" — Liste auf dem Westfriedhof. Mehrere dieser Personen sind in der verlinkten Wikipedia-Quelle dem Westfriedhof zugeordnet? Müsste geprüft werden — riecht nach Übernahme ohne Einzelverifikation. Aber: nicht falsifizierbar ohne weitere Recherche, daher schwächere Schwäche.
+Floskel-Check: "in der Kaiserstadt", "ausdifferenzierte kommunale Friedhofsstruktur", "ist die einzige Einäscherungsanlage" — überwiegend sachlich, keine massive Floskel-Inflation. Hier nicht.
+§ 9 BestG NRW = Leichenschau wird in Schritt 1 der Anleitung zitiert. In NRW ist die Leichenschau in § 9 BestG NRW geregelt — das passt. OK.
+"5 Porträts" vs. 4+1: Überschrift sagt "fünf Porträts", Einleitungssatz spricht von "vier Friedhöfe und das städtische Krematorium". Inkonsistenz, aber kosmetisch.
+
+Die drei stärksten Schwächen sind klar: §-Zitation, Kostenkorridor-Lücke, und der Wikipedia-belegte Ostfriedhof-Claim, der per UNSURE-Kommentar selbst eingeräumt aber trotzdem stehengelassen wurde.
+
+SCORE: 78/100
+
+FUNDE (Faktenfehler / unbelegte Claims / Marketing):
+
+SCHWÄCHE 1: §-Zitation BestG NRW unsauber — Im FAQ und im Fließtext der Sektion "Bestattungsrecht in Aachen" wird § 13 Abs. 3 BestG NRW als gemeinsame Grundlage für die 10-Tage-Frist (Erdbestattung), die 10-Tage-Frist (Einäscherung) und die 6-Wochen-Frist (Urnenbeisetzung) angeführt. Das ist in dieser Pauschalität sachlich falsch: Im BestG NRW sind diese Fristen auf verschiedene Absätze des § 13 verteilt (Erdbestattungsfrist und Überführungsfrist stehen nicht im selben Absatz wie die 6-Wochen-Urnenfrist). Zusätzlich wird in Schritt 2 der Anleitung "§ 13 Abs. 1 BestG NRW" für die 36-Stunden-Überführungsfrist zitiert — diese ergibt sich in NRW aus einem anderen Absatz, nicht aus Abs. 1, der die allgemeine Bestattungsform regelt. Bei einer Rechts-Page mit §-Anker im FAQ-Schema ist das ein Kategorie-12-Befund (Halluzinations-Verdacht bei Paragraphenzuordnung). Verbesserung: Die genaue Absatzzuordnung jeder Frist anhand des Volltextes auf recht.nrw.de prüfen und korrigieren — getrennt zitieren (z.B. "§ 13 Abs. X für die Erdbestattungsfrist; § 13 Abs. Y für die Urnenfrist") statt eines Sammel-§-Verweises. Da das im FAQ-Schema landet, ist das Markup-relevant.
+
+SCHWÄCHE 2: Kostenkorridor ist eine Phrasen-Wüste — Die Sektion "Bestattungskosten in Aachen" enthält fünf Aufzählungspunkte ohne eine einzige konkrete Zahl: "niedriger bis mittlerer vierstelliger Bereich", "deutlich höher", "in der Regel günstiger", "die niedrigste Gebührenstufe". Der eingebettete UNSURE-Kommentar räumt selbst ein, dass die konkrete Aachener Gebührentabelle nicht extrahiert wurde. Für eine Seite, die "Kosten" im Title-Tag, in der Meta-Description, im H1-Lead und als eigener H2 führt, ist das ein Kategorie-8-Befund: Sektion ist die schwächste der Page. Die verlinkte Gebührensatzungs-PDF ist in den Quellen erreichbar — der Inhalt müsste daraus belegbar destilliert werden, ohne dass eine pauschale Erstattung im SGB-XII-Sinn unterstellt wird. Verbesserung: Aus der verlinkten Aachener Friedhofsgebührensatzung mindestens 4–6 konkrete Eurobeträge entnehmen (Reihengrab Erdbestattung 20 Jahre / Urnenreihengrab / Urnenwahlgrab / Anonyme Gemeinschaftsgrabstätte / Trauerhallennutzung / Krematoriumsgrundgebühr Hüls) und mit "Stand JJJJ" datieren. Ohne diese Zahlen bietet die Sektion keinen Mehrwert gegenüber einem Generikum.
+
+SCHWÄCHE 3: Ostfriedhof-Behauptung "ausschließlich Urnenbeisetzungen seit 1980" steht im Fließtext, obwohl die Page sich selbst widerspricht — Im Ostfriedhof-Porträt steht: "Nach mehrjähriger Pause öffnete der Ostfriedhof 1980 wieder — laut Wikipedia seither ausschließlich für Urnenbeisetzungen; eine direkte Bestätigung in der städtischen Friedhofsübersicht steht aus." Der eigene UNSURE-Kommentar im HTML-Quelltext gibt zu, dass Wikipedia hier die einzige Quelle ist. Das ist ein Kategorie-1-Befund (Sekundärquelle für eine harte Sachaussage) und ein Kategorie-12-Befund (eine spezifische Behauptung — "ausschließlich Urnenbeisetzungen" — die für Angehörige planungsrelevant ist, hängt an einer einzigen unbestätigten Sekundärquelle). Wenn eine Aachener Familie nach diesem Text einen Erdbestattungsplatz auf dem Ostfriedhof sucht und feststellt, dass die Aussage falsch oder veraltet ist, ist das ein konkreter Schaden. Verbesserung: Entweder per Primärquelle (Aachener Stadtbetrieb / Friedhofssatzung / Anruf 0241 432-18180) belegen und dann hart formulieren, oder die Aussage streichen und durch eine neutrale Beschreibung der dort heute angebotenen Grabarten ersetzen, basierend auf der städtischen Friedhofsübersicht. Halbgare Hedging-Konstruktionen ("laut Wikipedia […], Bestätigung steht aus") gehören nicht in den Body einer Ratgeberseite.
+
+Zusatzbefunde (kleiner, aber relevant):
+
+Inkonsistenz: Sektionsüberschrift "Friedhöfe in Aachen – fünf Porträts", Einleitungssatz spricht von "vier Friedhöfe und das städtische Krematorium" — Krematorium ist kein Friedhof, also entweder Überschrift auf "vier Friedhöfe + Krematorium" korrigieren oder einen fünften Friedhof ergänzen.
+"Friedhof Hüls" wird in Ruhezeit-Aussagen erwähnt, ohne in der Friedhofs-Sektion eingeführt zu sein — Leser muss raten, ob "Hüls" der Friedhof am Krematorium ist.
+
+MUST-FIX vor Deploy: ja.
+
+Begründung: Schwäche 1 (§-Zitation) und Schwäche 3 (unbelegte Ostfriedhof-Aussage) sind Faktenrisiken auf einer Page, die juristische Fristen und konkrete Bestattungsfragen behandelt. Schwäche 2 (Kostenkorridor) ist eine User-Value-Lücke an der prominentesten Stelle der Seite. Mit dem Bundesland-Recheck wäre Schwäche 1 (falscher §) ein Blocker, Schwäche 3 (unsourced specific claim mit eigenem UNSURE-Marker im Body) ebenfalls. Kein Deploy ohne Korrektur dieser drei Punkte.
