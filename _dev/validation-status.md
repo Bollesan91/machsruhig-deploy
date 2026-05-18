@@ -31,3 +31,16 @@ Iterativ: Reviewer → Improver (open-ended) → Re-Reviewer in neuem Tab → bi
 - Article-Schema ohne `image` + `publisher.logo` ImageObject
 - Nav-Link `/bestatter/muenchen/` auf NRW-/anderen Stadt-Pages
 - UNSURE-Kommentare aus Pipeline noch im Production-HTML (Bonn hatte 4)
+
+## Bulk-Fix-Run (18.05.2026)
+
+✅ Script `_dev/bulk-validation-fix.py` lief auf allen 53 bestatter/-Cities:
+- 15 Cities: Nav-Link /bestatter/muenchen/ → /bestatter/ (augsburg, berlin, bielefeld, frankfurt, hamburg, karlsruhe, koeln, leipzig, luebeck, mannheim, moenchengladbach, muenster, nuernberg, stuttgart, wuppertal)
+- 3 Cities: UNSURE-Kommentare entfernt (münster, rostock, wuppertal)
+
+Diese 2 systemischen Issues sind ab jetzt zentral gefixt — Reviewer flaggt sie nicht mehr.
+
+Verbleibende systemische Findings für mögliche zukünftige Bulk-Fix-Runden:
+- Article-Schema ohne `image` + `publisher.logo` (mehrere Cities, JSON-Parsing nötig)
+- FAQ-Schema vs HTML-Mismatch (per-city analysis nötig)
+- Generic OG-Image-Default (würde neue Asset-Files erfordern)
