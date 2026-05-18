@@ -491,8 +491,7 @@ a.inline:hover{color:var(--color-ink)}
 </footer>
 
 <!-- Schema.org JSON-LD -->
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -502,12 +501,16 @@ a.inline:hover{color:var(--color-ink)}
       "name": "Bestattung in Oberhausen: Friedhöfe, Gebühren und Vorgehen",
       "description": "Bestattung in Oberhausen: 5 städtische Friedhöfe, Friedhofssatzung 31.03.2026, Ablauf nach einem Todesfall. Mit Primärquellen.",
       "inLanguage": "de-DE",
-      "isPartOf": { "@id": "https://machsruhig.de/#website" }
+      "isPartOf": {
+        "@id": "https://machsruhig.de/#website"
+      }
     },
     {
       "@type": "Article",
       "@id": "https://machsruhig.de/bestatter/oberhausen/#article",
-      "mainEntityOfPage": { "@id": "https://machsruhig.de/bestatter/oberhausen/#webpage" },
+      "mainEntityOfPage": {
+        "@id": "https://machsruhig.de/bestatter/oberhausen/#webpage"
+      },
       "headline": "Bestattung in Oberhausen: Friedhöfe, Gebühren und Vorgehen",
       "description": "Übersicht zu den fünf städtischen Friedhöfen Oberhausens, zur Friedhofsgebührensatzung vom 31.03.2026 und zu den Schritten nach einem Todesfall, mit Bezug auf das BestG NRW.",
       "inLanguage": "de-DE",
@@ -521,20 +524,49 @@ a.inline:hover{color:var(--color-ink)}
       "publisher": {
         "@type": "Organization",
         "name": "machsruhig",
-        "url": "https://machsruhig.de/"
+        "url": "https://machsruhig.de/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://machsruhig.de/assets/logo.png"
+        }
       },
       "about": [
-        { "@type": "Place", "name": "Oberhausen" },
-        { "@type": "Thing", "name": "Bestattung" },
-        { "@type": "Thing", "name": "Friedhof" }
-      ]
+        {
+          "@type": "Place",
+          "name": "Oberhausen"
+        },
+        {
+          "@type": "Thing",
+          "name": "Bestattung"
+        },
+        {
+          "@type": "Thing",
+          "name": "Friedhof"
+        }
+      ],
+      "image": "https://machsruhig.de/assets/og-image.png"
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://machsruhig.de/" },
-        { "@type": "ListItem", "position": 2, "name": "Städte", "item": "https://machsruhig.de/bestatter/" },
-        { "@type": "ListItem", "position": 3, "name": "Oberhausen", "item": "https://machsruhig.de/bestatter/oberhausen/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://machsruhig.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Städte",
+          "item": "https://machsruhig.de/bestatter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Oberhausen",
+          "item": "https://machsruhig.de/bestatter/oberhausen/"
+        }
       ]
     },
     {
@@ -564,7 +596,9 @@ a.inline:hover{color:var(--color-ink)}
         "addressCountry": "DE"
       },
       "telephone": "+49-208-594-7160",
-      "areaServed": { "@id": "https://machsruhig.de/bestatter/oberhausen/#city" }
+      "areaServed": {
+        "@id": "https://machsruhig.de/bestatter/oberhausen/#city"
+      }
     },
     {
       "@type": "Place",
@@ -693,8 +727,7 @@ a.inline:hover{color:var(--color-ink)}
       ]
     }
   ]
-}
-</script>
+}</script>
 
 </body>
 </html>

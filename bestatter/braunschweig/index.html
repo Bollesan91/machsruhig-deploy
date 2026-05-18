@@ -451,8 +451,7 @@ caption{caption-side:top;text-align:left;font-size:.85rem;color:var(--muted);mar
   </div>
 </footer>
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -461,8 +460,12 @@ caption{caption-side:top;text-align:left;font-size:.85rem;color:var(--muted);mar
       "url": "https://www.machsruhig.de/bestatter/braunschweig/",
       "name": "Bestattung in Braunschweig – Friedhöfe, Kosten, Ämter",
       "inLanguage": "de-DE",
-      "isPartOf": {"@id": "https://www.machsruhig.de/#website"},
-      "about": {"@id": "https://www.machsruhig.de/bestatter/braunschweig/#city"},
+      "isPartOf": {
+        "@id": "https://www.machsruhig.de/#website"
+      },
+      "about": {
+        "@id": "https://www.machsruhig.de/bestatter/braunschweig/#city"
+      },
       "datePublished": "2026-05-13",
       "dateModified": "2026-05-13"
     },
@@ -480,15 +483,25 @@ caption{caption-side:top;text-align:left;font-size:.85rem;color:var(--muted);mar
       "publisher": {
         "@type": "Organization",
         "name": "machsruhig.de",
-        "url": "https://www.machsruhig.de/"
+        "url": "https://www.machsruhig.de/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://machsruhig.de/assets/logo.png"
+        }
       },
-      "mainEntityOfPage": {"@id": "https://www.machsruhig.de/bestatter/braunschweig/#webpage"}
+      "mainEntityOfPage": {
+        "@id": "https://www.machsruhig.de/bestatter/braunschweig/#webpage"
+      },
+      "image": "https://machsruhig.de/assets/og-image.png"
     },
     {
       "@type": "City",
       "@id": "https://www.machsruhig.de/bestatter/braunschweig/#city",
       "name": "Braunschweig",
-      "containedInPlace": {"@type": "State", "name": "Niedersachsen"},
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Niedersachsen"
+      },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Braunschweig",
@@ -577,9 +590,24 @@ caption{caption-side:top;text-align:left;font-size:.85rem;color:var(--muted);mar
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://www.machsruhig.de/"},
-        {"@type": "ListItem", "position": 2, "name": "Städte", "item": "https://www.machsruhig.de/bestatter/"},
-        {"@type": "ListItem", "position": 3, "name": "Braunschweig", "item": "https://www.machsruhig.de/bestatter/braunschweig/"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://www.machsruhig.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Städte",
+          "item": "https://www.machsruhig.de/bestatter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Braunschweig",
+          "item": "https://www.machsruhig.de/bestatter/braunschweig/"
+        }
       ]
     },
     {
@@ -644,8 +672,7 @@ caption{caption-side:top;text-align:left;font-size:.85rem;color:var(--muted);mar
       ]
     }
   ]
-}
-</script>
+}</script>
 
 </body>
 </html>

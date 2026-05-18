@@ -123,8 +123,7 @@
   }
 </style>
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -134,8 +133,12 @@
       "name": "Bestattung in Kassel — Friedhöfe, Kosten & Ablauf",
       "description": "Friedhöfe, Gebühren und Ablauf einer Bestattung in Kassel — mit Primärquellen aus der Gebührensatzung 2024 und dem hessischen FBG.",
       "inLanguage": "de-DE",
-      "isPartOf": {"@id": "https://machsruhig.de/#website"},
-      "about": {"@id": "https://machsruhig.de/bestatter/kassel/#city"}
+      "isPartOf": {
+        "@id": "https://machsruhig.de/#website"
+      },
+      "about": {
+        "@id": "https://machsruhig.de/bestatter/kassel/#city"
+      }
     },
     {
       "@type": "Article",
@@ -143,12 +146,27 @@
       "headline": "Bestattung in Kassel — Friedhöfe, Kosten und Ablauf",
       "description": "Übersicht zu Friedhöfen, Gebühren und Bestattungsrecht in Kassel.",
       "inLanguage": "de-DE",
-      "isPartOf": {"@id": "https://machsruhig.de/bestatter/kassel/#webpage"},
-      "mainEntityOfPage": {"@id": "https://machsruhig.de/bestatter/kassel/#webpage"},
-      "author": {"@type": "Organization","name": "machsruhig Redaktion","url": "https://machsruhig.de/"},
-      "publisher": {"@id": "https://machsruhig.de/#organization"},
+      "isPartOf": {
+        "@id": "https://machsruhig.de/bestatter/kassel/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://machsruhig.de/bestatter/kassel/#webpage"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "machsruhig Redaktion",
+        "url": "https://machsruhig.de/"
+      },
+      "publisher": {
+        "@id": "https://machsruhig.de/#organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://machsruhig.de/assets/logo.png"
+        }
+      },
       "datePublished": "2026-05-09",
-      "dateModified": "2026-05-12"
+      "dateModified": "2026-05-12",
+      "image": "https://machsruhig.de/assets/og-image.png"
     },
     {
       "@type": "Organization",
@@ -159,9 +177,24 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem","position": 1,"name": "Start","item": "https://machsruhig.de/"},
-        {"@type": "ListItem","position": 2,"name": "Bestatter","item": "https://machsruhig.de/bestatter/"},
-        {"@type": "ListItem","position": 3,"name": "Kassel","item": "https://machsruhig.de/bestatter/kassel/"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://machsruhig.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bestatter",
+          "item": "https://machsruhig.de/bestatter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kassel",
+          "item": "https://machsruhig.de/bestatter/kassel/"
+        }
       ]
     },
     {
@@ -170,59 +203,152 @@
       "name": "Kassel",
       "addressRegion": "Hessen",
       "addressCountry": "DE",
-      "containedInPlace": {"@type": "AdministrativeArea","name": "Hessen"}
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Hessen"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://machsruhig.de/bestatter/kassel/#hauptfriedhof",
       "name": "Hauptfriedhof Kassel",
       "description": "Größter Friedhof Kassels mit rund 40 Hektar Fläche, eröffnet 1843 im Stadtteil Nord-Holland, Standort des Krematoriums und der Friedhofsverwaltung.",
-      "address": {"@type": "PostalAddress","streetAddress": "Tannenheckerweg 6","postalCode": "34127","addressLocality": "Kassel","addressRegion": "Hessen","addressCountry": "DE"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Tannenheckerweg 6",
+        "postalCode": "34127",
+        "addressLocality": "Kassel",
+        "addressRegion": "Hessen",
+        "addressCountry": "DE"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://machsruhig.de/bestatter/kassel/#altstaedter",
       "name": "Altstädter Friedhof (Lutherplatz)",
       "description": "Historischer Innenstadt-Friedhof am Lutherplatz, genutzt 1561 bis 1843, mit sechs gekennzeichneten Grimm-Grabstätten.",
-      "address": {"@type": "PostalAddress","streetAddress": "Lutherplatz","postalCode": "34117","addressLocality": "Kassel","addressRegion": "Hessen","addressCountry": "DE"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lutherplatz",
+        "postalCode": "34117",
+        "addressLocality": "Kassel",
+        "addressRegion": "Hessen",
+        "addressCountry": "DE"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://machsruhig.de/bestatter/kassel/#wehlheiden",
       "name": "Friedhof Wehlheiden",
       "description": "Größter Stadtteilfriedhof Kassels, eröffnet 1833, denkmalgeschützte Gesamtanlage.",
-      "address": {"@type": "PostalAddress","streetAddress": "Friedenstraße 53/55","postalCode": "34121","addressLocality": "Kassel","addressRegion": "Hessen","addressCountry": "DE"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Friedenstraße 53/55",
+        "postalCode": "34121",
+        "addressLocality": "Kassel",
+        "addressRegion": "Hessen",
+        "addressCountry": "DE"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://machsruhig.de/bestatter/kassel/#westfriedhof",
       "name": "Westfriedhof Kassel",
       "description": "Friedhof in der Dönche, eröffnet 1970, mit muslimischem Gräberfeld seit 1986 und Raum für rituelle Waschungen.",
-      "address": {"@type": "PostalAddress","streetAddress": "Heinrich-Schütz-Allee 211","postalCode": "34134","addressLocality": "Kassel","addressRegion": "Hessen","addressCountry": "DE"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Heinrich-Schütz-Allee 211",
+        "postalCode": "34134",
+        "addressLocality": "Kassel",
+        "addressRegion": "Hessen",
+        "addressCountry": "DE"
+      }
     },
     {
       "@type": "Place",
       "@id": "https://machsruhig.de/bestatter/kassel/#juedisch",
       "name": "Jüdischer Friedhof Kassel-Bettenhausen",
       "description": "Alter und Neuer Jüdischer Friedhof an Fasanenweg und Eichwaldstraße, angelegt im Dreißigjährigen Krieg um 1630, ca. 20.000 m² mit rund 3.000 Grabstellen.",
-      "address": {"@type": "PostalAddress","streetAddress": "Fasanenweg","postalCode": "34123","addressLocality": "Kassel","addressRegion": "Hessen","addressCountry": "DE"}
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Fasanenweg",
+        "postalCode": "34123",
+        "addressLocality": "Kassel",
+        "addressRegion": "Hessen",
+        "addressCountry": "DE"
+      }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question","name": "Wer ist Träger der Friedhöfe in Kassel?","acceptedAnswer": {"@type": "Answer","text": "Friedhofsträger aller 15 Kasseler Friedhöfe ist nach § 1 der Friedhofssatzung 9.06.08 der Evangelische Stadtkirchenkreis Kassel. Diese Konstellation ist nach § 30 in Verbindung mit § 2 FBG zulässig. Die Verwaltung obliegt einem paritätisch aus Vertretern der Stadt Kassel und des Stadtkirchenkreises besetzten Friedhofsausschuss, der nach Artikel 37 Abs. 2 der Grundordnung der Evangelischen Kirche von Kurhessen-Waldeck Friedhofs- und Gebührensatzung beschließt. Kommunale Friedhöfe im üblichen Sinn gibt es in Kassel nicht – das Beisetzungsrecht gilt aber ohne Unterschied der Konfession."}},
-        {"@type": "Question","name": "Was kostet eine Erdbestattung auf einem Kasseler Friedhof?","acceptedAnswer": {"@type": "Answer","text": "Eine Erdbestattung in einer Wahlgrabstätte mit Trauerfeier in der Trauerhalle kostet laut Ziffer 5.1.1 der Gebührensatzung 2024 (Stand 22.08.2025) 2.107,00 Euro. Hinzu kommt die Nutzungsrechtsgebühr nach Ziffer 1.1 von 1.908,00 Euro für 30 Jahre, eine Stelle. In Summe liegen die reinen Friedhofsgebühren bei rund 4.015 Euro – ohne Bestatterleistung, Sarg, Grabmal, Trauerdrucksachen und Blumen."}},
-        {"@type": "Question","name": "Wie lang ist die Ruhezeit auf Kasseler Friedhöfen?","acceptedAnswer": {"@type": "Answer","text": "Für Reihengrabstätten gilt eine 20-jährige Ruhezeit (Ziffer 1.4 Gebührensatzung). Bei Kinderreihengräbern bis zum 5. Lebensjahr sind es 15 Jahre, bei Kinderreihengräbern bis zum 3. Lebensmonat 10 Jahre. Wahlgrabstätten werden mit einem 30-jährigen Nutzungsrecht verliehen, das nach Ablauf erneuert werden kann; Grüfte im Mausoleum 50 Jahre. Für eine Verlängerung abgelaufener Reihengräber gibt es eine Ausnahmeregelung über einmalig 5 Jahre für 217,50 Euro (Ziffer 10.17)."}},
-        {"@type": "Question","name": "Welche Bestattungsfrist gilt in Hessen?","acceptedAnswer": {"@type": "Answer","text": "Nach dem novellierten hessischen Friedhofs- und Bestattungsgesetz (FBG), beschlossen am 30. September 2025 in zweiter Lesung, gilt eine Mindestfrist von 48 Stunden und eine Höchstfrist von 10 Tagen nach Eintritt des Todes (§ 16 Abs. 1 FBG). Die Höchstfrist wurde von der zuvor geltenden 96-Stunden-Frist (vier Tage) auf zehn Tage verlängert, um Angehörigen mehr Zeit für Organisation und Anreise zu geben. Die neue Regelung gilt für Erd- und Feuerbestattung gleichermaßen (Hessische Landesregierung, Pressemitteilung vom 30.09.2025)."}},
-        {"@type": "Question","name": "Wo erhalte ich die Sterbeurkunde in Kassel?","acceptedAnswer": {"@type": "Answer","text": "Zuständig ist das Standesamt der Stadt Kassel im Rathaus, Obere Königsstraße 8, 34117 Kassel, telefonisch erreichbar unter 0561 115. Der Todesfall ist nach § 28 PStG spätestens am dritten auf den Tod folgenden Werktag anzuzeigen. In der Regel übernimmt das beauftragte Bestattungsunternehmen die Anmeldung und reicht den nichtvertraulichen Teil des Leichenschauscheins ein."}},
-        {"@type": "Question","name": "Gibt es in Kassel anonyme oder pflegefreie Gräber?","acceptedAnswer": {"@type": "Answer","text": "Ja, in mehreren Varianten. Anonyme Urnenreihengrabstätten kosten 1.092,00 Euro (Ziffer 2.7). Pflegefreie Alternativen umfassen Rasenwahlgräber, Friedparkgräber auf Hauptfriedhof, Westfriedhof und mehreren Stadtteilfriedhöfen, Baumgräber, Urnengemeinschaftsanlagen, Memoriam-Gärten mit Pflicht-Pflegevertrag bei der Treuhandstelle für Dauergrabpflege Hessen-Thüringen GmbH sowie der Ruhewald-Hauptfriedhof. Im Ruhewald liegen die Gebühren je nach Stellenanzahl und Liegezeit zwischen 1.636,00 und 6.474,00 Euro."}},
-        {"@type": "Question","name": "Welche Friedhöfe in Kassel sind denkmalgeschützt?","acceptedAnswer": {"@type": "Answer","text": "Der Friedhof Wehlheiden ist als Gesamtanlage aus geschichtlichen Gründen denkmalgeschützt; einzelne Grabsteine und der Friedhofsbrunnen stehen darüber hinaus unter künstlerischem Denkmalschutz. Der Alte Jüdische Friedhof in Bettenhausen ist ebenfalls Denkmal. Der Altstädter Friedhof am Lutherplatz gilt als einer der letzten Überreste der urbanen Kasseler Stadtkultur und ist von besonderer kulturhistorischer Bedeutung; viele Grabmäler befinden sich heute im Bestand des Museums für Sepulkralkultur."}},
-        {"@type": "Question","name": "Sind muslimische Bestattungen in Kassel möglich?","acceptedAnswer": {"@type": "Answer","text": "Ja. Seit 1986 existiert auf dem Westfriedhof Kassel ein nach Mekka ausgerichtetes muslimisches Gräberfeld; seit 2014 sind dort sarglose Bestattungen aus religiösen Gründen zulässig. Stand 2026 sind rund 570 Muslime bestattet, bei jährlich mindestens 69 weiteren Beisetzungen. Aufgrund erreichter Kapazitätsgrenzen werden ab Juni 2026 zusätzliche Flächen auf dem Hauptfriedhof bereitgestellt. Die Gebühr für eine Bestattung auf dem islamischen Gräberfeld beträgt 1.654,00 Euro (Ziffer 5.3.1); für die Nutzung des Raums für rituelle Waschungen werden 435,00 Euro je Fall berechnet (Ziffer 10.9)."}}
+        {
+          "@type": "Question",
+          "name": "Wer ist Träger der Friedhöfe in Kassel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Friedhofsträger aller 15 Kasseler Friedhöfe ist nach § 1 der Friedhofssatzung 9.06.08 der Evangelische Stadtkirchenkreis Kassel. Diese Konstellation ist nach § 30 in Verbindung mit § 2 FBG zulässig. Die Verwaltung obliegt einem paritätisch aus Vertretern der Stadt Kassel und des Stadtkirchenkreises besetzten Friedhofsausschuss, der nach Artikel 37 Abs. 2 der Grundordnung der Evangelischen Kirche von Kurhessen-Waldeck Friedhofs- und Gebührensatzung beschließt. Kommunale Friedhöfe im üblichen Sinn gibt es in Kassel nicht – das Beisetzungsrecht gilt aber ohne Unterschied der Konfession."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet eine Erdbestattung auf einem Kasseler Friedhof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine Erdbestattung in einer Wahlgrabstätte mit Trauerfeier in der Trauerhalle kostet laut Ziffer 5.1.1 der Gebührensatzung 2024 (Stand 22.08.2025) 2.107,00 Euro. Hinzu kommt die Nutzungsrechtsgebühr nach Ziffer 1.1 von 1.908,00 Euro für 30 Jahre, eine Stelle. In Summe liegen die reinen Friedhofsgebühren bei rund 4.015 Euro – ohne Bestatterleistung, Sarg, Grabmal, Trauerdrucksachen und Blumen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lang ist die Ruhezeit auf Kasseler Friedhöfen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für Reihengrabstätten gilt eine 20-jährige Ruhezeit (Ziffer 1.4 Gebührensatzung). Bei Kinderreihengräbern bis zum 5. Lebensjahr sind es 15 Jahre, bei Kinderreihengräbern bis zum 3. Lebensmonat 10 Jahre. Wahlgrabstätten werden mit einem 30-jährigen Nutzungsrecht verliehen, das nach Ablauf erneuert werden kann; Grüfte im Mausoleum 50 Jahre. Für eine Verlängerung abgelaufener Reihengräber gibt es eine Ausnahmeregelung über einmalig 5 Jahre für 217,50 Euro (Ziffer 10.17)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Bestattungsfrist gilt in Hessen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nach dem novellierten hessischen Friedhofs- und Bestattungsgesetz (FBG), beschlossen am 30. September 2025 in zweiter Lesung, gilt eine Mindestfrist von 48 Stunden und eine Höchstfrist von 10 Tagen nach Eintritt des Todes (§ 16 Abs. 1 FBG). Die Höchstfrist wurde von der zuvor geltenden 96-Stunden-Frist (vier Tage) auf zehn Tage verlängert, um Angehörigen mehr Zeit für Organisation und Anreise zu geben. Die neue Regelung gilt für Erd- und Feuerbestattung gleichermaßen (Hessische Landesregierung, Pressemitteilung vom 30.09.2025)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo erhalte ich die Sterbeurkunde in Kassel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zuständig ist das Standesamt der Stadt Kassel im Rathaus, Obere Königsstraße 8, 34117 Kassel, telefonisch erreichbar unter 0561 115. Der Todesfall ist nach § 28 PStG spätestens am dritten auf den Tod folgenden Werktag anzuzeigen. In der Regel übernimmt das beauftragte Bestattungsunternehmen die Anmeldung und reicht den nichtvertraulichen Teil des Leichenschauscheins ein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es in Kassel anonyme oder pflegefreie Gräber?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, in mehreren Varianten. Anonyme Urnenreihengrabstätten kosten 1.092,00 Euro (Ziffer 2.7). Pflegefreie Alternativen umfassen Rasenwahlgräber, Friedparkgräber auf Hauptfriedhof, Westfriedhof und mehreren Stadtteilfriedhöfen, Baumgräber, Urnengemeinschaftsanlagen, Memoriam-Gärten mit Pflicht-Pflegevertrag bei der Treuhandstelle für Dauergrabpflege Hessen-Thüringen GmbH sowie der Ruhewald-Hauptfriedhof. Im Ruhewald liegen die Gebühren je nach Stellenanzahl und Liegezeit zwischen 1.636,00 und 6.474,00 Euro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Friedhöfe in Kassel sind denkmalgeschützt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Friedhof Wehlheiden ist als Gesamtanlage aus geschichtlichen Gründen denkmalgeschützt; einzelne Grabsteine und der Friedhofsbrunnen stehen darüber hinaus unter künstlerischem Denkmalschutz. Der Alte Jüdische Friedhof in Bettenhausen ist ebenfalls Denkmal. Der Altstädter Friedhof am Lutherplatz gilt als einer der letzten Überreste der urbanen Kasseler Stadtkultur und ist von besonderer kulturhistorischer Bedeutung; viele Grabmäler befinden sich heute im Bestand des Museums für Sepulkralkultur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind muslimische Bestattungen in Kassel möglich?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Seit 1986 existiert auf dem Westfriedhof Kassel ein nach Mekka ausgerichtetes muslimisches Gräberfeld; seit 2014 sind dort sarglose Bestattungen aus religiösen Gründen zulässig. Stand 2026 sind rund 570 Muslime bestattet, bei jährlich mindestens 69 weiteren Beisetzungen. Aufgrund erreichter Kapazitätsgrenzen werden ab Juni 2026 zusätzliche Flächen auf dem Hauptfriedhof bereitgestellt. Die Gebühr für eine Bestattung auf dem islamischen Gräberfeld beträgt 1.654,00 Euro (Ziffer 5.3.1); für die Nutzung des Raums für rituelle Waschungen werden 435,00 Euro je Fall berechnet (Ziffer 10.9)."
+          }
+        }
       ]
     }
   ]
-}
-</script>
+}</script>
 </head>
 <body>
 
