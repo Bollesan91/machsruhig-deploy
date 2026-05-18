@@ -8,15 +8,15 @@ Iterativ: Reviewer → Improver (open-ended) → Re-Reviewer in neuem Tab → bi
 - [x] bonn — V1 MAJOR-FIX (UNSURE, Kessenich, § 16 FS) → Improver → DEPLOY (16:13)
 - [x] hagen — V1 CLEAN ✅
 - [ ] krefeld — V1 MAJOR-FIX (FAQ-Schema-Mismatch) → Improver → DEPLOY (16:13) — RE-REVIEW pending
-- [ ] nuernberg — V1 MAJOR-FIX (Veit Stoss) → Improver streaming (Tab 948 retry)
+- [x] nuernberg — V2 CLEAN ✅ (nach Improver+Bulk)
 - [ ] bochum — V1 MAJOR-FIX (Schema, PLZ, Nav-Link) → Improver → DEPLOY (16:13) — RE-REVIEW pending
-- [ ] hannover — V1 MAJOR-FIX (OG, FAQ-Mismatch, Article-Schema) → Improver streaming (Tab 946)
+- [x] hannover — V2 CLEAN ✅ (nach Improver+Bulk)
 - [ ] duisburg — Reviewer streaming (Tab 945)
 - [ ] duesseldorf — Reviewer streaming (Tab 947)
 - [ ] stuttgart, leipzig, dortmund, essen, bremen, dresden, wuppertal, bielefeld, muenster — pending
 
 ### Welle 2
-- [ ] mannheim — Reviewer streaming (Tab 949)
+- [x] mannheim — V2 CLEAN ✅ (nach Improver+Bulk)
 - [ ] karlsruhe, augsburg, wiesbaden, mainz, kiel, magdeburg, saarbruecken, potsdam, erfurt, freiburg, luebeck, oldenburg, rostock, kassel — pending
 
 ### Welle 3
