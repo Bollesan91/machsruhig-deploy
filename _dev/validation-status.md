@@ -44,3 +44,7 @@ Verbleibende systemische Findings für mögliche zukünftige Bulk-Fix-Runden:
 - Article-Schema ohne `image` + `publisher.logo` (mehrere Cities, JSON-Parsing nötig)
 - FAQ-Schema vs HTML-Mismatch (per-city analysis nötig)
 - Generic OG-Image-Default (würde neue Asset-Files erfordern)
+
+## Münster Special Case (18.05.2026 R10)
+2 Verzeichnisse: bestatter/münster/ (proper, 57k, no noindex) vs bestatter/muenster/ (ASCII stub, 21k, noindex)
+Re-Reviewer fetched ASCII-Stub. Routing-Issue separat. Aus Validation-Loop genommen.
