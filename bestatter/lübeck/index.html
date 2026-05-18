@@ -93,107 +93,246 @@ a.inline{color:var(--accent);text-decoration:underline;text-underline-offset:2px
 .note-box{background:#fff;border:1px dashed var(--line);padding:.7rem .9rem;font-size:.85rem;color:var(--ink-soft);border-radius:6px;margin:.8rem 0}
 </style>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@type":"WebPage",
-      "@id":"https://machsruhig.de/bestatter/luebeck/#webpage",
-      "url":"https://machsruhig.de/bestatter/luebeck/",
-      "name":"Bestattung in Lübeck — Friedhöfe, Kosten, Recht",
-      "inLanguage":"de-DE",
-      "isPartOf":{"@type":"WebSite","name":"machsruhig","url":"https://machsruhig.de/"},
-      "about":{"@id":"https://machsruhig.de/bestatter/luebeck/#city"},
-      "datePublished":"2026-05-12",
-      "dateModified":"2026-05-12"
-    },
-    {
-      "@type":"Article",
-      "headline":"Bestattung in Lübeck — Friedhöfe, Kosten, Recht",
-      "author":{"@type":"Organization","name":"machsruhig Redaktion"},
-      "publisher":{"@type":"Organization","name":"machsruhig","url":"https://machsruhig.de/"},
-      "datePublished":"2026-05-12",
-      "dateModified":"2026-05-12",
-      "mainEntityOfPage":{"@id":"https://machsruhig.de/bestatter/luebeck/#webpage"},
-      "articleSection":"Bestattung",
-      "inLanguage":"de-DE"
-    },
-    {
-      "@type":"City",
-      "@id":"https://machsruhig.de/bestatter/luebeck/#city",
-      "name":"Lübeck",
-      "alternateName":"Hansestadt Lübeck",
-      "address":{
-        "@type":"PostalAddress",
-        "addressLocality":"Lübeck",
-        "addressRegion":"Schleswig-Holstein",
-        "addressCountry":"DE"
+      "@type": "WebPage",
+      "@id": "https://machsruhig.de/bestatter/luebeck/#webpage",
+      "url": "https://machsruhig.de/bestatter/luebeck/",
+      "name": "Bestattung in Lübeck — Friedhöfe, Kosten, Recht",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "machsruhig",
+        "url": "https://machsruhig.de/"
       },
-      "geo":{"@type":"GeoCoordinates","latitude":53.8655,"longitude":10.6866},
-      "containedInPlace":{"@type":"State","name":"Schleswig-Holstein"}
+      "about": {
+        "@id": "https://machsruhig.de/bestatter/luebeck/#city"
+      },
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-05-12"
     },
     {
-      "@type":"BreadcrumbList",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},
-        {"@type":"ListItem","position":2,"name":"Bestatter","item":"https://machsruhig.de/bestatter/"},
-        {"@type":"ListItem","position":3,"name":"Lübeck","item":"https://machsruhig.de/bestatter/luebeck/"}
+      "@type": "Article",
+      "headline": "Bestattung in Lübeck — Friedhöfe, Kosten, Recht",
+      "author": {
+        "@type": "Organization",
+        "name": "machsruhig Redaktion"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "machsruhig",
+        "url": "https://machsruhig.de/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://machsruhig.de/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-05-12",
+      "mainEntityOfPage": {
+        "@id": "https://machsruhig.de/bestatter/luebeck/#webpage"
+      },
+      "articleSection": "Bestattung",
+      "inLanguage": "de-DE",
+      "image": "https://machsruhig.de/assets/og-image.png"
+    },
+    {
+      "@type": "City",
+      "@id": "https://machsruhig.de/bestatter/luebeck/#city",
+      "name": "Lübeck",
+      "alternateName": "Hansestadt Lübeck",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lübeck",
+        "addressRegion": "Schleswig-Holstein",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.8655,
+        "longitude": 10.6866
+      },
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Schleswig-Holstein"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://machsruhig.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bestatter",
+          "item": "https://machsruhig.de/bestatter/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lübeck",
+          "item": "https://machsruhig.de/bestatter/luebeck/"
+        }
       ]
     },
     {
-      "@type":"Place",
-      "@id":"https://machsruhig.de/bestatter/luebeck/#vorwerker",
-      "name":"Vorwerker Friedhof",
-      "description":"Mit 53 Hektar der größte Friedhof Lübecks und Schleswig-Holsteins, 1907 von Gartendirektor Erwin Barth als Reformfriedhof eröffnet.",
-      "address":{"@type":"PostalAddress","streetAddress":"Friedhofsallee 146","addressLocality":"Lübeck","postalCode":"23554","addressRegion":"Schleswig-Holstein","addressCountry":"DE"},
-      "geo":{"@type":"GeoCoordinates","latitude":53.8921,"longitude":10.6632}
+      "@type": "Place",
+      "@id": "https://machsruhig.de/bestatter/luebeck/#vorwerker",
+      "name": "Vorwerker Friedhof",
+      "description": "Mit 53 Hektar der größte Friedhof Lübecks und Schleswig-Holsteins, 1907 von Gartendirektor Erwin Barth als Reformfriedhof eröffnet.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Friedhofsallee 146",
+        "addressLocality": "Lübeck",
+        "postalCode": "23554",
+        "addressRegion": "Schleswig-Holstein",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.8921,
+        "longitude": 10.6632
+      }
     },
     {
-      "@type":"Place",
-      "@id":"https://machsruhig.de/bestatter/luebeck/#burgtor",
-      "name":"Burgtorfriedhof",
-      "description":"Ab 1832 angelegt, 1834 offiziell eröffnet, rund acht Hektar, etwa 8.700 Grabstätten — Ruhestätte zahlreicher prominenter Lübecker Familien, darunter Familie Mann, Emanuel Geibel und Marianne Bachmeier.",
-      "address":{"@type":"PostalAddress","streetAddress":"Eschenburgstraße 20","addressLocality":"Lübeck","postalCode":"23568","addressRegion":"Schleswig-Holstein","addressCountry":"DE"},
-      "geo":{"@type":"GeoCoordinates","latitude":53.8844,"longitude":10.7046}
+      "@type": "Place",
+      "@id": "https://machsruhig.de/bestatter/luebeck/#burgtor",
+      "name": "Burgtorfriedhof",
+      "description": "Ab 1832 angelegt, 1834 offiziell eröffnet, rund acht Hektar, etwa 8.700 Grabstätten — Ruhestätte zahlreicher prominenter Lübecker Familien, darunter Familie Mann, Emanuel Geibel und Marianne Bachmeier.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Eschenburgstraße 20",
+        "addressLocality": "Lübeck",
+        "postalCode": "23568",
+        "addressRegion": "Schleswig-Holstein",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.8844,
+        "longitude": 10.7046
+      }
     },
     {
-      "@type":"Place",
-      "@id":"https://machsruhig.de/bestatter/luebeck/#stjuergen",
-      "name":"Friedhof St. Jürgen",
-      "description":"Städtischer Friedhof an der Ratzeburger Allee, in heutiger Form 1904 angelegt. Die zugehörige St.-Jürgen-Kapelle wurde 1645 errichtet und am 31. August 1646 eingeweiht.",
-      "address":{"@type":"PostalAddress","streetAddress":"Ratzeburger Allee 23","addressLocality":"Lübeck","postalCode":"23564","addressRegion":"Schleswig-Holstein","addressCountry":"DE"},
-      "geo":{"@type":"GeoCoordinates","latitude":53.8541,"longitude":10.7042}
+      "@type": "Place",
+      "@id": "https://machsruhig.de/bestatter/luebeck/#stjuergen",
+      "name": "Friedhof St. Jürgen",
+      "description": "Städtischer Friedhof an der Ratzeburger Allee, in heutiger Form 1904 angelegt. Die zugehörige St.-Jürgen-Kapelle wurde 1645 errichtet und am 31. August 1646 eingeweiht.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ratzeburger Allee 23",
+        "addressLocality": "Lübeck",
+        "postalCode": "23564",
+        "addressRegion": "Schleswig-Holstein",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.8541,
+        "longitude": 10.7042
+      }
     },
     {
-      "@type":"Place",
-      "@id":"https://machsruhig.de/bestatter/luebeck/#waldhusen",
-      "name":"Friedhof Waldhusen",
-      "description":"Kleinster städtischer Friedhof Lübecks im Norden der Stadt, rund 0,2 Hektar, etwa 389 Grabstätten, in welligem Gelände nördlich des Stadtgebiets.",
-      "address":{"@type":"PostalAddress","streetAddress":"Waldhusener Weg 2","addressLocality":"Lübeck","postalCode":"23569","addressRegion":"Schleswig-Holstein","addressCountry":"DE"},
-      "geo":{"@type":"GeoCoordinates","latitude":53.9131,"longitude":10.7972}
+      "@type": "Place",
+      "@id": "https://machsruhig.de/bestatter/luebeck/#waldhusen",
+      "name": "Friedhof Waldhusen",
+      "description": "Kleinster städtischer Friedhof Lübecks im Norden der Stadt, rund 0,2 Hektar, etwa 389 Grabstätten, in welligem Gelände nördlich des Stadtgebiets.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Waldhusener Weg 2",
+        "addressLocality": "Lübeck",
+        "postalCode": "23569",
+        "addressRegion": "Schleswig-Holstein",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 53.9131,
+        "longitude": 10.7972
+      }
     },
     {
-      "@type":"Organization",
-      "name":"Bereich Stadtgrün und Verkehr — Friedhofsverwaltung Lübeck",
-      "url":"https://www.luebeck.de/de/rathaus/verwaltung/friedhoefe/",
-      "address":{"@type":"PostalAddress","streetAddress":"Friedhofsallee","addressLocality":"Lübeck","postalCode":"23554","addressCountry":"DE"}
+      "@type": "Organization",
+      "name": "Bereich Stadtgrün und Verkehr — Friedhofsverwaltung Lübeck",
+      "url": "https://www.luebeck.de/de/rathaus/verwaltung/friedhoefe/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Friedhofsallee",
+        "addressLocality": "Lübeck",
+        "postalCode": "23554",
+        "addressCountry": "DE"
+      }
     },
     {
-      "@type":"FAQPage",
-      "mainEntity":[
-        {"@type":"Question","name":"Welcher Friedhof in Lübeck ist der größte?","acceptedAnswer":{"@type":"Answer","text":"Der Vorwerker Friedhof im Norden Lübecks ist mit rund 53 Hektar und etwa 49.600 Grabstätten der größte Friedhof Lübecks und zugleich der größte Friedhof Schleswig-Holsteins. Er wurde 1907 nach Plänen des späteren Gartendirektors Erwin Barth eröffnet."}},
-        {"@type":"Question","name":"Wie lange ist die Ruhezeit auf Lübecker Friedhöfen?","acceptedAnswer":{"@type":"Answer","text":"Die Ruhezeit auf den städtischen Friedhöfen Lübecks beträgt nach Friedhofssatzung für Verstorbene ab dem sechsten Lebensjahr 20 Jahre, für jüngere Verstorbene 15 Jahre. Diese Fristen gelten für Erd- wie für Urnenbeisetzungen."}},
-        {"@type":"Question","name":"Was kostet eine Bestattung in Lübeck?","acceptedAnswer":{"@type":"Answer","text":"Die reinen Friedhofsgebühren für ein Grab mit 20-jähriger Nutzungsdauer liegen für Erdbestattungen zwischen rund 1.280 und 4.950 Euro, für Urnenbeisetzungen zwischen rund 900 und 2.950 Euro. Hinzu kommen Bestatterleistungen, sodass die Gesamtkosten einer einfachen Bestattung üblicherweise zwischen 4.500 und 9.000 Euro liegen."}},
-        {"@type":"Question","name":"Welche Bestattungsfristen gelten in Lübeck?","acceptedAnswer":{"@type":"Answer","text":"Nach § 16 BestattG Schleswig-Holstein darf eine Bestattung frühestens 48 Stunden nach Eintritt des Todes erfolgen. Erd- oder Feuerbestattung sollen innerhalb von neun Tagen nach Todeseintritt vorgenommen werden, Urnen innerhalb eines Monats nach der Einäscherung beigesetzt werden."}},
-        {"@type":"Question","name":"Gibt es in Lübeck Friedhöfe ohne Sargpflicht?","acceptedAnswer":{"@type":"Answer","text":"Nach § 15 Abs. 1 Nr. 1 BestattG Schleswig-Holstein wird die Erdbestattung grundsätzlich in einem Sarg durchgeführt. Aus religiösen oder weltanschaulichen Gründen kann die zuständige Behörde Ausnahmen zulassen. Mit dem § 15a BestattG hat Schleswig-Holstein 2024 zudem die Reerdigung als neue Bestattungsform geöffnet."}},
-        {"@type":"Question","name":"Auf welchem Friedhof in Lübeck liegt die Familie Mann?","acceptedAnswer":{"@type":"Answer","text":"Auf dem Burgtorfriedhof. Dort befinden sich Familiengräber der Manns — der Großeltern und Verwandten Thomas und Heinrich Manns. In Sichtweite liegen weitere Persönlichkeiten der Lübecker Literaturgeschichte wie Emanuel Geibel und Ida Boy-Ed."}},
-        {"@type":"Question","name":"Wer betreibt die städtischen Friedhöfe in Lübeck?","acceptedAnswer":{"@type":"Answer","text":"Die vier städtischen Friedhöfe — Vorwerk, Burgtor, St. Jürgen und Waldhusen — sowie der nicht mehr für Neubestattungen genutzte Ehrenfriedhof werden vom Bereich Stadtgrün und Verkehr der Hansestadt Lübeck zentral verwaltet. Die Friedhofsverwaltung sitzt an der Friedhofsallee am Vorwerker Friedhof."}}
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welcher Friedhof in Lübeck ist der größte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Vorwerker Friedhof im Norden Lübecks ist mit rund 53 Hektar und etwa 49.600 Grabstätten der größte Friedhof Lübecks und zugleich der größte Friedhof Schleswig-Holsteins. Er wurde 1907 nach Plänen des späteren Gartendirektors Erwin Barth eröffnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange ist die Ruhezeit auf Lübecker Friedhöfen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Ruhezeit auf den städtischen Friedhöfen Lübecks beträgt nach Friedhofssatzung für Verstorbene ab dem sechsten Lebensjahr 20 Jahre, für jüngere Verstorbene 15 Jahre. Diese Fristen gelten für Erd- wie für Urnenbeisetzungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet eine Bestattung in Lübeck?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die reinen Friedhofsgebühren für ein Grab mit 20-jähriger Nutzungsdauer liegen für Erdbestattungen zwischen rund 1.280 und 4.950 Euro, für Urnenbeisetzungen zwischen rund 900 und 2.950 Euro. Hinzu kommen Bestatterleistungen, sodass die Gesamtkosten einer einfachen Bestattung üblicherweise zwischen 4.500 und 9.000 Euro liegen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Bestattungsfristen gelten in Lübeck?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nach § 16 BestattG Schleswig-Holstein darf eine Bestattung frühestens 48 Stunden nach Eintritt des Todes erfolgen. Erd- oder Feuerbestattung sollen innerhalb von neun Tagen nach Todeseintritt vorgenommen werden, Urnen innerhalb eines Monats nach der Einäscherung beigesetzt werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es in Lübeck Friedhöfe ohne Sargpflicht?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nach § 15 Abs. 1 Nr. 1 BestattG Schleswig-Holstein wird die Erdbestattung grundsätzlich in einem Sarg durchgeführt. Aus religiösen oder weltanschaulichen Gründen kann die zuständige Behörde Ausnahmen zulassen. Mit dem § 15a BestattG hat Schleswig-Holstein 2024 zudem die Reerdigung als neue Bestattungsform geöffnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Auf welchem Friedhof in Lübeck liegt die Familie Mann?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auf dem Burgtorfriedhof. Dort befinden sich Familiengräber der Manns — der Großeltern und Verwandten Thomas und Heinrich Manns. In Sichtweite liegen weitere Persönlichkeiten der Lübecker Literaturgeschichte wie Emanuel Geibel und Ida Boy-Ed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wer betreibt die städtischen Friedhöfe in Lübeck?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die vier städtischen Friedhöfe — Vorwerk, Burgtor, St. Jürgen und Waldhusen — sowie der nicht mehr für Neubestattungen genutzte Ehrenfriedhof werden vom Bereich Stadtgrün und Verkehr der Hansestadt Lübeck zentral verwaltet. Die Friedhofsverwaltung sitzt an der Friedhofsallee am Vorwerker Friedhof."
+          }
+        }
       ]
     }
   ]
-}
-</script>
+}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
