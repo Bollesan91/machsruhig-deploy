@@ -1,0 +1,31 @@
+Ich lade die drei Dateien und prüfe v3 hart.
+
+Fetching site
+Web durchsucht
+
+Alle drei Dateien gelesen. v3 hart durchgegangen. Drei substantielle Schwächen gefunden.
+
+SCORE: 87/100
+
+FUNDE:
+
+SCHWÄCHE 1: Erdreihengrab-Gebühr für falsche Friedhofskategorie verkauft — fragwürdige Plausibilität — Stelle: Tabelle „Bestattungskosten in Dresden", Zeile 1: „Erdreihengrab (130 × 260 cm), 20 Jahre Ruhefrist (Ziff. 2.1.1.1) — 780,15 €". Problem: Erdbestattungen finden in Dresden nahezu ausschließlich auf Friedhof Dölzschen und Heidefriedhof statt — Urnenhain Tolkewitz ist Urnenfriedhof, Nordfriedhof gemischt. Der Beleg in der Friedhofsgebührensatzung mit Ziff. 2.1.1.1 müsste sich auf einen oder mehrere bestimmte städtische Friedhöfe beziehen; im Text steht aber generisch „auf städtischen Friedhöfen". Die zweite Auffälligkeit: Die Spalte zeigt eine Gebühr ohne erkennbare Spreizung zwischen den Friedhöfen, obwohl Dresdner Gebührensatzungen typischerweise nach Friedhof differenzieren (Beleg im selben Text: Urnenwahlgrab Nordfriedhof/Heidefriedhof/Dölzschen 575,38 € vs. Tolkewitz 459,37 € — also differenziert die Satzung sehr wohl). Halluzinations-Verdacht nach Kategorie 12: Eine so präzise Zahl wie 780,15 € mit Ziff.-Angabe 2.1.1.1 ist entweder direkt aus der PDF kopiert (dann muss der zugehörige Friedhofsname mit) oder konstruiert. Re-Check: Vor Deploy muss ein Mensch die verlinkte PDF öffnen und für jede der 7 Tabellenzeilen verifizieren: (a) gibt es die Ziff. so, (b) stimmt der Betrag bis auf den Cent, (c) gilt sie für die im Text genannte Friedhofskategorie. Fix: Entweder die Tabelle pro Friedhof aufschlüsseln, oder explizit „gilt für Friedhof X laut Ziff. Y" pro Zeile.
+
+SCHWÄCHE 2: § 27 Abs. 22 UStG ist sachlich falsch — Halluzinations-Verdacht harter Sorte — Stelle: Sektion „Bestattungskosten", Absatz nach der Tabelle: „Hinzu kommt die Umsatzsteuer; nach § 27 Abs. 22 UStG wird sie seit dem 01.01.2025 auf bestimmte Leistungen geschuldet." Problem: § 27 UStG ist die Vorschrift über Anwendungsregelungen bei Gesetzesänderungen, kein eigenständiger Steuerentstehungstatbestand. § 27 Abs. 22 UStG existiert zwar, behandelt aber die Übergangsregelungen für die Umsatzbesteuerung von juristischen Personen des öffentlichen Rechts nach § 2b UStG — und die Übergangsfrist endete tatsächlich am 31.12.2024 mit Pflichtanwendung ab 01.01.2025. Das ist sachlich korrekt verknüpft, aber die Formulierung „nach § 27 Abs. 22 UStG wird sie […] geschuldet" ist juristisch schief: Geschuldet wird die USt nach § 1 UStG i. V. m. § 2b UStG; § 27 Abs. 22 regelt nur, ab wann § 2b zwingend gilt. Eine Page mit YMYL-Anspruch, die einen Paragraphen falsch zuordnet, verliert Vertrauen. Fix: „Seit dem 01.01.2025 unterliegen kommunale Friedhofsleistungen grundsätzlich der Umsatzsteuer (§ 2b UStG; Pflichtanwendung nach Auslaufen der Übergangsregel in § 27 Abs. 22 UStG)." — und Verlinkung auf gesetze-im-internet.de.
+
+SCHWÄCHE 3: „Reform-Krematorium" / „Reformarchitektur" / „Reformbau" — Begriff fünfmal benutzt, ohne erklärt zu werden — Begriff bleibt für die Zielgruppe undurchsichtig. Stelle: Lead, Sektion Tolkewitz, Hidden Gem Tolkewitz, FAQ. Im Lead: „das Reform-Krematorium Tolkewitz". In der Sektion: „Schumacher schuf einen Reformbau, der die wilhelminische Tempelarchitektur des frühen Krematoriumsbaus hinter sich ließ". Im Hidden-Gem-Abschnitt: „Reform-Ensembles ihrer Art". In FAQ: „bedeutendsten frühen Reformbauten der Sepulkralarchitektur". — Wer Bestattung für einen Angehörigen plant, kennt den kunsthistorischen Reformbegriff (Reformarchitektur um 1900, Heinrich Tessenow, Hermann Muthesius, Werkbund) nicht. Der Begriff trägt im Text die gesamte Bedeutungslast für Tolkewitz, wird aber nie aufgelöst. Das ist nicht nur Stil, sondern Verständlichkeitslücke in der wichtigsten architekturhistorischen Aussage der Page. Fix: An erster Stelle (Lead oder Beginn Tolkewitz-Sektion) einen Halbsatz: „im Stil der Reformarchitektur um 1900 — einer Stilrichtung, die ornamentlose, klare Bauformen gegen den wilhelminischen Historismus setzte". Danach kann der Begriff frei verwendet werden.
+
+Zwei Zusatzbeobachtungen (nicht Top-3, aber für ehrliche Bewertung):
+
+„Erfahrungswerte sprechen für mindestens fünf bis zehn Ausfertigungen" (Sterbeurkunden) — wessen Erfahrungswerte? Floskel nach Kategorie 11, klassisches „viele Friedhöfe bieten…"-Muster. Entweder konkrete Quelle (Verbraucherzentrale empfiehlt …) oder Aussage in „je nach Zahl der Banken/Versicherungen/Verträge benötigt man typischerweise 5–10 Ausfertigungen" umformulieren.
+Schema-Konsistenz: Im JSON-LD steht für Place „Trinitatisfriedhof" → Adresse „streetAddress: Fiedlerstraße" (ohne Hausnummer), bei Tolkewitz dagegen „Wehlener Straße 15". Inkonsistent. Entweder überall mit Hausnummer (recherchieren) oder überall ohne. Für Google-Reichweite zählt die strukturierte Adresse.
+
+Gegenüber v2 (79%) deutliche Verbesserung: Schwäche 1 aus v2 (Bestattungskosten-Floskeln) ist umfassend gefixt mit 7 konkreten Eurobeträgen, präziser Satzungsangabe und Datum. Schwäche 2 (Wikipedia-Monopol) ist deutlich entschärft durch Stadt-Dresden- und Trägerseiten als Primärquellen, Wikipedia nur noch sekundär. Schwäche 3 (Hidden-Gem-Belege) ist gefixt — die Löbtau/Plauen-Halluzination wurde gestrichen, jetzt nur noch „Opfer der Luftangriffe vom Februar 1945, gepflegt von der Annengemeinde". Die +8 Punkte (79 → 87) sind verdient.
+
+Aber: Schwäche 1 (Erdreihengrab-Friedhofszuordnung + Zahlenverifikation) und Schwäche 2 (§-Zuordnung UStG) sind harte Sachgenauigkeitspunkte auf einer YMYL-Page.
+
+MUST-FIX vor Deploy: ja.
+
+Begründung: Schwäche 2 (falsche §-Zuordnung UStG) ist nicht verhandelbar — eine Page, die Bürger über Gebühren informiert, darf einen Paragraphen nicht falsch zuordnen, das ist trivialerweise korrigierbar und sofort prüfbar. Schwäche 1 (Tabellenverifikation) erfordert einen 5-Minuten-Check der verlinkten PDF; ohne diesen Check ist die Tabelle Glaubenssache. Schwäche 3 (Reform-Begriff) ist nicht hart deploy-blockend, aber ein Quick-Fix von 15 Sekunden — kein Grund, ihn zu vertagen.
+
+Realistischer Score nach Fix der drei: 91–93.

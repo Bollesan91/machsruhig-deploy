@@ -1,0 +1,21 @@
+Ich hole mir die drei Dateien.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/_dev/content-loop/briefings/C-adversarial.md
+Web durchsucht
+
+BRIEFING_OK
+
+Jetzt die ehrliche adversariale Sicht auf v2. Annahme: Page ist unter 85, mindestens 3 echte Schwächen drin.
+
+SCORE: 78/100
+
+FUNDE:
+
+SCHWÄCHE 1 (Quellen-Lücke, §-Verweis fehlt — kritisch): In der Sektion „Bestattungsrecht in Leipzig" werden Sargpflicht, Friedhofszwang, Bestattungsfristen und zweite Leichenschau aufgezählt — aber kein einziger §-Verweis aufs SächsBestG. Der v1-Review hat exakt das schon als MUST-FIX markiert (§§ Bestattungsfrist, Sargpflicht, Friedhofszwang konkret nennen, nicht nur Pauschalverweis auf die Sachsen-Seite). v2 verweist wieder nur generisch („findet sich auf der Bundesland-Seite Sachsen"). Das ist eine nicht gefixte MUST-FIX-Lücke aus Runde 1. Verbesserung: Mindestens § 18 SächsBestG (Bestattungsfrist) und § 19 (Bestattungsart/Sargpflicht/Friedhofszwang) direkt im Fließtext der Recht-Sektion zitieren — nicht „siehe Sachsen-Seite".
+SCHWÄCHE 2 (Bestattungskosten-Sektion bleibt Leipzig-frei trotz MUST-FIX): Die neue Tabelle zeigt „niedriger vierstelliger Bereich", „mittlerer vierstelliger Bereich", „günstigste Variante". Das sind keine Leipzig-Zahlen, das sind verbale Platzhalter. Der v1-Review hatte explizit gefordert: „Leipzig-spezifische Preisspannen in Kostensektion ergänzen — zumindest Größenordnung Reihengrab / Urnenwahlgrab / Wahlgrab nach Gebührenordnung." Stattdessen wird die Forderung kosmetisch in eine Tabelle gepackt, die inhaltlich nichts Neues aussagt. Zusätzlich fehlt weiterhin der Direktlink auf die Leipziger Friedhofsgebührensatzung (verlinkt wird nur stadtreinigung-leipzig.de Startseite, nicht die Satzung selbst). YMYL-Page ohne konkrete €-Spannen für die wichtigste Nutzerintention. Verbesserung: Konkrete Euro-Spannen aus der aktuellen Satzung recherchieren (z.B. Reihengrab Erde 20 J. ca. 800–1.200 €, Wahlgrab 25 J. ca. 2.500–4.000 €) und direkt auf die Satzungs-PDF verlinken.
+SCHWÄCHE 3 (Halluzinations-Verdacht „Goethe-Anekdotenfeld" + irreführende H3-Überschrift): Die H3 lautet „Alter Johannisfriedhof — Bach und das Goethe-Anekdotenfeld". Im Text steht dann selbst: „Eine harte Primärquelle für ein konkretes ‚Goethe-Plündern' am Johannisfriedhof ließ sich allerdings nicht eindeutig finden" + UNSURE-Kommentar. Das heißt: Der Autor macht eine unbelegte Anekdote zur H3-Überschrift, die ein Suchmaschinen- und Leser-Signal ist, und relativiert sie dann im Fließtext. Das ist für eine YMYL-Page (Trauer-Kontext) ein Vertrauensbruch. Entweder die Anekdote ist belegbar → dann Quelle rein und H3 behalten; oder sie ist nicht belegbar → dann H3 ändern (z.B. „Bach, Gellert und die Goethe-Zeit") und Anekdote streichen oder klar als „lokale Tradition" markieren. Aktuell ist das ein klassischer Halluzinations-Verdacht in Headline-Position.
+Bonus-Beobachtung (nicht in Top-3 gezählt, aber strukturell relevant): Mehrere weitere MUST-FIX-Punkte aus Runde 1 sind in v2 gar nicht adressiert: Bruno Taut (kein Erwähnung mehr — ok, vermutlich entfernt, gut), aber Max Klinger fehlt komplett, Karl Friedrich Zöllner fehlt komplett, PLZ-Korrektur Ostfriedhof (04318 statt 04315 — beides falsch, korrekt für Anger-Crottendorf ist 04318? — prüfen, im Schema steht 04318, das könnte stimmen), Nordfriedhof Hektar-Angabe wurde gestrichen statt recherchiert (Ausweich-Lösung statt Fix), und FAQ-Schema hat jetzt 7 Fragen synchron mit HTML — das ist gefixt, gut. Die Bestattetenliste am Südfriedhof ist deutlich zurückhaltender geworden (Heine, Reclam, Brockhaus, Licht, Carl Ludwig — alles plausibel), aber die UNSURE-Kommentare bleiben drin. Wortzahl ca. 1.850 — weiterhin unter dem in Runde 1 geforderten Zielkorridor 2.000–2.500.
+
+MUST-FIX vor Deploy: ja.
+
+Hauptgründe: §§ SächsBestG fehlen weiterhin (MUST-FIX aus Runde 1 nicht erledigt), Leipzig-Kostensektion ist ohne konkrete €-Zahlen für eine YMYL-Page nicht deploy-fähig, und die „Goethe-Anekdotenfeld"-H3 mit eigenem Disclaimer im Text ist ein Trust-Killer in der Headline. Drei substantielle Defizite, von denen zwei explizit aus Runde 1 als MUST-FIX kamen und nicht umgesetzt wurden.

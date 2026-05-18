@@ -1,0 +1,18 @@
+Ich lade die drei Files und reviewe streng.
+
+Web durchsucht
+Web durchsucht
+
+Alles drei drin. Jetzt strenger adversarialer Review — drei substantielle Schwächen, kein Lob, keine Floskeln.
+
+SCORE: 84/100
+
+FUNDE:
+
+SCHWÄCHE 1 (Halluzinations-Verdacht / Quellen-Lücke, Kategorie 1+12): Die Kostentabelle führt fünf Positionen mit Sternchen-Hinweis "übrige Positionen variieren mit Grabgröße und Liegezeit" — aber drei davon sind konkrete Zahlen mit Stelle nach dem Komma: "Erd-Reihengrab 682,02 €" und Urnenwahlgrab "ca. 140 €" und Aschestreufeld "ca. 70 €". Die 682,02 € sieht aus wie aus der Gebührensatzung gezogen, aber die Fußnote sagt explizit "Werte bestätigt für 819 € und 70 € durch Ratsbeschluss... übrige Positionen variieren". Also: entweder ist 682,02 € belegt — dann gehört es ohne Stern in die "bestätigt"-Kategorie und die Fußnote ist falsch — oder es ist nicht belegt, dann ist die Pseudo-Präzision auf zwei Nachkommastellen Halluzinations-Risiko reinster Form. Fix: Entweder direkter Satzungs-Verweis pro Zeile (Anlage X §Y der Gebührensatzung 04.07.2024) oder alle nicht-belegten Werte als Spanne („ca. 600–700 €") ohne Schein-Präzision.
+SCHWÄCHE 2 (Halluzinations-Verdacht / Floskel-Risiko, Kategorie 12+11): Sennefriedhof-Block enthält die Behauptung, Käthe Kollwitz, Georg Kolbe, Hugo Lederer und Peter August Böckstiegel hätten dort Grabmale gestaltet — vier extrem prominente Bildhauer-Namen in einer Aufzählung, ohne einzelne Quelle, ohne Werkverweis, ohne Abteilungsnummer (außer bei Böckstiegel "Abteilung F, Familie Niemann, 1947, zwei Bronzereliefs"). Kollwitz hat in ihrem Leben sehr wenige Grabmale gestaltet (das berühmteste auf dem Zentralfriedhof Friedrichsfelde); ein Kollwitz-Grabmal auf dem Sennefriedhof wäre ein Sensationsbefund. Wenn das nicht aus einer belastbaren Primärquelle stammt (Friedhofsverwaltung, Denkmalliste, Werkverzeichnis), ist das eine Reputationsbombe. Die Wikipedia-Quelle zum Sennefriedhof ist als „Hidden-Gem-Recherche" gelistet — Wikipedia ist bei einer Werkzuordnung Kollwitz/Kolbe/Lederer KEIN tragfähiger Beleg. Fix: Entweder pro Bildhauer Werk+Abteilung+Quelle einfügen, oder die drei nicht-belegten Namen streichen und nur Böckstiegel behalten (der ist mit Werkdaten konkret).
+SCHWÄCHE 3 (Schema-Konsistenz / Strukturlücke, Kategorie 10): Das Article-Schema hat author und publisher beide als Organization "Redaktion machsruhig.de" mit url: https://machsruhig.de/methodik bzw. https://machsruhig.de/ — also Autor = Verlag, was bei einem YMYL-Topic von Google nicht als E-E-A-T-starkes Signal gewertet wird. Es fehlt ein identifizierbarer Author mit Sachkompetenz (Person mit Rolle, oder zumindest Organisation mit jobTitle/sameAs-Verweisen auf Innung/Verband). Das war im v1-Review nicht explizit gerügt, aber bleibt eine deploy-relevante Schwäche, weil die ganze Bundesland-Strategie auf "machsruhig Redaktion + Fachpool-Reviewer"-Autorenmodell setzt — und in der City-Page taucht der Fachpool-Reviewer im Schema mit keinem Wort auf. Fix: Author als Organization mit zusätzlich member oder reviewedBy-Property (Schema.org reviewedBy ist Article-konform), z.B. "reviewedBy":{"@type":"Person","name":"…","jobTitle":"Bestattermeister"} — sonst bleibt das Trust-Signal hohl.
+
+MUST-FIX vor Deploy: ja.
+
+Begründung in einem Satz: Schwäche 1 (682,02 €) und Schwäche 2 (Kollwitz/Kolbe/Lederer ohne Beleg) sind beide klassische Halluzinations-Risiken im YMYL-Kontext — eine widerlegte Faktenbehauptung auf einer Bestattungs-Page kostet die ganze Domain Vertrauen, das ist kein „nice-to-have-vor-deploy", sondern Re-Check-Blocker. Schwäche 3 ist deploy-tolerierbar, sollte aber spätestens in v4 nachgezogen werden.

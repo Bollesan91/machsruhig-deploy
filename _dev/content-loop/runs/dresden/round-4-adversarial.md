@@ -1,0 +1,27 @@
+Ich lade die drei Dateien.
+
+Fetching site
+Web durchsucht
+
+Ich habe Briefing, v2 und v1-Review gelesen. v2 hat die meisten v1-Faktenfehler tatsächlich rausgeräumt (Kayßler weg, Hörbiger weg, Reimann weg, Tessenow als Negativ-Beispiel sauber, Weber/Semper sauber als Kenotaph bzw. Friedrichstadt deklariert, UNSURE-Kommentare alle weg, Footer-Link gefixt, Cross-Links Leipzig/Chemnitz drin, §§ SächsBestG mit Nummer, § 31 PStV ergänzt, Urnenhain-Behauptung präzisiert). Solide Arbeit. Aber: das Briefing verlangt 3 substantielle Schwächen, und es gibt sie.
+
+SCORE: 79/100
+
+FUNDE:
+
+SCHWÄCHE 1: Bestattungskosten-Sektion — Primärquellen-Lücke trotz expliziter v1-MUST-FIX-Forderung. Stelle: Sektion „Bestattungskosten in Dresden", Absatz 2. v1-Review #15 hat exakt das gefordert: „konkrete Preisspannen aus der Dresdner Gebührensatzung Tolkewitz". v2 liefert stattdessen Watte-Formulierungen: „im niedrigen vierstelligen Eurobereich", „niedrigen bis mittleren dreistelligen Bereich", „niedrigen dreistelligen Bereich". Das sind keine Preisspannen, das sind Klassenbeschreibungen. Die Friedhofsgebührensatzung Dresden ist öffentlich (dresden.de/Amtsblatt) — konkrete Eurobeträge wären lieferbar. Aktuell ist die Sektion gegenüber v1 kosmetisch verbessert, sachlich aber gleich substanzarm. Fix: Mindestens 3 konkrete Beträge mit „Stand 2024/2025, Quelle: Friedhofsgebührensatzung der Landeshauptstadt Dresden vom [Datum], § [X]" — z.B. Erdreihengrab 25 Jahre Tolkewitz, Urnenreihengrab, Aschegemeinschaftsgrab. Ohne diese Zahlen ist die Sektion eine Floskel.
+
+SCHWÄCHE 2: Wikipedia als alleinige Quelle für 5 von 5 Friedhofs-Faktenangaben (Hektarzahlen, Gründungsdaten-Kontext, Hidden Gems). Stelle: Alle vier Friedhofs-Unterkapitel. Jeder Quellenanker im Fließtext ist „Wikipedia/Dehio Sachsen Bd. I" oder „Wikipedia/Stadt Dresden". Das Briefing (Kategorie 1: Quellen-Lücke) sagt explizit: Wikipedia bei juristischer Aussage Sekundärquelle — und auch bei Hektarangaben und Hidden-Gem-Stories ist Wikipedia nicht die Primärquelle, sondern verweist auf Dehio bzw. Stadtarchiv. Wenn Dehio die Quelle ist, dann Dehio direkt zitieren (Band, Seite). Wenn Stadtarchiv die Quelle ist, dann verlinken. Aktuell trägt jede Hektarzahl, jeder Hidden Gem und jede architekturhistorische Einordnung dieselbe Wikipedia-URL — das ist Quellen-Theater, nicht Quellenarbeit. Bei Tolkewitz wird sogar offen eingeräumt: „in der Literatur werden Werte zwischen etwa 19 und 23 Hektar genannt" — also ist die genaue Zahl unklar, aber im Schema steht keine Zahl, im Text eine Spanne. Saubere Lösung: Eine konkrete Hektarzahl aus einer benannten Primärquelle (z.B. Bebauungsplan, Friedhofsträger-Website, Denkmalliste Sachsen) oder Spanne mit beiden Quellen.
+
+SCHWÄCHE 3: Hidden-Gem-Stories sind narrativ stärker als v1, aber die zentrale Beleg-Lücke aus v1-Review #25 ist nur halb geschlossen. Stelle: Alle vier Hidden-Gem-Absätze. v1-MUST-FIX #15 forderte „jeweils mindestens eine Primärquelle pro Gem (Denkmalpflege, Gemeindearchiv, Dehio Sachsen Bd. I)". v2 fügt nun pro Gem einen Quellenverweis hinzu — aber bei drei von vier ist es wieder Wikipedia, ergänzt um „/Dehio Sachsen Bd. I" als angehängten Zusatz ohne Seitenzahl. Bei der Exulanten-Abteilung (Innerer Neustädter Friedhof) ist die Behauptung „in dieser Form in Sachsen selten dokumentiert" — eine Negativaussage, die ohne harte Quelle nicht belegbar ist. Bei der „Ehrengrabanlage 13. Februar 1945" auf dem Annenfriedhof: konkrete Aussage „viele Tafeln tragen Namen ganzer Familien aus Löbtau und Plauen, deren Wohnhäuser in jener Nacht zerstört wurden" — interessant, aber ohne Beleg. Das ist genau der Halluzinations-Verdacht aus Kategorie 12. Fix: Entweder Dehio Sachsen Bd. I mit Seitenzahl, oder Streichung der nicht belegbaren Details (Familien aus Löbtau und Plauen → „Opfer der Luftangriffe vom Februar 1945, gepflegt von der Annengemeinde").
+
+Zwei Zusatzfunde (nicht in den Top-3, aber bemerkenswert):
+
+„Stadtbrand von 1685" — der Brand der Altendresdner Seite war tatsächlich am 6. August 1685. Aber: der Innere Neustädter Friedhof wurde 1731 nicht „im Zuge des barocken Neuaufbaus" angelegt — der barocke Neuaufbau der Neustadt begann unmittelbar nach 1685, der Friedhof kam 46 Jahre später. Kausalverknüpfung im Text ist zeitlich zu lang gestreckt, um sauber zu sein. v1-Review #23 hatte das schon angemerkt — v2 hat die Formulierung minimal umgestellt, aber die Kausalkette „barocker Neuaufbau → Friedhof 1731" steht weiter. Plausibler Anlass war eher Bevölkerungswachstum und Überfüllung älterer Bestattungsplätze.
+Lesezeit „ca. 12 Minuten" bei ~2.000 Wörtern Fließtext ist eher 8–10 Minuten (Standard 200–250 WPM). Kleinigkeit, aber Trust-Signal.
+
+MUST-FIX vor Deploy: ja.
+
+Begründung: Schwäche 1 (Bestattungskosten ohne konkrete Beträge) ist ein direkt aus v1 übernommener MUST-FIX, der inhaltlich nicht erledigt wurde — nur kosmetisch. Eine YMYL-Page über Bestattungskosten ohne einen einzigen konkreten Eurobetrag aus einer benannten Satzung ist unter Vertrauensgesichtspunkten nicht deploy-reif. Schwäche 2 (Wikipedia als Pseudo-Primärquelle) lässt sich pragmatisch fixen, indem Dehio Sachsen Bd. I konsequent mit Seitenzahlen zitiert wird, wo er tatsächlich konsultiert wurde — oder die Doppel-Attribution „Wikipedia/Dehio" auf eines der beiden reduziert wird, je nachdem was wirklich genutzt wurde. Schwäche 3 ist die kleinste und ließe sich allein durch Streichung der nicht belegbaren Detailaussagen lösen.
+
+Ohne Schwäche 1 zu fixen: nein. Score realistisch nach Fix: 86–88.
