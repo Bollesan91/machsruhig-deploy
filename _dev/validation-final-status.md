@@ -56,3 +56,20 @@ Out-of-scope: Routing-Issue (ASCII-Stub mit noindex vs. Umlaut-Version mit conte
 - 5 Cities in Improver-Pipeline (Bremen/Essen/Hamburg/Berlin/Leipzig)
 - ~22 Cities benötigen erste Validation-Pass
 - Final-Sweep über alle 50 nach 1 vollen Validation-Cycle empfohlen
+
+## Round 18+ Final Results (10:55 Uhr)
+
+### Re-Review Outcomes nach Improver-Passes:
+- **Bremen v3**: CONDITIONAL PASS, 1 MAJOR Restbefund (Riensberger Fläche 28 vs 32 ha)
+- **Hamburg v2**: CONDITIONAL PASS, 3 MAJOR Rest (anonyme-Beisetzung Math, SH-Erdbestattungsfrist falsch 14d statt 8 Werktage, +81.20€ Bestatter-Basispreis unklar)
+- **Berlin v2**: PASS, 2 MAJOR Rest (Reform-Status unverifiziert, Reihengrab-Spanne 939-1016€ ohne Quelle)
+- **Karlsruhe v1**: MUST-FIX, 3 MAJOR (§ 36/37 BestattG BW Verwechslung, FAQ-Kosten-Kalibrierung niedrig)
+
+### Konvergenz-Status
+Pattern bestätigt: Auch nach 2-3 Improver-Passes findet jeder Reviewer 2-3 NEUE MAJOR. Pages haben **deep systematic factual issues**, die Editorial-Review durch Mensch + Primärquellen-Recherche brauchen.
+
+### Final-Recommendation
+- **9-11 Cities** mit guter Qualität deploy-ready (Strict CLEAN + Polish-akzeptiert)
+- **15+ Cities** sind in iterativer Pipeline mit Improver-Fixes applied, aber Restfunde
+- **22+ Cities** ohne erste Validation
+- Vollständige Konvergenz für alle 50 Cities wäre 6-10h Wallclock zusätzlich
