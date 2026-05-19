@@ -1,0 +1,23 @@
+Ich prüfe die Datei.
+
+Ich prüfe die Datei.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/braunschweig/index.html?cb=20260519b5
+
+Prüfung der 6 Punkte:
+
+✅ <h2>Sozialbestattung in Braunschweig</h2> vorhanden (Zeile in section#sozialbestattung)
+✅ Adresse korrekt: "Fachbereich Soziales und Gesundheit, Besondere Einzelfallhilfen (50.34), Naumburgstraße 25, 38124 Braunschweig"
+✅ § 8 Abs. 3 BestattG Niedersachsen + § 74 SGB XII beide zitiert (mehrfach, inkl. Verlinkung gesetze-im-internet.de)
+✅ BSG B 8 SO 20/10 R vom 25.08.2011 zitiert (im Fließtext + im Callout)
+HTML-Balance: Sozialbestattungs-Modul = 1 <section>, 3 <h3>, 7 <p>, 1 <div class="callout"> mit <strong> — alle sauber geschlossen. Globale Struktur: <main> → mehrere <section> → </main> → <footer> → </body> → </html> — balanced.
+Faktencheck:
+Adresse Naumburgstraße 25, 38124 BS: real existierende Adresse des FB Soziales/Gesundheit ✓
+BSG B 8 SO 20/10 R vom 25.08.2011: korrekt (Erbausschlagung & § 74 SGB XII) ✓
+§ 8 Abs. 3 BestattG Nds Rangfolge: korrekt ✓
+§ 74 SGB XII: korrekt ✓
+Naumburgstraße mit "ß" durchgängig korrekt (User-Prompt hatte "Naumburgstrasse" mit ss — Page nutzt korrekt "ß") ✓
+Keine neuen Typos im Modul gefunden
+
+VERDICT: CLEAN
