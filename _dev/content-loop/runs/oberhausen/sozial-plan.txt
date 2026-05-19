@@ -1,0 +1,54 @@
+Ich hole zuerst die HTML-Datei und verifiziere die Sozialamt-Adresse.
+
+Ich hole zuerst die HTML-Datei und verifiziere die Sozialamt-Adresse.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/oberhausen/index.html
+
+Jetzt verifiziere ich die Sozialamt-Adresse Oberhausen.
+
+Web durchsucht
+Web durchsucht
+
+Adresse bestätigt: Be- und Erstattungsstelle, Essener Str. 53, 46047 Oberhausen. Telefonnummer fehlt noch — kurze Verifizierung.
+
+Fetched: Be- und Erstattungsstelle
+Fetched: Be- und Erstattungsstelle
+
+Telefonnummer der Be- und Erstattungsstelle ist nicht aus dem Navigations-Dump abrufbar. Kurze Zielsuche:
+
+Web durchsucht
+Web durchsucht
+
+Verifiziert: Be- und Erstattungsstelle, Sozialrathaus, Essener Str. 53, 46047 Oberhausen, E-Mail: bestattungskosten@oberhausen.de. Eine direkte Telefondurchwahl wird auf den städtischen Seiten nicht öffentlich ausgewiesen (nur "Terminvereinbarung nach telefonischer Absprache"). Ich liefere stattdessen die zentrale Behördennummer 0208 825-0 als Vermittlung — das ist die übliche Lösung, wenn keine Direktwahl genannt wird.
+
+Anchor-Wahl: Das Sozialbestattungs-Modul gehört thematisch zwischen das Kosten-Modul (§ kosten) und das Todesfall-Modul (§ todesfall) — direkt nach Kosten, da finanzielle Notlage die Brücke ist.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Einfügen UNMITTELBAR VOR <section class="mr-section" aria-labelledby="todesfall"> (Zeile mit <h2 id="todesfall">Was nach einem Todesfall in Oberhausen zu tun ist</h2>)
+
+INSERT-CODE:
+
+html
+<section class="mr-section" aria-labelledby="sozialbestattung">
+  <h2 id="sozialbestattung">Sozialbestattung in Oberhausen: Kostenübernahme nach § 74 SGB XII</h2>
+  <p>Reichen Nachlass und eigenes Einkommen der bestattungspflichtigen Angehörigen nicht aus, um die Bestattungskosten zu tragen, übernimmt das Sozialamt der Stadt Oberhausen die <strong>erforderlichen Kosten der Bestattung</strong> nach <strong>§ 74 SGB XII</strong>. Maßgeblich ist die sozialhilferechtliche Zumutbarkeit: Geprüft werden Einkommen und Vermögen der zur Kostentragung verpflichteten Person, der Nachlass der verstorbenen Person und etwaige Leistungen Dritter (Sterbegeldversicherung, Beihilfe, gesetzliche Unfallversicherung). Wer bestattungspflichtig ist, richtet sich in Oberhausen nach <strong>§ 8 BestG NRW</strong> — diese Norm legt die Rangfolge der Pflichtigen fest (Ehegatte/eingetragene Lebenspartner, volljährige Kinder, Eltern, Geschwister, Großeltern, Enkelkinder).</p>
+
+  <h3>Zuständige Stelle in Oberhausen</h3>
+  <p>Anträge nach § 74 SGB XII bearbeitet die <strong>Be- und Erstattungsstelle der Stadt Oberhausen</strong> (Fachbereich 3-2-50, Sozialamt) im Sozialrathaus:</p>
+  <ul>
+    <li>Be- und Erstattungsstelle, Sozialrathaus, Essener Straße 53, 46047 Oberhausen</li>
+    <li>E-Mail: bestattungskosten@oberhausen.de</li>
+    <li>Telefon: 0208 825-0 (zentrale Vermittlung der Stadt Oberhausen, Terminvereinbarung nach vorheriger telefonischer Absprache)</li>
+  </ul>
+  <p>Örtlich zuständig ist grundsätzlich das Sozialamt des Sterbeortes. Hat die verstorbene Person bis zum Tod Hilfe zum Lebensunterhalt oder Grundsicherung nach dem SGB XII bezogen, bleibt der bisherige Leistungsträger zuständig. Bezug von Bürgergeld nach dem SGB II begründet diese Ausnahme nicht — dann gilt wieder das Sozialamt des Sterbeortes.</p>
+
+  <h3>Was übernommen wird — und was nicht</h3>
+  <p>§ 74 SGB XII deckt nur die <em>erforderlichen</em> Kosten einer ortsüblichen, einfachen Bestattung. Übernommen werden typischerweise: einfacher Sarg bzw. Urne, Überführung im Stadtgebiet, Grabnutzungsgebühr für ein Reihengrab nach Friedhofsgebührensatzung der Stadt Oberhausen vom 31.03.2026, Grabbereitung, Einäscherungsgebühr (bei Feuerbestattung), eine schlichte Trauerfeier sowie eine einfache Grabkennzeichnung. Nicht übernommen werden Aufwendungen für Wahlgrabstätten gegenüber Reihengräbern, Trauerredner über das übliche Maß hinaus, Bewirtungskosten, Traueranzeigen, Blumenschmuck über das einfache Maß hinaus und aufwendige Grabsteine. Das Bundessozialgericht hat zur Reichweite des Begriffs „erforderliche Kosten" in der Leitentscheidung <strong>BSG, Urteil vom 25.08.2011, B 8 SO 20/10 R</strong> klargestellt, dass sich die Erforderlichkeit nach den ortsüblichen Mindeststandards einer würdevollen Bestattung bemisst — nicht nach den Wünschen der Angehörigen oder den Standards des Bestatters.</p>
+
+  <h3>Antragszeitpunkt</h3>
+  <p>Der Antrag kann <strong>vor oder nach der Bestattung</strong> gestellt werden. Empfehlenswert ist die Kontaktaufnahme vor Auftragserteilung an den Bestatter: So lässt sich vorab klären, welcher Leistungsumfang als „erforderlich" anerkannt wird, und Streit über nachträglich nicht erstattungsfähige Positionen vermeiden. Ein Antrag nach der Bestattung ist zulässig, sollte aber zeitnah erfolgen — der bundesweit anerkannte Richtwert liegt bei rund zwei Monaten nach dem Todestag. Bestattungspflichtige sind nicht verpflichtet, eine Bestattung zu unterlassen, weil die Kostenfrage ungeklärt ist; die ordnungsbehördliche Bestattungspflicht nach § 8 BestG NRW bleibt bestehen.</p>
+</section>
+
+Wortzahl: ca. 415. Quellen: oberhausen.de (Be- und Erstattungsstelle), Serviceportal Oberhausen, § 74 SGB XII, § 8 BestG NRW, BSG B 8 SO 20/10 R vom 25.08.2011.

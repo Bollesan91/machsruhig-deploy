@@ -1,0 +1,24 @@
+Ich fetche die Datei und prüfe.
+
+Ich fetche die Datei und prüfe.
+
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/osnabrueck/index.html?cb=20260519b5
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/osnabrueck/index.html?cb=20260519b5
+
+Prüfung des Sozialbestattung-Moduls:
+
+✅ <h2 id="sozialbestattung">Sozialbestattung in Osnabrück</h2> vorhanden
+✅ Adresse Stadthaus 2, Natruper-Tor-Wall 5, 49076 Osnabrück, Tel 0541 323-2500 — korrekt
+✅ § 8 Abs. 3 BestattG Niedersachsen + § 74 SGB XII zitiert
+✅ BSG B 8 SO 20/10 R vom 25.08.2011 zitiert (Urteilsdatum verifiziert korrekt)
+✅ HTML-Tags balanced (section/h2/h3/p sauber geschlossen)
+✅ Kreisfreie-Stadt-Klarstellung enthalten ("Da Osnabrück kreisfreie Stadt ist, ist der städtische Fachbereich Soziales selbst Träger der Sozialhilfe")
+⚠️ dateModified ist "2026-05-13" — wurde NICHT auf heutiges Datum (2026-05-19) aktualisiert trotz Modul-Einfügung. Laut Pipeline-Regel: "dateModified updated on every fix."
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+JSON-LD "dateModified": "2026-05-13" → auf aktuelles Bearbeitungsdatum (2026-05-19) aktualisieren, da neues Sozialbestattung-Modul eingefügt wurde. Pipeline-Regel: dateModified bei jedem inhaltlichen Fix mitziehen.
+
+Sonst Modul inhaltlich, rechtlich und strukturell sauber.

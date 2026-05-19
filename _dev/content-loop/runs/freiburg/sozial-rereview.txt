@@ -1,0 +1,25 @@
+Ich fetche jetzt die Datei und prüfe das Sozialbestattung-Modul.
+
+Ich fetche jetzt die Datei und prüfe das Sozialbestattung-Modul.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/freiburg/index.html?cb=20260519b4
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/freiburg/index.html?cb=20260519b4
+
+Prüfung Sozialbestattung-Modul:
+
+✅ <h2>Sozialbestattung in Freiburg — wenn die Kosten nicht getragen werden können vorhanden
+⚠️ Adresse: "Fehrenbachallee 12, Gebäude C, 79106 Freiburg (Rathaus im Stühlinger)" — Tel 0761 201-3507 / 201-3620, AfS@freiburg.de — passt zur Vorgabe
+⚠️ § 21 BestattG BW + § 74 SGB XII zitiert — ABER: § 21 BestattG BW regelt nicht Bestattungspflicht/Reihenfolge, sondern Veranlassung der Leichenschau. Die Bestattungspflicht/Rangfolge ist in § 31 BestattG BW geregelt (so auch korrekt im Rechtsmodul derselben Seite zitiert: "§ 31 BestattG BW — Bestattungspflichtige: Reihenfolge der Angehörigen"). Innerhalb derselben Seite widersprüchlich.
+✅ BSG B 8 SO 20/10 R vom 25.08.2011 zitiert
+✅ HTML-Tags balanced (Sektion sauber: <h2>, drei <h3>, <p>, Schluss-</div>)
+✅ 346 € Erdreihengrab / 244 € Urnenreihengrab konsistent mit Gebührentabelle (A.4.1.1 / A.4.1.5), Satzungsdatum 19.3.2024 stimmt
+⚠️ Konsistenz-Issue: Im selben Dokument steht in § 31-Zeile "identisch mit der Aufzählung in § 21 Abs. 1 Nr. 1 ... der Freiburger Friedhofssatzung" — d.h. § 21 ist Satzungs-§, nicht BestattG-§. Im Sozialmodul wird genau diese Verwechslung in das Landesgesetz hineingezogen.
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+§ 21 BestattG BW → § 31 BestattG BW. Im Sozialbestattung-Modul steht: "Wer bestattungspflichtig ist, richtet sich in Baden-Württemberg nach § 21 BestattG BW". Falsch — § 21 BestattG BW regelt die Veranlassung der Leichenschau. Bestattungspflicht/Rangfolge regelt § 31 BestattG BW (so auch korrekt weiter oben im selben Dokument im Rechts-Überblick zitiert). Die Aufzählung Ehegatte → Kinder → Eltern → Großeltern → Geschwister → Enkel deckt sich exakt mit § 31 BestattG BW. Korrigieren auf: "…richtet sich in Baden-Württemberg nach § 31 BestattG BW".
+dateModified im JSON-LD steht auf 2026-05-15 — beim Einfügen eines neuen Moduls aktualisieren (z. B. 2026-05-19).
+
+(168 Wörter)

@@ -1,0 +1,66 @@
+Jetzt prüfe ich die Punkte systematisch:
+In Arbeit
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/karlsruhe/index.html?cb=20260519b4
+
+Jetzt prüfe ich die Punkte systematisch:
+
+1. <h2>Sozialbestattung in Karlsruhe vorhanden? ✅ Ja: <h2>Sozialbestattung in Karlsruhe — wenn die Kosten nicht aufgebracht werden können</h2>
+
+2. Adresse SJB:
+
+HTML: "Rathaus an der Alb, Ernst-Frey-Straße 10, 76135 Karlsruhe"
+User-Vorgabe: "Ernst-Frey-Strasse 10, 76135 Karlsruhe"
+Tel: 0721 133-5415 ✅
+Mail: infotheke@sjb.karlsruhe.de ✅
+
+Lass mich kurz die Adresse verifizieren:
+
+Abrufen von raw.githubusercontent.com
+Web durchsucht
+Web durchsucht
+
+Adresse SJB ✅ bestätigt: Ernst-Frey-Straße 10, 76135 Karlsruhe, Tel 0721 133-5415, infotheke@sjb.karlsruhe.de.
+
+3. § 21 BestattG BW + § 74 SGB XII:
+
+HTML zitiert: "§ 21 BestattG BW (Ehegatte/Lebenspartner, volljährige Kinder, Eltern, Großeltern, Geschwister, Enkel)"
+PROBLEM: Im selben HTML-Dokument oben wird die Reihenfolge der Bestattungspflichtigen unter § 31 BestattG BW zitiert. § 21 BestattG BW BW regelt die Leichenschau, nicht die Bestattungspflichtigen! Der korrekte Paragraph für Bestattungspflichtige in BW ist § 31 BestattG BW.
+
+Lass mich das verifizieren:
+
+Web durchsucht
+Web durchsucht
+
+Wichtiger Befund: Die Reihenfolge der Bestattungspflichtigen in BW richtet sich nach § 31 Abs. 1 S. 2 i.V.m. § 21 Abs. 3 BestattG BW. Das ist ein Verweis: § 31 nennt die Bestattungspflichtigen, § 21 Abs. 3 enthält die Definition/Reihenfolge der Angehörigen (ursprünglich für die Leichenschau-Bestimmung, auf die § 31 verweist).
+
+Im HTML steht aber im Sozialbestattungs-Modul nur "§ 21 BestattG BW (Ehegatte/Lebenspartner, volljährige Kinder, Eltern, Großeltern, Geschwister, Enkel)". Das ist verkürzt und schief — die Bestattungspflicht steht in § 31, nicht in § 21. § 21 Abs. 3 nennt nur die Reihenfolge der Angehörigen-Definition.
+
+Zusätzliches Problem: Im selben HTML wird im Abschnitt "Bestattungsrecht — der kurze Überblick" oben gesagt: "§ 31 BestattG BW — Bestattungspflichtige: Reihenfolge der Angehörigen". Das widerspricht sich intern mit dem Sozialbestattungs-Modul (§ 21 vs § 31).
+
+4. BSG B 8 SO 20/10 R vom 25.08.2011:
+
+Web durchsucht
+Web durchsucht
+
+BSG-Urteil ✅ verifiziert: B 8 SO 20/10 R vom 25.08.2011.
+
+ABER: Die Aussage im HTML — "Auch wer nach Landesrecht bestattungspflichtig ist, hat einen Anspruch auf Übernahme — das hat das Bundessozialgericht im Urteil B 8 SO 20/10 R vom 25. August 2011 ausdrücklich bestätigt" — ist sachlich schief / nicht das, was dieses Urteil tragend entschieden hat. Das Urteil unterscheidet zwischen Bestattungspflicht und der Pflicht zur Tragung der Bestattungskosten, und verlangt für letztere einen "besonderen zivil- oder öffentlich-rechtlichen Status". Es lehnt gerade nicht ab, dass die rein sittliche/vertragliche Verpflichtung reicht. Die Aussage im HTML ist zwar nicht offensichtlich falsch, aber die Zuordnung "BSG hat bestätigt, dass öffentlich-rechtlich Bestattungspflichtige einen Anspruch haben" ist trivial — das ist Wortlaut von § 74. Die korrekte Kernaussage dieses Urteils ist eher: zweistufige Prüfung der erforderlichen Kosten + Pauschalleistung abgelehnt. Trotzdem: Die Bezugnahme ist nicht falsch, nur etwas schwach gewählt. Kein MUST-FIX.
+
+5. HTML-Tags balanced: Quick check — sieht sauber aus, alle Sections, p, h2, h3, table, ul korrekt geschlossen. ✅
+
+6. Stadtkreis-Klarstellung: "Karlsruhe ist Stadtkreis und führt das Sozialamt in eigener Zuständigkeit." ✅ Korrekt — Karlsruhe ist tatsächlich Stadtkreis in BW.
+
+7. dateModified-Check: "dateModified": "2026-05-12" — bei neu eingefügtem Modul nicht aktualisiert worden. Sollte auf heutiges Datum.
+
+8. JSON-LD vs HTML FAQ: Sozialbestattung ist NICHT im FAQ-JSON-LD enthalten — das ist ok, weil auch keine FAQ-Frage zur Sozialbestattung im HTML existiert. ✅ konsistent.
+
+VERDICT: FAIL
+
+MUST-FIX-Liste:
+
+§ 21 BestattG BW ist falsch zitiert. Die Bestattungspflicht und ihre Reihenfolge stehen in § 31 BestattG BW (i.V.m. § 21 Abs. 3 für die Angehörigen-Definition). Im selben Dokument zitierst Du oben korrekt § 31 für Bestattungspflichtige — das Sozialmodul widerspricht sich intern. Korrektur: "§ 31 i.V.m. § 21 Abs. 3 BestattG BW" oder kurz "§ 31 BestattG BW".
+dateModified im Article-JSON-LD aktualisieren von "2026-05-12" auf heutiges Datum, da neues SOZIAL-Modul eingefügt. Auch sichtbares "Stand: 12. Mai 2026" im mr-article-meta nachziehen.
+
+Optional/nicht MUST-FIX: BSG-Urteil-Bezug ist sachlich tragfähig, aber etwas schwach gewählt — Kernaussage des Urteils ist die zweistufige Erforderlichkeitsprüfung, nicht die hier zitierte Selbstverständlichkeit. Verbesserungspotenzial, kein Fehler.
+
+Adresse SJB, Telefon, Mail, Stadtkreis-Klarstellung, § 74 SGB XII, BSG-Aktenzeichen/Datum ✅ verifiziert. (~195 Wörter)

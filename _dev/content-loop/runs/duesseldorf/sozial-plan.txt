@@ -1,0 +1,37 @@
+Ich fetche zuerst die Live-Version und verifiziere die Sozialamt-Daten.
+
+Ich fetche zuerst die Live-Version und verifiziere die Sozialamt-Daten.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/duesseldorf/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/duesseldorf/index.html
+
+Jetzt verifiziere ich die Sozialamt-Daten für Düsseldorf.
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert. Zuständig ist das Amt für Soziales der Landeshauptstadt Düsseldorf, Fachbereich 51/84 "Unterstützung im Alter, bei Pflegebedürftigkeit und zur Existenzsicherung", Sachbearbeitung Bestattungskosten, Willi-Becker-Allee 8, 40227 Düsseldorf, Tel. 0211 89-91, bestattungskosten@duesseldorf.de.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR (Insert direkt VOR diesem Block — also nach dem Kosten-Modul und vor dem "Was nach einem Todesfall"-Modul):
+
+  <div class="mr-section">
+    <h2>Was nach einem Todesfall in Düsseldorf zu tun ist</h2>
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Düsseldorf — wenn die Kosten nicht tragbar sind</h2>
+    <p>Reicht der Nachlass nicht aus und können die Bestattungspflichtigen die Kosten aus eigenem Einkommen und Vermögen nicht aufbringen, übernimmt das Sozialamt unter den Voraussetzungen des <a href="https://www.gesetze-im-internet.de/sgb_12/__74.html" rel="noopener" target="_blank"><strong>§ 74 SGB XII</strong></a> die <strong>erforderlichen Kosten einer einfachen, ortsüblichen Bestattung</strong>. Die Leistung ist nachrangig: Eigenes Einkommen und Vermögen sowie der Nachlass des Verstorbenen müssen vorrangig eingesetzt werden. Wer in Düsseldorf zur Bestattung verpflichtet ist, ergibt sich aus <a href="https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=5320141007092133713" rel="noopener" target="_blank"><strong>§ 8 BestG NRW</strong></a>: in fester Reihenfolge Ehegatte oder Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern, volljährige Enkelkinder.</p>
+
+    <h3>Zuständige Stelle in Düsseldorf</h3>
+    <p>Anträge sind beim <strong>Amt für Soziales</strong> der Landeshauptstadt Düsseldorf zu stellen — Fachbereich <strong>Unterstützung im Alter, bei Pflegebedürftigkeit und zur Existenzsicherung (51/84)</strong>, Sachbearbeitung Bestattungskosten. Anschrift: <strong>Willi-Becker-Allee 8, 40227 Düsseldorf</strong>. Telefon: <strong>0211 89-91</strong>. E-Mail: <strong>bestattungskosten@duesseldorf.de</strong>. Eine telefonische Antragstellung ist nicht möglich; Termine werden nach Vereinbarung vergeben. Zuständig ist Düsseldorf, wenn die verstorbene Person hier zuletzt Sozialhilfe oder Grundsicherung bezogen hat — ansonsten das Sozialamt am Sterbeort.</p>
+
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p>Erstattungsfähig ist der Standardrahmen einer würdigen Bestattung: einfacher Sarg oder Urne, Versorgung und Überführung im Stadtgebiet, Friedhofsgebühren für ein <strong>Reihengrab</strong> nach Düsseldorfer Gebührentarif, Beisetzungsgebühr, Trauerhallennutzung sowie bei Feuerbestattung die Einäscherung im Krematorium Stoffeler Friedhof. <strong>Nicht übernommen</strong> werden in der Regel: Wahlgrabstätten statt Reihengrab, Trauerdruck und Trauerfeier-Ausstattung über das Notwendige hinaus, Bewirtung, Grabstein oberhalb des satzungsrechtlich erforderlichen Maßes, Anreise- und Übernachtungskosten von Angehörigen sowie Überführungen aus dem oder ins Ausland. Maßstab ist das Urteil des Bundessozialgerichts vom 25.08.2011 (<strong>BSG B 8 SO 20/10 R</strong>): erstattungsfähig sind ortsübliche, einfache und würdige Kosten — keine pauschalen Höchstsätze, sondern eine Einzelfallprüfung anhand des Düsseldorfer Gebührentarifs.</p>
+
+    <h3>Antragszeitpunkt</h3>
+    <p>Der Antrag sollte <strong>vor der Beauftragung des Bestatters</strong> gestellt werden, damit das Sozialamt eine Kostenübernahmeerklärung ausstellt und der Bestatter direkt abrechnet. Eine <strong>rückwirkende Antragstellung</strong> ist möglich, wenn die Bestattung aufgrund der Zehn-Tage-Frist nach § 13 BestG NRW bereits durchgeführt werden musste — die Rechnungen sollten dann zeitnah, spätestens innerhalb weniger Monate nach der Bestattung, eingereicht werden. Allgemeine Hintergründe zur Sozialbestattung finden Angehörige auf unserer Seite zu den <a href="/bestattungskosten">Bestattungskosten</a>.</p>
+  </div>
