@@ -1,0 +1,74 @@
+Ich hole mir zuerst die aktuelle Hannover-Page und prüfe die Struktur.
+
+Ich hole mir zuerst die aktuelle Hannover-Page und prüfe die Struktur.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/hannover/index.html?cb=1747652000000
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/hannover/index.html?cb=${Date.now(
+
+Page hat. Sozialamt Hannover Adresse kurz verifizieren.
+
+Web durchsucht
+Web durchsucht
+
+Wichtige Verifikation: Für Hannover-Stadt → Stadt Hannover bearbeitet eigene Anträge (Fachbereich Soziales, Besucheranschrift Marktstraße 45, 30159 Hannover laut Region-Merkblatt). Telefon noch verifizieren.
+
+Web durchsucht
+Web durchsucht
+
+Wichtige Korrektur: Postanschrift ist Hamburger Allee 25, 30161 Hannover (offizielle Hauptanschrift Fachbereich Soziales). Marktstraße 45 ist nur Besucheranschrift einer Außenstelle laut Region-Merkblatt. Telefon Zentrale 0511/168-45757 ist verifiziert (für Hilfe zur Pflege; allgemeine Anlaufstelle). Genug für sauberen Block.
+
+Jetzt liefere ich den Insert-Plan.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR (exakter Insert-Punkt):
+
+Nach dem schließenden </div> der Sektion „Bestattungskosten in Hannover" (also direkt nach dem <p>-Absatz, der mit „…Honorare Dritter (Pfarrer, Trauerredner, Floristik)." endet, dann </div>), vor der nächsten Sektion <div class="mr-section"><h2>Was nach einem Todesfall in Hannover zu tun ist</h2>.
+
+Find-Marker (eindeutig):
+
+durchgereichten Friedhofsgebühren und Honorare Dritter (Pfarrer, Trauerredner, Floristik).</strong></p>
+  </div>
+
+  <div class="mr-section">
+    <h2>Was nach einem Todesfall in Hannover zu tun ist</h2>
+
+Den neuen <div class="mr-section">…</div>-Block zwischen das schließende </div> der Kostensektion und das öffnende <div class="mr-section"> der Todesfall-Sektion einfügen.
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Hannover — wenn die Kosten nicht tragbar sind</h2>
+    <p>Wenn Erben oder Bestattungspflichtige die Kosten einer Bestattung nicht aus eigenen Mitteln aufbringen können, übernimmt der Sozialhilfeträger nach <strong>§ 74 SGB XII</strong> die „erforderlichen Kosten" einer einfachen, ortsüblichen Bestattung. Der Anspruch besteht nicht in Form einer Pauschale, sondern als Einzelfallprüfung — Maßstab ist nach Rechtsprechung des Bundessozialgerichts (BSG, Urteil vom 25.08.2011 — <strong>B 8 SO 20/10 R</strong>) eine würdige, ortsübliche Bestattung, orientiert an den Verhältnissen unterer und mittlerer Einkommensbezieher. Luxusleistungen, Bewirtung der Trauergäste und repräsentative Grabsteine sind nicht erstattungsfähig.</p>
+
+    <h3>Wer ist antragsberechtigt? Reihenfolge nach § 8 Abs. 3 BestattG Niedersachsen</h3>
+    <p>Anspruchsberechtigt ist ausschließlich, wer <strong>bestattungspflichtig</strong> ist — Nachbarn oder Freunde, die sich freiwillig um die Bestattung kümmern, erhalten keine Erstattung. Die Bestattungspflicht ergibt sich aus <strong>§ 8 Abs. 3 Niedersächsisches Bestattungsgesetz (BestattG)</strong> in folgender Rangfolge: (1) Ehegattin/Ehegatte oder eingetragene Lebenspartnerin/Lebenspartner, (2) volljährige Kinder, (3) Eltern, (4) volljährige Geschwister, (5) Großeltern, (6) volljährige Enkelkinder. Innerhalb derselben Rangstufe entscheidet die enge Beziehung zur verstorbenen Person. Wurde vertraglich zu Lebzeiten eine andere Person mit der Bestattung beauftragt, geht diese vertragliche Regelung der öffentlich-rechtlichen Reihenfolge vor.</p>
+
+    <h3>Zuständige Stelle in Hannover</h3>
+    <p>Für Verstorbene mit letztem Wohnsitz in der Landeshauptstadt Hannover ist der <strong>Fachbereich Soziales der Landeshauptstadt Hannover</strong> zuständig — die Stadt Hannover bearbeitet ihre Anträge selbstständig, abweichend von der sonstigen Zuständigkeit der Region Hannover für das Umland.</p>
+    <p><strong>Fachbereich Soziales der Landeshauptstadt Hannover</strong><br>
+    Hamburger Allee 25, 30161 Hannover<br>
+    Telefon: 0511 168-45757<br>
+    Den Antrag „Übernahme von Bestattungskosten gemäß § 74 SGB XII" stellt die Stadt online und als PDF auf <a href="https://hannover.gov.de/buergerservice/dienstleistungen/bestattungskosten-uebernahme-900000215-0.html" rel="noopener" target="_blank">hannover.gov.de</a> bereit.</p>
+
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p><strong>Übernommen werden</strong> regelmäßig: einfacher Sarg oder Urne, Überführung im Stadtgebiet, hygienische Versorgung, einfache Trauerfeier, Friedhofsgebühren für ein Reihen- oder Urnenreihengrab nach Satzung der Stadt Hannover, Erstanlage des Grabes, Sterbeurkunden und Traueranzeige in einfacher Form.</p>
+    <p><strong>Nicht übernommen werden</strong>: Wahlgrab, repräsentativer Grabstein, Trauerredner über Standardumfang hinaus, Bewirtung von Trauergästen, Blumenschmuck über die Sargdekoration hinaus, Überführungen ins Ausland sowie alle Leistungen, die über das Maß einer „einfachen, ortsüblichen Bestattung" hinausgehen.</p>
+
+    <h3>Antragszeitpunkt — möglichst vor Auftragsvergabe</h3>
+    <p>Der Antrag sollte <strong>vor der Beauftragung des Bestatters</strong> oder unmittelbar danach gestellt werden. Eine gesetzliche Frist nennt § 74 SGB XII nicht — je später der Antrag nach Eintritt der Kostentragungspflicht eingeht, desto eher kann das Sozialamt Zweifel an der Zumutbarkeit anmelden. Praktisch: Bei Beauftragung des Bestattungsunternehmens schriftlich darauf hinweisen, dass ein Antrag nach § 74 SGB XII gestellt wird oder bereits gestellt wurde. Nicht anerkannte Kosten — etwa über das Niveau einer einfachen Bestattung hinausgehende Posten — trägt sonst die antragstellende Person selbst. Die <strong>8-Tage-Frist nach § 9 BestattG Niedersachsen</strong> für die Bestattung läuft unabhängig vom Antragsverfahren weiter; die Bestattung darf wegen der Sozialamt-Prüfung nicht aufgeschoben werden.</p>
+
+    <div class="mr-hint">
+      <strong>Hinweis:</strong> Eine Erbausschlagung (sechs Wochen ab Kenntnis, beim Nachlassgericht oder Amtsgericht des eigenen Wohnsitzes) befreit <strong>nicht automatisch</strong> von der Bestattungspflicht nach § 8 Abs. 3 BestattG Niedersachsen — die öffentlich-rechtliche Pflicht besteht unabhängig von der erbrechtlichen Stellung fort. Bestattungspflichtige können dennoch einen Antrag nach § 74 SGB XII stellen, wenn die Kostenübernahme finanziell unzumutbar ist.
+    </div>
+  </div>
+
+Hinweise für Round 2 (UNSURE-Marker / Adversarial-Check):
+
+Telefon 0511 168-45757 ist die in den Hannover-Stadt-Dienstleistungsseiten (Hilfe zur Pflege) gelistete Sammelnummer des Fachbereichs Soziales — verifiziert auf hannover.gov.de. Für die Speziell-Sachbearbeitung „Bestattungskosten" steht auf der Stadt-Dienstleistungsseite zur Bestattungskostenübernahme keine eigene Direktwahl; Sammelnummer ist korrekt. UNSURE falls Stadt eine speziellere Hotline pflegt — Reviewer prüfen.
+Adresse Hamburger Allee 25, 30161 Hannover = offizielle Postanschrift des Fachbereichs Soziales (verifiziert über hannover.gov.de „Hilfe zur Pflege"). Marktstraße 45 erscheint im Region-Merkblatt als Besucheranschrift einer Bestattungskosten-Sachbearbeitung — bewusst nicht aufgenommen, da Postanschrift verlässlicher und Stadt selbst die Hamburger Allee als zentrale Anschrift führt.
+BSG B 8 SO 20/10 R = Urteil vom 25.08.2011, Leitsatz „erforderliche Kosten" / würdige Bestattung. Standardzitat in der Sozialbestattungs-Rechtsprechung, in Hamburg-Arbeitshilfe (Bezirksämter) als Maßstab referenziert.
+§ 8 Abs. 3 BestattG Niedersachsen Reihenfolge = aus Serviceportal Niedersachsen (offizielle Stelle) übernommen — Ehegatte → Kinder → Eltern → Geschwister → Großeltern → Enkelkinder.
+
+Wortzahl Insert: ~470. Quellen für <div class="mr-sources">-Update separat liefern, wenn Sektion ergänzt werden soll (BSG B 8 SO 20/10 R, § 74 SGB XII gesetze-im-internet, hannover.gov.de Bestattungskostenübernahme, § 8 BestattG Nds. voris).

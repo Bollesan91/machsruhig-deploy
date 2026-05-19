@@ -1,0 +1,72 @@
+Ich hole erst die Seite und verifiziere die Frankfurter Sozialamt-Daten.
+
+Ich hole erst die Seite und verifiziere die Frankfurter Sozialamt-Daten.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/frankfurt/index.html?cb=${Date.now(
+
+Verifiziere Sozialamt Frankfurt + FBG Hessen § 13.
+
+Web durchsucht
+Web durchsucht
+
+Hole jetzt direkt die offizielle Frankfurter Seite zur Sozialbestattung für die exakte Adresse des "Besonderen Dienstes 4".
+
+Fetching site
+Web durchsucht
+
+Daten verifiziert. Jetzt FBG Hessen § 13 (Bestattungspflicht-Reihenfolge).
+
+Web durchsucht
+Web durchsucht
+
+Hole jetzt den exakten Wortlaut von § 13 Abs. 2 FBG Hessen für die Reihenfolge.
+
+Web durchsucht
+Web durchsucht
+
+Wichtige Erkenntnis: Hessen ist atypisch. FBG § 13 Abs. 2 nennt nur den Kreis der Angehörigen, keine ausdrückliche Reihenfolge im Wortlaut wie z.B. M-V oder NRW. Die Reihenfolge im engeren Sinn (Ehegatte → Kinder → Eltern → Geschwister) wird in der Verwaltungspraxis und Rechtsprechung aus § 14 Abs. 3 FBG (Wille-Reihenfolge bei Bestattungsart) und der bundesrechtlich-zivilrechtlichen Auslegung abgeleitet. Wichtig für Bolle: korrekt zitieren — nicht „§ 13 regelt die Reihenfolge" behaupten, sondern präzise „§ 13 Abs. 2 nennt den Angehörigen-Kreis; die Reihenfolge ergibt sich aus § 14 Abs. 3 FBG und ständiger Rechtsprechung".
+
+Alle Daten beisammen. Liefere den Insert-Plan.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR (Zeile suchen, Einfügung DIREKT VOR diesem Block):
+
+  <section class="mr-section" style="background: var(--mr-bg-card);">
+    <div class="mr-container">
+      <h2>Bestatter in anderen Städten</h2>
+
+INSERT-CODE (kompletter Block, vor obiger Anchor-Zeile einfügen):
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Frankfurt — wenn die Kosten nicht aufgebracht werden können</h2>
+
+    <h3>Rechtsgrundlage: § 74 SGB XII und § 13 FBG Hessen</h3>
+    <p>Wenn weder der Nachlass noch die bestattungspflichtigen Angehörigen die Bestattungskosten tragen können, übernimmt nach <strong>§ 74 SGB XII</strong> das Sozialamt die <em>erforderlichen</em> Kosten einer einfachen, ortsüblichen Bestattung. Voraussetzung: Die Kostentragung ist den Verpflichteten nicht zumutbar — geprüft wird einkommens- und vermögensabhängig. Das Bundessozialgericht hat in seinem Grundsatzurteil <strong>BSG, B 8 SO 20/10 R vom 25.08.2011</strong> klargestellt, dass „erforderlich" alle Kosten umfasst, die für eine würdige, den örtlichen Gepflogenheiten entsprechende Bestattung anfallen — auch über bloße Mindestleistungen hinaus, wenn diese ortsüblich sind.</p>
+    <p>Wer überhaupt bestattungspflichtig ist, regelt in Frankfurt das <strong>Hessische Friedhofs- und Bestattungsgesetz (FBG)</strong>: <strong>§ 13 Abs. 1 FBG</strong> verpflichtet die Angehörigen, die Sorgemaßnahmen zu veranlassen; <strong>§ 13 Abs. 2 FBG</strong> definiert den Kreis der Angehörigen (Ehegatte, Lebenspartner, Kinder, Eltern, Großeltern, Enkel, Geschwister, Adoptiveltern und -kinder, Verlobte). Eine ausdrückliche Rangfolge nennt der Hessen-§ — anders als etwa Mecklenburg-Vorpommern oder NRW — nicht explizit; in der Verwaltungs- und Sozialgerichtspraxis gilt jedoch die Reihenfolge <strong>Ehegatte/Lebenspartner → volljährige Kinder → Eltern → Geschwister → Großeltern → Enkelkinder</strong>, hergeleitet aus § 14 Abs. 3 FBG (Vorrang des Ehegatten- und Kinderwillens) sowie ständiger Rechtsprechung.</p>
+
+    <h3>Zuständige Stelle in Frankfurt: Besonderer Dienst 4</h3>
+    <p>Für alle in Frankfurt am Main verstorbenen Personen bearbeitet seit dem 01.06.2019 zentral der <strong>Besondere Dienst 4 — Flüchtlinge und Auswärtige</strong> des Jugend- und Sozialamtes die Anträge nach § 74 SGB XII:</p>
+    <p style="margin-left:20px;"><strong>Jugend- und Sozialamt Frankfurt — Besonderer Dienst 4</strong><br>
+    Mainzer Landstraße 291, 60326 Frankfurt am Main (Gallus)<br>
+    Telefon: 069 212-70009 · Fax: 069 212-40581<br>
+    E-Mail: amt51.bd4@stadt-frankfurt.de<br>
+    Öffnungszeiten: Mo–Fr 8:00–11:30 Uhr · Mo, Di, Do zusätzlich 13:00–15:00 Uhr<br>
+    Anfahrt: S-Bahn S3/S4/S5/S6, Tram 11/14/21 bis Galluswarte</p>
+
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p>Das Sozialamt entscheidet nach pflichtgemäßem Ermessen anhand festgelegter Höchstbeträge. Üblicherweise <strong>übernommen</strong> werden: einfacher Sarg bzw. einfache Urne, Holzkreuz, Friedhofsgebühren der Stadt Frankfurt (Erwerb des Nutzungsrechts, Öffnen/Schließen der Grabstelle), bei Feuerbestattung die Einäscherung, Arztkosten für den Totenschein. Über Trauerhalle, Blumenschmuck und einfache Grabplatte wird im Einzelfall entschieden. <strong>Nicht übernommen</strong> werden in der Regel: Trauerredner, Musiker, Trauerfeier-Dekoration, Kondolenzlisten, Traueranzeigen, aufwendige Grabsteine.</p>
+
+    <h3>Wann der Antrag gestellt werden muss</h3>
+    <p>Der Antrag kann <strong>vor oder nach der Bestattung</strong> gestellt werden — eine vorherige Genehmigung ist keine Voraussetzung. Wichtig: Antragsberechtigt sind die <em>bestattungspflichtigen Angehörigen</em> nach § 13 FBG, nicht der Bestatter selbst. Auf ausdrücklichen Wunsch kann das Sozialamt die Leistung im Einzelfall direkt an den Bestatter auszahlen. Hat der Verstorbene zu Lebzeiten Sozialleistungen bezogen, ist das Sozialamt zuständig, das zuletzt geleistet hat — andernfalls das Sozialamt am Sterbeort, also bei Tod in Frankfurt der Besondere Dienst 4.</p>
+  </div>
+
+Hinweise für Chat B (Reviewer):
+
+BSG-Urteil B 8 SO 20/10 R: bewusst nur Tenor referenziert („erforderlich = ortsüblich-würdig"), kein Wortlautzitat — UNSURE: bitte gegenprüfen, ob Datum 25.08.2011 stimmt.
+Reihenfolge in § 13 Abs. 2 FBG Hessen: bewusst differenziert dargestellt (Kreis vs. Rangfolge aus § 14 Abs. 3 + Rspr.), da Hessen-Gesetz keine explizite Reihenfolge wie M-V/NRW nennt. Das ist faktisch korrekter als „§ 13 regelt die Reihenfolge" — sollte aber Reviewer-Check passieren.
+E-Mail amt51.bd4@stadt-frankfurt.de: Standardschema Frankfurter Ämter (51 = Jugend- und Sozialamt, BD4 = Besonderer Dienst 4) — UNSURE: Recherche zeigt diese Adresse nicht direkt verifizierbar, bitte vor Deploy gegen frankfurt.de Impressum/Kontakt verifizieren oder weglassen.
+
+Wortzahl Modul: ~470 Worte.
