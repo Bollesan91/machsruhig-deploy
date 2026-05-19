@@ -1,0 +1,115 @@
+Neuer Chat
+Suchen
+Chats
+Projekte
+Code
+Anpassen
+Design
+Mehr
+Zuletzt verwendet
+Ausblenden
+Faktencheck AKUTBOX Berlin Bestattung
+Akutbox-Modul für Berlin-Seite strukturieren
+Faktencheck für Dresden Bestatter-Module
+Dresden Bestatter-Seite: Struktur-Erweiterung mit Checkliste und Sozialbestattung
+Überprüfung der Köln-Seite auf machsruhig.de
+Köln-Seite: Drei fehlende Module einfügen
+Machsleicht deployment und Sprint 1 Smoke-Tests
+Deutschlands Hauptstadt
+Einfache Multiplikation
+Basic arithmetic question
+Einfache mathematische Aufgabe
+Einfache mathematische Aufgabe
+Mathematische Antwort auf einfache Addition
+Einfache mathematische Aufgabe
+Saarbrücken Bestattungsrichtlinie Re-Review
+Krematorium-Ranking und YMYL-Daten überprüfen
+Re-Review der Wiesbaden-Seite auf machsruhig.de
+Regensburg Re-Review: Telefonnummer-Korrektur bei Fund 3
+Saarbrücken Bestattungsrichtlinie Re-Review
+Wiesbaden Stadt-Page Review für machsruhig.de
+Saarbrücken Bestattungsgesetz Review-Validierung
+Regensburg Friedhof-Schema Review
+Bestattungspflicht-Reihenfolge Oldenburg überprüfen
+Wiesbaden Stadt-Page Review für machsruhig.de
+Saarbrücken Bestatter-Seite Review
+Oberhausen Stadt-Page Review für machsruhig.de
+Oldenburg Stadt-Page Review für machsruhig.de
+Regensburg Stadt-Page Review für machsruhig.de
+Saarbrücken Bestatter-Seite Review
+Mülheim Friedhof Re-Review: Major-Funde Überprüfung
+Kassel Gebührensatzung: Doppelte Ziffer 1.2 Re-Check
+Mülheim Friedhof-Content Review: Major-Funde Überprüfung
+Alle Chats
+B
+Bolle
+Max Plan
+Faktencheck AKUTBOX Berlin Bestattung
+Claude hat die Antwort abgeschlossen
+Claude hat geantwortet: Ich pruefe die Fakten zu Berlin.
+
+Ich pruefe die Fakten zu Berlin.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/berlin/index.html?cb=1779181609694
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/berlin/index.html?cb=1779181609694
+
+Ich pruefe jetzt die kritischen Fakten gegen offizielle Quellen.
+
+Web durchsucht
+Web durchsucht
+
+Standesamt I bestaetigt: Schönstedtstraße 5, 13357 Berlin, Auslandsstandesamt. Jetzt § 15 BestattG BE (36h Überführungsfrist) und § 28 PStG (3 Werktage Anzeigefrist):
+
+Web durchsucht
+Web durchsucht
+
+KRITISCHER BEFUND: Die 36h-Regelung steht in § 9 BestattG BE, NICHT in § 15. § 15 BestattG BE regelt die Beschaffenheit der Särge bei Feuerbestattungen. Das ist falsch zitiert.
+
+Jetzt § 28 PStG:
+
+Web durchsucht
+Web durchsucht
+
+§ 28 PStG = 3 Werktage ✓ korrekt. Jetzt noch die Berliner Standesämter-Struktur (12 Bezirksstandesämter ja/nein?) und Friedhofszahlen:
+
+Web durchsucht
+Web durchsucht
+
+12 Bezirke und 12 Bezirksstandesämter ✓ bestätigt. Reform 2024 (48h-Wartefrist) und 222 Friedhöfe sind im Bundesland-Page-Kontext bereits geprüft worden — verifiziert über die Pressemitteilung und Berlin.de. Auf service.berlin.de existiert der Standorte-Pfad ebenfalls. Trägerschaftsstruktur (85+118+9+10=222) ist konsistent.
+
+Jetzt zur HTML-Struktur — prüfen ob doppelte Sections:
+
+Check structure
+Check structure
+
+Ich prüfe die Struktur direkt aus dem geladenen HTML: Ich sehe zwei "Kosten"-Sections (Gebühren und Kosten für Bestattungen in Berlin UND Bestattungskosten in Berlin) — beide mit ähnlichen Tabellen. Außerdem ein Tag-Mismatch: <section class="mr-section"> mit </div> geschlossen. Und <thead><tr><th>Friedhof</th> etc. — die erste Friedhofstabelle hat die Klasse mr-table, das ist konsistent.
+
+STADT: Berlin VERDICT: FAIL
+
+Pro Fakt:
+
+✗ § 15 BestattG BE = 36h Überführungsfrist — FALSCH. Die 36h-Regelung steht in § 13 BestattG BE (aktuelle Fassung) bzw. historisch § 9. § 15 BestattG BE regelt Beschaffenheit der Särge bei Feuerbestattungen. Ist in der AKUTBOX (Schritt 2) UND in den Keyfacts implizit falsch zitiert. Beleg: kirchenrecht-ekbo.de/document/65, aeternitas Berlin-Übersicht (§ 13).
+✓ § 28 PStG = 3 Werktage Anzeigefrist — korrekt (dejure.org, gesetze-im-internet.de).
+✓ 12 Bezirksstandesämter, kein zentrales Sterbe-Standesamt — korrekt (berlin.de/standesamt/sterbefall).
+✓ Standesamt I = Auslandsstandesamt, Schönstedtstr. 5, 13357 — korrekt (berlin.de/labo).
+✓ service.berlin.de/standorte/standesaemter — Pfad existiert.
+✓ 222 Friedhöfe / 85+118+9+10 Trägerschaft — konsistent mit Berlin.de.
+✓ Reform 2024: 48h-Wartefrist abgeschafft — korrekt.
+
+Strukturprobleme:
+
+⚠ Doppelte Kosten-Section: „Gebühren und Kosten" + „Bestattungskosten in Berlin" mit redundanten Tabellen.
+⚠ Tag-Mismatch: <section class="mr-section"> schließt mit </div>.
+
+MUST-FIX: § 15 → § 13 BestattG BE in AKUTBOX-Schritt 2.
+
+
+
+
+Opus 4.7
+Claude ist eine KI und kann Fehler machen. Bitte überprüfe die zitierten Quellen.
+Teilen
+ Claude is active in this tab group  
+Open chat
+ 
+Dismiss
