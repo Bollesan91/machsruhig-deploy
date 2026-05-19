@@ -1,0 +1,124 @@
+Ich starte mit Fetch der aktuellen Köln-Page und parallel Verifikation der Köln-spezifischen Daten.
+
+Ich starte mit Fetch der aktuellen Köln-Page und parallel Verifikation der Köln-spezifischen Daten.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/koeln/index.html?cb=1779179992669
+
+HTML geladen. Jetzt verifiziere ich die Köln-Spezifika parallel.
+
+Searching the web
+Web durchsucht
+
+Standesamt Köln verifiziert: Gülichplatz 1-3, 50667 Köln, Tel. 0221 221-25560 (Sterbefälle). Jetzt Sozialamt Köln + BSG-Rechtsprechung.
+
+Searching the web
+Web durchsucht
+
+Verifiziert. Köln hat eine Besonderheit: Sozialamt = "Amt für Soziales und Senioren — Außenstelle Lindenthal", Adresse Aachener Str. 220, 50931 Köln. E-Mail Sozialamt.Bestattungen@stadt-koeln.de. BSG-Az. brauche ich noch:
+
+Searching the web
+Web durchsucht
+
+Alle Daten verifiziert. Jetzt der Insert-Plan:
+
+=== MODUL 1: AKUTBOX ===
+
+ANCHOR: Direkt nach dem schließenden </div> der Keyfacts-Box und VOR dem ersten <div class="mr-section"> mit „Bestattungsrecht in Köln":
+
+      <li><strong>Gesamtkosten:</strong> 1.500 – 12.000 €</li>
+    </ul>
+  </div>
+
+  <div class="mr-section">
+    <h2>Bestattungsrecht in Köln — Kurzüberblick</h2>
+
+→ Insert NACH </div> der Keyfacts, VOR <div class="mr-section"> mit „Bestattungsrecht".
+
+INSERT-CODE:
+
+html
+  <div class="mr-hint" style="border-left-color:#B45309;background:#FFF7ED;padding:20px 24px;margin:0 0 40px;">
+    <h2 style="font-family:'Fraunces',serif;font-size:18px;font-weight:700;margin-bottom:12px;">Was nach einem Todesfall in Köln zu tun ist — die ersten Schritte</h2>
+    <p style="margin-bottom:12px;font-size:14px;line-height:1.7;">In den ersten 36 Stunden nach dem Tod sind sechs Schritte zu erledigen. Ein Bestattungsunternehmen übernimmt in Köln nahezu alle Behördengänge — Sie selbst müssen praktisch nur den Arzt rufen und das Bestattungsinstitut beauftragen.</p>
+    <ol style="margin-left:20px;font-size:14px;line-height:1.8;">
+      <li><strong>Arzt verständigen:</strong> Bei Tod zu Hause Hausarzt oder Notarzt rufen (112). Dieser stellt die Todesbescheinigung aus — sie ist die Voraussetzung für alles Weitere. Bei Tod im Krankenhaus oder Pflegeheim erledigt das die Einrichtung.</li>
+      <li><strong>Bestatter beauftragen:</strong> Ein Kölner Bestattungsunternehmen Ihrer Wahl übernimmt Überführung (in NRW innerhalb von 36 Stunden Pflicht), Sterbefall-Anmeldung beim Standesamt und Koordination mit dem Friedhof. Honorare in Köln: 700–4.000 €.</li>
+      <li><strong>Sterbefall beim Standesamt Köln anzeigen:</strong> <strong>Standesamt Köln, Gülichplatz 1–3, 50667 Köln</strong>, Sterbefall-Beurkundung: 0221 221-25560, standesamt@stadt-koeln.de. Die Anzeige übernimmt in fast allen Fällen das Bestattungsunternehmen. Die Beurkundung und die für Beerdigung, Krankenkasse und Rente benötigten Sterbeurkunden sind gebührenfrei.</li>
+      <li><strong>Friedhof wählen:</strong> Köln hat 55 städtische und 7 konfessionelle Friedhöfe. Hauptfriedhöfe: Melaten, Nord-, West-, Südfriedhof. Verwaltung über das Friedhofsamt der Stadt Köln.</li>
+      <li><strong>Grabstätte und Bestattungsart festlegen:</strong> Grabart wählen (Reihe-, Wahl-, Urnen-, Baumgrab), Mindestruhezeiten in Köln 25 Jahre für Erdgräber, 20 Jahre für Urnengräber. Friedhofsgebühren über die Friedhofsgebührensatzung der Stadt Köln.</li>
+      <li><strong>Trauerfeier planen:</strong> Trauerhalle in Köln ca. 198 €. Erdbestattung in NRW spätestens 10 Tage nach dem Tod, Urnenbeisetzung innerhalb von 6 Wochen nach Einäscherung. Bestatter koordiniert Termin mit Friedhof, ggf. Pfarrer/Trauerredner und Floristik.</li>
+    </ol>
+  </div>
+
+=== MODUL 2: BESTATTER-WAHL ===
+
+ANCHOR: Direkt VOR der Sektion „Bestatter in anderen Städten":
+
+    <h3>Bestattungskultur und Brauchtum</h3>
+    <p>Als Karnevalshochburg ... Lebenslust zu begegnen.</p>
+  </div>
+
+  <section class="mr-section" style="background: var(--mr-bg-card);">
+    <div class="mr-container">
+      <h2>Bestatter in anderen Städten</h2>
+
+→ Insert NACH dem schließenden </div> der Sektion „Lokale Besonderheiten Kölns", VOR <section class="mr-section" style="background: var(--mr-bg-card);">.
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Bestatter in Köln auswählen — Qualitäts-Checkliste</h2>
+    <p>Köln hat dutzende Bestattungsunternehmen, von alteingesessenen Familienbetrieben in Lindenthal und Ehrenfeld bis zu Discount-Anbietern. Die Preisspanne reicht von 700 € (Direktbestattung ohne Trauerfeier) bis über 4.000 € (Vollservice mit Trauerredner, Floristik, Catering). Diese sieben Kriterien helfen, einen seriösen Anbieter zu erkennen:</p>
+    <ul style="margin-left:20px;margin-top:12px;margin-bottom:16px;font-size:15px;line-height:1.8;">
+      <li><strong>Schriftlicher, detaillierter Kostenvoranschlag</strong> — keine pauschalen Gesamtpreise ohne Aufschlüsselung. Friedhofsgebühren und Bestatterleistungen müssen getrennt ausgewiesen sein.</li>
+      <li><strong>Mitgliedschaft im Bundesverband Deutscher Bestatter (BDB)</strong> oder im Verband unabhängiger Bestatter (VUB) — beide haben verbindliche Berufsordnungen.</li>
+      <li><strong>Transparente Sarg-/Urnenkataloge</strong> mit Preisen — kein Druck zur teureren Variante „aus Pietätsgründen".</li>
+      <li><strong>Aufklärung zur NRW-Steinmetzpflicht (§ 4a BestG NRW):</strong> Bei Grabsteinen Nachweis verlangen, dass keine ausbeuterische Kinderarbeit verwendet wurde.</li>
+      <li><strong>Bereitschaft, Vergleichsangebote zu akzeptieren</strong> — seriöse Bestatter drängen nicht auf sofortige Vertragsunterzeichnung.</li>
+      <li><strong>Keine Bargeldforderungen</strong> bei Erstkontakt. Rechnung kommt nach Bestattung, Anzahlungen sind unüblich.</li>
+      <li><strong>Klare Kommunikation bei Sozialbestattung</strong> — wenn die Familie die Kosten nicht tragen kann, muss der Bestatter den Antrag beim Sozialamt aktiv unterstützen (siehe nächster Abschnitt).</li>
+    </ul>
+    <p>Holen Sie 2–3 Vergleichsangebote ein. Der Bundesgerichtshof und auch das BSG haben mehrfach klargestellt, dass Bestattungspflichtige in der Belastungssituation keine umfassende Marktrecherche schulden — aber zwei Angebote sind realistisch und schützen vor Übervorteilung.</p>
+  </div>
+
+=== MODUL 3: SOZIALBESTATTUNG ===
+
+ANCHOR: Direkt VOR der <div class="mr-sources">-Sektion:
+
+        <div class="faq-answer">Köln hat seit 1965 ... allen 55 Kölner Friedhöfen möglich.</div>
+      </details>
+    </div>
+  </div>
+
+  <div class="mr-sources">
+    <h2>Quellen & Weiterführende Informationen</h2>
+
+→ Insert NACH dem schließenden </div> des FAQ-Blocks, VOR <div class="mr-sources">.
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Köln — wenn das Geld fehlt</h2>
+    <p>Wenn weder Nachlass noch eigene Mittel der bestattungspflichtigen Angehörigen ausreichen, übernimmt das Sozialamt nach <strong>§ 74 SGB XII</strong> die <em>erforderlichen</em> Kosten einer einfachen, würdigen Bestattung. Voraussetzung: Sie sind nach Erbrecht (§ 1968 BGB), Unterhaltsrecht oder § 8 BestG NRW <strong>rechtlich verpflichtet</strong> — eine rein freundschaftliche oder „sittliche" Verpflichtung reicht nicht.</p>
+    <h3>Zuständig in Köln</h3>
+    <p><strong>Amt für Soziales, Arbeit und Senioren — Außenstelle Lindenthal</strong><br>
+    Aachener Straße 220 (Bürgeramt), 50931 Köln<br>
+    E-Mail: <a href="mailto:Sozialamt.Bestattungen@stadt-koeln.de">Sozialamt.Bestattungen@stadt-koeln.de</a><br>
+    Telefon-Zentrale: 115 oder 0221 221-0</p>
+    <p>Köln bündelt alle Bestattungskosten-Anträge zentral in der Außenstelle Lindenthal — unabhängig vom Wohnort innerhalb Kölns. Eine telefonische Voranmeldung vor Antragstellung ist von der Stadt ausdrücklich erwünscht. Antragsformular online über den Formular-Server der Stadt Köln.</p>
+    <h3>Was übernommen wird</h3>
+    <p>Die Stadt Köln hat mit der Bestatterinnung eine Pauschale für Bestatterleistungen vereinbart. Hinzu kommen die tatsächlichen Friedhofs- und Einäscherungsgebühren. <strong>Nicht übernommen</strong> werden Grabstein, Grabgestaltung, Todesanzeigen, Trauerkaffee oder Trauerbekleidung — das BSG hat diese Position mehrfach bestätigt (zuletzt <a href="https://www.bsg.bund.de/SharedDocs/Entscheidungen/DE/2023/2023_12_12_B_08_SO_20_22_R.html" rel="noopener" target="_blank">BSG, Urteil vom 12.12.2023, B 8 SO 20/22 R</a>; grundlegend BSG, 25.08.2011, B 8 SO 20/10 R und BSG, 04.04.2019, B 8 SO 10/18 R).</p>
+    <h3>Wichtig zum Antragszeitpunkt</h3>
+    <p>Der Antrag kann auch <strong>nach</strong> der Bestattung gestellt werden — er erlischt nicht durch die Vollziehung. Maßgeblich für die Zumutbarkeitsprüfung sind die wirtschaftlichen Verhältnisse zum Zeitpunkt der <strong>Fälligkeit der Bestatterrechnung</strong>, nicht zum Antragsdatum (BSG, B 8 SO 10/18 R). Wer beim Tod Grundsicherung nach SGB XII bezog, gilt regelmäßig als nicht zumutbar belastbar. Ein Sterbequartalsvorschuss aus der Rente ist zu 50 % auf den Bedarf anzurechnen.</p>
+  </div>
+
+Quellen (verifiziert 19.05.2026):
+
+Standesamt Köln: stadt-koeln.de/service/adressen/standesamt (Gülichplatz 1–3, 50667 Köln; Sterbefälle 0221 221-25560)
+Sozialamt Köln: stadt-koeln.de/service/produkte/00857/index.html (Außenstelle Lindenthal zentral zuständig)
+Adresse Sozialamt + E-Mail Sozialamt.Bestattungen@stadt-koeln.de: muelheimer-senioren.kompass.koeln (Aachener Str. 220, 50931 Köln)
+BSG-Az. B 8 SO 20/22 R (12.12.2023), B 8 SO 10/18 R (04.04.2019), B 8 SO 20/10 R (25.08.2011) — alle bsg.bund.de / dejure.org verifiziert
+§ 74 SGB XII, § 1968 BGB, § 8 BestG NRW — geltendes Recht.
