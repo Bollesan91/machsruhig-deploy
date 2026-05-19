@@ -1,0 +1,47 @@
+Ich fetche zuerst die Live-Version und verifiziere die Sozialamt-Daten.
+
+Ich fetche zuerst die Live-Version und verifiziere die Sozialamt-Daten.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/bochum/index.html
+
+Jetzt verifiziere ich das Sozialamt Bochum (korrekte Behördenbezeichnung, Adresse, Telefon, Mail).
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert. Behördenbezeichnung in Bochum ist "Amt für Soziales" (nicht "Sozialamt"), Standort Husemann Karree, Viktoriastraße 14c, 44777 Bochum, 5. OG. Servicezeiten und Telefon über Service-Center 0234 910-0. Hier der Insert-Plan:
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Eingefügt NACH dem "Bestattungskosten in Bochum"-Modul, VOR "Was nach einem Todesfall in Bochum zu tun ist". Exakter Anker:
+
+    <p>Hinzu kommen Kosten für Trauerhallennutzung und Beisetzung, ggf. Grabstein, Trauerdruck sowie laufende Grabpflege. Aufgrund der hohen Feuerbestattungsquote in Bochum (rund 80 Prozent nach Pressedarstellungen 2021, siehe oben) liegt das tatsächliche Median-Kostenniveau eher im Urnenbereich. Aeternitas und die <strong>Verbraucherzentrale NRW</strong> empfehlen vor Auftragserteilung mindestens drei schriftliche Kostenvoranschläge im direkten Vergleich, getrennt nach Bestatterleistungen, Friedhofs- und Fremdkosten. Eine Ratenzahlung der Friedhofsgebühren kann auf Antrag bei der Friedhofsverwaltung im Einzelfall geprüft werden.</p>
+  </div>
+
+→ Neues <div class="mr-section"> direkt NACH dem schließenden </div> dieses Blocks einfügen.
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Bochum: Kostenübernahme nach § 74 SGB XII</h2>
+    <p>Können die nach <a href="https://recht.nrw.de/lrgv/gesetz/19022022-gesetz-ueber-das-friedhofs-und-bestattungswesen-bestattungsgesetz-bestg-nrw" rel="noopener" target="_blank">§ 8 Abs. 1 BestG NRW</a> bestattungspflichtigen Angehörigen (Ehegatte/Lebenspartner, volljährige Kinder, Eltern, Großeltern, volljährige Geschwister, volljährige Enkelkinder) die Bestattungskosten nicht aus eigenen Mitteln und aus dem Nachlass der verstorbenen Person tragen, übernimmt das Sozialamt nach <strong>§ 74 SGB XII</strong> die <em>erforderlichen</em> Kosten der Bestattung. Maßgeblich ist die wirtschaftliche Zumutbarkeit für die bestattungspflichtige Person — nicht der Sozialhilfestatus der verstorbenen Person. Das Bundessozialgericht hat mit Urteil vom <strong>25.08.2011 (B 8 SO 20/10 R)</strong> klargestellt, dass die Prüfung der Zumutbarkeit individuell und unter Berücksichtigung der Einkommens- und Vermögensverhältnisse des Verpflichteten zu erfolgen hat — eine pauschale Ablehnung ist unzulässig.</p>
+
+    <h3>Zuständige Stelle: Amt für Soziales Bochum</h3>
+    <p>Zuständig ist in Bochum das <strong>Amt für Soziales</strong> der Stadt Bochum (nicht „Sozialamt" als Eigenname). Seit dem Umzug aus den früheren Standorten Diekampstraße, BVZ, Amtshaus Weitmar und Verwaltungsstelle Langendreer befindet sich das Amt im Husemann Karree:</p>
+    <p>Stadt Bochum — Amt für Soziales<br>
+    Husemann Karree (5. OG)<br>
+    Viktoriastraße 14c, 44777 Bochum<br>
+    Service-Center: 0234 910-0<br>
+    Schriftlich: <a href="https://www.bochum.de/Amt-fuer-Soziales" rel="noopener" target="_blank">Online-Kontaktformular der Stadt Bochum</a><br>
+    Servicezeit (telefonisch): Mo–Mi 8–16 Uhr, Do 8–17 Uhr, Fr 8–14 Uhr. Persönliche Vorsprache nur nach Terminvereinbarung.</p>
+
+    <h3>Was wird übernommen — und was nicht?</h3>
+    <p><strong>Übernommen werden</strong> die <em>erforderlichen</em> Kosten einer ortsüblich einfachen Bestattung: Sarg oder Urne in einfacher Ausführung, Überführung, hygienische Versorgung, Sterbeurkunden-Gebühren, einfache Friedhofsgebühren für ein Reihengrab, Trauerhallennutzung in einfachem Rahmen sowie Standardträger-Leistungen. <strong>Nicht übernommen</strong> werden in der Regel: aufwendiger Sarg, Trauerdruck und Anzeigen, Trauerredner, Blumenschmuck über das Notwendige hinaus, Grabstein, Wahlgrab anstelle eines Reihengrabs sowie laufende Grabpflege. Die Übernahme erfolgt nachrangig: Vorrangig sind Nachlass, Sterbegelder aus Versicherungen sowie Leistungen anderer Träger (z. B. Berufsgenossenschaft).</p>
+
+    <h3>Antrag möglichst vor Auftragsvergabe</h3>
+    <p>Der Antrag kann formlos beim Amt für Soziales gestellt werden — <strong>idealerweise vor Beauftragung des Bestatters</strong>, damit Art und Umfang der Bestattung im erstattungsfähigen Rahmen bleiben. Wer einen Premium-Bestatterauftrag erteilt und im Nachgang die Erstattung beantragt, riskiert, dass nur ein Teil als „erforderlich" anerkannt wird. Eine nachträgliche Antragstellung bleibt möglich (Ausschlussfrist: ein Jahr ab Kenntnis der Verpflichtung), ist aber risikoreicher. Mitzubringen sind: Sterbeurkunde, Kostenvoranschlag des Bestatters, Nachweise über Einkommen und Vermögen der antragstellenden Person sowie Nachlassübersicht der verstorbenen Person. Hinweis der <strong>Verbraucherzentrale NRW</strong>: Im Zweifel vor Auftragsvergabe kurz beim Amt für Soziales anrufen.</p>
+  </div>
+
+Hinweis: dateModified im JSON-LD auf 2026-05-19 setzen; FAQ-Block kann unverändert bleiben (Sozialbestattung nicht zwingend in FAQ — optional Sub-Frage „Wer trägt die Kosten, wenn Angehörige nicht zahlen können?" ergänzbar).
