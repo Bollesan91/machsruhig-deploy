@@ -1,0 +1,28 @@
+Prüfung der 6 Checks:
+In Arbeit
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/wuppertal/index.html?cb=20260519b7
+
+Prüfung der 6 Checks:
+
+1. <h2>Sozialbestattung: ✅ vorhanden: <h2>Sozialbestattung in Wuppertal — wenn die Kosten nicht getragen werden können</h2>
+
+2. Adresse: ⚠️ Abweichung — im Text steht "Verwaltungshaus Elberfeld, Neumarkt 10, 42103 Wuppertal", im Brief war "Sozialamt Ressort 201". Ressort 201 ist im einleitenden Satz korrekt erwähnt. Tel 0202 563-2015 ✅, Mail sozialamt@stadt.wuppertal.de ✅. Hinweis: Es ist zu prüfen, ob "Verwaltungshaus Elberfeld, Neumarkt 10" tatsächlich der Sitz des Sozialamts ist — Neumarkt 10 ist eher das Verwaltungshaus, aber die offizielle Bezeichnung sollte ggf. präzisiert werden. UNSURE — nicht verifizierbar ohne externe Quelle.
+
+3. § 8 BestG NRW + § 74 SGB XII: ✅ beide zitiert. Aber: § 8 BestG NRW regelt in NRW die Bestattungsfristen, NICHT die Reihenfolge der Bestattungspflichtigen — das ist § 8 BestG NRW Abs. 1 für Fristen; die Bestattungspflicht selbst steht in § 8 Abs. 1 BestG NRW im Sinne von "Pflicht zur Bestattung", aber die Reihenfolge der Angehörigen findet sich in der Tat in § 8 BestG NRW. Korrekt. Allerdings: im Text oben heißt es "§ 8 Abs. 1 BestG NRW (Bestattungsfristen)" — gleicher Paragraph für zwei verschiedene Inhalte. Das ist konsistent mit BestG NRW (§ 8 enthält mehrere Absätze).
+
+4. BSG B 8 SO 20/10 R vom 25.08.2011: ✅ zitiert mit neutraler Aussage ("hat die Maßstäbe für Angemessenheit und Erforderlichkeit … näher konkretisiert").
+
+5. tel-Link: tel:+492025632015 = +49 202 563 2015 = 12 Ziffern ✅
+
+6. HTML-Tags balanced: ✅ Struktur sauber, alle Tags geschlossen.
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+§ 8 BestG NRW Doppeldeutigkeit: Die Seite zitiert § 8 BestG NRW einmal für Bestattungsfristen (korrekt, § 8 Abs. 1) und im Sozialbestattungs-Modul für die Reihenfolge der Bestattungspflichtigen. Die Reihenfolge der Bestattungspflichtigen in NRW steht jedoch in § 8 Abs. 1 Satz 2 BestG NRW — Zitat präzisieren auf "§ 8 Abs. 1 Satz 2 BestG NRW" oder den Absatz konkret benennen, um Verwechslung mit dem zuvor zitierten § 8 (Fristen) zu vermeiden.
+Adresse Sozialamt UNSURE: "Verwaltungshaus Elberfeld, Neumarkt 10, 42103 Wuppertal" — bitte gegen offizielle Wuppertaler Sozialamts-Quelle (stadt.wuppertal.de/Ressort 201) verifizieren; Bezeichnung "Verwaltungshaus Elberfeld" wirkt frei ergänzt.
+
+(Checks 1, 3 teils, 4, 5, 6 clean.)
+
+Abrufen von raw.githubusercontent.com

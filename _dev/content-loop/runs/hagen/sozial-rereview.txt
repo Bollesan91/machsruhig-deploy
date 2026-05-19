@@ -1,0 +1,19 @@
+Ich fetche die Seite und verifiziere.
+
+Ich fetche die Seite und verifiziere.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/hagen/index.html?cb=20260519b7
+
+Verifikation der Punkte:
+
+✅ <h2>Sozialbestattung in Hagen: wenn die Kosten nicht getragen werden können</h2> vorhanden
+✅ Adresse: "Fachbereich Jugend und Soziales, Berliner Platz 22, 58089 Hagen", Tel 02331/207-3163, jugendsoziales@stadt-hagen.de — passt
+✅ § 8 Abs. 1 BestG NRW + § 74 SGB XII zitiert
+✅ BSG B 8 SO 20/10 R vom 25.08.2011 mit neutraler Aussage "ortsüblichen Mindeststandards … bescheidenen, aber nicht entwürdigenden Niveau"
+⚠️ tel-Link prüfen: +4923312073163 → Aufschlüsselung: +49 (Ländercode) + 2331 (Ortsvorwahl Hagen ohne führende 0) + 207 + 3163 = 4+3+4 = 11 Ziffern nach +49. Gesamt: +49 + 11 = "+4923312073163" hat 13 Zeichen inkl. +, also 12 Ziffern. Aufgabenstellung sagt "13 Stellen weil 02331+207+3163 = 12 domestic" — das ist intern widersprüchlich (12 domestic + Ersatz der 0 durch +49 → 13 Ziffern wären es nur, wenn 0 erhalten bliebe). Tatsächlich: 0 wird durch +49 ersetzt → 4+3+3+4 = 14 Ziffern? Nein: 49+2331+207+3163 = 2+4+3+4 = 13 Ziffern. Zählen wir das Tel-Attribut: +4923312073163 → 4-9-2-3-3-1-2-0-7-3-1-6-3 = 13 Ziffern. ✅ Korrekt.
+✅ HTML-Tags balanced: <section id="sozialbestattung"> öffnet, </section> schließt; <h2>, <h3>, <p>, <a>, <strong> alle ordentlich geschlossen.
+
+VERDICT: CLEAN
+
+Alle sechs Prüfpunkte erfüllt. Sozialbestattungsmodul ist korrekt eingefügt, Adresse und Kontaktdaten konsistent, Rechtsnormen (§ 8 Abs. 1 BestG NRW, § 74 SGB XII) und BSG-Urteil B 8 SO 20/10 R vom 25.08.2011 mit neutraler Aussage zu ortsüblichen Mindeststandards zitiert, tel-Link +4923312073163 korrekt (13 Ziffern: 49-2331-207-3163), HTML balanced.
