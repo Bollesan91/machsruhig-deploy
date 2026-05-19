@@ -1,0 +1,40 @@
+Ich hole erst die Datei und prüfe Anker + lokale Behördendaten.
+
+Ich hole erst die Datei und prüfe Anker + lokale Behördendaten.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/potsdam/index.html
+
+Jetzt prüfe ich die lokalen Behördendaten zum Sozialamt Potsdam.
+
+Web durchsucht
+Web durchsucht
+
+Alle Daten verifiziert. Behörde: Landeshauptstadt Potsdam, Fachbereich Soziales und Inklusion, AG Hilfe zur Pflege (zuständig für Bestattungskostenübernahme). Postanschrift Friedrich-Ebert-Str. 79/81, Besucheradresse Behlertstr. 3a. Telefon Sozialberatung 0331 289-2211. E-Mail hilfezurpflege@rathaus.potsdam.de. Brandenburg-Paragraph für Bestattungspflicht-Reihenfolge: § 20 BbgBestG (bereits im Recht-Block der Seite zitiert, also konsistent). BSG B 8 SO 20/10 R, 25.08.2011 verifiziert.
+
+Anker: Modul gehört thematisch zwischen Kostentabelle und Ablauf. Bester Insert-Punkt: direkt nach Schließung der #kosten-Section, vor #ablauf.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: </section> der Section id="kosten" — also nach der Zeile </section> die unmittelbar vor <section class="mr-section" id="ablauf"> steht. Einfügen direkt davor.
+
+INSERT-CODE:
+
+html
+<section class="mr-section" id="sozialbestattung">
+<h2>Sozialbestattung in Potsdam: Was tun, wenn das Geld fehlt?</h2>
+
+<p>Reichen Nachlass und eigene Mittel der bestattungspflichtigen Person nicht aus, übernimmt das Sozialamt nach § 74 SGB XII die <em>erforderlichen</em> Kosten einer einfachen, würdigen Bestattung. Erfasst sind in der Regel Sarg oder Urne, Überführung, Friedhofsgebühren für ein Reihengrab, einfache Trauerfeier und Trauerredner. Nicht erfasst sind Grabstein, Trauerkaffee oder repräsentative Ausstattung. Der Antrag muss <strong>vor</strong> Beauftragung des Bestatters gestellt werden, spätestens jedoch zeitnah – wer erst nach erfolgter Bestattung Rechnungen einreicht, riskiert eine Ablehnung wegen fehlender Mitwirkung.</p>
+
+<h3>Wer ist in Potsdam zuständig?</h3>
+
+<p>Zuständig ist die Landeshauptstadt Potsdam, Fachbereich Soziales und Inklusion, Arbeitsgruppe 3843 Hilfe zur Pflege und Bestattungskostenübernahme. Postanschrift: Friedrich-Ebert-Straße 79/81, 14469 Potsdam. Besucheradresse: Behlertstraße 3a, Haus M/N, 14467 Potsdam. Sozialberatung: <a href="tel:+493312892211">0331 289-2211</a>. E-Mail: <a href="mailto:hilfezurpflege@rathaus.potsdam.de">hilfezurpflege@rathaus.potsdam.de</a>. Die örtliche Zuständigkeit richtet sich nach dem Sterbeort, nicht dem Bestattungsort; hat die verstorbene Person zuletzt Sozialhilfe nach SGB XII bezogen, bleibt der bisherige Träger zuständig.</p>
+
+<h3>Wer muss den Antrag stellen?</h3>
+
+<p>Antragsberechtigt sind ausschließlich die nach § 20 Brandenburgisches Bestattungsgesetz bestattungspflichtigen Angehörigen in der dort vorgegebenen Reihenfolge – zuerst Ehe- oder eingetragene Lebenspartner, dann Kinder, Eltern, Geschwister, Enkelkinder, Großeltern, schließlich Personen aus einer dauerhaften nichtehelichen Lebensgemeinschaft. Bei mehreren Pflichtigen gleicher Stufe geht die ältere der jüngeren vor. Das Bundessozialgericht hat in seinem Urteil vom 25. August 2011 (Az. B 8 SO 20/10 R) entschieden, dass die Zumutbarkeit der Kostentragung anhand der wirtschaftlichen Leistungsfähigkeit jedes einzelnen Pflichtigen zu prüfen ist – auch ein zerrüttetes oder gar nicht bestehendes persönliches Verhältnis zur verstorbenen Person kann im Einzelfall zur Unzumutbarkeit führen.</p>
+
+<p>Mitzubringen oder einzureichen sind der Antrag auf Bestattungskostenübernahme nach § 74 SGB XII, Sterbeurkunde, Kostenvoranschlag des Bestatters, Nachweise zu Einkommen und Vermögen aller Pflichtigen sowie Belege zum Nachlass (Konten, Versicherungen, Sterbegeld). Das Antragsformular liegt online unter vv.potsdam.de bereit.</p>
+</section>
+
+Hinweise: dateModified im JSON-LD auf heutiges Datum aktualisieren. FAQ-Block optional um Frage „Wer zahlt die Bestattung, wenn das Geld fehlt?" erweitern (dann auch JSON-LD FAQPage spiegeln).

@@ -1,0 +1,43 @@
+Ich fetche die Seite und prüfe primärquellenrechtlich.
+
+Ich fetche die Seite und prüfe primärquellenrechtlich.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/bremen/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/bremen/index.html
+
+Primärquellenprüfung BremBestattG zur Bestattungspflicht-Reihenfolge:
+
+Web durchsucht
+Web durchsucht
+
+Wichtig: In Bremen ist die Bestattungspflicht im "Gesetz über das Leichenwesen" geregelt (§ 4 Abs. 1 Satz 1 Nr. 1), NICHT im BremBestattG! Bremen ist Sondertyp: alle Pflichtigen sind gleichrangig (nicht abgestuft). Lass mich das Sozialamt prüfen:
+
+Web durchsucht
+Web durchsucht
+
+Habe alles. Zentrale Adresse Amt für Soziale Dienste — kurz Telefon prüfen:
+
+Web durchsucht
+Web durchsucht
+
+Alles geprüft. Hier der präzise Insert-Plan:
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: <div class="mr-section"> direkt vor <h2>Bestatter-Wahl in Bremen</h2> (also nach dem schließenden </div> des "Was nach einem Todesfall in Bremen zu tun ist"-Sections, vor der Zeile <div class="mr-section"> mit dem H2 "Bestatter-Wahl in Bremen")
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung — wenn die Kosten nicht tragbar sind</h2>
+    <p>Wenn die zur Tragung der Bestattungskosten verpflichtete Person diese nicht oder nicht in voller Höhe aufbringen kann, übernimmt der Sozialhilfeträger nach <a href="https://www.sozialgesetzbuch-sgb.de/sgbxii/74.html" rel="noopener" target="_blank"><strong>§ 74 SGB XII</strong></a> die erforderlichen Kosten einer einfachen, würdevollen Bestattung. Maßstab ist die Zumutbarkeit: Geprüft werden Nachlass, Sterbegeldversicherungen, Bestattungsvorsorgeverträge sowie Einkommens- und Vermögensverhältnisse der pflichtigen Person. Erstattet werden Bestatter-Grundleistungen (Sarg/Urne, Überführung, einfacher Trauerfeier-Rahmen) und Friedhofsgebühren; nicht erstattet werden Bewirtung, aufwendiger Trauerdruck oder gehobene Sarg-/Grabausstattung.</p>
+    <h3>Bestattungspflicht in Bremen — die Bremer Besonderheit</h3>
+    <p>Anders als in den meisten Bundesländern regelt nicht das Bremische Friedhofs- und Bestattungsgesetz die Bestattungspflicht, sondern das <strong><a href="https://www.transparenz.bremen.de/" rel="noopener" target="_blank">Gesetz über das Leichenwesen</a></strong>. Nach <strong>§ 4 Abs. 1 Satz 1 Nr. 1</strong> dieses Gesetzes sind alle durch Eheschließung, eingetragene Lebenspartnerschaft, Abstammung, Schwägerschaft oder Lebensgemeinschaft verbundenen Angehörigen pflichtig — und zwar <strong>gleichrangig</strong>, ohne abgestufte Reihenfolge. Bremen ist damit bundesweit ein Sonderfall: Es kennt keine Rangfolge Ehegatte → Kinder → Eltern wie etwa Niedersachsen oder NRW. <strong>Großeltern und Enkelkinder sind in Bremen nicht bestattungspflichtig.</strong> Veranlassen die Angehörigen nicht innerhalb von zehn Tagen eine Bestattung, ordnet das Institut für Rechtsmedizin nach § 17 Abs. 2 Satz 2 des Gesetzes über das Leichenwesen eine Bestattung von Amts wegen an; die Kosten werden den Pflichtigen anschließend in Rechnung gestellt.</p>
+    <h3>Zuständig: Amt für Soziale Dienste Bremen</h3>
+    <p>Der Antrag auf Übernahme nach § 74 SGB XII ist an das <strong>Amt für Soziale Dienste der Stadtgemeinde Bremen</strong> zu richten — konkret an das Sozialzentrum, in dessen Bereich die verstorbene Person zuletzt gewohnt hat oder verstorben ist. Hatte sie zuletzt Sozialhilfe bezogen, ist der bisher leistende Träger zuständig. Eine starre Frist besteht nicht; ein Antrag kann auch nach erfolgter Bestattung gestellt werden, sollte aber im zeitlichen Zusammenhang erfolgen.</p>
+    <p><strong>Amt für Soziale Dienste Bremen</strong><br>Bahnhofsplatz 29, 28195 Bremen<br>Telefon: <a href="tel:+494213619730">0421 361 9730</a> (Zentrale Wirtschaftliche Hilfen)<br>E-Mail: <a href="mailto:office@afsd.bremen.de">office@afsd.bremen.de</a><br>Web: <a href="https://www.amtfuersozialedienste.bremen.de/" rel="noopener" target="_blank">amtfuersozialedienste.bremen.de</a></p>
+    <div class="mr-hint">
+      <strong>Höchstrichterlich geklärt:</strong> Nach Urteil des Bundessozialgerichts <a href="https://www.bsg.bund.de/" rel="noopener" target="_blank">B 8 SO 20/10 R vom 25.08.2011</a> umfasst der Anspruch nach § 74 SGB XII ausschließlich die <strong>erforderlichen</strong> Kosten einer einfachen, würdevollen Bestattung; Aufwendungen für gehobene Ausstattung oder Bewirtung der Trauergäste werden nicht erstattet. Das Erbe ist vorrangig einzusetzen.
+    </div>
+  </div>
