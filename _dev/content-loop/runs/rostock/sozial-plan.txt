@@ -1,0 +1,39 @@
+Jetzt prüfe ich die Primärquelle BestattG M-V für die Bestattungspflicht-Reihenfolge.
+In Arbeit
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/rostock/index.html
+
+Jetzt prüfe ich die Primärquelle BestattG M-V für die Bestattungspflicht-Reihenfolge.
+
+Abrufen von raw.githubusercontent.com
+Web durchsucht
+Web durchsucht
+
+Bestätigt: § 9 Abs. 2 BestattG M-V regelt die Reihenfolge (1. Ehegatte, 2. Lebenspartner, 3. Kinder, 4. Eltern, 5. Geschwister, 6. Großeltern, 7. Enkelkinder, 8. nichtehelicher Lebenspartner). § 9 Abs. 3 = Ordnungsbehörde bei Ausfall.
+
+Jetzt Sozialamt Rostock verifizieren:
+
+Web durchsucht
+Web durchsucht
+
+Alle Daten verifiziert. Tel-Link für Rostock: 0381 → +49 381. Sozialamt Rostock = Amt für Soziales und Teilhabe, Abteilung Sozialhilfe, St.-Georg-Straße 109, Haus II, 18055 Rostock, Tel. 0381 381-2520, E-Mail sozialamt@rostock.de.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Einfügen DIREKT NACH </section> von <section class="mr-section" id="kosten"> (Zeile mit </section> nach dem mr-note "Tipp"-Block), VOR <section class="mr-section" id="todesfall">.
+
+INSERT-CODE:
+
+html
+<section class="mr-section" id="sozialbestattung">
+  <h2>Sozialbestattung in Rostock: Wenn die Kosten nicht zu tragen sind</h2>
+  <p>Eine Bestattung kostet in Rostock je nach Bestattungsart und Grabwahl mehrere tausend Euro. Wer als Bestattungspflichtiger diese Kosten nicht aus eigenen Mitteln aufbringen kann, hat unter den Voraussetzungen des § 74 SGB XII einen Anspruch auf Übernahme der „erforderlichen Kosten“ durch den Sozialhilfeträger. Zuständig in der Hansestadt Rostock ist das Amt für Soziales und Teilhabe, Abteilung Sozialhilfe. Wichtig: Der Antrag sollte möglichst vor Auftragserteilung an das Bestattungsunternehmen gestellt werden – das verhindert spätere Streitfälle über die Erforderlichkeit einzelner Leistungspositionen.</p>
+
+  <h3>Wer ist bestattungspflichtig – und wer kostenpflichtig?</h3>
+  <p>§ 9 Absatz 2 BestattG M-V legt die öffentlich-rechtliche Bestattungspflicht der volljährigen Angehörigen in folgender Reihenfolge fest: 1. Ehegatte, 2. Lebenspartner, 3. Kinder, 4. Eltern, 5. Geschwister, 6. Großeltern, 7. Enkelkinder, 8. sonstiger Partner einer auf Dauer angelegten nichtehelichen Lebensgemeinschaft. Diese ordnungsrechtliche Pflicht – die Bestattung zu veranlassen – ist von der zivilrechtlichen Kostentragungspflicht (§ 1968 BGB für Erben, § 74 SGB XII für Hilfebedürftige) zu unterscheiden. Sind keine Bestattungspflichtigen vorhanden oder kommen sie ihrer Pflicht nicht nach, sorgt nach § 9 Absatz 3 BestattG M-V die örtliche Ordnungsbehörde am letzten Hauptwohnsitz ersatzweise für die Bestattung.</p>
+
+  <h3>Umfang der Kostenübernahme nach § 74 SGB XII</h3>
+  <p>Das Bundessozialgericht hat in seiner Entscheidung vom 25. August 2011 (Az. B 8 SO 20/10 R) den unbestimmten Rechtsbegriff der „erforderlichen Kosten“ konkretisiert: Übernahmefähig ist eine einfache, ortsübliche und würdige Bestattung. Nicht erforderlich sind in der Regel aufwendige Trauerfeiern, repräsentative Grabmale oder Wahlgrabstätten, wenn ein Reihengrab ausreichend wäre. Eigenes Einkommen und Vermögen des Bestattungspflichtigen sowie der Nachlass des Verstorbenen sind vorrangig einzusetzen. Lebensversicherungen, Sterbegeldversicherungen und Vermögen aus dem Nachlass mindern den Anspruch entsprechend.</p>
+
+  <h3>Antrag und Kontakt in Rostock</h3>
+  <p>Zuständig ist die Hanse- und Universitätsstadt Rostock, Amt für Soziales und Teilhabe, Abteilung Sozialhilfe, St.-Georg-Straße 109/Haus II, 18055 Rostock. Telefon: <a href="tel:+493813812520">0381 381-2520</a>, E-Mail: <a href="mailto:sozialamt@rostock.de">sozialamt@rostock.de</a>. Beizubringen sind in der Regel Sterbeurkunde, Kostenvoranschlag des Bestatters, Nachweise über Einkommen und Vermögen aller Bestattungspflichtigen, Nachlassaufstellung sowie ein Nachweis der Verwandtschaft. Die Frist zur Antragstellung ist nicht im Gesetz geregelt; die Rechtsprechung lässt aber regelmäßig nur Anträge zu, die in zeitlichem Zusammenhang mit dem Todesfall gestellt werden.</p>
+</section>

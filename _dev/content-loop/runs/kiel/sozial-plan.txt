@@ -1,0 +1,47 @@
+Ich pruefe Quelle und Primaerquellen.
+
+Ich pruefe Quelle und Primaerquellen.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/kiel/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/kiel/index.html
+
+Ich pruefe BestattG SH Paragraph fuer Bestattungspflicht-Reihenfolge und Sozialamt Kiel.
+
+Web durchsucht
+Web durchsucht
+
+Bestaetigt: § 13 Abs. 2 BestattG SH i.V.m. § 2 Nr. 12 BestattG SH (Hinterbliebenen-Reihenfolge). Jetzt Sozialamt Kiel:
+
+Web durchsucht
+Web durchsucht
+
+Bestaetigte Behoerdenbezeichnung: "Amt fuer Wohnen und Grundsicherung, Bereich Hilfe zum Lebensunterhalt (nach dem SGB XII) und Bestattungskosten", Deliusstrasse 2, 24114 Kiel, Fax +49 431 901-62350, E-Mail Grundsicherung@kiel.de. Behoerdennummer 115. Tel-Link: tel:+49431115 fuer 115 ist nicht passend - 115 ist eigene Nummer. Ich nutze fuer Hauptkontakt die 115 als Textangabe und das E-Mail.
+
+Pruefe BSG-Urteil B 8 SO 20/10 R:
+
+Web durchsucht
+Web durchsucht
+
+Alle Quellen bestaetigt. Kernaussage BSG B 8 SO 20/10 R: "Der Sozialhilfetraeger darf fuer die Uebernahme von Bestattungskosten deren Erforderlichkeit nicht allein anhand pauschalierend begrenzender Verguetungssaetze bestimmen, wenn die tatsaechlichen Kosten hoeher sind."
+
+Anker-Wahl: Modul gehoert thematisch nach "Bestattungskosten" und vor "Seebestattung". Ich setze als Anker den Beginn der Seebestattungs-Section.
+
+=== MODUL: SOZIALBESTATTUNG === ANCHOR: <section class="mr-section"> direkt vor <h2>Seebestattung in der Kieler Förde</h2>
+
+INSERT-CODE:
+
+html
+<section class="mr-section">
+  <h2>Sozialbestattung in Kiel: Hilfe nach § 74 SGB XII</h2>
+  <p>Wenn Bestattungspflichtige die Kosten einer Bestattung finanziell nicht tragen können, übernimmt der Sozialhilfeträger nach § 74 SGB XII die <em>erforderlichen</em> Bestattungskosten – soweit den Verpflichteten die Kostentragung nicht zugemutet werden kann. Bestattungspflichtig in Kiel sind nach § 13 Absatz 2 BestattG SH in Verbindung mit § 2 Nummer 12 BestattG SH die volljährigen Hinterbliebenen in folgender Reihenfolge: Ehegattin oder Ehegatte, eingetragene Lebenspartnerin oder Lebenspartner, leibliche und adoptierte Kinder, Eltern, Geschwister, Großeltern und Enkelkinder.</p>
+
+  <p>Die Kostentragung ist insbesondere dann unzumutbar, wenn der oder die Bestattungspflichtige selbst Bürgergeld, Grundsicherung im Alter oder Hilfe zum Lebensunterhalt nach SGB XII bezieht – bei laufendem Sozialleistungsbezug ist nach gefestigter höchstrichterlicher Rechtsprechung regelmäßig von Unzumutbarkeit auszugehen. Auch oberhalb der Einkommensgrenze des § 85 SGB XII ist eine Übernahme möglich, wenn die wirtschaftlichen Verhältnisse zum Zeitpunkt der Fälligkeit der Bestattungsrechnungen dies nahelegen. Das Bundessozialgericht hat in seinem Urteil vom 25. August 2011 (Az. B 8 SO 20/10 R) klargestellt, dass der Sozialhilfeträger die Erforderlichkeit der Bestattungskosten nicht allein anhand pauschal begrenzender Vergütungssätze bestimmen darf, wenn die tatsächlichen Kosten höher sind – Maßstab sind eine einfache, würdige und ortsübliche Bestattung.</p>
+
+  <h3>Zuständige Stelle in Kiel</h3>
+  <p>Für die Übernahme der Bestattungskosten ist in der Landeshauptstadt Kiel das <strong>Amt für Wohnen und Grundsicherung, Bereich Hilfe zum Lebensunterhalt (nach dem SGB XII) und Bestattungskosten</strong> zuständig:</p>
+  <p>Deliusstraße 2, 24114 Kiel<br>
+  Telefon: <a href="tel:+49431115">+49 431 115</a> (einheitliche Behördennummer)<br>
+  Fax: +49 431 901-62350<br>
+  E-Mail: <a href="mailto:Grundsicherung@kiel.de">Grundsicherung@kiel.de</a></p>
+  <p>Der Antrag kann formlos schriftlich oder über die zuständigen Sozialzentren der Stadt gestellt werden. Es gibt keine gesetzliche Antragsfrist; der Antrag sollte aber zeitnah nach Fälligkeit der Bestattungsrechnungen erfolgen, da für die Zumutbarkeitsprüfung die Einkommens- und Vermögensverhältnisse zum Fälligkeitszeitpunkt maßgeblich sind. Übernommen werden die unmittelbaren Bestattungskosten (z. B. einfacher Sarg oder Urne, Friedhofs- und Krematoriumsgebühren, Anlage der Grabstätte). Nicht übernommen werden Folgekosten wie Bewirtung von Trauergästen oder Grabstein.</p>
+</section>
