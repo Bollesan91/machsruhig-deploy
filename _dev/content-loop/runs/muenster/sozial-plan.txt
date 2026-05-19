@@ -1,0 +1,40 @@
+Ich fetche die Datei und prüfe die lokalen Behördendaten.
+
+Ich fetche die Datei und prüfe die lokalen Behördendaten.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/muenster/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/muenster/index.html
+
+Behördendaten Sozialamt Münster verifizieren:
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert. Sozialamt Münster (SG 56): Hafenstraße 8, 48153 Münster, Tel. 0251/492-5016, sozialamt-sg56@stadt-muenster.de.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: </div> der <div class="mr-section"> mit <h2>Vorsorge für die eigene Bestattung in Münster</h2> (also DIREKT vor <div class="mr-faq">)
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Münster — wenn die Kosten nicht selbst getragen werden können</h2>
+    <p>Reicht der Nachlass nicht aus und sind auch die bestattungspflichtigen Angehörigen finanziell nicht in der Lage, die Kosten zu tragen, übernimmt das <strong>Sozialamt der Stadt Münster</strong> nach <strong>§ 74 SGB XII</strong> die <em>erforderlichen</em> Bestattungskosten — also den ortsüblich angemessenen Rahmen einer einfachen, würdigen Bestattung. Die Stadt Münster hat dazu mit den örtlichen Bestattungsunternehmen pauschale Beträge für ein angemessenes ortsübliches Begräbnis vereinbart, sodass im Regelfall kein Eigenanteil anfällt, wenn die Voraussetzungen erfüllt sind. Wichtig: <strong>Den Antrag möglichst vor Beauftragung des Bestatters stellen</strong>, spätestens jedoch zeitnah nach der Bestattung.</p>
+
+    <h3>Wer ist antragsberechtigt?</h3>
+    <p>Antragsberechtigt ist die Person, die nach <strong>§ 8 Abs. 1 Satz 2 BestG NRW</strong> zur Bestattung verpflichtet ist — in der gesetzlichen Rangfolge Ehegatten, Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern und volljährige Enkelkinder. Vorrangig haften jedoch zivilrechtlich die Erben (§ 1968 BGB) und Unterhaltspflichtige; das Sozialamt prüft, ob aus dem Nachlass oder von vorrangig Verpflichteten Mittel verfügbar sind. Die örtliche Zuständigkeit richtet sich nach § 98 Abs. 3 SGB XII: bei laufendem Sozialhilfebezug der verstorbenen Person der bisherige Träger, sonst der Sterbeortträger.</p>
+
+    <h3>Höchstrichterliche Klärung: Erbausschlagung schließt Anspruch nicht aus</h3>
+    <p>Das <strong>Bundessozialgericht</strong> hat mit Urteil vom <strong>25. August 2011 (Az. B 8 SO 20/10 R)</strong> entschieden, dass die Verpflichtung zur Tragung der Bestattungskosten nicht zwingend an die Erbenstellung anknüpft. Auch wer das Erbe ausgeschlagen hat, aber landesrechtlich bestattungspflichtig bleibt, kann unter den Voraussetzungen des § 74 SGB XII einen Anspruch auf Kostenübernahme haben — die Zumutbarkeit der Eigenfinanzierung ist gesondert zu prüfen. Eine pauschale Ablehnung wegen Erbausschlagung ist damit nicht zulässig.</p>
+
+    <h3>Ansprechpartner Sozialamt Münster (SG 56)</h3>
+    <p><strong>Stadt Münster — Sozialamt, Sachgebiet 56 (Bestattungskosten)</strong><br>
+    Hafenstraße 8, 48153 Münster<br>
+    Telefon: <a href="tel:+492514925016">0251 492-5016</a><br>
+    E-Mail: <a href="mailto:sozialamt-sg56@stadt-muenster.de">sozialamt-sg56@stadt-muenster.de</a><br>
+    Antragsformular: <a href="https://www.stadt-muenster.de/sozialamt/weitere-leistungen" rel="noopener" target="_blank">stadt-muenster.de/sozialamt/weitere-leistungen</a></p>
+  </div>
+
+Wortzahl: ~340. Tel-Link +492514925016 korrekt (Vorwahl 0251 → 251, keine Extra-0).

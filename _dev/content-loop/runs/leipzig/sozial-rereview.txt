@@ -1,0 +1,61 @@
+Ich fetche die Seite und prüfe die Punkte.
+
+Ich fetche die Seite und prüfe die Punkte.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/leipzig/index.html?cb=20260519b8
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/leipzig/index.html?cb=20260519b8
+
+Prüfung der 6 Punkte:
+
+H2 vorhanden? ✅ <h2>Sozialbestattung in Leipzig — wenn die Kosten nicht tragbar sind</h2>
+Adresse korrekt? Prüfung der Behauptung: Sozialamt Leipzig, Prager Straße 21, 04103, Tel 0341 123-4400, Mail sozialamt@leipzig.de.
+Web durchsucht
+Web durchsucht
+
+Wichtige Befunde zur Adresse/Telefon:
+
+Adresse ✅ Prager Straße 21, 04103 Leipzig — bestätigt
+E-Mail sozialamt@leipzig.de — wird in einer Quelle (HTS Saxonia) genannt ✅
+Telefon: Die Behauptung „0341 123-4400" ist nicht belegbar. Offizielle Stadt-Leipzig-Quellen nennen für das Sozialamt zentral 0341 115 (Behördenruf), für „Wirtschaftliche Sozialhilfe" (die nach § 74 SGB XII zuständige Abteilung) 0341 123-4523. Die Nummer 123-4400 ist nicht auffindbar (nur 123-4000 für Schwerbehinderte). Das ist ein FAIL.
+§ 10 Abs. 3 SächsBestG + § 74 SGB XII zitiert? ✅ Beide werden im Sozialbestattungs-Modul genannt.
+BSG B 8 SO 20/10 R vom 25.08.2011 — Datum und Aussage prüfen:
+Web durchsucht
+Web durchsucht
+
+BSG-Urteil: Datum 25.08.2011 und Az B 8 SO 20/10 R bestätigt ✅. Aussage „Maßstäbe für ‚erforderliche' Kosten näher konkretisiert" ist neutral und korrekt ✅.
+
+tel-Link 12-stellig? tel:+493411234400 → +49 + 3411234400 = 13 Zeichen inkl. „+", die Ziffern allein sind 12 (nach „+"). Aber: die Nummer selbst (0341 123-4400) ist nicht verifiziert und höchstwahrscheinlich falsch (siehe Punkt 2). Mechanisch hat der tel-Link 12 Ziffern nach dem +, aber das ist irrelevant, wenn die Nummer nicht stimmt.
+§ 10 Abs. 3 SächsBestG — Bestattungspflicht-Rangfolge prüfen:
+Web durchsucht
+Web durchsucht
+
+Wichtige Befunde zu § 10 SächsBestG:
+
+Das Sozialbestattung-Modul zitiert „§ 10 Abs. 3 SächsBestG" für die Rangfolge der Bestattungspflichtigen. Das ist FALSCH:
+
+Die Rangfolge der Bestattungspflichtigen steht in § 10 Abs. 1 SächsBestG (Satz 2: „Als nächste Angehörige gelten in der Reihenfolge der Aufzählung…")
+§ 10 Abs. 3 SächsBestG regelt die Ersatzvornahme durch die Ortspolizeibehörde, wenn kein Bestattungspflichtiger ermittelbar ist — nicht die Rangfolge der Angehörigen
+
+Außerdem stimmt die Reihenfolge im Text nicht: der Text nennt „Ehegatten/Lebenspartner, dann volljährige Kinder, Eltern, Großeltern, volljährige Geschwister, Enkelkinder". Die korrekte Reihenfolge nach § 10 Abs. 1 SächsBestG ist: 1. Ehegatte/Lebenspartner, 2. volljährige Kinder, 3. Eltern, 4. volljährige Geschwister, 5. nichtehel. Lebenspartner, 6. Großeltern, 7. volljährige Enkelkinder (laut Pirna-Merkblatt). Reihenfolge ist also umgestellt.
+
+Weiter: HTML-Balance — schneller Check.
+
+2 Befehle ausgeführt
+2 Befehle ausgeführt
+
+Direkter curl ist nicht erlaubt — ich prüfe die Balance per Hand am Fetch-Ergebnis von oben.
+
+Running command
+Balance check für Sozialbestattung-Modul
+
+Sozialbestattung-Modul ist HTML-balanced ✅. tel-Link hat 12 Ziffern nach „+" ✅ (mechanisch korrekt).
+
+VERDICT: FAIL
+
+MUST-FIX-Liste:
+
+§-Zitat falsch — § 10 Abs. 3 SächsBestG zitiert für die Rangfolge der Bestattungspflichtigen. Korrekt ist § 10 Abs. 1 SächsBestG (Satz 2 nennt die Reihenfolge der Angehörigen). § 10 Abs. 3 regelt die Ersatzvornahme durch die Ortspolizeibehörde. Korrigieren auf „§ 10 Abs. 1 SächsBestG".
+Rangfolge der Angehörigen falsch wiedergegeben. Im Text steht: Ehegatte → Kinder → Eltern → Großeltern → Geschwister → Enkelkinder. Korrekt nach § 10 Abs. 1 SächsBestG: Ehegatte/Lebenspartner → volljährige Kinder → Eltern → volljährige Geschwister → nichtehel. Lebenspartner → Großeltern → volljährige Enkelkinder. Reihenfolge korrigieren. „Sonstige Sorgeberechtigte" streichen (kein Bestandteil der § 10 Abs. 1-Rangfolge).
+Telefonnummer 0341 123-4400 nicht belegbar. Stadt Leipzig führt für das Sozialamt zentral 0341 115 (Behördenruf); die für § 74 SGB XII zuständige Abteilung „Wirtschaftliche Sozialhilfe" hat 0341 123-4523. Die Durchwahl 123-4400 ist in offiziellen Quellen nicht auffindbar. Ersetzen durch 0341 123-4523 (Abt. Wirtschaftliche Sozialhilfe) oder 0341 115 und tel-Link entsprechend anpassen.
+
+(155 Wörter)

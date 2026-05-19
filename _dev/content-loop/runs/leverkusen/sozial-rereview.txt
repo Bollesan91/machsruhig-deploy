@@ -1,0 +1,19 @@
+Ich fetche die Seite und prüfe.
+
+Ich fetche die Seite und prüfe.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/leverkusen/index.html?cb=20260519b7
+
+Prüfung:
+
+H2 vorhanden: ✅ <h2 id="sozial-heading">Sozialbestattung in Leverkusen — wenn die Kosten nicht tragbar sind</h2>
+Adresse: ⚠️ Hauptstraße 119, 51373 Leverkusen-Wiesdorf ✅ / Tel 0214 406-50203 ✅ / Mail 502-soziale-leistungen@stadt.leverkusen.de ✅ / "FB Soziales, Abteilung 502 — Soziale Leistungen" ✅ / Standort seit 08.01.2026 ✅. Passt.
+§ 8 BestG NRW + § 74 SGB XII: ✅ beide explizit zitiert.
+BSG B 8 SO 20/10 R vom 25.08.2011: ✅ zitiert, Aussage neutral: "klargestellt, dass sich der Maßstab des „Erforderlichen" an den am Bestattungsort ortsüblichen Mindeststandards für eine würdige Bestattung orientiert." — Wiedergabe deckungsgleich mit Leitsatz, kein tendenziöses Framing.
+tel-Link: tel:+4921440650203 → +49 214 406 50203 → ohne + = 13 Ziffern ✅ (49 + 214 + 40650203). Korrekt.
+HTML balanced: Section sozial-heading sauber geöffnet/geschlossen, h2/h3/p/a-Tags alle paarig. ✅
+
+Zusatzcheck Recht: § 8 BestG NRW Reihenfolge — Gesetz nennt: Ehegatte/Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern, volljährige Enkelkinder. Im Modul identisch ✅.
+
+VERDICT: CLEAN

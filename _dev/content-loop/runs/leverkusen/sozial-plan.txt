@@ -1,0 +1,50 @@
+Ich hole die Seite und verifiziere die Sozialamt-Daten.
+
+Ich hole die Seite und verifiziere die Sozialamt-Daten.
+
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/leverkusen/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/leverkusen/index.html
+
+Sozialamt Leverkusen verifizieren.
+
+Web durchsucht
+Web durchsucht
+
+Ich brauche die genaue Adresse + Telefon des Sozialamts Leverkusen.
+
+Searching the web
+Web durchsucht
+
+Klare Lage: Fachbereich Soziales ist seit 8. Januar 2026 in der Hauptstraße 119 in Wiesdorf. Zentrale Nummer 0214 406-50001. Ich verifiziere noch die Sammel-E-Mail.
+
+Web durchsucht
+Web durchsucht
+
+Alle Daten verifiziert. Aktuelle Adresse (Stand Mai 2026): Hauptstraße 119, 51373 Leverkusen. Abteilung 502, E-Mail 502-soziale-leistungen@stadt.leverkusen.de. Zentrale Soziale Leistungen I: 0214 406-50203.
+
+Anchor-Bestimmung: Modul gehört thematisch zwischen "Bestattungskosten" und "Was nach einem Todesfall in Leverkusen zu tun ist" — die Kosten-Sektion endet mit der Bestatter-Vergleich-Empfehlung, danach passt das Sozialbestattungs-Modul als logische Brücke.
+
+Tel-Link-Format: +49 214 406 50203 → tel:+4921440650203
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Direkt VOR <section class="mr-section" aria-labelledby="todesfall-heading"> (Zeile mit <h2 id="todesfall-heading">Was nach einem Todesfall in Leverkusen zu tun ist</h2>)
+
+Konkret einfügen NACH dem schließenden </section> der Kosten-Sektion (Ende der Bestatter-Wahl-Liste? Nein — die Bestatter-Sektion ist eigene mr-section. Korrekt: NACH </section> der Kosten-Sektion aria-labelledby="kosten-heading", also direkt VOR <section class="mr-section" aria-labelledby="todesfall-heading">.
+
+INSERT-CODE:
+
+html
+<section class="mr-section" aria-labelledby="sozial-heading">
+  <h2 id="sozial-heading">Sozialbestattung in Leverkusen — wenn die Kosten nicht tragbar sind</h2>
+  <p>Bei Friedhofsgebühren, die in Leverkusen zu den höchsten in Nordrhein-Westfalen zählen, geraten kostentragungspflichtige Angehörige regelmäßig in finanzielle Überforderung. Für diese Fälle sieht § 74 SGB XII die Übernahme der erforderlichen Bestattungskosten durch das Sozialamt vor — soweit den Verpflichteten nicht zugemutet werden kann, die Kosten selbst zu tragen. Maßgeblich ist nicht die Bedürftigkeit der oder des Verstorbenen, sondern die wirtschaftliche Lage der Person, die nach § 8 BestG NRW zur Bestattung verpflichtet ist (Ehegatten, eingetragene Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern, volljährige Enkelkinder — in dieser Reihenfolge). Auch wer selbst keine Sozialhilfe bezieht, kann antragsberechtigt sein, wenn das eigene Einkommen und Vermögen die Kostentragung nicht zulässt.</p>
+
+  <h3>Zuständige Stelle in Leverkusen</h3>
+  <p>Anlaufstelle ist der Fachbereich Soziales der Stadt Leverkusen, Abteilung 502 — Soziale Leistungen, seit dem 8. Januar 2026 im neuen Zentralstandort Hauptstraße 119, 51373 Leverkusen-Wiesdorf. Telefonisch erreichbar unter <a href="tel:+4921440650203">0214 406-50203</a> (Soziale Leistungen I), E-Mail <a href="mailto:502-soziale-leistungen@stadt.leverkusen.de">502-soziale-leistungen@stadt.leverkusen.de</a>. Zuständig ist das Sozialamt, das der verstorbenen Person bis zum Tod Sozialhilfe gewährt hat; lag keine Sozialhilfe vor, ist das Sozialamt des Sterbeorts zuständig.</p>
+
+  <h3>Was übernommen wird — und was nicht</h3>
+  <p>Übernommen werden ausschließlich die <strong>erforderlichen Kosten einer einfachen und würdigen Bestattung</strong>: Sarg oder Urne in einfacher Ausführung, Überführung im Stadtgebiet, einfache Sargausstattung, Grabgebühr für ein Reihengrab nach städtischer Gebührensatzung, einfache Grabherstellung, Trauerredner oder einfache kirchliche Trauerfeier sowie eine Sterbeurkunde. Das Bundessozialgericht hat in seinem Urteil <strong>B 8 SO 20/10 R vom 25. August 2011</strong> klargestellt, dass sich der Maßstab des „Erforderlichen" an den am Bestattungsort ortsüblichen Mindeststandards für eine würdige Bestattung orientiert. Nicht übernommen werden in der Regel Wahlgrab- statt Reihengrabgebühren, Grabstein und Grabeinfassung, Trauerkaffee, Traueranzeigen, Blumenschmuck über das einfache Maß hinaus sowie Kosten der Grabpflege.</p>
+
+  <h3>Antragszeitpunkt</h3>
+  <p>Der Antrag sollte <strong>vor</strong> der Bestattung gestellt werden, ist nach der Bestattung aber innerhalb angemessener Frist (in der Verwaltungspraxis bis zu zwei Monate nach dem Todestag) ebenfalls möglich. Empfohlen wird, dem Bestattungsunternehmen die Antragstellung mitzuteilen — viele Leverkusener Bestatter rechnen bei vorliegender Kostenübernahmeerklärung direkt mit dem Sozialamt ab. Erforderlich sind unter anderem Sterbeurkunde, Kostenvoranschlag des Bestatters, Nachweise zu Einkommen und Vermögen der antragstellenden Person sowie Angaben zum Nachlass.</p>
+</section>

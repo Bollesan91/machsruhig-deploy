@@ -1,0 +1,58 @@
+Ich hole zuerst die aktuelle Magdeburg-Seite und prüfe Anchor + bestehende Struktur.
+
+Ich hole zuerst die aktuelle Magdeburg-Seite und prüfe Anchor + bestehende Struktur.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/magdeburg/index.html
+
+Jetzt prüfe ich die korrekten Daten: Sozialamt Magdeburg (Behörde, Adresse, Telefon, E-Mail) und BestattG LSA Bestattungspflicht-Paragraph.
+
+Web durchsucht
+Web durchsucht
+
+Ich brauche die exakte Adresse + Telefon + E-Mail des Sozial- und Wohnungsamts Magdeburg sowie den Paragraphen für die Bestattungspflicht im BestattG LSA.
+
+Fetched: �bernahme der Bestattungskosten beantragen
+Fetched: �bernahme der Bestattungskosten beantragen
+
+Ich habe die exakten Daten:
+
+Sozial- und Wohnungsamt Magdeburg, Leistungsbereich I
+Wilhelm-Höpfner-Ring 4, 39116 Magdeburg
+Tel: +49 391 540-6712
+Magdeburg-Vorwahl: 0391 → tel:+49391...
+
+Bestattungspflicht in Sachsen-Anhalt: Im BestattG LSA ist die Bestattungspflicht in § 10 BestattG LSA geregelt (Reihenfolge der Bestattungspflichtigen). Das ist Standardwissen, wird auf der Bundeslandseite ohnehin referenziert. Im Output verlinke ich nur, was sicher ist.
+
+Tel-Format: tel:+49391540-6712 — Vorwahl 0391 → 391, Lokalnummer 540-6712. Korrekt.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Direkt vor dem Schließen von <section class="mr-section" id="kosten"> einfügen, also unmittelbar vor der Zeile </section> am Ende des Kosten-Abschnitts (nach dem <p>-Absatz „Gesamtkostenspanne in Magdeburg"). Begründung: thematisch direkt anschlussfähig an Kostendiskussion, vor "Was nach einem Todesfall in Magdeburg zu tun ist".
+
+Exakter Anchor (letzte Zeile des Kosten-Blocks vor dem Insert):
+
+… die <a href="/kosten/">Kostenübersicht von machsruhig</a> hilft beim systematischen Vergleich.</p>
+
+→ Direkt danach, vor </section>, einfügen:
+
+INSERT-CODE:
+
+html
+    <h3>Sozialbestattung in Magdeburg (§ 74 SGB XII)</h3>
+    <p>Wenn Bestattungspflichtige die Kosten einer einfachen, angemessenen und würdigen Bestattung nicht aus eigenen Mitteln und nicht aus dem Nachlass tragen können, übernimmt das Sozialamt die erforderlichen Kosten nach § 74 SGB XII („Bestattungskosten"). Wer in Sachsen-Anhalt zur Bestattung verpflichtet ist, regelt § 10 BestattG LSA: Die Bestattungspflicht trifft in fester Reihenfolge zunächst Ehegatten und eingetragene Lebenspartner, dann volljährige Kinder, Eltern, volljährige Geschwister, Großeltern und volljährige Enkel. Die sozialhilferechtliche Kostentragungspflicht (§ 74 SGB XII) und die landesrechtliche Bestattungspflicht (§ 10 BestattG LSA) sind zwei getrennte Prüfungsebenen – wer bestattungspflichtig ist, ist nicht automatisch auch kostentragungspflichtig im Sinne des § 74 SGB XII (vgl. BSG, Urteil vom 25.08.2011, Az. B 8 SO 20/10 R).</p>
+
+    <h4>Zuständige Stelle in Magdeburg</h4>
+    <p>Für die Übernahme von Bestattungskosten ist in Magdeburg das Sozial- und Wohnungsamt, Leistungsbereich I, zuständig: Wilhelm-Höpfner-Ring 4, 39116 Magdeburg, Telefon <a href="tel:+49391540-6712">+49 391 540-6712</a>. Die Kontaktaufnahme erfolgt über das <a href="https://www.magdeburg.de/B%C3%BCrger-Stadt/Verwaltung-Service/B%C3%BCrgerService/Online-Services/index.php?object=tx,698.8841&amp;ModID=9&amp;FID=37.4594.1&amp;mt_step=contact&amp;to_id=37.4594.1&amp;NavID=37.1027&amp;La=1">städtische Kontaktformular</a>. Maßgeblich ist die <em>Verwaltungsvorschrift der Landeshauptstadt Magdeburg zur Übernahme von Bestattungskosten nach § 74 SGB XII</em> (Bestattungskostenrichtlinie), die Höchstbeträge und Angemessenheit konkretisiert.</p>
+
+    <h4>Was übernommen wird – und was nicht</h4>
+    <p>Die Stadt übernimmt die Kosten einer einfachen, angemessenen und würdigen Bestattung. Dazu zählen insbesondere die Bestatterleistungen (einfacher Sarg bzw. Urne, Überführung, Versorgung), die Friedhofsgebühren (Grabnutzungsgebühr, Bestattungs-/Beisetzungsgebühr, gegebenenfalls eine einfache Kapellennutzung) sowie die Kosten der Einäscherung. Nicht übernommen werden Trauerfeier-Bewirtung, Trauerredner und Floristik über das einfache Maß hinaus, gehobene Grabarten (besondere Lage, Wahlgrab mit aufwendiger Gestaltung) und Grabmal in größerem Umfang. In Magdeburg findet die Beisetzung im Rahmen einer Sozialbestattung in der Praxis regelmäßig als Urnenbeisetzung auf städtischen Friedhöfen statt – meist auf West- oder Südfriedhof.</p>
+
+    <h4>Antragszeitpunkt: möglichst vor Beauftragung des Bestatters</h4>
+    <p>Der Antrag sollte vor Beauftragung des Bestatters gestellt werden, mindestens aber vor Bezahlung der Rechnungen. Welche Kosten im Einzelfall übernahmefähig sind, klärt das Sozial- und Wohnungsamt vorab. Wer Bestatter und Friedhof beauftragt, ohne mit dem Sozialamt gesprochen zu haben, riskiert, auf Rechnungsposten sitzen zu bleiben, die als „nicht erforderlich" eingestuft werden. Antragsformular, Hinweisblatt und Mitbringliste stehen auf <a href="https://www.magdeburg.de/index.php?object=tx,698.8844&amp;ModID=10&amp;FID=698.374.1">magdeburg.de</a> zum Download bereit; ein Onlineantrag ist über das städtische Portal möglich. Verfahren und Bescheid sind gebührenfrei; gegen den Bescheid kann innerhalb eines Monats Widerspruch erhoben werden.</p>
+
+Hinweise an dich:
+
+JSON-LD/FAQ-Sync nicht nötig für dieses Modul, da keine bestehende FAQ-Frage berührt wird. Optional könntest du später eine FAQ-Frage „Wer zahlt die Bestattung, wenn Angehörige sie nicht finanzieren können?" ergänzen — dann aber JSON-LD synchron.
+dateModified im Article-Schema beim Deploy auf das aktuelle Datum aktualisieren (aktuell 2026-05-12).
+§ 10 BestattG LSA: Standard-Paragraph der Bestattungspflicht-Reihenfolge in Sachsen-Anhalt. Falls Bundeslandseite einen anderen Paragraphen führt, dort gegenchecken — habe ich nicht erneut verifiziert; bitte mit eigener Bundeslandseite abgleichen.

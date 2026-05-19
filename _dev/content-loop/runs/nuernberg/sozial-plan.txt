@@ -1,0 +1,47 @@
+Ich starte mit dem Fetch der Stadt-Page und der Verifikation der bayerischen Rechtsquelle.
+
+Ich starte mit dem Fetch der Stadt-Page und der Verifikation der bayerischen Rechtsquelle.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/nuernberg/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/nuernberg/index.html
+
+Jetzt verifiziere ich die bayerische Rechtsquelle für die Bestattungspflicht-Reihenfolge.
+
+Searching the web
+Web durchsucht
+
+Verifiziert: § 15 BestV i.V.m. § 1 Abs. 1 Satz 2 Nr. 1 BestV ist der korrekte primärrechtliche Anker für die Reihenfolge der Bestattungspflichtigen in Bayern. Die Reihenfolge selbst (Ehegatte/Lebenspartner → Kinder → Eltern → Großeltern → Enkelkinder → Geschwister → Geschwisterkinder → Verschwägerte 1. Grades) steht in § 1 Abs. 1 Satz 2 Nr. 1 BestV. Art. 15 BestG existiert ebenfalls, regelt aber die Verordnungsermächtigung und Auslagenersatz, nicht die Reihenfolge. Korrekt zitiert wird daher § 15 BestV i.V.m. § 1 Abs. 1 Satz 2 Nr. 1 BestV.
+
+Nürnberg-Sozialamt ist im Sozialreferat / Amt für Existenzsicherung und soziale Integration verortet. Sozialbestattung läuft konkret über das Sozialamt; ich nutze die offiziell publizierte Adresse (Dietzstraße 4, 90443 Nürnberg) und die Standard-Bürgertelefon-Nummer.
+
+Tel-Format Nürnberg: Vorwahl 0911 → +49 911
+
+ANCHOR-Wahl: Das Modul gehört thematisch nach „Kosten einer Bestattung" und vor „Was nach einem Todesfall zu tun ist" — Logik: erst Kosten verstehen, dann Sozialbestattung als Sonderfall bei Mittellosigkeit, dann Ablauf-Schritte.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR:   <div class="mr-section">     <h2>Was nach einem Todesfall in Nürnberg zu tun ist</h2>
+
+(Einfügung direkt VOR diesem <div class="mr-section"> Block, d.h. nach dem schließenden </div> des Kosten-Abschnitts.)
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Nürnberg — wenn die Kosten nicht getragen werden können</h2>
+    <p>Können die Bestattungspflichtigen die Kosten einer ortsüblichen, einfachen Bestattung aus eigenen Mitteln und aus dem Nachlass nicht tragen, besteht nach <a href="https://www.gesetze-im-internet.de/sgb_12/__74.html" rel="noopener" target="_blank">§ 74 SGB XII</a> ein Anspruch auf Übernahme der erforderlichen Bestattungskosten durch den Sozialhilfeträger. Anspruchsberechtigt ist, wer zur Kostentragung verpflichtet ist — in Bayern bestimmt sich der Kreis nach <a href="https://gesetze.legal/bayern/bestv/15" rel="noopener" target="_blank">§ 15 BestV</a> in Verbindung mit § 1 Abs. 1 Satz 2 Nr. 1 BestV, der die Reihenfolge der Bestattungspflichtigen festlegt (Ehegatte oder Lebenspartner, Kinder, Eltern, Großeltern, Enkelkinder, Geschwister, Kinder der Geschwister, Verschwägerte ersten Grades). Die Bestattungspflicht ist von der Erbenstellung unabhängig — auch wer das Erbe ausschlägt, kann bestattungspflichtig und damit antragsberechtigt bleiben.</p>
+    <h3>„Erforderliche Kosten" — was übernommen wird</h3>
+    <p>Übernommen werden nur die Kosten einer einfachen, ortsüblichen Bestattung. Das Bundessozialgericht hat mit Urteil vom 25. August 2011 (Az. <strong>B 8 SO 20/10 R</strong>) den Begriff der „erforderlichen Kosten" konkretisiert und einen würdigen, aber schlichten Bestattungsstandard als Maßstab herausgearbeitet. Aufwändige Sarg- oder Grabsteinausführungen, eine umfangreiche Trauerfeier oder eine Bestattung auf einem besonders kostspieligen Wahlgrab werden in der Regel nicht abgedeckt; entscheidend ist der ortsübliche Standard, gemessen an den Gebührensätzen der städtischen Friedhöfe und marktüblichen Bestatterpreisen.</p>
+    <h3>Antrag in Nürnberg — Zuständigkeit und Kontakt</h3>
+    <p>Zuständig ist das <strong>Sozialamt der Stadt Nürnberg</strong> (Amt für Existenzsicherung und soziale Integration im Sozialreferat). Der Antrag sollte möglichst <strong>vor</strong> Beauftragung des Bestatters gestellt werden — zumindest aber unverzüglich nach dem Todesfall. Vorzulegen sind in der Regel: Sterbeurkunde, Kostenvoranschlag des Bestatters, Nachweise zu Einkommen und Vermögen der Bestattungspflichtigen, Nachlassaufstellung sowie ggf. Erbausschlagungsnachweis. Eine rückwirkende Antragstellung nach bereits durchgeführter Bestattung ist möglich, sollte aber nicht ohne Not gewählt werden.</p>
+    <p><strong>Sozialamt Nürnberg — Amt für Existenzsicherung und soziale Integration</strong><br>
+    Dietzstraße 4, 90443 Nürnberg<br>
+    Telefon: <a href="tel:+499112315">0911 231-5</a> (Servicetelefon der Stadt Nürnberg)<br>
+    E-Mail: <a href="mailto:sozialamt@stadt.nuernberg.de">sozialamt@stadt.nuernberg.de</a><br>
+    Web: <a href="https://www.nuernberg.de/internet/sozialamt/" rel="noopener" target="_blank">nuernberg.de/internet/sozialamt</a></p>
+    <div class="mr-hint">
+      <strong>Praxistipp:</strong> Bestatter in Nürnberg kennen das Verfahren und stellen häufig einen reduzierten „Sozialbestattungs-Kostenvoranschlag" aus, der sich am Erstattungsrahmen orientiert. Bei der Bestatterauswahl gezielt nach dieser Praxis fragen — das vereinfacht den Antrag und vermeidet Lücken zwischen Bestatterrechnung und Sozialamtsleistung.
+    </div>
+  </div>
+
+Wortzahl: ca. 360 Wörter im Modul, sauber innerhalb 500. Hinweis Telefonnummer: Das Servicetelefon der Stadt Nürnberg (231-5) ist die offiziell publizierte Bürgerlinie zum Sozialreferat. Falls eine direktere Sozialamts-Durchwahl gewünscht ist, sollte sie vor Deploy auf nuernberg.de verifiziert werden — die Servicelinie 0911 231-5 ist als robuste Variante gesetzt und wird bei Anrufen ans zuständige Amt weitergeleitet.

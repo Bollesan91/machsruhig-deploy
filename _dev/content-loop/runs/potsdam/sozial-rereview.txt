@@ -1,0 +1,18 @@
+Ich fetche die Datei und prüfe.
+
+Ich fetche die Datei und prüfe.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/potsdam/index.html?cb=20260519b9
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/potsdam/index.html?cb=20260519b9
+
+Prüfung der 5 Punkte:
+
+✅ <h2>Sozialbestattung in Potsdam: Was tun, wenn das Geld fehlt?</h2> vorhanden
+✅ FB Soziales und Inklusion, AG 3843, Postanschrift Friedrich-Ebert-Str. 79/81, Besucheradresse Behlertstr. 3a Haus M/N, Tel 0331 289-2211, Mail hilfezurpflege@rathaus.potsdam.de — passt
+✅ § 74 SGB XII zitiert, § 20 BbgBestG zitiert (Reihenfolge der Bestattungspflichtigen)
+✅ BSG-Urteil B 8 SO 20/10 R neutral zitiert (Datum 25.08.2011 + Zumutbarkeit-Aussage)
+✅ HTML balanced: <section id="sozialbestattung"> öffnet → </section> schließt korrekt vor <section id="ablauf">. Alle <h3> und <p> sauber geschlossen.
+
+Hinweis (nicht MUST-FIX, da nicht im Prüfauftrag): Die Aussage zur örtlichen Zuständigkeit ("richtet sich nach dem Sterbeort") ist sachlich zumindest verkürzt — nach § 98 Abs. 3 SGB XII richtet sich die Zuständigkeit für Bestattungskosten primär nach dem Sterbeort der verstorbenen Person, das stimmt grundsätzlich. OK.
+
+VERDICT: CLEAN

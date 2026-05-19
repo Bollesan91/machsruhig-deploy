@@ -1,0 +1,41 @@
+Ich hole die Datei und prüfe die lokalen Behördendaten.
+
+Ich hole die Datei und prüfe die lokalen Behördendaten.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/hagen/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/hagen/index.html
+
+Ich verifiziere jetzt die Sozialamt-Hagen-Kontaktdaten.
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert: Fachbereich Jugend und Soziales, Berliner Platz 22, 58089 Hagen, Tel. 02331/207-3163 → tel:+4923312073163. E-Mail bestätige ich aus der offiziellen Stadt-Hagen-Domain — Standard ist soziales@stadt-hagen.de. Verifiziere kurz:
+
+Web durchsucht
+Web durchsucht
+
+Alle Daten verifiziert: Fachbereich Jugend und Soziales, Berliner Platz 22, 58089 Hagen, Tel. 02331/207-3163, jugendsoziales@stadt-hagen.de.
+
+Tel-Link: 02331/207-3163 → +49 2331 207 3163 → tel:+4923312073163 ✓
+
+Anker: Das Modul gehört thematisch zwischen "Kosten" und "Todesfall". Sauberster Insert-Punkt ist direkt nach dem </section> des Kosten-Blocks (Zeile mit </section> nach dem mr-callout zur Kostentransparenz), vor <section class="mr-section" id="todesfall">.
+
+=== MODUL: SOZIALBESTATTUNG === ANCHOR: <section class="mr-section" id="todesfall"> (Sozialbestattungs-Modul wird unmittelbar davor eingefügt — d.h. nach dem schließenden </section> des Kosten-Blocks)
+
+INSERT-CODE:
+
+html
+<section class="mr-section" id="sozialbestattung">
+<h2>Sozialbestattung in Hagen: wenn die Kosten nicht getragen werden können</h2>
+<p>Sind die Bestattungspflichtigen finanziell nicht in der Lage, eine Bestattung zu finanzieren, übernimmt das Sozialamt die erforderlichen Kosten — geregelt in <a href="https://www.gesetze-im-internet.de/sgb_12/__74.html">§ 74 SGB XII</a>. Voraussetzung ist, dass der nach § 8 Abs. 1 BestG NRW Bestattungspflichtige die Kosten nicht aus eigenen Mitteln und nicht aus dem Nachlass des Verstorbenen aufbringen kann und ihm die Übernahme nicht zuzumuten ist. Geprüft wird die individuelle Zumutbarkeit — nicht die schematische Bedürftigkeit; auch Personen ohne laufenden Sozialhilfebezug haben Anspruch, wenn die Bestattungskosten ihre wirtschaftliche Leistungsfähigkeit übersteigen würden.</p>
+
+<h3>Zuständige Stelle in Hagen</h3>
+<p>Anträge auf Übernahme der Bestattungskosten nimmt der Fachbereich Jugend und Soziales der Stadt Hagen entgegen, Berliner Platz 22, 58089 Hagen, Telefon <a href="tel:+4923312073163">02331/207-3163</a>, E-Mail <a href="mailto:jugendsoziales@stadt-hagen.de">jugendsoziales@stadt-hagen.de</a>. Telefonische Erreichbarkeit der Sachbearbeitung ist nach Angaben der Stadt Hagen werktags zwischen 8:30 und 9:30 Uhr.</p>
+
+<h3>Was übernommen wird — und was nicht</h3>
+<p>Übernommen werden nach § 74 SGB XII die <strong>erforderlichen</strong> Kosten einer ortsüblichen Bestattung in einfacher, würdiger Form. Das umfasst in der Praxis: Sarg oder Urne in einfacher Ausführung, Überführung, eine schlichte Trauerfeier, Friedhofsgebühren des Wirtschaftsbetriebs Hagen für ein Reihengrab sowie die Erstanlage des Grabes. Das Bundessozialgericht hat in seiner Rechtsprechung (u.a. <a href="https://www.bsg.bund.de/SharedDocs/Entscheidungen/DE/2011/2011_08_25_B_08_SO_20_10_R.html">BSG, Urteil vom 25.08.2011, B 8 SO 20/10 R</a>) klargestellt, dass sich der Erforderlichkeitsmaßstab an ortsüblichen Mindeststandards orientiert — also am bescheidenen, aber nicht entwürdigenden Niveau vor Ort. Nicht übernommen werden in der Regel: Trauerredner über das einfache Maß hinaus, aufwendige Blumendekoration, Trauerkaffee, Zeitungsanzeigen, Wahlgrabaufschläge gegenüber dem Reihengrab und die laufende Grabpflege nach der Erstanlage.</p>
+
+<h3>Antragszeitpunkt: möglichst vor Auftragserteilung</h3>
+<p>Der Antrag sollte nach Möglichkeit <strong>vor</strong> Auftragserteilung an den Bestatter gestellt werden — spätestens jedoch unverzüglich nach dem Todesfall. Eine spätere Antragstellung ist nicht ausgeschlossen, aber das Sozialamt prüft dann besonders sorgfältig, ob die in Auftrag gegebenen Leistungen das ortsüblich Erforderliche überschritten haben; übersteigende Beträge gehen zu Lasten des Antragstellers. Sinnvoll ist, bereits beim Erstgespräch mit dem Bestatter offen zu kommunizieren, dass eine Kostenübernahme nach § 74 SGB XII beantragt werden soll — viele Hagener Bestattungsunternehmen kennen das Verfahren und erstellen entsprechend angepasste Kostenvoranschläge.</p>
+</section>

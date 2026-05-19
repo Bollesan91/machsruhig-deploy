@@ -1,0 +1,39 @@
+Ich hole die Datei und verifiziere die Sozialamt-Daten.
+
+Ich hole die Datei und verifiziere die Sozialamt-Daten.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/wuppertal/index.html
+
+Jetzt verifiziere ich die Sozialamt-Daten Wuppertal:
+
+Web durchsucht
+Web durchsucht
+
+Ich brauche die konkrete Adresse des Wuppertaler Sozialamts:
+
+Searching the web
+Web durchsucht
+
+Alle Daten verifiziert. Stadt Wuppertal offiziell: Sozialamt (Ressort 201), Neumarkt 10, 42103 Wuppertal, Tel. 0202 563-2015, E-Mail: sozialamt@stadt.wuppertal.de. Jetzt suche ich den exakten Anker — die Sozialbestattung sollte logisch zwischen "Bestattungskosten in Wuppertal" und "Was nach einem Todesfall in Wuppertal zu tun ist" eingefügt werden.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Direkt VOR der Zeile <div class="mr-section"> die zur Section <h2>Was nach einem Todesfall in Wuppertal zu tun ist</h2> führt (also nach dem schließenden </div> des Kostenmoduls mit dem mr-hint-Kasten "Kostenfalle Grabpflege").
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Wuppertal — wenn die Kosten nicht getragen werden können</h2>
+    <p>Können bestattungspflichtige Angehörige die Kosten der Bestattung nicht aus eigenem Einkommen oder Vermögen aufbringen und ist der Nachlass des Verstorbenen aufgezehrt, besteht nach <strong>§ 74 SGB XII</strong> ein Anspruch auf Übernahme der erforderlichen Kosten durch den Sozialhilfeträger. Die Bestattungspflicht selbst ergibt sich in NRW aus <strong>§ 8 BestG NRW</strong>, der die Reihenfolge der bestattungspflichtigen Angehörigen (Ehegatte, eingetragener Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern, volljährige Enkel) festlegt. Bestattungspflicht und Kostentragungspflicht sind dabei rechtlich zu trennen — wer bestattungspflichtig ist, kann unabhängig davon einen Antrag auf Kostenübernahme stellen, wenn die Mittel fehlen.</p>
+
+    <h3>Zuständige Stelle in Wuppertal</h3>
+    <p>Zuständig für die Übernahme der Bestattungskosten nach § 74 SGB XII ist das <strong>Sozialamt der Stadt Wuppertal (Ressort 201 Soziales)</strong>, Verwaltungshaus Elberfeld, <strong>Neumarkt 10, 42103 Wuppertal</strong>, Telefon <a href="tel:+4920256320150">0202 563-2015</a>, E-Mail <a href="mailto:sozialamt@stadt.wuppertal.de">sozialamt@stadt.wuppertal.de</a>. Bezog die verstorbene Person zum Todeszeitpunkt bereits Sozialhilfeleistungen, ist die Dienststelle zuständig, die zuletzt Hilfe gewährt hat; in allen anderen Fällen das Sozialamt des Sterbeortes.</p>
+
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p>Übernommen werden die erforderlichen Kosten für eine <em>einfache, aber würdige, den ortsüblichen Verhältnissen entsprechende Bestattung</em>. Erstattungsfähig sind nur Aufwendungen, die unmittelbar der Bestattung selbst dienen — Sarg oder Urne in einfacher Ausführung, Überführung im Stadtgebiet, Grabnutzungsrecht für ein Reihengrab über die Ruhezeit, Beisetzungsgebühr, eine schlichte Trauerfeier am Grab. <strong>Nicht übernommen</strong> werden in aller Regel Grabstein und Einfassung, dauerhafte Grabpflege, Trauerdruck, Blumenschmuck über das übliche Maß hinaus, Trauerkaffee oder eine Erweiterung zum Wahlgrab. Das Sozialamt prüft vorrangig, ob der Nachlass die Kosten deckt; nur der ungedeckte Restbetrag wird übernommen. Die Bundessozialgerichts-Entscheidung <strong>B 8 SO 20/10 R vom 25.08.2011</strong> hat die Maßstäbe für Angemessenheit und Erforderlichkeit der erstattungsfähigen Kosten näher konkretisiert; im Einzelfall ist die jeweils aktuelle Verwaltungspraxis des zuständigen Trägers maßgeblich.</p>
+
+    <h3>Antragszeitpunkt</h3>
+    <p>Der Antrag auf Übernahme der Bestattungskosten ist <strong>möglichst vor Auftragserteilung an den Bestatter</strong> beim Sozialamt zu stellen — spätestens jedoch unverzüglich nach Bekanntwerden der Bestattungspflicht. Eine rückwirkende Übernahme bereits beglichener Rechnungen ist zwar nicht ausgeschlossen, in der Praxis aber an zusätzliche Nachweispflichten gebunden. Empfehlenswert ist, das ausgewählte Bestattungsunternehmen vorab über den geplanten Antrag zu informieren; die in Wuppertal ansässigen Bestatter kennen die geltenden Angemessenheitsgrenzen und können das Angebot entsprechend zuschneiden.</p>
+  </div>

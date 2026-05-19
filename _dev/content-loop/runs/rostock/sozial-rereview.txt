@@ -1,0 +1,18 @@
+Ich prüfe die Seite.
+
+Ich prüfe die Seite.
+
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/rostock/index.html?cb=20260519bA
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/rostock/index.html?cb=20260519bA
+
+VERDICT: CLEAN
+
+Begründung (knapp):
+
+✅ <h2>Sozialbestattung in Rostock: Wenn die Kosten nicht zu tragen sind</h2> vorhanden.
+✅ Amt für Soziales und Teilhabe, Abteilung Sozialhilfe; St.-Georg-Straße 109, Haus II, 18055 Rostock; Tel. 0381 381-2520; Mail sozialamt@rostock.de — alles korrekt im Block.
+✅ § 9 Abs. 2 BestattG M-V (Bestattungspflicht-Reihenfolge) und § 74 SGB XII (Kostenübernahme) beide zitiert. Zusätzlich § 9 Abs. 3 BestattG M-V (Ersatzvornahme) und § 1968 BGB sauber differenziert.
+✅ BSG-Urteil vom 25.08.2011, Az. B 8 SO 20/10 R neutral wiedergegeben: „erforderliche Kosten" = einfache, ortsübliche, würdige Bestattung; Nachlass/Einkommen vorrangig. Keine Wertung, keine Übertreibung.
+✅ HTML balanced: <section id="sozialbestattung"> öffnet, </section> schließt; alle inneren Tags (<h2>, <h3>, <p>, <strong>, <a>) korrekt geschlossen. Sauber zwischen #kosten und #todesfall eingebettet.
+
+Modul ist freigabefähig.

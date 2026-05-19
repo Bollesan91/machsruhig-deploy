@@ -1,0 +1,29 @@
+Ich fetche die Datei jetzt.
+
+Ich fetche die Datei jetzt.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/magdeburg/index.html?cb=20260519b8
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/magdeburg/index.html?cb=20260519b8
+
+Prüfung Punkt für Punkt:
+
+<h2>Sozialbestattung in Magdeburg ✅ vorhanden (<h2>Sozialbestattung in Magdeburg (§ 74 SGB XII)</h2>)
+Adresse Sozial- und Wohnungsamt: Soll laut Auftrag: Wilhelm-Hoepfner-Ring 4. Im HTML steht: Wilhelm-Höpfner-Ring 4, 39116 Magdeburg. PLZ + Tel 0391 540-6712 passen. Schreibweise mit „ö" vs. „oe" — beide Varianten sind im Magdeburger Sprachgebrauch belegt; „Wilhelm-Höpfner-Ring" ist die amtliche Schreibweise. ✅
+§ 10 BestattG LSA + § 74 SGB XII zitiert? ✅ beide explizit genannt (§ 74 SGB XII in Überschrift + Fließtext; § 10 BestattG LSA mit Reihenfolge der Bestattungspflichtigen). ⚠️ ABER: § 10 BestattG LSA regelt die Bestattungspflicht-Reihenfolge inhaltlich korrekt? Schnell-Check: BestattG LSA § 10 = „Bestattungspflicht" — ja, das ist der richtige Paragraph.
+BSG B 8 SO 20/10 R vom 25.08.2011? ✅ exakt so zitiert: „BSG, Urteil vom 25.08.2011, Az. B 8 SO 20/10 R".
+tel-Link: tel:+493915406712 — Zählung: +49 (2) 391 (3) 5406712 (7) = 12 Ziffern. Format +49 391 540 6712 → ohne führende 0 nach +49. ✅ Korrekt, keine extra-0.
+HTML balanced: Section <section class="mr-section" id="sozialbestattung"> öffnet, schließt mit </section>. Innere <h2>, <h3>, <p>, <strong>, <em>, <a> alle paarig. ✅
+
+Ein potenzielles MAJOR-Issue: Quellenliste enthält keine Quelle für das neue Sozialbestattungs-Modul (weder § 74 SGB XII, § 10 BestattG LSA, BSG-Urteil noch die Magdeburger Bestattungskostenrichtlinie). Bei YMYL-Inhalt mit Paragrafen-Zitaten und BGH/BSG-Urteil ist das ein Beleg-Defizit.
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+Quellen für Sozialbestattungs-Modul fehlen in der <aside class="mr-sources">-Liste. Ergänze mindestens:
+§ 74 SGB XII → https://www.gesetze-im-internet.de/sgb_12/__74.html
+§ 10 BestattG LSA → bestehender Landesrecht-Link reicht, aber konkrete Verlinkung auf § 10 wäre sauberer
+BSG, Urteil vom 25.08.2011, B 8 SO 20/10 R → https://www.bsg.bund.de/ Entscheidungsdatenbank oder Sozialgerichtsbarkeit
+Bestattungskostenrichtlinie der Landeshauptstadt Magdeburg (im Text als „Verwaltungsvorschrift" referenziert) → falls online verfügbar, verlinken; sonst Aussage „Bestattungskostenrichtlinie" entweder belegen oder zu „interne Verwaltungspraxis" abschwächen.
+
+Alles andere (Adresse, Telefon, Paragrafen, BSG-Aktenzeichen, HTML-Struktur, tel-Link-Format) ist CLEAN.
