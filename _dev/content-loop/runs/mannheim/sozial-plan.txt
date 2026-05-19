@@ -1,0 +1,42 @@
+Ich fetche die Live-Version und verifiziere die Mannheim-Daten.
+
+Ich fetche die Live-Version und verifiziere die Mannheim-Daten.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/mannheim/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/mannheim/index.html
+
+Jetzt verifiziere ich die Sozialamt-Adresse Mannheim.
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert: Fachbereich Arbeit und Soziales, K1, 7-13, 68159 Mannheim, Tel 0621 293-9218/-9219. Anker gewählt: Standesamt-Section direkt vor "Bestatter-Wahl" — thematisch sauberer Übergang.
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR (vor diesem Block einfügen — Modul kommt nach "Was nach einem Todesfall in Mannheim zu tun ist" und vor "Bestatter-Wahl in Mannheim"):
+
+  <div class="mr-section">
+    <h2>Bestatter-Wahl in Mannheim</h2>
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Mannheim — wenn die Kosten die Angehörigen überfordern</h2>
+    <p>Reicht das Vermögen der verstorbenen Person nicht aus und sind die nach <strong>§ 31 BestattG BW</strong> bestattungspflichtigen Angehörigen (Ehegatte/Lebenspartner, volljährige Kinder, Eltern, Großeltern, volljährige Geschwister, Enkelkinder — in dieser Reihenfolge) wirtschaftlich nicht in der Lage, die Kosten zu tragen, übernimmt der Sozialhilfeträger nach <a href="https://www.gesetze-im-internet.de/sgb_12/__74.html" rel="noopener" target="_blank">§ 74 SGB XII</a> die <strong>erforderlichen Kosten</strong> einer ortsüblichen, einfachen, aber würdevollen Bestattung. Maßstab ist die Zumutbarkeit: Das Bundessozialgericht hat mit Urteil vom <strong>25.08.2011 (Az. B 8 SO 20/10 R)</strong> klargestellt, dass die Übernahme nicht nur bei Mittellosigkeit, sondern bereits dann greift, wenn dem Verpflichteten nach seinen wirtschaftlichen Verhältnissen die Tragung nicht zugemutet werden kann — auch ein Erbausschlagungsfall entbindet von der Kostenpflicht nach § 1968 BGB, nicht aber von der ordnungsbehördlichen Bestattungspflicht nach BestattG BW.</p>
+    <h3>Zuständige Stelle in Mannheim</h3>
+    <p>Anlaufstelle für Sozialbestattungen ist der <strong>Fachbereich Arbeit und Soziales der Stadt Mannheim</strong> (Sozialamt):</p>
+    <p>Fachbereich Arbeit und Soziales<br>
+    K 1, 7–13<br>
+    68159 Mannheim<br>
+    Telefon: 0621 293-9218 / -9219<br>
+    Fax: 0621 293-3444<br>
+    E-Mail: <a href="mailto:arbeit.soziales@mannheim.de">arbeit.soziales@mannheim.de</a></p>
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p><strong>Übernommen werden</strong> die ortsüblichen Kosten einer einfachen Bestattung: Sarg oder Urne in einfacher Ausführung, hygienische Versorgung, Überführung, Sterbeurkunden, kommunale Friedhofsgebühren für ein Reihengrab nach der Mannheimer Gebührensatzung (z. B. 910 € für 15 Jahre Erdreihengrab), einfache Trauerfeier und Beisetzung. <strong>Nicht übernommen werden</strong> in der Regel Wahlgräber, aufwendige Grabmale, repräsentative Sargmodelle, Trauerredner-Honorare über dem ortsüblichen Niveau, Bewirtung, Traueranzeigen und Grabpflege. Vorrangig einzusetzen sind Nachlassvermögen, Sterbegeldversicherungen sowie Leistungen Dritter (z. B. Berufsgenossenschaft bei Arbeitsunfall).</p>
+    <h3>Antrag — Timing entscheidet</h3>
+    <p>Der Antrag ist <strong>vor Beauftragung des Bestatters</strong> oder unmittelbar danach zu stellen — spätestens jedoch vor Begleichung der Rechnung. Wer ohne Rücksprache eine kostspielige Bestattung beauftragt und erst anschließend Übernahme beantragt, riskiert, dass nur der ortsübliche Mindestbetrag erstattet wird. Mitzubringen sind Sterbeurkunde, Kostenvoranschlag des Bestatters, Nachweise zum Nachlass (Kontoauszüge, Versicherungspolicen) sowie Einkommens- und Vermögensnachweise der antragstellenden Person.</p>
+  </div>
+
+Wortzahl Modul: ~395 Wörter. Adresse/Tel/E-Mail Sozialamt Mannheim aus städtischem Branchenbuch bestätigt — keine UNSURE-Markierung nötig.
