@@ -1,0 +1,29 @@
+Ich fetche die Seite und liefere den Plan.
+
+Ich fetche die Seite und liefere den Plan.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/leipzig/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/leipzig/index.html
+
+Sozialamt Leipzig: Vorwahl 0341, Hauptnummer 123-4400 → tel:+493411234400. E-Mail sozialamt@leipzig.de. Anschrift: Prager Straße 21, 04103 Leipzig (Hauptverwaltung Sozialamt).
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Direkt VOR <div class="mr-faq"> (also nach dem Bestatter-Wahl-Modul, vor dem FAQ-Block) einfügen.
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Leipzig — wenn die Kosten nicht tragbar sind</h2>
+    <p>Reichen Nachlass und eigene Mittel der Bestattungspflichtigen nicht aus, kann das Sozialamt die <strong>erforderlichen Kosten der Bestattung</strong> nach <a href="https://www.gesetze-im-internet.de/sgb_12/__74.html" rel="noopener" target="_blank">§ 74 SGB XII</a> übernehmen. Voraussetzung ist, dass den Verpflichteten die Tragung der Kosten <strong>nicht zugemutet werden kann</strong>. Wer zur Bestattung verpflichtet ist, ergibt sich in Sachsen aus <strong><a href="https://www.revosax.sachsen.de/vorschrift/4526-Saechsisches-Bestattungsgesetz" rel="noopener" target="_blank">§ 10 Abs. 3 SächsBestG</a></strong>: in der dort genannten Rangfolge zunächst Ehegatten oder Lebenspartner, dann volljährige Kinder, Eltern, Großeltern, volljährige Geschwister, Enkelkinder und schließlich sonstige Sorgeberechtigte. Die Bestattungspflicht ist von der Kostentragungspflicht zu unterscheiden — sie kann auch dann bestehen, wenn § 74 SGB XII greift.</p>
+
+    <h3>Zuständige Stelle: Sozialamt der Stadt Leipzig</h3>
+    <p>Anträge auf Übernahme der Bestattungskosten richten Angehörige an das <strong>Sozialamt der Stadt Leipzig</strong>, Prager Straße 21, 04103 Leipzig. Telefonisch ist das Sozialamt über die zentrale Servicenummer <a href="tel:+493411234400">0341 123-4400</a> erreichbar, per E-Mail unter <a href="mailto:sozialamt@leipzig.de">sozialamt@leipzig.de</a>. Zuständig ist grundsätzlich das Sozialamt am letzten gewöhnlichen Aufenthaltsort des Verstorbenen; bei Versterben in Leipzig ist dies in aller Regel das Leipziger Sozialamt.</p>
+
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p>Übernommen werden nur die <strong>erforderlichen Kosten einer ortsüblichen, einfachen, aber würdigen Bestattung</strong>. Dazu zählen in der Regel ein einfacher Sarg oder eine schlichte Urne, hygienische Versorgung, Überführung im Stadtgebiet, Beisetzung in einem Reihen- oder Urnenreihengrab, Trauerhalle und Sterbeurkunden. <strong>Nicht übernommen</strong> werden in der Regel Wahlgrabstätten, Grabsteine und Grabeinfassungen, aufwendige Trauerfeiern, Blumenschmuck, Trauerdruck und Bewirtungen. Vor der Übernahme rechnet das Sozialamt vorhandenes <strong>Nachlassvermögen</strong>, Sterbegeldversicherungen und Leistungen Dritter gegen. Zur Frage, in welchem Umfang Nachlass einzusetzen ist, hat das <strong>Bundessozialgericht</strong> mit Urteil vom <strong>25. August 2011 (B 8 SO 20/10 R)</strong> Maßstäbe formuliert.</p>
+
+    <h3>Antragszeitpunkt — möglichst früh, spätestens parallel zur Beauftragung</h3>
+    <p>Der Antrag sollte <strong>möglichst vor der Beauftragung des Bestatters</strong> gestellt werden, spätestens aber zeitnah danach. Es gibt keine starre Antragsfrist, das Sozialamt prüft jedoch streng, ob die in Rechnung gestellten Positionen tatsächlich erforderlich und ortsüblich waren. Wer ohne Abstimmung eine aufwendigere Bestattung beauftragt, riskiert, auf den Mehrkosten sitzen zu bleiben. Bei der ersten Kontaktaufnahme mit dem Bestatter sollten Angehörige daher offen mitteilen, dass eine Kostenübernahme nach § 74 SGB XII beantragt werden soll — viele Leipziger Bestatter haben Erfahrung mit dem Sozialamt und gestalten das Angebot entsprechend.</p>
+  </div>
