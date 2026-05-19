@@ -1,0 +1,20 @@
+Ich fetche die Datei und prüfe.
+
+Ich fetche die Datei und prüfe.
+
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/bremen/index.html?cb=20260519b9
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/bremen/index.html?cb=20260519b9
+
+Prüfung Schritt für Schritt:
+
+<h2>Sozialbestattung in Bremen — ✅ vorhanden („Sozialbestattung in Bremen — wenn die Kosten nicht tragbar sind")
+Adresse: Bahnhofsplatz 29, 28195 Bremen, Tel 0421 361-9730, Mail office@afsd.bremen.de — ✅ exakt so im HTML
+Bremer Sonderfall:
+✅ NICHT BremBestattG, sondern „Gesetz über das Leichenwesen"
+✅ § 4 Abs. 1 Satz 1 Nr. 1 zitiert
+✅ „gleichrangig, ohne abgestufte Reihenfolge"
+✅ „Großeltern und Enkelkinder sind in Bremen nicht bestattungspflichtig"
+§ 74 SGB XII + BSG B 8 SO 20/10 R: ✅ beide vorhanden, neutral formuliert („erforderlichen Kosten einer einfachen, würdevollen Bestattung")
+HTML balanced: Quick-Scan der Sozialbestattung-Sektion — <div class="mr-section"> öffnet, schließt sauber vor nächstem <div class="mr-section"> der Bestatter-Wahl. <h2>/<h3>/<p>/<a>/<strong> alle korrekt geschlossen. Mail- und Tel-Links balanced. ✅
+
+VERDICT: CLEAN

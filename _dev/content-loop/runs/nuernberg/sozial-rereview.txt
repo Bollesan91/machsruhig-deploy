@@ -1,0 +1,20 @@
+Ich fetche die HTML.
+
+Ich fetche die HTML.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/nuernberg/index.html?cb=20260519b9
+
+Prüfung:
+
+<h2>Sozialbestattung in Nürnberg vorhanden? ✅ Ja: <h2>Sozialbestattung in Nürnberg — wenn die Kosten nicht getragen werden können</h2>
+Adresse Sozialamt Dietzstr. 4, 90443 NU, Tel 0911 231-5 — ✅ Steht so im HTML: "Dietzstraße 4, 90443 Nürnberg / Telefon: 0911 231-5". Plausibilitätscheck: Die zentrale Servicenummer der Stadt Nürnberg ist tatsächlich 0911 231-0 bzw. 231-Durchwahl. Das Sozialamt (Amt für Existenzsicherung und soziale Integration) hat seinen Sitz in der Dietzstraße 4, 90443 Nürnberg — passt.
+§ 15 BestV i.V.m. § 1 Abs. 1 Satz 2 Nr. 1 BestV (Bayern) + § 74 SGB XII — ⚠️ KRITISCHER FEHLER. Die Bestattungspflicht in Bayern ist NICHT in § 15 BestV geregelt. Die Reihenfolge der Bestattungspflichtigen steht in Art. 15 BestG (Bayerisches Bestattungsgesetz) bzw. in § 1 BestV für die Bestattungspflicht im engeren Sinne. § 15 BestV regelt etwas anderes (Beerdigungen). Die Konstruktion "§ 15 BestV i.V.m. § 1 Abs. 1 Satz 2 Nr. 1 BestV" ist juristisch inkorrekt — das wäre eine Selbstverweisung innerhalb derselben Verordnung. § 74 SGB XII ✅ korrekt.
+BSG B 8 SO 20/10 R neutral? ✅ Datum 25.08.2011 und Az. korrekt zitiert, neutral beschrieben.
+HTML balanced? ✅ Alle Tags sauber geschlossen.
+
+VERDICT: FAIL
+
+MUST-FIX (1): Falsche Paragraphenzitierung im Sozialbestattung-Modul. "§ 15 BestV i.V.m. § 1 Abs. 1 Satz 2 Nr. 1 BestV" ist juristisch inkorrekt (Selbstverweisung innerhalb derselben Verordnung; § 15 BestV regelt nicht die Bestattungspflicht-Reihenfolge). Die Reihenfolge der Bestattungspflichtigen in Bayern ergibt sich aus Art. 15 BestG (Bayerisches Bestattungsgesetz) — nicht aus der BestV. Zu ersetzen durch: "Art. 15 BestG" (mit Verlinkung auf gesetze-bayern.de/Content/Document/BayBestG-15). Die Aufzählung der Angehörigen-Reihenfolge bleibt inhaltlich korrekt, nur die Rechtsgrundlage muss umgestellt werden.
+
+(192 Wörter)
