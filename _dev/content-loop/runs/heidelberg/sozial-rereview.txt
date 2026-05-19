@@ -1,0 +1,23 @@
+Ich fetch die Seite und prüfe.
+
+Ich fetch die Seite und prüfe.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/heidelberg/index.html
+
+Prüfung:
+
+H2 Sozialbestattung: ✅ vorhanden ("Sozialbestattung in Heidelberg — wenn die Kosten nicht zu tragen sind")
+Adresse/Kontakt: ✅ Amt für Soziales und Senioren, Eppelheimer Straße 13, 69115 HD, sozialamt@heidelberg.de stimmt. ⚠️ Telefon-Anzeige "06221 58-37000" passt zur Vorgabe, ABER tel:-Link hat eine Null zu viel: tel:+49622158370000 (= 06221 58-370000). Inkonsistenz Anzeige vs. Link.
+§ 31 BestattG BW + § 74 SGB XII: ✅ beide korrekt zitiert. ⚠️ Aber: § 31 BestattG BW regelt in BW die Bestattungspflicht-Reihenfolge tatsächlich — Achtung: in BW steht die Reihenfolge primär in § 21 BestattVO BW, nicht im BestattG selbst. § 31 BestattG BW regelt nach gängiger Lesart eher Friedhofszwang/Aufbewahrung. Bitte gegenprüfen — möglicher Falschzitat.
+BSG-Urteil: ✅ B 8 SO 20/10 R vom 25.08.2011 ist real und thematisch einschlägig (Zumutbarkeit § 74 SGB XII).
+Tag-Balance: ✅ Geprüft per Auszählung — <section class="mr-section"> öffnen/schließen ausgeglichen, alle <article>, <div class="hidden-gem">, <aside> sauber geschlossen.
+Stadtkreis-Klarstellung: ✅ explizit drin ("Da Heidelberg ein Stadtkreis ist, ist nicht das Sozialamt des Rhein-Neckar-Kreises zuständig").
+Sonstige Funde: Inkonsistente Telefonnummer (siehe 2).
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+Telefon-Link korrigieren (Tippfehler, eine 0 zu viel): <a href="tel:+49622158370000"> → <a href="tel:+4962215837000"> Anzeigetext "06221 58-37000" bleibt korrekt.
+§ 31 BestattG BW verifizieren: In Baden-Württemberg ist die Reihenfolge der Bestattungspflichtigen in § 21 BestattVO BW (Bestattungsverordnung) geregelt, nicht im BestattG selbst. § 31 BestattG BW betrifft m.W. anderen Inhalt (Friedhofswesen/Bestattungspflicht-Träger). Bitte primärquellenrechtlich klären: Falls falsch → ersetzen durch korrekte Norm (vermutlich § 21 BestattVO BW i.V.m. § 31 BestattG BW), sonst bleibt das ein YMYL-Fehler an exponierter Stelle.
