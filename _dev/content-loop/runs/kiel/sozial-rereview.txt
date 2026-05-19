@@ -1,0 +1,15 @@
+Ich prüfe das Sozialbestattung-Modul für Kiel.
+
+Ich prüfe das Sozialbestattung-Modul für Kiel.
+
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/kiel/index.html?cb=20260519bA
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/kiel/index.html?cb=20260519bA
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+§-Zitat falsch: § 2 Nr. 12 BestattG SH existiert nicht. § 2 BestattG SH enthält Begriffsbestimmungen, aber keine Nr. 12 mit dem Angehörigenkatalog. Die Angehörigenrangfolge steht in § 13 Abs. 2 BestattG SH selbst (Ehegatte → eingetragene Lebenspartner → volljährige Kinder → Eltern → Geschwister → Großeltern → Enkelkinder). Korrektur: Verweis auf "§ 2 Nr. 12" streichen, nur § 13 Abs. 2 BestattG SH i.V.m. § 74 SGB XII zitieren.
+Strukturfehler: verschachtelte <section class="mr-section">. Das Sozialbestattung-Modul ist als innere <section> in eine äußere <section class="mr-section"> (Kosten-Block) gewickelt, aber die äußere </section> wird erst nach dem Seebestattungs-<h2> geschlossen. Dadurch steht "Seebestattung in der Kieler Förde" innerhalb des Sozialbestattung-Blocks. Korrektur: Äußere </section> vor dem inneren <section class="mr-section"> (Sozialbestattung) schließen, oder die innere Wrapper-<section> ganz entfernen und durch eine eigenständige <section class="mr-section"> für Sozialbestattung ersetzen.
+
+CLEAN-Punkte: Adresse Deliusstraße 2, 24114 Kiel ✓ · Tel 115 / Grundsicherung@kiel.de ✓ · § 74 SGB XII ✓ · BSG B 8 SO 20/10 R neutral zitiert ✓ · § 13 Abs. 2 BestattG SH korrekt.

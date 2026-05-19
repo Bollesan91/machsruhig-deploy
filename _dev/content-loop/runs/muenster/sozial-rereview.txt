@@ -1,0 +1,13 @@
+Prüfung Sozialbestattung-Modul Münster:
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/muenster/index.html?cb=20260519bA
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/muenster/index.html?cb=20260519bA
+
+Prüfung Sozialbestattung-Modul Münster:
+
+<h2>Sozialbestattung in Münster ✅ vorhanden ("Sozialbestattung in Münster — wenn die Kosten nicht selbst getragen werden können")
+Sozialamt SG 56, Hafenstr. 8, 48153 MS, Tel 0251 492-5016, Mail sozialamt-sg56@stadt-muenster.de ✅ vollständig korrekt zitiert (Hafenstraße 8, 48153 Münster, Tel 0251 492-5016, sozialamt-sg56@stadt-muenster.de)
+§ 8 Abs. 1 Satz 2 BestG NRW + § 74 SGB XII ✅ beide zitiert, zusätzlich § 1968 BGB und § 98 Abs. 3 SGB XII (sinnvolle Ergänzung)
+BSG B 8 SO 20/10 R neutral ✅ Urteil vom 25.08.2011, Aktenzeichen korrekt, neutral dargestellt ("Verpflichtung zur Tragung der Bestattungskosten nicht zwingend an die Erbenstellung anknüpft"; "Zumutbarkeit gesondert zu prüfen"). Kein Spin.
+HTML balanced ✅ <div class="mr-section"> öffnet, </div> schließt. Drei <h3> ordnungsgemäß ohne Auswirkung auf Container-Struktur. Modul liegt sauber vor <div class="mr-faq">.
+
+VERDICT: CLEAN
