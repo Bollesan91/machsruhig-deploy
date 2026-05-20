@@ -1,8 +1,51 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 20. Mai 2026 (FAQ-Schema-Drift-Sweep + Wuppertal-Gebühren + Comprehensive Sitewide Sweep)
-**Deploy-Status:** Branch `claude/start-ruhig-YetPT` gepusht (15 Commits), nicht in main gemerged — wartet auf Review/Deploy-Freigabe.
+**Datum:** 20. Mai 2026 (FAQ-Schema-Drift-Sweep + Wuppertal-Gebühren + Comprehensive Sitewide Sweep + Mehrstunden-Queue)
+**Deploy-Status:** Branch `claude/start-ruhig-YetPT` gepusht (20 Commits), nicht in main gemerged — wartet auf Review/Deploy-Freigabe.
+
+### Weitere Sweeps (Mehrstunden-Queue, Phase 21+)
+- **Bundesland → Stadt-Verlinkungs-Vollständigkeit**: Massive Crosslink-Lücke behoben. NRW verlinkte nur 8/19 Cities. 15 Bundesland-Pages bekamen einheitliche "Stadt-Profile in X"-Section mit allen relevanten Cities. Hessen `frankfurt-am-main` → `frankfurt` Tippo-Fix.
+- **rel="noopener" sitewide**: 357 externe Links bekamen `rel="noopener"` (Tabnabbing-Schutz). Vorher: 1.290 mit rel-Attribut, 357 ohne.
+- **Stuttgart-Footer-Bug**: bestatter/stuttgart/ endete abrupt ohne `</footer></body></html>`. Footer + closing-Tags aus Frankfurt übernommen.
+- **Robots-Meta-Standardisierung**: 11 Pages mit `index, follow` (Space) → `index,follow` (ohne Space) für Konsistenz.
+
+### Audit-Tools dieser Session (`_dev/audit/`)
+- `faq-schema-drift.py` — FAQ-Drift sitewide
+- `regenerate-faq-jsonld.py` — Surgical JSON-LD FAQPage-Replace
+- `module-heatmap-v2.py` — 6-Module-Audit pro Stadt-Page
+- `sitewide-health.py` — konsolidiertes Audit (JSON-LD/Assets/OG/Schema-Refs/Hygiene)
+
+### Final Sitewide-Health-Check
+- 0 broken JSON-LD über 101 Pages
+- 0 broken Asset-Pfade (CSS, JS, Fonts, Images)
+- 0 broken og:image, 0 missing twitter:card
+- 0 unresolved Schema.org @id-Refs
+- 0 unclosed HTML-Tags (Stuttgart gefixt)
+- 0 doppelte IDs pro Page, 0 doppelte Sitemap-URLs
+- 0 DRIFT zwischen JSON-LD FAQPage und HTML-FAQ-Block (86/86 CLEAN)
+- 8 hygiene-issues bleiben (React-CSR-Tools, bekannt)
+
+### 20 Commits dieser Session (chronologisch)
+1. `22e3d16` audit-Tool FAQ-Schema-Drift
+2. `9fabc2d` FAQ-JSON-LD aus HTML regeneriert (39 Cities)
+3. `514ddc2` Umlaut-Duplikate + Darmstadt-Markup
+4. `98f8df1` Wuppertal Friedhofsgebühren offizielle Sätze
+5. `e2bf34d` FAQ-Drift sitewide (Bundesland+Vorsorge+Tools)
+6. `90a79df` 17 broken Internal Links
+7. `7900ce3` OG-Image sitewide + 2 Canonical-Bugs
+8. `d146667` SESSION-NOTES + Modul-Heatmap V2
+9. `b56c0ad` Asset-Cleanup (Aachen+Darmstadt Style-Transfer)
+10. `d1ab8b6` Twitter-Cards sitewide + Berlin/Hub Schema
+11. `c6101dc` Quellen-Sections (4 Cities)
+12. `c12a9e4` Sitemap Priority+lastmod + noopener-Fix
+13. `61a940b` Frankfurt+Köln Kosten-Section
+14. `d49f3d1` Kostenrechner-CTA 50 Stadt-Pages
+15. `d693ca7` SESSION-NOTES + sitewide-health.py
+16. `ed5bc4a` BL→Stadt-Crosslinks (15 BL erweitert)
+17. `f72c365` rel="noopener" sitewide (357 Links)
+18. `ac7be0d` Stuttgart Footer-Bug-Fix
+19. `5b9b477` Robots-Meta-Standardisierung
 
 ## Was wurde gemacht (Session 20.05.2026 — Mega-Sweep)
 
