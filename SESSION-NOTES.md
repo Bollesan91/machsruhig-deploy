@@ -1,8 +1,83 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 20. Mai 2026 (FAQ-Schema-Drift-Sweep sitewide + Wuppertal-Gebühren + Sitewide-Audit-Aufräumen)
-**Deploy-Status:** Branch `claude/start-ruhig-YetPT` gepusht (6 Commits), nicht in main gemerged — wartet auf Review/Deploy-Freigabe.
+**Datum:** 20. Mai 2026 (FAQ-Schema-Drift-Sweep + Wuppertal-Gebühren + Comprehensive Sitewide Sweep)
+**Deploy-Status:** Branch `claude/start-ruhig-YetPT` gepusht (15 Commits), nicht in main gemerged — wartet auf Review/Deploy-Freigabe.
+
+## Was wurde gemacht (Session 20.05.2026 — Mega-Sweep)
+
+### Stream A: FAQ-Schema-Drift + JSON-LD-Hygiene sitewide
+Siehe Detail unten — 4 Commits, 0 DRIFT sitewide.
+
+### Stream B: Sitewide-Audit-Aufräumen (von User autorisierte Mehrstunden-Queue)
+
+**Asset-Cleanup (Commit `b56c0ad`):**
+- **Aachen + Darmstadt komplett ungestylet** — referenzierten broken `/assets/css/main.css`. Inline-Style aus Dortmund (71%/35% Class-Coverage) übertragen, broken Refs entfernt.
+- 15 weitere Pages mit broken Font-/CSS-Pfaden: 26 WOFF-Pfade auf existierende Font-Files (`/fonts/dm-sans-latin-wght-normal.woff2`, `fraunces-latin-wght-normal.woff2`) gemappt, 13 nicht-existente `<link>`-Refs entfernt.
+- Audit-Resultat: 0 broken Asset-Pfade sitewide.
+
+**Twitter-Cards + Schema-Lücken (Commit `d1ab8b6`):**
+- 80 Pages bekamen `twitter:card`/`twitter:title`/`twitter:description`/`twitter:image` (aus `og:*`-Werten abgeleitet).
+- Berlin Schema-Erweiterung: hatte nur Service+BreadcrumbList+FAQPage+Organization → ergänzt um WebPage+Article+City-Node mit `@id`.
+- Bestatter-Hub (`bestatter/index.html`): JSON-LD-Schema erstellt (CollectionPage+BreadcrumbList), Bundesland-Link-Block von 7/16 auf 16/16 mit korrekten Umlaut-URLs.
+- Noindex-Cities (luebeck+moenchengladbach): Bundesland-Backlink ergänzt.
+
+**Modul-Lücken (Commits `c6101dc` + `61a940b`):**
+- 4 Cities (essen, gelsenkirchen, hagen NRW; braunschweig NI) bekamen Quellen-Section ergänzt — Standard-Bundesland-Gesetze + bestehende externe Links aus dem Body extrahiert.
+- Frankfurt + Köln Bestattungskosten-Section gebaut aus FAQ-Daten — beide hatten konkrete Kostendaten nur im FAQ.
+- Heatmap-V2-Regex robuster: erfasst "Nach einem Todesfall in X" (Akut), "Kosten einer Bestattung in X" (Kosten), "Quellen und weiterführende Informationen" (Quellen).
+
+**Endstand Modul-Heatmap (`_dev/audit/module-heatmap-v2.md`):**
+- akut: 50/52 ✓ (2 noindex)
+- kosten: **52/52** ✓
+- bestwahl: **52/52** ✓
+- sozial: 47/52 (3 echte Lücken: mainz, saarbrücken, wiesbaden — lokale Recherche nötig)
+- faq: **52/52** ✓
+- quellen: 50/52 ✓ (2 noindex)
+
+**Sitemap + Hygiene (Commit `c12a9e4`):**
+- 16 Bundesland-Pages priority `0.6` → `0.7` (Authority-Hubs, Backlog-Item).
+- `/ueber-uns` + `/methodik` `0.5/0.6` → `0.8` (YMYL-Trust-Pages).
+- 47 URLs lastmod-Sync auf dateModified-Wert ihrer JSON-LD-Pages.
+- 1 Sicherheits-Issue: `vorsorge/patientenverfuegung` Afilio-CTA → `rel="noopener noreferrer"`.
+- 1 Schema-Bug: `bestatter/braunschweig` hatte 12× `www.machsruhig.de` statt `machsruhig.de` (Konsistenz mit allen anderen Pages).
+
+**Kostenrechner-CTA (Commit `d49f3d1`):**
+- Backlog-Item: einheitliche CTA-Box in alle 50 indexierten Stadt-Pages eingefügt (mr-hint-Variante, warm-Akzent), zwischen Kosten- und Quellen-Section.
+- Plus 16 Bundesland-Pages mit gleicher CTA-Box.
+- Insert-Pattern surgical: 3 unterschiedliche Quellen-Wrapper-Stile unterstützt.
+
+### Audit-Tooling konsolidiert (`_dev/audit/`)
+
+Neue Skripte dieser Session:
+- `faq-schema-drift.py` — FAQ-Drift-Audit über alle Page-Bereiche, 3 Markup-Stile.
+- `regenerate-faq-jsonld.py` — Surgical JSON-LD FAQPage-Replace (format-preserving via `JSONDecoder.raw_decode`).
+- `module-heatmap-v2.py` — 6-Module-Audit pro Stadt-Page, flexible Header-Regex.
+- `sitewide-health.py` — konsolidiertes Audit (JSON-LD, Assets, OG, Schema-Refs, HTML-Hygiene).
+
+### Sitewide-Health (Endstand)
+
+| Check | Status |
+|---|---|
+| JSON-LD-Validität (101 Pages) | **0 broken** |
+| Asset-Pfade (CSS, JS, Fonts, Images) | **0 broken** |
+| og:image-Existenz | **0 broken** |
+| twitter:card (bei Pages mit og:url) | **0 missing** |
+| Schema.org @id-Referenz-Konsistenz | **0 unresolved** |
+| HTML-Hygiene (h1, alt, noopener) | 8 hygiene-issues (alle React-CSR-Tools) |
+| FAQ-Schema-Drift sitewide | **0 DRIFT** (86/86 CLEAN, 7 NO_HTML CSR-Tools) |
+
+### Offene Folge-Tickets (dokumentiert)
+
+- **7 React-CSR-Tools** mit Schema-ohne-HTML (FAQPage gerendert per JS) — Architektur-Frage SSR-Migration.
+- **22 verbleibende broken internal links** — Policy: Page anlegen vs Link entfernen (Offenbach, Herne, Recklinghausen, Heilbronn, /ratgeber/-Hub, etc.).
+- **3 Cities ohne Sozialbestattung-Modul**: mainz, saarbrücken, wiesbaden (lokale Sozialamt-Recherche nötig).
+- **17 zu lange Titles (>70 Z) + 48 zu lange Descriptions (>170 Z)** — Per-Page-Content-Editing.
+- **Stadt-spezifische OG-Images** (~50 Cities) — Image-Generation.
+- **Luebeck/Mönchengladbach Lead-Sprache** — strategische Entscheidung, noindex bleibt vorerst.
+- **Frankfurt/Köln Sozialbestattung-Block** — vorhanden, aber strukturell anders als andere Cities. Optionaler Refactor.
+- **Darmstadt eigenes Template** — Inline-Style aus Dortmund deckt nur ~35% der Darmstadt-eigenen Classes ab.
+- **GPTBot/anthropic-ai in robots.txt** — Policy-Frage AI-Crawler-Allow vs Disallow.
 
 ## Was wurde gemacht (Session 20.05.2026)
 
