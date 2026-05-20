@@ -40,8 +40,7 @@ MODULE_PATTERNS = {
         r"<h2[^>]*>[^<]*(?:FAQ|Häufig|H&auml;ufig|Häufige Fragen|Fragen zur|Häufig gestellte)",
     ],
     "quellen": [
-        r"<h2[^>]*>\s*Quellen\s*</h2>",
-        r"<h2[^>]*>[^<]*(?:Quellen|Belege|Referenzen)\s*</h2>",
+        r"<h2[^>]*>[^<]*(?:Quellen|Belege|Referenzen)",
     ],
 }
 
