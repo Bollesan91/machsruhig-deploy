@@ -645,44 +645,69 @@
   {
     "city": "darmstadt",
     "ld_count": 7,
-    "html_count": 0,
+    "html_count": 7,
     "ld": [
       {
         "q": "Wie viele Friedhöfe gibt es in Darmstadt?",
-        "a": "Die Stadt Darmstadt verwaltet sechs kommunale Friedhöfe (Alter Friedhof, Bessunger Friedhof, Waldfriedhof, Eberstädter Friedhof, Arheilger Friedhof, Friedhof Wixhausen) sowie den Jüdischen Friedhof in Bessungen. Verwaltungsstelle ist das Grünflächen- und Umweltamt in der Bessunger Straße 125."
+        "a": "Die Stadt Darmstadt verwaltet sechs kommunale Friedhöfe: den Alten Friedhof (Herdweg 105), den Bessunger Friedhof (Heinrichwingertsweg 72), den Waldfriedhof (Am Waldfriedhof 25), den Eberstädter Friedhof (Palisadenstraße 5–7), den Arheilger Friedhof (Weiterstädter Str. 46) und den Friedhof Wixhausen (Auwiesenweg 18). Hinzu kommt der Jüdische Friedhof in der Martinstraße 133. Verwaltungsstelle für alle kommunalen Friedhöfe ist das Grünflächen- und Umweltamt in der Bessunger Straße 125."
       },
       {
         "q": "Wie lange ist die Bestattungsfrist in Hessen?",
-        "a": "Nach Pressemitteilung der Hessischen Staatskanzlei vom 30. September 2025 hat der Hessische Landtag eine Novellierung des Friedhofs- und Bestattungsgesetzes beschlossen, die die Höchstfrist für die Bestattung von vier auf zehn Tage verlängern soll; die Mindestfrist von 48 Stunden bleibt erhalten (§ 16 FBG Hessen). Da das Inkrafttreten der Novelle (Veröffentlichung im GVBl. Hessen) zum Redaktionsstand dieser Seite nicht zweifelsfrei belegt war, sollte die im konkreten Sterbefall geltende Frist mit der Friedhofsverwaltung Darmstadt abgestimmt werden."
+        "a": "Nach Pressemitteilung der Hessischen Staatskanzlei vom 30. September 2025 hat der Hessische Landtag eine Novellierung des hessischen Friedhofs- und Bestattungsgesetzes beschlossen, die die Höchstfrist für die Bestattung von vier auf zehn Tage verlängern soll; die Mindestfrist von 48 Stunden bleibt erhalten (§ 16 FBG Hessen). Da das Inkrafttreten der Novelle (Veröffentlichung im GVBl. Hessen) zum Redaktionsstand dieser Seite nicht zweifelsfrei belegt war, sollte die im konkreten Sterbefall maßgebliche Frist mit der Friedhofsverwaltung Darmstadt abgestimmt werden."
       },
       {
         "q": "Was kostet eine Urnenbeisetzung auf einem Darmstädter Friedhof?",
-        "a": "Die reine Beisetzungsgebühr für eine Urne auf den kommunalen Friedhöfen in Darmstadt liegt im niedrigen dreistelligen Bereich; hinzu kommen das Grabnutzungsrecht für 20 Jahre, Bestatterleistungen, Kremation, Urne und Sterbeurkunden. Gesamtkosten für eine Urnenbeisetzung mit Grab in Darmstadt liegen erfahrungsgemäß zwischen rund 2.500 und 5.500 Euro. Verbindliche Einzelbeträge regelt die jeweils aktuelle Gebührensatzung der Wissenschaftsstadt Darmstadt, die über das Grünflächen- und Umweltamt einsehbar ist."
+        "a": "Die reine Beisetzungsgebühr für eine Urne auf den kommunalen Friedhöfen in Darmstadt liegt im niedrigen dreistelligen Bereich. Das Grabnutzungsrecht für 20 Jahre bewegt sich je nach Grabart vom mittleren dreistelligen bis in den niedrigen vierstelligen Bereich. Hinzu kommen Bestatter, Kremation, Urne und Sterbeurkunden. Gesamtkosten liegen erfahrungsgemäß zwischen etwa 2.500 € (anonym) und 5.500 € (mit Grab und Trauerfeier). Verbindliche Einzelbeträge regelt die jeweils aktuelle Gebührensatzung der Wissenschaftsstadt Darmstadt."
       },
       {
-        "q": "Wer übernimmt in Darmstadt die Bestattungskosten, wenn das Geld fehlt?",
-        "a": "Wenn die bestattungspflichtigen Angehörigen finanziell nicht in der Lage sind, die Bestattung zu tragen, kann bei der Sozialverwaltung der Wissenschaftsstadt Darmstadt ein Antrag auf Übernahme der erforderlichen Bestattungskosten nach § 74 SGB XII gestellt werden. Antragsweg läuft über das Digitale Rathaus Darmstadt; das Standesamt (Sterbefälle: 06151-13-2763) leitet im Bedarfsfall die Bestattung parallel ein."
+        "q": "Wer übernimmt die Bestattungskosten, wenn das Geld fehlt?",
+        "a": "Bei nachgewiesener Mittellosigkeit übernimmt die Sozialverwaltung der Wissenschaftsstadt Darmstadt nach § 74 SGB XII die erforderlichen Kosten. Antrag im Digitalen Rathaus Darmstadt; das Standesamt (Hauptkontakt Sterbefälle: 06151-13-2763) leitet bei Bedarf parallel eine ordnungsbehördliche Bestattung ein, damit die Bestattungsfrist eingehalten wird. Bestattungspflichtig sind in Hessen Ehepartner, Kinder, Eltern, Geschwister, Großeltern und Enkelkinder — ohne Rangfolge."
       },
       {
         "q": "Wo wird der Sterbefall in Darmstadt beurkundet?",
-        "a": "Zuständig ist das Standesamt Darmstadt im Alten Rathaus am Marktplatz, sofern der Sterbeort in der Gemarkung Darmstadt liegt. Eine Sterbeurkunde kostet 12 Euro, jede weitere zeitgleich ausgestellte Urkunde 6 Euro; Urkunden für Renten- oder Sozialzwecke sind gebührenfrei."
+        "a": "Zuständig ist das Standesamt Darmstadt im Alten Rathaus am Marktplatz, sofern der Sterbeort in der Gemarkung Darmstadt liegt. Erste Sterbeurkunde 12 €, jede weitere zeitgleich ausgestellte 6 €; Sterbeurkunden für Renten- und Sozialversicherung sind gebührenfrei. Hauptkontakt Sterbefälle: 06151-13-2763."
       },
       {
         "q": "Sind Baumbestattungen in Darmstadt möglich?",
-        "a": "Ja. Auf dem Waldfriedhof betreibt die Stadt den „Friedpark”, in dem Urnen an den Wurzeln von Bestattungsbäumen beigesetzt werden — möglich als Urnenreihengrab, Urnenwahlgrab und sogar als Erdwahlgrab am Baum. Die Urne muss biologisch abbaubar sein. Im Umland bestehen FriedWälder in Mühltal, Michelstadt und Dietzenbach sowie der Ruheforst Erbach. Auf dem Eberstädter Friedhof werden im Trauerwald-Bereich seit November 2024 keine neuen Grabstätten mehr verkauft."
+        "a": "Ja. Auf dem Waldfriedhof betreibt die Stadt den „Friedpark\", in dem Urnen an den Wurzeln von Bestattungsbäumen beigesetzt werden — möglich als Urnenreihengrab, Urnenwahlgrab und sogar als Erdwahlgrab am Baum. Die Urne muss biologisch abbaubar sein. Im Umland bestehen FriedWälder in Mühltal, Michelstadt und Dietzenbach sowie der Ruheforst Erbach. Auf dem Eberstädter Friedhof werden im Trauerwald-Bereich seit November 2024 keine neuen Grabstätten mehr verkauft."
       },
       {
         "q": "Gibt es in Darmstadt ein Krematorium?",
-        "a": "Ja. Das städtische Krematorium befindet sich auf dem Waldfriedhof und wurde 1913/14 als erstes Gebäude des Friedhofs errichtet. Es zählt zu den älteren kommunalen Krematorien in Hessen; das erste deutsche Krematorium wurde bereits 1878 in Gotha errichtet."
+        "a": "Ja. Das städtische Krematorium befindet sich auf dem Waldfriedhof und wurde 1913/14 als erstes Gebäude des Friedhofs errichtet. Es zählt zu den älteren kommunalen Krematorien in Hessen — das erste deutsche Krematorium wurde bereits 1878 in Gotha errichtet, sodass die Darmstädter Anlage zwar früh in Hessen, im bundesweiten Vergleich aber im Mittelfeld der Gründungswelle steht."
       }
     ],
-    "html": [],
-    "issues": [
+    "html": [
       {
-        "type": "NO_HTML"
+        "q": "Wie viele Friedhöfe gibt es in Darmstadt?",
+        "a": "<p>Die Stadt Darmstadt verwaltet sechs kommunale Friedhöfe: den Alten Friedhof (Herdweg 105), den Bessunger Friedhof (Heinrichwingertsweg 72), den Waldfriedhof (Am Waldfriedhof 25), den Eberstädter Friedhof (Palisadenstraße 5–7), den Arheilger Friedhof (Weiterstädter Str. 46) und den Friedhof Wixhausen (Auwiesenweg 18). Hinzu kommt der Jüdische Friedhof in der Martinstraße 133. Verwaltungsstelle für alle kommunalen Friedhöfe ist das Grünflächen- und Umweltamt in der Bessunger Straße 125.</p>"
+      },
+      {
+        "q": "Wie lange ist die Bestattungsfrist in Hessen?",
+        "a": "<p>Nach Pressemitteilung der Hessischen Staatskanzlei vom 30. September 2025 hat der Hessische Landtag eine Novellierung des hessischen Friedhofs- und Bestattungsgesetzes beschlossen, die die Höchstfrist für die Bestattung von vier auf zehn Tage verlängern soll; die Mindestfrist von 48 Stunden bleibt erhalten (§ 16 FBG Hessen). Da das Inkrafttreten der Novelle (Veröffentlichung im GVBl. Hessen) zum Redaktionsstand dieser Seite nicht zweifelsfrei belegt war, sollte die im konkreten Sterbefall maßgebliche Frist mit der Friedhofsverwaltung Darmstadt abgestimmt werden.</p>"
+      },
+      {
+        "q": "Was kostet eine Urnenbeisetzung auf einem Darmstädter Friedhof?",
+        "a": "<p>Die reine Beisetzungsgebühr für eine Urne auf den kommunalen Friedhöfen in Darmstadt liegt im niedrigen dreistelligen Bereich. Das Grabnutzungsrecht für 20 Jahre bewegt sich je nach Grabart vom mittleren dreistelligen bis in den niedrigen vierstelligen Bereich. Hinzu kommen Bestatter, Kremation, Urne und Sterbeurkunden. Gesamtkosten liegen erfahrungsgemäß zwischen etwa 2.500 € (anonym) und 5.500 € (mit Grab und Trauerfeier). Verbindliche Einzelbeträge regelt die jeweils aktuelle Gebührensatzung der Wissenschaftsstadt Darmstadt.</p>"
+      },
+      {
+        "q": "Wer übernimmt die Bestattungskosten, wenn das Geld fehlt?",
+        "a": "<p>Bei nachgewiesener Mittellosigkeit übernimmt die Sozialverwaltung der Wissenschaftsstadt Darmstadt nach § 74 SGB XII die erforderlichen Kosten. Antrag im Digitalen Rathaus Darmstadt; das Standesamt (Hauptkontakt Sterbefälle: 06151-13-2763) leitet bei Bedarf parallel eine ordnungsbehördliche Bestattung ein, damit die Bestattungsfrist eingehalten wird. Bestattungspflichtig sind in Hessen Ehepartner, Kinder, Eltern, Geschwister, Großeltern und Enkelkinder — ohne Rangfolge.</p>"
+      },
+      {
+        "q": "Wo wird der Sterbefall in Darmstadt beurkundet?",
+        "a": "<p>Zuständig ist das Standesamt Darmstadt im Alten Rathaus am Marktplatz, sofern der Sterbeort in der Gemarkung Darmstadt liegt. Erste Sterbeurkunde 12 €, jede weitere zeitgleich ausgestellte 6 €; Sterbeurkunden für Renten- und Sozialversicherung sind gebührenfrei. Hauptkontakt Sterbefälle: 06151-13-2763.</p>"
+      },
+      {
+        "q": "Sind Baumbestattungen in Darmstadt möglich?",
+        "a": "<p>Ja. Auf dem Waldfriedhof betreibt die Stadt den „Friedpark\", in dem Urnen an den Wurzeln von Bestattungsbäumen beigesetzt werden — möglich als Urnenreihengrab, Urnenwahlgrab und sogar als Erdwahlgrab am Baum. Die Urne muss biologisch abbaubar sein. Im Umland bestehen FriedWälder in Mühltal, Michelstadt und Dietzenbach sowie der Ruheforst Erbach. Auf dem Eberstädter Friedhof werden im Trauerwald-Bereich seit November 2024 keine neuen Grabstätten mehr verkauft.</p>"
+      },
+      {
+        "q": "Gibt es in Darmstadt ein Krematorium?",
+        "a": "<p>Ja. Das städtische Krematorium befindet sich auf dem Waldfriedhof und wurde 1913/14 als erstes Gebäude des Friedhofs errichtet. Es zählt zu den älteren kommunalen Krematorien in Hessen — das erste deutsche Krematorium wurde bereits 1878 in Gotha errichtet, sodass die Darmstädter Anlage zwar früh in Hessen, im bundesweiten Vergleich aber im Mittelfeld der Gründungswelle steht.</p>"
       }
     ],
-    "status": "NO_HTML"
+    "issues": [],
+    "status": "CLEAN"
   },
   {
     "city": "dortmund",
@@ -2175,6 +2200,73 @@
     "status": "CLEAN"
   },
   {
+    "city": "lübeck",
+    "ld_count": 7,
+    "html_count": 7,
+    "ld": [
+      {
+        "q": "Welcher Friedhof in Lübeck ist der größte?",
+        "a": "Der Vorwerker Friedhof im Norden Lübecks ist mit rund 53 Hektar und etwa 49.600 Grabstätten der größte Friedhof Lübecks und zugleich der größte Friedhof Schleswig-Holsteins. Er wurde 1907 nach Plänen von Gartendirektor Erwin Barth als Reformfriedhof eröffnet."
+      },
+      {
+        "q": "Wie lange ist die Ruhezeit auf Lübecker Friedhöfen?",
+        "a": "Die Ruhezeit beträgt für Verstorbene ab dem sechsten Lebensjahr 20 Jahre, für jüngere Verstorbene 15 Jahre. Diese Fristen gelten für Erd- wie für Urnenbeisetzungen und sind in der Friedhofssatzung der Hansestadt Lübeck festgelegt."
+      },
+      {
+        "q": "Was kostet eine Bestattung in Lübeck?",
+        "a": "Die reinen Grabnutzungsrechte für 20 Jahre liegen für Erdbestattungen bei rund 1.280 bis 4.950 Euro, für Urnenbeisetzungen bei rund 900 bis 2.950 Euro. Zusammen mit Bestatterleistungen und Grabstein bewegt sich eine schlichte Bestattung in einer Gesamtspanne von etwa 4.500 bis 9.000 Euro."
+      },
+      {
+        "q": "Welche Bestattungsfristen gelten in Lübeck?",
+        "a": "Nach § 16 BestattG Schleswig-Holstein darf eine Bestattung frühestens 48 Stunden nach Eintritt des Todes erfolgen. Erd- oder Feuerbestattung sollen innerhalb von neun Tagen vorgenommen werden, Urnen innerhalb eines Monats nach der Einäscherung beigesetzt werden."
+      },
+      {
+        "q": "Gibt es in Lübeck Friedhöfe ohne Sargpflicht?",
+        "a": "Nach § 15 Abs. 1 Nr. 1 BestattG Schleswig-Holstein wird die Erdbestattung grundsätzlich in einem Sarg durchgeführt. Aus religiösen oder weltanschaulichen Gründen kann die zuständige Behörde sarglose Erdbestattungen zulassen. Mit dem 2024 neu eingefügten § 15a BestattG hat Schleswig-Holstein zudem die Reerdigung als neue Bestattungsform geöffnet — eine Variante, die im Einzelfall mit spezialisiertem Bestatter und Friedhofsverwaltung abzustimmen ist."
+      },
+      {
+        "q": "Auf welchem Friedhof in Lübeck liegt die Familie Mann?",
+        "a": "Auf dem Burgtorfriedhof. Dort befinden sich Familiengräber der Lübecker Manns — der Großeltern und Verwandten Thomas und Heinrich Manns aus dem Zweig Johann Sigmund Manns. In Sichtweite liegen weitere literarische Persönlichkeiten wie Emanuel Geibel und Ida Boy-Ed."
+      },
+      {
+        "q": "Wer betreibt die städtischen Friedhöfe in Lübeck?",
+        "a": "Die vier städtischen Friedhöfe Vorwerk, Burgtor, St. Jürgen und Waldhusen sowie der Ehrenfriedhof werden vom Bereich Stadtgrün und Verkehr der Hansestadt Lübeck zentral verwaltet. Die Friedhofsverwaltung sitzt an der Friedhofsallee am Vorwerker Friedhof."
+      }
+    ],
+    "html": [
+      {
+        "q": "Welcher Friedhof in Lübeck ist der größte?",
+        "a": "<p>Der Vorwerker Friedhof im Norden Lübecks ist mit rund 53 Hektar und etwa 49.600 Grabstätten der größte Friedhof Lübecks und zugleich der größte Friedhof Schleswig-Holsteins. Er wurde 1907 nach Plänen von Gartendirektor Erwin Barth als Reformfriedhof eröffnet.</p>"
+      },
+      {
+        "q": "Wie lange ist die Ruhezeit auf Lübecker Friedhöfen?",
+        "a": "<p>Die Ruhezeit beträgt für Verstorbene ab dem sechsten Lebensjahr 20 Jahre, für jüngere Verstorbene 15 Jahre. Diese Fristen gelten für Erd- wie für Urnenbeisetzungen und sind in der Friedhofssatzung der Hansestadt Lübeck festgelegt.</p>"
+      },
+      {
+        "q": "Was kostet eine Bestattung in Lübeck?",
+        "a": "<p>Die reinen Grabnutzungsrechte für 20 Jahre liegen für Erdbestattungen bei rund 1.280 bis 4.950 Euro, für Urnenbeisetzungen bei rund 900 bis 2.950 Euro. Zusammen mit Bestatterleistungen und Grabstein bewegt sich eine schlichte Bestattung in einer Gesamtspanne von etwa 4.500 bis 9.000 Euro.</p>"
+      },
+      {
+        "q": "Welche Bestattungsfristen gelten in Lübeck?",
+        "a": "<p>Nach § 16 BestattG Schleswig-Holstein darf eine Bestattung frühestens 48 Stunden nach Eintritt des Todes erfolgen. Erd- oder Feuerbestattung sollen innerhalb von neun Tagen vorgenommen werden, Urnen innerhalb eines Monats nach der Einäscherung beigesetzt werden.</p>"
+      },
+      {
+        "q": "Gibt es in Lübeck Friedhöfe ohne Sargpflicht?",
+        "a": "<p>Nach § 15 Abs. 1 Nr. 1 BestattG Schleswig-Holstein wird die Erdbestattung grundsätzlich in einem Sarg durchgeführt. Aus religiösen oder weltanschaulichen Gründen kann die zuständige Behörde sarglose Erdbestattungen zulassen. Mit dem 2024 neu eingefügten § 15a BestattG hat Schleswig-Holstein zudem die Reerdigung als neue Bestattungsform geöffnet — eine Variante, die im Einzelfall mit spezialisiertem Bestatter und Friedhofsverwaltung abzustimmen ist.</p>"
+      },
+      {
+        "q": "Auf welchem Friedhof in Lübeck liegt die Familie Mann?",
+        "a": "<p>Auf dem Burgtorfriedhof. Dort befinden sich Familiengräber der Lübecker Manns — der Großeltern und Verwandten Thomas und Heinrich Manns aus dem Zweig Johann Sigmund Manns. In Sichtweite liegen weitere literarische Persönlichkeiten wie Emanuel Geibel und Ida Boy-Ed.</p>"
+      },
+      {
+        "q": "Wer betreibt die städtischen Friedhöfe in Lübeck?",
+        "a": "<p>Die vier städtischen Friedhöfe Vorwerk, Burgtor, St. Jürgen und Waldhusen sowie der Ehrenfriedhof werden vom Bereich Stadtgrün und Verkehr der Hansestadt Lübeck zentral verwaltet. Die Friedhofsverwaltung sitzt an der Friedhofsallee am Vorwerker Friedhof.</p>"
+      }
+    ],
+    "issues": [],
+    "status": "CLEAN"
+  },
+  {
     "city": "magdeburg",
     "ld_count": 7,
     "html_count": 7,
@@ -2622,6 +2714,73 @@
       {
         "q": "Gibt es in Münster muslimische und jüdische Grabfelder?",
         "a": "Ja. Auf dem Waldfriedhof Lauheide bestehen ein muslimisches Grabfeld sowie die Möglichkeit der Tuchbestattung. Jüdische Bestattungen erfolgen seit 2002 auf einem abgetrennten Bereich des städtischen Friedhofs Hohe Ward in Hiltrup; der historische jüdische Friedhof an der Einsteinstraße (1811/12) ist nahezu voll belegt und nur noch für Gemeindemitglieder mit vorab zugesicherter Grabstätte zugänglich."
+      }
+    ],
+    "issues": [],
+    "status": "CLEAN"
+  },
+  {
+    "city": "mönchengladbach",
+    "ld_count": 7,
+    "html_count": 7,
+    "ld": [
+      {
+        "q": "Wer verwaltet die Friedhöfe in Mönchengladbach?",
+        "a": "Die 13 städtischen Friedhöfe werden von mags – Mönchengladbacher Abfall-, Grün- und Straßenbetriebe AöR – verwaltet. mags hat die Friedhofsverwaltung von der Stadt übernommen und ist Ansprechpartner für Beerdigungen, Gebühren, Grabmalgenehmigungen, Wiedererwerb und Rückgabe von Grabstätten. Hauptsitz: Am Nordpark 400, 41068 Mönchengladbach. Daneben existiert das private St. Kamillus Kolumbarium als konfessionsfreie Grabeskirche."
+      },
+      {
+        "q": "Was kostet eine Urnenbestattung in Mönchengladbach?",
+        "a": "Nach dem NRW-Friedhofsgebührenvergleich des Bundes der Steuerzahler (Stand: 2022) lagen die kommunalen Gebühren für ein Urnenreihengrab in Mönchengladbach bei rund 702 Euro. Der Folgeerhebung 2025 zufolge sind diese Gebühren seit 2024 um rund 19 % gestiegen – der aktuelle Wert dürfte spürbar darüber liegen. Hinzu kommen Bestatterleistungen, Sarg/Urne, Krematoriumsgebühr und ggf. Trauerfeier – realistisch ergibt sich eine Gesamtspanne von rund 2.800 bis 4.800 Euro für eine einfache Urnenbeisetzung."
+      },
+      {
+        "q": "Wie lange ist die Bestattungsfrist in NRW?",
+        "a": "Nach § 13 Abs. 2 BestG NRW darf eine Erdbestattung frühestens 24 Stunden nach Eintritt des Todes erfolgen. Nach § 13 Abs. 3 BestG NRW muss die Erdbestattung oder Einäscherung innerhalb von zehn Tagen durchgeführt werden. Die Totenasche ist innerhalb von sechs Wochen beizusetzen. Die örtliche Ordnungsbehörde kann auf Antrag Verlängerungen gewähren."
+      },
+      {
+        "q": "Gibt es ein Borussia-Kolumbarium in Mönchengladbach?",
+        "a": "Ja, auf dem städtischen Friedhof an der Preyerstraße in Rheydt gibt es seit Mai 2018 ein Borussia-Kolumbarium mit 48 Grabkammern für jeweils bis zu zwei Urnen. Vorder- und Rückseite tragen die Raute von Borussia Mönchengladbach, der Untergrund ist in Rautenform in den Vereinsfarben schwarz und weiß gestaltet. Schwarze Marmorplatten verschließen die einzelnen Kammern und können mit Namen, Lebensdaten oder Symbolen versehen werden. Eingerahmt wird die Anlage durch eine Eibenhecke. Eine Grabkammer kostete bei Eröffnung 1.500 Euro (aktueller Tarif bei mags zu erfragen)."
+      },
+      {
+        "q": "Wo werden Verstorbene aus Mönchengladbach eingeäschert?",
+        "a": "Mönchengladbach betreibt selbst kein Krematorium. Bestatter überführen Verstorbene überwiegend in das Krematorium Willich (Rhein-Kreis Neuss) oder in das städtische Krematorium Düsseldorf am Friedhof Stoffeln (Stoffeler Kapellenweg, 40225 Düsseldorf). Die Krematoriumsgebühr wird zusätzlich zu den Friedhofsgebühren von mags erhoben und liegt typischerweise bei 250–500 Euro."
+      },
+      {
+        "q": "Welche Friedhöfe in Mönchengladbach sind als immaterielles Kulturerbe ausgezeichnet?",
+        "a": "Der Hauptfriedhof und der Friedhof Rheydt führen die Hinweisschilder der Kultusministerkonferenz zur deutschen Friedhofskultur als immaterielles UNESCO-Kulturerbe. Ausgezeichnet ist nicht der einzelne Friedhof selbst, sondern die Friedhofskultur insgesamt – also Trauern, Erinnern, Gestalten und Pflegen. Diese Standorte tragen die Auszeichnung beispielhaft."
+      },
+      {
+        "q": "Wie lange ist die Nutzungsfrist für eine Reihengrabstätte?",
+        "a": "Nach § 10 Abs. 1 der Friedhofssatzung der Stadt Mönchengladbach beträgt die Ruhefrist für Erwachsene 25 Jahre. Auf den Erweiterungsflächen in Giesenkirchen (Flurstücke 14/2, 108, 109, 205, 206 und 207 der Gemarkung Giesenkirchen, Flur 16) und Uedding sind es 30 Jahre. Für Verstorbene bis zum vollendeten 5. Lebensjahr beträgt die Ruhefrist 12 Jahre, für Tot- und Fehlgeburten sowie aus einem Schwangerschaftsabbruch stammende Leibesfrüchte 7 Jahre. Eine Verlängerung ist bei Reihengräbern nach Ablauf der Ruhefrist nicht möglich."
+      }
+    ],
+    "html": [
+      {
+        "q": "Wer verwaltet die Friedhöfe in Mönchengladbach?",
+        "a": "<p>Die 13 städtischen Friedhöfe werden von <strong>mags</strong> – Mönchengladbacher Abfall-, Grün- und Straßenbetriebe AöR – verwaltet. mags hat die Friedhofsverwaltung von der Stadt übernommen und ist Ansprechpartner für Beerdigungen, Gebühren, Grabmalgenehmigungen, Wiedererwerb und Rückgabe von Grabstätten. Hauptsitz: Am Nordpark 400, 41068 Mönchengladbach. Daneben existiert das private St. Kamillus Kolumbarium als konfessionsfreie Grabeskirche.</p>"
+      },
+      {
+        "q": "Was kostet eine Urnenbestattung in Mönchengladbach?",
+        "a": "<p>Nach dem NRW-Friedhofsgebührenvergleich des Bundes der Steuerzahler (Stand: 2022) lagen die kommunalen Gebühren für ein Urnenreihengrab in Mönchengladbach bei rund 702 Euro. Der Folgeerhebung 2025 zufolge sind diese Gebühren seit 2024 um rund 19 % gestiegen – der aktuelle Wert dürfte spürbar darüber liegen. Hinzu kommen Bestatterleistungen, Sarg/Urne, Krematoriumsgebühr und ggf. Trauerfeier – realistisch ergibt sich eine Gesamtspanne von rund 2.800 bis 4.800 Euro für eine einfache Urnenbeisetzung.</p>"
+      },
+      {
+        "q": "Wie lange ist die Bestattungsfrist in NRW?",
+        "a": "<p>Nach § 13 Abs. 2 BestG NRW darf eine Erdbestattung frühestens 24 Stunden nach Eintritt des Todes erfolgen. Nach § 13 Abs. 3 BestG NRW muss die Erdbestattung oder Einäscherung innerhalb von zehn Tagen durchgeführt werden. Die Totenasche ist innerhalb von sechs Wochen beizusetzen. Die örtliche Ordnungsbehörde kann auf Antrag Verlängerungen gewähren.</p>"
+      },
+      {
+        "q": "Gibt es ein Borussia-Kolumbarium in Mönchengladbach?",
+        "a": "<p>Ja, auf dem städtischen Friedhof an der Preyerstraße in Rheydt gibt es seit Mai 2018 ein Borussia-Kolumbarium mit 48 Grabkammern für jeweils bis zu zwei Urnen. Vorder- und Rückseite tragen die Raute von Borussia Mönchengladbach, der Untergrund ist in Rautenform in den Vereinsfarben schwarz und weiß gestaltet. Schwarze Marmorplatten verschließen die einzelnen Kammern und können mit Namen, Lebensdaten oder Symbolen versehen werden. Eingerahmt wird die Anlage durch eine Eibenhecke. Eine Grabkammer kostete bei Eröffnung 1.500 Euro (aktueller Tarif bei mags zu erfragen).</p>"
+      },
+      {
+        "q": "Wo werden Verstorbene aus Mönchengladbach eingeäschert?",
+        "a": "<p>Mönchengladbach betreibt selbst kein Krematorium. Bestatter überführen Verstorbene überwiegend in das Krematorium Willich (Rhein-Kreis Neuss) oder in das städtische Krematorium Düsseldorf am Friedhof Stoffeln (Stoffeler Kapellenweg, 40225 Düsseldorf). Die Krematoriumsgebühr wird zusätzlich zu den Friedhofsgebühren von mags erhoben und liegt typischerweise bei 250–500 Euro.</p>"
+      },
+      {
+        "q": "Welche Friedhöfe in Mönchengladbach sind als immaterielles Kulturerbe ausgezeichnet?",
+        "a": "<p>Der Hauptfriedhof und der Friedhof Rheydt führen die Hinweisschilder der Kultusministerkonferenz zur deutschen Friedhofskultur als immaterielles UNESCO-Kulturerbe. Ausgezeichnet ist nicht der einzelne Friedhof selbst, sondern die Friedhofskultur insgesamt – also Trauern, Erinnern, Gestalten und Pflegen. Diese Standorte tragen die Auszeichnung beispielhaft.</p>"
+      },
+      {
+        "q": "Wie lange ist die Nutzungsfrist für eine Reihengrabstätte?",
+        "a": "<p>Nach § 10 Abs. 1 der Friedhofssatzung der Stadt Mönchengladbach beträgt die Ruhefrist für Erwachsene 25 Jahre. Auf den Erweiterungsflächen in Giesenkirchen (Flurstücke 14/2, 108, 109, 205, 206 und 207 der Gemarkung Giesenkirchen, Flur 16) und Uedding sind es 30 Jahre. Für Verstorbene bis zum vollendeten 5. Lebensjahr beträgt die Ruhefrist 12 Jahre, für Tot- und Fehlgeburten sowie aus einem Schwangerschaftsabbruch stammende Leibesfrüchte 7 Jahre. Eine Verlängerung ist bei Reihengräbern nach Ablauf der Ruhefrist nicht möglich.</p>"
       }
     ],
     "issues": [],

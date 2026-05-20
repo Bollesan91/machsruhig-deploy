@@ -59,6 +59,7 @@ def extract_html_faq(html: str):
         spans.append((start, end))
     for start, end in spans:
         region = html[start:end]
+        # Stil A: <details><summary>…</summary>…</details>
         for det in re.finditer(
             r"<details([^>]*)>\s*<summary[^>]*>(.*?)</summary>\s*(.*?)</details>",
             region,
@@ -77,8 +78,16 @@ def extract_html_faq(html: str):
                 re.DOTALL,
             )
             a_html = inner.group(1) if inner else body
-            a = html_to_plain(a_html)
-            faqs.append({"q": q, "a": a})
+            faqs.append({"q": q, "a": html_to_plain(a_html)})
+        if faqs:
+            continue
+        # Stil B (fallback): <div class="mr-faq__item|faq-item"><h3>…</h3><p>…</p></div>
+        for item in re.finditer(
+            r'<div\s+class="(?:mr-faq__item|faq-item)"[^>]*>\s*<h3[^>]*>(.*?)</h3>\s*(.*?)</div>',
+            region,
+            re.DOTALL,
+        ):
+            faqs.append({"q": html_to_plain(item.group(1)), "a": html_to_plain(item.group(2))})
     return faqs
 
 
@@ -204,7 +213,7 @@ def main():
     ap.add_argument("--city", help="Single city to process (default: all)")
     ap.add_argument("--write", action="store_true", help="Actually write files (default: dry-run)")
     ap.add_argument("--diff", action="store_true", help="Show diff preview")
-    ap.add_argument("--skip", default="lübeck,mönchengladbach,darmstadt", help="Comma-separated cities to skip")
+    ap.add_argument("--skip", default="", help="Comma-separated cities to skip (default: none — Umlaut-Duplikate sind live)")
     args = ap.parse_args()
 
     skip = set(args.skip.split(","))

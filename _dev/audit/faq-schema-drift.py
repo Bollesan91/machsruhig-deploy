@@ -117,17 +117,16 @@ def extract_html_faq(html: str):
 
     for start, end in spans:
         region = html[start:end]
+        # Stil A: <details><summary>…</summary>…</details>
         for det in re.finditer(
             r"<details([^>]*)>\s*<summary[^>]*>(.*?)</summary>\s*(.*?)</details>",
             region,
             re.DOTALL,
         ):
             attrs = det.group(1) or ""
-            # Skip Mobile-Nav-<details>
             if re.search(r"mr-nav-mobile|nav-mobile|class=[\"'][^\"']*nav", attrs):
                 continue
             q = det.group(2).strip()
-            # Skip Hamburger-Icon-Summaries
             if q in {"☰", "&#9776;"} or len(q) <= 3:
                 continue
             body = det.group(3).strip()
@@ -137,6 +136,17 @@ def extract_html_faq(html: str):
                 re.DOTALL,
             )
             a = inner.group(1).strip() if inner else body
+            faqs.append({"q": q, "a": a})
+        if faqs:
+            continue
+        # Stil B (fallback): <div class="mr-faq__item|faq-item"><h3>…</h3><p>…</p></div>
+        for item in re.finditer(
+            r'<div\s+class="(?:mr-faq__item|faq-item)"[^>]*>\s*<h3[^>]*>(.*?)</h3>\s*(.*?)</div>',
+            region,
+            re.DOTALL,
+        ):
+            q = item.group(1).strip()
+            a = item.group(2).strip()
             faqs.append({"q": q, "a": a})
     return faqs
 
@@ -220,7 +230,8 @@ def main():
         print(f"FATAL: {CITIES_DIR} nicht gefunden", file=sys.stderr)
         sys.exit(1)
 
-    skip = {"index.html", "lübeck", "mönchengladbach"}  # duplicate symlink-style dirs
+    skip = {"index.html"}  # Umlaut-Duplikate (lübeck, mönchengladbach) bewusst NICHT skippen:
+                            # sie sind aktive Pages ohne noindex, müssen drift-frei bleiben.
 
     results = []
     for city_dir in sorted(CITIES_DIR.iterdir()):
