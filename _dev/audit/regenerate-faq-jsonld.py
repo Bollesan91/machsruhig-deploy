@@ -136,42 +136,113 @@ def detect_format(raw_body: str):
     return indent, (",", ": ")
 
 
+def find_faq_object_bounds(body: str):
+    """Findet die exakten Byte-Bounds des FAQPage-Objekts im Body-Text.
+    Gibt (start, end) zurück, mit body[start:end] = das vollständige `{…}`-Objekt.
+    Verwendet JSONDecoder.raw_decode() für balanced-brace-Parsing.
+    """
+    decoder = json.JSONDecoder()
+    # Suche nach "@type":"FAQPage" oder "@type": "FAQPage"
+    m = re.search(r'"@type"\s*:\s*"FAQPage"', body)
+    if not m:
+        return None
+    # Gehe zurück zum öffnenden `{` des umgebenden Objekts (skip whitespace)
+    i = m.start() - 1
+    depth = 0
+    while i >= 0:
+        c = body[i]
+        if c == "}":
+            depth += 1
+        elif c == "{":
+            if depth == 0:
+                break
+            depth -= 1
+        i -= 1
+    if i < 0:
+        return None
+    start = i
+    # Parse das Objekt ab `start`
+    try:
+        _, rel_end = decoder.raw_decode(body[start:])
+    except json.JSONDecodeError:
+        return None
+    return start, start + rel_end
+
+
+def detect_object_indent(body: str, start: int) -> int:
+    """Bestimme den Indent-Level des Objekts an Position `start` (Anzahl Spaces vor `{`)."""
+    line_start = body.rfind("\n", 0, start) + 1
+    indent = 0
+    while line_start + indent < start and body[line_start + indent] == " ":
+        indent += 1
+    return indent
+
+
+def format_faq_node(new_node, body: str, start: int) -> str:
+    """Formatiere new_node als JSON-String passend zum umgebenden Stil.
+    - Wenn der alte Body multi-line ist: indent=2, mit Außen-Einrückung = detect_object_indent
+    - Wenn minified: ohne Whitespace
+    """
+    if "\n" not in body.strip():
+        return json.dumps(new_node, ensure_ascii=False, separators=(",", ":"))
+    outer = detect_object_indent(body, start)
+    # Inneres Indent =2; danach jede nachfolgende Zeile um `outer` einrücken
+    raw = json.dumps(new_node, ensure_ascii=False, indent=2, separators=(",", ": "))
+    if outer == 0:
+        return raw
+    lines = raw.split("\n")
+    return lines[0] + "".join("\n" + (" " * outer) + l for l in lines[1:])
+
+
 def regenerate_page(html: str, faqs):
-    """Ersetzt FAQPage im @graph (dict) oder in der Top-Level-List durch neuen Node.
-    Format (minified/indented) wird aus dem Original beibehalten."""
-    new_node = build_faq_node(faqs)
+    """Ersetzt FAQPage SURGICAL — nur das Objekt selbst, alle anderen Nodes byte-genau."""
+    new_node_base = build_faq_node(faqs)
     for m, data in find_jsonld_blocks(html):
         raw_body = m.group(2)
-        # Stil 1: {"@graph": [...]}
+
+        # Suche FAQPage im Container
         if isinstance(data, dict) and isinstance(data.get("@graph"), list):
             container = data["@graph"]
-        # Stil 2: Top-level [...]
         elif isinstance(data, list):
             container = data
         else:
             continue
 
-        action = None
-        for i, node in enumerate(container):
+        existing_faq = None
+        for node in container:
             if isinstance(node, dict) and node.get("@type") == "FAQPage":
-                merged = dict(new_node)
-                if "@id" in node:
-                    merged["@id"] = node["@id"]
-                container[i] = merged
-                action = "replaced"
+                existing_faq = node
                 break
-        if action is None:
-            container.append(new_node)
-            action = "inserted"
 
+        # Behalte @id wenn vorhanden
+        new_node = dict(new_node_base)
+        if existing_faq and "@id" in existing_faq:
+            new_node = {"@id": existing_faq["@id"], **new_node_base}
+        # Sortiere @type vor @id vor mainEntity für Konsistenz
+        ordered = {}
+        for k in ("@type", "@id", "mainEntity"):
+            if k in new_node:
+                ordered[k] = new_node[k]
+        new_node = ordered
+
+        if existing_faq is not None:
+            # SURGICAL REPLACE
+            bounds = find_faq_object_bounds(raw_body)
+            if bounds:
+                bstart, bend = bounds
+                new_json = format_faq_node(new_node, raw_body, bstart)
+                new_body = raw_body[:bstart] + new_json + raw_body[bend:]
+                new_html = html[: m.start()] + m.group(1) + new_body + m.group(3) + html[m.end():]
+                return new_html, "replaced"
+        # Fallback: kein FAQPage da → anfügen (full reserialize)
+        container.append(new_node)
         indent, sep = detect_format(raw_body)
-        # Behalte führenden/abschließenden Whitespace im Body bei (z.B. \n vor `{`)
         leading = re.match(r"\s*", raw_body).group(0)
         trailing = re.search(r"\s*\Z", raw_body).group(0)
         new_json = json.dumps(data, ensure_ascii=False, indent=indent, separators=sep)
         new_body = leading + new_json + trailing
         new_html = html[: m.start()] + m.group(1) + new_body + m.group(3) + html[m.end():]
-        return new_html, action
+        return new_html, "inserted"
     return html, "noop"
 
 
@@ -210,18 +281,20 @@ def diff_preview(old: str, new: str, city: str):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--city", help="Single city to process (default: all)")
+    ap.add_argument("--dir", default="bestatter", help="Root-Verzeichnis relativ zum Repo (default: bestatter)")
+    ap.add_argument("--city", help="Single city/page-dir name to process (default: all)")
     ap.add_argument("--write", action="store_true", help="Actually write files (default: dry-run)")
     ap.add_argument("--diff", action="store_true", help="Show diff preview")
-    ap.add_argument("--skip", default="", help="Comma-separated cities to skip (default: none — Umlaut-Duplikate sind live)")
+    ap.add_argument("--skip", default="", help="Comma-separated dir names to skip")
     args = ap.parse_args()
 
-    skip = set(args.skip.split(","))
+    base_dir = ROOT / args.dir
+    skip = set(s for s in args.skip.split(",") if s)
 
     if args.city:
-        cities = [CITIES_DIR / args.city]
+        cities = [base_dir / args.city]
     else:
-        cities = sorted([p for p in CITIES_DIR.iterdir() if p.is_dir() and p.name not in skip])
+        cities = sorted([p for p in base_dir.iterdir() if p.is_dir() and p.name not in skip])
 
     summary = {"replaced": [], "inserted": [], "noop": [], "no_html_faq": []}
     for city_dir in cities:
