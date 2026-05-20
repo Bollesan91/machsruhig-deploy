@@ -24,10 +24,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 MODULE_PATTERNS = {
     "akut": [
-        r"<h2[^>]*>[^<]*(?:Akutbox|Akut-Box|Was nach einem Todesfall|Erste(?:n)?\s+24\s+Stunden?|Erste(?:n)?\s+72\s+Stunden?|Sofort.{0,5}tun|Im\s+Akutfall|Was tun nach)",
+        r"<h2[^>]*>[^<]*(?:Akutbox|Akut-Box|[Nn]ach einem Todesfall|Erste(?:n)?\s+24\s+Stunden?|Erste(?:n)?\s+72\s+Stunden?|Sofort.{0,5}tun|Im\s+Akutfall|Was tun nach|ersten Schritte|in den ersten Tagen)",
     ],
     "kosten": [
-        r"<h2[^>]*>[^<]*(?:Bestattungskosten|Kosten in|Friedhofsgebühren|Was kostet)",
+        r"<h2[^>]*>[^<]*(?:Bestattungskosten|Kosten\s+(?:in|einer)|Friedhofsgebühren|Was kostet|Gebühren und Kosten|Gebühren\s+(?:in|der|für))",
     ],
     "bestwahl": [
         r"<h2[^>]*>[^<]*(?:Bestatter.*(?:wählen|w\\u00e4hlen|wahl|finden|auswählen|ausw\\u00e4hlen|auswahl|vergleichen|prüfen|pr\\u00fcfen)|(?:Wie|Welch[er]).{0,30}Bestatter|Bestatter\s+in\s+\w+\s+(?:wählen|auswählen|finden))",
