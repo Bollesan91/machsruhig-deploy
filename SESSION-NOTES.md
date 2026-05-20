@@ -1,6 +1,86 @@
 # Session-Notizen
 
 ## Letzte Session
+**Datum:** 20. Mai 2026 (FAQ-Schema-Drift-Sweep sitewide + Wuppertal-Gebühren + Sitewide-Audit-Aufräumen)
+**Deploy-Status:** Branch `claude/start-ruhig-YetPT` gepusht (6 Commits), nicht in main gemerged — wartet auf Review/Deploy-Freigabe.
+
+## Was wurde gemacht (Session 20.05.2026)
+
+### Stream A: FAQ-Schema-Drift-Sweep + JSON-LD-Hygiene sitewide
+
+**Tool-Suite gebaut (`_dev/audit/`):**
+- `faq-schema-drift.py` — auditiert JSON-LD `FAQPage` vs sichtbarem HTML-FAQ-Block über alle Page-Bereiche. Unterstützt drei Markup-Stile (`<details><summary>`, `mr-faq-Wrapper`, `mr-faq__item`/`faq-item`-divs). Filter für Mobile-Nav-`<details>`. Klassifiziert: CLEAN, DRIFT (COUNT/Q_TEXT/A_TEXT), NO_LD, NO_HTML, NO_FAQ.
+- `regenerate-faq-jsonld.py` — regeneriert FAQPage-Schema aus sichtbarem HTML als Single-Source-of-Truth. Format-preserving via **Surgical-Replace**: nur das FAQPage-Objekt wird per `JSONDecoder.raw_decode()` byte-genau ersetzt, alle anderen JSON-LD-Nodes bleiben unangetastet. `--dir`/`--city`/`--diff`/`--write`-Argumente.
+- `module-heatmap-v2.py` — Modul-Audit (6 Pflicht-Module) mit flexiblen Header-Regex über alle Stadt-Pages.
+
+**Drift-Behebung (Resultat: 0 DRIFT sitewide):**
+- bestatter/ (52 Cities): 39 DRIFT → 52 CLEAN
+- bestattung-in/ (16 Bundesländer): 11 DRIFT → 16 CLEAN
+- vorsorge/ (8 Pages): 8 DRIFT → 8 CLEAN
+- tools/ (10): 1 DRIFT (danksagung) → CLEAN; 7 NO_HTML notiert (CSR-React-Issue, separates Ticket)
+
+**Drift-Typen behoben:**
+- 4 COUNT-Mismatch (berlin/hamburg LD 4→7, bremen 7→9, rostock 6→7)
+- 7 BOTH Q+A-Drift (Augsburg-Vertauschung Q5/Q6, chemnitz, essen, halle, magdeburg, muelheim, darmstadt)
+- 44 A_ONLY-Drift (Answer-Text aus HTML übernommen)
+
+**JSON-LD-Quoting-Bugs nebenher gefixt:**
+- Münster + Darmstadt hatten unescaped `"` innerhalb von `„…"`-Strings im JSON-LD (verhinderte Parsen). Per Skript-Regex `(„[^„"]*?)"` → `\1"` (U+201D) gefixt.
+
+### Wuppertal Friedhofsgebühren-Tabelle
+
+- Ersetzt: Orientierungsspannen aus NRW-Vergleichsstädten (Düsseldorf/Essen/Solingen/Remscheid) durch 16 verbindliche Sätze des **Christlichen Friedhofsverbandes Wuppertal** (Gebührensatzung 05.12.2023, in Kraft seit 04.03.2024).
+- Inkl. Bestattungs-, Kapellen-, Friedhofsunterhaltungs-Gebühren konkret.
+- Geltungsbereichs-Hinweis: 34 christliche Friedhöfe + jüdische Friedhöfe und kommunale Grabfelder mit eigenen Sätzen.
+- FAQ-Antwort + Quellen-Block (Direkt-Link zu Gebühren- + Friedhofssatzung PDF).
+- Daten kamen vom User (PDF in dieser Container-Sandbox per Net-Allowlist nicht erreichbar).
+
+### Stream B: SEO/Content-Audit + Bugfixes
+
+**Broken Internal Links (Sweep-Fix, 17 Vorkommen über 8 Pages):**
+- `/bestattung-in/baden-wuerttemberg/` → `/bestattung-in/baden-württemberg/` (12×)
+- `/bestattung-in/thueringen/` → `/bestattung-in/thüringen/` (2×)
+- `/vorsorge/bestattungsverfuegung/` → `/vorsorge/bestattungsvorsorge/` (3×, Tippfehler)
+
+**OG-Image-Sweep (sitewide, 65 Pages):**
+- 13 Pages hatten broken og:image-URLs auf nicht-existente Bilder (`/assets/og/bielefeld-sennefriedhof.png`, `/og/essen.jpg`, `/og/default.jpg`, …)
+- 52 Pages hatten og:title/og:url, aber kein og:image (kein Social-Preview-Bild)
+- Alle 65 → Default `/assets/og-image.png` (das einzige existierende OG-Image)
+
+**Canonical-Bugs (2):**
+- `bestatter/braunschweig/`: `www.machsruhig.de` → `machsruhig.de` (Konsistenz mit anderen Pages)
+- `bestatter/muelheim/`: Canonical auf nicht-existentes `/bestatter/muelheim-an-der-ruhr/` → `/bestatter/muelheim/`
+
+### Audit-Befunde (kein Fix, dokumentiert)
+
+- **39 broken internal links insgesamt**, 17 davon gefixt (siehe oben). Verbleibende erfordern Policy-Decision: nicht-existente Cities (Offenbach, Herne, Recklinghausen, Heilbronn, Bremerhaven, Esslingen, Brandenburg-an-der-Havel, …), fehlende Hub-Pages (`/ratgeber/`, `/bestattung-in/`-Index, `/kosten/`, `/wissen/`).
+- **7 Tool-Pages mit FAQPage-Schema ohne sichtbaren HTML-Block** (abschiedsbrief, bestattungskosten-rechner, checkliste-todesfall, fristen-radar, kostenrechner, notfallkarte, vorsorge-check) — alle React-CSR. Bekanntes BACKLOG-Item (tool-CSR-Problem). Risiko: Google Structured-Data-Verstoß.
+- **Modul-Heatmap V2** (`_dev/audit/module-heatmap-v2.md`): Sitewide-Status nach Sozial-Sweep, robusterer Regex als V1-Heatmap. Lücken: akut 3, kosten 6, sozial 5, quellen 11 — FAQ + Bestwahl jetzt 52/52.
+- **Sitemap-Konsistenz**: tatsächlich sauber (Stream-B-Agent hatte URL-Encoding-Naivität-Bug). Umlauts (`baden-württemberg`) sind percent-encoded in Sitemap — best practice.
+- **Tel-Link-Audit sitewide**: 0 Probleme. Lib aus Sozial-Sweep blieb sauber.
+- **JSON-LD-Validität sitewide**: 0 broken Blocks über ~100 Pages.
+
+### 6 Commits dieser Session
+
+1. `22e3d16` — `[audit]` FAQ-Schema-Drift-Audit-Tool über alle Stadt-Pages
+2. `9fabc2d` — `[faq-schema-fix]` FAQ-JSON-LD aus HTML regeneriert (39 Cities + Quote-Fix)
+3. `514ddc2` — `[faq-schema-fix]` Gründlicher Audit: Umlaut-Duplikate + Darmstadt-Markup
+4. `98f8df1` — `[wuppertal]` Friedhofsgebühren-Tabelle durch offizielle Sätze ersetzt
+5. `e2bf34d` — `[faq-schema-fix]` FAQ-Drift sitewide gelöst (Bundesland + Vorsorge + Tools)
+6. `90a79df` — `[broken-links]` 17 fehlerhafte interne Links über 8 Pages
+7. `7900ce3` — `[og-image + canonical]` Sitewide OG-Image-Fix + 2 Canonical-Bugs
+
+### Methodik-Erkenntnisse
+
+- **Single-Source-of-Truth = HTML** für FAQ-Schema. JSON-LD wird per Skript-Regenerator daraus synchronisiert. Konform zu Google's Structured-Data-Richtlinie ("Content must be present on the page that loads").
+- **Surgical-Replace** schlägt full-reserialize: balanced-brace-Suche via `JSONDecoder.raw_decode()` ersetzt nur das gezielte Objekt, andere Nodes bleiben byte-exakt → minimaler Diff-Churn.
+- **Format-Preservation pro File** (indent=2 vs minified) detect-bar über `\n` und Erst-Indent-Level.
+- **Agent-Halluzinationen erkennen**: Stream-B-Agent behauptete `bestatter/köln/` + `bestatter/münchen/` als Umlaut-Duplikate — falsch. Tatsächlich nur `lübeck/` + `mönchengladbach/`. Findings immer per `ls`/`grep` selbst verifizieren.
+- **Network-Allowlist beachten**: Container blockt externe Hosts (`fvwuppertal.de`, `wz.de`, `google.com` → 403). Lokale Audits + User-bereitgestellte Daten als Pfad.
+
+---
+
+## Letzte vor-vorige Session
 **Datum:** 19. Mai 2026 (Sozialbestattung-Sweep komplett — 10 Batches, 27 Cities, 12 Bundesländer + Hamburg-Strukturkonsolidierung + Stuttgart-Gebühren 2025)
 **Deploy-Status:** content-loop-pipeline → main Final-Merge mit Netlify-Deploy (Ende-Deploy)
 
