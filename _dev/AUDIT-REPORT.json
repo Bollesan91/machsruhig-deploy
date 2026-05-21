@@ -1,7 +1,7 @@
 {
   "meta": {
     "pages": 104,
-    "avg_score": 70.67,
+    "avg_score": 70.87,
     "by_category": {
       "legal": {
         "count": 4,
@@ -17,7 +17,7 @@
       },
       "bundesland": {
         "count": 17,
-        "avg_score": 83.06
+        "avg_score": 83.65
       },
       "content": {
         "count": 7,
@@ -33,7 +33,7 @@
       },
       "tool": {
         "count": 7,
-        "avg_score": 61.29
+        "avg_score": 62.71
       },
       "other": {
         "count": 1,
@@ -92,7 +92,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1295 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 39,
       "meta_desc_len": 148,
@@ -143,7 +143,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 64,
       "meta_desc_len": 157,
@@ -216,7 +216,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 51,
       "meta_desc_len": 156,
@@ -293,7 +293,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, WebPage, PostalAddress, Answer, Service, Question,"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 48,
       "meta_desc_len": 160,
@@ -350,7 +350,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, State, Ques",
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -420,7 +420,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 50,
       "meta_desc_len": 160,
@@ -486,7 +486,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 48,
       "meta_desc_len": 158,
@@ -560,7 +560,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 53,
       "meta_desc_len": 162,
@@ -632,7 +632,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 63,
       "meta_desc_len": 156,
@@ -705,7 +705,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 64,
       "meta_desc_len": 162,
@@ -773,7 +773,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 65,
       "meta_desc_len": 161,
@@ -839,7 +839,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, WebSite, Answer, St",
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 51,
@@ -910,7 +910,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 47,
       "meta_desc_len": 152,
@@ -978,7 +978,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, Place, ListItem, WebPage, PostalAddress, Answer, Qu"
+        "Schema: FAQPage, GovernmentOffice, Question, WebPage, PostalAddress,"
       ],
       "title_len": 54,
       "meta_desc_len": 165,
@@ -1047,7 +1047,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 57,
       "meta_desc_len": 157,
@@ -1113,7 +1113,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 61,
       "meta_desc_len": 156,
@@ -1189,7 +1189,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 56,
       "meta_desc_len": 141,
@@ -1263,7 +1263,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 57,
       "meta_desc_len": 161,
@@ -1331,7 +1331,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, Place, ListItem, WebPage, PostalAddress, Answer, St"
+        "Schema: FAQPage, GovernmentOffice, Question, WebPage, PostalAddress,"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -1401,7 +1401,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 56,
       "meta_desc_len": 156,
@@ -1470,7 +1470,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, Place, ListItem, WebPage, PostalAddress, Person, An"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 64,
       "meta_desc_len": 155,
@@ -1546,7 +1546,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 55,
       "meta_desc_len": 152,
@@ -1621,7 +1621,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Answer, Service, Question, City, Organization, Art"
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, Service,"
       ],
       "title_len": 55,
       "meta_desc_len": 152,
@@ -1678,7 +1678,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 55,
       "meta_desc_len": 161,
@@ -1748,7 +1748,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
@@ -1804,18 +1804,17 @@
     {
       "path": "bestatter/index.html",
       "category": "stadt",
-      "size_bytes": 14395,
-      "word_count": 650,
+      "size_bytes": 14906,
+      "word_count": 653,
       "score": 77,
       "max_score": 100,
       "issues": [],
       "warnings": [
-        "Open-Graph-Tags unvollständig",
-        "skip-link (Sprungmarke) fehlt - Accessibility-Lücke"
+        "Open-Graph-Tags unvollständig"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Content-Tiefe passend (650 Wörter)",
+        "Content-Tiefe passend (653 Wörter)",
         "Schema: ListItem, CollectionPage, BreadcrumbList",
         "Monetarisierungs-Element vorhanden"
       ],
@@ -1853,7 +1852,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, Place, ListItem, WebPage, PostalAddress, Answer, St"
+        "Schema: FAQPage, GovernmentOffice, Question, WebPage, PostalAddress,"
       ],
       "title_len": 63,
       "meta_desc_len": 165,
@@ -1921,7 +1920,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 65,
       "meta_desc_len": 160,
@@ -1992,7 +1991,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 52,
       "meta_desc_len": 145,
@@ -2066,7 +2065,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 61,
       "meta_desc_len": 159,
@@ -2128,7 +2127,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: FAQPage, ListItem, Place, WebPage, AdministrativeArea, Posta"
+        "Schema: FAQPage, GovernmentOffice, Question, WebPage, Administrative"
       ],
       "title_len": 53,
       "meta_desc_len": 162,
@@ -2200,7 +2199,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 51,
       "meta_desc_len": 163,
@@ -2268,7 +2267,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: GovernmentOrganization, ListItem, Place, WebPage, Administra"
+        "Schema: GovernmentOrganization, FAQPage, Question, WebPage, Administ"
       ],
       "title_len": 54,
       "meta_desc_len": 151,
@@ -2341,7 +2340,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Service, City, Question, Answer, FAQPage, Breadcru",
+        "Schema: FAQPage, Question, Answer, BreadcrumbList, Service, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -2390,7 +2389,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, WebSite, GeoCoordin"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 60,
       "meta_desc_len": 180,
@@ -2465,7 +2464,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
@@ -2536,7 +2535,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, AdministrativeArea, PostalAddress,",
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -2607,7 +2606,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, AdministrativeArea, PostalAddress,"
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres"
       ],
       "title_len": 51,
       "meta_desc_len": 153,
@@ -2677,7 +2676,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (668 Wörter)",
-        "Schema: ListItem, Service, City, Question, Answer, FAQPage, Breadcru",
+        "Schema: FAQPage, Question, Answer, BreadcrumbList, Service, City, Li",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 43,
@@ -2725,7 +2724,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 55,
       "meta_desc_len": 153,
@@ -2794,7 +2793,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 64,
       "meta_desc_len": 156,
@@ -2865,7 +2864,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques",
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 51,
@@ -2938,7 +2937,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 80,
       "meta_desc_len": 198,
@@ -3005,7 +3004,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, GeoCoordinates, Ans"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 52,
       "meta_desc_len": 159,
@@ -3079,7 +3078,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Thing, Place, ListItem, WebPage, AdministrativeArea, PostalA",
+        "Schema: FAQPage, Question, WebPage, AdministrativeArea, PostalAddres",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -3154,7 +3153,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 55,
       "meta_desc_len": 154,
@@ -3223,7 +3222,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
@@ -3293,7 +3292,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 61,
       "meta_desc_len": 155,
@@ -3362,7 +3361,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, WebSite, GeoCoordin"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Country, Answer, "
       ],
       "title_len": 55,
       "meta_desc_len": 156,
@@ -3433,7 +3432,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, GeoCoordinates, Ans"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 50,
       "meta_desc_len": 163,
@@ -3500,7 +3499,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, GeoCoordinates, Ans"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 53,
       "meta_desc_len": 164,
@@ -3578,7 +3577,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 57,
       "meta_desc_len": 158,
@@ -3648,7 +3647,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Place, WebPage, PostalAddress, WebSite, Answer, St"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 52,
       "meta_desc_len": 156,
@@ -3718,7 +3717,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, State, Ques"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, State, Ar"
       ],
       "title_len": 58,
       "meta_desc_len": 152,
@@ -3783,7 +3782,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2446 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 60,
       "meta_desc_len": 165,
@@ -3843,7 +3842,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2189 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 62,
       "meta_desc_len": 154,
@@ -3903,7 +3902,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2179 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 52,
       "meta_desc_len": 139,
@@ -3959,7 +3958,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2002 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 54,
       "meta_desc_len": 158,
@@ -4019,7 +4018,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2154 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 60,
       "meta_desc_len": 163,
@@ -4076,7 +4075,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2100 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 52,
       "meta_desc_len": 161,
@@ -4132,7 +4131,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2194 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 56,
       "meta_desc_len": 157,
@@ -4182,27 +4181,26 @@
     {
       "path": "bestattung-in/index.html",
       "category": "bundesland",
-      "size_bytes": 7698,
-      "word_count": 200,
-      "score": 72,
+      "size_bytes": 11253,
+      "word_count": 503,
+      "score": 82,
       "max_score": 100,
       "issues": [],
       "warnings": [
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 200 Wörter (Ziel ≥ 400)",
-        "Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). Penalty temporär ausgesetzt.",
-        "skip-link (Sprungmarke) fehlt - Accessibility-Lücke"
+        "Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). Penalty temporär ausgesetzt."
       ],
       "wins": [
         "lang-Attribut korrekt",
+        "Content-Tiefe passend (503 Wörter)",
         "Schema: ListItem, CollectionPage, BreadcrumbList"
       ],
       "title_len": 64,
       "meta_desc_len": 154,
       "h1_count": 1,
-      "h2_count": 3,
-      "internal_links": 24,
-      "external_links": 3,
+      "h2_count": 5,
+      "internal_links": 25,
+      "external_links": 4,
       "affiliate_links": 0,
       "jsonld_types": [
         "CollectionPage",
@@ -4230,7 +4228,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1915 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 65,
       "meta_desc_len": 163,
@@ -4290,7 +4288,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2003 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 59,
       "meta_desc_len": 163,
@@ -4350,7 +4348,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 55,
       "meta_desc_len": 151,
@@ -4414,7 +4412,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2247 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 63,
       "meta_desc_len": 151,
@@ -4474,7 +4472,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Place, ListItem, WebPage, PostalAddress, GeoCoordinates, Ans"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Cemetery,"
       ],
       "title_len": 48,
       "meta_desc_len": 155,
@@ -4538,7 +4536,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2356 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 63,
       "meta_desc_len": 155,
@@ -4598,7 +4596,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1872 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 57,
       "meta_desc_len": 162,
@@ -4658,7 +4656,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2075 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 52,
       "meta_desc_len": 149,
@@ -4717,7 +4715,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1850 Wörter)",
-        "Schema: Place, ListItem, WebPage, PostalAddress, Answer, Question, C"
+        "Schema: FAQPage, Question, WebPage, PostalAddress, Answer, Article, "
       ],
       "title_len": 52,
       "meta_desc_len": 160,
@@ -4777,7 +4775,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1561 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 45,
       "meta_desc_len": 163,
@@ -4827,7 +4825,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 62,
       "meta_desc_len": 139,
@@ -4934,7 +4932,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (644 Wörter)",
-        "Schema: Organization, WebSite, SiteNavigationElement",
+        "Schema: SiteNavigationElement, Organization, WebSite",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 65,
@@ -4970,7 +4968,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2121 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 52,
       "meta_desc_len": 146,
@@ -5020,7 +5018,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1958 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 60,
       "meta_desc_len": 159,
@@ -5208,7 +5206,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Offer, WebApplication, Question, Answer, FAQPage, "
+        "Schema: WebApplication, FAQPage, Question, Answer, BreadcrumbList, O"
       ],
       "title_len": 55,
       "meta_desc_len": 137,
@@ -5255,7 +5253,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Offer, WebApplication, Question, Answer, FAQPage, "
+        "Schema: WebApplication, FAQPage, Question, Answer, BreadcrumbList, O"
       ],
       "title_len": 58,
       "meta_desc_len": 156,
@@ -5392,27 +5390,26 @@
     {
       "path": "tools/index.html",
       "category": "tool",
-      "size_bytes": 6786,
-      "word_count": 172,
-      "score": 67,
+      "size_bytes": 9809,
+      "word_count": 375,
+      "score": 77,
       "max_score": 100,
       "issues": [],
       "warnings": [
         "Open-Graph-Tags unvollständig",
-        "Content dünn: 172 Wörter (Ziel ≥ 250)",
         "Schema vorhanden aber nicht ideal: ['CollectionPage', 'BreadcrumbList', 'ListItem', 'ListItem']",
-        "H1 und Title nur gering überlappend",
-        "skip-link (Sprungmarke) fehlt - Accessibility-Lücke"
+        "H1 und Title nur gering überlappend"
       ],
       "wins": [
-        "lang-Attribut korrekt"
+        "lang-Attribut korrekt",
+        "Content-Tiefe passend (375 Wörter)"
       ],
       "title_len": 58,
       "meta_desc_len": 163,
       "h1_count": 1,
-      "h2_count": 3,
+      "h2_count": 6,
       "internal_links": 17,
-      "external_links": 0,
+      "external_links": 1,
       "affiliate_links": 0,
       "jsonld_types": [
         "CollectionPage",
@@ -5441,7 +5438,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Offer, WebApplication, Question, Answer, FAQPage, "
+        "Schema: WebApplication, FAQPage, Question, Answer, BreadcrumbList, O"
       ],
       "title_len": 55,
       "meta_desc_len": 156,
@@ -5577,7 +5574,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Offer, WebApplication, Question, Answer, FAQPage, "
+        "Schema: WebApplication, FAQPage, Question, Answer, BreadcrumbList, O"
       ],
       "title_len": 46,
       "meta_desc_len": 140,
@@ -5623,7 +5620,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1679 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 44,
       "meta_desc_len": 145,
@@ -5673,7 +5670,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2133 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 60,
       "meta_desc_len": 154,
@@ -5761,7 +5758,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2254 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 45,
       "meta_desc_len": 133,
@@ -5812,7 +5809,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2994 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 41,
       "meta_desc_len": 153,
@@ -5868,7 +5865,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2468 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 41,
       "meta_desc_len": 146,
@@ -5924,7 +5921,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1534 Wörter)",
-        "Schema: ListItem, WebPage, Question, Organization, Answer, FAQPage, "
+        "Schema: FAQPage, Question, WebPage, Answer, BreadcrumbList, ListItem"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -5978,7 +5975,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1940 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 55,
       "meta_desc_len": 155,
@@ -6026,7 +6023,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2404 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, ",
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 57,
@@ -6079,7 +6076,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2616 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 62,
       "meta_desc_len": 142,
@@ -6131,7 +6128,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2387 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 52,
       "meta_desc_len": 145,
@@ -6183,7 +6180,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2876 Wörter)",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 60,
       "meta_desc_len": 145,
@@ -6235,7 +6232,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: ListItem, Answer, Question, Organization, Article, FAQPage, "
+        "Schema: FAQPage, Question, Answer, Article, BreadcrumbList, ListItem"
       ],
       "title_len": 45,
       "meta_desc_len": 146,
