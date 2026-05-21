@@ -94,7 +94,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1295 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 39,
       "meta_desc_len": 148,
@@ -145,7 +145,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebSite, BreadcrumbList, City, GeoCoordinates, Answer, Image"
+        "Schema: ImageObject, Place, WebSite, GeoCoordinates, AdministrativeA"
       ],
       "title_len": 64,
       "meta_desc_len": 157,
@@ -218,7 +218,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, City, WebPage, Answer, State, Organizati"
       ],
       "title_len": 51,
       "meta_desc_len": 156,
@@ -295,7 +295,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Service, BreadcrumbList, City, Answer, ListItem, Organizatio"
+        "Schema: City, WebPage, Service, Answer, Organization, ListItem, FAQP"
       ],
       "title_len": 48,
       "meta_desc_len": 160,
@@ -352,7 +352,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, ",
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -422,7 +422,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, Article, Organi"
       ],
       "title_len": 50,
       "meta_desc_len": 160,
@@ -488,7 +488,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, Article, Organi"
       ],
       "title_len": 48,
       "meta_desc_len": 158,
@@ -562,7 +562,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, City, WebPage, Answer, State, Organizati"
       ],
       "title_len": 53,
       "meta_desc_len": 162,
@@ -634,7 +634,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, Article, Organi"
       ],
       "title_len": 63,
       "meta_desc_len": 156,
@@ -707,7 +707,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: PostalAddress, ImageObject, City, WebPage, Answer, State, Or"
       ],
       "title_len": 64,
       "meta_desc_len": 162,
@@ -775,7 +775,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ListItem, State, Organization,"
+        "Schema: Place, City, WebPage, Answer, State, Organization, ListItem,"
       ],
       "title_len": 65,
       "meta_desc_len": 161,
@@ -841,7 +841,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebSite, BreadcrumbList, City, Answer, ImageObject, ListItem",
+        "Schema: ImageObject, Place, WebSite, City, WebPage, Answer, State, O",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 51,
@@ -912,7 +912,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz"
       ],
       "title_len": 47,
       "meta_desc_len": 152,
@@ -980,7 +980,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, GovernmentOffice, Artic"
       ],
       "title_len": 54,
       "meta_desc_len": 165,
@@ -1049,7 +1049,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, Article, Organi"
       ],
       "title_len": 57,
       "meta_desc_len": 157,
@@ -1115,7 +1115,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, GeoCoordinates, Answer, ImageObject, L"
+        "Schema: ImageObject, Place, GeoCoordinates, AdministrativeArea, City"
       ],
       "title_len": 61,
       "meta_desc_len": 156,
@@ -1191,7 +1191,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, City, WebPage, Answer, State, Organizati"
       ],
       "title_len": 56,
       "meta_desc_len": 141,
@@ -1265,7 +1265,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, Article, Organi"
       ],
       "title_len": 57,
       "meta_desc_len": 161,
@@ -1333,7 +1333,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, GovernmentOffice, State, Articl"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -1403,7 +1403,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, City, WebPage, Answer, Organizat"
       ],
       "title_len": 56,
       "meta_desc_len": 156,
@@ -1472,7 +1472,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: CivicStructure, BreadcrumbList, City, Answer, ImageObject, L"
+        "Schema: ImageObject, Place, Person, BreadcrumbList, City, WebPage, A"
       ],
       "title_len": 64,
       "meta_desc_len": 155,
@@ -1548,7 +1548,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, GeoCoordinates, Answer, ImageObject, L"
+        "Schema: ImageObject, Place, GeoCoordinates, AdministrativeArea, City"
       ],
       "title_len": 55,
       "meta_desc_len": 152,
@@ -1623,7 +1623,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Service, BreadcrumbList, City, Answer, ImageObject, ListItem"
+        "Schema: ImageObject, City, Service, Answer, Organization, ListItem, "
       ],
       "title_len": 55,
       "meta_desc_len": 152,
@@ -1680,7 +1680,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz"
       ],
       "title_len": 55,
       "meta_desc_len": 161,
@@ -1750,7 +1750,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Adminis"
+        "Schema: ImageObject, Place, AdministrativeArea, City, WebPage, Answe"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
@@ -1822,7 +1822,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: CollectionPage, ListItem, BreadcrumbList"
+        "Schema: CollectionPage, BreadcrumbList, ListItem"
       ],
       "title_len": 61,
       "meta_desc_len": 118,
@@ -1858,7 +1858,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, GovernmentOffice, State, Articl"
       ],
       "title_len": 63,
       "meta_desc_len": 165,
@@ -1926,7 +1926,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Adminis"
+        "Schema: PostalAddress, ImageObject, AdministrativeArea, City, WebPag"
       ],
       "title_len": 65,
       "meta_desc_len": 160,
@@ -1997,7 +1997,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Adminis"
+        "Schema: PostalAddress, ImageObject, AdministrativeArea, City, WebPag"
       ],
       "title_len": 52,
       "meta_desc_len": 145,
@@ -2071,7 +2071,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, Article, Organi"
       ],
       "title_len": 61,
       "meta_desc_len": 159,
@@ -2133,7 +2133,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, GeoCoordinates, Answer, ImageObject, L"
+        "Schema: ImageObject, Place, GeoCoordinates, AdministrativeArea, City"
       ],
       "title_len": 53,
       "meta_desc_len": 162,
@@ -2205,7 +2205,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz"
       ],
       "title_len": 51,
       "meta_desc_len": 163,
@@ -2273,7 +2273,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Governm"
+        "Schema: PostalAddress, ImageObject, AdministrativeArea, City, WebPag"
       ],
       "title_len": 54,
       "meta_desc_len": 151,
@@ -2346,7 +2346,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Service, BreadcrumbList, City, ListItem, Answer, FAQPage, Qu",
+        "Schema: Service, Answer, ListItem, FAQPage, City, BreadcrumbList, Qu",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -2395,7 +2395,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebSite, BreadcrumbList, City, GeoCoordinates, Answer, Image"
+        "Schema: ImageObject, Place, WebSite, GeoCoordinates, City, WebPage, "
       ],
       "title_len": 60,
       "meta_desc_len": 180,
@@ -2470,7 +2470,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebSite, BreadcrumbList, City, GeoCoordinates, Answer, Image"
+        "Schema: ImageObject, Place, WebSite, GeoCoordinates, AdministrativeA"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
@@ -2541,7 +2541,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Adminis",
+        "Schema: ImageObject, Place, AdministrativeArea, WebPage, Answer, Art",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -2612,7 +2612,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Adminis"
+        "Schema: ImageObject, Place, AdministrativeArea, WebPage, Answer, Art"
       ],
       "title_len": 51,
       "meta_desc_len": 153,
@@ -2682,7 +2682,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (668 Wörter)",
-        "Schema: Service, BreadcrumbList, City, ListItem, Answer, FAQPage, Qu",
+        "Schema: Service, Answer, ListItem, FAQPage, City, BreadcrumbList, Qu",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 43,
@@ -2730,7 +2730,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, Answer, ImageObject, ListItem, State, Organi"
+        "Schema: PostalAddress, ImageObject, WebPage, Answer, State, Organiza"
       ],
       "title_len": 55,
       "meta_desc_len": 153,
@@ -2799,7 +2799,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz"
       ],
       "title_len": 64,
       "meta_desc_len": 156,
@@ -2870,7 +2870,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, ",
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 51,
@@ -2943,7 +2943,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, City, WebPage, Answer, Organization, Lis"
       ],
       "title_len": 80,
       "meta_desc_len": 198,
@@ -3010,7 +3010,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, GeoCoordinates, Answer, ImageObject, L"
+        "Schema: ImageObject, Place, GeoCoordinates, WebPage, Answer, State, "
       ],
       "title_len": 52,
       "meta_desc_len": 159,
@@ -3084,7 +3084,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Adminis",
+        "Schema: PostalAddress, ImageObject, Thing, AdministrativeArea, City,",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -3159,7 +3159,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, City, WebPage, Answer, State, Organizati"
       ],
       "title_len": 55,
       "meta_desc_len": 154,
@@ -3228,7 +3228,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, City, WebPage, Answer, State, Organizati"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
@@ -3298,7 +3298,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: PostalAddress, ImageObject, City, WebPage, Answer, Organizat"
       ],
       "title_len": 61,
       "meta_desc_len": 155,
@@ -3367,7 +3367,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebSite, BreadcrumbList, City, GeoCoordinates, Country, Imag"
+        "Schema: PostalAddress, ImageObject, WebSite, GeoCoordinates, Country"
       ],
       "title_len": 55,
       "meta_desc_len": 156,
@@ -3438,7 +3438,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, GeoCoordinates, Answer, ImageObject, L"
+        "Schema: PostalAddress, ImageObject, GeoCoordinates, City, WebPage, A"
       ],
       "title_len": 50,
       "meta_desc_len": 163,
@@ -3505,7 +3505,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, GeoCoordinates, Answer, ImageObject, L"
+        "Schema: ImageObject, Place, GeoCoordinates, City, WebPage, Answer, S"
       ],
       "title_len": 53,
       "meta_desc_len": 164,
@@ -3583,7 +3583,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz"
       ],
       "title_len": 57,
       "meta_desc_len": 158,
@@ -3653,7 +3653,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebSite, BreadcrumbList, City, Answer, ImageObject, ListItem"
+        "Schema: ImageObject, Place, WebSite, City, WebPage, Answer, State, O"
       ],
       "title_len": 52,
       "meta_desc_len": 156,
@@ -3723,7 +3723,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, State, "
+        "Schema: ImageObject, Place, WebPage, Answer, State, Article, Organiz"
       ],
       "title_len": 58,
       "meta_desc_len": 152,
@@ -3788,7 +3788,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2446 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 60,
       "meta_desc_len": 165,
@@ -3848,7 +3848,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2189 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 62,
       "meta_desc_len": 154,
@@ -3908,7 +3908,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2179 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 52,
       "meta_desc_len": 139,
@@ -3964,7 +3964,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2002 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 54,
       "meta_desc_len": 158,
@@ -4024,7 +4024,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2154 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 60,
       "meta_desc_len": 163,
@@ -4081,7 +4081,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2100 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 52,
       "meta_desc_len": 161,
@@ -4137,7 +4137,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2194 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 56,
       "meta_desc_len": 157,
@@ -4200,7 +4200,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: CollectionPage, ListItem, BreadcrumbList"
+        "Schema: CollectionPage, BreadcrumbList, ListItem"
       ],
       "title_len": 64,
       "meta_desc_len": 154,
@@ -4235,7 +4235,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1915 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 65,
       "meta_desc_len": 163,
@@ -4295,7 +4295,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2003 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 59,
       "meta_desc_len": 163,
@@ -4355,7 +4355,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 55,
       "meta_desc_len": 151,
@@ -4419,7 +4419,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2247 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 63,
       "meta_desc_len": 151,
@@ -4479,7 +4479,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Cemetery, BreadcrumbList, City, GeoCoordinates, Answer, Imag"
+        "Schema: ImageObject, Place, GeoCoordinates, WebPage, Cemetery, Artic"
       ],
       "title_len": 48,
       "meta_desc_len": 155,
@@ -4543,7 +4543,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2356 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 63,
       "meta_desc_len": 155,
@@ -4603,7 +4603,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1872 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 57,
       "meta_desc_len": 162,
@@ -4663,7 +4663,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2075 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 52,
       "meta_desc_len": 149,
@@ -4722,7 +4722,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1850 Wörter)",
-        "Schema: BreadcrumbList, City, Answer, ImageObject, ListItem, Organiz"
+        "Schema: ImageObject, Place, WebPage, Answer, Article, Organization, "
       ],
       "title_len": 52,
       "meta_desc_len": 160,
@@ -4782,7 +4782,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1561 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 45,
       "meta_desc_len": 163,
@@ -4832,7 +4832,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 62,
       "meta_desc_len": 139,
@@ -4941,7 +4941,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (644 Wörter)",
-        "Schema: WebSite, Organization, SiteNavigationElement",
+        "Schema: Organization, SiteNavigationElement, WebSite",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 65,
@@ -4977,7 +4977,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2121 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 52,
       "meta_desc_len": 146,
@@ -5027,7 +5027,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1958 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 60,
       "meta_desc_len": 159,
@@ -5175,7 +5175,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, WebApplication, ListItem, BreadcrumbList"
+        "Schema: WebApplication, Offer, ListItem, BreadcrumbList"
       ],
       "title_len": 50,
       "meta_desc_len": 151,
@@ -5215,7 +5215,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, Offer, WebApplication, Answer, FAQ"
+        "Schema: Offer, WebApplication, Answer, ListItem, FAQPage, Breadcrumb"
       ],
       "title_len": 55,
       "meta_desc_len": 137,
@@ -5262,7 +5262,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, Offer, WebApplication, Answer, FAQ"
+        "Schema: Offer, WebApplication, Answer, ListItem, FAQPage, Breadcrumb"
       ],
       "title_len": 58,
       "meta_desc_len": 156,
@@ -5300,12 +5300,11 @@
     {
       "path": "tools/danksagung/index.html",
       "category": "tool-content",
-      "size_bytes": 36953,
+      "size_bytes": 36980,
       "word_count": 133,
       "score": 40,
       "max_score": 100,
       "issues": [
-        "<main>-Landmark fehlt",
         "Content extrem dünn: 133 Wörter (Ziel ≥ 800)",
         "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (66 JSX-Leaks). Google sieht kein H1, keinen Content."
       ],
@@ -5449,7 +5448,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, Offer, WebApplication, Answer, FAQ"
+        "Schema: Offer, WebApplication, Answer, ListItem, FAQPage, Breadcrumb"
       ],
       "title_len": 55,
       "meta_desc_len": 156,
@@ -5532,12 +5531,11 @@
     {
       "path": "tools/trauerrede/index.html",
       "category": "tool",
-      "size_bytes": 53393,
+      "size_bytes": 53420,
       "word_count": 128,
       "score": 40,
       "max_score": 100,
       "issues": [
-        "<main>-Landmark fehlt",
         "DEPLOY-BLOCKER: JSX wird client-side via @babel/standalone kompiliert (110 JSX-Leaks). Google sieht kein H1, keinen Content."
       ],
       "warnings": [
@@ -5548,7 +5546,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, WebApplication, ListItem, BreadcrumbList"
+        "Schema: WebApplication, Offer, ListItem, BreadcrumbList"
       ],
       "title_len": 52,
       "meta_desc_len": 139,
@@ -5586,7 +5584,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, Offer, WebApplication, Answer, FAQ"
+        "Schema: Offer, WebApplication, Answer, ListItem, FAQPage, Breadcrumb"
       ],
       "title_len": 46,
       "meta_desc_len": 140,
@@ -5632,7 +5630,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1679 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 44,
       "meta_desc_len": 145,
@@ -5682,7 +5680,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2133 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 60,
       "meta_desc_len": 154,
@@ -5771,7 +5769,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2254 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 45,
       "meta_desc_len": 133,
@@ -5822,7 +5820,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2994 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 41,
       "meta_desc_len": 153,
@@ -5878,7 +5876,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2468 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 41,
       "meta_desc_len": 146,
@@ -5934,7 +5932,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1534 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Organization, Answer, FAQPage, Que"
+        "Schema: WebPage, Answer, Organization, ListItem, FAQPage, Breadcrumb"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -5988,7 +5986,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1940 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 55,
       "meta_desc_len": 155,
@@ -6036,7 +6034,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2404 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ",
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 57,
@@ -6089,7 +6087,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2616 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 62,
       "meta_desc_len": 142,
@@ -6141,7 +6139,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2387 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 52,
       "meta_desc_len": 145,
@@ -6193,7 +6191,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2876 Wörter)",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 60,
       "meta_desc_len": 145,
@@ -6245,7 +6243,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, Answer, ListItem, Organization, Article, FAQ"
+        "Schema: Answer, Organization, ListItem, FAQPage, Article, Breadcrumb"
       ],
       "title_len": 45,
       "meta_desc_len": 146,
