@@ -1,7 +1,7 @@
 {
   "meta": {
     "pages": 104,
-    "avg_score": 69.55,
+    "avg_score": 69.52,
     "by_category": {
       "legal": {
         "count": 4,
@@ -13,7 +13,7 @@
       },
       "stadt": {
         "count": 53,
-        "avg_score": 67.3
+        "avg_score": 67.25
       },
       "bundesland": {
         "count": 17,
@@ -44,137 +44,9 @@
         "avg_score": 68.62
       }
     },
-    "broken_internal_links": 127
+    "broken_internal_links": 0
   },
-  "broken_links": {
-    "bestatter/aachen/index.html → /ratgeber/": 1,
-    "bestatter/aachen/index.html → /ratgeber/sozialbestattung/": 1,
-    "bestatter/aachen/index.html → /ratgeber/vorsorge/": 1,
-    "bestatter/aachen/index.html → /ratgeber/trauerfeier/": 1,
-    "bestatter/aachen/index.html → /kontakt/": 1,
-    "bestatter/augsburg/index.html → /ratgeber/": 1,
-    "bestatter/augsburg/index.html → /ratgeber/bestatter-auswaehlen/": 1,
-    "bestatter/augsburg/index.html → /ratgeber/erbschein-antrag/": 1,
-    "bestatter/augsburg/index.html → /ratgeber/trauerfeier/": 1,
-    "bestatter/augsburg/index.html → /kontakt/": 1,
-    "bestatter/bielefeld/index.html → /bestattung": 1,
-    "bestatter/bochum/index.html → /bestattung": 1,
-    "bestatter/bonn/index.html → /bestattung": 1,
-    "bestatter/bonn/index.html → /bestattungsarten/feuerbestattung": 1,
-    "bestatter/bonn/index.html → /bestattungsarten/seebestattung": 1,
-    "bestatter/braunschweig/index.html → /ratgeber/": 2,
-    "bestatter/braunschweig/index.html → /bestatter/goettingen/": 1,
-    "bestatter/braunschweig/index.html → /kontakt/": 1,
-    "bestatter/braunschweig/index.html → /quellen/": 1,
-    "bestatter/bremen/index.html → /bestatter/bremerhaven/": 1,
-    "bestatter/chemnitz/index.html → /kontakt/": 1,
-    "bestatter/darmstadt/index.html → /checklisten/": 1,
-    "bestatter/darmstadt/index.html → /bestatter/offenbach/": 1,
-    "bestatter/darmstadt/index.html → /checklisten/erste-72-stunden/": 1,
-    "bestatter/darmstadt/index.html → /vorsorge/friedwald-baumbestattung/": 1,
-    "bestatter/darmstadt/index.html → /redaktion/": 1,
-    "bestatter/darmstadt/index.html → /kontakt/": 1,
-    "bestatter/erfurt/index.html → /checkliste-todesfall/": 1,
-    "bestatter/erfurt/index.html → /bestatter/weimar/": 1,
-    "bestatter/erfurt/index.html → /bestatter/jena/": 1,
-    "bestatter/erfurt/index.html → /bestatter/gera/": 1,
-    "bestatter/essen/index.html → /kontakt/": 1,
-    "bestatter/gelsenkirchen/index.html → /kosten/": 2,
-    "bestatter/gelsenkirchen/index.html → /wissen/": 2,
-    "bestatter/gelsenkirchen/index.html → /bestatter/herne/": 2,
-    "bestatter/gelsenkirchen/index.html → /bestatter/recklinghausen/": 2,
-    "bestatter/gelsenkirchen/index.html → /ueber/": 1,
-    "bestatter/gelsenkirchen/index.html → /kontakt/": 1,
-    "bestatter/halle/index.html → /kostenrechner": 1,
-    "bestatter/halle/index.html → /kontakt": 1,
-    "bestatter/hannover/index.html → /bestatter/hildesheim/": 1,
-    "bestatter/hannover/index.html → /bestattungsarten/feuerbestattung/": 1,
-    "bestatter/hannover/index.html → /bestattungsarten/baumbestattung/": 1,
-    "bestatter/heidelberg/index.html → /bestatter/heilbronn/": 1,
-    "bestatter/heidelberg/index.html → /bestatter/ulm/": 1,
-    "bestatter/heidelberg/index.html → /kontakt": 1,
-    "bestatter/karlsruhe/index.html → /bestatter/freiburg-im-breisgau/": 1,
-    "bestatter/karlsruhe/index.html → /bestatter/pforzheim/": 1,
-    "bestatter/kassel/index.html → /ratgeber/": 1,
-    "bestatter/kassel/index.html → /ratgeber/checkliste-todesfall/": 1,
-    "bestatter/kassel/index.html → /bestatter/offenbach/": 1,
-    "bestatter/kassel/index.html → /kontakt/": 1,
-    "bestatter/kiel/index.html → /ratgeber/": 1,
-    "bestatter/kiel/index.html → /ratgeber/seebestattung/": 1,
-    "bestatter/kiel/index.html → /ratgeber/friedwald-ruheforst/": 1,
-    "bestatter/kiel/index.html → /ratgeber/vorsorge/": 1,
-    "bestatter/kiel/index.html → /ratgeber/patientenverfuegung/": 1,
-    "bestatter/krefeld/index.html → /ratgeber/": 1,
-    "bestatter/leverkusen/index.html → /ratgeber/": 1,
-    "bestatter/leverkusen/index.html → /kontakt/": 1,
-    "bestatter/lübeck/index.html → /bestatter/flensburg/": 1,
-    "bestatter/lübeck/index.html → /bestattungsarten/seebestattung/": 1,
-    "bestatter/lübeck/index.html → /bestattungsarten/reerdigung/": 1,
-    "bestatter/lübeck/index.html → /kontakt/": 1,
-    "bestatter/magdeburg/index.html → /kosten/": 2,
-    "bestatter/magdeburg/index.html → /trauerfeier/": 2,
-    "bestatter/magdeburg/index.html → /checkliste-todesfall/": 1,
-    "bestatter/magdeburg/index.html → /kontakt/": 1,
-    "bestatter/muelheim/index.html → /ratgeber/": 1,
-    "bestatter/muelheim/index.html → /kontakt/": 1,
-    "bestatter/muenchen/index.html → /bestatter/muenchen/waldfriedhof-solln/": 1,
-    "bestatter/muenchen/index.html → /bestatter/muenchen/bogenhausen/": 1,
-    "bestatter/muenchen/index.html → /bestatter/muenchen/perlacher-forst/": 1,
-    "bestatter/muenster/index.html → /bestattung": 1,
-    "bestatter/mönchengladbach/index.html → /ratgeber/": 1,
-    "bestatter/mönchengladbach/index.html → /ratgeber/bestattungsvorsorge/": 2,
-    "bestatter/mönchengladbach/index.html → /ratgeber/bestattungsverfuegung/": 1,
-    "bestatter/mönchengladbach/index.html → /ratgeber/trauerhilfe/": 1,
-    "bestatter/mönchengladbach/index.html → /kontakt/": 1,
-    "bestatter/nuernberg/index.html → /bestatter/wuerzburg/": 1,
-    "bestatter/oberhausen/index.html → /ratgeber/": 1,
-    "bestatter/oberhausen/index.html → /kontakt/": 1,
-    "bestatter/oldenburg/index.html → /ratgeber/": 1,
-    "bestatter/oldenburg/index.html → /bestatter/wilhelmshaven/": 1,
-    "bestatter/oldenburg/index.html → /kontakt/": 1,
-    "bestatter/osnabrueck/index.html → /kontakt/": 1,
-    "bestatter/potsdam/index.html → /vorsorge/bestattungsvorsorgevertrag/": 1,
-    "bestatter/potsdam/index.html → /bestatter/brandenburg-an-der-havel/": 1,
-    "bestatter/potsdam/index.html → /trauerfeier/": 1,
-    "bestatter/regensburg/index.html → /ratgeber": 1,
-    "bestatter/regensburg/index.html → /ratgeber/checkliste-todesfall/": 1,
-    "bestatter/regensburg/index.html → /redaktion": 1,
-    "bestatter/rostock/index.html → /ratgeber/": 1,
-    "bestatter/rostock/index.html → /ratgeber/sterbeurkunde/": 2,
-    "bestatter/rostock/index.html → /ratgeber/trauerredner/": 2,
-    "bestatter/rostock/index.html → /ratgeber/seebestattung/": 2,
-    "bestatter/rostock/index.html → /bestatter/schwerin/": 1,
-    "bestatter/rostock/index.html → /bestatter/stralsund/": 1,
-    "bestatter/rostock/index.html → /kontakt/": 1,
-    "bestatter/stuttgart/index.html → /bestatter/esslingen/": 1,
-    "bestatter/stuttgart/index.html → /bestatter/ludwigsburg/": 1,
-    "bestatter/stuttgart/index.html → /bestatter/tuebingen/": 1,
-    "bestatter/stuttgart/index.html → /bestatter/reutlingen/": 1,
-    "bestatter/stuttgart/index.html → /bestatter/heilbronn/": 1,
-    "bestatter/wuppertal/index.html → /bestatter/solingen/": 1,
-    "bestatter/wuppertal/index.html → /bestatter/remscheid/": 1,
-    "bestattung-in/baden-württemberg/index.html → /bestattung": 1,
-    "bestattung-in/bayern/index.html → /bestattung": 1,
-    "bestattung-in/berlin/index.html → /bestattung": 1,
-    "bestattung-in/brandenburg/index.html → /bestattung": 1,
-    "bestattung-in/bremen/index.html → /bestattung": 1,
-    "bestattung-in/hamburg/index.html → /bestattung": 1,
-    "bestattung-in/hessen/index.html → /bestattung": 1,
-    "bestattung-in/hessen/index.html → /bestatter/offenbach-am-main/": 1,
-    "bestattung-in/mecklenburg-vorpommern/index.html → /bestattung": 1,
-    "bestattung-in/niedersachsen/index.html → /bestattung": 1,
-    "bestattung-in/nordrhein-westfalen/index.html → /bestattung": 1,
-    "bestattung-in/rheinland-pfalz/index.html → /bestattung": 1,
-    "bestattung-in/saarland/index.html → /bestattung": 1,
-    "bestattung-in/saarland/index.html → /bestatter-in/saarbruecken/": 1,
-    "bestattung-in/saarland/index.html → /bestattungsarten/baumbestattung/": 1,
-    "bestattung-in/saarland/index.html → /bestattungsarten/feuerbestattung/": 1,
-    "bestattung-in/sachsen/index.html → /bestattung": 1,
-    "bestattung-in/sachsen-anhalt/index.html → /bestattung": 1,
-    "bestattung-in/schleswig-holstein/index.html → /bestattung": 1,
-    "bestattung-in/thüringen/index.html → /bestattung": 1,
-    "vorsorge/ohne-vorsorge/index.html → /tools/brief-an-meine-liebsten": 1
-  },
+  "broken_links": {},
   "pages": [
     {
       "path": "404.html",
@@ -222,7 +94,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1295 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 39,
       "meta_desc_len": 148,
@@ -260,26 +132,26 @@
     {
       "path": "bestatter/aachen/index.html",
       "category": "stadt",
-      "size_bytes": 62214,
-      "word_count": 4254,
+      "size_bytes": 62044,
+      "word_count": 4250,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4254 Wörter) - evtl. splitten",
+        "Content sehr lang (4250 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 64,
       "meta_desc_len": 157,
       "h1_count": 1,
       "h2_count": 11,
-      "internal_links": 17,
+      "internal_links": 12,
       "external_links": 20,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -333,26 +205,26 @@
     {
       "path": "bestatter/augsburg/index.html",
       "category": "stadt",
-      "size_bytes": 62176,
-      "word_count": 4479,
+      "size_bytes": 61983,
+      "word_count": 4474,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4479 Wörter) - evtl. splitten",
+        "Content sehr lang (4474 Wörter) - evtl. splitten",
         "6 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 51,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 15,
+      "internal_links": 10,
       "external_links": 0,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -410,7 +282,7 @@
     {
       "path": "bestatter/berlin/index.html",
       "category": "stadt",
-      "size_bytes": 58696,
+      "size_bytes": 58700,
       "word_count": 3541,
       "score": 66,
       "max_score": 100,
@@ -423,7 +295,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, Service, PostalAddress, BreadcrumbList, ListI"
+        "Schema: Article, PostalAddress, City, BreadcrumbList, Service, FAQPa"
       ],
       "title_len": 48,
       "meta_desc_len": 160,
@@ -480,14 +352,14 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, ",
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
       "meta_desc_len": 153,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 18,
+      "internal_links": 17,
       "external_links": 22,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -550,13 +422,13 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 50,
       "meta_desc_len": 160,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 18,
+      "internal_links": 17,
       "external_links": 15,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -603,7 +475,7 @@
     {
       "path": "bestatter/bonn/index.html",
       "category": "stadt",
-      "size_bytes": 58534,
+      "size_bytes": 58504,
       "word_count": 3715,
       "score": 67,
       "max_score": 100,
@@ -616,13 +488,13 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 48,
       "meta_desc_len": 158,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 19,
+      "internal_links": 16,
       "external_links": 15,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -677,26 +549,26 @@
     {
       "path": "bestatter/braunschweig/index.html",
       "category": "stadt",
-      "size_bytes": 63294,
-      "word_count": 3931,
+      "size_bytes": 63071,
+      "word_count": 3926,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3931 Wörter) - evtl. splitten",
+        "Content sehr lang (3926 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 53,
       "meta_desc_len": 162,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 14,
+      "internal_links": 10,
       "external_links": 26,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -749,26 +621,26 @@
     {
       "path": "bestatter/bremen/index.html",
       "category": "stadt",
-      "size_bytes": 65622,
-      "word_count": 3847,
+      "size_bytes": 65550,
+      "word_count": 3844,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3847 Wörter) - evtl. splitten",
+        "Content sehr lang (3844 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, ListIte"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 63,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 16,
+      "internal_links": 15,
       "external_links": 24,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -822,26 +694,26 @@
     {
       "path": "bestatter/chemnitz/index.html",
       "category": "stadt",
-      "size_bytes": 54296,
-      "word_count": 3725,
+      "size_bytes": 54225,
+      "word_count": 3723,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3725 Wörter) - evtl. splitten",
+        "Content sehr lang (3723 Wörter) - evtl. splitten",
         "6 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 64,
       "meta_desc_len": 162,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 10,
+      "internal_links": 9,
       "external_links": 13,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -890,26 +762,26 @@
     {
       "path": "bestatter/darmstadt/index.html",
       "category": "stadt",
-      "size_bytes": 55910,
-      "word_count": 3668,
+      "size_bytes": 55771,
+      "word_count": 3664,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3668 Wörter) - evtl. splitten",
+        "Content sehr lang (3664 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, FAQPage, Place"
       ],
       "title_len": 65,
       "meta_desc_len": 161,
       "h1_count": 1,
       "h2_count": 11,
-      "internal_links": 17,
+      "internal_links": 12,
       "external_links": 19,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -958,25 +830,25 @@
     {
       "path": "bestatter/dortmund/index.html",
       "category": "stadt",
-      "size_bytes": 54423,
-      "word_count": 3277,
+      "size_bytes": 54283,
+      "word_count": 3274,
       "score": 77,
       "max_score": 100,
       "issues": [],
       "warnings": [
-        "Content sehr lang (3277 Wörter) - evtl. splitten",
+        "Content sehr lang (3274 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, ",
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 51,
       "meta_desc_len": 155,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 11,
+      "internal_links": 9,
       "external_links": 22,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1040,7 +912,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 47,
       "meta_desc_len": 152,
@@ -1108,7 +980,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, ListIte"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 54,
       "meta_desc_len": 165,
@@ -1177,7 +1049,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 57,
       "meta_desc_len": 157,
@@ -1230,26 +1102,26 @@
     {
       "path": "bestatter/erfurt/index.html",
       "category": "stadt",
-      "size_bytes": 64848,
-      "word_count": 4639,
+      "size_bytes": 64759,
+      "word_count": 4637,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4639 Wörter) - evtl. splitten",
+        "Content sehr lang (4637 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, PostalAddress, ImageObjec"
       ],
       "title_len": 61,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 14,
+      "internal_links": 11,
       "external_links": 20,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1306,26 +1178,26 @@
     {
       "path": "bestatter/essen/index.html",
       "category": "stadt",
-      "size_bytes": 62808,
-      "word_count": 4212,
+      "size_bytes": 62773,
+      "word_count": 4210,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4212 Wörter) - evtl. splitten",
+        "Content sehr lang (4210 Wörter) - evtl. splitten",
         "7 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 56,
       "meta_desc_len": 141,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 13,
+      "internal_links": 12,
       "external_links": 28,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1393,7 +1265,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 57,
       "meta_desc_len": 161,
@@ -1461,7 +1333,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -1518,26 +1390,26 @@
     {
       "path": "bestatter/gelsenkirchen/index.html",
       "category": "stadt",
-      "size_bytes": 58435,
-      "word_count": 3473,
+      "size_bytes": 58159,
+      "word_count": 3467,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3473 Wörter) - evtl. splitten",
+        "Content sehr lang (3467 Wörter) - evtl. splitten",
         "8 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, ListIte"
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 56,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 16,
+      "internal_links": 12,
       "external_links": 21,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1587,26 +1459,26 @@
     {
       "path": "bestatter/hagen/index.html",
       "category": "stadt",
-      "size_bytes": 60400,
-      "word_count": 3893,
+      "size_bytes": 59910,
+      "word_count": 3886,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3893 Wörter) - evtl. splitten",
+        "Content sehr lang (3886 Wörter) - evtl. splitten",
         "10 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, Person, PostalAddress, BreadcrumbList,"
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, P"
       ],
       "title_len": 64,
       "meta_desc_len": 155,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 15,
+      "internal_links": 9,
       "external_links": 22,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1663,26 +1535,26 @@
     {
       "path": "bestatter/halle/index.html",
       "category": "stadt",
-      "size_bytes": 61136,
-      "word_count": 4150,
+      "size_bytes": 61113,
+      "word_count": 4149,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4150 Wörter) - evtl. splitten",
+        "Content sehr lang (4149 Wörter) - evtl. splitten",
         "6 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, A"
       ],
       "title_len": 55,
       "meta_desc_len": 152,
       "h1_count": 1,
       "h2_count": 7,
-      "internal_links": 11,
+      "internal_links": 10,
       "external_links": 16,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1751,7 +1623,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Service, City, BreadcrumbList, ListItem, ImageObject, Questi"
+        "Schema: Article, City, BreadcrumbList, ImageObject, FAQPage, Answer,"
       ],
       "title_len": 55,
       "meta_desc_len": 152,
@@ -1795,26 +1667,26 @@
     {
       "path": "bestatter/hannover/index.html",
       "category": "stadt",
-      "size_bytes": 57546,
-      "word_count": 3540,
+      "size_bytes": 57425,
+      "word_count": 3535,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3540 Wörter) - evtl. splitten",
+        "Content sehr lang (3535 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 55,
       "meta_desc_len": 161,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 17,
+      "internal_links": 14,
       "external_links": 18,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1865,26 +1737,26 @@
     {
       "path": "bestatter/heidelberg/index.html",
       "category": "stadt",
-      "size_bytes": 64271,
-      "word_count": 4420,
+      "size_bytes": 64165,
+      "word_count": 4418,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4420 Wörter) - evtl. splitten",
+        "Content sehr lang (4418 Wörter) - evtl. splitten",
         "6 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 18,
+      "internal_links": 15,
       "external_links": 12,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -1950,7 +1822,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, CollectionPage"
+        "Schema: CollectionPage, BreadcrumbList, ListItem"
       ],
       "title_len": 61,
       "meta_desc_len": 118,
@@ -1973,26 +1845,26 @@
     {
       "path": "bestatter/karlsruhe/index.html",
       "category": "stadt",
-      "size_bytes": 61697,
-      "word_count": 3468,
+      "size_bytes": 61649,
+      "word_count": 3467,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3468 Wörter) - evtl. splitten",
+        "Content sehr lang (3467 Wörter) - evtl. splitten",
         "8 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 63,
       "meta_desc_len": 165,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 18,
+      "internal_links": 17,
       "external_links": 29,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2041,26 +1913,26 @@
     {
       "path": "bestatter/kassel/index.html",
       "category": "stadt",
-      "size_bytes": 69076,
-      "word_count": 5003,
+      "size_bytes": 68929,
+      "word_count": 4995,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (5003 Wörter) - evtl. splitten",
+        "Content sehr lang (4995 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 65,
       "meta_desc_len": 160,
       "h1_count": 1,
       "h2_count": 11,
-      "internal_links": 14,
+      "internal_links": 11,
       "external_links": 18,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2111,27 +1983,27 @@
     {
       "path": "bestatter/kiel/index.html",
       "category": "stadt",
-      "size_bytes": 68010,
-      "word_count": 4860,
+      "size_bytes": 67820,
+      "word_count": 4853,
       "score": 65,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4860 Wörter) - evtl. splitten",
+        "Content sehr lang (4853 Wörter) - evtl. splitten",
         "6 Inline-Style-Attribute",
         "H1 und Title nur gering überlappend"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 52,
       "meta_desc_len": 145,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 12,
+      "internal_links": 9,
       "external_links": 18,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2199,7 +2071,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 61,
       "meta_desc_len": 159,
@@ -2248,26 +2120,26 @@
     {
       "path": "bestatter/krefeld/index.html",
       "category": "stadt",
-      "size_bytes": 59372,
-      "word_count": 3694,
+      "size_bytes": 59339,
+      "word_count": 3693,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3694 Wörter) - evtl. splitten",
+        "Content sehr lang (3693 Wörter) - evtl. splitten",
         "13 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 53,
       "meta_desc_len": 162,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 9,
+      "internal_links": 8,
       "external_links": 21,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2333,7 +2205,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 51,
       "meta_desc_len": 163,
@@ -2388,26 +2260,26 @@
     {
       "path": "bestatter/leverkusen/index.html",
       "category": "stadt",
-      "size_bytes": 58708,
-      "word_count": 4153,
+      "size_bytes": 58644,
+      "word_count": 4151,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4153 Wörter) - evtl. splitten",
+        "Content sehr lang (4151 Wörter) - evtl. splitten",
         "7 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 54,
       "meta_desc_len": 151,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 10,
+      "internal_links": 8,
       "external_links": 16,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2474,7 +2346,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Service, City, BreadcrumbList, ListItem, Question, Answer, F",
+        "Schema: City, BreadcrumbList, FAQPage, Answer, ListItem, Question, S",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 34,
@@ -2509,8 +2381,8 @@
     {
       "path": "bestatter/lübeck/index.html",
       "category": "stadt",
-      "size_bytes": 47020,
-      "word_count": 2853,
+      "size_bytes": 46864,
+      "word_count": 2844,
       "score": 65,
       "max_score": 100,
       "issues": [
@@ -2518,18 +2390,18 @@
       ],
       "warnings": [
         "Meta-Description zu lang (180 Zeichen)",
-        "Content sehr lang (2853 Wörter) - evtl. splitten",
+        "Content sehr lang (2844 Wörter) - evtl. splitten",
         "7 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 60,
       "meta_desc_len": 180,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 13,
+      "internal_links": 10,
       "external_links": 15,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2585,26 +2457,26 @@
     {
       "path": "bestatter/magdeburg/index.html",
       "category": "stadt",
-      "size_bytes": 56797,
-      "word_count": 3977,
+      "size_bytes": 56732,
+      "word_count": 3974,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3977 Wörter) - evtl. splitten",
+        "Content sehr lang (3974 Wörter) - evtl. splitten",
         "6 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 13,
+      "internal_links": 11,
       "external_links": 20,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2669,7 +2541,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb",
+        "Schema: City, PostalAddress, AdministrativeArea, Article, ImageObjec",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
@@ -2740,7 +2612,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Breadcrumb"
+        "Schema: City, PostalAddress, AdministrativeArea, Article, ImageObjec"
       ],
       "title_len": 51,
       "meta_desc_len": 153,
@@ -2810,7 +2682,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (668 Wörter)",
-        "Schema: Service, City, BreadcrumbList, ListItem, Question, Answer, F",
+        "Schema: City, BreadcrumbList, FAQPage, Answer, ListItem, Question, S",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 43,
@@ -2845,26 +2717,26 @@
     {
       "path": "bestatter/muelheim/index.html",
       "category": "stadt",
-      "size_bytes": 59331,
-      "word_count": 4173,
+      "size_bytes": 59220,
+      "word_count": 4170,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4173 Wörter) - evtl. splitten",
+        "Content sehr lang (4170 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, State, PostalAddress, BreadcrumbList, Place, ListIt"
+        "Schema: Article, PostalAddress, BreadcrumbList, ImageObject, FAQPage"
       ],
       "title_len": 55,
       "meta_desc_len": 153,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 10,
+      "internal_links": 8,
       "external_links": 27,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2914,7 +2786,7 @@
     {
       "path": "bestatter/muenchen/index.html",
       "category": "stadt",
-      "size_bytes": 66822,
+      "size_bytes": 66670,
       "word_count": 4376,
       "score": 67,
       "max_score": 100,
@@ -2927,13 +2799,13 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, State, City, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 64,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 20,
+      "internal_links": 17,
       "external_links": 33,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -2998,14 +2870,14 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, ",
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 51,
       "meta_desc_len": 161,
       "h1_count": 1,
       "h2_count": 11,
-      "internal_links": 18,
+      "internal_links": 17,
       "external_links": 22,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3056,8 +2928,8 @@
     {
       "path": "bestatter/mönchengladbach/index.html",
       "category": "stadt",
-      "size_bytes": 56685,
-      "word_count": 3922,
+      "size_bytes": 56504,
+      "word_count": 3917,
       "score": 63,
       "max_score": 100,
       "issues": [
@@ -3066,18 +2938,18 @@
       "warnings": [
         "Title zu lang (80 Zeichen, Ziel 50-60)",
         "Meta-Description zu lang (198 Zeichen)",
-        "Content sehr lang (3922 Wörter) - evtl. splitten",
+        "Content sehr lang (3917 Wörter) - evtl. splitten",
         "7 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, ListIte"
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 80,
       "meta_desc_len": 198,
       "h1_count": 1,
       "h2_count": 7,
-      "internal_links": 16,
+      "internal_links": 12,
       "external_links": 11,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3125,7 +2997,7 @@
     {
       "path": "bestatter/nuernberg/index.html",
       "category": "stadt",
-      "size_bytes": 62364,
+      "size_bytes": 62328,
       "word_count": 3800,
       "score": 67,
       "max_score": 100,
@@ -3138,13 +3010,13 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 52,
       "meta_desc_len": 159,
       "h1_count": 1,
       "h2_count": 14,
-      "internal_links": 15,
+      "internal_links": 14,
       "external_links": 15,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3200,25 +3072,26 @@
     {
       "path": "bestatter/oberhausen/index.html",
       "category": "stadt",
-      "size_bytes": 61008,
-      "word_count": 4215,
-      "score": 77,
+      "size_bytes": 60936,
+      "word_count": 4212,
+      "score": 74,
       "max_score": 100,
       "issues": [],
       "warnings": [
-        "Content sehr lang (4215 Wörter) - evtl. splitten",
+        "Content sehr lang (4212 Wörter) - evtl. splitten",
+        "Nur 7 interne Links (Ziel ≥ 8)",
         "9 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, AdministrativeArea, PostalAddress, Thing, Bre",
+        "Schema: Article, City, AdministrativeArea, BreadcrumbList, ImageObje",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 54,
       "meta_desc_len": 163,
       "h1_count": 1,
       "h2_count": 9,
-      "internal_links": 9,
+      "internal_links": 7,
       "external_links": 11,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3273,26 +3146,26 @@
     {
       "path": "bestatter/oldenburg/index.html",
       "category": "stadt",
-      "size_bytes": 60371,
-      "word_count": 4305,
+      "size_bytes": 60232,
+      "word_count": 4301,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4305 Wörter) - evtl. splitten",
+        "Content sehr lang (4301 Wörter) - evtl. splitten",
         "10 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 55,
       "meta_desc_len": 154,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 14,
+      "internal_links": 11,
       "external_links": 16,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3342,26 +3215,26 @@
     {
       "path": "bestatter/osnabrueck/index.html",
       "category": "stadt",
-      "size_bytes": 60937,
-      "word_count": 4450,
+      "size_bytes": 60897,
+      "word_count": 4449,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4450 Wörter) - evtl. splitten",
+        "Content sehr lang (4449 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 54,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 9,
+      "internal_links": 8,
       "external_links": 17,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3412,26 +3285,26 @@
     {
       "path": "bestatter/potsdam/index.html",
       "category": "stadt",
-      "size_bytes": 53280,
-      "word_count": 3988,
+      "size_bytes": 53120,
+      "word_count": 3980,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3988 Wörter) - evtl. splitten",
+        "Content sehr lang (3980 Wörter) - evtl. splitten",
         "7 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, ListIte"
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 61,
       "meta_desc_len": 155,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 13,
+      "internal_links": 11,
       "external_links": 13,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3481,26 +3354,26 @@
     {
       "path": "bestatter/regensburg/index.html",
       "category": "stadt",
-      "size_bytes": 56034,
-      "word_count": 3729,
+      "size_bytes": 55950,
+      "word_count": 3724,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3729 Wörter) - evtl. splitten",
+        "Content sehr lang (3724 Wörter) - evtl. splitten",
         "9 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, Country, BreadcrumbList"
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, C"
       ],
       "title_len": 55,
       "meta_desc_len": 156,
       "h1_count": 1,
       "h2_count": 8,
-      "internal_links": 11,
+      "internal_links": 9,
       "external_links": 17,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3552,26 +3425,26 @@
     {
       "path": "bestatter/rostock/index.html",
       "category": "stadt",
-      "size_bytes": 57551,
-      "word_count": 4027,
+      "size_bytes": 57020,
+      "word_count": 4008,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (4027 Wörter) - evtl. splitten",
+        "Content sehr lang (4008 Wörter) - evtl. splitten",
         "8 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 50,
       "meta_desc_len": 163,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 16,
+      "internal_links": 9,
       "external_links": 18,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3632,7 +3505,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 53,
       "meta_desc_len": 164,
@@ -3697,26 +3570,26 @@
     {
       "path": "bestatter/stuttgart/index.html",
       "category": "stadt",
-      "size_bytes": 64159,
-      "word_count": 3861,
+      "size_bytes": 63976,
+      "word_count": 3856,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3861 Wörter) - evtl. splitten",
+        "Content sehr lang (3856 Wörter) - evtl. splitten",
         "5 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 57,
       "meta_desc_len": 158,
       "h1_count": 1,
       "h2_count": 12,
-      "internal_links": 21,
+      "internal_links": 16,
       "external_links": 24,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3780,7 +3653,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: Article, City, PostalAddress, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 52,
       "meta_desc_len": 156,
@@ -3837,26 +3710,26 @@
     {
       "path": "bestatter/wuppertal/index.html",
       "category": "stadt",
-      "size_bytes": 59618,
-      "word_count": 3594,
+      "size_bytes": 59543,
+      "word_count": 3592,
       "score": 67,
       "max_score": 100,
       "issues": [
         "Keine Monetarisierung (Lead-Form oder Affiliate fehlt)"
       ],
       "warnings": [
-        "Content sehr lang (3594 Wörter) - evtl. splitten",
+        "Content sehr lang (3592 Wörter) - evtl. splitten",
         "8 Inline-Style-Attribute"
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, State, PostalAddress, BreadcrumbList, Place, "
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 58,
       "meta_desc_len": 152,
       "h1_count": 1,
       "h2_count": 10,
-      "internal_links": 17,
+      "internal_links": 15,
       "external_links": 14,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -3915,7 +3788,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2446 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 60,
       "meta_desc_len": 165,
@@ -3975,7 +3848,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2189 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 62,
       "meta_desc_len": 154,
@@ -4035,7 +3908,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2179 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 52,
       "meta_desc_len": 139,
@@ -4091,7 +3964,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2002 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 54,
       "meta_desc_len": 158,
@@ -4151,7 +4024,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2154 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 60,
       "meta_desc_len": 163,
@@ -4208,7 +4081,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2100 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 52,
       "meta_desc_len": 161,
@@ -4252,8 +4125,8 @@
     {
       "path": "bestattung-in/hessen/index.html",
       "category": "bundesland",
-      "size_bytes": 42502,
-      "word_count": 2195,
+      "size_bytes": 42458,
+      "word_count": 2194,
       "score": 84,
       "max_score": 100,
       "issues": [],
@@ -4263,14 +4136,14 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Content-Tiefe passend (2195 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Content-Tiefe passend (2194 Wörter)",
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 56,
       "meta_desc_len": 157,
       "h1_count": 1,
       "h2_count": 14,
-      "internal_links": 19,
+      "internal_links": 18,
       "external_links": 20,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -4314,7 +4187,7 @@
     {
       "path": "bestattung-in/index.html",
       "category": "bundesland",
-      "size_bytes": 7702,
+      "size_bytes": 7698,
       "word_count": 200,
       "score": 72,
       "max_score": 100,
@@ -4327,7 +4200,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, CollectionPage"
+        "Schema: CollectionPage, BreadcrumbList, ListItem"
       ],
       "title_len": 64,
       "meta_desc_len": 154,
@@ -4362,7 +4235,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1915 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 65,
       "meta_desc_len": 163,
@@ -4422,7 +4295,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2003 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 59,
       "meta_desc_len": 163,
@@ -4482,7 +4355,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 55,
       "meta_desc_len": 151,
@@ -4546,7 +4419,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2247 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 63,
       "meta_desc_len": 151,
@@ -4594,7 +4467,7 @@
     {
       "path": "bestattung-in/saarland/index.html",
       "category": "bundesland",
-      "size_bytes": 46102,
+      "size_bytes": 46066,
       "word_count": 2614,
       "score": 82,
       "max_score": 100,
@@ -4606,13 +4479,13 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, C"
       ],
       "title_len": 48,
       "meta_desc_len": 155,
       "h1_count": 1,
       "h2_count": 11,
-      "internal_links": 20,
+      "internal_links": 17,
       "external_links": 14,
       "affiliate_links": 0,
       "jsonld_types": [
@@ -4670,7 +4543,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2356 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 63,
       "meta_desc_len": 155,
@@ -4730,7 +4603,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1872 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 57,
       "meta_desc_len": 162,
@@ -4790,7 +4663,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2075 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 52,
       "meta_desc_len": 149,
@@ -4849,7 +4722,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1850 Wörter)",
-        "Schema: WebPage, City, PostalAddress, BreadcrumbList, Place, FAQPage"
+        "Schema: City, PostalAddress, Article, BreadcrumbList, ImageObject, F"
       ],
       "title_len": 52,
       "meta_desc_len": 160,
@@ -4909,7 +4782,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1561 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 45,
       "meta_desc_len": 163,
@@ -4959,7 +4832,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 62,
       "meta_desc_len": 139,
@@ -5104,7 +4977,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2121 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 52,
       "meta_desc_len": 146,
@@ -5154,7 +5027,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1958 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 60,
       "meta_desc_len": 159,
@@ -5303,7 +5176,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, WebApplication, ListItem, BreadcrumbList"
+        "Schema: Offer, BreadcrumbList, WebApplication, ListItem"
       ],
       "title_len": 50,
       "meta_desc_len": 151,
@@ -5343,7 +5216,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, BreadcrumbList, ListItem, WebApplication, Question, A"
+        "Schema: BreadcrumbList, FAQPage, Offer, WebApplication, Answer, List"
       ],
       "title_len": 55,
       "meta_desc_len": 137,
@@ -5391,7 +5264,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, BreadcrumbList, ListItem, WebApplication, Question, A"
+        "Schema: BreadcrumbList, FAQPage, Offer, WebApplication, Answer, List"
       ],
       "title_len": 58,
       "meta_desc_len": 156,
@@ -5529,7 +5402,7 @@
     {
       "path": "tools/index.html",
       "category": "tool",
-      "size_bytes": 6790,
+      "size_bytes": 6786,
       "word_count": 172,
       "score": 67,
       "max_score": 100,
@@ -5579,7 +5452,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, BreadcrumbList, ListItem, WebApplication, Question, A"
+        "Schema: BreadcrumbList, FAQPage, Offer, WebApplication, Answer, List"
       ],
       "title_len": 55,
       "meta_desc_len": 156,
@@ -5678,7 +5551,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, WebApplication, ListItem, BreadcrumbList"
+        "Schema: Offer, BreadcrumbList, WebApplication, ListItem"
       ],
       "title_len": 52,
       "meta_desc_len": 139,
@@ -5717,7 +5590,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: Offer, BreadcrumbList, ListItem, WebApplication, Question, A"
+        "Schema: BreadcrumbList, FAQPage, Offer, WebApplication, Answer, List"
       ],
       "title_len": 46,
       "meta_desc_len": 140,
@@ -5763,7 +5636,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1679 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 44,
       "meta_desc_len": 145,
@@ -5813,7 +5686,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2133 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 60,
       "meta_desc_len": 154,
@@ -5902,7 +5775,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2254 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 45,
       "meta_desc_len": 133,
@@ -5953,7 +5826,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2994 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 41,
       "meta_desc_len": 153,
@@ -6009,7 +5882,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2468 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 41,
       "meta_desc_len": 146,
@@ -6065,7 +5938,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1534 Wörter)",
-        "Schema: WebPage, BreadcrumbList, ListItem, Question, Answer, FAQPage"
+        "Schema: BreadcrumbList, FAQPage, Answer, ListItem, Question, WebPage"
       ],
       "title_len": 59,
       "meta_desc_len": 155,
@@ -6106,7 +5979,7 @@
     {
       "path": "vorsorge/ohne-vorsorge/index.html",
       "category": "vorsorge",
-      "size_bytes": 36042,
+      "size_bytes": 36034,
       "word_count": 1940,
       "score": 68,
       "max_score": 100,
@@ -6119,7 +5992,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (1940 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 55,
       "meta_desc_len": 155,
@@ -6167,7 +6040,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2404 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage",
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question",
         "Monetarisierungs-Element vorhanden"
       ],
       "title_len": 57,
@@ -6220,7 +6093,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2616 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 62,
       "meta_desc_len": 142,
@@ -6272,7 +6145,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2387 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 52,
       "meta_desc_len": 145,
@@ -6324,7 +6197,7 @@
       "wins": [
         "lang-Attribut korrekt",
         "Content-Tiefe passend (2876 Wörter)",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 60,
       "meta_desc_len": 145,
@@ -6376,7 +6249,7 @@
       ],
       "wins": [
         "lang-Attribut korrekt",
-        "Schema: BreadcrumbList, ListItem, Question, Answer, Article, FAQPage"
+        "Schema: Article, BreadcrumbList, FAQPage, Answer, ListItem, Question"
       ],
       "title_len": 45,
       "meta_desc_len": 146,

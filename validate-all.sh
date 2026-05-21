@@ -153,7 +153,7 @@ echo
 
 # --- Check 6: OG-Image erreichbar -----------------------------------------
 echo "[6/6] OG-Image vorhanden..."
-OG_IMAGES=$(grep -rhE 'og:image"\s+content="[^"]+"' --include="*.html" \
+OG_IMAGES=$(grep -rohE 'og:image"\s+content="[^"]+"' --include="*.html" \
   --exclude-dir=".git" --exclude-dir="_dev" --exclude-dir="templates" \
   --exclude-dir="node_modules" . 2>/dev/null | grep -oE 'content="[^"]+"' | sort -u)
 if [ -z "$OG_IMAGES" ]; then
