@@ -5,10 +5,52 @@ Disallow: /_dev/
 Disallow: /data/
 Disallow: /.claude/
 Crawl-delay: 1
+
+# SEO-Crawler — gedrosselt
 User-agent: AhrefsBot
 Crawl-delay: 10
+
 User-agent: SemrushBot
 Crawl-delay: 10
+
 User-agent: DotBot
 Crawl-delay: 10
+
+# AI-/LLM-Crawler — explizit erlaubt
+# Strategie: Authority via AI-Answer-Engines aufbauen.
+# Content soll bei Suchanfragen via ChatGPT, Claude, Perplexity etc. aufgefunden werden.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Bekannt aggressive / missbräuchliche Crawler — geblockt
+User-agent: Bytespider
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
 Sitemap: https://machsruhig.de/sitemap.xml
