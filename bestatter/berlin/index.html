@@ -22,21 +22,117 @@
 
 <script defer src="/js/tracking.js"></script>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org","@graph":[
-    {"@type":"Service","name":"Bestatter in Berlin finden","description":"Vergleichen und finden Sie lokale Bestatter in Berlin. Informationen zu über 200 Friedhöfen, günstigen Gebühren und der Reform des Berliner Bestattungsgesetzes 2024.","areaServed":{"@type":"City","name":"Berlin"},"serviceType":"Funeral Services","provider":{"@id":"https://machsruhig.de/#org"}},
-    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestatter finden","item":"https://machsruhig.de/bestatter"},{"@type":"ListItem","position":3,"name":"Berlin","item":"https://machsruhig.de/bestatter/berlin"}]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Was kostet eine Bestattung in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Die Kosten in Berlin sind günstiger als in anderen Großstädten. Urnengräber kosten etwa 450–1.200 € (20 Jahre), Erdgräber 1.000–3.500 € (25–30 Jahre). Bestatterleistungen kommen hinzu (ca. 1.200–2.500 €). Berlin bietet ein gutes Preis-Leistungs-Verhältnis."}},
-      {"@type":"Question","name":"Wie viele Friedhöfe gibt es in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Laut Berlin.de (Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt) gibt es in Berlin insgesamt 222 Friedhöfe, davon 182 geöffnet. Das Land Berlin verwaltet davon 85 Friedhöfe, der Rest ist in kirchlicher oder anderer Trägerschaft."}},
-      {"@type":"Question","name":"Was hat sich durch die Reform des Berliner Bestattungsgesetzes 2024 geändert?","acceptedAnswer":{"@type":"Answer","text":"Mit der Reform 2024 wurde die bisherige 48-Stunden-Wartefrist vor einer Bestattung (vormals § 21 BestattG BE) abgeschafft. Damit können insbesondere muslimische und jüdische Bestattungen, die nach religiösen Vorschriften innerhalb eines Tages erfolgen sollen, in Berlin künftig zeitnah durchgeführt werden."}},
-      {"@type":"Question","name":"Gibt es naturnahe Bestattungen in Berlin?","acceptedAnswer":{"@type":"Answer","text":"Ja. Innerhalb Berlins bieten u.a. der Waldfriedhof Zehlendorf und der Waldfriedhof Heerstraße naturnahe Bestattungen in Waldlage. Zusätzlich nutzen viele Berliner Familien den Südwestkirchhof Stahnsdorf, der allerdings in Brandenburg (Gemeinde Stahnsdorf) liegt und nicht zu den Berliner Friedhöfen zählt."}}
-    ]},
-    {"@type":"Organization","@id":"https://machsruhig.de/#org","name":"machsruhig.de","url":"https://machsruhig.de","description":"Unabhängiges Informationsportal für Vorsorge, Trauer und Bestattung in Deutschland.","publishingPrinciples":"https://machsruhig.de/methodik"}
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Bestatter in Berlin finden",
+      "description": "Vergleichen und finden Sie lokale Bestatter in Berlin. Informationen zu über 200 Friedhöfen, günstigen Gebühren und der Reform des Berliner Bestattungsgesetzes 2024.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Berlin"
+      },
+      "serviceType": "Funeral Services",
+      "provider": {
+        "@id": "https://machsruhig.de/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://machsruhig.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bestatter finden",
+          "item": "https://machsruhig.de/bestatter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Berlin",
+          "item": "https://machsruhig.de/bestatter/berlin"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://machsruhig.de/#org",
+      "name": "machsruhig.de",
+      "url": "https://machsruhig.de",
+      "description": "Unabhängiges Informationsportal für Vorsorge, Trauer und Bestattung in Deutschland.",
+      "publishingPrinciples": "https://machsruhig.de/methodik"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://machsruhig.de/bestatter/berlin/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was kostet eine Bestattung in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berlin hat im Bundesvergleich relativ günstige Friedhofsgebühren. Beispiele für landeseigene Friedhöfe: Reihengrab (Erdbestattung) ca. 939–1.016 € (20 Jahre), Urnengrab 450–1.200 €, anonyme Beisetzung 300–600 €. Hinzu kommen Bestatterleistungen (ca. 1.200–2.500 €), Sarg/Urne und ggf. Einäscherung. Gesamtbudget für eine einfache Bestattung ohne Trauerfeier: etwa 2.500–5.000 €."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie viele Friedhöfe gibt es in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Laut Berlin.de (Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt) gibt es im Land Berlin 222 Friedhöfe, von denen 182 geöffnet sind. 85 davon werden vom Land Berlin verwaltet (rund 580 ha im Stadtgebiet), der Rest ist in kirchlicher oder anderer Trägerschaft. Andere häufig genannte Zahlen (z. B. 224) lassen sich nicht über die offizielle Senats-Statistik belegen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wurde die 48-Stunden-Wartefrist in Berlin abgeschafft?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Mit der Reform des Berliner Bestattungsgesetzes 2024 wurde die bisherige Mindestwartefrist von 48 Stunden nach Eintritt des Todes (vormals § 21 BestattG BE) abgeschafft. Der Senat hatte die Reform 2023 angestoßen, das Abgeordnetenhaus beschlossen. Hintergrund war insbesondere die Berücksichtigung muslimischer und jüdischer Bestattungsriten, die eine Bestattung innerhalb eines Tages vorsehen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich in Berlin ohne Sarg bestattet werden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grundsätzlich besteht in Berlin Sargpflicht. Auf vom Friedhofsträger bestimmten Grabfeldern können Verstorbene jedoch aus religiösen Gründen in einem Leichentuch ohne Sarg bestattet werden — relevant vor allem für islamische und jüdische Bestattungen. Der Transport zur Grabstätte erfolgt weiterhin in einem geeigneten Sarg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es naturnahe Bestattungen in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Innerhalb Berlins bieten der Waldfriedhof Zehlendorf (~37,5 ha) und der Friedhof Heerstraße naturnahe Bestattungen in Waldlage; viele weitere Friedhöfe haben Baumbestattungszonen. Wer einen klassischen Bestattungswald sucht, weicht häufig auf den Südwestkirchhof Stahnsdorf in Brandenburg aus (~206 ha, EKBO-Trägerschaft) — dieser ist allerdings kein Berliner Friedhof."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es Friedhöfe für Muslime und Juden in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Der Islamische Friedhof Columbiadamm ist einer der ältesten muslimischen Bestattungsorte Deutschlands. Der Jüdische Friedhof Weißensee (~42 ha) gehört mit etwa 116.000 Grabstellen zu den größten erhaltenen jüdischen Friedhöfen Europas. Auf vielen weiteren Berliner Friedhöfen gibt es spezielle Felder für religiöse Gemeinschaften."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wer übernimmt die Bestattungskosten, wenn ich arm bin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berlin bietet Sozialbestattungen nach § 74 SGB XII. Wenn du oder deine Angehörigen die Bestattungskosten nicht tragen können, übernimmt das zuständige Bezirksamt (Amt für Soziales) die Kosten in einem festgelegten Umfang (Bestatter-Pauschale plus Friedhofs- und Krematoriumsgebühren). Die genauen Sätze variieren bezirklich und werden regelmäßig angepasst — frage konkret beim zuständigen Bezirksamt nach."
+          }
+        }
+      ]
+    }
   ]
-}
-</script>
+}</script>
 
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -252,7 +348,7 @@
 
   <div class="mr-section">
     <h2>Berliner Friedhofslandschaft in Zahlen</h2>
-    <p>Berlin verfügt nach Angaben des Senats für Umwelt, Verbraucherschutz und Klimaschutz (UVK) sowie der Wikipedia-Übersicht „Berliner Bestattungswesen" über <strong>221 offene und geschlossene Friedhöfe</strong>. Die Gesamtfläche von rund <strong>1.147 Hektar</strong> entspricht knapp 1,3 Prozent des Stadtgebiets. Mengenmäßig dominieren die Konfessionsfriedhöfe: <strong>118 evangelische Gemeindefriedhöfe</strong> umfassen rund 411 Hektar, die <strong>85 landeseigenen Friedhöfe</strong> rund 575 Hektar. Hinzu kommen neun katholische und zehn weitere Friedhöfe — jüdische, muslimische, russisch-orthodoxe und der britische Soldatenfriedhof. <strong>79 Friedhöfe stehen als Gartendenkmäler</strong> im Berliner Denkmalverzeichnis; 23 landeseigene und 14 evangelische Friedhöfe sind für Neubelegungen bereits geschlossen.</p>
+    <p>Nach der <a href="https://www.berlin.de/sen/uvk/_assets/natur-gruen/stadtgruen/daten-und-fakten/liste_friedhoefe.pdf" rel="noopener" target="_blank">offiziellen Friedhofsliste der Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt (Stand 31.12.2024)</a> verzeichnet Berlin <strong>222 Friedhöfe</strong>, davon sind nach Senats-Auskunft <strong>182 geöffnet</strong>. Mengenmäßig dominieren die Konfessionsfriedhöfe: rund <strong>116 evangelische Gemeindefriedhöfe</strong> sowie <strong>9 römisch-katholische Friedhöfe</strong>; hinzu kommen weitere konfessionelle Anlagen (jüdische Friedhöfe, ein russisch-orthodoxer Friedhof, drei sowjetische Ehrenmäler und der britische Soldatenfriedhof an der Heerstraße). Die <strong>landeseigenen Friedhöfe</strong> in den zwölf Bezirken umfassen nach den Angaben in der amtlichen <a href="https://www.berlin.de/sen/uvk/_assets/natur-gruen/stadtgruen/friedhoefe-und-begraebnisstaetten/grabstaetten-und-gebuehren/broschuere_fhinberlin.pdf" rel="noopener" target="_blank">Broschüre „Friedhöfe in Berlin"</a> rund <strong>580 Hektar</strong> im Stadtgebiet; dazu kommen zwei landeseigene Anlagen im Berliner Umland (Brandenburg).</p>
     <p>Die landeseigenen Friedhöfe werden <strong>nicht zentral verwaltet</strong>, sondern fallen in die Hoheit der <strong>Grünflächenämter der zwölf Berliner Bezirke</strong>. Beispiel: Das Bezirksamt Reinickendorf führt zehn landeseigene Friedhöfe, Pankow trägt unter anderem den großen Komplex um Weißensee. Konfessionelle Friedhöfe werden über die jeweiligen Kirchengemeinden, die Jüdische Gemeinde zu Berlin oder die Türkische Gemeinde geführt. Zwei traditionsreiche Berliner Friedhöfe — der Südwestkirchhof Stahnsdorf und der Friedhof Berlin-Friedrichsfelde-Spreebogen-Erweiterung — liegen außerhalb des Berliner Stadtgebiets im benachbarten Brandenburg. Die jährliche Sterbefallzahl bewegt sich in Berlin in einer Größenordnung von <strong>32.000 bis 36.000 Personen</strong>; die altersbereinigte Sterberate ist seit 1990 deutlich gesunken.</p>
   </div>
 
