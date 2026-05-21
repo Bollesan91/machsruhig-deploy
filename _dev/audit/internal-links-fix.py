@@ -4,30 +4,28 @@ Internal-Links-Fixer
 ====================
 Wendet die kuratierten Fixes auf identifizierte broken interne Links an.
 
-Regelarten:
-- REWRITE       : ersetze href-Wert (Tippfehler / besserer Ersatz).
-- DROP_LI_FIRST : prüfe ob <li>…<a href=X>…</a>…</li> NUR den Link enthält;
-                  falls ja → ganzes <li> entfernen. Sonst Fallback auf UNLINK.
-- UNLINK        : <a href=X>TEXT</a> → TEXT (Anchor weg, Text bleibt).
-- DROP_ANCHOR   : entferne den gesamten <a>-Tag (inkl. Text). Für nackt im Nav/
-                  Footer stehende Hub-Anker, wo verbliebener Text optisch falsch
-                  wäre.
-
-Konservativer Default: bei Unklarheit UNLINK statt DROP.
+Regelarten (in dieser Reihenfolge):
+1. REWRITE       : href-Wert ersetzen (Tippfehler / besserer Ersatz). Wendet sich
+                   sowohl auf <a href="…"> als auch auf JSON-LD "item":"…" an.
+2. DROP_ENTIRELY : entfernt Anchor + ggf. umgebenden Separator (·, &middot;, |, …).
+                   Reihenfolge je Target:
+                     a) <li>…anchor…</li> → ganzes <li> droppen
+                     b) "sep anchor" oder "anchor sep" → beide droppen
+                     c) bare anchor (Nav-Link-Container) → nur anchor droppen
+3. UNLINK        : Fallback — Anchor weg, Text bleibt (für Inline-Use im Fließtext).
+                   Für Targets, deren Text auch nach Unlink lesbar bleibt.
 """
 import pathlib
 import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-
 HOST_PREFIX = "https://machsruhig.de"
 
 
-# (href_value, replacement_href_value) — beide /pfad UND host-prefixed Varianten
+# (href, replacement_href)
 REWRITES = [
-    # Hub-Tippfehler & Pfad-Korrekturen
-    ("/bestattung", "/bestatter/"),               # Breadcrumb-Drift
+    ("/bestattung", "/bestatter/"),
     ("/kosten/", "/bestattungskosten"),
     ("/ueber/", "/ueber-uns"),
     ("/kostenrechner", "/tools/kostenrechner/"),
@@ -41,7 +39,6 @@ REWRITES = [
     ("/tools/brief-an-meine-liebsten", "/tools/abschiedsbrief/"),
     ("/bestatter-in/saarbruecken/", "/bestatter/saarbruecken/"),
     ("/bestatter/freiburg-im-breisgau/", "/bestatter/freiburg/"),
-    # Bestattungsarten-Subpages existieren nicht → flach auf Hub
     ("/bestattungsarten/feuerbestattung/", "/bestattungsarten"),
     ("/bestattungsarten/feuerbestattung", "/bestattungsarten"),
     ("/bestattungsarten/baumbestattung/", "/bestattungsarten"),
@@ -51,21 +48,24 @@ REWRITES = [
 ]
 
 
-# Ziele OHNE sinnvollen Ersatz. Behandlung in folgender Reihenfolge:
-#   1) wenn in <li>…</li> als alleiniger Inhalt: <li> ganz entfernen.
-#   2) sonst: Anchor unlinken (Text bleibt als Plain-Text).
-UNLINK_TARGETS = {
-    # Hubs that simply don't exist
+# Ziele, die NUR in Nav/Footer auftreten und vollständig entfernt werden sollen
+# (inkl. umgebender Trenner). Hier passt KEIN UNLINK.
+DROP_ENTIRELY_TARGETS = {
     "/ratgeber/",
     "/ratgeber",
     "/wissen/",
-    "/trauerfeier/",
     "/quellen/",
     "/redaktion/",
     "/redaktion",
     "/kontakt/",
     "/kontakt",
-    # Ratgeber-/Vorsorge-Subpages ohne eigenen Inhalt
+}
+
+
+# Restliche Ziele ohne sinnvollen Ersatz: <li> droppen (wenn solo) oder Inline
+# unlinken (Text bleibt).
+UNLINK_TARGETS = {
+    "/trauerfeier/",
     "/vorsorge/friedwald-baumbestattung/",
     "/ratgeber/seebestattung/",
     "/ratgeber/trauerfeier/",
@@ -77,7 +77,6 @@ UNLINK_TARGETS = {
     "/ratgeber/trauerredner/",
     "/ratgeber/bestattungsverfuegung/",
     "/ratgeber/trauerhilfe/",
-    # Nicht-existente Stadt-Pages
     "/bestatter/offenbach/",
     "/bestatter/offenbach-am-main/",
     "/bestatter/herne/",
@@ -113,12 +112,12 @@ UNLINK_TARGETS = {
 }
 
 
-# Anker, deren Resttext im Nav/Footer optisch sinnlos wäre → ganzer Tag weg.
-# (Pfade die NUR in Footer-/Nav-Containern auftreten.)
-DROP_ANCHOR_TARGETS = {
-    "/redaktion/",
-    "/redaktion",
-}
+SEP_PATTERNS = [
+    r"\s*·\s*",
+    r"\s*&middot;\s*",
+    r"\s*\|\s*",
+    r"\s*&bull;\s*",
+]
 
 
 def get_pages():
@@ -139,13 +138,64 @@ def apply_rewrites(html: str, counts: dict) -> str:
     for old, new in REWRITES:
         for variant in (old, HOST_PREFIX + old):
             replacement_value = new if variant == old else HOST_PREFIX + new
+            # 1) <a href="…">
             needle = f'href="{variant}"'
             replacement = f'href="{replacement_value}"'
             n = html.count(needle)
             if n:
                 html = html.replace(needle, replacement)
-                counts[f"REWRITE {variant} -> {new}"] = (
-                    counts.get(f"REWRITE {variant} -> {new}", 0) + n
+                counts[f"REWRITE href {variant} -> {new}"] = (
+                    counts.get(f"REWRITE href {variant} -> {new}", 0) + n
+                )
+            # 2) JSON-LD BreadcrumbList "item":"…" — nur fully-qualified
+            if variant.startswith("http"):
+                needle2 = f'"item":"{variant}"'
+                replacement2 = f'"item":"{replacement_value}"'
+                n2 = html.count(needle2)
+                if n2:
+                    html = html.replace(needle2, replacement2)
+                    counts[f"REWRITE jsonld {variant} -> {new}"] = (
+                        counts.get(f"REWRITE jsonld {variant} -> {new}", 0) + n2
+                    )
+    return html
+
+
+def apply_drop_entirely(html: str, counts: dict) -> str:
+    for target in DROP_ENTIRELY_TARGETS:
+        for variant in (target, HOST_PREFIX + target):
+            anchor_re = (
+                r'<a\s+href="' + re.escape(variant) + r'"(?:\s+[^>]*)?>(?:[^<]*)</a>'
+            )
+            # A) <li>…anchor…</li> → ganzes <li>
+            li_pat = re.compile(
+                r"<li>\s*" + anchor_re + r"\s*</li>",
+                re.IGNORECASE,
+            )
+            html, n = li_pat.subn("", html)
+            if n:
+                counts[f"DROP_LI {variant}"] = counts.get(f"DROP_LI {variant}", 0) + n
+
+            # B) "sep anchor" oder "anchor sep" → beide weg
+            for sep in SEP_PATTERNS:
+                pat_after = re.compile(sep + anchor_re, re.IGNORECASE)
+                html, n = pat_after.subn("", html)
+                if n:
+                    counts[f"DROP_SEP_ANCHOR {variant}"] = (
+                        counts.get(f"DROP_SEP_ANCHOR {variant}", 0) + n
+                    )
+                pat_before = re.compile(anchor_re + sep, re.IGNORECASE)
+                html, n = pat_before.subn("", html)
+                if n:
+                    counts[f"DROP_ANCHOR_SEP {variant}"] = (
+                        counts.get(f"DROP_ANCHOR_SEP {variant}", 0) + n
+                    )
+
+            # C) Bare anchor (Nav-Link-Container, kein Trenner)
+            bare_pat = re.compile(anchor_re, re.IGNORECASE)
+            html, n = bare_pat.subn("", html)
+            if n:
+                counts[f"DROP_BARE_A {variant}"] = (
+                    counts.get(f"DROP_BARE_A {variant}", 0) + n
                 )
     return html
 
@@ -153,7 +203,6 @@ def apply_rewrites(html: str, counts: dict) -> str:
 def apply_unlink(html: str, counts: dict) -> str:
     for target in UNLINK_TARGETS:
         for variant in (target, HOST_PREFIX + target):
-            # 1) <li>\s*<a href="variant"...>...</a>\s*</li>
             li_pat = re.compile(
                 r'<li>\s*<a\s+href="'
                 + re.escape(variant)
@@ -164,7 +213,6 @@ def apply_unlink(html: str, counts: dict) -> str:
             if n:
                 counts[f"DROP_LI {variant}"] = counts.get(f"DROP_LI {variant}", 0) + n
 
-            # 2) Inline unlink: <a href="variant"...>TEXT</a> -> TEXT
             a_pat = re.compile(
                 r'<a\s+href="'
                 + re.escape(variant)
@@ -174,23 +222,6 @@ def apply_unlink(html: str, counts: dict) -> str:
             html, n = a_pat.subn(lambda m: m.group(1), html)
             if n:
                 counts[f"UNLINK {variant}"] = counts.get(f"UNLINK {variant}", 0) + n
-    return html
-
-
-def apply_drop_anchor(html: str, counts: dict) -> str:
-    for target in DROP_ANCHOR_TARGETS:
-        for variant in (target, HOST_PREFIX + target):
-            pat = re.compile(
-                r'<a\s+href="'
-                + re.escape(variant)
-                + r'"(?:\s+[^>]*)?>.*?</a>',
-                re.IGNORECASE | re.DOTALL,
-            )
-            html, n = pat.subn("", html)
-            if n:
-                counts[f"DROP_ANCHOR {variant}"] = (
-                    counts.get(f"DROP_ANCHOR {variant}", 0) + n
-                )
     return html
 
 
@@ -208,10 +239,8 @@ def main():
             continue
         file_counts: dict = {}
         html = original
-        # Reihenfolge: erst Rewrites (sonst würden manche UNLINKs Treffer "stehlen"),
-        # dann harte DROPs, zuletzt UNLINK.
         html = apply_rewrites(html, file_counts)
-        html = apply_drop_anchor(html, file_counts)
+        html = apply_drop_entirely(html, file_counts)
         html = apply_unlink(html, file_counts)
         if html != original:
             p.write_text(html, encoding="utf-8")
