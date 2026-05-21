@@ -30,8 +30,8 @@ FIXES: dict[str, dict] = {
 
     # ---- Title-Kürzungen (root pages) ----
     "kindern-tod-erklaeren.html": {
-        # 94 → ~58
-        "title": "Kindern den Tod erklären — Altersgerechter Leitfaden | mach's ruhig",
+        # 94 → ~65
+        "title": "Kindern den Tod erklären — Altersgerechter Leitfaden",
         # 189 → ~155
         "description": "Wie erkläre ich meinem Kind den Tod? Gesprächsleitfaden nach Alter (3–5, 6–9, 10–13, 14+) mit Formulierungen, häufigen Fehlern und Hilfsangeboten.",
     },
@@ -70,6 +70,12 @@ FIXES: dict[str, dict] = {
     "tools/fristen-radar/index.html": {
         # 69 → ~38
         "title": "Fristen-Radar Todesfall — Alle Fristen im Blick",
+    },
+    "tools/index.html": {
+        # 74 → ~60
+        "title": "Tools — Kostenrechner, Checkliste & Vorsorge | machs ruhig",
+        # 180 → ~165
+        "description": "Kostenlose Tools rund um Bestattung und Vorsorge: Kostenrechner, Checkliste Todesfall, Vorsorge-Check, Fristen-Radar, Notfallkarte. Ohne Anmeldung, sofort nutzbar.",
     },
     "tools/vorsorge-check/index.html": {
         # 66 → ~36
@@ -329,11 +335,11 @@ FIXES: dict[str, dict] = {
     },
     "bestatter/dresden/index.html": {
         # 190 → ~158
-        "description": "Bestattung in Dresden: Trinitatisfriedhof, Alter Annenfriedhof, Johannisfriedhof Tolkewitz, Innerer Neustädter Friedhof. Geschichten, Kosten und Ablauf nach Todesfall.",
+        "description": "Bestattung in Dresden: Trinitatisfriedhof, Alter Annenfriedhof, Johannisfriedhof Tolkewitz, Innerer Neustädter Friedhof. Geschichten, Kosten und Ablauf.",
     },
     "bestatter/bremen/index.html": {
         # 189 → ~158
-        "description": "Bestattung in Bremen: 13 städtische Friedhöfe, Riensberger Parkfriedhof, Osterholzer Zentralfriedhof, Waller Friedhof, jüdischer Friedhof Hastedt. Gebühren, Ruhezeit.",
+        "description": "Bestattung in Bremen: 13 städtische Friedhöfe, Riensberger Parkfriedhof, Osterholzer Zentralfriedhof, Waller Friedhof, jüdischer Friedhof Hastedt. Gebühren.",
     },
     "bestatter/stuttgart/index.html": {
         # 183 → ~158
@@ -353,7 +359,7 @@ FIXES: dict[str, dict] = {
     },
     "kondolenzschreiben.html": {
         # 175 → ~158
-        "description": "Wie schreibe ich ein Kondolenzschreiben? Anleitung Schritt für Schritt: Struktur, Dos and Don'ts, Vorlagen für verschiedene Situationen, FAQs. Respektvoll, hilfreich.",
+        "description": "Wie schreibe ich ein Kondolenzschreiben? Anleitung Schritt für Schritt: Struktur, Dos and Don'ts, Vorlagen für viele Situationen, FAQs. Respektvoll, hilfreich.",
     },
 }
 

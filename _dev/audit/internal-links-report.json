@@ -1,0 +1,730 @@
+{
+  "summary": {
+    "pages_scanned": 104,
+    "internal_links_total": 4551,
+    "broken_targets": 72,
+    "pages_affected": 54
+  },
+  "broken": {
+    "/ratgeber/": [
+      {
+        "page": "bestatter/aachen/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/augsburg/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/braunschweig/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/braunschweig/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/dortmund/index.html",
+        "href": "https://machsruhig.de/ratgeber/"
+      },
+      {
+        "page": "bestatter/hagen/index.html",
+        "href": "https://machsruhig.de/ratgeber/"
+      },
+      {
+        "page": "bestatter/kassel/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/kiel/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/krefeld/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/leverkusen/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/muelheim/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/mönchengladbach/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/oberhausen/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/oldenburg/index.html",
+        "href": "/ratgeber/"
+      },
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/"
+      }
+    ],
+    "/ratgeber/sozialbestattung/": [
+      {
+        "page": "bestatter/aachen/index.html",
+        "href": "/ratgeber/sozialbestattung/"
+      }
+    ],
+    "/ratgeber/vorsorge/": [
+      {
+        "page": "bestatter/aachen/index.html",
+        "href": "/ratgeber/vorsorge/"
+      },
+      {
+        "page": "bestatter/kiel/index.html",
+        "href": "/ratgeber/vorsorge/"
+      }
+    ],
+    "/ratgeber/trauerfeier/": [
+      {
+        "page": "bestatter/aachen/index.html",
+        "href": "/ratgeber/trauerfeier/"
+      },
+      {
+        "page": "bestatter/augsburg/index.html",
+        "href": "/ratgeber/trauerfeier/"
+      }
+    ],
+    "/kontakt/": [
+      {
+        "page": "bestatter/aachen/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/augsburg/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/braunschweig/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/chemnitz/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/darmstadt/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/dortmund/index.html",
+        "href": "https://machsruhig.de/kontakt/"
+      },
+      {
+        "page": "bestatter/essen/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/hagen/index.html",
+        "href": "https://machsruhig.de/kontakt/"
+      },
+      {
+        "page": "bestatter/kassel/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/leverkusen/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/lübeck/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/magdeburg/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/muelheim/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/mönchengladbach/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/oberhausen/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/oldenburg/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/osnabrueck/index.html",
+        "href": "/kontakt/"
+      },
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/kontakt/"
+      }
+    ],
+    "/ratgeber/bestatter-auswaehlen/": [
+      {
+        "page": "bestatter/augsburg/index.html",
+        "href": "/ratgeber/bestatter-auswaehlen/"
+      }
+    ],
+    "/ratgeber/erbschein-antrag/": [
+      {
+        "page": "bestatter/augsburg/index.html",
+        "href": "/ratgeber/erbschein-antrag/"
+      }
+    ],
+    "/bestattung": [
+      {
+        "page": "bestatter/bielefeld/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestatter/bochum/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestatter/bonn/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestatter/muenster/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/baden-württemberg/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/bayern/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/berlin/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/brandenburg/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/bremen/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/hamburg/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/hessen/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/mecklenburg-vorpommern/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/niedersachsen/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/nordrhein-westfalen/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/rheinland-pfalz/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/saarland/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/sachsen/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/sachsen-anhalt/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/schleswig-holstein/index.html",
+        "href": "/bestattung"
+      },
+      {
+        "page": "bestattung-in/thüringen/index.html",
+        "href": "/bestattung"
+      }
+    ],
+    "/bestattungsarten/feuerbestattung": [
+      {
+        "page": "bestatter/bonn/index.html",
+        "href": "/bestattungsarten/feuerbestattung"
+      }
+    ],
+    "/bestattungsarten/seebestattung": [
+      {
+        "page": "bestatter/bonn/index.html",
+        "href": "/bestattungsarten/seebestattung"
+      }
+    ],
+    "/bestatter/goettingen/": [
+      {
+        "page": "bestatter/braunschweig/index.html",
+        "href": "/bestatter/goettingen/"
+      }
+    ],
+    "/quellen/": [
+      {
+        "page": "bestatter/braunschweig/index.html",
+        "href": "/quellen/"
+      }
+    ],
+    "/bestatter/bremerhaven/": [
+      {
+        "page": "bestatter/bremen/index.html",
+        "href": "/bestatter/bremerhaven/"
+      }
+    ],
+    "/checklisten/": [
+      {
+        "page": "bestatter/darmstadt/index.html",
+        "href": "/checklisten/"
+      }
+    ],
+    "/bestatter/offenbach/": [
+      {
+        "page": "bestatter/darmstadt/index.html",
+        "href": "/bestatter/offenbach/"
+      },
+      {
+        "page": "bestatter/kassel/index.html",
+        "href": "/bestatter/offenbach/"
+      }
+    ],
+    "/checklisten/erste-72-stunden/": [
+      {
+        "page": "bestatter/darmstadt/index.html",
+        "href": "/checklisten/erste-72-stunden/"
+      }
+    ],
+    "/vorsorge/friedwald-baumbestattung/": [
+      {
+        "page": "bestatter/darmstadt/index.html",
+        "href": "/vorsorge/friedwald-baumbestattung/"
+      }
+    ],
+    "/redaktion/": [
+      {
+        "page": "bestatter/darmstadt/index.html",
+        "href": "/redaktion/"
+      }
+    ],
+    "/bestatter/weimar/": [
+      {
+        "page": "bestatter/erfurt/index.html",
+        "href": "/bestatter/weimar/"
+      }
+    ],
+    "/bestatter/jena/": [
+      {
+        "page": "bestatter/erfurt/index.html",
+        "href": "/bestatter/jena/"
+      }
+    ],
+    "/bestatter/gera/": [
+      {
+        "page": "bestatter/erfurt/index.html",
+        "href": "/bestatter/gera/"
+      }
+    ],
+    "/kosten/": [
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/kosten/"
+      },
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/kosten/"
+      },
+      {
+        "page": "bestatter/magdeburg/index.html",
+        "href": "/kosten/"
+      },
+      {
+        "page": "bestatter/magdeburg/index.html",
+        "href": "/kosten/"
+      }
+    ],
+    "/wissen/": [
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/wissen/"
+      },
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/wissen/"
+      }
+    ],
+    "/bestatter/herne/": [
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/bestatter/herne/"
+      },
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/bestatter/herne/"
+      }
+    ],
+    "/bestatter/recklinghausen/": [
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/bestatter/recklinghausen/"
+      },
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/bestatter/recklinghausen/"
+      }
+    ],
+    "/ueber/": [
+      {
+        "page": "bestatter/gelsenkirchen/index.html",
+        "href": "/ueber/"
+      }
+    ],
+    "/bestatter/iserlohn/": [
+      {
+        "page": "bestatter/hagen/index.html",
+        "href": "https://machsruhig.de/bestatter/iserlohn/"
+      }
+    ],
+    "/bestatter/schwerte/": [
+      {
+        "page": "bestatter/hagen/index.html",
+        "href": "https://machsruhig.de/bestatter/schwerte/"
+      }
+    ],
+    "/bestatter/witten/": [
+      {
+        "page": "bestatter/hagen/index.html",
+        "href": "https://machsruhig.de/bestatter/witten/"
+      }
+    ],
+    "/bestatter/hattingen/": [
+      {
+        "page": "bestatter/hagen/index.html",
+        "href": "https://machsruhig.de/bestatter/hattingen/"
+      }
+    ],
+    "/kostenrechner": [
+      {
+        "page": "bestatter/halle/index.html",
+        "href": "/kostenrechner"
+      }
+    ],
+    "/kontakt": [
+      {
+        "page": "bestatter/halle/index.html",
+        "href": "/kontakt"
+      },
+      {
+        "page": "bestatter/heidelberg/index.html",
+        "href": "/kontakt"
+      }
+    ],
+    "/bestatter/hildesheim/": [
+      {
+        "page": "bestatter/hannover/index.html",
+        "href": "/bestatter/hildesheim/"
+      }
+    ],
+    "/bestattungsarten/feuerbestattung/": [
+      {
+        "page": "bestatter/hannover/index.html",
+        "href": "/bestattungsarten/feuerbestattung/"
+      },
+      {
+        "page": "bestattung-in/saarland/index.html",
+        "href": "/bestattungsarten/feuerbestattung/"
+      }
+    ],
+    "/bestattungsarten/baumbestattung/": [
+      {
+        "page": "bestatter/hannover/index.html",
+        "href": "/bestattungsarten/baumbestattung/"
+      },
+      {
+        "page": "bestattung-in/saarland/index.html",
+        "href": "/bestattungsarten/baumbestattung/"
+      }
+    ],
+    "/bestatter/heilbronn/": [
+      {
+        "page": "bestatter/heidelberg/index.html",
+        "href": "/bestatter/heilbronn/"
+      },
+      {
+        "page": "bestatter/stuttgart/index.html",
+        "href": "/bestatter/heilbronn/"
+      }
+    ],
+    "/bestatter/ulm/": [
+      {
+        "page": "bestatter/heidelberg/index.html",
+        "href": "/bestatter/ulm/"
+      }
+    ],
+    "/bestatter/freiburg-im-breisgau/": [
+      {
+        "page": "bestatter/karlsruhe/index.html",
+        "href": "/bestatter/freiburg-im-breisgau/"
+      }
+    ],
+    "/bestatter/pforzheim/": [
+      {
+        "page": "bestatter/karlsruhe/index.html",
+        "href": "/bestatter/pforzheim/"
+      }
+    ],
+    "/ratgeber/checkliste-todesfall/": [
+      {
+        "page": "bestatter/kassel/index.html",
+        "href": "/ratgeber/checkliste-todesfall/"
+      },
+      {
+        "page": "bestatter/regensburg/index.html",
+        "href": "/ratgeber/checkliste-todesfall/"
+      }
+    ],
+    "/ratgeber/seebestattung/": [
+      {
+        "page": "bestatter/kiel/index.html",
+        "href": "/ratgeber/seebestattung/"
+      },
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/seebestattung/"
+      },
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/seebestattung/"
+      }
+    ],
+    "/ratgeber/friedwald-ruheforst/": [
+      {
+        "page": "bestatter/kiel/index.html",
+        "href": "/ratgeber/friedwald-ruheforst/"
+      }
+    ],
+    "/ratgeber/patientenverfuegung/": [
+      {
+        "page": "bestatter/kiel/index.html",
+        "href": "/ratgeber/patientenverfuegung/"
+      }
+    ],
+    "/bestatter/flensburg/": [
+      {
+        "page": "bestatter/lübeck/index.html",
+        "href": "/bestatter/flensburg/"
+      }
+    ],
+    "/bestattungsarten/seebestattung/": [
+      {
+        "page": "bestatter/lübeck/index.html",
+        "href": "/bestattungsarten/seebestattung/"
+      }
+    ],
+    "/bestattungsarten/reerdigung/": [
+      {
+        "page": "bestatter/lübeck/index.html",
+        "href": "/bestattungsarten/reerdigung/"
+      }
+    ],
+    "/trauerfeier/": [
+      {
+        "page": "bestatter/magdeburg/index.html",
+        "href": "/trauerfeier/"
+      },
+      {
+        "page": "bestatter/magdeburg/index.html",
+        "href": "/trauerfeier/"
+      },
+      {
+        "page": "bestatter/potsdam/index.html",
+        "href": "/trauerfeier/"
+      }
+    ],
+    "/bestatter/muenchen/waldfriedhof-solln/": [
+      {
+        "page": "bestatter/muenchen/index.html",
+        "href": "/bestatter/muenchen/waldfriedhof-solln/"
+      }
+    ],
+    "/bestatter/muenchen/bogenhausen/": [
+      {
+        "page": "bestatter/muenchen/index.html",
+        "href": "/bestatter/muenchen/bogenhausen/"
+      }
+    ],
+    "/bestatter/muenchen/perlacher-forst/": [
+      {
+        "page": "bestatter/muenchen/index.html",
+        "href": "/bestatter/muenchen/perlacher-forst/"
+      }
+    ],
+    "/ratgeber/bestattungsvorsorge/": [
+      {
+        "page": "bestatter/mönchengladbach/index.html",
+        "href": "/ratgeber/bestattungsvorsorge/"
+      },
+      {
+        "page": "bestatter/mönchengladbach/index.html",
+        "href": "/ratgeber/bestattungsvorsorge/"
+      }
+    ],
+    "/ratgeber/bestattungsverfuegung/": [
+      {
+        "page": "bestatter/mönchengladbach/index.html",
+        "href": "/ratgeber/bestattungsverfuegung/"
+      }
+    ],
+    "/ratgeber/trauerhilfe/": [
+      {
+        "page": "bestatter/mönchengladbach/index.html",
+        "href": "/ratgeber/trauerhilfe/"
+      }
+    ],
+    "/bestatter/wuerzburg/": [
+      {
+        "page": "bestatter/nuernberg/index.html",
+        "href": "/bestatter/wuerzburg/"
+      }
+    ],
+    "/bestatter/wilhelmshaven/": [
+      {
+        "page": "bestatter/oldenburg/index.html",
+        "href": "/bestatter/wilhelmshaven/"
+      }
+    ],
+    "/vorsorge/bestattungsvorsorgevertrag/": [
+      {
+        "page": "bestatter/potsdam/index.html",
+        "href": "/vorsorge/bestattungsvorsorgevertrag/"
+      }
+    ],
+    "/bestatter/brandenburg-an-der-havel/": [
+      {
+        "page": "bestatter/potsdam/index.html",
+        "href": "/bestatter/brandenburg-an-der-havel/"
+      }
+    ],
+    "/ratgeber": [
+      {
+        "page": "bestatter/regensburg/index.html",
+        "href": "/ratgeber"
+      }
+    ],
+    "/redaktion": [
+      {
+        "page": "bestatter/regensburg/index.html",
+        "href": "/redaktion"
+      }
+    ],
+    "/ratgeber/sterbeurkunde/": [
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/sterbeurkunde/"
+      },
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/sterbeurkunde/"
+      }
+    ],
+    "/ratgeber/trauerredner/": [
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/trauerredner/"
+      },
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/ratgeber/trauerredner/"
+      }
+    ],
+    "/bestatter/schwerin/": [
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/bestatter/schwerin/"
+      }
+    ],
+    "/bestatter/stralsund/": [
+      {
+        "page": "bestatter/rostock/index.html",
+        "href": "/bestatter/stralsund/"
+      }
+    ],
+    "/bestatter/esslingen/": [
+      {
+        "page": "bestatter/stuttgart/index.html",
+        "href": "/bestatter/esslingen/"
+      }
+    ],
+    "/bestatter/ludwigsburg/": [
+      {
+        "page": "bestatter/stuttgart/index.html",
+        "href": "/bestatter/ludwigsburg/"
+      }
+    ],
+    "/bestatter/tuebingen/": [
+      {
+        "page": "bestatter/stuttgart/index.html",
+        "href": "/bestatter/tuebingen/"
+      }
+    ],
+    "/bestatter/reutlingen/": [
+      {
+        "page": "bestatter/stuttgart/index.html",
+        "href": "/bestatter/reutlingen/"
+      }
+    ],
+    "/bestatter/solingen/": [
+      {
+        "page": "bestatter/wuppertal/index.html",
+        "href": "/bestatter/solingen/"
+      }
+    ],
+    "/bestatter/remscheid/": [
+      {
+        "page": "bestatter/wuppertal/index.html",
+        "href": "/bestatter/remscheid/"
+      }
+    ],
+    "/bestatter/offenbach-am-main/": [
+      {
+        "page": "bestattung-in/hessen/index.html",
+        "href": "/bestatter/offenbach-am-main/"
+      }
+    ],
+    "/bestatter-in/saarbruecken/": [
+      {
+        "page": "bestattung-in/saarland/index.html",
+        "href": "/bestatter-in/saarbruecken/"
+      }
+    ],
+    "/tools/brief-an-meine-liebsten": [
+      {
+        "page": "vorsorge/ohne-vorsorge/index.html",
+        "href": "/tools/brief-an-meine-liebsten"
+      }
+    ]
+  }
+}
