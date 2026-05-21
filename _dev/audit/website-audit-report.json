@@ -3,11 +3,9 @@
     {
       "path": "bestatter\\aachen\\index.html",
       "slug": "aachen",
-      "size_kb": 53.9,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 57.6,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -25,12 +23,12 @@
       "canonical": "https://machsruhig.de/bestatter/aachen/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 23,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -38,10 +36,9 @@
     {
       "path": "bestatter\\augsburg\\index.html",
       "slug": "augsburg",
-      "size_kb": 59.9,
-      "score": 5,
+      "size_kb": 63.6,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Sozial"
       ],
       "schema_valid": 1,
@@ -61,12 +58,12 @@
       "canonical": "https://machsruhig.de/bestatter/augsburg/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 16,
+      "internal_link_count": 21,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -74,10 +71,9 @@
     {
       "path": "bestatter\\berlin\\index.html",
       "slug": "berlin",
-      "size_kb": 55.2,
-      "score": 5,
+      "size_kb": 58.6,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Sozial"
       ],
       "schema_valid": 1,
@@ -94,12 +90,12 @@
       "canonical": "https://machsruhig.de/bestatter/berlin",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 19,
+      "internal_link_count": 20,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -107,7 +103,7 @@
     {
       "path": "bestatter\\bielefeld\\index.html",
       "slug": "bielefeld",
-      "size_kb": 59.6,
+      "size_kb": 60.0,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -126,12 +122,12 @@
       "canonical": "https://machsruhig.de/bestatter/bielefeld/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -139,11 +135,9 @@
     {
       "path": "bestatter\\bochum\\index.html",
       "slug": "bochum",
-      "size_kb": 59.3,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 62.8,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -160,12 +154,12 @@
       "canonical": "https://machsruhig.de/bestatter/bochum/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 19,
+      "internal_link_count": 20,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -173,11 +167,10 @@
     {
       "path": "bestatter\\bonn\\index.html",
       "slug": "bonn",
-      "size_kb": 56.2,
-      "score": 5,
+      "size_kb": 59.6,
+      "score": 6,
       "missing": [
-        "Kosten",
-        "BestWahl"
+        "Kosten"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -195,12 +188,12 @@
       "canonical": "https://machsruhig.de/bestatter/bonn/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 20,
+      "internal_link_count": 21,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -208,10 +201,9 @@
     {
       "path": "bestatter\\braunschweig\\index.html",
       "slug": "braunschweig",
-      "size_kb": 57.6,
-      "score": 5,
+      "size_kb": 61.4,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Quellen"
       ],
       "schema_valid": 1,
@@ -231,12 +223,12 @@
       "canonical": "https://www.machsruhig.de/bestatter/braunschweig/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 14,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -244,7 +236,7 @@
     {
       "path": "bestatter\\bremen\\index.html",
       "slug": "bremen",
-      "size_kb": 63.1,
+      "size_kb": 63.5,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -263,12 +255,12 @@
       "canonical": "https://machsruhig.de/bestatter/bremen/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 17,
+      "internal_link_count": 18,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -276,7 +268,7 @@
     {
       "path": "bestatter\\chemnitz\\index.html",
       "slug": "chemnitz",
-      "size_kb": 52.1,
+      "size_kb": 52.8,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -296,12 +288,12 @@
       "canonical": "https://machsruhig.de/bestatter/chemnitz/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 10,
+      "internal_link_count": 12,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -309,7 +301,7 @@
     {
       "path": "bestatter\\darmstadt\\index.html",
       "slug": "darmstadt",
-      "size_kb": 48.0,
+      "size_kb": 48.5,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -329,12 +321,12 @@
       "canonical": "https://machsruhig.de/bestatter/darmstadt/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 19,
+      "internal_link_count": 20,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": false,
       "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -342,7 +334,7 @@
     {
       "path": "bestatter\\dortmund\\index.html",
       "slug": "dortmund",
-      "size_kb": 50.6,
+      "size_kb": 51.4,
       "score": 6,
       "missing": [
         "Kosten"
@@ -364,12 +356,12 @@
       "canonical": "https://machsruhig.de/bestatter/dortmund/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 0,
+      "internal_link_count": 2,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -377,10 +369,9 @@
     {
       "path": "bestatter\\dresden\\index.html",
       "slug": "dresden",
-      "size_kb": 57.2,
-      "score": 5,
+      "size_kb": 60.6,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Sozial"
       ],
       "schema_valid": 1,
@@ -399,12 +390,12 @@
       "canonical": "https://machsruhig.de/bestatter/dresden/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 16,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -412,7 +403,7 @@
     {
       "path": "bestatter\\duesseldorf\\index.html",
       "slug": "duesseldorf",
-      "size_kb": 53.5,
+      "size_kb": 53.9,
       "score": 6,
       "missing": [
         "Kosten"
@@ -435,12 +426,12 @@
       "canonical": "https://machsruhig.de/bestatter/duesseldorf/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 14,
+      "internal_link_count": 15,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -448,7 +439,7 @@
     {
       "path": "bestatter\\duisburg\\index.html",
       "slug": "duisburg",
-      "size_kb": 57.6,
+      "size_kb": 58.1,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -468,12 +459,12 @@
       "canonical": "https://machsruhig.de/bestatter/duisburg/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -481,7 +472,7 @@
     {
       "path": "bestatter\\erfurt\\index.html",
       "slug": "erfurt",
-      "size_kb": 61.8,
+      "size_kb": 62.6,
       "score": 6,
       "missing": [
         "Sozial"
@@ -503,12 +494,12 @@
       "canonical": "https://machsruhig.de/bestatter/erfurt/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 15,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -516,7 +507,7 @@
     {
       "path": "bestatter\\essen\\index.html",
       "slug": "essen",
-      "size_kb": 59.5,
+      "size_kb": 60.2,
       "score": 5,
       "missing": [
         "Sozial",
@@ -539,12 +530,12 @@
       "canonical": "https://machsruhig.de/bestatter/essen/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 14,
+      "internal_link_count": 16,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -587,7 +578,7 @@
     {
       "path": "bestatter\\freiburg\\index.html",
       "slug": "freiburg",
-      "size_kb": 64.8,
+      "size_kb": 65.2,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -607,12 +598,12 @@
       "canonical": "https://machsruhig.de/bestatter/freiburg/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -620,10 +611,9 @@
     {
       "path": "bestatter\\gelsenkirchen\\index.html",
       "slug": "gelsenkirchen",
-      "size_kb": 52.9,
-      "score": 5,
+      "size_kb": 56.7,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Quellen"
       ],
       "schema_valid": 1,
@@ -643,12 +633,12 @@
       "canonical": "https://machsruhig.de/bestatter/gelsenkirchen/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 17,
+      "internal_link_count": 22,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -656,7 +646,7 @@
     {
       "path": "bestatter\\hagen\\index.html",
       "slug": "hagen",
-      "size_kb": 56.7,
+      "size_kb": 57.5,
       "score": 6,
       "missing": [
         "Quellen"
@@ -679,12 +669,12 @@
       "canonical": "https://machsruhig.de/bestatter/hagen/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 0,
+      "internal_link_count": 2,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -692,7 +682,7 @@
     {
       "path": "bestatter\\halle\\index.html",
       "slug": "halle",
-      "size_kb": 57.6,
+      "size_kb": 58.4,
       "score": 6,
       "missing": [
         "Sozial"
@@ -714,11 +704,11 @@
       "canonical": "https://machsruhig.de/bestatter/halle/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 11,
+      "internal_link_count": 13,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
+      "has_methodik": true,
+      "has_author_block": true,
       "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
@@ -727,7 +717,7 @@
     {
       "path": "bestatter\\hamburg\\index.html",
       "slug": "hamburg",
-      "size_kb": 56.4,
+      "size_kb": 56.8,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -745,12 +735,12 @@
       "canonical": "https://machsruhig.de/bestatter/hamburg",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -758,11 +748,10 @@
     {
       "path": "bestatter\\hannover\\index.html",
       "slug": "hannover",
-      "size_kb": 55.2,
-      "score": 5,
+      "size_kb": 58.6,
+      "score": 6,
       "missing": [
-        "Kosten",
-        "BestWahl"
+        "Kosten"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -780,12 +769,12 @@
       "canonical": "https://machsruhig.de/bestatter/hannover/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -793,11 +782,9 @@
     {
       "path": "bestatter\\heidelberg\\index.html",
       "slug": "heidelberg",
-      "size_kb": 60.4,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 64.2,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -815,12 +802,12 @@
       "canonical": "https://machsruhig.de/bestatter/heidelberg/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 23,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -828,7 +815,7 @@
     {
       "path": "bestatter\\karlsruhe\\index.html",
       "slug": "karlsruhe",
-      "size_kb": 59.3,
+      "size_kb": 59.7,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -848,12 +835,12 @@
       "canonical": "https://machsruhig.de/bestatter/karlsruhe/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 19,
+      "internal_link_count": 20,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -861,11 +848,9 @@
     {
       "path": "bestatter\\kassel\\index.html",
       "slug": "kassel",
-      "size_kb": 66.4,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 70.2,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -883,12 +868,12 @@
       "canonical": "https://machsruhig.de/bestatter/kassel/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 13,
+      "internal_link_count": 18,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -896,11 +881,9 @@
     {
       "path": "bestatter\\kiel\\index.html",
       "slug": "kiel",
-      "size_kb": 64.0,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 67.7,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -918,12 +901,12 @@
       "canonical": "https://machsruhig.de/bestatter/kiel/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 11,
+      "internal_link_count": 16,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -965,7 +948,7 @@
     {
       "path": "bestatter\\krefeld\\index.html",
       "slug": "krefeld",
-      "size_kb": 55.6,
+      "size_kb": 56.4,
       "score": 6,
       "missing": [
         "Sozial"
@@ -988,12 +971,12 @@
       "canonical": "https://machsruhig.de/bestatter/krefeld/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 8,
+      "internal_link_count": 10,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1001,7 +984,7 @@
     {
       "path": "bestatter\\leipzig\\index.html",
       "slug": "leipzig",
-      "size_kb": 50.9,
+      "size_kb": 51.4,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1020,12 +1003,12 @@
       "canonical": "https://machsruhig.de/bestatter/leipzig/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 16,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1033,7 +1016,7 @@
     {
       "path": "bestatter\\leverkusen\\index.html",
       "slug": "leverkusen",
-      "size_kb": 55.9,
+      "size_kb": 56.7,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1053,12 +1036,12 @@
       "canonical": "https://machsruhig.de/bestatter/leverkusen/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 12,
+      "internal_link_count": 14,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1066,12 +1049,11 @@
     {
       "path": "bestatter\\luebeck\\index.html",
       "slug": "luebeck",
-      "size_kb": 16.3,
-      "score": 0,
+      "size_kb": 19.7,
+      "score": 1,
       "missing": [
         "Akutbox",
         "Kosten",
-        "BestWahl",
         "Sozial",
         "FAQ",
         "Quellen",
@@ -1090,12 +1072,12 @@
       "canonical": "https://machsruhig.de/bestatter/luebeck",
       "og_img": false,
       "noindex": true,
-      "internal_link_count": 13,
+      "internal_link_count": 16,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": true,
       "has_affiliate": false
@@ -1103,7 +1085,7 @@
     {
       "path": "bestatter\\lübeck\\index.html",
       "slug": "lübeck",
-      "size_kb": 44.6,
+      "size_kb": 45.4,
       "score": 6,
       "missing": [
         "Sozial"
@@ -1125,12 +1107,12 @@
       "canonical": "https://machsruhig.de/bestatter/luebeck/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 12,
+      "internal_link_count": 14,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1138,7 +1120,7 @@
     {
       "path": "bestatter\\magdeburg\\index.html",
       "slug": "magdeburg",
-      "size_kb": 53.8,
+      "size_kb": 54.6,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1158,12 +1140,12 @@
       "canonical": "https://machsruhig.de/bestatter/magdeburg/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 12,
+      "internal_link_count": 14,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1171,10 +1153,9 @@
     {
       "path": "bestatter\\mainz\\index.html",
       "slug": "mainz",
-      "size_kb": 58.7,
-      "score": 5,
+      "size_kb": 62.1,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Sozial"
       ],
       "schema_valid": 1,
@@ -1194,12 +1175,12 @@
       "canonical": "https://machsruhig.de/bestatter/mainz/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 15,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1207,7 +1188,7 @@
     {
       "path": "bestatter\\mannheim\\index.html",
       "slug": "mannheim",
-      "size_kb": 53.6,
+      "size_kb": 54.0,
       "score": 6,
       "missing": [
         "Fhf-Profile(0)"
@@ -1228,12 +1209,12 @@
       "canonical": "https://machsruhig.de/bestatter/mannheim/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 14,
+      "internal_link_count": 15,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1241,12 +1222,11 @@
     {
       "path": "bestatter\\moenchengladbach\\index.html",
       "slug": "moenchengladbach",
-      "size_kb": 19.5,
-      "score": 1,
+      "size_kb": 22.9,
+      "score": 2,
       "missing": [
         "Akutbox",
         "Kosten",
-        "BestWahl",
         "FAQ",
         "Quellen",
         "Fhf-Profile(0)"
@@ -1264,12 +1244,12 @@
       "canonical": "https://machsruhig.de/bestatter/moenchengladbach",
       "og_img": false,
       "noindex": true,
-      "internal_link_count": 13,
+      "internal_link_count": 16,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": true,
       "has_affiliate": true
@@ -1277,11 +1257,9 @@
     {
       "path": "bestatter\\muelheim\\index.html",
       "slug": "muelheim",
-      "size_kb": 56.8,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 60.6,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -1298,12 +1276,12 @@
       "canonical": "https://machsruhig.de/bestatter/muelheim-an-der-ruhr/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 9,
+      "internal_link_count": 14,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1311,7 +1289,7 @@
     {
       "path": "bestatter\\muenchen\\index.html",
       "slug": "muenchen",
-      "size_kb": 64.2,
+      "size_kb": 64.6,
       "score": 6,
       "missing": [
         "Sozial"
@@ -1333,12 +1311,12 @@
       "canonical": "https://machsruhig.de/bestatter/muenchen/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 21,
+      "internal_link_count": 22,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1346,7 +1324,7 @@
     {
       "path": "bestatter\\muenster\\index.html",
       "slug": "muenster",
-      "size_kb": 61.8,
+      "size_kb": 62.2,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1366,12 +1344,12 @@
       "canonical": "https://machsruhig.de/bestatter/muenster/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 20,
+      "internal_link_count": 21,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1379,7 +1357,7 @@
     {
       "path": "bestatter\\mönchengladbach\\index.html",
       "slug": "mönchengladbach",
-      "size_kb": 53.6,
+      "size_kb": 54.3,
       "score": 6,
       "missing": [
         "Sozial"
@@ -1401,12 +1379,12 @@
       "canonical": "https://machsruhig.de/bestatter/moenchengladbach/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 15,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1414,7 +1392,7 @@
     {
       "path": "bestatter\\nuernberg\\index.html",
       "slug": "nuernberg",
-      "size_kb": 59.9,
+      "size_kb": 60.3,
       "score": 6,
       "missing": [
         "Fhf-Profile(2)"
@@ -1436,12 +1414,12 @@
       "canonical": "https://machsruhig.de/bestatter/nuernberg/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 16,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1449,11 +1427,9 @@
     {
       "path": "bestatter\\oberhausen\\index.html",
       "slug": "oberhausen",
-      "size_kb": 57.1,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 60.9,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -1471,12 +1447,12 @@
       "canonical": "https://machsruhig.de/bestatter/oberhausen/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 9,
+      "internal_link_count": 14,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1484,7 +1460,7 @@
     {
       "path": "bestatter\\oldenburg\\index.html",
       "slug": "oldenburg",
-      "size_kb": 57.8,
+      "size_kb": 58.6,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1504,12 +1480,12 @@
       "canonical": "https://machsruhig.de/bestatter/oldenburg/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 13,
+      "internal_link_count": 15,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1517,7 +1493,7 @@
     {
       "path": "bestatter\\osnabrueck\\index.html",
       "slug": "osnabrueck",
-      "size_kb": 57.8,
+      "size_kb": 58.6,
       "score": 6,
       "missing": [
         "FAQ"
@@ -1539,12 +1515,12 @@
       "canonical": "https://machsruhig.de/bestatter/osnabrueck/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 8,
+      "internal_link_count": 10,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1552,11 +1528,9 @@
     {
       "path": "bestatter\\potsdam\\index.html",
       "slug": "potsdam",
-      "size_kb": 50.5,
-      "score": 6,
-      "missing": [
-        "BestWahl"
-      ],
+      "size_kb": 54.2,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -1574,12 +1548,12 @@
       "canonical": "https://machsruhig.de/bestatter/potsdam/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 13,
+      "internal_link_count": 18,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1587,7 +1561,7 @@
     {
       "path": "bestatter\\regensburg\\index.html",
       "slug": "regensburg",
-      "size_kb": 53.1,
+      "size_kb": 53.8,
       "score": 6,
       "missing": [
         "Sozial"
@@ -1609,12 +1583,12 @@
       "canonical": "https://machsruhig.de/bestatter/regensburg/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 13,
+      "internal_link_count": 15,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1622,7 +1596,7 @@
     {
       "path": "bestatter\\rostock\\index.html",
       "slug": "rostock",
-      "size_kb": 55.0,
+      "size_kb": 55.7,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1642,12 +1616,12 @@
       "canonical": "https://machsruhig.de/bestatter/rostock/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 17,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1655,7 +1629,7 @@
     {
       "path": "bestatter\\saarbruecken\\index.html",
       "slug": "saarbruecken",
-      "size_kb": 56.9,
+      "size_kb": 57.6,
       "score": 6,
       "missing": [
         "Sozial"
@@ -1677,12 +1651,12 @@
       "canonical": "https://machsruhig.de/bestatter/saarbruecken/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 10,
+      "internal_link_count": 12,
       "entity_bugs": 0,
-      "has_stand": false,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_stand": true,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1690,7 +1664,7 @@
     {
       "path": "bestatter\\stuttgart\\index.html",
       "slug": "stuttgart",
-      "size_kb": 60.9,
+      "size_kb": 61.3,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1710,12 +1684,12 @@
       "canonical": "https://machsruhig.de/bestatter/stuttgart/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 21,
+      "internal_link_count": 22,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": true
@@ -1723,10 +1697,9 @@
     {
       "path": "bestatter\\wiesbaden\\index.html",
       "slug": "wiesbaden",
-      "size_kb": 47.4,
-      "score": 5,
+      "size_kb": 51.2,
+      "score": 6,
       "missing": [
-        "BestWahl",
         "Sozial"
       ],
       "schema_valid": 1,
@@ -1747,12 +1720,12 @@
       "canonical": "https://machsruhig.de/bestatter/wiesbaden/",
       "og_img": false,
       "noindex": false,
-      "internal_link_count": 12,
+      "internal_link_count": 17,
       "entity_bugs": 0,
       "has_stand": true,
-      "has_methodik": false,
-      "has_author_block": false,
-      "has_kostenrechner_cta": false,
+      "has_methodik": true,
+      "has_author_block": true,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": false,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1760,7 +1733,7 @@
     {
       "path": "bestatter\\wuppertal\\index.html",
       "slug": "wuppertal",
-      "size_kb": 56.8,
+      "size_kb": 57.2,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1779,12 +1752,12 @@
       "canonical": "https://machsruhig.de/bestatter/wuppertal/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 18,
+      "internal_link_count": 19,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -2365,71 +2338,70 @@
     }
   ],
   "score_distribution": {
-    "6": [
-      "aachen",
-      "bochum",
-      "dortmund",
-      "duesseldorf",
-      "erfurt",
-      "frankfurt",
-      "hagen",
-      "halle",
-      "heidelberg",
-      "kassel",
-      "kiel",
-      "koeln",
-      "krefeld",
-      "lübeck",
-      "mannheim",
-      "muelheim",
-      "muenchen",
-      "mönchengladbach",
-      "nuernberg",
-      "oberhausen",
-      "osnabrueck",
-      "potsdam",
-      "regensburg",
-      "saarbruecken"
-    ],
-    "5": [
-      "augsburg",
-      "berlin",
-      "bonn",
-      "braunschweig",
-      "dresden",
-      "essen",
-      "gelsenkirchen",
-      "hannover",
-      "mainz",
-      "wiesbaden"
-    ],
     "7": [
+      "aachen",
       "bielefeld",
+      "bochum",
       "bremen",
       "chemnitz",
       "darmstadt",
       "duisburg",
       "freiburg",
       "hamburg",
+      "heidelberg",
       "karlsruhe",
+      "kassel",
+      "kiel",
       "leipzig",
       "leverkusen",
       "magdeburg",
+      "muelheim",
       "muenster",
+      "oberhausen",
       "oldenburg",
+      "potsdam",
       "rostock",
       "stuttgart",
       "wuppertal"
     ],
-    "0": [
-      "luebeck"
+    "6": [
+      "augsburg",
+      "berlin",
+      "bonn",
+      "braunschweig",
+      "dortmund",
+      "dresden",
+      "duesseldorf",
+      "erfurt",
+      "frankfurt",
+      "gelsenkirchen",
+      "hagen",
+      "halle",
+      "hannover",
+      "koeln",
+      "krefeld",
+      "lübeck",
+      "mainz",
+      "mannheim",
+      "muenchen",
+      "mönchengladbach",
+      "nuernberg",
+      "osnabrueck",
+      "regensburg",
+      "saarbruecken",
+      "wiesbaden"
+    ],
+    "5": [
+      "essen"
     ],
     "1": [
+      "luebeck"
+    ],
+    "2": [
       "moenchengladbach"
     ]
   },
   "missing_freq": {
-    "BestWahl": 19,
     "Sozial": 15,
     "Kosten": 8,
     "Quellen": 6,
