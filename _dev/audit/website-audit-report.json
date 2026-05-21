@@ -36,7 +36,7 @@
     {
       "path": "bestatter\\augsburg\\index.html",
       "slug": "augsburg",
-      "size_kb": 66.8,
+      "size_kb": 66.9,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -69,7 +69,7 @@
     {
       "path": "bestatter\\berlin\\index.html",
       "slug": "berlin",
-      "size_kb": 61.8,
+      "size_kb": 62.4,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -198,10 +198,8 @@
       "path": "bestatter\\braunschweig\\index.html",
       "slug": "braunschweig",
       "size_kb": 61.2,
-      "score": 6,
-      "missing": [
-        "Quellen"
-      ],
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -264,7 +262,7 @@
     {
       "path": "bestatter\\chemnitz\\index.html",
       "slug": "chemnitz",
-      "size_kb": 52.8,
+      "size_kb": 52.9,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -466,7 +464,7 @@
     {
       "path": "bestatter\\erfurt\\index.html",
       "slug": "erfurt",
-      "size_kb": 65.7,
+      "size_kb": 65.6,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -499,11 +497,9 @@
     {
       "path": "bestatter\\essen\\index.html",
       "slug": "essen",
-      "size_kb": 63.4,
-      "score": 6,
-      "missing": [
-        "Quellen"
-      ],
+      "size_kb": 63.3,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -603,10 +599,8 @@
       "path": "bestatter\\gelsenkirchen\\index.html",
       "slug": "gelsenkirchen",
       "size_kb": 56.7,
-      "score": 6,
-      "missing": [
-        "Quellen"
-      ],
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -638,10 +632,8 @@
       "path": "bestatter\\hagen\\index.html",
       "slug": "hagen",
       "size_kb": 57.4,
-      "score": 6,
-      "missing": [
-        "Quellen"
-      ],
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -673,7 +665,7 @@
     {
       "path": "bestatter\\halle\\index.html",
       "slug": "halle",
-      "size_kb": 61.5,
+      "size_kb": 61.4,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -706,7 +698,7 @@
     {
       "path": "bestatter\\hamburg\\index.html",
       "slug": "hamburg",
-      "size_kb": 56.8,
+      "size_kb": 56.7,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -903,11 +895,9 @@
     {
       "path": "bestatter\\koeln\\index.html",
       "slug": "koeln",
-      "size_kb": 43.1,
-      "score": 6,
-      "missing": [
-        "Kosten"
-      ],
+      "size_kb": 46.4,
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -924,12 +914,12 @@
       "canonical": "https://machsruhig.de/bestatter/koeln/",
       "og_img": true,
       "noindex": false,
-      "internal_link_count": 20,
+      "internal_link_count": 21,
       "entity_bugs": 0,
       "has_stand": true,
       "has_methodik": true,
       "has_author_block": true,
-      "has_kostenrechner_cta": false,
+      "has_kostenrechner_cta": true,
       "has_planer_cta": true,
       "has_lead_form": false,
       "has_affiliate": false
@@ -1138,7 +1128,7 @@
     {
       "path": "bestatter\\mainz\\index.html",
       "slug": "mainz",
-      "size_kb": 65.2,
+      "size_kb": 65.1,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1540,7 +1530,7 @@
     {
       "path": "bestatter\\regensburg\\index.html",
       "slug": "regensburg",
-      "size_kb": 56.9,
+      "size_kb": 56.8,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1606,7 +1596,7 @@
     {
       "path": "bestatter\\saarbruecken\\index.html",
       "slug": "saarbruecken",
-      "size_kb": 60.8,
+      "size_kb": 60.7,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -2317,19 +2307,24 @@
       "berlin",
       "bielefeld",
       "bochum",
+      "braunschweig",
       "bremen",
       "chemnitz",
       "darmstadt",
       "dresden",
       "duisburg",
       "erfurt",
+      "essen",
       "freiburg",
+      "gelsenkirchen",
+      "hagen",
       "halle",
       "hamburg",
       "heidelberg",
       "karlsruhe",
       "kassel",
       "kiel",
+      "koeln",
       "krefeld",
       "leipzig",
       "leverkusen",
@@ -2352,15 +2347,10 @@
     ],
     "6": [
       "bonn",
-      "braunschweig",
       "dortmund",
       "duesseldorf",
-      "essen",
       "frankfurt",
-      "gelsenkirchen",
-      "hagen",
       "hannover",
-      "koeln",
       "mannheim",
       "nuernberg",
       "osnabrueck"
@@ -2373,11 +2363,11 @@
     ]
   },
   "missing_freq": {
-    "Kosten": 8,
-    "Quellen": 6,
+    "Kosten": 7,
     "Akutbox": 2,
     "Sozial": 1,
     "FAQ": 3,
+    "Quellen": 2,
     "Fhf-Profile": 4
   }
 }
