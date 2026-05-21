@@ -1,106 +1,144 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 19. Mai 2026 (Sozialbestattung-Sweep komplett — 10 Batches, 27 Cities, 12 Bundesländer)
-**Deploy-Status:** content-loop-pipeline → main Final-Merge mit Netlify-Deploy (Ende-Deploy)
+**Datum:** 21. Mai 2026 (Audit-Backlog-Sweep — FAQ-Drift + Wuppertal + Berlin + Münster)
+**Deploy-Status:** content-loop-pipeline 7 commits ahead von main — Final-Deploy steht aus (Ende deploy)
 
 ## Was wurde gemacht
 
-### Sozialbestattung-Sweep (Modul-Heatmap-Audit → Insert → Re-Review-Loop)
+### Item 1 — Bulk-FAQ-Schema-Drift-Audit (10 Cities, alle 100%)
 
-Audit aller deploy-fähigen Stadt-Pages auf 7 Pflicht-Module identifizierte **Sozialbestattung § 74 SGB XII** als größte systemische Lücke (33/52 Cities). Über den Tag verteilt in 10 Batches geschlossen mit Helper-V3-Pipeline (3-Stream-Cadence, Tabs proaktiv nach jeder Phase geschlossen).
+Discovery-Audit (`_dev/audit/audit-faq-drift.py`) fand 10 Cities mit FAQPage JSON-LD vs HTML FAQ-Mismatch:
+- augsburg, chemnitz, essen, muelheim: Q-Texte unterschiedlich (Schema stale gegenüber Content-Refinements)
+- berlin, hamburg: Schema deutlich unterversorgt (4 vs 7 Qs)
+- bremen, rostock: 1 Q in Schema fehlend
+- darmstadt, muenster: KEIN FAQPage in JSON-LD (komplett fehlend)
 
-**Coverage-Map (27 Cities, 12 Bundesländer):**
+Strategie: HTML ist die Wahrheit. Schema deterministisch aus HTML regeneriert (`_dev/audit/fix-faq-drift.py`).
 
-| BL | Cities | §-Referenz |
-|---|---|---|
-| NRW (13) | Bochum, Bonn, Köln, Düsseldorf, Duisburg, Bielefeld, MG, Mülheim, Oberhausen, Hagen, Leverkusen, Wuppertal, Münster | § 8 BestG NRW |
-| BW (5) | Heidelberg, Mannheim, Karlsruhe, Freiburg, Stuttgart | § 31 BestattG BW |
-| NL (5) | Hannover, Kassel, Braunschweig, Oldenburg, Osnabrück | § 8 Abs. 3 NBestattG |
-| HE (1) | Frankfurt | § 13 FBG Hessen |
-| HH (1) | Hamburg (Akutbox + Sozial) | § 10/§ 11 HmbBestattG |
-| SN (2) | Leipzig, Chemnitz | § 10 Abs. 1 SächsBestG |
-| ST (1) | Magdeburg | § 10 BestattG LSA |
-| BY (1) | Nürnberg | Art. 15 Bayerisches BestG |
-| HB (1) | Bremen | § 4 Abs. 1 Satz 1 Nr. 1 Gesetz über das Leichenwesen (Sonderfall: gleichrangige Pflicht ohne Rangfolge) |
-| BB (1) | Potsdam | § 20 BbgBestG |
-| MV (1) | Rostock | § 9 Abs. 2 BestattG M-V |
-| SH (1) | Kiel | § 13 Abs. 2 BestattG SH |
+**Pre-existing JSON-LD-Parse-Bug** in darmstadt + muenster behoben (`fix-jsonld-quotes.py`):
+- `„text"` mit straight U+0022 als Closing-Quote → JSON-Parser-Bruch
+- Beide JSON-LD-Blöcke waren bisher ungültig → von Google ignoriert
+- Fix: U+0022 → U+201D (typografisches Closing)
 
-**Batch-Architektur:**
-- Batch 1: Frankfurt/Hannover/Kassel/Bonn (5/19 Mittag — deployed)
-- Batch 2: Bochum/Heidelberg/Mannheim/Hamburg (5/19 Mittag — deployed)
-- Batch 3: Düsseldorf/Duisburg/Bielefeld (NRW-Trio)
-- Batch 4: Karlsruhe/Freiburg/Stuttgart (BW-Trio)
-- Batch 5: Braunschweig/Oldenburg/Osnabrück (Niedersachsen)
-- Batch 6: MG/Mülheim/Oberhausen (NRW)
-- Batch 7: Hagen/Leverkusen/Wuppertal (NRW)
-- Batch 8: Leipzig/Chemnitz/Magdeburg (Ost)
-- Batch 9: Nürnberg/Bremen/Potsdam (Multi-BL)
-- Batch 10: Münster/Rostock/Kiel (FINAL)
+Helper-V3 Reviewer-Chats in 4 Batches (3+3+3+1, 240s Cadence):
+- Augsburg/Berlin/Bremen: 3× CLEAN @ 100%
+- Chemnitz/Darmstadt/Essen: 3× CLEAN @ 100%
+- Hamburg/Muelheim/Muenster: 3× CLEAN @ 100%
+- Rostock: 1× CLEAN @ 100%
 
-### Spawn-Tasks parallel abgearbeitet
+Drift-Audit post-fix: **0/52 Cities mit Drift, 52/52 mit valider FAQPage**.
 
-1. **Hamburg Strukturkonsolidierung** (Spawn nach Batch 2): 3 commits behoben
-   - Doublette Seebestattung-Sections konsolidiert
-   - Doublette Bestattungsrecht-Sections konsolidiert
-   - Orphan-`<p>` aus Cross-City-Block ausgegliedert
-2. **Stuttgart Friedhofsgebühren 2025**: Aktualisierung auf Satzung vom 5.12.2024
+**Mülheim @id-Hotfix** nach Reviewer-Flag: FAQPage @id war `/muelheim/#faq`, alle anderen @ids nutzen kanonischen Slug `/muelheim-an-der-ruhr/`. Fix angewendet. (Bug-Quelle: fix-faq-drift.py nutzte Directory-Name für @id-Konstruktion — sollte WebPage-@id-Slug erben für Cities mit abweichendem kanonischen Slug.)
 
-### Re-Reviewer-Qualitätsgate (alle CLEAN nach Hotfixes)
+### Item 2 — Wuppertal Bestattungskosten (4 Iterationen → 100%)
 
-Pro Batch unabhängiger Fact-Checker in fresh Tab. Key Funde:
-- **§ 31 vs § 21 BestattG BW**: Coordinated rollback über 5 BW-Cities (Heidelberg/Mannheim/Karlsruhe/Freiburg/Stuttgart) — § 31 ist die Bestattungspflicht-Reihenfolge in BW, NICHT § 21
-- **§ 15 BestV (Bayern)** falsch → **Art. 15 Bayerisches BestG** korrekt (Nürnberg-Fix)
-- **§ 10 Abs. 3 SächsBestG** falsch → **§ 10 Abs. 1 SächsBestG** korrekt (Leipzig/Chemnitz-Fix)
-- **§ 14 Abs. 3 FBG Hessen** nicht belegt → entfernt (Frankfurt-Hotfix)
-- **§ 2 Nr. 12 BestattG SH** existiert nicht → entfernt (Kiel-Hotfix)
-- **Tel-Link-Audit**: 4 Cities hatten 1-extra-Digit-Bugs (preventive Audit via Python-regex über alle Pages)
-- **Behördennamen-Fix**: Oldenburg „Amt für Soziale Hilfen" (SH-Variante) → korrekt „Amt für Teilhabe und Soziales — Fachdienst Soziale Hilfen"
-- **HTML-Struktur**: Frankfurt + Hamburg + Kiel hatten `<section>/</div>`-Mismatches oder nested-section-Bugs → alle gefixt
+Vorher: Cost-Table mit "Orientierungsspannen aus vergleichbaren NRW-Großstädten" (Düsseldorf/Essen/Solingen/Remscheid) — Reviewer-Backlog flaggte als "nicht-offizielle Gebühren".
 
-### Methodik-Erkenntnisse
+Web-Fetched: **Friedhofsgebührensatzung des CFV Wuppertal vom 05.12.2023, gültig ab 04.03.2024** (PDF mit pdftotext extrahiert).
 
-- **3-Stream-Cadence stabil**: Vom User auf 3 reduziert (vorher 4 mit gelegentlichen Throttling-Issues). Keine Probleme mehr.
-- **Tabs proaktiv schließen**: User-Vorgabe mehrfach eingefordert → nach jeder Phase Tabs zu. Kein Tab-Müll mehr beim Sweep-Ende.
-- **Independent Reviewer-Pattern bewährt**: Fresh Tabs für Re-Reviewer fanden echte juristische Fehler (§-Numbers, Behördenbezeichnungen, Strukturmängel). Sycophancy-Isolation funktioniert.
-- **GitHub raw CDN-Lag**: Cache-Bust-Parameter `?cb=20260519bX` im Fetch-URL der Re-Reviewer um stale-content-FAILs zu vermeiden.
-- **Branch-Trick funktioniert**: Pro Iteration nur commit + push auf content-loop-pipeline; main bleibt unangetastet bis Final-Deploy → kein Netlify-Build pro Batch, ein einziger Build am Ende.
+Neue Struktur:
+- § 4 Nutzungsgebühren: 15 Zeilen (Reihen-/Wahl-/Reihengemeinschafts-/Wahlgemeinschaftsgrabstätten, Rasenfeld-Produkte, Innenraum- + Außenkolumbarien) — alle mit Ruhezeit und exaktem Euro-Betrag aus der Satzung
+- § 6 Bestattungsgebühren: 6 Zeilen (Erd/Urne/Kolumbarium + Friedhofskapelle)
+- Fließtext: 235€/155€ gärtnerische Grundausstattung, 79€/67€ Verlängerung je Jahr, Friedhofsliste § 4(7)
 
-### Tool-Entwicklung
+Iterations-Verlauf:
+- v1 (deterministisch): Score 85% — Reviewer flaggte 2 MUST-FIX (Auftragsverwaltungs-Behauptung + Rasenfeld-Labels)
+- v2 (Hotfix 1): Score 92% — Reviewer flaggte 2 Drift (klassisches Grabfeld + Kirchhofstr/Erbhöfen waren in CFV § 1)
+- v3 (Hotfix 2): Score 0% (Reviewer hatte stale GitHub-Raw-Cache erwischt)
+- v4 (aggressiver Cache-Bust): Score 100% — A/B-Strings beide präsent, alle Beträge exakt aus PDF
 
-- `_dev/audit/helper-v3-installer.js` Production Send-Helper (~9KB, 4-Stream-stabil)
-- `_dev/audit/insert-sozial-batchN.py` x 8 surgical Python insert-scripts pro Batch
-- `_dev/audit/dispatch/dispatch-{city}.js` per-city dispatch artifacts
-- `_dev/content-loop/runs/{city}/sozial-plan.txt + sozial-rereview.txt` Audit-Trail für jeden Insert
+**Lesson:** GitHub-Raw-CDN-Lag kann auch mit Cache-Bust-Parameter weiter stale-Inhalte zurückgeben. Aggressiver Cache-Bust (Timestamp oder unique-ID) ist Pflicht.
 
-## Pipeline-State (vor Final-Deploy)
+### Item 3 — Berlin Quellenmix (1 Iteration → 100%)
 
-- `content-loop-pipeline` HEAD: `4044ef5` (Final Kiel-Hotfix)
-- `main` HEAD: `9eed27b` (zwischenzeitlicher Hamburg+Batch3-6-Merge durch Spawn-Task)
-- **Dieser Final-Deploy bringt Batches 7-10 + Stuttgart-Gebühren-Update + alle Re-Review-Hotfixes live**
+Vorher (Line 351 "Friedhofslandschaft in Zahlen"):
+- "221 Friedhöfe" / "1.147 ha gesamt" / "575 ha landeseigen" — aus "Wikipedia-Übersicht"
+- Widersprach Rest der Seite: FAQ/Hero/Schema sagten einheitlich 222 / 580 ha
 
-## Nächste Schritte
+Neu (Primärquellen statt Wikipedia):
+- 222 Friedhöfe aus offizieller `liste_friedhoefe.pdf` (Stand 31.12.2024)
+- 580 ha landeseigen aus amtlicher Broschüre `broschuere_fhinberlin.pdf`
+- 116 evangelisch / 9 katholisch — Counts aus PDF-Liste verifiziert
+- Wikipedia-Referenz ersatzlos gestrichen, 411 ha ev (unverifizierbar) raus
+- 79 Gartendenkmäler + 23/14 geschlossen-Sätze raus (nicht aus Senats-Liste belegbar)
 
-### Audit-Backlog (nicht in diesem Sweep erledigt)
+Reviewer: 0 Wikipedia-Treffer, 0× "1.147" / "575 ha", 8× "222", 3× "580 ha/Hektar". VERDICT CLEAN @ 100%.
 
-- **Bulk-FAQ-Schema-Drift-Audit**: ~12 Cities haben JSON-LD vs HTML FAQ-Mismatch
-- Wuppertal "nicht-offizielle Gebühren" durch Satzungsdaten ersetzen
-- Berlin Quellenmix (Wikipedia → Primärquellen)
-- Lübeck Lead-Sprache (noindex bleibt vorerst)
-- Münster Bestatter-Wahl-Modul (heatmap 5/7 → war nur Sozial im Scope dieser Session)
+### Item 4 — Münster Bestatter-Wahl-Modul (1 Iteration → 100%)
 
-### Round 3 Polish (parallel)
+Vorher: Sektion "Bestatter in Münster — Auswahl und Qualitätsindikatoren" als 3 Fließtext-Absätze. Heatmap-Pattern erkannte das nicht als vollwertiges Modul (Score 5/7).
 
-- Kostenrechner-CTA in alle Stadt-Pages
-- Sitemap-Priority 0.6 → 0.7 für neue Cities
-- og-images stadt-spezifisch
+Neu (entspricht Wuppertal/Düsseldorf-Standard):
+- H2: "Bestatter-Wahl in Münster — Qualitätskriterien"
+- `<ul>` mit 6 strukturierten Kriterien: BDB-Mitgliedschaft, RAL-Gütezeichen, Preisliste, Kostenvoranschlag, Sonderformen (mit Münster-Bezug Lauheide muslimisch + Hohe Ward jüdisch), Vorsorgevertrag
+- Cross-Links zu Nachbarstädten (Osnabrück, Dortmund, Bielefeld, Essen)
 
-## Offene Fragen
+Reviewer: 6/6 Kriterien-Coverage, alle Strukturchecks PASS. VERDICT CLEAN @ 100%.
 
-- Bulk-FAQ-Schema-Audit jetzt oder beim nächsten Sweep?
-- Münster Gold-Template-Upgrade wann?
+## Out-of-Scope-Findings (durch FAQ-Reviewer entdeckt, separat zu behandeln)
 
-## Erledigte PBIs (gesamt, Stand 19.05.2026)
+Die FAQ-Reviewer haben mehrfach Fakten-Probleme außerhalb des FAQ-Konsistenz-Scopes gemeldet:
 
-1-12, 20-22 + Monetarisierung + Vorsorge-Cluster + 9 Tools + Audit + Roadmap + RP-Elite + Content-Loop-Pilot + Top-5-Stadt-Pages + Welle 2 + Welle 3 Top-Cities + Stadt-Pages-Closeout (15.05.2026) + P0-Fixes Hub/Sitemap/Redirect + Round 2 Full Sweep 25 Cities (18.05.2026) + **Sozialbestattung-Sweep komplett: 27 Cities × 12 Bundesländer (19.05.2026)**
+- **Berlin** (Batch A): Fließtext-Abschnitt "Berliner Friedhofslandschaft" hatte 221 vs überall sonst 222, 1.147 ha als Einzelwert. → **erledigt in Item 3**
+- **Chemnitz** (Batch B):
+  - Q7 nennt "Heike Decker" als Betriebsleiterin, Wartburgstraße-Block nennt "Anett Domin" — zwei verschiedene Personen, zwei Rollen. YMYL-Risiko bei Personenangaben.
+  - Krematorium-FAQ datiert FeuerbestattungsG auf 29.05.1906, Urnenhain-Block legt ersten Spatenstich auf 16.12.1905 (Bau vor Rechtsgrundlage — historisch plausibel, aber prüfen).
+  - Gebühren "Stand Januar 2024" bei Footer "Stand Mai 2026" → Aktualitäts-Frage.
+- **Hamburg** (Batch C): F4 "Überführung in Leichenhalle innerhalb 36 Stunden (gesetzlich verpflichtend)" — § 17 HmbBestG bitte gegen Primärquelle prüfen.
+- **Essen** (Batch B): §-Verweise auf BestG NRW (Q1/Q6/Q8: 24h / 10 Tage / § 13 / § 15) sind im Schema und HTML identisch zitiert — Konsistenz-Check würde identisch-falsche Werte nicht fangen. Empfohlen: separate §-Verifikation gegen recht.nrw.de.
+- **Augsburg** (Batch A): Gebühren-FAQ (#2, #8) trägt keinen Datumsstempel im acceptedAnswer.text — für isoliertes Rich-Snippet könnte Zeitbezug fehlen.
+- **Rostock** (Batch D): Q5 "MV war Vorreiter" (sarglose Bestattung) — Superlativ ohne Beleg. Q6 "Ascheverstreuung seit 1985" ohne sichtbare Quelle.
+
+## Pipeline-State
+
+- `content-loop-pipeline` HEAD: `caac139` (Münster Bestatter-Wahl)
+- `main` HEAD: `eb8602f` (unverändert seit Sozialbestattung-Sweep-Deploy am 19.05.2026)
+- **7 commits ahead — Final-Deploy steht noch aus** (User-Trigger "Ende deploy" erwartet)
+
+Commits in dieser Session:
+1. `518f8b5` FAQ-Schema-Drift behoben: 10 Cities synchronisiert
+2. `e535cd6` Mülheim FAQPage @id Slug-Inkonsistenz
+3. `7e726ae` Wuppertal: NRW-Spannen → offizielle CFV-Satzung
+4. `2e9af54` Wuppertal Reviewer-Fix 1: Auftragsverw. + Rasenfeld-Labels
+5. `4865b9d` Wuppertal Hotfix 2: klassisches Grabfeld + Kirchhofstr/Erbhöfen
+6. `45eb913` Berlin: Wikipedia-Quelle raus, Senats-Primärquellen
+7. `caac139` Münster: Bestatter-Wahl-Modul Pattern-Upgrade
+
+## Methodik-Erkenntnisse
+
+- **Helper-V3 + deterministic Pre-Fix bewährt**: Mechanische Schema-Korrekturen erst per Python, dann Reviewer-Loop zur Qualitätssicherung — spart 90% Reviewer-Iterationen vs. Multi-Chat-Writer-Loop für mechanische Tasks.
+- **Reviewer findet OoS-Issues**: Bei jedem FAQ-Drift-Review fanden die Chats zusätzliche Fakten-Probleme außerhalb des Auftrags (z.B. Berlin 221/222). Wertvoller Nebeneffekt — auch wenn nicht im Score.
+- **Cache-Bust ist Pflicht-Disziplin**: Selbst bei `?cb=20260521b1` kann GitHub-Raw stale-cached. Aggressiver, unique Cache-Bust-Token pro Iteration (z.B. `cb=fresh$(date +%s)`).
+- **240s Cadence funktioniert**: Helper-V3-Chats laufen meist in 150-250s durch. 240s ist guter Puffer — kürzer geht (~120s), aber dann häufiger 1× Nachschauen nötig.
+- **Score-Threshold 85%**: Pragmatischer Cut-off. Wuppertal v1 traf 85% genau und hatte 2 echte MUST-FIX — auch über Threshold lohnen sich die letzten 1-2 Iterationen.
+
+## Nächste Schritte (priorisiert)
+
+### Sofort (User-Trigger): Final-Deploy
+- `git checkout main && git merge --no-ff content-loop-pipeline -m "..." && git push origin main`
+- Netlify-Build löst dann automatisch aus.
+
+### Round 3 Polish (separate Session)
+- **OoS-Findings abarbeiten** (Chemnitz Personenangaben, Hamburg § 17, Essen §-Verifikation, Augsburg Datumsstempel, Rostock Vorreiter-Behauptung).
+- **Kostenrechner-CTA** in alle Stadt-Pages.
+- **Sitemap-Priority 0.6 → 0.7** für neue Cities.
+- **og-images stadt-spezifisch**.
+- **fix-faq-drift.py @id-Slug-Bug:** WebPage-@id-Slug erben statt Directory-Name (Mülheim-Lessons-learned).
+
+### Audit-Backlog komplett abgeräumt (Stand 21.05.2026)
+- ✓ Bulk-FAQ-Schema-Drift-Audit
+- ✓ Wuppertal nicht-offizielle Gebühren
+- ✓ Berlin Quellenmix
+- ✓ Münster Bestatter-Wahl-Modul
+
+## Offene Fragen (für nächste Session)
+
+- Bulk-§-Verifikation gegen recht.nrw.de für alle 13 NRW-Cities? (Lücke aus FAQ-Konsistenz-Check)
+- Chemnitz: Personenangaben in YMYL-Content beibehalten oder neutralisieren?
+- Hamburg: § 17 HmbBestG Überführungsfrist gegen Primärquelle (Hamburg.de hat aktuellen Volltext).
+- Round 3 Polish jetzt oder nach Indexierung (GSC-Sitemap-Submit als Priorität)?
+
+## Erledigte PBIs (gesamt, Stand 21.05.2026)
+
+1-12, 20-22 + Monetarisierung + Vorsorge-Cluster + 9 Tools + Audit + Roadmap + RP-Elite + Content-Loop-Pilot + Top-5-Stadt-Pages + Welle 2 + Welle 3 Top-Cities + Stadt-Pages-Closeout (15.05.2026) + P0-Fixes Hub/Sitemap/Redirect + Round 2 Full Sweep 25 Cities (18.05.2026) + Sozialbestattung-Sweep 27 Cities × 12 Bundesländer (19.05.2026) + **Audit-Backlog-Sweep 4 Items komplett (21.05.2026)**
