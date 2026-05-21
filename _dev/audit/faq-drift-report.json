@@ -1,0 +1,2378 @@
+[
+  {
+    "city": "aachen",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in aachen?",
+      "welche bestattungsfristen gelten in aachen?",
+      "was kostet eine bestattung in aachen?",
+      "wer übernimmt die bestattungskosten, wenn kein geld vorhanden ist?",
+      "besteht in aachen sargpflicht?",
+      "welche ruhezeit gilt auf aachener friedhöfen?",
+      "wo wird der sterbefall in aachen beurkundet?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in aachen?",
+      "welche bestattungsfristen gelten in aachen?",
+      "was kostet eine bestattung in aachen?",
+      "wer übernimmt die bestattungskosten, wenn kein geld vorhanden ist?",
+      "besteht in aachen sargpflicht?",
+      "welche ruhezeit gilt auf aachener friedhöfen?",
+      "wo wird der sterbefall in aachen beurkundet?"
+    ],
+    "schema_answers_chars": [
+      211,
+      424,
+      633,
+      418,
+      257,
+      242,
+      282
+    ],
+    "html_answers_chars": [
+      265,
+      614,
+      782,
+      488,
+      308,
+      302,
+      318
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "augsburg",
+    "schema_count": 9,
+    "html_count": 9,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in augsburg?",
+      "was kostet eine bestattung auf einem städtischen friedhof in augsburg?",
+      "wie lange ist die bestattungsfrist in bayern?",
+      "wie lang ist die ruhezeit auf augsburger friedhöfen?",
+      "gibt es in augsburg eine möglichkeit zur sarglosen erdbestattung?",
+      "wer trägt die bestattungskosten in augsburg?",
+      "wo wird ein sterbefall in augsburg gemeldet?",
+      "gibt es in augsburg ein krematorium?",
+      "ist bertolt brecht auf einem augsburger friedhof beigesetzt?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in augsburg?",
+      "was kostet eine bestattung auf einem städtischen friedhof in augsburg?",
+      "wie lange ist die bestattungsfrist in bayern?",
+      "wie lang ist die ruhezeit auf augsburger friedhöfen?",
+      "gibt es in augsburg eine möglichkeit zur sarglosen erdbestattung?",
+      "wer trägt die bestattungskosten in augsburg?",
+      "wo wird ein sterbefall in augsburg gemeldet?",
+      "gibt es in augsburg ein krematorium?",
+      "ist bertolt brecht auf einem augsburger friedhof beigesetzt?"
+    ],
+    "schema_answers_chars": [
+      473,
+      539,
+      341,
+      317,
+      470,
+      859,
+      445,
+      705,
+      478
+    ],
+    "html_answers_chars": [
+      473,
+      539,
+      341,
+      317,
+      470,
+      859,
+      445,
+      705,
+      478
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "berlin",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "was kostet eine bestattung in berlin?",
+      "wie viele friedhöfe gibt es in berlin?",
+      "wurde die 48-stunden-wartefrist in berlin abgeschafft?",
+      "kann ich in berlin ohne sarg bestattet werden?",
+      "gibt es naturnahe bestattungen in berlin?",
+      "gibt es friedhöfe für muslime und juden in berlin?",
+      "wer übernimmt die bestattungskosten, wenn ich arm bin?"
+    ],
+    "html_questions": [
+      "was kostet eine bestattung in berlin?",
+      "wie viele friedhöfe gibt es in berlin?",
+      "wurde die 48-stunden-wartefrist in berlin abgeschafft?",
+      "kann ich in berlin ohne sarg bestattet werden?",
+      "gibt es naturnahe bestattungen in berlin?",
+      "gibt es friedhöfe für muslime und juden in berlin?",
+      "wer übernimmt die bestattungskosten, wenn ich arm bin?"
+    ],
+    "schema_answers_chars": [
+      378,
+      380,
+      398,
+      324,
+      373,
+      334,
+      405
+    ],
+    "html_answers_chars": [
+      378,
+      381,
+      398,
+      324,
+      373,
+      334,
+      405
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "bielefeld",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wie viele städtische friedhöfe gibt es in bielefeld?",
+      "welcher friedhof ist der größte in bielefeld?",
+      "was kostet eine bestattung in bielefeld?",
+      "wie lange ist die ruhezeit auf bielefelder friedhöfen?",
+      "wo wird in bielefeld der sterbefall angezeigt?",
+      "wer ist auf dem johannisfriedhof bestattet?",
+      "gibt es muslimische grabfelder in bielefeld?",
+      "gibt es baumbestattungen in oder bei bielefeld?"
+    ],
+    "html_questions": [
+      "wie viele städtische friedhöfe gibt es in bielefeld?",
+      "welcher friedhof ist der größte in bielefeld?",
+      "was kostet eine bestattung in bielefeld?",
+      "wie lange ist die ruhezeit auf bielefelder friedhöfen?",
+      "wo wird in bielefeld der sterbefall angezeigt?",
+      "wer ist auf dem johannisfriedhof bestattet?",
+      "gibt es muslimische grabfelder in bielefeld?",
+      "gibt es baumbestattungen in oder bei bielefeld?"
+    ],
+    "schema_answers_chars": [
+      300,
+      201,
+      584,
+      358,
+      178,
+      365,
+      316,
+      442
+    ],
+    "html_answers_chars": [
+      300,
+      201,
+      585,
+      442,
+      178,
+      373,
+      316,
+      369
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "bochum",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in bochum?",
+      "wo befindet sich der hauptfriedhof bochum und wann ist er erreichbar?",
+      "gibt es in bochum einen west- und einen ostfriedhof?",
+      "welche friedhofsgebühren gelten in bochum?",
+      "welche rolle spielt die bergbau-tradition für die bochumer friedhöfe?",
+      "wo finde ich informationen zum bestattungsrecht für bochum?",
+      "sind muslimische und jüdische bestattungen in bochum möglich?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in bochum?",
+      "wo befindet sich der hauptfriedhof bochum und wann ist er erreichbar?",
+      "gibt es in bochum einen west- und einen ostfriedhof?",
+      "welche friedhofsgebühren gelten in bochum?",
+      "welche rolle spielt die bergbau-tradition für die bochumer friedhöfe?",
+      "wo finde ich informationen zum bestattungsrecht für bochum?",
+      "sind muslimische und jüdische bestattungen in bochum möglich?"
+    ],
+    "schema_answers_chars": [
+      759,
+      596,
+      466,
+      765,
+      764,
+      688,
+      624
+    ],
+    "html_answers_chars": [
+      759,
+      611,
+      481,
+      745,
+      778,
+      688,
+      624
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "bonn",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "welche städtischen friedhöfe gibt es in bonn?",
+      "wo sind robert und clara schumann in bonn begraben?",
+      "ist das grab von august macke in bonn zu besichtigen?",
+      "welche prominenten persönlichkeiten sind auf dem burgfriedhof bad godesberg bestattet?",
+      "welches bestattungsgesetz gilt in bonn?",
+      "welche ruhezeit gilt auf den bonner friedhöfen?",
+      "was kostet eine bestattung in bonn?",
+      "wo wird der sterbefall in bonn beurkundet?"
+    ],
+    "html_questions": [
+      "welche städtischen friedhöfe gibt es in bonn?",
+      "wo sind robert und clara schumann in bonn begraben?",
+      "ist das grab von august macke in bonn zu besichtigen?",
+      "welche prominenten persönlichkeiten sind auf dem burgfriedhof bad godesberg bestattet?",
+      "welches bestattungsgesetz gilt in bonn?",
+      "welche ruhezeit gilt auf den bonner friedhöfen?",
+      "was kostet eine bestattung in bonn?",
+      "wo wird der sterbefall in bonn beurkundet?"
+    ],
+    "schema_answers_chars": [
+      404,
+      244,
+      333,
+      488,
+      396,
+      366,
+      734,
+      247
+    ],
+    "html_answers_chars": [
+      404,
+      244,
+      333,
+      488,
+      396,
+      373,
+      734,
+      247
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "braunschweig",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie lange darf man in niedersachsen mit der bestattung warten?",
+      "was kostet eine einfache urnenbestattung auf dem hauptfriedhof braunschweig?",
+      "wer übernimmt die bestattungskosten, wenn niemand zahlen kann?",
+      "ist eine bestattung ohne sarg in braunschweig möglich?",
+      "wo ist heinrich der löwe begraben?",
+      "kann man auf dem magnifriedhof in der innenstadt noch bestattet werden?",
+      "welcher friedhof in braunschweig hat die niedrigste konfessionshürde?"
+    ],
+    "html_questions": [
+      "wie lange darf man in niedersachsen mit der bestattung warten?",
+      "was kostet eine einfache urnenbestattung auf dem hauptfriedhof braunschweig?",
+      "wer übernimmt die bestattungskosten, wenn niemand zahlen kann?",
+      "ist eine bestattung ohne sarg in braunschweig möglich?",
+      "wo ist heinrich der löwe begraben?",
+      "kann man auf dem magnifriedhof in der innenstadt noch bestattet werden?",
+      "welcher friedhof in braunschweig hat die niedrigste konfessionshürde?"
+    ],
+    "schema_answers_chars": [
+      314,
+      337,
+      404,
+      332,
+      274,
+      220,
+      231
+    ],
+    "html_answers_chars": [
+      394,
+      425,
+      404,
+      365,
+      325,
+      292,
+      298
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "bremen",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "welche friedhöfe gibt es in der stadtgemeinde bremen?",
+      "darf in bremen die asche zuhause aufbewahrt oder im garten verstreut werden?",
+      "wer verwaltet die friedhofsgebühren in bremen?",
+      "wie lang ist die ruhezeit auf bremer friedhöfen?",
+      "wo wird in bremen eingeäschert?",
+      "gibt es in bremen einen jüdischen friedhof?",
+      "gilt diese seite auch für bremerhaven?",
+      "ist eine seebestattung von bremen aus möglich?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in der stadtgemeinde bremen?",
+      "darf in bremen die asche zuhause aufbewahrt oder im garten verstreut werden?",
+      "wer verwaltet die friedhofsgebühren in bremen?",
+      "wie lang ist die ruhezeit auf bremer friedhöfen?",
+      "wo wird in bremen eingeäschert?",
+      "gibt es in bremen einen jüdischen friedhof?",
+      "gilt diese seite auch für bremerhaven?",
+      "ist eine seebestattung von bremen aus möglich?"
+    ],
+    "schema_answers_chars": [
+      495,
+      647,
+      358,
+      330,
+      357,
+      319,
+      484,
+      330
+    ],
+    "html_answers_chars": [
+      495,
+      649,
+      358,
+      330,
+      357,
+      319,
+      484,
+      330
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "chemnitz",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in chemnitz?",
+      "wie lange ist die ruhezeit auf chemnitzer friedhöfen?",
+      "was kostet eine urnenbeisetzung in chemnitz?",
+      "welche fristen gelten nach einem todesfall?",
+      "welcher friedhof in chemnitz hat das krematorium?",
+      "ist eine baumbestattung in chemnitz möglich?",
+      "wer ist träger der städtischen friedhöfe chemnitz?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in chemnitz?",
+      "wie lange ist die ruhezeit auf chemnitzer friedhöfen?",
+      "was kostet eine urnenbeisetzung in chemnitz?",
+      "welche fristen gelten nach einem todesfall?",
+      "welcher friedhof in chemnitz hat das krematorium?",
+      "ist eine baumbestattung in chemnitz möglich?",
+      "wer ist träger der städtischen friedhöfe chemnitz?"
+    ],
+    "schema_answers_chars": [
+      407,
+      384,
+      540,
+      447,
+      513,
+      454,
+      312
+    ],
+    "html_answers_chars": [
+      407,
+      384,
+      540,
+      447,
+      513,
+      454,
+      312
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "darmstadt",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in darmstadt?",
+      "wie lange ist die bestattungsfrist in hessen?",
+      "was kostet eine urnenbeisetzung auf einem darmstädter friedhof?",
+      "wer übernimmt die bestattungskosten, wenn das geld fehlt?",
+      "wo wird der sterbefall in darmstadt beurkundet?",
+      "sind baumbestattungen in darmstadt möglich?",
+      "gibt es in darmstadt ein krematorium?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in darmstadt?",
+      "wie lange ist die bestattungsfrist in hessen?",
+      "was kostet eine urnenbeisetzung auf einem darmstädter friedhof?",
+      "wer übernimmt die bestattungskosten, wenn das geld fehlt?",
+      "wo wird der sterbefall in darmstadt beurkundet?",
+      "sind baumbestattungen in darmstadt möglich?",
+      "gibt es in darmstadt ein krematorium?"
+    ],
+    "schema_answers_chars": [
+      489,
+      568,
+      533,
+      474,
+      303,
+      463,
+      378
+    ],
+    "html_answers_chars": [
+      489,
+      568,
+      533,
+      474,
+      303,
+      463,
+      378
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "dortmund",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in dortmund?",
+      "welcher ist der größte friedhof in dortmund?",
+      "wie lange ist die ruhezeit auf dortmunder friedhöfen?",
+      "was kostet eine bestattung in dortmund?",
+      "wer trägt die kosten, wenn hinterbliebene zahlungsunfähig sind?",
+      "gibt es in dortmund ein krematorium?",
+      "welche bestattungsarten sind in dortmund möglich?",
+      "sind muslimische oder jüdische bestattungen in dortmund möglich?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in dortmund?",
+      "welcher ist der größte friedhof in dortmund?",
+      "wie lange ist die ruhezeit auf dortmunder friedhöfen?",
+      "was kostet eine bestattung in dortmund?",
+      "wer trägt die kosten, wenn hinterbliebene zahlungsunfähig sind?",
+      "gibt es in dortmund ein krematorium?",
+      "welche bestattungsarten sind in dortmund möglich?",
+      "sind muslimische oder jüdische bestattungen in dortmund möglich?"
+    ],
+    "schema_answers_chars": [
+      210,
+      185,
+      225,
+      260,
+      214,
+      289,
+      347,
+      329
+    ],
+    "html_answers_chars": [
+      357,
+      192,
+      407,
+      499,
+      412,
+      436,
+      519,
+      422
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "dresden",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche friedhöfe in dresden sind historisch besonders bedeutsam?",
+      "wer ist träger der dresdner friedhöfe?",
+      "was kostet eine bestattung in dresden?",
+      "welches recht gilt für bestattungen in dresden?",
+      "wie lange ist die ruhezeit auf dresdner friedhöfen?",
+      "wo wird in dresden eingeäschert?",
+      "wo wird der sterbefall in dresden angezeigt?"
+    ],
+    "html_questions": [
+      "welche friedhöfe in dresden sind historisch besonders bedeutsam?",
+      "wer ist träger der dresdner friedhöfe?",
+      "was kostet eine bestattung in dresden?",
+      "welches recht gilt für bestattungen in dresden?",
+      "wie lange ist die ruhezeit auf dresdner friedhöfen?",
+      "wo wird in dresden eingeäschert?",
+      "wo wird der sterbefall in dresden angezeigt?"
+    ],
+    "schema_answers_chars": [
+      400,
+      647,
+      532,
+      487,
+      241,
+      243,
+      292
+    ],
+    "html_answers_chars": [
+      400,
+      444,
+      544,
+      389,
+      241,
+      321,
+      292
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "duesseldorf",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in düsseldorf?",
+      "welcher ist der größte friedhof in düsseldorf?",
+      "wo befindet sich das städtische krematorium in düsseldorf?",
+      "was ist der millionenhügel auf dem nordfriedhof?",
+      "welches recht gilt für bestattungen in düsseldorf?",
+      "was kostet eine bestattung in düsseldorf?",
+      "was ist beim tote-hosen-grab auf dem südfriedhof zu beachten?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in düsseldorf?",
+      "welcher ist der größte friedhof in düsseldorf?",
+      "wo befindet sich das städtische krematorium in düsseldorf?",
+      "was ist der millionenhügel auf dem nordfriedhof?",
+      "welches recht gilt für bestattungen in düsseldorf?",
+      "was kostet eine bestattung in düsseldorf?",
+      "was ist beim tote-hosen-grab auf dem südfriedhof zu beachten?"
+    ],
+    "schema_answers_chars": [
+      405,
+      332,
+      241,
+      383,
+      804,
+      609,
+      392
+    ],
+    "html_answers_chars": [
+      405,
+      332,
+      241,
+      383,
+      804,
+      609,
+      392
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "duisburg",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche städtischen friedhöfe gibt es in duisburg?",
+      "wo finde ich die friedhofsgebühren der stadt duisburg?",
+      "welche bedeutung hatte der bergbau für die duisburger friedhöfe?",
+      "was gilt rechtlich für eine bestattung in duisburg?",
+      "wie lange ist die ruhezeit in duisburg?",
+      "wie meldet man einen sterbefall in duisburg an?",
+      "worauf achten bei der bestatter-wahl in duisburg?"
+    ],
+    "html_questions": [
+      "welche städtischen friedhöfe gibt es in duisburg?",
+      "wo finde ich die friedhofsgebühren der stadt duisburg?",
+      "welche bedeutung hatte der bergbau für die duisburger friedhöfe?",
+      "was gilt rechtlich für eine bestattung in duisburg?",
+      "wie lange ist die ruhezeit in duisburg?",
+      "wie meldet man einen sterbefall in duisburg an?",
+      "worauf achten bei der bestatter-wahl in duisburg?"
+    ],
+    "schema_answers_chars": [
+      478,
+      347,
+      398,
+      855,
+      359,
+      399,
+      402
+    ],
+    "html_answers_chars": [
+      478,
+      347,
+      398,
+      855,
+      359,
+      399,
+      402
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "erfurt",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "welche friedhöfe gibt es in erfurt?",
+      "wie lange ist die ruhezeit auf den erfurter friedhöfen?",
+      "was kostet eine bestattung auf dem erfurter hauptfriedhof?",
+      "wo muss ein sterbefall in erfurt angezeigt werden?",
+      "was ist eine sozialbestattung in erfurt?",
+      "gibt es in erfurt ein krematorium?",
+      "wie lange darf ein verstorbener in erfurt zu hause aufgebahrt werden?",
+      "was ist beim besuch des neuen jüdischen friedhofs zu beachten?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in erfurt?",
+      "wie lange ist die ruhezeit auf den erfurter friedhöfen?",
+      "was kostet eine bestattung auf dem erfurter hauptfriedhof?",
+      "wo muss ein sterbefall in erfurt angezeigt werden?",
+      "was ist eine sozialbestattung in erfurt?",
+      "gibt es in erfurt ein krematorium?",
+      "wie lange darf ein verstorbener in erfurt zu hause aufgebahrt werden?",
+      "was ist beim besuch des neuen jüdischen friedhofs zu beachten?"
+    ],
+    "schema_answers_chars": [
+      447,
+      360,
+      651,
+      393,
+      485,
+      341,
+      425,
+      407
+    ],
+    "html_answers_chars": [
+      572,
+      412,
+      713,
+      515,
+      546,
+      493,
+      399,
+      407
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "essen",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "welche bestattungsfrist gilt in essen?",
+      "wie viele kommunale friedhöfe gibt es in essen?",
+      "was kostet eine bestattung in essen realistisch?",
+      "wer übernimmt die kosten bei mittellosigkeit – sozialbestattung in essen?",
+      "wo liegt das grab von gustav heinemann in essen?",
+      "ist auf den essener friedhöfen eine tuchbestattung möglich?",
+      "wo werden sterbefälle in essen beurkundet?",
+      "wie lange dauert in essen der ablauf vom todesfall bis zur beisetzung?"
+    ],
+    "html_questions": [
+      "welche bestattungsfrist gilt in essen?",
+      "wie viele kommunale friedhöfe gibt es in essen?",
+      "was kostet eine bestattung in essen realistisch?",
+      "wer übernimmt die kosten bei mittellosigkeit – sozialbestattung in essen?",
+      "wo liegt das grab von gustav heinemann in essen?",
+      "ist auf den essener friedhöfen eine tuchbestattung möglich?",
+      "wo werden sterbefälle in essen beurkundet?",
+      "wie lange dauert in essen der ablauf vom todesfall bis zur beisetzung?"
+    ],
+    "schema_answers_chars": [
+      328,
+      386,
+      429,
+      335,
+      238,
+      453,
+      289,
+      495
+    ],
+    "html_answers_chars": [
+      328,
+      386,
+      429,
+      335,
+      238,
+      453,
+      289,
+      495
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "frankfurt",
+    "schema_count": 6,
+    "html_count": 6,
+    "schema_questions": [
+      "welcher friedhof in frankfurt ist der größte?",
+      "wer ist auf dem hauptfriedhof frankfurt bestattet?",
+      "was kostet eine bestattung in frankfurt am main?",
+      "welches bestattungsrecht gilt in frankfurt?",
+      "wo ist mayer amschel rothschild begraben?",
+      "welche behörde verwaltet die frankfurter friedhöfe?"
+    ],
+    "html_questions": [
+      "welcher friedhof in frankfurt ist der größte?",
+      "wer ist auf dem hauptfriedhof frankfurt bestattet?",
+      "was kostet eine bestattung in frankfurt am main?",
+      "welches bestattungsrecht gilt in frankfurt?",
+      "wo ist mayer amschel rothschild begraben?",
+      "welche behörde verwaltet die frankfurter friedhöfe?"
+    ],
+    "schema_answers_chars": [
+      243,
+      258,
+      371,
+      342,
+      309,
+      272
+    ],
+    "html_answers_chars": [
+      243,
+      258,
+      414,
+      381,
+      309,
+      288
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "freiburg",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welcher friedhof ist der größte in freiburg?",
+      "wer ist friedhofsträger in freiburg?",
+      "welche paragraphen des bestattg bw gelten in freiburg?",
+      "wie lange dauert die ruhezeit auf dem hauptfriedhof freiburg?",
+      "was kostet eine bestattung in freiburg?",
+      "welche bestatter sind in freiburg vertreten?",
+      "gibt es einen jüdischen friedhof in freiburg?"
+    ],
+    "html_questions": [
+      "welcher friedhof ist der größte in freiburg?",
+      "wer ist friedhofsträger in freiburg?",
+      "welche paragraphen des bestattg bw gelten in freiburg?",
+      "wie lange dauert die ruhezeit auf dem hauptfriedhof freiburg?",
+      "was kostet eine bestattung in freiburg?",
+      "welche bestatter sind in freiburg vertreten?",
+      "gibt es einen jüdischen friedhof in freiburg?"
+    ],
+    "schema_answers_chars": [
+      483,
+      372,
+      545,
+      343,
+      698,
+      292,
+      340
+    ],
+    "html_answers_chars": [
+      483,
+      388,
+      569,
+      300,
+      663,
+      437,
+      430
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "gelsenkirchen",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wie lange darf eine bestattung in gelsenkirchen aufgeschoben werden?",
+      "wer trägt in gelsenkirchen die bestattungspflicht?",
+      "was kostet ein einfaches urnenreihengrab auf einem städtischen friedhof in gelsenkirchen?",
+      "gibt es in gelsenkirchen einen themenfriedhof?",
+      "übernimmt das sozialamt in gelsenkirchen bestattungskosten?",
+      "welche bestattungsarten bieten die städtischen friedhöfe gelsenkirchen?",
+      "wo wird der sterbefall in gelsenkirchen beurkundet?",
+      "wo finde ich trauerbegleitung und hospizdienste in gelsenkirchen?"
+    ],
+    "html_questions": [
+      "wie lange darf eine bestattung in gelsenkirchen aufgeschoben werden?",
+      "wer trägt in gelsenkirchen die bestattungspflicht?",
+      "was kostet ein einfaches urnenreihengrab auf einem städtischen friedhof in gelsenkirchen?",
+      "gibt es in gelsenkirchen einen themenfriedhof?",
+      "übernimmt das sozialamt in gelsenkirchen bestattungskosten?",
+      "welche bestattungsarten bieten die städtischen friedhöfe gelsenkirchen?",
+      "wo wird der sterbefall in gelsenkirchen beurkundet?",
+      "wo finde ich trauerbegleitung und hospizdienste in gelsenkirchen?"
+    ],
+    "schema_answers_chars": [
+      308,
+      511,
+      306,
+      374,
+      406,
+      282,
+      287,
+      387
+    ],
+    "html_answers_chars": [
+      354,
+      494,
+      460,
+      425,
+      453,
+      391,
+      428,
+      393
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "hagen",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in hagen?",
+      "was kostet eine bestattung in hagen?",
+      "welche bestattungsformen sind in hagen möglich?",
+      "wer trägt das eduard-müller-krematorium und was macht es besonders?",
+      "wo wird ein sterbefall in hagen angezeigt?",
+      "wie lange beträgt die ruhezeit in hagen?",
+      "welche stelle führt die zweite leichenschau vor einer feuerbestattung in hagen durch?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in hagen?",
+      "was kostet eine bestattung in hagen?",
+      "welche bestattungsformen sind in hagen möglich?",
+      "wer trägt das eduard-müller-krematorium und was macht es besonders?",
+      "wo wird ein sterbefall in hagen angezeigt?",
+      "wie lange beträgt die ruhezeit in hagen?",
+      "welche stelle führt die zweite leichenschau vor einer feuerbestattung in hagen durch?"
+    ],
+    "schema_answers_chars": [
+      298,
+      461,
+      418,
+      397,
+      263,
+      293,
+      432
+    ],
+    "html_answers_chars": [
+      298,
+      461,
+      418,
+      397,
+      263,
+      293,
+      408
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "halle",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in halle (saale)?",
+      "welche bestattungsfrist gilt in halle (saale)?",
+      "was kostet ein reihengrab in halle (saale)?",
+      "gilt in sachsen-anhalt sargpflicht?",
+      "wo wird die sterbeurkunde in halle ausgestellt?",
+      "wie lange ist die ruhezeit auf halleschen friedhöfen?",
+      "können urnen auf dem stadtgottesacker bestattet werden?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in halle (saale)?",
+      "welche bestattungsfrist gilt in halle (saale)?",
+      "was kostet ein reihengrab in halle (saale)?",
+      "gilt in sachsen-anhalt sargpflicht?",
+      "wo wird die sterbeurkunde in halle ausgestellt?",
+      "wie lange ist die ruhezeit auf halleschen friedhöfen?",
+      "können urnen auf dem stadtgottesacker bestattet werden?"
+    ],
+    "schema_answers_chars": [
+      302,
+      368,
+      470,
+      490,
+      472,
+      284,
+      266
+    ],
+    "html_answers_chars": [
+      393,
+      468,
+      622,
+      924,
+      592,
+      383,
+      473
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "hamburg",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "was kostet eine bestattung in hamburg — gesamtbudget?",
+      "ist der ohlsdorf wirklich der größte friedhof der welt?",
+      "kann man in hamburg eine seebestattung durchführen lassen?",
+      "wie lange habe ich zeit, eine bestattung zu organisieren?",
+      "gibt es günstige bestattungsoptionen in hamburg?",
+      "welche bestattungsarten gibt es in hamburg?",
+      "wo kann ich mich über bestatter in hamburg informieren?"
+    ],
+    "html_questions": [
+      "was kostet eine bestattung in hamburg — gesamtbudget?",
+      "ist der ohlsdorf wirklich der größte friedhof der welt?",
+      "kann man in hamburg eine seebestattung durchführen lassen?",
+      "wie lange habe ich zeit, eine bestattung zu organisieren?",
+      "gibt es günstige bestattungsoptionen in hamburg?",
+      "welche bestattungsarten gibt es in hamburg?",
+      "wo kann ich mich über bestatter in hamburg informieren?"
+    ],
+    "schema_answers_chars": [
+      515,
+      370,
+      666,
+      395,
+      473,
+      429,
+      409
+    ],
+    "html_answers_chars": [
+      515,
+      370,
+      666,
+      395,
+      473,
+      429,
+      409
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "hannover",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welcher ist der größte friedhof hannovers?",
+      "wo findet die einäscherung in hannover statt?",
+      "wie lange ist die bestattungsfrist in hannover?",
+      "welche prominenten liegen auf dem stadtfriedhof engesohde?",
+      "was kostet eine bestattung auf einem hannoverschen stadtfriedhof?",
+      "gibt es eine sargpflicht in hannover?",
+      "gibt es naturnahe bestattungsformen direkt in hannover?"
+    ],
+    "html_questions": [
+      "welcher ist der größte friedhof hannovers?",
+      "wo findet die einäscherung in hannover statt?",
+      "wie lange ist die bestattungsfrist in hannover?",
+      "welche prominenten liegen auf dem stadtfriedhof engesohde?",
+      "was kostet eine bestattung auf einem hannoverschen stadtfriedhof?",
+      "gibt es eine sargpflicht in hannover?",
+      "gibt es naturnahe bestattungsformen direkt in hannover?"
+    ],
+    "schema_answers_chars": [
+      420,
+      258,
+      357,
+      693,
+      462,
+      374,
+      237
+    ],
+    "html_answers_chars": [
+      420,
+      258,
+      357,
+      693,
+      462,
+      374,
+      237
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "heidelberg",
+    "schema_count": 9,
+    "html_count": 9,
+    "schema_questions": [
+      "wie lange ist die ruhezeit auf heidelberger friedhöfen?",
+      "bis wann muss in heidelberg bestattet werden?",
+      "kann in heidelberg eine anonyme bestattung erfolgen?",
+      "gibt es in heidelberg ein muslimisches gräberfeld?",
+      "gibt es in heidelberg ein krematorium?",
+      "wo wird der sterbefall in heidelberg angezeigt?",
+      "was kostet eine bestattung in heidelberg insgesamt?",
+      "ist eine seebestattung von heidelberg aus möglich?",
+      "welcher heidelberger friedhof ist der historisch interessanteste?"
+    ],
+    "html_questions": [
+      "wie lange ist die ruhezeit auf heidelberger friedhöfen?",
+      "bis wann muss in heidelberg bestattet werden?",
+      "kann in heidelberg eine anonyme bestattung erfolgen?",
+      "gibt es in heidelberg ein muslimisches gräberfeld?",
+      "gibt es in heidelberg ein krematorium?",
+      "wo wird der sterbefall in heidelberg angezeigt?",
+      "was kostet eine bestattung in heidelberg insgesamt?",
+      "ist eine seebestattung von heidelberg aus möglich?",
+      "welcher heidelberger friedhof ist der historisch interessanteste?"
+    ],
+    "schema_answers_chars": [
+      357,
+      323,
+      381,
+      503,
+      328,
+      301,
+      404,
+      282,
+      387
+    ],
+    "html_answers_chars": [
+      443,
+      458,
+      497,
+      505,
+      488,
+      416,
+      508,
+      407,
+      594
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "karlsruhe",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welcher friedhof ist der größte in karlsruhe?",
+      "wer ist friedhofsträger in karlsruhe?",
+      "welche paragraphen des bestattg bw gelten in karlsruhe?",
+      "wie lange dauert die ruhezeit auf dem hauptfriedhof karlsruhe?",
+      "was kostet eine bestattung in karlsruhe?",
+      "welche bestatter sind in karlsruhe vertreten?",
+      "gibt es einen jüdischen friedhof in karlsruhe?"
+    ],
+    "html_questions": [
+      "welcher friedhof ist der größte in karlsruhe?",
+      "wer ist friedhofsträger in karlsruhe?",
+      "welche paragraphen des bestattg bw gelten in karlsruhe?",
+      "wie lange dauert die ruhezeit auf dem hauptfriedhof karlsruhe?",
+      "was kostet eine bestattung in karlsruhe?",
+      "welche bestatter sind in karlsruhe vertreten?",
+      "gibt es einen jüdischen friedhof in karlsruhe?"
+    ],
+    "schema_answers_chars": [
+      365,
+      226,
+      399,
+      348,
+      423,
+      324,
+      431
+    ],
+    "html_answers_chars": [
+      365,
+      226,
+      399,
+      348,
+      427,
+      324,
+      431
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "kassel",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wer ist träger der friedhöfe in kassel?",
+      "was kostet eine erdbestattung auf einem kasseler friedhof?",
+      "wie lang ist die ruhezeit auf kasseler friedhöfen?",
+      "welche bestattungsfrist gilt in hessen?",
+      "wo erhalte ich die sterbeurkunde in kassel?",
+      "gibt es in kassel anonyme oder pflegefreie gräber?",
+      "welche friedhöfe in kassel sind denkmalgeschützt?",
+      "sind muslimische bestattungen in kassel möglich?"
+    ],
+    "html_questions": [
+      "wer ist träger der friedhöfe in kassel?",
+      "was kostet eine erdbestattung auf einem kasseler friedhof?",
+      "wie lang ist die ruhezeit auf kasseler friedhöfen?",
+      "welche bestattungsfrist gilt in hessen?",
+      "wo erhalte ich die sterbeurkunde in kassel?",
+      "gibt es in kassel anonyme oder pflegefreie gräber?",
+      "welche friedhöfe in kassel sind denkmalgeschützt?",
+      "sind muslimische bestattungen in kassel möglich?"
+    ],
+    "schema_answers_chars": [
+      590,
+      395,
+      472,
+      533,
+      373,
+      510,
+      501,
+      593
+    ],
+    "html_answers_chars": [
+      590,
+      395,
+      472,
+      533,
+      373,
+      510,
+      501,
+      593
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "kiel",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in kiel?",
+      "welcher friedhof in kiel ist der größte?",
+      "was kostet eine bestattung in kiel insgesamt?",
+      "wie lange ist die ruhezeit auf kieler friedhöfen?",
+      "innerhalb welcher frist muss in schleswig-holstein eine urne beigesetzt werden?",
+      "wo befindet sich das zuständige standesamt für die sterbeanzeige in kiel?",
+      "ist eine seebestattung in der kieler förde möglich?",
+      "wer trägt die bestattungskosten, wenn keine angehörigen vorhanden sind?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in kiel?",
+      "welcher friedhof in kiel ist der größte?",
+      "was kostet eine bestattung in kiel insgesamt?",
+      "wie lange ist die ruhezeit auf kieler friedhöfen?",
+      "innerhalb welcher frist muss in schleswig-holstein eine urne beigesetzt werden?",
+      "wo befindet sich das zuständige standesamt für die sterbeanzeige in kiel?",
+      "ist eine seebestattung in der kieler förde möglich?",
+      "wer trägt die bestattungskosten, wenn keine angehörigen vorhanden sind?"
+    ],
+    "schema_answers_chars": [
+      350,
+      227,
+      258,
+      190,
+      226,
+      225,
+      297,
+      272
+    ],
+    "html_answers_chars": [
+      506,
+      330,
+      434,
+      333,
+      343,
+      314,
+      428,
+      416
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "koeln",
+    "schema_count": 5,
+    "html_count": 5,
+    "schema_questions": [
+      "was kostet eine bestattung in köln?",
+      "was ist das besondere am melaten-friedhof?",
+      "wie schnell muss eine beerdigung in köln stattfinden?",
+      "gibt es wasserbestattungen in köln?",
+      "welche islamischen bestattungsoptionen gibt es in köln?"
+    ],
+    "html_questions": [
+      "was kostet eine bestattung in köln?",
+      "was ist das besondere am melaten-friedhof?",
+      "wie schnell muss eine beerdigung in köln stattfinden?",
+      "gibt es wasserbestattungen in köln?",
+      "welche islamischen bestattungsoptionen gibt es in köln?"
+    ],
+    "schema_answers_chars": [
+      431,
+      505,
+      360,
+      418,
+      414
+    ],
+    "html_answers_chars": [
+      446,
+      507,
+      360,
+      418,
+      414
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "krefeld",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in krefeld?",
+      "was kostet ein urnenreihengrab in krefeld?",
+      "wie lange ist die ruhezeit auf krefelder friedhöfen?",
+      "welche bestattungsfrist gilt in krefeld?",
+      "gibt es in krefeld einen friedhofszwang?",
+      "wo findet man qualifizierte bestatter in krefeld?",
+      "wo wird in krefeld der sterbefall beurkundet?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in krefeld?",
+      "was kostet ein urnenreihengrab in krefeld?",
+      "wie lange ist die ruhezeit auf krefelder friedhöfen?",
+      "welche bestattungsfrist gilt in krefeld?",
+      "gibt es in krefeld einen friedhofszwang?",
+      "wo findet man qualifizierte bestatter in krefeld?",
+      "wo wird in krefeld der sterbefall beurkundet?"
+    ],
+    "schema_answers_chars": [
+      316,
+      291,
+      446,
+      330,
+      318,
+      289,
+      395
+    ],
+    "html_answers_chars": [
+      425,
+      423,
+      653,
+      397,
+      627,
+      514,
+      561
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "leipzig",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche friedhöfe gibt es in leipzig?",
+      "wie hoch sind die friedhofsgebühren in leipzig?",
+      "wo ist johann sebastian bach in leipzig bestattet?",
+      "welches bestattungsrecht gilt in leipzig?",
+      "welche ruhezeit gilt in leipzig?",
+      "wie wählt man in leipzig einen bestatter aus?",
+      "wo wurde felix mendelssohn bartholdy bestattet?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in leipzig?",
+      "wie hoch sind die friedhofsgebühren in leipzig?",
+      "wo ist johann sebastian bach in leipzig bestattet?",
+      "welches bestattungsrecht gilt in leipzig?",
+      "welche ruhezeit gilt in leipzig?",
+      "wie wählt man in leipzig einen bestatter aus?",
+      "wo wurde felix mendelssohn bartholdy bestattet?"
+    ],
+    "schema_answers_chars": [
+      372,
+      452,
+      459,
+      448,
+      259,
+      399,
+      328
+    ],
+    "html_answers_chars": [
+      372,
+      452,
+      448,
+      435,
+      259,
+      399,
+      312
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "leverkusen",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in leverkusen?",
+      "was kostet eine bestattung in leverkusen?",
+      "welcher friedhof in leverkusen erlaubt islamische bestattungen?",
+      "wo wird in leverkusen ein sterbefall beurkundet?",
+      "welche fristen gelten für eine bestattung in leverkusen?",
+      "gilt in leverkusen eine sargpflicht?",
+      "wie lang sind die ruhezeiten auf leverkusener friedhöfen?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in leverkusen?",
+      "was kostet eine bestattung in leverkusen?",
+      "welcher friedhof in leverkusen erlaubt islamische bestattungen?",
+      "wo wird in leverkusen ein sterbefall beurkundet?",
+      "welche fristen gelten für eine bestattung in leverkusen?",
+      "gilt in leverkusen eine sargpflicht?",
+      "wie lang sind die ruhezeiten auf leverkusener friedhöfen?"
+    ],
+    "schema_answers_chars": [
+      474,
+      451,
+      299,
+      368,
+      359,
+      366,
+      423
+    ],
+    "html_answers_chars": [
+      474,
+      451,
+      299,
+      368,
+      359,
+      366,
+      423
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "luebeck",
+    "schema_count": 4,
+    "html_count": 4,
+    "schema_questions": [
+      "was kostet eine erdbestattung?",
+      "gibt es günstigere alternativen?",
+      "wie lange dauert die organisation?",
+      "können wir eine trauerfeier organisieren?"
+    ],
+    "html_questions": [
+      "was kostet eine erdbestattung?",
+      "gibt es günstigere alternativen?",
+      "wie lange dauert die organisation?",
+      "können wir eine trauerfeier organisieren?"
+    ],
+    "schema_answers_chars": [
+      140,
+      89,
+      93,
+      85
+    ],
+    "html_answers_chars": [
+      140,
+      89,
+      93,
+      85
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "lübeck",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welcher friedhof in lübeck ist der größte?",
+      "wie lange ist die ruhezeit auf lübecker friedhöfen?",
+      "was kostet eine bestattung in lübeck?",
+      "welche bestattungsfristen gelten in lübeck?",
+      "gibt es in lübeck friedhöfe ohne sargpflicht?",
+      "auf welchem friedhof in lübeck liegt die familie mann?",
+      "wer betreibt die städtischen friedhöfe in lübeck?"
+    ],
+    "html_questions": [
+      "welcher friedhof in lübeck ist der größte?",
+      "wie lange ist die ruhezeit auf lübecker friedhöfen?",
+      "was kostet eine bestattung in lübeck?",
+      "welche bestattungsfristen gelten in lübeck?",
+      "gibt es in lübeck friedhöfe ohne sargpflicht?",
+      "auf welchem friedhof in lübeck liegt die familie mann?",
+      "wer betreibt die städtischen friedhöfe in lübeck?"
+    ],
+    "schema_answers_chars": [
+      250,
+      225,
+      327,
+      281,
+      316,
+      241,
+      298
+    ],
+    "html_answers_chars": [
+      259,
+      230,
+      289,
+      262,
+      452,
+      265,
+      254
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "magdeburg",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche friedhofsgebühren fallen in magdeburg an?",
+      "wie viele kommunale friedhöfe gibt es in magdeburg?",
+      "wie lange ist die ruhezeit in magdeburg?",
+      "welche bestattungsfrist gilt in magdeburg?",
+      "wo wird der sterbefall in magdeburg beurkundet?",
+      "gilt in sachsen-anhalt eine sargpflicht?",
+      "gibt es in magdeburg naturbestattungen?"
+    ],
+    "html_questions": [
+      "welche friedhofsgebühren fallen in magdeburg an?",
+      "wie viele kommunale friedhöfe gibt es in magdeburg?",
+      "wie lange ist die ruhezeit in magdeburg?",
+      "welche bestattungsfrist gilt in magdeburg?",
+      "gibt es in magdeburg naturbestattungen?",
+      "wo wird der sterbefall in magdeburg beurkundet?",
+      "gilt in sachsen-anhalt eine sargpflicht?"
+    ],
+    "schema_answers_chars": [
+      408,
+      245,
+      234,
+      244,
+      144,
+      241,
+      275
+    ],
+    "html_answers_chars": [
+      343,
+      314,
+      297,
+      244,
+      353,
+      282,
+      197
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "mainz",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in mainz?",
+      "was kostet eine bestattung in mainz?",
+      "welche bestattungsformen sind in mainz möglich?",
+      "was macht den mainzer hauptfriedhof besonders?",
+      "wo muss ein todesfall in mainz angezeigt werden?",
+      "welche friedhofsverwaltung ist zuständig?",
+      "ist eine patenschaft für historische gräber in mainz möglich?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in mainz?",
+      "was kostet eine bestattung in mainz?",
+      "welche bestattungsformen sind in mainz möglich?",
+      "was macht den mainzer hauptfriedhof besonders?",
+      "wo muss ein todesfall in mainz angezeigt werden?",
+      "welche friedhofsverwaltung ist zuständig?",
+      "ist eine patenschaft für historische gräber in mainz möglich?"
+    ],
+    "schema_answers_chars": [
+      442,
+      526,
+      546,
+      629,
+      389,
+      370,
+      481
+    ],
+    "html_answers_chars": [
+      442,
+      526,
+      546,
+      629,
+      389,
+      363,
+      476
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "mannheim",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wo liegt der hauptfriedhof mannheim?",
+      "welcher friedhof ist in mannheim der älteste?",
+      "wie groß ist der jüdische friedhof mannheim?",
+      "wie lange ist die ruhezeit in mannheim?",
+      "wie viele friedhöfe gibt es in mannheim?",
+      "was kostet ein grab in mannheim?",
+      "welches standesamt ist in mannheim für einen sterbefall zuständig?",
+      "wie lange ist die bestattungsfrist in baden-württemberg?"
+    ],
+    "html_questions": [
+      "wo liegt der hauptfriedhof mannheim?",
+      "welcher friedhof ist in mannheim der älteste?",
+      "wie groß ist der jüdische friedhof mannheim?",
+      "wie lange ist die ruhezeit in mannheim?",
+      "wie viele friedhöfe gibt es in mannheim?",
+      "was kostet ein grab in mannheim?",
+      "welches standesamt ist in mannheim für einen sterbefall zuständig?",
+      "wie lange ist die bestattungsfrist in baden-württemberg?"
+    ],
+    "schema_answers_chars": [
+      249,
+      181,
+      214,
+      342,
+      289,
+      324,
+      196,
+      267
+    ],
+    "html_answers_chars": [
+      249,
+      181,
+      214,
+      342,
+      289,
+      324,
+      196,
+      267
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "moenchengladbach",
+    "schema_count": 4,
+    "html_count": 4,
+    "schema_questions": [
+      "was kostet eine erdbestattung?",
+      "gibt es günstigere alternativen?",
+      "wie lange dauert die organisation?",
+      "können wir eine trauerfeier organisieren?"
+    ],
+    "html_questions": [
+      "was kostet eine erdbestattung?",
+      "gibt es günstigere alternativen?",
+      "wie lange dauert die organisation?",
+      "können wir eine trauerfeier organisieren?"
+    ],
+    "schema_answers_chars": [
+      140,
+      89,
+      93,
+      85
+    ],
+    "html_answers_chars": [
+      140,
+      89,
+      93,
+      85
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "muelheim",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele städtische friedhöfe gibt es in mülheim?",
+      "welche bestattungsfristen gelten in mülheim?",
+      "wo wird der sterbefall in mülheim angezeigt?",
+      "was kostet ein grab in mülheim an der ruhr?",
+      "kann man auf den mülheimer friedhöfen pflegefreie gräber wählen?",
+      "welche religionsgemeinschaften haben in mülheim eigene bestattungsmöglichkeiten?",
+      "kann man die asche eines verstorbenen in mülheim außerhalb eines friedhofs verstreuen?"
+    ],
+    "html_questions": [
+      "wie viele städtische friedhöfe gibt es in mülheim?",
+      "welche bestattungsfristen gelten in mülheim?",
+      "wo wird der sterbefall in mülheim angezeigt?",
+      "was kostet ein grab in mülheim an der ruhr?",
+      "kann man auf den mülheimer friedhöfen pflegefreie gräber wählen?",
+      "welche religionsgemeinschaften haben in mülheim eigene bestattungsmöglichkeiten?",
+      "kann man die asche eines verstorbenen in mülheim außerhalb eines friedhofs verstreuen?"
+    ],
+    "schema_answers_chars": [
+      578,
+      536,
+      369,
+      406,
+      299,
+      374,
+      317
+    ],
+    "html_answers_chars": [
+      578,
+      536,
+      369,
+      406,
+      299,
+      374,
+      317
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "muenchen",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche paragraphen regeln die bestattungsfristen in münchen?",
+      "wann wurde die sargpflicht in bayern gelockert?",
+      "wie lang sind die ruhezeiten auf städtischen friedhöfen münchens?",
+      "wie wird ein wahlgrab in münchen verlängert?",
+      "welche friedhofsöffnungszeiten gelten auf den städtischen friedhöfen?",
+      "können angehörige bei sozialer bedürftigkeit eine bestattung beantragen lassen?",
+      "welche besonders gestalteten friedhofsteile gibt es in münchen?"
+    ],
+    "html_questions": [
+      "welche paragraphen regeln die bestattungsfristen in münchen?",
+      "wann wurde die sargpflicht in bayern gelockert?",
+      "wie lang sind die ruhezeiten auf städtischen friedhöfen münchens?",
+      "wie wird ein wahlgrab in münchen verlängert?",
+      "welche friedhofsöffnungszeiten gelten auf den städtischen friedhöfen?",
+      "können angehörige bei sozialer bedürftigkeit eine bestattung beantragen lassen?",
+      "welche besonders gestalteten friedhofsteile gibt es in münchen?"
+    ],
+    "schema_answers_chars": [
+      494,
+      462,
+      491,
+      551,
+      549,
+      561,
+      598
+    ],
+    "html_answers_chars": [
+      494,
+      462,
+      491,
+      551,
+      549,
+      561,
+      598
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "muenster",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche friedhöfe gibt es in münster?",
+      "was kostet ein grab auf dem waldfriedhof lauheide?",
+      "welches gesetz regelt die bestattung in münster?",
+      "wird auf dem überwasserfriedhof noch bestattet?",
+      "wo ist der sterbefall in münster anzuzeigen?",
+      "was ist das sternchenfeld auf dem waldfriedhof lauheide?",
+      "gibt es in münster muslimische und jüdische grabfelder?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in münster?",
+      "was kostet ein grab auf dem waldfriedhof lauheide?",
+      "welches gesetz regelt die bestattung in münster?",
+      "wird auf dem überwasserfriedhof noch bestattet?",
+      "wo ist der sterbefall in münster anzuzeigen?",
+      "was ist das sternchenfeld auf dem waldfriedhof lauheide?",
+      "gibt es in münster muslimische und jüdische grabfelder?"
+    ],
+    "schema_answers_chars": [
+      659,
+      408,
+      608,
+      379,
+      346,
+      296,
+      402
+    ],
+    "html_answers_chars": [
+      659,
+      408,
+      608,
+      379,
+      346,
+      296,
+      402
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "mönchengladbach",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wer verwaltet die friedhöfe in mönchengladbach?",
+      "was kostet eine urnenbestattung in mönchengladbach?",
+      "wie lange ist die bestattungsfrist in nrw?",
+      "gibt es ein borussia-kolumbarium in mönchengladbach?",
+      "wo werden verstorbene aus mönchengladbach eingeäschert?",
+      "welche friedhöfe in mönchengladbach sind als immaterielles kulturerbe ausgezeichnet?",
+      "wie lange ist die nutzungsfrist für eine reihengrabstätte?"
+    ],
+    "html_questions": [
+      "wer verwaltet die friedhöfe in mönchengladbach?",
+      "was kostet eine urnenbestattung in mönchengladbach?",
+      "wie lange ist die bestattungsfrist in nrw?",
+      "gibt es ein borussia-kolumbarium in mönchengladbach?",
+      "wo werden verstorbene aus mönchengladbach eingeäschert?",
+      "welche friedhöfe in mönchengladbach sind als immaterielles kulturerbe ausgezeichnet?",
+      "wie lange ist die nutzungsfrist für eine reihengrabstätte?"
+    ],
+    "schema_answers_chars": [
+      284,
+      362,
+      231,
+      351,
+      251,
+      217,
+      317
+    ],
+    "html_answers_chars": [
+      432,
+      502,
+      349,
+      572,
+      375,
+      358,
+      530
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "nuernberg",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "welche friedhöfe gibt es in nürnberg?",
+      "wo liegt das grab albrecht dürers?",
+      "welche bestattungsfrist gilt in bayern?",
+      "was kostet eine bestattung in nürnberg?",
+      "sind auf st. johannis und st. rochus noch bestattungen möglich?",
+      "welche ruhezeit gilt in nürnberg?",
+      "wo ist der todesfall in nürnberg anzuzeigen?",
+      "wo wird in nürnberg eingeäschert?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in nürnberg?",
+      "wo liegt das grab albrecht dürers?",
+      "welche bestattungsfrist gilt in bayern?",
+      "was kostet eine bestattung in nürnberg?",
+      "sind auf st. johannis und st. rochus noch bestattungen möglich?",
+      "welche ruhezeit gilt in nürnberg?",
+      "wo ist der todesfall in nürnberg anzuzeigen?",
+      "wo wird in nürnberg eingeäschert?"
+    ],
+    "schema_answers_chars": [
+      301,
+      222,
+      413,
+      444,
+      248,
+      223,
+      235,
+      376
+    ],
+    "html_answers_chars": [
+      301,
+      222,
+      413,
+      444,
+      248,
+      223,
+      235,
+      376
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "oberhausen",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche friedhöfe gehören zur stadt oberhausen?",
+      "was kostet eine bestattung auf einem oberhausener friedhof?",
+      "wie lang ist die ruhezeit in oberhausen?",
+      "gibt es in oberhausen anonyme bestattungen?",
+      "wie lange dauert es nach dem tod, bis die bestattung stattfinden muss?",
+      "wo wird der sterbefall in oberhausen beurkundet?",
+      "gibt es ein muslimisches oder griechisch-orthodoxes grabfeld in oberhausen?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gehören zur stadt oberhausen?",
+      "was kostet eine bestattung auf einem oberhausener friedhof?",
+      "wie lang ist die ruhezeit in oberhausen?",
+      "gibt es in oberhausen anonyme bestattungen?",
+      "wie lange dauert es nach dem tod, bis die bestattung stattfinden muss?",
+      "wo wird der sterbefall in oberhausen beurkundet?",
+      "gibt es ein muslimisches oder griechisch-orthodoxes grabfeld in oberhausen?"
+    ],
+    "schema_answers_chars": [
+      301,
+      409,
+      412,
+      217,
+      358,
+      361,
+      269
+    ],
+    "html_answers_chars": [
+      418,
+      603,
+      658,
+      392,
+      488,
+      618,
+      501
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "oldenburg",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche städtischen friedhöfe gibt es in oldenburg?",
+      "was kostet ein grab in oldenburg?",
+      "wie lange ist die ruhezeit in oldenburg?",
+      "gibt es ein krematorium in oldenburg?",
+      "wer muss in oldenburg die bestattung organisieren?",
+      "wo bekommen angehörige in oldenburg die sterbeurkunde?",
+      "sind auf den oldenburger friedhöfen muslimische oder jüdische bestattungen möglich?"
+    ],
+    "html_questions": [
+      "welche städtischen friedhöfe gibt es in oldenburg?",
+      "was kostet ein grab in oldenburg?",
+      "wie lange ist die ruhezeit in oldenburg?",
+      "gibt es ein krematorium in oldenburg?",
+      "wer muss in oldenburg die bestattung organisieren?",
+      "wo bekommen angehörige in oldenburg die sterbeurkunde?",
+      "sind auf den oldenburger friedhöfen muslimische oder jüdische bestattungen möglich?"
+    ],
+    "schema_answers_chars": [
+      408,
+      325,
+      235,
+      283,
+      519,
+      391,
+      281
+    ],
+    "html_answers_chars": [
+      408,
+      399,
+      235,
+      283,
+      546,
+      391,
+      281
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "osnabrueck",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in osnabrück?",
+      "welcher friedhof in osnabrück hat ein krematorium?",
+      "wie lange ist die ruhezeit in osnabrück?",
+      "was kostet eine bestattung in osnabrück?",
+      "wo wird in osnabrück der sterbefall angezeigt?",
+      "gibt es in osnabrück eine anonyme bestattung?",
+      "ist eine reerdigung in osnabrück möglich?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in osnabrück?",
+      "welcher friedhof in osnabrück hat ein krematorium?",
+      "wie lange ist die ruhezeit in osnabrück?",
+      "was kostet eine bestattung in osnabrück?",
+      "wo wird in osnabrück der sterbefall angezeigt?",
+      "gibt es in osnabrück eine anonyme bestattung?",
+      "ist eine reerdigung in osnabrück möglich?"
+    ],
+    "schema_answers_chars": [
+      432,
+      297,
+      322,
+      456,
+      340,
+      237,
+      323
+    ],
+    "html_answers_chars": [
+      489,
+      416,
+      418,
+      530,
+      537,
+      412,
+      458
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "potsdam",
+    "schema_count": 8,
+    "html_count": 8,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in potsdam?",
+      "welcher friedhof in potsdam ist unesco-welterbe?",
+      "wie lange ist die ruhezeit in potsdam?",
+      "was kostet ein urnengrab in potsdam?",
+      "welcher friedhof in potsdam ist der zentrale begräbnisplatz?",
+      "wo wird der sterbefall in potsdam angezeigt?",
+      "welche bestattungsfristen gelten in brandenburg?",
+      "gibt es in potsdam baum- oder waldbestattungen?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in potsdam?",
+      "welcher friedhof in potsdam ist unesco-welterbe?",
+      "wie lange ist die ruhezeit in potsdam?",
+      "was kostet ein urnengrab in potsdam?",
+      "welcher friedhof in potsdam ist der zentrale begräbnisplatz?",
+      "wo wird der sterbefall in potsdam angezeigt?",
+      "welche bestattungsfristen gelten in brandenburg?",
+      "gibt es in potsdam baum- oder waldbestattungen?"
+    ],
+    "schema_answers_chars": [
+      256,
+      195,
+      212,
+      223,
+      251,
+      151,
+      247,
+      233
+    ],
+    "html_answers_chars": [
+      256,
+      240,
+      496,
+      297,
+      251,
+      263,
+      436,
+      321
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "regensburg",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele städtische friedhöfe gibt es in regensburg?",
+      "was kostet eine bestattung in regensburg?",
+      "wo muss ein sterbefall in regensburg angezeigt werden?",
+      "gilt in regensburg die sargpflicht?",
+      "welche friedhöfe in regensburg sind besonders sehenswert?",
+      "wie wähle ich einen bestatter in regensburg?",
+      "wie lange ist die ruhezeit in regensburg?"
+    ],
+    "html_questions": [
+      "wie viele städtische friedhöfe gibt es in regensburg?",
+      "was kostet eine bestattung in regensburg?",
+      "wo muss ein sterbefall in regensburg angezeigt werden?",
+      "gilt in regensburg die sargpflicht?",
+      "welche friedhöfe in regensburg sind besonders sehenswert?",
+      "wie wähle ich einen bestatter in regensburg?",
+      "wie lange ist die ruhezeit in regensburg?"
+    ],
+    "schema_answers_chars": [
+      344,
+      622,
+      269,
+      359,
+      446,
+      518,
+      463
+    ],
+    "html_answers_chars": [
+      356,
+      660,
+      332,
+      451,
+      511,
+      538,
+      580
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "rostock",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele kommunale friedhöfe gibt es in rostock?",
+      "was kostet ein grab in rostock?",
+      "wie lange ist die ruhefrist in mecklenburg-vorpommern?",
+      "wo wird ein sterbefall in rostock angezeigt?",
+      "gilt in mecklenburg-vorpommern sargpflicht?",
+      "welche bestattungsarten gibt es auf den rostocker friedhöfen?",
+      "kann man in rostock auch eine seebestattung organisieren?"
+    ],
+    "html_questions": [
+      "wie viele kommunale friedhöfe gibt es in rostock?",
+      "was kostet ein grab in rostock?",
+      "wie lange ist die ruhefrist in mecklenburg-vorpommern?",
+      "wo wird ein sterbefall in rostock angezeigt?",
+      "gilt in mecklenburg-vorpommern sargpflicht?",
+      "welche bestattungsarten gibt es auf den rostocker friedhöfen?",
+      "kann man in rostock auch eine seebestattung organisieren?"
+    ],
+    "schema_answers_chars": [
+      277,
+      362,
+      264,
+      280,
+      325,
+      313,
+      384
+    ],
+    "html_answers_chars": [
+      277,
+      362,
+      264,
+      280,
+      325,
+      313,
+      384
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "saarbruecken",
+    "schema_count": 9,
+    "html_count": 9,
+    "schema_questions": [
+      "welche friedhöfe gibt es in saarbrücken?",
+      "wie hoch sind die friedhofsgebühren in saarbrücken?",
+      "welche ruhezeit gilt im saarland?",
+      "besteht in saarbrücken eine sargpflicht?",
+      "wer muss den sterbefall in saarbrücken anzeigen?",
+      "wie lange dauert es bis zur bestattung und welche fristen gelten?",
+      "welche bestattungsformen sind in saarbrücken möglich?",
+      "welche sonderregeln gelten für bestattungsvorsorge im saarland?",
+      "wo finden angehörige in saarbrücken beratung zu bestattung und grabpflege?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in saarbrücken?",
+      "wie hoch sind die friedhofsgebühren in saarbrücken?",
+      "welche ruhezeit gilt im saarland?",
+      "besteht in saarbrücken eine sargpflicht?",
+      "wer muss den sterbefall in saarbrücken anzeigen?",
+      "wie lange dauert es bis zur bestattung und welche fristen gelten?",
+      "welche bestattungsformen sind in saarbrücken möglich?",
+      "welche sonderregeln gelten für bestattungsvorsorge im saarland?",
+      "wo finden angehörige in saarbrücken beratung zu bestattung und grabpflege?"
+    ],
+    "schema_answers_chars": [
+      304,
+      353,
+      216,
+      331,
+      531,
+      310,
+      362,
+      461,
+      349
+    ],
+    "html_answers_chars": [
+      436,
+      515,
+      371,
+      393,
+      531,
+      465,
+      464,
+      599,
+      432
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "stuttgart",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe hat stuttgart?",
+      "was kostet eine bestattung in stuttgart?",
+      "gibt es in stuttgart muslimische grabfelder?",
+      "welche ruhezeit gilt auf stuttgarter friedhöfen?",
+      "wo befindet sich das krematorium stuttgart?",
+      "wer ist auf dem waldfriedhof degerloch bestattet?",
+      "was unterscheidet die stadt-seite von der bundesland-seite?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe hat stuttgart?",
+      "was kostet eine bestattung in stuttgart?",
+      "gibt es in stuttgart muslimische grabfelder?",
+      "welche ruhezeit gilt auf stuttgarter friedhöfen?",
+      "wo befindet sich das krematorium stuttgart?",
+      "wer ist auf dem waldfriedhof degerloch bestattet?",
+      "was unterscheidet die stadt-seite von der bundesland-seite?"
+    ],
+    "schema_answers_chars": [
+      287,
+      660,
+      278,
+      415,
+      343,
+      339,
+      372
+    ],
+    "html_answers_chars": [
+      287,
+      699,
+      312,
+      422,
+      450,
+      339,
+      378
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "wiesbaden",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "wie viele friedhöfe gibt es in wiesbaden?",
+      "was kostet ein reihengrab in wiesbaden?",
+      "welche bestattungsfrist gilt in wiesbaden?",
+      "welcher friedhof wiesbadens ist der größte?",
+      "wo wird ein sterbefall in wiesbaden angezeigt?",
+      "gibt es in wiesbaden eine baumbestattung?",
+      "welche ruhezeit gilt für ein grab in wiesbaden?"
+    ],
+    "html_questions": [
+      "wie viele friedhöfe gibt es in wiesbaden?",
+      "was kostet ein reihengrab in wiesbaden?",
+      "welche bestattungsfrist gilt in wiesbaden?",
+      "welcher friedhof wiesbadens ist der größte?",
+      "wo wird ein sterbefall in wiesbaden angezeigt?",
+      "gibt es in wiesbaden eine baumbestattung?",
+      "welche ruhezeit gilt für ein grab in wiesbaden?"
+    ],
+    "schema_answers_chars": [
+      269,
+      258,
+      231,
+      228,
+      278,
+      311,
+      258
+    ],
+    "html_answers_chars": [
+      333,
+      334,
+      287,
+      366,
+      326,
+      294,
+      258
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  },
+  {
+    "city": "wuppertal",
+    "schema_count": 7,
+    "html_count": 7,
+    "schema_questions": [
+      "welche friedhöfe gibt es in wuppertal?",
+      "wie hoch sind die bestattungskosten in wuppertal?",
+      "welches bestattungsrecht gilt in wuppertal?",
+      "wo wird der sterbefall in wuppertal angezeigt?",
+      "gibt es ein krematorium in wuppertal?",
+      "ist eine waldbestattung von wuppertal aus möglich?",
+      "was sollten angehörige bei der bestatter-wahl in wuppertal beachten?"
+    ],
+    "html_questions": [
+      "welche friedhöfe gibt es in wuppertal?",
+      "wie hoch sind die bestattungskosten in wuppertal?",
+      "welches bestattungsrecht gilt in wuppertal?",
+      "wo wird der sterbefall in wuppertal angezeigt?",
+      "gibt es ein krematorium in wuppertal?",
+      "ist eine waldbestattung von wuppertal aus möglich?",
+      "was sollten angehörige bei der bestatter-wahl in wuppertal beachten?"
+    ],
+    "schema_answers_chars": [
+      767,
+      632,
+      383,
+      245,
+      406,
+      282,
+      340
+    ],
+    "html_answers_chars": [
+      767,
+      648,
+      405,
+      261,
+      406,
+      282,
+      329
+    ],
+    "count_mismatch": false,
+    "q_in_schema_only": [],
+    "q_in_html_only": [],
+    "drift": false
+  }
+]
