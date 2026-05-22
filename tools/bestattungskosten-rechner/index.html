@@ -675,7 +675,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
     // Urnengrab nur bei Feuerbestattung
     $$('option[data-feuer-only]', sel).forEach(function(opt){
       opt.hidden = ba !== 'feuerbestattung';
-      if (opt.hidden && sel.value === opt.value) sel.value = 'Einzelgrab';
+      if (opt.hidden && sel.value === opt.value) { sel.value = 'Einzelgrab'; state.grabGrab = 'Einzelgrab'; }
     });
   }
 
