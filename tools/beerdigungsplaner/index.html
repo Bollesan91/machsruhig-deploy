@@ -208,7 +208,7 @@
     if (s.hint) h += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">' + esc(s.hint) + '</p>';
     h += '<div style="display:grid;gap:10px">';
     s.options.forEach(function(o){
-      h += '<button type="button" class="opt-btn' + (state.answers[s.id] === o.value ? ' selected' : '') + '" data-value="' + esc(o.value) + '">';
+      h += '<button type="button" class="opt-btn' + (state.answers[s.id] === o.value ? ' selected' : '') + '" data-value="' + esc(o.value) + '" aria-pressed="' + (state.answers[s.id] === o.value ? 'true' : 'false') + '">';
       h += '<div class="row"><strong>' + esc(o.label) + '</strong>';
       if (o.kosten) h += '<span class="kosten">' + esc(o.kosten) + '</span>';
       h += '</div>';
@@ -268,7 +268,7 @@
   function renderResult(){
     var h = '';
     h += '<header style="padding:32px 0 16px">';
-    h += '<h1 style="font-family:\'Fraunces\',serif;font-size:clamp(22px,4vw,30px);font-weight:800">Dein Beerdigungsplan</h1>';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(22px,4vw,30px);font-weight:800">Dein Beerdigungsplan</h2>';
     h += '</header>';
     h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px">Dies ist eine Planungsgrundlage. Besprich diesen Plan mit dem Bestatter — er berät dich zu den konkreten Möglichkeiten in deiner Region.</div>';
 
