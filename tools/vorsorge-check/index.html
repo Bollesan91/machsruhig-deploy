@@ -102,6 +102,7 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
         <label class="vc-check"><input type="checkbox" data-doc="betreuungsverfuegung" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Betreuungsverfügung</strong><span style="font-size:13px;color:var(--mr-text-muted)">Wunsch für Betreuer:in</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="testament" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Testament</strong><span style="font-size:13px;color:var(--mr-text-muted)">Vermögensregelung nach dem Tod</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="bestattungsverfuegung" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Bestattungsverfügung</strong><span style="font-size:13px;color:var(--mr-text-muted)">Wünsche für Beerdigung</span></span></label>
+        <label class="vc-check"><input type="checkbox" data-doc="sorgerechtsverfuegung" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Sorgerechtsverfügung</strong><span style="font-size:13px;color:var(--mr-text-muted)">Wer übernimmt das Sorgerecht für Kinder?</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="organspendeausweis" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Organspendeausweis</strong><span style="font-size:13px;color:var(--mr-text-muted)">Organ-/Gewebespende-Entscheidung</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="kontovollmacht" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Kontovollmacht / Bankenvollmacht</strong><span style="font-size:13px;color:var(--mr-text-muted)">Bankzugang für Vertrauensperson</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="digitalerbe" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Digitalerbe</strong><span style="font-size:13px;color:var(--mr-text-muted)">Zugang zu Online-Konten geregelt</span></span></label>
@@ -168,16 +169,26 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
 (function(){
   'use strict';
 
+  // DOCUMENTS mit situationsspezifischer priority. priorityBy[situation]
+  // mappt {dringend|empfohlen|optional}. Fallback: priority-Default.
   var DOCUMENTS = [
-    {id:'patientenverfuegung',name:'Patientenverfügung',icon:'📋',description:'Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.',why:'Du kannst nicht selbst entscheiden — wer entscheidet dann für dich?',link:'/vorsorge/patientenverfuegung',situation:['single','verheiratet','kindern','alleinerziehend']},
-    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann der Staat eine Person einsetzen, die du nicht kennst.',link:'/vorsorge/vorsorgevollmacht',situation:['single','verheiratet','kindern','alleinerziehend']},
-    {id:'betreuungsverfuegung',name:'Betreuungsverfügung',icon:'👤',description:'Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.',why:'Verhindert, dass das Gericht eine fremde Person bestellt.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend']},
-    {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet das Gesetz. Für Alleinerziehende: ohne Testament keine Sorgerechtsverfügung für die Kinder. Für Singles: gesetzliche Erbfolge geht ggf. an entfernte Verwandte/Fiskus, nicht an Partner ohne Trauschein, Patenkinder oder Vereine.',link:'/vorsorge/testament',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'dringend'},
-    {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend']},
-    {id:'organspendeausweis',name:'Organspendeausweis',icon:'💝',description:'Dokumentiert deine Entscheidung zu Organ- und Gewebespende.',why:'Gibt Gewissheit für deine Angehörigen und kann Leben retten.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend']},
-    {id:'kontovollmacht',name:'Kontovollmacht / Bankenvollmacht',icon:'🏦',description:'Ermöglicht Zugang zu Konten und Bankangelegenheiten für deine Vertrauensperson.',why:'Ohne Bankenvollmacht können deine Konten eingefroren sein.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend']},
-    {id:'digitalerbe',name:'Digitalerbe (Online-Konten)',icon:'💻',description:'Regelung des Zugangs zu E-Mails, Sozialen Medien, Cloud-Speichern und Dateien.',why:'Ohne Regelung können wichtige digitale Vermögenswerte verloren gehen.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend']}
+    {id:'patientenverfuegung',name:'Patientenverfügung',icon:'📋',description:'Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.',why:'Du kannst nicht selbst entscheiden — wer entscheidet dann für dich?',link:'/vorsorge/patientenverfuegung',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'dringend'},
+    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann der Staat eine Person einsetzen, die du nicht kennst.',link:'/vorsorge/vorsorgevollmacht',situation:['single','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'}},
+    {id:'betreuungsverfuegung',name:'Betreuungsverfügung',icon:'👤',description:'Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.',why:'Verhindert, dass das Gericht eine fremde Person bestellt.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'empfohlen'},
+    {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet das Gesetz. Für Singles: gesetzliche Erbfolge geht ggf. an entfernte Verwandte/Fiskus, nicht an Partner ohne Trauschein, Patenkinder oder Vereine.',link:'/vorsorge/testament',situation:['single','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'empfohlen',verheiratet:'dringend',kindern:'dringend',alleinerziehend:'dringend'}},
+    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Sorgerechtsverfügung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. § 1777 BGB ist vom Testament getrennt.',link:'#',situation:['kindern','alleinerziehend'],priority:'dringend'},
+    {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'empfohlen'},
+    {id:'organspendeausweis',name:'Organspendeausweis',icon:'💝',description:'Dokumentiert deine Entscheidung zu Organ- und Gewebespende.',why:'Gibt Gewissheit für deine Angehörigen und kann Leben retten.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'optional'},
+    {id:'kontovollmacht',name:'Kontovollmacht / Bankenvollmacht',icon:'🏦',description:'Ermöglicht Zugang zu Konten und Bankangelegenheiten für deine Vertrauensperson.',why:'Ohne Bankenvollmacht können deine Konten eingefroren sein.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'empfohlen'},
+    {id:'digitalerbe',name:'Digitalerbe (Online-Konten)',icon:'💻',description:'Regelung des Zugangs zu E-Mails, Sozialen Medien, Cloud-Speichern und Dateien.',why:'Ohne Regelung können wichtige digitale Vermögenswerte verloren gehen.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'optional'}
   ];
+
+  // Housing-Modifikatoren: erhöht Priorität bestimmter Docs je nach Wohnsituation
+  var HOUSING_PRIORITY_BOOST = {
+    eigentum: {testament:'dringend', kontovollmacht:'dringend'},  // Grundbuch-Themen
+    pflegeheim: {vorsorgevollmacht:'dringend', betreuungsverfuegung:'dringend', patientenverfuegung:'dringend'},
+    miete: {}  // keine Anhebung
+  };
 
   var FAQ = [
     {q:'Muss ich alle Dokumente haben?', a:'Nein, aber je nach deiner Lebenssituation sind einige wichtiger als andere. Ein Testament ist für verheiratete Menschen mit Kindern dringend, eine Patientenverfügung für alle empfohlen. Wir zeigen dir, was für dich passt.'},
@@ -268,8 +279,18 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
     return P[p] || P.empfohlen;
   }
 
+  // Computed Priorität pro Doc kombiniert priorityBy[situation], priority-Default
+  // und HOUSING_PRIORITY_BOOST. Reihenfolge: housing-Boost > situation > default.
+  function effectivePriority(doc){
+    var housingBoost = (HOUSING_PRIORITY_BOOST[state.housing] || {})[doc.id];
+    if (housingBoost) return housingBoost;
+    if (doc.priorityBy && doc.priorityBy[state.situation]) return doc.priorityBy[state.situation];
+    return doc.priority || 'empfohlen';
+  }
+
   function renderDocCard(doc, hasDoc){
-    var c = priorityStyle(doc.priority || 'empfohlen');
+    var prio = effectivePriority(doc);
+    var c = priorityStyle(prio);
     var bg = hasDoc ? '#d4edda' : c.bg;
     var border = hasDoc ? '#28a745' : c.border;
     var tagBg = hasDoc ? '#28a745' : c.tagBg;
