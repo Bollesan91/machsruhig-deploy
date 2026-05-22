@@ -28,7 +28,9 @@
 .mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}.mr-footer-inner{max-width:720px;margin:0 auto}.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}.mr-footer a:hover{color:var(--mr-primary)}.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}.mr-footer-bottom p{font-size:12px;color:#73655A}
 .mr-content{max-width:720px;margin:0 auto;padding:0 20px}
 
-/* Form styles */
+.nk-step{display:none}
+.nk-step.active{display:block}
+
 .nk-field{margin-bottom:20px}
 .nk-field label{display:block;font-weight:600;font-size:14px;color:var(--mr-text);margin-bottom:6px}
 .nk-field input[type="text"],.nk-field input[type="date"],.nk-field input[type="tel"],.nk-field select,.nk-field textarea{width:100%;padding:12px 16px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);font-family:inherit;font-size:15px;color:var(--mr-text);background:var(--mr-bg-card);transition:border-color 0.2s,box-shadow 0.2s;outline:none}
@@ -39,7 +41,21 @@
 @media(max-width:480px){.nk-field-row{grid-template-columns:1fr}}
 .nk-field-optional{font-weight:400;color:var(--mr-text-muted);font-size:12px;margin-left:4px}
 
-/* Print card styles */
+.nk-progress{margin:24px 0 8px}
+.nk-progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--mr-text-muted);margin-bottom:6px}
+.nk-progress-bar{height:6px;background:var(--mr-border);border-radius:3px}
+.nk-progress-fill{height:100%;background:var(--mr-accent);border-radius:3px;transition:width 0.3s}
+
+.nk-preview-card{background:#fff;border:2px dashed var(--mr-border);border-radius:12px;padding:0;width:100%;max-width:380px;aspect-ratio:85.6/54;position:relative;overflow:hidden}
+.nk-preview-card .label{position:absolute;top:0;left:0;right:0;background:var(--mr-accent);color:#fff;font-size:10px;font-weight:600;text-align:center;padding:3px 0;letter-spacing:0.5px}
+.nk-preview-card .body{padding:28px 16px 12px;font-size:11px;line-height:1.4;color:#000;height:100%;display:flex;flex-direction:column}
+.nk-preview-card h4{font-family:'Fraunces',serif;font-size:13px;font-weight:700;border-bottom:1px solid #ddd;padding-bottom:4px;margin-bottom:6px}
+.nk-preview-row{display:flex;gap:6px;margin-bottom:2px;font-size:10px}
+.nk-preview-row .lbl{font-weight:600;min-width:70px;color:#333;flex-shrink:0}
+.nk-preview-row .val{color:#000;word-break:break-word}
+.nk-preview-row.bold .val{font-weight:700}
+.nk-preview-card .brand{margin-top:auto;text-align:right;font-size:8px;color:#999}
+
 @media print{
   .no-print,.mr-nav,.mr-footer{display:none!important}
   body{background:#fff!important;margin:0;padding:0}
@@ -54,10 +70,11 @@
   .nk-card-inner .nk-card-branding{position:absolute;bottom:1.5mm;right:3mm;font-size:5.5pt;color:#999}
   .nk-cut-line{text-align:center;font-size:8pt;color:#999;margin:2mm 0;letter-spacing:1px}
 }
+
+.pdf-export-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#FFFDF9;color:#7A6B5D;border:2px solid #7A6B5D;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;margin-left:8px;transition:background 0.2s}
+.pdf-export-btn:hover{background:#7A6B5D;color:#fff}
+body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf-export-btn,body.exporting-pdf [class*="export-controls"]{display:none!important}
 </style>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
@@ -72,434 +89,399 @@
       <a href="/tools/vorsorge-check">Vorsorge</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <a href="/bestatter/muenchen/">Bestatter finden</a></div></div></nav>
-<div class="mr-content"><main id="main"><div id="app"></div></main></div>
+
+<div class="mr-content"><main id="main">
+
+  <div style="text-align:center;margin:40px 0 16px" class="no-print">
+    <h1 style="font-family:'Fraunces',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--mr-text);margin:0 0 12px;line-height:1.2">Notfallkarte erstellen</h1>
+    <p style="font-size:clamp(15px,2.5vw,18px);color:var(--mr-text-muted);max-width:540px;margin:0 auto">Erstelle in 2 Minuten eine Notfallkarte im Kreditkartenformat — zum Ausdrucken und Mitnehmen.</p>
+  </div>
+
+  <div id="intro-privacy" class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:32px 0;font-size:14px;line-height:1.6">
+    <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir</strong>
+    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Alle Eingaben bleiben ausschließlich in deinem Browser. Wir speichern nichts, senden nichts an einen Server und nutzen deine Daten nicht. Deine Privatsphäre ist uns wichtig.</p>
+  </div>
+
+  <!-- Step 1: Persönliche Angaben (initial active, indexable) -->
+  <form id="nk-form" onsubmit="return false">
+
+  <div class="nk-step active" data-step="0" id="step-persoenlich">
+    <div class="nk-progress">
+      <div class="nk-progress-label"><span>Schritt 1 von 2</span><span>50%</span></div>
+      <div class="nk-progress-bar"><div class="nk-progress-fill" style="width:50%"></div></div>
+    </div>
+
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 8px">Persönliche Angaben</h2>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:24px">Diese Informationen erscheinen auf der Vorderseite deiner Notfallkarte.</p>
+
+    <div class="nk-field">
+      <label for="f-name">Name</label>
+      <input type="text" id="f-name" name="name" placeholder="Vor- und Nachname" required>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-geburtsdatum">Geburtsdatum</label>
+      <input type="date" id="f-geburtsdatum" name="geburtsdatum">
+    </div>
+
+    <div class="nk-field">
+      <label for="f-blutgruppe">Blutgruppe</label>
+      <select id="f-blutgruppe" name="blutgruppe">
+        <option value="">Bitte wählen</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="0+">0+</option>
+        <option value="0-">0-</option>
+        <option value="Unbekannt">Unbekannt</option>
+      </select>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-allergien">Allergien / Unverträglichkeiten<span class="nk-field-optional">(optional)</span></label>
+      <textarea id="f-allergien" name="allergien" rows="2" placeholder="Allergien und Unverträglichkeiten eintragen"></textarea>
+      <div class="nk-hint">z. B. Penicillin, Nüsse, Latex</div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-medikamente">Regelmäßige Medikamente<span class="nk-field-optional">(optional)</span></label>
+      <textarea id="f-medikamente" name="medikamente" rows="2" placeholder="Medikamente und Dosierung eintragen"></textarea>
+      <div class="nk-hint">z. B. Metoprolol 50 mg, Aspirin 100 mg</div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-vorerkrankungen">Vorerkrankungen<span class="nk-field-optional">(optional)</span></label>
+      <textarea id="f-vorerkrankungen" name="vorerkrankungen" rows="2" placeholder="Relevante Vorerkrankungen eintragen"></textarea>
+      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, Herzschrittmacher</div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-organspende">Organspender?</label>
+      <select id="f-organspende" name="organspende">
+        <option value="">Bitte wählen</option>
+        <option value="Ja">Ja</option>
+        <option value="Nein">Nein</option>
+        <option value="Kein Ausweis">Kein Ausweis</option>
+      </select>
+    </div>
+
+    <button type="button" id="btn-step1-next" disabled style="margin-top:24px;width:100%;padding:14px 20px;background:var(--mr-border);color:var(--mr-text-muted);border:none;border-radius:99px;cursor:not-allowed;font-weight:600;font-size:15px;font-family:inherit;transition:background 0.2s">Weiter →</button>
+  </div>
+
+  <!-- Step 2: Kontakte & Dokumente -->
+  <div class="nk-step" data-step="1" id="step-kontakte">
+    <div class="nk-progress">
+      <div class="nk-progress-label"><span>Schritt 2 von 2</span><span>100%</span></div>
+      <div class="nk-progress-bar"><div class="nk-progress-fill" style="width:100%"></div></div>
+    </div>
+
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 8px">Kontakte &amp; Dokumente</h2>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:24px">Diese Informationen erscheinen auf der Rückseite deiner Notfallkarte.</p>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px">Notfallkontakt 1</h3>
+    <div class="nk-field-row">
+      <div class="nk-field"><label for="f-kontakt1Name">Name</label><input type="text" id="f-kontakt1Name" name="kontakt1Name" placeholder="Name des Kontakts" required></div>
+      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" placeholder="z. B. 0171 1234567" required></div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Notfallkontakt 2<span class="nk-field-optional">(optional)</span></h3>
+    <div class="nk-field-row">
+      <div class="nk-field"><label for="f-kontakt2Name">Name</label><input type="text" id="f-kontakt2Name" name="kontakt2Name" placeholder="Name des Kontakts"></div>
+      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" placeholder="z. B. 0171 9876543"></div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Hausarzt<span class="nk-field-optional">(optional)</span></h3>
+    <div class="nk-field-row">
+      <div class="nk-field"><label for="f-hausarztName">Name</label><input type="text" id="f-hausarztName" name="hausarztName" placeholder="Name der Praxis / des Arztes"></div>
+      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" placeholder="z. B. 089 1234567"></div>
+    </div>
+
+    <div style="border-top:1px solid var(--mr-border);margin-top:28px;padding-top:24px"></div>
+
+    <div class="nk-field">
+      <label for="f-dokumenteOrt">Wo sind meine Dokumente?<span class="nk-field-optional">(optional)</span></label>
+      <input type="text" id="f-dokumenteOrt" name="dokumenteOrt" placeholder="Aufbewahrungsort deiner wichtigen Dokumente">
+      <div class="nk-hint">z. B. „Ordner im Schlafzimmerschrank" oder „Bei Notar Dr. Müller"</div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-patientenverfuegung">Patientenverfügung vorhanden?</label>
+      <select id="f-patientenverfuegung" name="patientenverfuegung"><option value="">Bitte wählen</option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-vorsorgevollmacht">Vorsorgevollmacht vorhanden?</label>
+      <select id="f-vorsorgevollmacht" name="vorsorgevollmacht"><option value="">Bitte wählen</option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:24px">
+      <button type="button" data-back="1" style="padding:14px 20px;background:none;border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-size:15px;color:var(--mr-text-muted);font-weight:500;font-family:inherit">← Zurück</button>
+      <button type="button" id="btn-step2-next" disabled style="flex:1;padding:14px 20px;background:var(--mr-border);color:var(--mr-text-muted);border:none;border-radius:99px;cursor:not-allowed;font-weight:600;font-size:15px;font-family:inherit;transition:background 0.2s">Notfallkarte erstellen →</button>
+    </div>
+  </div>
+
+  </form>
+
+  <!-- Step 3: Result (vorschau + actions) — JS rendert dynamische Karten-Inhalte -->
+  <div class="nk-step" data-step="2" id="step-result"></div>
+
+  <!-- Print-only: tatsächlich gedruckte Karten — JS füllt die Inhalte -->
+  <div class="nk-print-page" id="print-page" style="display:none"></div>
+
+</main></div>
+
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprueche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
-<script type="text/babel">
-const {useState, useRef, useCallback} = React;
-
-const FAQ = [
-  {frage:'Warum brauche ich eine Notfallkarte?',antwort:'Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist.'},
-  {frage:'Was gehört auf eine Notfallkarte?',antwort:'Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht.'},
-  {frage:'Werden meine Daten gespeichert?',antwort:'Nein, alle Eingaben bleiben ausschließlich in deinem Browser. Es werden keine Daten an einen Server gesendet oder gespeichert. Die Karte wird direkt in deinem Browser generiert und gedruckt.'},
-  {frage:'Wie groß ist die Karte?',antwort:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Es werden zwei Karten pro A4-Seite gedruckt, damit du eine zum Laminieren und eine als Reserve hast.'}
-];
-
-const BLUTGRUPPEN = ['A+','A-','B+','B-','AB+','AB-','0+','0-','Unbekannt'];
-
-function ProgressBar({current, total}) {
-  const pct = Math.round((current / total) * 100);
-  return React.createElement('div', {style:{margin:'24px 0 8px'}},
-    React.createElement('div', {style:{display:'flex',justifyContent:'space-between',fontSize:13,color:'var(--mr-text-muted)',marginBottom:6}},
-      React.createElement('span', null, 'Schritt ' + current + ' von ' + total),
-      React.createElement('span', null, pct + '%')
-    ),
-    React.createElement('div', {style:{height:6,background:'var(--mr-border)',borderRadius:3}},
-      React.createElement('div', {style:{height:'100%',width:pct+'%',background:'var(--mr-accent)',borderRadius:3,transition:'width 0.3s'}})
-    )
-  );
-}
-
-function PrivacyNotice() {
-  return React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'32px 0',fontSize:14,lineHeight:1.6}},
-    React.createElement('strong', {style:{color:'var(--mr-text)'}}, 'Deine Daten bleiben bei dir'),
-    React.createElement('p', {style:{margin:'8px 0 0',color:'var(--mr-text-muted)'}},
-      'Alle Eingaben bleiben ausschließlich in deinem Browser. Wir speichern nichts, senden nichts an einen Server und nutzen deine Daten nicht. Deine Privatsphäre ist uns wichtig.'
-    )
-  );
-}
-
-function FormField({label, optional, hint, children}) {
-  return React.createElement('div', {className:'nk-field'},
-    React.createElement('label', null, label, optional && React.createElement('span', {className:'nk-field-optional'}, '(optional)')),
-    children,
-    hint && React.createElement('div', {className:'nk-hint'}, hint)
-  );
-}
-
-function Step1({data, onChange, onNext}) {
-  const update = (field, value) => onChange({...data, [field]: value});
-  const canContinue = data.name && data.name.trim().length > 0;
-
-  return React.createElement('div', null,
-    React.createElement(ProgressBar, {current:1, total:2}),
-    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,margin:'24px 0 8px'}}, 'Persönliche Angaben'),
-    React.createElement('p', {style:{fontSize:14,color:'var(--mr-text-muted)',marginBottom:24}}, 'Diese Informationen erscheinen auf der Vorderseite deiner Notfallkarte.'),
-
-    React.createElement(FormField, {label:'Name'},
-      React.createElement('input', {type:'text',value:data.name||'',onChange:e=>update('name',e.target.value),placeholder:'Vor- und Nachname'})
-    ),
-
-    React.createElement(FormField, {label:'Geburtsdatum'},
-      React.createElement('input', {type:'date',value:data.geburtsdatum||'',onChange:e=>update('geburtsdatum',e.target.value)})
-    ),
-
-    React.createElement(FormField, {label:'Blutgruppe'},
-      React.createElement('select', {value:data.blutgruppe||'',onChange:e=>update('blutgruppe',e.target.value)},
-        React.createElement('option', {value:''}, 'Bitte wählen'),
-        BLUTGRUPPEN.map(bg => React.createElement('option', {key:bg,value:bg}, bg))
-      )
-    ),
-
-    React.createElement(FormField, {label:'Allergien / Unverträglichkeiten', optional:true, hint:'z. B. Penicillin, Nüsse, Latex'},
-      React.createElement('textarea', {value:data.allergien||'',onChange:e=>update('allergien',e.target.value),placeholder:'Allergien und Unverträglichkeiten eintragen',rows:2})
-    ),
-
-    React.createElement(FormField, {label:'Regelmäßige Medikamente', optional:true, hint:'z. B. Metoprolol 50 mg, Aspirin 100 mg'},
-      React.createElement('textarea', {value:data.medikamente||'',onChange:e=>update('medikamente',e.target.value),placeholder:'Medikamente und Dosierung eintragen',rows:2})
-    ),
-
-    React.createElement(FormField, {label:'Vorerkrankungen', optional:true, hint:'z. B. Diabetes Typ 2, Asthma, Herzschrittmacher'},
-      React.createElement('textarea', {value:data.vorerkrankungen||'',onChange:e=>update('vorerkrankungen',e.target.value),placeholder:'Relevante Vorerkrankungen eintragen',rows:2})
-    ),
-
-    React.createElement(FormField, {label:'Organspender?'},
-      React.createElement('select', {value:data.organspende||'',onChange:e=>update('organspende',e.target.value)},
-        React.createElement('option', {value:''}, 'Bitte wählen'),
-        React.createElement('option', {value:'Ja'}, 'Ja'),
-        React.createElement('option', {value:'Nein'}, 'Nein'),
-        React.createElement('option', {value:'Kein Ausweis'}, 'Kein Ausweis')
-      )
-    ),
-
-    React.createElement('button', {
-      onClick:() => { if(window.mrTrack) window.mrTrack('toolStep',{tool:'notfallkarte',step:'persoenlich'}); onNext(); },
-      disabled:!canContinue,
-      style:{marginTop:24,width:'100%',padding:'14px 20px',background:canContinue?'var(--mr-primary)':'var(--mr-border)',color:canContinue?'#fff':'var(--mr-text-muted)',border:'none',borderRadius:99,cursor:canContinue?'pointer':'not-allowed',fontWeight:600,fontSize:15,transition:'background 0.2s'}
-    }, 'Weiter \u2192')
-  );
-}
-
-function Step2({data, onChange, onNext, onBack}) {
-  const update = (field, value) => onChange({...data, [field]: value});
-  const canContinue = data.kontakt1Name && data.kontakt1Name.trim().length > 0 && data.kontakt1Tel && data.kontakt1Tel.trim().length > 0;
-
-  return React.createElement('div', null,
-    React.createElement(ProgressBar, {current:2, total:2}),
-    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,margin:'24px 0 8px'}}, 'Kontakte & Dokumente'),
-    React.createElement('p', {style:{fontSize:14,color:'var(--mr-text-muted)',marginBottom:24}}, 'Diese Informationen erscheinen auf der Rückseite deiner Notfallkarte.'),
-
-    React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:17,fontWeight:700,margin:'0 0 12px',color:'var(--mr-text)'}}, 'Notfallkontakt 1'),
-    React.createElement('div', {className:'nk-field-row'},
-      React.createElement(FormField, {label:'Name'},
-        React.createElement('input', {type:'text',value:data.kontakt1Name||'',onChange:e=>update('kontakt1Name',e.target.value),placeholder:'Name des Kontakts'})
-      ),
-      React.createElement(FormField, {label:'Telefon'},
-        React.createElement('input', {type:'tel',value:data.kontakt1Tel||'',onChange:e=>update('kontakt1Tel',e.target.value),placeholder:'z. B. 0171 1234567'})
-      )
-    ),
-
-    React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:17,fontWeight:700,margin:'24px 0 12px',color:'var(--mr-text)'}}, React.createElement('span', null, 'Notfallkontakt 2'), React.createElement('span', {className:'nk-field-optional'}, ' (optional)')),
-    React.createElement('div', {className:'nk-field-row'},
-      React.createElement(FormField, {label:'Name'},
-        React.createElement('input', {type:'text',value:data.kontakt2Name||'',onChange:e=>update('kontakt2Name',e.target.value),placeholder:'Name des Kontakts'})
-      ),
-      React.createElement(FormField, {label:'Telefon'},
-        React.createElement('input', {type:'tel',value:data.kontakt2Tel||'',onChange:e=>update('kontakt2Tel',e.target.value),placeholder:'z. B. 0171 9876543'})
-      )
-    ),
-
-    React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:17,fontWeight:700,margin:'24px 0 12px',color:'var(--mr-text)'}}, React.createElement('span', null, 'Hausarzt'), React.createElement('span', {className:'nk-field-optional'}, ' (optional)')),
-    React.createElement('div', {className:'nk-field-row'},
-      React.createElement(FormField, {label:'Name'},
-        React.createElement('input', {type:'text',value:data.hausarztName||'',onChange:e=>update('hausarztName',e.target.value),placeholder:'Name der Praxis / des Arztes'})
-      ),
-      React.createElement(FormField, {label:'Telefon'},
-        React.createElement('input', {type:'tel',value:data.hausarztTel||'',onChange:e=>update('hausarztTel',e.target.value),placeholder:'z. B. 089 1234567'})
-      )
-    ),
-
-    React.createElement('div', {style:{borderTop:'1px solid var(--mr-border)',marginTop:28,paddingTop:24}}),
-
-    React.createElement(FormField, {label:'Wo sind meine Dokumente?', optional:true, hint:'z. B. "Ordner im Schlafzimmerschrank" oder "Bei Notar Dr. Müller"'},
-      React.createElement('input', {type:'text',value:data.dokumenteOrt||'',onChange:e=>update('dokumenteOrt',e.target.value),placeholder:'Aufbewahrungsort deiner wichtigen Dokumente'})
-    ),
-
-    React.createElement(FormField, {label:'Patientenverfügung vorhanden?'},
-      React.createElement('select', {value:data.patientenverfuegung||'',onChange:e=>update('patientenverfuegung',e.target.value)},
-        React.createElement('option', {value:''}, 'Bitte wählen'),
-        React.createElement('option', {value:'Ja'}, 'Ja'),
-        React.createElement('option', {value:'Nein'}, 'Nein')
-      )
-    ),
-
-    React.createElement(FormField, {label:'Vorsorgevollmacht vorhanden?'},
-      React.createElement('select', {value:data.vorsorgevollmacht||'',onChange:e=>update('vorsorgevollmacht',e.target.value)},
-        React.createElement('option', {value:''}, 'Bitte wählen'),
-        React.createElement('option', {value:'Ja'}, 'Ja'),
-        React.createElement('option', {value:'Nein'}, 'Nein')
-      )
-    ),
-
-    React.createElement('div', {style:{display:'flex',gap:12,marginTop:24}},
-      React.createElement('button', {
-        onClick:onBack,
-        style:{padding:'14px 20px',background:'none',border:'1px solid var(--mr-border)',borderRadius:99,cursor:'pointer',fontSize:15,color:'var(--mr-text-muted)',fontWeight:500}
-      }, '\u2190 Zurück'),
-      React.createElement('button', {
-        onClick:() => { if(window.mrTrack) window.mrTrack('toolStep',{tool:'notfallkarte',step:'kontakte'}); onNext(); },
-        disabled:!canContinue,
-        style:{flex:1,padding:'14px 20px',background:canContinue?'var(--mr-primary)':'var(--mr-border)',color:canContinue?'#fff':'var(--mr-text-muted)',border:'none',borderRadius:99,cursor:canContinue?'pointer':'not-allowed',fontWeight:600,fontSize:15,transition:'background 0.2s'}
-      }, 'Notfallkarte erstellen \u2192')
-    )
-  );
-}
-
-function formatDate(dateStr) {
-  if(!dateStr) return '';
-  var parts = dateStr.split('-');
-  if(parts.length === 3) return parts[2] + '.' + parts[1] + '.' + parts[0];
-  return dateStr;
-}
-
-function CardRow({label, value}) {
-  if(!value) return null;
-  return React.createElement('div', {className:'nk-card-row'},
-    React.createElement('span', {className:'nk-card-label'}, label),
-    React.createElement('span', {className:'nk-card-value'}, value)
-  );
-}
-
-function CardFront({data}) {
-  return React.createElement('div', {className:'nk-card-wrapper'},
-    React.createElement('div', {className:'nk-card-inner'},
-      React.createElement('h3', null, 'NOTFALLKARTE'),
-      React.createElement(CardRow, {label:'Name:', value:data.name}),
-      React.createElement(CardRow, {label:'Geb.:', value:formatDate(data.geburtsdatum)}),
-      React.createElement(CardRow, {label:'Blutgruppe:', value:data.blutgruppe}),
-      data.allergien && React.createElement(CardRow, {label:'Allergien:', value:data.allergien}),
-      data.medikamente && React.createElement(CardRow, {label:'Medikam.:', value:data.medikamente}),
-      data.vorerkrankungen && React.createElement(CardRow, {label:'Vorerkr.:', value:data.vorerkrankungen}),
-      React.createElement(CardRow, {label:'Organsp.:', value:data.organspende || '\u2014'}),
-      React.createElement('div', {className:'nk-card-branding'}, 'machsruhig.de')
-    )
-  );
-}
-
-function CardBack({data}) {
-  return React.createElement('div', {className:'nk-card-wrapper'},
-    React.createElement('div', {className:'nk-card-inner'},
-      React.createElement('h3', null, 'NOTFALLKONTAKTE'),
-      React.createElement(CardRow, {label:'Kontakt 1:', value:data.kontakt1Name}),
-      React.createElement(CardRow, {label:'Tel.:', value:data.kontakt1Tel}),
-      data.kontakt2Name && React.createElement(CardRow, {label:'Kontakt 2:', value:data.kontakt2Name}),
-      data.kontakt2Tel && React.createElement(CardRow, {label:'Tel.:', value:data.kontakt2Tel}),
-      data.hausarztName && React.createElement(CardRow, {label:'Hausarzt:', value:data.hausarztName}),
-      data.hausarztTel && React.createElement(CardRow, {label:'Tel.:', value:data.hausarztTel}),
-      React.createElement('div', {style:{borderTop:'0.5pt solid #ccc',margin:'1.5mm 0',paddingTop:'1mm'}}),
-      data.dokumenteOrt && React.createElement(CardRow, {label:'Dokumente:', value:data.dokumenteOrt}),
-      React.createElement(CardRow, {label:'Pat.verf.:', value:data.patientenverfuegung || '\u2014'}),
-      React.createElement(CardRow, {label:'Vollmacht:', value:data.vorsorgevollmacht || '\u2014'}),
-      React.createElement('div', {className:'nk-card-branding'}, 'machsruhig.de')
-    )
-  );
-}
-
-function PrintPreviewCard({label, children}) {
-  return React.createElement('div', {style:{background:'#fff',border:'2px dashed var(--mr-border)',borderRadius:12,padding:0,width:'100%',maxWidth:380,aspectRatio:'85.6/54',position:'relative',overflow:'hidden'}},
-    React.createElement('div', {style:{position:'absolute',top:0,left:0,right:0,background:'var(--mr-accent)',color:'#fff',fontSize:10,fontWeight:600,textAlign:'center',padding:'3px 0',letterSpacing:'0.5px'}}, label),
-    React.createElement('div', {style:{padding:'28px 16px 12px 16px',fontSize:11,lineHeight:1.4,color:'#000',height:'100%',display:'flex',flexDirection:'column'}}, children)
-  );
-}
-
-function PreviewRow({label, value, bold}) {
-  if(!value) return null;
-  return React.createElement('div', {style:{display:'flex',gap:6,marginBottom:2}},
-    React.createElement('span', {style:{fontWeight:600,minWidth:70,color:'#333',flexShrink:0,fontSize:10}}, label),
-    React.createElement('span', {style:{color:'#000',fontSize:10,fontWeight:bold?700:400,wordBreak:'break-word'}}, value)
-  );
-}
-
-function ResultView({data, onRestart}) {
-  const handlePrint = () => {
-    if(window.mrTrack) window.mrTrack('toolExport',{tool:'notfallkarte',type:'print'});
-    window.print();
-  };
-
-  if(window.mrTrack) window.mrTrack('toolStep',{tool:'notfallkarte',step:'ergebnis'});
-
-  return React.createElement('div', null,
-    React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'2px solid var(--mr-accent)',borderRadius:'var(--mr-radius)',padding:'32px 28px',textAlign:'center',margin:'32px 0'}},
-      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(24px,5vw,32px)',fontWeight:800,color:'var(--mr-text)',margin:'0 0 8px'}}, 'Deine Notfallkarte ist fertig!'),
-      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',margin:0}}, 'Drucke die Karte aus, schneide sie zurecht und stecke sie in dein Portemonnaie.')
-    ),
-
-    /* Screen preview */
-    React.createElement('div', {className:'no-print',style:{margin:'32px 0'}},
-      React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:18,fontWeight:700,marginBottom:16}}, 'Vorschau'),
-      React.createElement('div', {style:{display:'flex',flexWrap:'wrap',gap:20,justifyContent:'center'}},
-
-        /* Front preview */
-        React.createElement(PrintPreviewCard, {label:'VORDERSEITE'},
-          React.createElement('div', {style:{fontFamily:"'Fraunces',serif",fontSize:13,fontWeight:700,borderBottom:'1px solid #ddd',paddingBottom:4,marginBottom:6}}, 'NOTFALLKARTE'),
-          React.createElement(PreviewRow, {label:'Name:', value:data.name, bold:true}),
-          React.createElement(PreviewRow, {label:'Geb.:', value:formatDate(data.geburtsdatum)}),
-          React.createElement(PreviewRow, {label:'Blutgruppe:', value:data.blutgruppe}),
-          data.allergien && React.createElement(PreviewRow, {label:'Allergien:', value:data.allergien}),
-          data.medikamente && React.createElement(PreviewRow, {label:'Medikam.:', value:data.medikamente}),
-          data.vorerkrankungen && React.createElement(PreviewRow, {label:'Vorerkr.:', value:data.vorerkrankungen}),
-          React.createElement(PreviewRow, {label:'Organsp.:', value:data.organspende || '\u2014'}),
-          React.createElement('div', {style:{marginTop:'auto',textAlign:'right',fontSize:8,color:'#999'}}, 'machsruhig.de')
-        ),
-
-        /* Back preview */
-        React.createElement(PrintPreviewCard, {label:'RÜCKSEITE'},
-          React.createElement('div', {style:{fontFamily:"'Fraunces',serif",fontSize:13,fontWeight:700,borderBottom:'1px solid #ddd',paddingBottom:4,marginBottom:6}}, 'NOTFALLKONTAKTE'),
-          React.createElement(PreviewRow, {label:'Kontakt 1:', value:data.kontakt1Name}),
-          React.createElement(PreviewRow, {label:'Tel.:', value:data.kontakt1Tel}),
-          data.kontakt2Name && React.createElement(PreviewRow, {label:'Kontakt 2:', value:data.kontakt2Name}),
-          data.kontakt2Tel && React.createElement(PreviewRow, {label:'Tel.:', value:data.kontakt2Tel}),
-          data.hausarztName && React.createElement(PreviewRow, {label:'Hausarzt:', value:data.hausarztName}),
-          data.hausarztTel && React.createElement(PreviewRow, {label:'Tel.:', value:data.hausarztTel}),
-          React.createElement('div', {style:{borderTop:'1px solid #ddd',margin:'4px 0',paddingTop:4}}),
-          data.dokumenteOrt && React.createElement(PreviewRow, {label:'Dokumente:', value:data.dokumenteOrt}),
-          React.createElement(PreviewRow, {label:'Pat.verf.:', value:data.patientenverfuegung || '\u2014'}),
-          React.createElement(PreviewRow, {label:'Vollmacht:', value:data.vorsorgevollmacht || '\u2014'}),
-          React.createElement('div', {style:{marginTop:'auto',textAlign:'right',fontSize:8,color:'#999'}}, 'machsruhig.de')
-        )
-      )
-    ),
-
-    /* Action buttons */
-    React.createElement('div', {className:'no-print',style:{display:'flex',flexWrap:'wrap',gap:10,margin:'28px 0 16px',justifyContent:'center'}},
-      React.createElement('button', {onClick:handlePrint, style:{padding:'14px 28px',background:'var(--mr-primary)',color:'#fff',border:'none',borderRadius:99,cursor:'pointer',fontWeight:600,fontSize:15,transition:'background 0.2s'},onMouseOver:function(e){e.currentTarget.style.background='var(--mr-primary-hover)'},onMouseOut:function(e){e.currentTarget.style.background='var(--mr-primary)'}}, 'Notfallkarte drucken'),
-      React.createElement('button', {onClick:onRestart, style:{padding:'14px 28px',background:'var(--mr-bg-card)',color:'var(--mr-text)',border:'1px solid var(--mr-border)',borderRadius:99,cursor:'pointer',fontWeight:600,fontSize:14}}, '\u21BA Neu erstellen')
-    ),
-
-    /* Tips */
-    React.createElement('div', {className:'no-print',style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'24px 0',fontSize:14,lineHeight:1.6}},
-      React.createElement('strong', {style:{color:'var(--mr-text)'}}, 'Tipps zum Ausdrucken'),
-      React.createElement('ul', {style:{margin:'8px 0 0',paddingLeft:20,color:'var(--mr-text-muted)'}},
-        React.createElement('li', null, 'Laminiere die Karte für mehr Haltbarkeit.'),
-        React.createElement('li', null, 'Schneide entlang der gestrichelten Linie.'),
-        React.createElement('li', null, 'Falte Vorder- und Rückseite zusammen oder klebe sie Rücken an Rücken.'),
-        React.createElement('li', null, 'Aktualisiere die Karte bei Änderungen (neue Medikamente, Kontaktwechsel).')
-      )
-    ),
-
-    /* Privacy */
-    React.createElement('div', {className:'no-print',style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'24px 0',fontSize:14,lineHeight:1.6}},
-      React.createElement('strong', {style:{color:'var(--mr-text)'}}, 'Deine Daten bleiben in deinem Browser'),
-      React.createElement('p', {style:{margin:'8px 0 0',color:'var(--mr-text-muted)'}},
-        'Alle eingegebenen Daten werden ausschließlich in deinem Browser verarbeitet. Nichts wird gespeichert oder an einen Server gesendet. Sobald du die Seite schließt, sind die Daten weg.'
-      )
-    ),
-
-    /* Cross-links */
-    React.createElement('div', {className:'no-print',style:{background:'var(--mr-bg-card)',border:'2px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'32px 28px',margin:'40px 0',textAlign:'center'}},
-      React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,marginBottom:8}}, 'Vorsorge geht weiter'),
-      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',marginBottom:20}}, 'Die Notfallkarte ist ein guter Anfang. Hier findest du weitere wichtige Themen:'),
-      React.createElement('div', {style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(160px,1fr))',gap:12}},
-        [{label:'Vorsorge-Check',url:'/tools/vorsorge-check'},{label:'Patientenverfügung',url:'/vorsorge/patientenverfuegung'},{label:'Vorsorgevollmacht',url:'/vorsorge/vorsorgevollmacht'},{label:'Testament',url:'/vorsorge/testament'}].map(function(link, i) {
-          return React.createElement('a', {key:i, href:link.url, style:{display:'block',padding:'12px 16px',background:'var(--mr-bg)',color:'var(--mr-text)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',textDecoration:'none',fontWeight:600,fontSize:14,transition:'transform 0.2s'},onMouseOver:function(e){e.currentTarget.style.transform='translateY(-2px)'},onMouseOut:function(e){e.currentTarget.style.transform='none'}}, link.label);
-        })
-      )
-    ),
-
-    /* Print-only card layout: 2 cards (front + back) per page, repeated twice */
-    React.createElement('div', {className:'nk-print-page',style:{display:'none'}},
-      React.createElement('div', {className:'nk-cut-line'}, '- - - - - - - Hier ausschneiden - - - - - - -'),
-      React.createElement(CardFront, {data:data}),
-      React.createElement('div', {className:'nk-cut-line'}, '- - - - - - - \u2702 Hier ausschneiden - - - - - - -'),
-      React.createElement(CardBack, {data:data}),
-      React.createElement('div', {className:'nk-cut-line',style:{marginTop:'8mm'}}, '- - - - - - - Reservekarte - - - - - - -'),
-      React.createElement(CardFront, {data:data}),
-      React.createElement('div', {className:'nk-cut-line'}, '- - - - - - - \u2702 Hier ausschneiden - - - - - - -'),
-      React.createElement(CardBack, {data:data})
-    )
-  );
-}
-
-function FAQSection() {
-  return React.createElement('div', {className:'no-print',style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'32px 28px',margin:'40px 0'}},
-    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,marginBottom:24}}, 'Häufig gefragt'),
-    FAQ.map(function(item, i) {
-      return React.createElement('div', {key:i, style:{marginBottom:i<FAQ.length-1?24:0,paddingBottom:i<FAQ.length-1?24:'',borderBottom:i<FAQ.length-1?'1px solid var(--mr-border)':'none'}},
-        React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:16,fontWeight:700,marginBottom:8}}, item.frage),
-        React.createElement('p', {style:{fontSize:14,color:'var(--mr-text-muted)',lineHeight:1.7,margin:0}}, item.antwort)
-      );
-    })
-  );
-}
-
-function App() {
-  var stepState = useState(0);
-  var step = stepState[0];
-  var setStep = stepState[1];
-
-  var dataState = useState({
-    name:'', geburtsdatum:'', blutgruppe:'', allergien:'', medikamente:'', vorerkrankungen:'', organspende:'',
-    kontakt1Name:'', kontakt1Tel:'', kontakt2Name:'', kontakt2Tel:'',
-    hausarztName:'', hausarztTel:'',
-    dokumenteOrt:'', patientenverfuegung:'', vorsorgevollmacht:''
-  });
-  var data = dataState[0];
-  var setData = dataState[1];
-
-  var handleRestart = function() {
-    setData({
-      name:'', geburtsdatum:'', blutgruppe:'', allergien:'', medikamente:'', vorerkrankungen:'', organspende:'',
-      kontakt1Name:'', kontakt1Tel:'', kontakt2Name:'', kontakt2Tel:'',
-      hausarztName:'', hausarztTel:'',
-      dokumenteOrt:'', patientenverfuegung:'', vorsorgevollmacht:''
-    });
-    setStep(0);
-    window.scrollTo(0,0);
-  };
-
-  /* Intro + Step 1 */
-  if(step === 0) {
-    return React.createElement('div', null,
-      React.createElement('div', {style:{textAlign:'center',margin:'40px 0 32px'}},
-        React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,5vw,40px)',fontWeight:800,color:'var(--mr-text)',margin:'0 0 12px',lineHeight:1.2}}, 'Notfallkarte erstellen'),
-        React.createElement('p', {style:{fontSize:'clamp(15px,2.5vw,18px)',color:'var(--mr-text-muted)',maxWidth:540,margin:'0 auto'}}, 'Erstelle in 2 Minuten eine Notfallkarte im Kreditkartenformat — zum Ausdrucken und Mitnehmen.')
-      ),
-      React.createElement(PrivacyNotice),
-      React.createElement(Step1, {data:data, onChange:setData, onNext:function(){setStep(1); window.scrollTo(0,0);}})
-    );
-  }
-
-  /* Step 2 */
-  if(step === 1) {
-    return React.createElement('div', null,
-      React.createElement('div', {style:{textAlign:'center',margin:'40px 0 16px'}},
-        React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,5vw,40px)',fontWeight:800,color:'var(--mr-text)',margin:'0 0 12px',lineHeight:1.2}}, 'Notfallkarte erstellen')
-      ),
-      React.createElement(Step2, {data:data, onChange:setData, onNext:function(){if(window.mrTrack) window.mrTrack('toolComplete',{tool:'notfallkarte'}); setStep(2); window.scrollTo(0,0);}, onBack:function(){setStep(0); window.scrollTo(0,0);}})
-    );
-  }
-
-  /* Result */
-  return React.createElement('div', null,
-    React.createElement('div', {className:'no-print',style:{textAlign:'center',margin:'40px 0 0'}},
-      React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,5vw,40px)',fontWeight:800,color:'var(--mr-text)',margin:'0 0 12px',lineHeight:1.2}}, 'Notfallkarte erstellen')
-    ),
-    React.createElement(ResultView, {data:data, onRestart:handleRestart}),
-    React.createElement(FAQSection)
-  );
-}
-
-ReactDOM.render(React.createElement(App), document.getElementById('app'));
-</script>
-
-
-<!-- PDF-Export via html2pdf.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
-<style>
-  .pdf-export-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#FFFDF9;color:#7A6B5D;border:2px solid #7A6B5D;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;margin-left:8px;transition:background 0.2s}
-  .pdf-export-btn:hover{background:#7A6B5D;color:#fff}
-  body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf-export-btn,body.exporting-pdf [class*="export-controls"]{display:none!important}
-</style>
 <script>
 (function(){
-  var EXPORT_SELECTOR = '.nk-card-wrapper';
+  'use strict';
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
+
+  function formatDate(s){
+    if (!s) return '';
+    var p = s.split('-');
+    return p.length === 3 ? p[2] + '.' + p[1] + '.' + p[0] : s;
+  }
+
+  function collectData(){
+    var ids = ['name','geburtsdatum','blutgruppe','allergien','medikamente','vorerkrankungen','organspende',
+               'kontakt1Name','kontakt1Tel','kontakt2Name','kontakt2Tel','hausarztName','hausarztTel',
+               'dokumenteOrt','patientenverfuegung','vorsorgevollmacht'];
+    var d = {};
+    ids.forEach(function(id){ var el = $('#f-' + id); d[id] = el ? el.value.trim() : ''; });
+    return d;
+  }
+
+  // Setup validation
+  function check1(){
+    $('#btn-step1-next').disabled = !$('#f-name').value.trim();
+    var b = $('#btn-step1-next');
+    if (!b.disabled) { b.style.background = 'var(--mr-primary)'; b.style.color = '#fff'; b.style.cursor = 'pointer'; }
+    else { b.style.background = 'var(--mr-border)'; b.style.color = 'var(--mr-text-muted)'; b.style.cursor = 'not-allowed'; }
+  }
+  function check2(){
+    var ok = $('#f-kontakt1Name').value.trim() && $('#f-kontakt1Tel').value.trim();
+    $('#btn-step2-next').disabled = !ok;
+    var b = $('#btn-step2-next');
+    if (!b.disabled) { b.style.background = 'var(--mr-primary)'; b.style.color = '#fff'; b.style.cursor = 'pointer'; }
+    else { b.style.background = 'var(--mr-border)'; b.style.color = 'var(--mr-text-muted)'; b.style.cursor = 'not-allowed'; }
+  }
+  $('#f-name').addEventListener('input', check1);
+  $('#f-kontakt1Name').addEventListener('input', check2);
+  $('#f-kontakt1Tel').addEventListener('input', check2);
+
+  function setStep(n){
+    $$('.nk-step').forEach(function(el){
+      el.classList.toggle('active', parseInt(el.dataset.step,10) === n);
+    });
+    window.scrollTo(0, 0);
+  }
+
+  // Step transitions
+  $('#btn-step1-next').addEventListener('click', function(){
+    if ($('#f-name').value.trim()) {
+      track('toolStep', {tool:'notfallkarte', step:'persoenlich'});
+      setStep(1);
+    }
+  });
+  $$('[data-back]').forEach(function(b){
+    b.addEventListener('click', function(){ setStep(0); });
+  });
+  $('#btn-step2-next').addEventListener('click', function(){
+    var d = collectData();
+    if (!d.kontakt1Name || !d.kontakt1Tel) return;
+    track('toolComplete', {tool:'notfallkarte'});
+    track('toolStep', {tool:'notfallkarte', step:'ergebnis'});
+    renderResult(d);
+    setStep(2);
+  });
+
+  // ===== Result rendering =====
+
+  function previewRow(label, value, bold){
+    if (!value) return '';
+    return '<div class="nk-preview-row' + (bold?' bold':'') + '"><span class="lbl">' + esc(label) + '</span><span class="val">' + esc(value) + '</span></div>';
+  }
+
+  function cardRow(label, value){
+    if (!value) return '';
+    return '<div class="nk-card-row"><span class="nk-card-label">' + esc(label) + '</span><span class="nk-card-value">' + esc(value) + '</span></div>';
+  }
+
+  function buildCardFront(d){
+    var html = '<div class="nk-card-wrapper"><div class="nk-card-inner">';
+    html += '<h3>NOTFALLKARTE</h3>';
+    html += cardRow('Name:', d.name);
+    html += cardRow('Geb.:', formatDate(d.geburtsdatum));
+    html += cardRow('Blutgruppe:', d.blutgruppe);
+    html += cardRow('Allergien:', d.allergien);
+    html += cardRow('Medikam.:', d.medikamente);
+    html += cardRow('Vorerkr.:', d.vorerkrankungen);
+    html += cardRow('Organsp.:', d.organspende || '—');
+    html += '<div class="nk-card-branding">machsruhig.de</div>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function buildCardBack(d){
+    var html = '<div class="nk-card-wrapper"><div class="nk-card-inner">';
+    html += '<h3>NOTFALLKONTAKTE</h3>';
+    html += cardRow('Kontakt 1:', d.kontakt1Name);
+    html += cardRow('Tel.:', d.kontakt1Tel);
+    html += cardRow('Kontakt 2:', d.kontakt2Name);
+    html += cardRow('Tel.:', d.kontakt2Tel);
+    html += cardRow('Hausarzt:', d.hausarztName);
+    html += cardRow('Tel.:', d.hausarztTel);
+    html += '<div style="border-top:0.5pt solid #ccc;margin:1.5mm 0;padding-top:1mm"></div>';
+    html += cardRow('Dokumente:', d.dokumenteOrt);
+    html += cardRow('Pat.verf.:', d.patientenverfuegung || '—');
+    html += cardRow('Vollmacht:', d.vorsorgevollmacht || '—');
+    html += '<div class="nk-card-branding">machsruhig.de</div>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function buildPreviewFront(d){
+    var html = '<div class="nk-preview-card"><div class="label">VORDERSEITE</div><div class="body">';
+    html += '<h4>NOTFALLKARTE</h4>';
+    html += previewRow('Name:', d.name, true);
+    html += previewRow('Geb.:', formatDate(d.geburtsdatum));
+    html += previewRow('Blutgruppe:', d.blutgruppe);
+    html += previewRow('Allergien:', d.allergien);
+    html += previewRow('Medikam.:', d.medikamente);
+    html += previewRow('Vorerkr.:', d.vorerkrankungen);
+    html += previewRow('Organsp.:', d.organspende || '—');
+    html += '<div class="brand">machsruhig.de</div>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function buildPreviewBack(d){
+    var html = '<div class="nk-preview-card"><div class="label">RÜCKSEITE</div><div class="body">';
+    html += '<h4>NOTFALLKONTAKTE</h4>';
+    html += previewRow('Kontakt 1:', d.kontakt1Name);
+    html += previewRow('Tel.:', d.kontakt1Tel);
+    html += previewRow('Kontakt 2:', d.kontakt2Name);
+    html += previewRow('Tel.:', d.kontakt2Tel);
+    html += previewRow('Hausarzt:', d.hausarztName);
+    html += previewRow('Tel.:', d.hausarztTel);
+    html += '<div style="border-top:1px solid #ddd;margin:4px 0;padding-top:4px"></div>';
+    html += previewRow('Dokumente:', d.dokumenteOrt);
+    html += previewRow('Pat.verf.:', d.patientenverfuegung || '—');
+    html += previewRow('Vollmacht:', d.vorsorgevollmacht || '—');
+    html += '<div class="brand">machsruhig.de</div>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function renderResult(d){
+    // Screen preview + actions + tips + cross-links + FAQ
+    var h = '';
+    h += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:32px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(24px,5vw,32px);font-weight:800;color:var(--mr-text);margin:0 0 8px">Deine Notfallkarte ist fertig!</h2>';
+    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin:0">Drucke die Karte aus, schneide sie zurecht und stecke sie in dein Portemonnaie.</p>';
+    h += '</div>';
+
+    h += '<div class="no-print" style="margin:32px 0">';
+    h += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin-bottom:16px">Vorschau</h3>';
+    h += '<div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">';
+    h += buildPreviewFront(d);
+    h += buildPreviewBack(d);
+    h += '</div></div>';
+
+    h += '<div class="no-print" style="display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 16px;justify-content:center">';
+    h += '<button type="button" id="btn-print" style="padding:14px 28px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit">Notfallkarte drucken</button>';
+    h += '<button type="button" id="btn-restart" style="padding:14px 28px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-weight:600;font-size:14px;font-family:inherit">↺ Neu erstellen</button>';
+    h += '</div>';
+
+    h += '<div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">';
+    h += '<strong style="color:var(--mr-text)">Tipps zum Ausdrucken</strong>';
+    h += '<ul style="margin:8px 0 0;padding-left:20px;color:var(--mr-text-muted)">';
+    h += '<li>Laminiere die Karte für mehr Haltbarkeit.</li>';
+    h += '<li>Schneide entlang der gestrichelten Linie.</li>';
+    h += '<li>Falte Vorder- und Rückseite zusammen oder klebe sie Rücken an Rücken.</li>';
+    h += '<li>Aktualisiere die Karte bei Änderungen (neue Medikamente, Kontaktwechsel).</li>';
+    h += '</ul></div>';
+
+    h += '<div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">';
+    h += '<strong style="color:var(--mr-text)">Deine Daten bleiben in deinem Browser</strong>';
+    h += '<p style="margin:8px 0 0;color:var(--mr-text-muted)">Alle eingegebenen Daten werden ausschließlich in deinem Browser verarbeitet. Nichts wird gespeichert oder an einen Server gesendet. Sobald du die Seite schließt, sind die Daten weg.</p>';
+    h += '</div>';
+
+    h += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
+    h += '<h3 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Vorsorge geht weiter</h3>';
+    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Die Notfallkarte ist ein guter Anfang. Hier findest du weitere wichtige Themen:</p>';
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px">';
+    h += '<a href="/tools/vorsorge-check" style="display:block;padding:12px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Vorsorge-Check</a>';
+    h += '<a href="/vorsorge/patientenverfuegung" style="display:block;padding:12px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Patientenverfügung</a>';
+    h += '<a href="/vorsorge/vorsorgevollmacht" style="display:block;padding:12px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Vorsorgevollmacht</a>';
+    h += '<a href="/vorsorge/testament" style="display:block;padding:12px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Testament</a>';
+    h += '</div></div>';
+
+    // FAQ
+    var FAQ = [
+      {q:'Warum brauche ich eine Notfallkarte?', a:'Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist.'},
+      {q:'Was gehört auf eine Notfallkarte?', a:'Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht.'},
+      {q:'Werden meine Daten gespeichert?', a:'Nein, alle Eingaben bleiben ausschließlich in deinem Browser. Es werden keine Daten an einen Server gesendet oder gespeichert. Die Karte wird direkt in deinem Browser generiert und gedruckt.'},
+      {q:'Wie groß ist die Karte?', a:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Es werden zwei Karten pro A4-Seite gedruckt, damit du eine zum Laminieren und eine als Reserve hast.'}
+    ];
+    h += '<div class="no-print" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:22px;font-weight:700;margin-bottom:24px">Häufig gefragt</h2>';
+    FAQ.forEach(function(item, i){
+      h += '<div style="' + (i<FAQ.length-1?'margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--mr-border)':'') + '">';
+      h += '<h3 style="font-family:\'Fraunces\',serif;font-size:16px;font-weight:700;margin-bottom:8px">' + esc(item.q) + '</h3>';
+      h += '<p style="font-size:14px;color:var(--mr-text-muted);line-height:1.7;margin:0">' + esc(item.a) + '</p>';
+      h += '</div>';
+    });
+    h += '</div>';
+
+    $('#step-result').innerHTML = h;
+
+    // Build print page
+    var pp = '';
+    pp += '<div class="nk-cut-line">- - - - - - - Hier ausschneiden - - - - - - -</div>';
+    pp += buildCardFront(d);
+    pp += '<div class="nk-cut-line">- - - - - - - ✂ Hier ausschneiden - - - - - - -</div>';
+    pp += buildCardBack(d);
+    pp += '<div class="nk-cut-line" style="margin-top:8mm">- - - - - - - Reservekarte - - - - - - -</div>';
+    pp += buildCardFront(d);
+    pp += '<div class="nk-cut-line">- - - - - - - ✂ Hier ausschneiden - - - - - - -</div>';
+    pp += buildCardBack(d);
+    $('#print-page').innerHTML = pp;
+
+    // Bind action buttons
+    $('#btn-print').addEventListener('click', function(){
+      track('toolExport', {tool:'notfallkarte', type:'print'});
+      window.print();
+    });
+    $('#btn-restart').addEventListener('click', function(){
+      $$('input,select,textarea').forEach(function(el){ if (el.type === 'checkbox') el.checked = false; else el.value = ''; });
+      check1(); check2();
+      setStep(0);
+    });
+  }
+})();
+</script>
+
+<!-- PDF-Export via html2pdf.js (kept) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<script>
+(function(){
+  var EXPORT_SELECTOR = '#print-page';
   var FILENAME = 'notfallkarte';
   var TOOL_LABEL = 'notfallkarte';
   var injected = false;
 
   function exportPDF() {
-    var target = document.querySelector(EXPORT_SELECTOR) || document.getElementById('app');
-    if (!target || target.children.length === 0) {
+    var target = document.querySelector(EXPORT_SELECTOR);
+    if (!target || !target.innerHTML.trim()) {
       alert('Bitte erst Tool ausfüllen, dann PDF exportieren.');
       return;
     }
@@ -517,10 +499,15 @@ ReactDOM.render(React.createElement(App), document.getElementById('app'));
       document.body.classList.remove('exporting-pdf');
       return;
     }
+    // temporarily make print-page visible for capture
+    var prev = target.style.display;
+    target.style.display = 'block';
     html2pdf().set(opt).from(target).save().then(function() {
+      target.style.display = prev;
       document.body.classList.remove('exporting-pdf');
     }).catch(function(err) {
       console.error('PDF-Export-Fehler:', err);
+      target.style.display = prev;
       document.body.classList.remove('exporting-pdf');
       alert('PDF-Export fehlgeschlagen. Bitte versuche es mit der Drucken-Funktion (Drucker: Als PDF speichern).');
     });
@@ -545,11 +532,11 @@ ReactDOM.render(React.createElement(App), document.getElementById('app'));
     injected = true;
   }
 
-  // Try immediately + observe DOM for late React-renders
   window.addEventListener('load', injectButton);
   var observer = new MutationObserver(function() { injectButton(); });
   observer.observe(document.body, { childList: true, subtree: true });
 })();
 </script>
+
 </body>
 </html>
