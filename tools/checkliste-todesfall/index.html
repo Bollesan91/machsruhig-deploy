@@ -242,7 +242,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     ]},
     {id:"ersterMonat",label:"Monat 1",zeitraum:"Erbe, Wohnung, Steuern",color:"#5a8a5a",aufgaben:[
       {id:"testament",titel:"Testament eröffnen / Erbschein beantragen",desc:"Testament beim Nachlassgericht abgeben. Ohne Testament gilt gesetzliche Erbfolge. Erbschein kostet 75–1.000 €+ und dauert 4–8 Wochen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Testament (Original)","Sterbeurkunde"]},
-      {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Gesetzliche Kündigungsfrist: 3 Monate (§580 BGB Sonderkündigungsrecht). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
+      {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod (§ 580 BGB), dann 3-monatige Kündigungsfrist (§ 580a Abs. 4 BGB). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
       {id:"vermieter",titel:"Vermieter informieren",desc:"Bei gemeinsamer Wohnung geht der Mietvertrag auf den überlebenden Mieter über.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
       {id:"finanzamt",titel:"Finanzamt informieren",desc:"Letzte Einkommensteuererklärung für das Todesjahr. Erbschaftsteuererklärung innerhalb von 3 Monaten nach Kenntnis.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Steuer-ID"]},
       {id:"digital",titel:"Digitalen Nachlass regeln",desc:"E-Mail, Social Media, Online-Banking, Cloud, Abos. Viele Plattformen bieten Verfahren für den Todesfall.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Zugangsdaten"]},
@@ -441,7 +441,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     h += '<ul style="list-style:none">';
     ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: April 2026)',
      'Personenstandsgesetz (PStG) §28 — Anzeigepflicht beim Standesamt',
-     'Bürgerliches Gesetzbuch (BGB) §580 — Sonderkündigungsrecht bei Tod',
+     'Bürgerliches Gesetzbuch (BGB) § 580 + § 580a Abs. 4 — Sonderkündigungsrecht bei Tod (3-Monats-Frist)',
      'Sozialgesetzbuch XII §74 — Bestattungskosten bei Bedürftigkeit'].forEach(function(q){
       h += '<li style="font-size:13px;color:var(--mr-text-muted);padding:4px 0 4px 16px;position:relative"><span style="position:absolute;left:0;color:var(--mr-warm)">→</span>' + esc(q) + '</li>';
     });
