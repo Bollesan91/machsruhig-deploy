@@ -71,12 +71,13 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
 .mr-footer-bottom p{font-size:12px;color:#73655A}
 .mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+.cl-view{display:none}.cl-view.active{display:block}
+.szen-btn{padding:14px 16px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);background:var(--mr-bg-card);cursor:pointer;text-align:left;transition:border-color 0.2s;font-family:inherit;font-size:14px;width:100%}
+.szen-btn.selected{border:2px solid var(--mr-accent);background:var(--mr-safety)}
+.szen-btn strong{display:block;font-size:14px;margin-bottom:2px;color:var(--mr-text)}
+.szen-btn .desc{font-size:12px;color:var(--mr-text-muted)}
 @media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt}.mr-content{max-width:100%;padding:0}.task-item.checked .task-title{text-decoration:line-through;color:#999}}
 </style>
-
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
@@ -84,9 +85,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 <nav class="mr-nav no-print">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
-    <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-    </button>
+    <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     <div class="mr-nav-links">
       <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
       <a href="/beerdigung-planen">Beerdigung planen</a>
@@ -103,7 +102,66 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 </nav>
 
 <div class="mr-content">
-  <main id="main"><div id="app"></div></main>
+<main id="main">
+
+  <!-- Setup view (initial active, SEO-indexable) -->
+  <div class="cl-view active" id="view-setup">
+    <header style="padding:48px 0 32px">
+      <div style="font-size:13px;color:var(--mr-text-muted);margin-bottom:16px">
+        <a href="/" style="color:var(--mr-warm);text-decoration:none">Start</a> ›
+        <a href="/checkliste-todesfall" style="color:var(--mr-warm);text-decoration:none">Checkliste Todesfall</a> › Interaktive Checkliste
+      </div>
+      <h1 style="font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;margin-bottom:12px">Checkliste nach Todesfall</h1>
+      <p style="font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px">Ein Mensch ist gestorben, und du weißt nicht, wo du anfangen sollst. Diese Checkliste führt dich Schritt für Schritt — personalisiert nach deinem Bundesland.</p>
+    </header>
+
+    <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    </div>
+
+    <div style="margin-bottom:24px">
+      <label for="cl-bl" style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;display:block;margin-bottom:8px">In welchem Bundesland ist der Mensch verstorben?</label>
+      <select id="cl-bl" style="width:100%;padding:12px 16px;font-size:15px;border:1px solid var(--mr-border);border-radius:8px;background:var(--mr-bg-card);color:var(--mr-text);font-family:inherit">
+        <option value="">Bundesland wählen...</option>
+        <option value="bw">Baden-Württemberg</option>
+        <option value="by">Bayern</option>
+        <option value="be">Berlin</option>
+        <option value="bb">Brandenburg</option>
+        <option value="hb">Bremen</option>
+        <option value="hh">Hamburg</option>
+        <option value="he">Hessen</option>
+        <option value="mv">Mecklenburg-Vorpommern</option>
+        <option value="ni">Niedersachsen</option>
+        <option value="nw">Nordrhein-Westfalen</option>
+        <option value="rp">Rheinland-Pfalz</option>
+        <option value="sl">Saarland</option>
+        <option value="sn">Sachsen</option>
+        <option value="st">Sachsen-Anhalt</option>
+        <option value="sh">Schleswig-Holstein</option>
+        <option value="th">Thüringen</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:24px">
+      <label style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;display:block;margin-bottom:8px">Wo ist der Mensch verstorben?</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" id="cl-szenario-grid">
+        <button type="button" class="szen-btn" data-value="zuhause"><strong>Zu Hause</strong><span class="desc">Du bist vor Ort oder wurdest informiert</span></button>
+        <button type="button" class="szen-btn" data-value="krankenhaus"><strong>Im Krankenhaus / Hospiz</strong><span class="desc">Das Krankenhaus hat dich informiert</span></button>
+        <button type="button" class="szen-btn" data-value="pflegeheim"><strong>Im Pflegeheim</strong><span class="desc">Das Pflegeheim hat dich informiert</span></button>
+        <button type="button" class="szen-btn" data-value="unbekannt"><strong>Woanders / Unklar</strong><span class="desc">Unfall, unterwegs oder unklar</span></button>
+      </div>
+    </div>
+
+    <div id="cl-summary" style="display:none">
+      <div id="cl-summary-box" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:24px;font-size:14px"></div>
+      <button type="button" id="cl-start-btn" style="width:100%;padding:16px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s">Checkliste starten</button>
+    </div>
+  </div>
+
+  <!-- Main checklist view -->
+  <div class="cl-view" id="view-checklist"></div>
+
+</main>
 </div>
 
 <footer class="mr-footer no-print">
@@ -136,343 +194,298 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   </div>
 </footer>
 
-<script type="text/babel">
-const { useState, useRef, useEffect } = React;
+<script>
+(function(){
+  'use strict';
 
-/* ========== DATA ========== */
-const BUNDESLAENDER = [
-  {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:6},
-  {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:null,besonderheit:"Keine gesetzliche Höchstfrist für die Einäscherung."},
-  {id:"be",name:"Berlin",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Verlängerung auf Antrag möglich."},
-  {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
-  {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7,besonderheit:"Asche darf unter Bedingungen an Angehörige herausgegeben werden."},
-  {id:"hh",name:"Hamburg",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7},
-  {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
-  {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
-  {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
-  {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Fristverlängerung beim Ordnungsamt möglich."},
-  {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10},
-  {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
-  {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
-  {id:"st",name:"Sachsen-Anhalt",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
-  {id:"sh",name:"Schleswig-Holstein",ueberfuehrung:36,mindest:48,maxErd:6,maxEinaescherung:8},
-  {id:"th",name:"Thüringen",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10}
-];
+  var BUNDESLAENDER = [
+    {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:6},
+    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:null,besonderheit:"Keine gesetzliche Höchstfrist für die Einäscherung."},
+    {id:"be",name:"Berlin",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Verlängerung auf Antrag möglich."},
+    {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7,besonderheit:"Asche darf unter Bedingungen an Angehörige herausgegeben werden."},
+    {id:"hh",name:"Hamburg",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7},
+    {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
+    {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Fristverlängerung beim Ordnungsamt möglich."},
+    {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10},
+    {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
+    {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"st",name:"Sachsen-Anhalt",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"sh",name:"Schleswig-Holstein",ueberfuehrung:36,mindest:48,maxErd:6,maxEinaescherung:8},
+    {id:"th",name:"Thüringen",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10}
+  ];
 
-const SZENARIEN = [
-  {value:"zuhause",label:"Zu Hause",desc:"Du bist vor Ort oder wurdest informiert"},
-  {value:"krankenhaus",label:"Im Krankenhaus / Hospiz",desc:"Das Krankenhaus hat dich informiert"},
-  {value:"pflegeheim",label:"Im Pflegeheim",desc:"Das Pflegeheim hat dich informiert"},
-  {value:"unbekannt",label:"Woanders / Unklar",desc:"Unfall, unterwegs oder unklar"}
-];
+  var SZENARIEN_LABELS = {zuhause:"Zu Hause", krankenhaus:"Im Krankenhaus / Hospiz", pflegeheim:"Im Pflegeheim", unbekannt:"Woanders / Unklar"};
 
-const SONDERFAELLE = [
-  {id:"polizei",titel:"Unnatürlicher Tod / Verdacht auf Fremdeinwirkung",text:"Sofort Polizei rufen (110). Nichts verändern, nichts aufräumen. Die Bestattung kann sich verzögern, bis die Untersuchung abgeschlossen ist.",icon:"!"},
-  {id:"ausland",titel:"Todesfall im Ausland",text:"Deutsche Botschaft/Konsulat kontaktieren. Sie hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe, ob eine Reiseversicherung mit Rückholklausel besteht.",icon:"?"},
-  {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt Kostenübernahme beantragen (§74 SGB XII). Der Antrag sollte vor der Bestattung gestellt werden. Einfache Bestattungen werden in der Regel übernommen.",icon:"€"}
-];
+  var SONDERFAELLE = [
+    {id:"polizei",titel:"Unnatürlicher Tod / Verdacht auf Fremdeinwirkung",text:"Sofort Polizei rufen (110). Nichts verändern, nichts aufräumen. Die Bestattung kann sich verzögern, bis die Untersuchung abgeschlossen ist."},
+    {id:"ausland",titel:"Todesfall im Ausland",text:"Deutsche Botschaft/Konsulat kontaktieren. Sie hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe, ob eine Reiseversicherung mit Rückholklausel besteht."},
+    {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt Kostenübernahme beantragen (§74 SGB XII). Der Antrag sollte vor der Bestattung gestellt werden. Einfache Bestattungen werden in der Regel übernommen."}
+  ];
 
-const PHASEN = [
-  {id:"sofort",label:"Sofort",zeitraum:"Erste Stunden",color:"#c45e3a",aufgaben:[
-    {id:"arzt",titel:"Arzt rufen — Totenschein ausstellen lassen",desc:"Ein Arzt muss den Tod feststellen. Zu Hause: Hausarzt oder 116 117 (Bereitschaftsdienst). Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Personalausweis des Verstorbenen"],eskalation:"Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern."},
-    {id:"angehoerige",titel:"Engste Angehörige informieren",desc:"Informiere die engste Familie. Das muss nicht alles auf einmal passieren. Du musst das nicht allein machen — bitte jemanden, dir zu helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]},
-    {id:"bestatter",titel:"Bestatter beauftragen (Überführung)",desc:"Ein Bestatter übernimmt die Überführung und kümmert sich um erste Formalitäten.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Totenschein"],bundeslandFeld:"ueberfuehrung",bundeslandText:"In {bl} muss die Überführung innerhalb von {frist} Stunden erfolgen.",isBestatterCTA:true},
-    {id:"dokumente",titel:"Wichtige Dokumente zusammensuchen",desc:"Personalausweis, Geburtsurkunde, Heiratsurkunde, Bestattungsverfügung, Versicherungsunterlagen, Testament — nicht alles muss sofort da sein.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Personalausweis/Reisepass","Geburtsurkunde","Heiratsurkunde","Versicherungsunterlagen"]},
-    {id:"wohnung",titel:"Wohnung sichern (Heizung, Tiere, Post)",desc:"Wenn der Verstorbene allein gelebt hat: Heizung, Haustiere, Postkasten. Schlüssel sichern.",szenarien:["zuhause","krankenhaus","pflegeheim"],pflicht:false,docs:[]}
-  ]},
-  {id:"ersteTage",label:"Tag 1–3",zeitraum:"Behörden & Bestattung",color:"#b8956a",aufgaben:[
-    {id:"standesamt",titel:"Sterbefall beim Standesamt anzeigen",desc:"Der Bestatter übernimmt das in der Regel. Du erhältst die Sterbeurkunde. Bestelle mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €).",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Totenschein","Personalausweis","Geburtsurkunde","Heiratsurkunde"]},
-    {id:"bestattungArt",titel:"Art der Bestattung besprechen",desc:"Besprich mit dem Bestatter und der Familie die gewünschte Bestattungsart. Prüfe, ob eine Bestattungsverfügung existiert.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Bestattungsverfügung"],bundeslandFeld:"maxErd",bundeslandText:"In {bl} muss die Erdbestattung innerhalb von {frist} Tagen erfolgen."},
-    {id:"trauerfeier",titel:"Trauerfeier planen",desc:"Termin, Ort, Redner, Musik. Wer soll die Trauerrede halten?",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[],toolLink:{href:"/tools/trauerrede/",text:"Trauerrede-Generator nutzen"}},
-    {id:"eigenArbeitgeber",titel:"Eigenen Arbeitgeber informieren (Sonderurlaub)",desc:"Bei Tod naher Angehöriger hast du Anspruch auf 1–2 Tage Sonderurlaub (je nach Vertrag/Tarif, manchmal bis zu 5 Tage).",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde (Kopie)"]},
-    {id:"traueranzeige",titel:"Traueranzeige aufgeben (optional)",desc:"Zeitung oder Online-Gedenkseite. Kosten: 50–500 €. Der Bestatter kann helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]}
-  ]},
-  {id:"ersteWoche",label:"Woche 1",zeitraum:"Versicherungen & Bank",color:"#7a6b5d",aufgaben:[
-    {id:"versicherungen",titel:"Versicherungen informieren",desc:"Lebensversicherung, Sterbegeldversicherung, Unfallversicherung. Achtung: Meldefristen oft nur 24–72 Stunden nach Kenntnis!",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Versicherungsunterlagen"]},
-    {id:"bank",titel:"Bank informieren / Konten klären",desc:"Konto wird eingeschränkt. Für Zugriff brauchst du Vollmacht, Erbschein oder Testament. Daueraufträge laufen zunächst weiter.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Erbschein oder Testament"]},
-    {id:"rente",titel:"Rentenversicherung informieren",desc:"Rente wird bis Monatsende weitergezahlt. Witwen-/Witwerrente kann beantragt werden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Rentenversicherungsnummer"]},
-    {id:"krankenkasse",titel:"Krankenkasse informieren",desc:"Mitgliedschaft endet mit dem Tod. Familienversicherte müssen sich ggf. selbst versichern.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Krankenversicherungskarte"]},
-    {id:"arbeitgeberV",titel:"Arbeitgeber des Verstorbenen informieren",desc:"Offene Gehaltsforderungen, Urlaubsansprüche, betriebliche Altersvorsorge klären.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
-    {id:"vertraege",titel:"Laufende Verträge prüfen und kündigen",desc:"Strom, Gas, Telefon, Internet, Abos, Streaming. Die meisten können mit Sterbeurkunde sofort gekündigt werden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"],hinweis:"Mietvertrag nicht sofort kündigen — erst die Wohnung räumen."}
-  ]},
-  {id:"ersterMonat",label:"Monat 1",zeitraum:"Erbe, Wohnung, Steuern",color:"#5a8a5a",aufgaben:[
-    {id:"testament",titel:"Testament eröffnen / Erbschein beantragen",desc:"Testament beim Nachlassgericht abgeben. Ohne Testament gilt gesetzliche Erbfolge. Erbschein kostet 75–1.000 €+ und dauert 4–8 Wochen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Testament (Original)","Sterbeurkunde"]},
-    {id:"wohnung",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Gesetzliche Kündigungsfrist: 3 Monate (§580 BGB Sonderkündigungsrecht). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
-    {id:"vermieter",titel:"Vermieter informieren",desc:"Bei gemeinsamer Wohnung geht der Mietvertrag auf den überlebenden Mieter über.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
-    {id:"finanzamt",titel:"Finanzamt informieren",desc:"Letzte Einkommensteuererklärung für das Todesjahr. Erbschaftsteuererklärung innerhalb von 3 Monaten nach Kenntnis.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Steuer-ID"]},
-    {id:"digital",titel:"Digitalen Nachlass regeln",desc:"E-Mail, Social Media, Online-Banking, Cloud, Abos. Viele Plattformen bieten Verfahren für den Todesfall.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Zugangsdaten"]},
-    {id:"grabpflege",titel:"Grabpflege organisieren",desc:"Wer kümmert sich langfristig? Alternative: Dauergrabpflege-Vertrag (2.000–8.000 €). Entfällt bei Baum-/Seebestattung.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]}
-  ]}
-];
+  var PHASEN = [
+    {id:"sofort",label:"Sofort",zeitraum:"Erste Stunden",color:"#c45e3a",aufgaben:[
+      {id:"arzt",titel:"Arzt rufen — Totenschein ausstellen lassen",desc:"Ein Arzt muss den Tod feststellen. Zu Hause: Hausarzt oder 116 117 (Bereitschaftsdienst). Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Personalausweis des Verstorbenen"],eskalation:"Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern."},
+      {id:"angehoerige",titel:"Engste Angehörige informieren",desc:"Informiere die engste Familie. Das muss nicht alles auf einmal passieren. Du musst das nicht allein machen — bitte jemanden, dir zu helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]},
+      {id:"bestatter",titel:"Bestatter beauftragen (Überführung)",desc:"Ein Bestatter übernimmt die Überführung und kümmert sich um erste Formalitäten.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Totenschein"],bundeslandFeld:"ueberfuehrung",bundeslandText:"In {bl} muss die Überführung innerhalb von {frist} Stunden erfolgen.",isBestatterCTA:true},
+      {id:"dokumente",titel:"Wichtige Dokumente zusammensuchen",desc:"Personalausweis, Geburtsurkunde, Heiratsurkunde, Bestattungsverfügung, Versicherungsunterlagen, Testament — nicht alles muss sofort da sein.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Personalausweis/Reisepass","Geburtsurkunde","Heiratsurkunde","Versicherungsunterlagen"]},
+      {id:"wohnung",titel:"Wohnung sichern (Heizung, Tiere, Post)",desc:"Wenn der Verstorbene allein gelebt hat: Heizung, Haustiere, Postkasten. Schlüssel sichern.",szenarien:["zuhause","krankenhaus","pflegeheim"],pflicht:false,docs:[]}
+    ]},
+    {id:"ersteTage",label:"Tag 1–3",zeitraum:"Behörden & Bestattung",color:"#b8956a",aufgaben:[
+      {id:"standesamt",titel:"Sterbefall beim Standesamt anzeigen",desc:"Der Bestatter übernimmt das in der Regel. Du erhältst die Sterbeurkunde. Bestelle mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €).",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Totenschein","Personalausweis","Geburtsurkunde","Heiratsurkunde"]},
+      {id:"bestattungArt",titel:"Art der Bestattung besprechen",desc:"Besprich mit dem Bestatter und der Familie die gewünschte Bestattungsart. Prüfe, ob eine Bestattungsverfügung existiert.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Bestattungsverfügung"],bundeslandFeld:"maxErd",bundeslandText:"In {bl} muss die Erdbestattung innerhalb von {frist} Tagen erfolgen."},
+      {id:"trauerfeier",titel:"Trauerfeier planen",desc:"Termin, Ort, Redner, Musik. Wer soll die Trauerrede halten?",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[],toolLink:{href:"/tools/trauerrede/",text:"Trauerrede-Generator nutzen"}},
+      {id:"eigenArbeitgeber",titel:"Eigenen Arbeitgeber informieren (Sonderurlaub)",desc:"Bei Tod naher Angehöriger hast du Anspruch auf 1–2 Tage Sonderurlaub (je nach Vertrag/Tarif, manchmal bis zu 5 Tage).",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde (Kopie)"]},
+      {id:"traueranzeige",titel:"Traueranzeige aufgeben (optional)",desc:"Zeitung oder Online-Gedenkseite. Kosten: 50–500 €. Der Bestatter kann helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]}
+    ]},
+    {id:"ersteWoche",label:"Woche 1",zeitraum:"Versicherungen & Bank",color:"#7a6b5d",aufgaben:[
+      {id:"versicherungen",titel:"Versicherungen informieren",desc:"Lebensversicherung, Sterbegeldversicherung, Unfallversicherung. Achtung: Meldefristen oft nur 24–72 Stunden nach Kenntnis!",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Versicherungsunterlagen"]},
+      {id:"bank",titel:"Bank informieren / Konten klären",desc:"Konto wird eingeschränkt. Für Zugriff brauchst du Vollmacht, Erbschein oder Testament. Daueraufträge laufen zunächst weiter.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Erbschein oder Testament"]},
+      {id:"rente",titel:"Rentenversicherung informieren",desc:"Rente wird bis Monatsende weitergezahlt. Witwen-/Witwerrente kann beantragt werden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Rentenversicherungsnummer"]},
+      {id:"krankenkasse",titel:"Krankenkasse informieren",desc:"Mitgliedschaft endet mit dem Tod. Familienversicherte müssen sich ggf. selbst versichern.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Krankenversicherungskarte"]},
+      {id:"arbeitgeberV",titel:"Arbeitgeber des Verstorbenen informieren",desc:"Offene Gehaltsforderungen, Urlaubsansprüche, betriebliche Altersvorsorge klären.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
+      {id:"vertraege",titel:"Laufende Verträge prüfen und kündigen",desc:"Strom, Gas, Telefon, Internet, Abos, Streaming. Die meisten können mit Sterbeurkunde sofort gekündigt werden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"],hinweis:"Mietvertrag nicht sofort kündigen — erst die Wohnung räumen."}
+    ]},
+    {id:"ersterMonat",label:"Monat 1",zeitraum:"Erbe, Wohnung, Steuern",color:"#5a8a5a",aufgaben:[
+      {id:"testament",titel:"Testament eröffnen / Erbschein beantragen",desc:"Testament beim Nachlassgericht abgeben. Ohne Testament gilt gesetzliche Erbfolge. Erbschein kostet 75–1.000 €+ und dauert 4–8 Wochen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Testament (Original)","Sterbeurkunde"]},
+      {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Gesetzliche Kündigungsfrist: 3 Monate (§580 BGB Sonderkündigungsrecht). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
+      {id:"vermieter",titel:"Vermieter informieren",desc:"Bei gemeinsamer Wohnung geht der Mietvertrag auf den überlebenden Mieter über.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
+      {id:"finanzamt",titel:"Finanzamt informieren",desc:"Letzte Einkommensteuererklärung für das Todesjahr. Erbschaftsteuererklärung innerhalb von 3 Monaten nach Kenntnis.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Steuer-ID"]},
+      {id:"digital",titel:"Digitalen Nachlass regeln",desc:"E-Mail, Social Media, Online-Banking, Cloud, Abos. Viele Plattformen bieten Verfahren für den Todesfall.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Zugangsdaten"]},
+      {id:"grabpflege",titel:"Grabpflege organisieren",desc:"Wer kümmert sich langfristig? Alternative: Dauergrabpflege-Vertrag (2.000–8.000 €). Entfällt bei Baum-/Seebestattung.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]}
+    ]}
+  ];
 
-const FAQ = [
-  {q:"Was muss ich als erstes tun, wenn jemand stirbt?",a:"Zuerst muss ein Arzt den Tod feststellen und einen Totenschein ausstellen. Zu Hause rufst du den Hausarzt oder den ärztlichen Bereitschaftsdienst (116 117). Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."},
-  {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden, spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die genauen Fristen für dein Bundesland."},
-  {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
-  {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
-  {q:"Werden meine Eingaben gespeichert?",a:"Nein. Die Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an unsere Server übermittelt."},
-  {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
-];
+  var FAQ = [
+    {q:"Was muss ich als erstes tun, wenn jemand stirbt?",a:"Zuerst muss ein Arzt den Tod feststellen und einen Totenschein ausstellen. Zu Hause rufst du den Hausarzt oder den ärztlichen Bereitschaftsdienst (116 117). Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."},
+    {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden, spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die genauen Fristen für dein Bundesland."},
+    {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
+    {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
+    {q:"Werden meine Eingaben gespeichert?",a:"Nein. Die Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an unsere Server übermittelt."},
+    {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
+  ];
 
-/* ========== COMPONENTS ========== */
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
-function PrivacyNotice() {
-  return React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'0 0 24px',fontSize:14,lineHeight:1.6}},
-    React.createElement('strong', {style:{color:'var(--mr-text)'}}, 'Deine Daten bleiben bei dir.'),
-    ' Diese Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. ',
-    React.createElement('a', {href:'/datenschutz',style:{color:'var(--mr-primary)'}}, 'Datenschutzerklärung')
-  );
-}
+  var state = {bundesland:'', szenario:'', checkedTasks:{}};
 
-function ProgressBar({checked, total}) {
-  const pct = total > 0 ? Math.round((checked / total) * 100) : 0;
-  return React.createElement('div', {style:{margin:'20px 0 24px'}},
-    React.createElement('div', {style:{display:'flex',justifyContent:'space-between',fontSize:13,color:'var(--mr-text-muted)',marginBottom:6}},
-      React.createElement('span', null, checked + ' von ' + total + ' erledigt'),
-      React.createElement('span', {style:{fontWeight:600,color: pct === 100 ? 'var(--mr-success)' : 'var(--mr-text)'}}, pct + ' %')
-    ),
-    React.createElement('div', {style:{height:8,background:'var(--mr-border)',borderRadius:4,overflow:'hidden'}},
-      React.createElement('div', {style:{height:'100%',width:pct+'%',background: pct===100 ? 'var(--mr-success)' : 'var(--mr-accent)',borderRadius:4,transition:'width 0.3s ease'}})
-    )
-  );
-}
-
-function TaskItem({task, checked, onToggle, bundesland, szenario}) {
-  if (!task.szenarien.includes(szenario)) return null;
-  const bl = bundesland ? BUNDESLAENDER.find(b => b.id === bundesland) : null;
-  let blHint = null;
-  if (bl && task.bundeslandFeld && bl[task.bundeslandFeld]) {
-    blHint = task.bundeslandText.replace('{bl}', bl.name).replace('{frist}', bl[task.bundeslandFeld]);
-  }
-
-  return React.createElement('div', {
-    className: 'task-item' + (checked ? ' checked' : ''),
-    style:{background:'var(--mr-bg-card)',border:'1px solid '+(checked?'var(--mr-success)':'var(--mr-border)'),borderRadius:'var(--mr-radius)',padding:'16px 20px',marginBottom:10,transition:'border-color 0.2s,opacity 0.2s',opacity:checked?0.7:1}
-  },
-    React.createElement('div', {style:{display:'flex',gap:12,alignItems:'flex-start'}},
-      React.createElement('input', {type:'checkbox',checked:checked,onChange:onToggle,style:{width:20,height:20,marginTop:2,accentColor:'var(--mr-success)',cursor:'pointer',flexShrink:0}}),
-      React.createElement('div', {style:{flex:1}},
-        React.createElement('div', {style:{display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}},
-          React.createElement('span', {className:'task-title',style:{fontWeight:600,fontSize:15,textDecoration:checked?'line-through':'none',color:checked?'var(--mr-text-muted)':'var(--mr-text)'}}, task.titel),
-          task.pflicht && React.createElement('span', {style:{fontSize:11,background:'var(--mr-urgent)',color:'#fff',padding:'1px 8px',borderRadius:99,fontWeight:600}}, 'Pflicht')
-        ),
-        React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',lineHeight:1.6,marginTop:4}}, task.desc),
-        blHint && React.createElement('div', {style:{fontSize:12,color:'var(--mr-urgent)',marginTop:6,fontWeight:500}}, blHint),
-        task.eskalation && React.createElement('div', {style:{fontSize:12,color:'var(--mr-urgent)',background:'#fff5f2',border:'1px solid #f0d0c4',borderRadius:6,padding:'8px 12px',marginTop:8}}, task.eskalation),
-        task.isBestatterCTA && !checked && React.createElement('a', {href:'/bestatter',style:{display:'inline-block',fontSize:13,color:'var(--mr-primary)',marginTop:8,textDecoration:'underline'},'data-track':'cta'}, 'Bestatter in deiner Nähe finden'),
-        task.toolLink && !checked && React.createElement('a', {href:task.toolLink.href,style:{display:'inline-block',fontSize:13,color:'var(--mr-primary)',marginTop:8,textDecoration:'underline'}}, task.toolLink.text),
-        task.hinweis && React.createElement('div', {style:{fontSize:12,color:'var(--mr-warm)',marginTop:6,fontStyle:'italic'}}, task.hinweis),
-        task.docs && task.docs.length > 0 && !checked && React.createElement('div', {style:{fontSize:12,color:'var(--mr-text-muted)',marginTop:6}}, 'Dokumente: ' + task.docs.join(', '))
-      )
-    ),
-    !checked && React.createElement('button', {
-      onClick: () => {
-        const text = task.titel + (task.desc ? '\n' + task.desc : '');
-        const url = 'https://wa.me/?text=' + encodeURIComponent('Checkliste Todesfall — Aufgabe:\n\n' + text + '\n\nMehr: https://machsruhig.de/tools/checkliste-todesfall');
-        window.open(url, '_blank');
-      },
-      style:{background:'none',border:'none',cursor:'pointer',fontSize:11,color:'var(--mr-text-muted)',marginTop:8,padding:'4px 0'},
-      title:'Per WhatsApp teilen'
-    }, 'Per WhatsApp teilen')
-  );
-}
-
-function PhaseBlock({phase, checkedTasks, onToggle, bundesland, szenario}) {
-  const visible = phase.aufgaben.filter(t => t.szenarien.includes(szenario));
-  if (visible.length === 0) return null;
-  const done = visible.filter(t => checkedTasks[t.id]).length;
-  const allDone = done === visible.length;
-
-  return React.createElement('section', {style:{marginBottom:32}},
-    React.createElement('div', {style:{display:'flex',alignItems:'center',gap:12,marginBottom:16}},
-      React.createElement('div', {style:{width:40,height:40,borderRadius:'50%',background:allDone?'var(--mr-success)':phase.color,color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:700,fontSize:14,flexShrink:0}}, allDone ? '\u2713' : done+'/'+visible.length),
-      React.createElement('div', null,
-        React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,color:'var(--mr-text)',margin:0}}, phase.label),
-        React.createElement('span', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, phase.zeitraum)
-      )
-    ),
-    visible.map(task =>
-      React.createElement(TaskItem, {key:task.id,task:task,checked:!!checkedTasks[task.id],onToggle:()=>onToggle(task.id),bundesland:bundesland,szenario:szenario})
-    )
-  );
-}
-
-function Sonderfaelle() {
-  return React.createElement('div', {style:{margin:'32px 0'}},
-    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,marginBottom:16,paddingBottom:8,borderBottom:'2px solid var(--mr-border)'}}, 'Sonderfälle'),
-    SONDERFAELLE.map(sf =>
-      React.createElement('div', {key:sf.id,style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'16px 20px',marginBottom:10}},
-        React.createElement('strong', {style:{fontSize:15}}, sf.titel),
-        React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',marginTop:4,lineHeight:1.6}}, sf.text)
-      )
-    )
-  );
-}
-
-function FaqSection() {
-  const [open, setOpen] = useState({});
-  return React.createElement('section', {style:{margin:'40px 0'}},
-    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,marginBottom:20,paddingBottom:8,borderBottom:'2px solid var(--mr-border)'}}, 'Häufige Fragen'),
-    FAQ.map((f, i) =>
-      React.createElement('details', {key:i,style:{border:'1px solid var(--mr-border)',borderRadius:8,marginBottom:8,background:'var(--mr-bg-card)'}},
-        React.createElement('summary', {style:{padding:'16px 20px',fontWeight:600,fontSize:15,cursor:'pointer',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}, f.q),
-        React.createElement('div', {style:{padding:'0 20px 16px',fontSize:14,lineHeight:1.7,color:'var(--mr-text-muted)'}},
-          React.createElement('p', null, f.a)
-        )
-      )
-    )
-  );
-}
-
-/* ========== MAIN APP ========== */
-function App() {
-  const [bundesland, setBundesland] = useState('');
-  const [szenario, setSzenario] = useState('');
-  const [checkedTasks, setCheckedTasks] = useState({});
-  const [started, setStarted] = useState(false);
-  const topRef = useRef(null);
-
-  const toggleTask = (id) => {
-    setCheckedTasks(prev => {
-      const next = {...prev, [id]: !prev[id]};
-      if (window.mrTrack && !prev[id]) window.mrTrack.toolStep('checkliste-todesfall', Object.values(next).filter(Boolean).length);
-      return next;
+  // ===== Setup view =====
+  $('#cl-bl').addEventListener('change', function(e){
+    state.bundesland = e.target.value;
+    refreshSummary();
+  });
+  $$('.szen-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      $$('.szen-btn').forEach(function(b){ b.classList.remove('selected'); });
+      btn.classList.add('selected');
+      state.szenario = btn.dataset.value;
+      refreshSummary();
     });
-  };
+  });
+  function refreshSummary(){
+    if (!state.bundesland || !state.szenario) {
+      $('#cl-summary').style.display = 'none';
+      return;
+    }
+    var bl = BUNDESLAENDER.filter(function(b){ return b.id === state.bundesland; })[0];
+    if (!bl) return;
+    var html = '<strong>' + esc(bl.name) + ': </strong>';
+    html += 'Überführung innerhalb von ' + bl.ueberfuehrung + 'h · ';
+    html += 'Erdbestattung innerhalb von ' + bl.maxErd + ' Tagen · ';
+    html += 'Frühestens nach 48h';
+    if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
+    $('#cl-summary-box').innerHTML = html;
+    $('#cl-summary').style.display = 'block';
+  }
+  $('#cl-start-btn').addEventListener('click', function(){
+    if (!state.bundesland || !state.szenario) return;
+    track('toolStep', {tool:'checkliste-todesfall', step:'started'});
+    renderChecklist();
+    $('#view-setup').classList.remove('active');
+    $('#view-checklist').classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
 
-  const allTasks = PHASEN.flatMap(p => p.aufgaben.filter(t => szenario ? t.szenarien.includes(szenario) : true));
-  const totalChecked = Object.values(checkedTasks).filter(Boolean).length;
-  const totalTasks = allTasks.length;
-  const allDone = totalTasks > 0 && totalChecked === totalTasks;
-
-  const handleStart = () => {
-    if (!bundesland || !szenario) return;
-    setStarted(true);
-    if (window.mrTrack) window.mrTrack.toolStep('checkliste-todesfall', 0);
-    setTimeout(() => topRef.current && topRef.current.scrollIntoView({behavior:'smooth'}), 100);
-  };
-
-  /* Setup screen */
-  if (!started) {
-    return React.createElement('div', null,
-      React.createElement('header', {style:{padding:'48px 0 32px'}},
-        React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)',marginBottom:16}},
-          React.createElement('a', {href:'/',style:{color:'var(--mr-warm)',textDecoration:'none'}}, 'Start'), ' \u203A ',
-          React.createElement('a', {href:'/checkliste-todesfall',style:{color:'var(--mr-warm)',textDecoration:'none'}}, 'Checkliste Todesfall'), ' \u203A Interaktive Checkliste'
-        ),
-        React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(26px,4.5vw,36px)',fontWeight:800,lineHeight:1.25,marginBottom:12}}, 'Checkliste nach Todesfall'),
-        React.createElement('p', {style:{fontSize:17,lineHeight:1.7,color:'var(--mr-text-muted)',maxWidth:600}}, 'Ein Mensch ist gestorben, und du weißt nicht, wo du anfangen sollst. Diese Checkliste führt dich Schritt für Schritt — personalisiert nach deinem Bundesland.')
-      ),
-
-      React.createElement(PrivacyNotice),
-
-      React.createElement('div', {style:{marginBottom:24}},
-        React.createElement('label', {style:{fontFamily:"'Fraunces',serif",fontSize:17,fontWeight:700,display:'block',marginBottom:8}}, 'In welchem Bundesland ist der Mensch verstorben?'),
-        React.createElement('select', {value:bundesland,onChange:e=>setBundesland(e.target.value),style:{width:'100%',padding:'12px 16px',fontSize:15,border:'1px solid var(--mr-border)',borderRadius:8,background:'var(--mr-bg-card)',color:'var(--mr-text)',appearance:'auto'}},
-          React.createElement('option', {value:''}, 'Bundesland wählen...'),
-          BUNDESLAENDER.map(bl => React.createElement('option', {key:bl.id,value:bl.id}, bl.name))
-        )
-      ),
-
-      React.createElement('div', {style:{marginBottom:24}},
-        React.createElement('label', {style:{fontFamily:"'Fraunces',serif",fontSize:17,fontWeight:700,display:'block',marginBottom:8}}, 'Wo ist der Mensch verstorben?'),
-        React.createElement('div', {style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}},
-          SZENARIEN.map(s =>
-            React.createElement('button', {
-              key:s.value,
-              onClick:()=>setSzenario(s.value),
-              style:{
-                padding:'14px 16px',border: szenario===s.value ? '2px solid var(--mr-accent)' : '1px solid var(--mr-border)',
-                borderRadius:'var(--mr-radius)',background: szenario===s.value ? 'var(--mr-safety)' : 'var(--mr-bg-card)',
-                cursor:'pointer',textAlign:'left',transition:'border-color 0.2s'
-              }
-            },
-              React.createElement('strong', {style:{fontSize:14,display:'block'}}, s.label),
-              React.createElement('span', {style:{fontSize:12,color:'var(--mr-text-muted)'}}, s.desc)
-            )
-          )
-        )
-      ),
-
-      bundesland && szenario && React.createElement('div', null,
-        React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'16px 20px',marginBottom:24,fontSize:14}},
-          React.createElement('strong', null, BUNDESLAENDER.find(b=>b.id===bundesland).name + ': '),
-          'Überführung innerhalb von ' + BUNDESLAENDER.find(b=>b.id===bundesland).ueberfuehrung + 'h · ',
-          'Erdbestattung innerhalb von ' + BUNDESLAENDER.find(b=>b.id===bundesland).maxErd + ' Tagen · ',
-          'Frühestens nach 48h',
-          BUNDESLAENDER.find(b=>b.id===bundesland).besonderheit && React.createElement('div', {style:{marginTop:6,color:'var(--mr-warm)',fontSize:13}}, BUNDESLAENDER.find(b=>b.id===bundesland).besonderheit)
-        ),
-        React.createElement('button', {
-          onClick:handleStart,
-          style:{width:'100%',padding:'16px',background:'var(--mr-primary)',color:'#fff',border:'none',borderRadius:99,fontSize:16,fontWeight:600,cursor:'pointer',transition:'background 0.2s'},
-          onMouseOver:e=>e.target.style.background='var(--mr-primary-hover)',
-          onMouseOut:e=>e.target.style.background='var(--mr-primary)',
-          'data-track':'cta'
-        }, 'Checkliste starten')
-      )
-    );
+  // ===== Checklist view =====
+  function toggleTask(id){
+    state.checkedTasks[id] = !state.checkedTasks[id];
+    if (state.checkedTasks[id]) {
+      track('toolStep', {tool:'checkliste-todesfall', step:'task_checked', task:id});
+    }
+    renderChecklist();
   }
 
-  /* Main checklist */
-  const bl = BUNDESLAENDER.find(b => b.id === bundesland);
-  return React.createElement('div', {ref:topRef},
-    React.createElement('header', {style:{padding:'32px 0 8px'}},
-      React.createElement('div', {style:{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:8}},
-        React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(22px,4vw,30px)',fontWeight:800}}, 'Checkliste Todesfall'),
-        React.createElement('div', {style:{display:'flex',gap:8}},
-          React.createElement('button', {onClick:()=>window.print(),className:'no-print',style:{fontSize:13,padding:'8px 16px',border:'1px solid var(--mr-border)',borderRadius:8,background:'var(--mr-bg-card)',cursor:'pointer',color:'var(--mr-text)'}}, 'Drucken / PDF'),
-          React.createElement('button', {onClick:()=>{setStarted(false);setCheckedTasks({})},className:'no-print',style:{fontSize:13,padding:'8px 16px',border:'1px solid var(--mr-border)',borderRadius:8,background:'var(--mr-bg-card)',cursor:'pointer',color:'var(--mr-text)'}}, 'Neu starten')
-        )
-      ),
-      React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)',marginTop:4}}, bl.name + ' · ' + SZENARIEN.find(s=>s.value===szenario).label)
-    ),
+  function shareWhatsapp(title, desc){
+    var text = 'Checkliste Todesfall — Aufgabe:\n\n' + title + (desc ? '\n' + desc : '') + '\n\nMehr: https://machsruhig.de/tools/checkliste-todesfall';
+    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+  }
 
-    React.createElement(ProgressBar, {checked:totalChecked, total:totalTasks}),
+  function renderChecklist(){
+    var bl = BUNDESLAENDER.filter(function(b){ return b.id === state.bundesland; })[0];
+    if (!bl) return;
+    var sz = state.szenario;
 
-    PHASEN.map(phase =>
-      React.createElement(PhaseBlock, {key:phase.id, phase:phase, checkedTasks:checkedTasks, onToggle:toggleTask, bundesland:bundesland, szenario:szenario})
-    ),
+    // Filter tasks
+    var allTasks = [];
+    PHASEN.forEach(function(p){
+      p.aufgaben.forEach(function(t){
+        if (t.szenarien.indexOf(sz) >= 0) allTasks.push(t);
+      });
+    });
+    var totalChecked = allTasks.filter(function(t){ return state.checkedTasks[t.id]; }).length;
+    var totalTasks = allTasks.length;
+    var allDone = totalTasks > 0 && totalChecked === totalTasks;
+    var pct = totalTasks > 0 ? Math.round((totalChecked/totalTasks)*100) : 0;
 
-    React.createElement(Sonderfaelle),
+    var h = '';
+    h += '<header style="padding:32px 0 8px">';
+    h += '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">';
+    h += '<h1 style="font-family:\'Fraunces\',serif;font-size:clamp(22px,4vw,30px);font-weight:800">Checkliste Todesfall</h1>';
+    h += '<div style="display:flex;gap:8px">';
+    h += '<button type="button" class="no-print" id="cl-print-btn" style="font-size:13px;padding:8px 16px;border:1px solid var(--mr-border);border-radius:8px;background:var(--mr-bg-card);cursor:pointer;color:var(--mr-text);font-family:inherit">Drucken / PDF</button>';
+    h += '<button type="button" class="no-print" id="cl-restart-btn" style="font-size:13px;padding:8px 16px;border:1px solid var(--mr-border);border-radius:8px;background:var(--mr-bg-card);cursor:pointer;color:var(--mr-text);font-family:inherit">Neu starten</button>';
+    h += '</div></div>';
+    h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:4px">' + esc(bl.name) + ' · ' + esc(SZENARIEN_LABELS[sz]) + '</div>';
+    h += '</header>';
 
-    allDone && React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'2px solid var(--mr-success)',borderRadius:'var(--mr-radius)',padding:'32px 28px',margin:'40px 0',textAlign:'center'}},
-      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,marginBottom:8,color:'var(--mr-success)'}}, 'Du hast alles erledigt.'),
-      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',marginBottom:20}}, 'Nimm dir die Zeit, die du brauchst. Wenn du bei der weiteren Planung Unterstützung brauchst:'),
-      React.createElement('div', {style:{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:12}},
-        [{l:'Beerdigung planen',h:'/beerdigung-planen',d:'Schritt für Schritt'},{l:'Bestattungskosten',h:'/bestattungskosten',d:'Was es kostet'},{l:'Bestatter finden',h:'/bestatter',d:'In deiner Nähe'}].map(link =>
-          React.createElement('a', {key:link.h,href:link.h,style:{padding:'16px 12px',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',textDecoration:'none',textAlign:'center',background:'var(--mr-bg-card)'}},
-            React.createElement('strong', {style:{fontSize:14,color:'var(--mr-text)',display:'block'}}, link.l),
-            React.createElement('span', {style:{fontSize:12,color:'var(--mr-text-muted)'}}, link.d)
-          )
-        )
-      )
-    ),
+    // Progress
+    h += '<div style="margin:20px 0 24px">';
+    h += '<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--mr-text-muted);margin-bottom:6px"><span>' + totalChecked + ' von ' + totalTasks + ' erledigt</span><span style="font-weight:600;color:' + (pct===100?'var(--mr-success)':'var(--mr-text)') + '">' + pct + ' %</span></div>';
+    h += '<div style="height:8px;background:var(--mr-border);border-radius:4px;overflow:hidden"><div style="height:100%;width:' + pct + '%;background:' + (pct===100?'var(--mr-success)':'var(--mr-accent)') + ';border-radius:4px;transition:width 0.3s ease"></div></div>';
+    h += '</div>';
 
-    React.createElement(FaqSection),
+    // Phasen
+    PHASEN.forEach(function(p){
+      var phaseTasks = p.aufgaben.filter(function(t){ return t.szenarien.indexOf(sz) >= 0; });
+      if (phaseTasks.length === 0) return;
+      var phaseDone = phaseTasks.filter(function(t){ return state.checkedTasks[t.id]; }).length;
+      var phaseAllDone = phaseDone === phaseTasks.length;
 
-    React.createElement('div', {style:{background:'#f4f0eb',borderRadius:'var(--mr-radius)',padding:'24px 28px',margin:'40px 0'}},
-      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:16,fontWeight:700,marginBottom:12}}, 'Quellen'),
-      React.createElement('ul', {style:{listStyle:'none'}},
-        ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: April 2026)','Personenstandsgesetz (PStG) §28 — Anzeigepflicht beim Standesamt','Bürgerliches Gesetzbuch (BGB) §580 — Sonderkündigungsrecht bei Tod','Sozialgesetzbuch XII §74 — Bestattungskosten bei Bedürftigkeit'].map((q,i) =>
-          React.createElement('li', {key:i,style:{fontSize:13,color:'var(--mr-text-muted)',padding:'4px 0 4px 16px',position:'relative'}},
-            React.createElement('span', {style:{position:'absolute',left:0,color:'var(--mr-warm)'}}, '\u2192'), q
-          )
-        )
-      )
-    ),
+      h += '<section style="margin-bottom:32px">';
+      h += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">';
+      h += '<div style="width:40px;height:40px;border-radius:50%;background:' + (phaseAllDone?'var(--mr-success)':p.color) + ';color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">' + (phaseAllDone ? '✓' : phaseDone + '/' + phaseTasks.length) + '</div>';
+      h += '<div>';
+      h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;color:var(--mr-text);margin:0">' + esc(p.label) + '</h2>';
+      h += '<span style="font-size:13px;color:var(--mr-text-muted)">' + esc(p.zeitraum) + '</span>';
+      h += '</div></div>';
 
-    React.createElement('div', {style:{textAlign:'center',padding:'24px 0',marginBottom:16}},
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',lineHeight:1.6}},
-        'Alle Angaben ohne Gewähr. Bestattungsrecht ist Ländersache. Diese Checkliste ersetzt keine Rechtsberatung.',
-        React.createElement('br'),
-        'machsruhig.de ist ein unabhängiges Informationsportal. ',
-        React.createElement('a', {href:'/methodik',style:{color:'var(--mr-primary)',textDecoration:'none'}}, 'Mehr zu unserer Methodik'), '.'
-      )
-    )
-  );
-}
+      phaseTasks.forEach(function(t){
+        var checked = !!state.checkedTasks[t.id];
+        var blHint = '';
+        if (t.bundeslandFeld && bl[t.bundeslandFeld]) {
+          blHint = t.bundeslandText.replace('{bl}', bl.name).replace('{frist}', bl[t.bundeslandFeld]);
+        }
+        h += '<div class="task-item' + (checked?' checked':'') + '" data-id="' + esc(t.id) + '" style="background:var(--mr-bg-card);border:1px solid ' + (checked?'var(--mr-success)':'var(--mr-border)') + ';border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px;opacity:' + (checked?'0.7':'1') + ';transition:border-color 0.2s,opacity 0.2s">';
+        h += '<div style="display:flex;gap:12px;align-items:flex-start">';
+        h += '<input type="checkbox" class="task-cb" data-task="' + esc(t.id) + '"' + (checked?' checked':'') + ' style="width:20px;height:20px;margin-top:2px;accent-color:var(--mr-success);cursor:pointer;flex-shrink:0">';
+        h += '<div style="flex:1">';
+        h += '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">';
+        h += '<span class="task-title" style="font-weight:600;font-size:15px;text-decoration:' + (checked?'line-through':'none') + ';color:' + (checked?'var(--mr-text-muted)':'var(--mr-text)') + '">' + esc(t.titel) + '</span>';
+        if (t.pflicht) h += '<span style="font-size:11px;background:var(--mr-urgent);color:#fff;padding:1px 8px;border-radius:99px;font-weight:600">Pflicht</span>';
+        h += '</div>';
+        h += '<p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-top:4px">' + esc(t.desc) + '</p>';
+        if (blHint) h += '<div style="font-size:12px;color:var(--mr-urgent);margin-top:6px;font-weight:500">' + esc(blHint) + '</div>';
+        if (t.eskalation) h += '<div style="font-size:12px;color:var(--mr-urgent);background:#fff5f2;border:1px solid #f0d0c4;border-radius:6px;padding:8px 12px;margin-top:8px">' + esc(t.eskalation) + '</div>';
+        if (t.isBestatterCTA && !checked) h += '<a href="/bestatter" style="display:inline-block;font-size:13px;color:var(--mr-primary);margin-top:8px;text-decoration:underline" data-track="cta">Bestatter in deiner Nähe finden</a>';
+        if (t.toolLink && !checked) h += '<a href="' + esc(t.toolLink.href) + '" style="display:inline-block;font-size:13px;color:var(--mr-primary);margin-top:8px;text-decoration:underline">' + esc(t.toolLink.text) + '</a>';
+        if (t.hinweis) h += '<div style="font-size:12px;color:var(--mr-warm);margin-top:6px;font-style:italic">' + esc(t.hinweis) + '</div>';
+        if (t.docs && t.docs.length > 0 && !checked) h += '<div style="font-size:12px;color:var(--mr-text-muted);margin-top:6px">Dokumente: ' + esc(t.docs.join(', ')) + '</div>';
+        h += '</div></div>';
+        if (!checked) h += '<button type="button" class="task-share no-print" data-task="' + esc(t.id) + '" style="background:none;border:none;cursor:pointer;font-size:11px;color:var(--mr-text-muted);margin-top:8px;padding:4px 0;font-family:inherit" title="Per WhatsApp teilen">Per WhatsApp teilen</button>';
+        h += '</div>';
+      });
+      h += '</section>';
+    });
 
-ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(App));
+    // Sonderfälle
+    h += '<div style="margin:32px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)">Sonderfälle</h2>';
+    SONDERFAELLE.forEach(function(sf){
+      h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px">';
+      h += '<strong style="font-size:15px">' + esc(sf.titel) + '</strong>';
+      h += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:4px;line-height:1.6">' + esc(sf.text) + '</p>';
+      h += '</div>';
+    });
+    h += '</div>';
+
+    // Allles erledigt CTA
+    if (allDone) {
+      h += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-success);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
+      h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px;color:var(--mr-success)">Du hast alles erledigt.</h2>';
+      h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Nimm dir die Zeit, die du brauchst. Wenn du bei der weiteren Planung Unterstützung brauchst:</p>';
+      h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+      [['Beerdigung planen','/beerdigung-planen','Schritt für Schritt'],
+       ['Bestattungskosten','/bestattungskosten','Was es kostet'],
+       ['Bestatter finden','/bestatter','In deiner Nähe']].forEach(function(l){
+        h += '<a href="' + l[1] + '" style="padding:16px 12px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;text-align:center;background:var(--mr-bg-card)">';
+        h += '<strong style="font-size:14px;color:var(--mr-text);display:block">' + esc(l[0]) + '</strong>';
+        h += '<span style="font-size:12px;color:var(--mr-text-muted)">' + esc(l[2]) + '</span>';
+        h += '</a>';
+      });
+      h += '</div></div>';
+    }
+
+    // FAQ
+    h += '<section style="margin:40px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:22px;font-weight:700;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)">Häufige Fragen</h2>';
+    FAQ.forEach(function(f){
+      h += '<details style="border:1px solid var(--mr-border);border-radius:8px;margin-bottom:8px;background:var(--mr-bg-card)">';
+      h += '<summary style="padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">' + esc(f.q) + '</summary>';
+      h += '<div style="padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--mr-text-muted)"><p>' + esc(f.a) + '</p></div>';
+      h += '</details>';
+    });
+    h += '</section>';
+
+    // Quellen
+    h += '<div style="background:#f4f0eb;border-radius:var(--mr-radius);padding:24px 28px;margin:40px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:16px;font-weight:700;margin-bottom:12px">Quellen</h2>';
+    h += '<ul style="list-style:none">';
+    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: April 2026)',
+     'Personenstandsgesetz (PStG) §28 — Anzeigepflicht beim Standesamt',
+     'Bürgerliches Gesetzbuch (BGB) §580 — Sonderkündigungsrecht bei Tod',
+     'Sozialgesetzbuch XII §74 — Bestattungskosten bei Bedürftigkeit'].forEach(function(q){
+      h += '<li style="font-size:13px;color:var(--mr-text-muted);padding:4px 0 4px 16px;position:relative"><span style="position:absolute;left:0;color:var(--mr-warm)">→</span>' + esc(q) + '</li>';
+    });
+    h += '</ul></div>';
+
+    // Disclaimer
+    h += '<div style="text-align:center;padding:24px 0;margin-bottom:16px">';
+    h += '<p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6">Alle Angaben ohne Gewähr. Bestattungsrecht ist Ländersache. Diese Checkliste ersetzt keine Rechtsberatung.<br>';
+    h += 'machsruhig.de ist ein unabhängiges Informationsportal. <a href="/methodik" style="color:var(--mr-primary);text-decoration:none">Mehr zu unserer Methodik</a>.</p>';
+    h += '</div>';
+
+    var v = $('#view-checklist');
+    v.innerHTML = h;
+
+    // Bind actions
+    $('#cl-print-btn').addEventListener('click', function(){
+      track('toolExport', {tool:'checkliste-todesfall', type:'print'});
+      window.print();
+    });
+    $('#cl-restart-btn').addEventListener('click', function(){
+      state.checkedTasks = {};
+      $('#view-checklist').classList.remove('active');
+      $('#view-setup').classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+    $$('.task-cb').forEach(function(cb){
+      cb.addEventListener('change', function(){ toggleTask(cb.dataset.task); });
+    });
+    $$('.task-share').forEach(function(b){
+      b.addEventListener('click', function(){
+        var id = b.dataset.task;
+        var t = null;
+        PHASEN.forEach(function(p){ p.aufgaben.forEach(function(x){ if(x.id===id) t = x; }); });
+        if (t) shareWhatsapp(t.titel, t.desc);
+      });
+    });
+  }
+})();
 </script>
 
 </body>
