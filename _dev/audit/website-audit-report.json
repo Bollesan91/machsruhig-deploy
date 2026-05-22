@@ -99,7 +99,7 @@
     {
       "path": "bestatter\\bielefeld\\index.html",
       "slug": "bielefeld",
-      "size_kb": 60.0,
+      "size_kb": 60.1,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1034,7 +1034,7 @@
         "Sozial",
         "FAQ",
         "Quellen",
-        "Fhf-Profile(0)"
+        "Fhf-Profile(0h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1162,10 +1162,8 @@
       "path": "bestatter\\mannheim\\index.html",
       "slug": "mannheim",
       "size_kb": 53.9,
-      "score": 6,
-      "missing": [
-        "Fhf-Profile(0)"
-      ],
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -1202,7 +1200,7 @@
         "Kosten",
         "FAQ",
         "Quellen",
-        "Fhf-Profile(0)"
+        "Fhf-Profile(0h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1230,7 +1228,7 @@
     {
       "path": "bestatter\\muelheim\\index.html",
       "slug": "muelheim",
-      "size_kb": 60.5,
+      "size_kb": 60.7,
       "score": 7,
       "missing": [],
       "schema_valid": 1,
@@ -1362,10 +1360,8 @@
       "path": "bestatter\\nuernberg\\index.html",
       "slug": "nuernberg",
       "size_kb": 60.2,
-      "score": 6,
-      "missing": [
-        "Fhf-Profile(2)"
-      ],
+      "score": 7,
+      "missing": [],
       "schema_valid": 1,
       "schema_total": 1,
       "schema_types": [
@@ -1737,7 +1733,7 @@
         "Kosten",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(0)"
+        "Fhf-Profile(0h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1773,7 +1769,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(0)"
+        "Fhf-Profile(0h3+2h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1844,7 +1840,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(1)"
+        "Fhf-Profile(1h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1880,7 +1876,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(2)"
+        "Fhf-Profile(2h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1916,7 +1912,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(2)"
+        "Fhf-Profile(2h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -1988,7 +1984,7 @@
         "Kosten",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(1)"
+        "Fhf-Profile(1h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -2093,7 +2089,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(2)"
+        "Fhf-Profile(2h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -2164,7 +2160,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(0)"
+        "Fhf-Profile(0h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -2200,7 +2196,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(0)"
+        "Fhf-Profile(0h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -2236,7 +2232,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(1)"
+        "Fhf-Profile(1h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -2272,7 +2268,7 @@
         "Akutbox",
         "BestWahl",
         "Sozial",
-        "Fhf-Profile(1)"
+        "Fhf-Profile(1h3+0h2)"
       ],
       "schema_valid": 1,
       "schema_total": 1,
@@ -2331,10 +2327,12 @@
       "lübeck",
       "magdeburg",
       "mainz",
+      "mannheim",
       "muelheim",
       "muenchen",
       "muenster",
       "mönchengladbach",
+      "nuernberg",
       "oberhausen",
       "oldenburg",
       "potsdam",
@@ -2351,8 +2349,6 @@
       "duesseldorf",
       "frankfurt",
       "hannover",
-      "mannheim",
-      "nuernberg",
       "osnabrueck"
     ],
     "1": [
@@ -2368,6 +2364,6 @@
     "Sozial": 1,
     "FAQ": 3,
     "Quellen": 2,
-    "Fhf-Profile": 4
+    "Fhf-Profile": 2
   }
 }

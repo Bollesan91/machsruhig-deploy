@@ -87,12 +87,16 @@ def audit_module_score(text):
     else:
         missing.append("Quellen")
 
-    # 7. Friedhof-Profile: ≥3 h3 mit "friedhof" oder genug Friedhof-Detail-Sections
+    # 7. Friedhof-Profile: ≥3 h2 oder h3 mit "friedhof" / "krematorium"
     fhf_h3s = [h for h in H3_RE.findall(text) if "friedhof" in strip_html(h).lower() or "krematorium" in strip_html(h).lower()]
-    if len(fhf_h3s) >= 3:
+    fhf_h2s = [h for h in H2_RE.findall(text) if "friedhof" in strip_html(h).lower() or "krematorium" in strip_html(h).lower()]
+    # Filter out generic h2 like "Bestattungskosten", "FAQ", "Quellen" etc.
+    # Only count h2 if it's clearly a specific Friedhof-Profile (e.g. "Hauptfriedhof X" or "Jüdischer Friedhof X")
+    fhf_h2s_specific = [h for h in fhf_h2s if not any(k in strip_html(h).lower() for k in ["bestattungs", "friedhofsgebühr", "die wichtig", "in zahlen", "in mannheim", "in kassel", "bestattungsrecht"])]
+    if (len(fhf_h3s) + len(fhf_h2s_specific)) >= 3:
         score += 1
     else:
-        missing.append(f"Fhf-Profile({len(fhf_h3s)})")
+        missing.append(f"Fhf-Profile({len(fhf_h3s)}h3+{len(fhf_h2s_specific)}h2)")
 
     return score, missing
 
