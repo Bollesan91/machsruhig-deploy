@@ -271,15 +271,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '</div>';
     html += '<div id="copy-status" role="status" aria-live="polite" style="min-height:20px;font-size:13px;color:var(--mr-success,#5a8a5a);margin:0 0 16px;text-align:center"></div>';
 
-    // Next-Step CTAs
-    html += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
-    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Du kennst jetzt die Richtwerte</h3>';
-    html += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Lass dir von Bestattern in deiner Nähe konkrete Angebote machen — kostenlos und unverbindlich.</p>';
-    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">';
-    html += '<a href="/bestatter/" style="display:block;padding:14px 16px;background:var(--mr-primary);color:#fff;border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Bestatter in deiner Nähe finden</a>';
-    html += '<a href="/tools/checkliste-todesfall/" style="display:block;padding:14px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Checkliste Todesfall</a>';
-    html += '<a href="/tools/beerdigungsplaner/" style="display:block;padding:14px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Beerdigung Schritt für Schritt</a>';
-    html += '</div></div>';
+    // Bestatter-Lead-CTA (Tool-Cross-Links laufen jetzt via "Was kommt als Nächstes?"-Card weiter unten)
+    html += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px 28px;margin:40px 0;text-align:center">';
+    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin-bottom:6px">Du kennst jetzt die Richtwerte</h3>';
+    html += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">Lass dir von Bestattern in deiner Nähe konkrete Angebote machen — kostenlos und unverbindlich.</p>';
+    html += '<a href="/bestatter/" style="display:inline-block;padding:12px 24px;background:var(--mr-primary);color:#fff;border-radius:99px;text-decoration:none;font-weight:600;font-size:14px">Bestatter in deiner Nähe finden</a>';
+    html += '</div>';
 
     // Disclaimer
     html += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:13px;line-height:1.7;color:var(--mr-text-muted)">';
