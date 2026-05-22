@@ -332,7 +332,14 @@
 
   function handleSelect(value){
     var key = STEPS[state.step].id;
-    state.auswahl[key] = value;
+    // Bei Bestattungsart-Wechsel (via Zurück → Step 0 → neue Wahl): State-Hygiene
+    // alle nachfolgenden Auswahlen verwerfen, damit alte Werte aus dem ersten Durchlauf
+    // nicht ungesehen in die Berechnung einfließen
+    if (key === 'bestattungsart') {
+      state.auswahl = {bestattungsart: value};
+    } else {
+      state.auswahl[key] = value;
+    }
     track('toolStep', {tool:'kostenrechner', step:key, value:value});
     if (state.step < STEPS.length - 1) {
       state.step++;
