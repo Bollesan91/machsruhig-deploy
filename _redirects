@@ -1,4 +1,11 @@
-# Trailing slash normalization for key pages
+# =====================================================================
+# Trailing-Slash-Konvention (sitewide):
+# - Directories MIT trailing slash: /tools/{x}/, /vorsorge/{x}/, /bestatter/{x}/, /bestattung-in/{x}/
+# - Standalone-Files OHNE trailing slash: /bestattungskosten, /impressum, ...
+# Konsistenz wichtig für Canonical und Crawl-Budget.
+# =====================================================================
+
+# Root-Files: strip trailing slash (Files, keine Directories)
 /bestattungskosten/   /bestattungskosten   301
 /bestattungsarten/    /bestattungsarten    301
 /beerdigung-planen/   /beerdigung-planen   301
@@ -9,24 +16,52 @@
 /datenschutz/         /datenschutz         301
 /methodik/            /methodik            301
 /ueber-uns/           /ueber-uns           301
+/vertraege-kuendigen/ /vertraege-kuendigen 301
+/kindern-tod-erklaeren/ /kindern-tod-erklaeren 301
 
-# Old/broken links that might exist
-/checkliste-todesfall  /tools/checkliste-todesfall  301
-/bestatter             /bestatter/                  301
-/vorsorge-check        /tools/vorsorge-check        301
-/bestattungskosten-rechner /tools/bestattungskosten-rechner 301
-/trauerrede            /tools/trauerrede             301
+# Tools-Directory: enforce trailing slash (canonical-target)
+/tools/abschiedsbrief               /tools/abschiedsbrief/                301
+/tools/beerdigungsplaner            /tools/beerdigungsplaner/             301
+/tools/bestattungskosten-rechner    /tools/bestattungskosten-rechner/     301
+/tools/checkliste-todesfall         /tools/checkliste-todesfall/          301
+/tools/danksagung                   /tools/danksagung/                    301
+/tools/fristen-radar                /tools/fristen-radar/                 301
+/tools/kostenrechner                /tools/kostenrechner/                 301
+/tools/notfallkarte                 /tools/notfallkarte/                  301
+/tools/trauerrede                   /tools/trauerrede/                    301
+/tools/vorsorge-check               /tools/vorsorge-check/                301
+
+# Vorsorge-Directory: enforce trailing slash (canonical-target)
+/vorsorge/bestattungsvorsorge       /vorsorge/bestattungsvorsorge/        301
+/vorsorge/digitaler-nachlass        /vorsorge/digitaler-nachlass/         301
+/vorsorge/ohne-vorsorge             /vorsorge/ohne-vorsorge/              301
+/vorsorge/patientenverfuegung       /vorsorge/patientenverfuegung/        301
+/vorsorge/sorgerechtsverfuegung     /vorsorge/sorgerechtsverfuegung/      301
+/vorsorge/sterbegeldversicherung    /vorsorge/sterbegeldversicherung/     301
+/vorsorge/testament                 /vorsorge/testament/                  301
+/vorsorge/vorsorge-ordner           /vorsorge/vorsorge-ordner/            301
+
+# Old/legacy / shortcut redirects
+/checkliste-todesfall       /tools/checkliste-todesfall/      301
+/bestatter                  /bestatter/                       301
+/vorsorge-check             /tools/vorsorge-check/            301
+/bestattungskosten-rechner  /tools/bestattungskosten-rechner/ 301
+/trauerrede                 /tools/trauerrede/                301
+/danksagung                 /tools/danksagung/                301
+/notfallkarte               /tools/notfallkarte/              301
+/abschiedsbrief             /tools/abschiedsbrief/            301
+/fristen-radar              /tools/fristen-radar/             301
+/fristen                    /tools/fristen-radar/             301
 
 # Vorsorge shortcuts
-/vorsorge              /vorsorge/                    301
-/sterbegeldversicherung /vorsorge/sterbegeldversicherung 301
-/patientenverfuegung   /vorsorge/patientenverfuegung  301
-/bestattungsvorsorge   /vorsorge/bestattungsvorsorge  301
-/testament             /vorsorge/testament            301
-/sorgerechtsverfuegung /vorsorge/sorgerechtsverfuegung 301
-/digitaler-nachlass    /vorsorge/digitaler-nachlass    301
-/danksagung            /tools/danksagung               301
-/notfallkarte          /tools/notfallkarte             301
-/abschiedsbrief        /tools/abschiedsbrief           301
-/fristen-radar         /tools/fristen-radar            301
-/fristen               /tools/fristen-radar            301
+/vorsorge                   /vorsorge/                        301
+/sterbegeldversicherung     /vorsorge/sterbegeldversicherung/ 301
+/patientenverfuegung        /vorsorge/patientenverfuegung/    301
+/bestattungsvorsorge        /vorsorge/bestattungsvorsorge/    301
+/testament                  /vorsorge/testament/              301
+/sorgerechtsverfuegung      /vorsorge/sorgerechtsverfuegung/  301
+/digitaler-nachlass         /vorsorge/digitaler-nachlass/     301
+
+# Bestattung-in shortcut
+/bestattung      /bestattung-in/   301
+/bestattung-in   /bestattung-in/   301
