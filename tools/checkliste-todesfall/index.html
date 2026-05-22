@@ -24,8 +24,204 @@
       {"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},
       {"@type":"ListItem","position":2,"name":"Checkliste Todesfall","item":"https://machsruhig.de/checkliste-todesfall"},
       {"@type":"ListItem","position":3,"name":"Interaktive Checkliste","item":"https://machsruhig.de/tools/checkliste-todesfall"}
-    ]},
-    {id:"bestatter",titel:"Bestatter beauftragen (Überführung)",desc:"Ein Bestatter übernimmt die Überführung und kümmert sich um erste Formalitäten.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Totenschein"],bundeslandFeld:"ueberfuehrung",bundeslandText:"In {bl} muss die Überführung innerhalb von {frist} Stunden erfolgen.",isBestatterCTA:true},
+    ]}
+  ]
+}
+</script>
+
+<script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+<script defer src="/js/tracking.js"></script>
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+::selection{background:#e8ddd0;color:#1a1a1a}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
+:root{--mr-primary:#7A6B5D;--mr-primary-hover:#5E5047;--mr-warm:#7A6B5D;--mr-bg:#faf8f5;--mr-bg-card:#FFFDF9;--mr-border:#E8E0D6;--mr-text:#2D2319;--mr-text-muted:#73655A;--mr-accent:#866E45;--mr-safety:#FFFAF5;--mr-radius:12px;--mr-success:#5a8a5a;--mr-urgent:#c45e3a}
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none}
+.mr-nav-logo span{color:var(--mr-primary)}
+.mr-nav-links{display:flex;gap:4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
+.mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,0.08)}
+.mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
+@media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
+.mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}
+.mr-footer-inner{max-width:720px;margin:0 auto}
+.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}
+.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}
+.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}
+.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}
+.mr-footer a:hover{color:var(--mr-primary)}
+.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}
+.mr-footer-bottom p{font-size:12px;color:#73655A}
+.mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+.cl-view{display:none}.cl-view.active{display:block}
+.szen-btn{padding:14px 16px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);background:var(--mr-bg-card);cursor:pointer;text-align:left;transition:border-color 0.2s;font-family:inherit;font-size:14px;width:100%}
+.szen-btn.selected{border:2px solid var(--mr-accent);background:var(--mr-safety)}
+.szen-btn strong{display:block;font-size:14px;margin-bottom:2px;color:var(--mr-text)}
+.szen-btn .desc{font-size:12px;color:var(--mr-text-muted)}
+@media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt}.mr-content{max-width:100%;padding:0}.task-item.checked .task-title{text-decoration:line-through;color:#999}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
+
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" onclick="document.querySelector('.mr-nav-links').classList.toggle('open')" aria-label="Menü"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    <div class="mr-nav-links">
+      <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="/beerdigung-planen">Beerdigung planen</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+      <a href="/bestatter/muenchen/">Bestatter finden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="mr-content">
+<main id="main">
+
+  <!-- Setup view (initial active, SEO-indexable) -->
+  <div class="cl-view active" id="view-setup">
+    <header style="padding:48px 0 32px">
+      <div style="font-size:13px;color:var(--mr-text-muted);margin-bottom:16px">
+        <a href="/" style="color:var(--mr-warm);text-decoration:none">Start</a> ›
+        <a href="/checkliste-todesfall" style="color:var(--mr-warm);text-decoration:none">Checkliste Todesfall</a> › Interaktive Checkliste
+      </div>
+      <h1 style="font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;margin-bottom:12px">Checkliste nach Todesfall</h1>
+      <p style="font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px">Ein Mensch ist gestorben, und du weißt nicht, wo du anfangen sollst. Diese Checkliste führt dich Schritt für Schritt — personalisiert nach deinem Bundesland.</p>
+    </header>
+
+    <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    </div>
+
+    <div style="margin-bottom:24px">
+      <label for="cl-bl" style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;display:block;margin-bottom:8px">In welchem Bundesland ist der Mensch verstorben?</label>
+      <select id="cl-bl" style="width:100%;padding:12px 16px;font-size:15px;border:1px solid var(--mr-border);border-radius:8px;background:var(--mr-bg-card);color:var(--mr-text);font-family:inherit">
+        <option value="">Bundesland wählen...</option>
+        <option value="bw">Baden-Württemberg</option>
+        <option value="by">Bayern</option>
+        <option value="be">Berlin</option>
+        <option value="bb">Brandenburg</option>
+        <option value="hb">Bremen</option>
+        <option value="hh">Hamburg</option>
+        <option value="he">Hessen</option>
+        <option value="mv">Mecklenburg-Vorpommern</option>
+        <option value="ni">Niedersachsen</option>
+        <option value="nw">Nordrhein-Westfalen</option>
+        <option value="rp">Rheinland-Pfalz</option>
+        <option value="sl">Saarland</option>
+        <option value="sn">Sachsen</option>
+        <option value="st">Sachsen-Anhalt</option>
+        <option value="sh">Schleswig-Holstein</option>
+        <option value="th">Thüringen</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:24px">
+      <label style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;display:block;margin-bottom:8px">Wo ist der Mensch verstorben?</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px" id="cl-szenario-grid">
+        <button type="button" class="szen-btn" data-value="zuhause"><strong>Zu Hause</strong><span class="desc">Du bist vor Ort oder wurdest informiert</span></button>
+        <button type="button" class="szen-btn" data-value="krankenhaus"><strong>Im Krankenhaus / Hospiz</strong><span class="desc">Das Krankenhaus hat dich informiert</span></button>
+        <button type="button" class="szen-btn" data-value="pflegeheim"><strong>Im Pflegeheim</strong><span class="desc">Das Pflegeheim hat dich informiert</span></button>
+        <button type="button" class="szen-btn" data-value="unbekannt"><strong>Woanders / Unklar</strong><span class="desc">Unfall, unterwegs oder unklar</span></button>
+      </div>
+    </div>
+
+    <div id="cl-summary" style="display:none">
+      <div id="cl-summary-box" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:24px;font-size:14px"></div>
+      <button type="button" id="cl-start-btn" style="width:100%;padding:16px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s">Checkliste starten</button>
+    </div>
+  </div>
+
+  <!-- Main checklist view -->
+  <div class="cl-view" id="view-checklist"></div>
+
+</main>
+</div>
+
+<footer class="mr-footer no-print">
+  <div class="mr-footer-inner">
+    <div class="mr-footer-grid">
+      <div>
+        <h4>Über machsruhig.de</h4>
+        <p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p>
+      </div>
+      <div>
+        <h4>Themen</h4>
+        <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>
+        <a href="/trauerrede-schreiben">Trauerrede schreiben</a>
+        <a href="/beerdigung-planen">Beerdigung planen</a>
+        <a href="/bestattungskosten">Bestattungskosten</a>
+        <a href="/bestattungsarten">Bestattungsarten</a>
+        <a href="/bestatter/muenchen/">Bestatter finden</a>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/methodik">Methodik</a>
+      </div>
+    </div>
+    <div class="mr-footer-bottom">
+      <p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung. Angaben zu Bestattungsrecht variieren nach Bundesland.</p>
+      <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  var BUNDESLAENDER = [
+    {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:6},
+    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:null,besonderheit:"Keine gesetzliche Höchstfrist für die Einäscherung."},
+    {id:"be",name:"Berlin",ueberfuehrung:36,mindest:48,maxErd:null,maxEinaescherung:null,besonderheit:"Berlin hat KEINE gesetzliche Höchstfrist für die Bestattung. Friedhofssatzungen können Soll-Regelungen vorsehen — Rücksprache mit dem zuständigen Friedhof empfohlen."},
+    {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7,besonderheit:"Asche darf unter Bedingungen an Angehörige herausgegeben werden."},
+    {id:"hh",name:"Hamburg",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7},
+    {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
+    {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Fristverlängerung beim Ordnungsamt möglich."},
+    {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10},
+    {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
+    {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"st",name:"Sachsen-Anhalt",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
+    {id:"sh",name:"Schleswig-Holstein",ueberfuehrung:36,mindest:48,maxErd:6,maxEinaescherung:8},
+    {id:"th",name:"Thüringen",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10}
+  ];
+
+  var SZENARIEN_LABELS = {zuhause:"Zu Hause", krankenhaus:"Im Krankenhaus / Hospiz", pflegeheim:"Im Pflegeheim", unbekannt:"Woanders / Unklar"};
+
+  var SONDERFAELLE = [
+    {id:"polizei",titel:"Unnatürlicher Tod / Verdacht auf Fremdeinwirkung",text:"Sofort Polizei rufen (110). Nichts verändern, nichts aufräumen. Die Bestattung kann sich verzögern, bis die Untersuchung abgeschlossen ist."},
+    {id:"ausland",titel:"Todesfall im Ausland",text:"Deutsche Botschaft/Konsulat kontaktieren. Sie hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe, ob eine Reiseversicherung mit Rückholklausel besteht."},
+    {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt Kostenübernahme beantragen (§74 SGB XII). Der Antrag sollte vor der Bestattung gestellt werden. Einfache Bestattungen werden in der Regel übernommen."}
+  ];
+
+  var PHASEN = [
+    {id:"sofort",label:"Sofort",zeitraum:"Erste Stunden",color:"#c45e3a",aufgaben:[
+      {id:"arzt",titel:"Arzt rufen — Totenschein ausstellen lassen",desc:"Ein Arzt muss den Tod feststellen. Zu Hause: Hausarzt oder 116 117 (Bereitschaftsdienst). Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Personalausweis des Verstorbenen"],eskalation:"Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern."},
+      {id:"angehoerige",titel:"Engste Angehörige informieren",desc:"Informiere die engste Familie. Das muss nicht alles auf einmal passieren. Du musst das nicht allein machen — bitte jemanden, dir zu helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]},
+      {id:"bestatter",titel:"Bestatter beauftragen (Überführung)",desc:"Ein Bestatter übernimmt die Überführung und kümmert sich um erste Formalitäten.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Totenschein"],bundeslandFeld:"ueberfuehrung",bundeslandText:"In {bl} muss die Überführung innerhalb von {frist} Stunden erfolgen.",isBestatterCTA:true},
       {id:"dokumente",titel:"Wichtige Dokumente zusammensuchen",desc:"Personalausweis, Geburtsurkunde, Heiratsurkunde, Bestattungsverfügung, Versicherungsunterlagen, Testament — nicht alles muss sofort da sein.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Personalausweis/Reisepass","Geburtsurkunde","Heiratsurkunde","Versicherungsunterlagen"]},
       {id:"wohnung",titel:"Wohnung sichern (Heizung, Tiere, Post)",desc:"Wenn der Verstorbene allein gelebt hat: Heizung, Haustiere, Postkasten. Schlüssel sichern.",szenarien:["zuhause","krankenhaus","pflegeheim"],pflicht:false,docs:[]}
     ]},
@@ -176,7 +372,6 @@
         if (t.bundeslandFeld && bl[t.bundeslandFeld] != null) {
           blHint = t.bundeslandText.replace('{bl}', bl.name).replace('{frist}', bl[t.bundeslandFeld]);
         } else if (t.bundeslandFeld && bl[t.bundeslandFeld] === null) {
-          // Bundesland hat keine gesetzliche Frist (z.B. Berlin)
           blHint = 'In ' + bl.name + ' gibt es keine gesetzliche Höchstfrist — Rücksprache mit dem Friedhof empfohlen.';
         }
         h += '<div class="task-item' + (checked?' checked':'') + '" data-id="' + esc(t.id) + '" style="background:var(--mr-bg-card);border:1px solid ' + (checked?'var(--mr-success)':'var(--mr-border)') + ';border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px;opacity:' + (checked?'0.7':'1') + ';transition:border-color 0.2s,opacity 0.2s">';
