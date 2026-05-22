@@ -282,6 +282,23 @@ details[open] summary span[aria-hidden]{transform:rotate(180deg)}
     });
     html += '</div>';
 
+    // Tool-Kette: Nächster sinnvoller Schritt
+    html += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
+    html += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
+    html += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Du hast eine erste Schätzung. Diese Tools führen dich weiter:</p>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    [{title:'Detaillierter Rechner',sub:'Nach Bundesland und Extras',href:'/tools/bestattungskosten-rechner/'},
+     {title:'Beerdigung planen',sub:'Trauerfeier vorbereiten',href:'/tools/beerdigungsplaner/'},
+     {title:'Checkliste Todesfall',sub:'Bürokratie Schritt für Schritt',href:'/tools/checkliste-todesfall/'}].forEach(function(l){
+      html += '<a href="' + l.href + '" data-next-step="' + l.href + '" style="padding:16px 12px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;text-align:center;background:var(--mr-bg-card);transition:border-color 0.2s,box-shadow 0.2s" onmouseover="this.style.borderColor=\'var(--mr-accent)\';this.style.boxShadow=\'0 2px 8px rgba(0,0,0,0.06)\'" onmouseout="this.style.borderColor=\'var(--mr-border)\';this.style.boxShadow=\'none\'">';
+      html += '<strong style="font-size:14px;color:var(--mr-text);display:block;margin-bottom:2px">' + l.title + '</strong>';
+      html += '<span style="font-size:12px;color:var(--mr-text-muted)">' + l.sub + '</span>';
+      html += '</a>';
+    });
+    html += '</div>';
+    html += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:16px">Kein Druck. Alles in deinem Tempo.</p>';
+    html += '</div>';
+
     // Quellen
     html += '<div style="text-align:center;padding:24px 0">';
     html += '<p style="font-size:13px;color:var(--mr-text-muted)">Quellen: BDB, Stiftung Warentest, Verbraucherzentralen, Aeternitas e.V.</p>';
@@ -292,6 +309,13 @@ details[open] summary span[aria-hidden]{transform:rotate(180deg)}
     var w = $('#wizard');
     w.innerHTML = html;
     $('#privacy-banner').style.display = 'none';
+
+    // Tool-Kette: Tracking auf Next-Step-Klicks
+    $$('a[data-next-step]', w).forEach(function(a){
+      a.addEventListener('click', function(){
+        track('toolNextStep', {from:'kostenrechner', to:a.getAttribute('data-next-step')});
+      });
+    });
 
     // Bind buttons
     $('#btn-print').addEventListener('click', function(){

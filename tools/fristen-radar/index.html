@@ -417,25 +417,32 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     // Privacy notice
     html += '<div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6"><strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Dieser Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert.</div>';
 
-    // Cross-links
-    html += '<div class="no-print" style="margin-top:32px;margin-bottom:24px">';
-    html += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;color:var(--mr-text);margin-bottom:6px">Weiterführende Hilfe</h2>';
-    html += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">Diese Tools helfen dir bei den nächsten Schritten:</p>';
-    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">';
-    [['Checkliste Todesfall','Schritt-für-Schritt durch die ersten Tage','/tools/checkliste-todesfall'],
-     ['Verträge kündigen','Welche Verträge sofort gekündigt werden müssen','/vertraege-kuendigen'],
-     ['Bestattungskosten','Mit welchen Kosten du rechnen musst','/bestattungskosten'],
-     ['Beerdigung planen','Ablauf und Organisation der Bestattung','/beerdigung-planen']
-    ].forEach(function(l){
-      html += '<a href="' + l[2] + '" style="display:block;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 16px;text-decoration:none;transition:border-color 0.2s;cursor:pointer">';
-      html += '<div style="font-weight:600;font-size:14px;color:var(--mr-text);margin-bottom:4px">' + esc(l[0]) + '</div>';
-      html += '<div style="font-size:13px;color:var(--mr-text-muted);line-height:1.4">' + esc(l[1]) + '</div>';
+    // Tool-Kette: Nächster sinnvoller Schritt
+    html += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
+    html += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
+    html += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Du kennst die Fristen. Diese Tools helfen bei der konkreten Umsetzung:</p>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    [{title:'Checkliste Todesfall',sub:'Schritt-für-Schritt-Plan',href:'/tools/checkliste-todesfall/'},
+     {title:'Bestattungskosten',sub:'Realistische Schätzung',href:'/tools/bestattungskosten-rechner/'},
+     {title:'Vorsorge-Check',sub:'Selbst vorbereiten',href:'/tools/vorsorge-check/'}].forEach(function(l){
+      html += '<a href="' + l.href + '" data-next-step="' + l.href + '" style="padding:16px 12px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;text-align:center;background:var(--mr-bg-card);transition:border-color 0.2s,box-shadow 0.2s" onmouseover="this.style.borderColor=\'var(--mr-accent)\';this.style.boxShadow=\'0 2px 8px rgba(0,0,0,0.06)\'" onmouseout="this.style.borderColor=\'var(--mr-border)\';this.style.boxShadow=\'none\'">';
+      html += '<strong style="font-size:14px;color:var(--mr-text);display:block;margin-bottom:2px">' + l.title + '</strong>';
+      html += '<span style="font-size:12px;color:var(--mr-text-muted)">' + l.sub + '</span>';
       html += '</a>';
     });
-    html += '</div></div>';
+    html += '</div>';
+    html += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:16px">Kein Druck. Alles in deinem Tempo.</p>';
+    html += '</div>';
 
     var v = $('#view-results');
     v.innerHTML = html;
+
+    // Tool-Kette: Tracking auf Next-Step-Klicks
+    $$('a[data-next-step]', v).forEach(function(a){
+      a.addEventListener('click', function(){
+        track('toolNextStep', {from:'fristen-radar', to:a.getAttribute('data-next-step')});
+      });
+    });
 
     // Bind interactions
     $('#fr-hide-done', v).addEventListener('change', function(e){

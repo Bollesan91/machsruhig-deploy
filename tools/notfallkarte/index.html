@@ -451,7 +451,31 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
     });
     h += '</div>';
 
+    // Tool-Kette: Nächster sinnvoller Schritt
+    h += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
+    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Deine Notfallkarte ist fertig. Diese Vorsorge-Tools komplettieren das Paket:</p>';
+    h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    [{title:'Vorsorge-Check',sub:'Was solltest du sonst regeln?',href:'/tools/vorsorge-check/'},
+     {title:'Checkliste Todesfall',sub:'Plan für Hinterbliebene',href:'/tools/checkliste-todesfall/'},
+     {title:'Patientenverfügung',sub:'Smartlaw-Partner',href:'/vorsorge/patientenverfuegung'}].forEach(function(l){
+      h += '<a href="' + l.href + '" data-next-step="' + l.href + '" style="padding:16px 12px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;text-align:center;background:var(--mr-bg-card);transition:border-color 0.2s,box-shadow 0.2s" onmouseover="this.style.borderColor=\'var(--mr-accent)\';this.style.boxShadow=\'0 2px 8px rgba(0,0,0,0.06)\'" onmouseout="this.style.borderColor=\'var(--mr-border)\';this.style.boxShadow=\'none\'">';
+      h += '<strong style="font-size:14px;color:var(--mr-text);display:block;margin-bottom:2px">' + l.title + '</strong>';
+      h += '<span style="font-size:12px;color:var(--mr-text-muted)">' + l.sub + '</span>';
+      h += '</a>';
+    });
+    h += '</div>';
+    h += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:16px">Kein Druck. Alles in deinem Tempo.</p>';
+    h += '</div>';
+
     $('#step-result').innerHTML = h;
+
+    // Tool-Kette: Tracking auf Next-Step-Klicks
+    $$('a[data-next-step]', $('#step-result')).forEach(function(a){
+      a.addEventListener('click', function(){
+        track('toolNextStep', {from:'notfallkarte', to:a.getAttribute('data-next-step')});
+      });
+    });
 
     // Build print page
     var pp = '';
