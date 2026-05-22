@@ -27,11 +27,16 @@
 @media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
 .mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}.mr-footer-inner{max-width:720px;margin:0 auto}.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}.mr-footer a:hover{color:var(--mr-primary)}.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}.mr-footer-bottom p{font-size:12px;color:#73655A}
 .mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+.bp-view{display:none}.bp-view.active{display:block}
+.opt-btn{padding:16px 20px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);background:var(--mr-bg-card);cursor:pointer;text-align:left;transition:border-color 0.2s;font-family:inherit;width:100%}
+.opt-btn:hover{border-color:var(--mr-accent)}
+.opt-btn.selected{border:2px solid var(--mr-accent);background:var(--mr-safety)}
+.opt-btn .row{display:flex;justify-content:space-between;align-items:center}
+.opt-btn strong{font-size:15px}
+.opt-btn .kosten{font-size:13px;color:var(--mr-warm);font-weight:600}
+.opt-btn .desc{font-size:13px;color:var(--mr-text-muted);display:block;margin-top:2px}
 @media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt;color:#000!important}.mr-content{max-width:100%;padding:0}h1{font-size:18pt!important}h2{font-size:14pt!important}.plan-item{break-inside:avoid;page-break-inside:avoid}}
 </style>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
@@ -46,9 +51,34 @@
       <a href="/tools/vorsorge-check">Vorsorge</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <a href="/bestatter/muenchen/">Bestatter finden</a></div></div></nav>
-<div class="mr-content"><main id="main"><div id="app"></div>
 
-  <section style="max-width:680px;margin:48px auto 0;padding:0 20px">
+<div class="mr-content"><main id="main">
+
+  <!-- Setup/intro view (initial active, SEO-indexable) -->
+  <div class="bp-view active" id="bp-view-step">
+    <header style="padding:48px 0 32px">
+      <div style="font-size:13px;color:var(--mr-text-muted);margin-bottom:16px">
+        <a href="/" style="color:var(--mr-warm);text-decoration:none">Start</a> ›
+        <a href="/beerdigung-planen" style="color:var(--mr-warm);text-decoration:none">Beerdigung planen</a> › Planer
+      </div>
+      <h1 style="font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;margin-bottom:12px">Beerdigungsplaner</h1>
+      <p style="font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px">Dieser Planer führt dich durch die wichtigsten Entscheidungen. Am Ende hast du einen persönlichen Plan, den du ausdrucken und mit dem Bestatter besprechen kannst.</p>
+    </header>
+
+    <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px">
+      <strong>Deine Planung bleibt privat.</strong> Alles läuft in deinem Browser. Keine Daten werden gesendet. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    </div>
+
+    <div style="font-size:14px;color:var(--mr-text-muted);margin-bottom:24px">8 Entscheidungen · ca. 10–15 Minuten · Druckbarer Plan am Ende</div>
+
+    <div id="bp-step-content"></div>
+  </div>
+
+  <!-- Result view -->
+  <div class="bp-view" id="bp-view-result"></div>
+
+
+  <section style="max-width:680px;margin:48px auto 0;padding:0 20px" class="no-print">
     <div class="mr-cta-block" style="background:#FFFDF9;border:2px solid #E8E0D6;border-radius:12px;padding:28px 24px;text-align:left">
       <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:8px;text-align:center">Plan per Email &mdash; und Bestatter-Angebote</h2>
       <p style="font-size:15px;color:#73655A;margin-bottom:20px;text-align:center">Wir mailen Dir Deinen Beerdigungs-Plan. Optional: bis zu 3 Bestatter aus Deiner Region rufen unverbindlich zurück. Kein Vertrag, kein Druck.</p>
@@ -91,257 +121,248 @@
   </section>
 
 </main></div>
+
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprüche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
-<script type="text/babel">
-const {useState, useRef} = React;
+<script>
+(function(){
+  'use strict';
 
-const STEPS = [
-  {id:'bestattungsart',title:'Welche Bestattungsart?',hint:'Falls eine Bestattungsverfügung existiert, hat sie Vorrang.',options:[
-    {value:'erdbestattung',label:'Erdbestattung (Sarg)',desc:'Klassisch, Friedhof, Grabpflege nötig',kosten:'5.000–15.000 €'},
-    {value:'feuerbestattung',label:'Feuerbestattung (Urne)',desc:'Häufigste Form, mehrere Beisetzungsoptionen',kosten:'2.000–8.000 €'},
-    {value:'seebestattung',label:'Seebestattung',desc:'Urne auf See, Verfügung nötig',kosten:'3.000–6.000 €'},
-    {value:'waldbestattung',label:'Baumbestattung / Wald',desc:'Urne am Baum, keine Grabpflege',kosten:'2.500–7.000 €'},
-    {value:'kolumbarium',label:'Kolumbarium (Urnenwand)',desc:'Urnennische auf dem Friedhof',kosten:'2.000–5.000 €'},
-    {value:'unsicher',label:'Noch unsicher',desc:'Ich möchte mich erst beraten lassen'}
-  ]},
-  {id:'trauerfeier',title:'Soll es eine Trauerfeier geben?',hint:'Optional, aber für viele ein wichtiger Teil des Abschieds.',options:[
-    {value:'kirchlich',label:'Kirchliche Trauerfeier',desc:'Mit Pfarrer/in, in Kirche oder Kapelle'},
-    {value:'weltlich',label:'Weltliche Trauerfeier',desc:'Ohne religiösen Bezug, mit freiem Redner'},
-    {value:'stille',label:'Stille Beisetzung',desc:'Nur engster Kreis, ohne formelle Feier'},
-    {value:'keine',label:'Keine Trauerfeier',desc:'Nur die Beisetzung selbst'}
-  ]},
-  {id:'teilnehmer',title:'Mit wie vielen Gästen rechnest du?',hint:'Beeinflusst Räumlichkeit und Kosten.',options:[
-    {value:'klein',label:'Engster Kreis (bis 15)',desc:'Familie und engste Freunde'},
-    {value:'mittel',label:'Mittlerer Kreis (15–50)',desc:'Familie, Freunde, Nachbarn'},
-    {value:'gross',label:'Großer Kreis (50+)',desc:'Breites Umfeld, Kollegen, Vereine'},
-    {value:'unklar',label:'Noch unklar',desc:'Kann ich noch nicht einschätzen'}
-  ]},
-  {id:'blumen',title:'Blumenschmuck?',hint:'Kein Muss, aber für viele ein wichtiger Teil.',options:[
-    {value:'komplett',label:'Komplett (Sarg + Halle + Grab)',desc:'Ab ca. 300–800 €'},
-    {value:'einfach',label:'Sargbukett / Urnenkranz',desc:'Ab ca. 80–200 €'},
-    {value:'minimal',label:'Einzelne Blumen',desc:'Ab ca. 30–80 €'},
-    {value:'keine',label:'Kein Blumenschmuck',desc:'Stattdessen z. B. Spenden'}
-  ]},
-  {id:'musik',title:'Musik bei der Trauerfeier?',hint:'Es gibt keine falschen Lieder.',options:[
-    {value:'live',label:'Live-Musik',desc:'Organist, Sänger, Band. Ab 150–500 €'},
-    {value:'tontraeger',label:'Vom Tonträger',desc:'Lieblingslieder des Verstorbenen'},
-    {value:'beides',label:'Beides kombinieren',desc:'z. B. Orgel + persönliches Lied'},
-    {value:'keine',label:'Keine Musik',desc:'Stille kann kraftvoll sein'}
-  ]},
-  {id:'redner',title:'Wer hält die Trauerrede?',hint:'Das Herzstück der Feier.',options:[
-    {value:'selbst',label:'Ich / Ein Angehöriger',desc:'Persönlich. Unser Generator hilft.'},
-    {value:'pfarrer',label:'Pfarrer/in',desc:'Bei kirchlicher Feier'},
-    {value:'trauerredner',label:'Professioneller Trauerredner',desc:'150–400 €, individuelles Vorgespräch'},
-    {value:'keiner',label:'Keine Rede',desc:'Bei stiller Beisetzung'}
-  ]},
-  {id:'kaffee',title:'Trauerkaffee nach der Beisetzung?',hint:'Tradition, die Raum zum Erinnern gibt.',options:[
-    {value:'restaurant',label:'Im Restaurant',desc:'15–30 € pro Person'},
-    {value:'gemeindehaus',label:'Gemeindehaus / Friedhofscafé',desc:'Oft günstiger, nah am Friedhof'},
-    {value:'zuhause',label:'Zu Hause',desc:'Privat und persönlich'},
-    {value:'kein',label:'Kein Trauerkaffee',desc:'Ist keine Pflicht'}
-  ]},
-  {id:'budget',title:'Budget-Vorstellung?',hint:'Es gibt kein richtig oder falsch.',options:[
-    {value:'sparsam',label:'Möglichst günstig (bis 3.000 €)',desc:'Einfache Bestattung'},
-    {value:'mittel',label:'Mittleres Budget (3.000–7.000 €)',desc:'Solide mit Trauerfeier'},
-    {value:'gehoben',label:'Gehoben (7.000–15.000 €)',desc:'Umfangreiche Gestaltung'},
-    {value:'egal',label:'Weiß ich noch nicht',desc:'Erstmal planen'}
-  ]}
-];
+  var STEPS = [
+    {id:'bestattungsart',title:'Welche Bestattungsart?',hint:'Falls eine Bestattungsverfügung existiert, hat sie Vorrang.',options:[
+      {value:'erdbestattung',label:'Erdbestattung (Sarg)',desc:'Klassisch, Friedhof, Grabpflege nötig',kosten:'5.000–15.000 €'},
+      {value:'feuerbestattung',label:'Feuerbestattung (Urne)',desc:'Häufigste Form, mehrere Beisetzungsoptionen',kosten:'2.000–8.000 €'},
+      {value:'seebestattung',label:'Seebestattung',desc:'Urne auf See, Verfügung nötig',kosten:'3.000–6.000 €'},
+      {value:'waldbestattung',label:'Baumbestattung / Wald',desc:'Urne am Baum, keine Grabpflege',kosten:'2.500–7.000 €'},
+      {value:'kolumbarium',label:'Kolumbarium (Urnenwand)',desc:'Urnennische auf dem Friedhof',kosten:'2.000–5.000 €'},
+      {value:'unsicher',label:'Noch unsicher',desc:'Ich möchte mich erst beraten lassen'}
+    ]},
+    {id:'trauerfeier',title:'Soll es eine Trauerfeier geben?',hint:'Optional, aber für viele ein wichtiger Teil des Abschieds.',options:[
+      {value:'kirchlich',label:'Kirchliche Trauerfeier',desc:'Mit Pfarrer/in, in Kirche oder Kapelle'},
+      {value:'weltlich',label:'Weltliche Trauerfeier',desc:'Ohne religiösen Bezug, mit freiem Redner'},
+      {value:'stille',label:'Stille Beisetzung',desc:'Nur engster Kreis, ohne formelle Feier'},
+      {value:'keine',label:'Keine Trauerfeier',desc:'Nur die Beisetzung selbst'}
+    ]},
+    {id:'teilnehmer',title:'Mit wie vielen Gästen rechnest du?',hint:'Beeinflusst Räumlichkeit und Kosten.',options:[
+      {value:'klein',label:'Engster Kreis (bis 15)',desc:'Familie und engste Freunde'},
+      {value:'mittel',label:'Mittlerer Kreis (15–50)',desc:'Familie, Freunde, Nachbarn'},
+      {value:'gross',label:'Großer Kreis (50+)',desc:'Breites Umfeld, Kollegen, Vereine'},
+      {value:'unklar',label:'Noch unklar',desc:'Kann ich noch nicht einschätzen'}
+    ]},
+    {id:'blumen',title:'Blumenschmuck?',hint:'Kein Muss, aber für viele ein wichtiger Teil.',options:[
+      {value:'komplett',label:'Komplett (Sarg + Halle + Grab)',desc:'Ab ca. 300–800 €'},
+      {value:'einfach',label:'Sargbukett / Urnenkranz',desc:'Ab ca. 80–200 €'},
+      {value:'minimal',label:'Einzelne Blumen',desc:'Ab ca. 30–80 €'},
+      {value:'keine',label:'Kein Blumenschmuck',desc:'Stattdessen z. B. Spenden'}
+    ]},
+    {id:'musik',title:'Musik bei der Trauerfeier?',hint:'Es gibt keine falschen Lieder.',options:[
+      {value:'live',label:'Live-Musik',desc:'Organist, Sänger, Band. Ab 150–500 €'},
+      {value:'tontraeger',label:'Vom Tonträger',desc:'Lieblingslieder des Verstorbenen'},
+      {value:'beides',label:'Beides kombinieren',desc:'z. B. Orgel + persönliches Lied'},
+      {value:'keine',label:'Keine Musik',desc:'Stille kann kraftvoll sein'}
+    ]},
+    {id:'redner',title:'Wer hält die Trauerrede?',hint:'Das Herzstück der Feier.',options:[
+      {value:'selbst',label:'Ich / Ein Angehöriger',desc:'Persönlich. Unser Generator hilft.'},
+      {value:'pfarrer',label:'Pfarrer/in',desc:'Bei kirchlicher Feier'},
+      {value:'trauerredner',label:'Professioneller Trauerredner',desc:'150–400 €, individuelles Vorgespräch'},
+      {value:'keiner',label:'Keine Rede',desc:'Bei stiller Beisetzung'}
+    ]},
+    {id:'kaffee',title:'Trauerkaffee nach der Beisetzung?',hint:'Tradition, die Raum zum Erinnern gibt.',options:[
+      {value:'restaurant',label:'Im Restaurant',desc:'15–30 € pro Person'},
+      {value:'gemeindehaus',label:'Gemeindehaus / Friedhofscafé',desc:'Oft günstiger, nah am Friedhof'},
+      {value:'zuhause',label:'Zu Hause',desc:'Privat und persönlich'},
+      {value:'kein',label:'Kein Trauerkaffee',desc:'Ist keine Pflicht'}
+    ]},
+    {id:'budget',title:'Budget-Vorstellung?',hint:'Es gibt kein richtig oder falsch.',options:[
+      {value:'sparsam',label:'Möglichst günstig (bis 3.000 €)',desc:'Einfache Bestattung'},
+      {value:'mittel',label:'Mittleres Budget (3.000–7.000 €)',desc:'Solide mit Trauerfeier'},
+      {value:'gehoben',label:'Gehoben (7.000–15.000 €)',desc:'Umfangreiche Gestaltung'},
+      {value:'egal',label:'Weiß ich noch nicht',desc:'Erstmal planen'}
+    ]}
+  ];
 
-const TIPS = [
-  {t:'Nimm dir Zeit',d:'Die meisten Entscheidungen müssen nicht sofort getroffen werden.'},
-  {t:'Bestatter als Partner',d:'Ein guter Bestatter nimmt dir viel ab. Vergleiche 2–3 Angebote.'},
-  {t:'Wünsche prüfen',d:'Gibt es eine Bestattungsverfügung oder mündliche Wünsche?'},
-  {t:'Kosten transparent klären',d:'Lass dir ein detailliertes Angebot geben.'},
-  {t:'Hilfe annehmen',d:'Freunde und Familie wollen helfen — lass sie.'},
-  {t:'Finanzielle Hilfe',d:'Sozialamt (§74 SGB XII) oder Sterbegeldversicherung prüfen.'}
-];
+  var TIPS = [
+    {t:'Nimm dir Zeit',d:'Die meisten Entscheidungen müssen nicht sofort getroffen werden.'},
+    {t:'Bestatter als Partner',d:'Ein guter Bestatter nimmt dir viel ab. Vergleiche 2–3 Angebote.'},
+    {t:'Wünsche prüfen',d:'Gibt es eine Bestattungsverfügung oder mündliche Wünsche?'},
+    {t:'Kosten transparent klären',d:'Lass dir ein detailliertes Angebot geben.'},
+    {t:'Hilfe annehmen',d:'Freunde und Familie wollen helfen — lass sie.'},
+    {t:'Finanzielle Hilfe',d:'Sozialamt (§74 SGB XII) oder Sterbegeldversicherung prüfen.'}
+  ];
 
-function App() {
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState({});
-  const [done, setDone] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const topRef = useRef(null);
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
-  const select = (val) => {
-    const newAnswers = {...answers, [STEPS[step].id]: val};
-    setAnswers(newAnswers);
-    if (window.mrTrack) window.mrTrack.toolStep('beerdigungsplaner', step + 1);
-    if (step < STEPS.length - 1) {
-      setStep(step + 1);
-      setTimeout(() => topRef.current?.scrollIntoView({behavior:'smooth'}), 100);
-    } else {
-      setDone(true);
-      setTimeout(() => topRef.current?.scrollIntoView({behavior:'smooth'}), 100);
+  var state = {step:0, answers:{}};
+
+  function renderStep(){
+    var s = STEPS[state.step];
+    var pct = ((state.step + 1) / STEPS.length * 100);
+    var h = '';
+    h += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">';
+    h += '<div style="width:36px;height:36px;border-radius:50%;background:var(--mr-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0">' + (state.step + 1) + '</div>';
+    h += '<div><div style="font-size:12px;color:var(--mr-text-muted)">Schritt ' + (state.step + 1) + ' von ' + STEPS.length + '</div>';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin:0">' + esc(s.title) + '</h2></div></div>';
+    if (s.hint) h += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">' + esc(s.hint) + '</p>';
+    h += '<div style="display:grid;gap:10px">';
+    s.options.forEach(function(o){
+      h += '<button type="button" class="opt-btn' + (state.answers[s.id] === o.value ? ' selected' : '') + '" data-value="' + esc(o.value) + '" aria-pressed="' + (state.answers[s.id] === o.value ? 'true' : 'false') + '">';
+      h += '<div class="row"><strong>' + esc(o.label) + '</strong>';
+      if (o.kosten) h += '<span class="kosten">' + esc(o.kosten) + '</span>';
+      h += '</div>';
+      h += '<span class="desc">' + esc(o.desc) + '</span>';
+      h += '</button>';
+    });
+    h += '</div>';
+    if (state.step > 0) {
+      h += '<button type="button" id="bp-back" class="no-print" style="margin-top:16px;font-size:13px;color:var(--mr-text-muted);background:none;border:none;cursor:pointer;padding:8px 0;font-family:inherit">← Zurück</button>';
     }
-  };
+    h += '<div style="height:6px;background:var(--mr-border);border-radius:3px;margin:24px 0 0;overflow:hidden"><div style="height:100%;width:' + pct + '%;background:var(--mr-accent);border-radius:3px;transition:width 0.3s"></div></div>';
 
-  const getLabel = (stepId, val) => {
-    const s = STEPS.find(s => s.id === stepId);
-    const o = s?.options.find(o => o.value === val);
-    return o ? o.label : val;
-  };
+    $('#bp-step-content').innerHTML = h;
+    $$('.opt-btn', $('#bp-step-content')).forEach(function(btn){
+      btn.addEventListener('click', function(){ select(btn.dataset.value); });
+    });
+    var back = $('#bp-back');
+    if (back) back.addEventListener('click', function(){
+      if (state.step > 0) { state.step--; renderStep(); window.scrollTo({top:0, behavior:'smooth'}); }
+    });
+  }
 
-  const generatePlanText = () => {
-    let text = 'BEERDIGUNGSPLAN — erstellt mit machsruhig.de\n';
-    text += '='.repeat(45) + '\n\n';
-    STEPS.forEach(s => {
-      if (answers[s.id]) {
-        const o = s.options.find(o => o.value === answers[s.id]);
-        text += s.title + '\n  → ' + (o ? o.label + (o.kosten ? ' (' + o.kosten + ')' : '') : answers[s.id]) + '\n\n';
+  function select(val){
+    var sid = STEPS[state.step].id;
+    state.answers[sid] = val;
+    track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: sid, value: val});
+    if (state.step < STEPS.length - 1) {
+      state.step++;
+      renderStep();
+      window.scrollTo({top:0, behavior:'smooth'});
+    } else {
+      renderResult();
+      $('#bp-view-step').classList.remove('active');
+      $('#bp-view-result').classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+  }
+
+  function getOption(stepId, val){
+    var s = STEPS.filter(function(s){ return s.id === stepId; })[0];
+    if (!s) return null;
+    return s.options.filter(function(o){ return o.value === val; })[0] || null;
+  }
+
+  function generatePlanText(){
+    var text = 'BEERDIGUNGSPLAN — erstellt mit machsruhig.de\n' + new Array(46).join('=') + '\n\n';
+    STEPS.forEach(function(s){
+      if (state.answers[s.id]) {
+        var o = getOption(s.id, state.answers[s.id]);
+        text += s.title + '\n  → ' + (o ? o.label + (o.kosten ? ' (' + o.kosten + ')' : '') : state.answers[s.id]) + '\n\n';
       }
     });
     text += '\nErstellt am ' + new Date().toLocaleDateString('de-DE') + '\nMehr Infos: https://machsruhig.de/beerdigung-planen';
     return text;
-  };
+  }
 
-  const copyPlan = () => {
-    navigator.clipboard.writeText(generatePlanText()).then(() => {
-      setCopied(true);
-      if (window.mrTrack) window.mrTrack.toolExport('beerdigungsplaner', 'copy');
-      setTimeout(() => setCopied(false), 2000);
+  function renderResult(){
+    var h = '';
+    h += '<header style="padding:32px 0 16px">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(22px,4vw,30px);font-weight:800">Dein Beerdigungsplan</h2>';
+    h += '</header>';
+    h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px">Dies ist eine Planungsgrundlage. Besprich diesen Plan mit dem Bestatter — er berät dich zu den konkreten Möglichkeiten in deiner Region.</div>';
+
+    h += '<div style="margin-bottom:32px">';
+    STEPS.forEach(function(s, i){
+      if (!state.answers[s.id]) return;
+      var o = getOption(s.id, state.answers[s.id]);
+      h += '<div class="plan-item" style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--mr-border)">';
+      h += '<div style="width:28px;height:28px;border-radius:50%;background:var(--mr-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;margin-top:2px">' + (i + 1) + '</div>';
+      h += '<div style="flex:1">';
+      h += '<div style="font-size:13px;color:var(--mr-text-muted)">' + esc(s.title) + '</div>';
+      h += '<div style="font-size:15px;font-weight:600;color:var(--mr-text)">' + esc(o ? o.label : state.answers[s.id]) + '</div>';
+      if (o && o.kosten) h += '<div style="font-size:13px;color:var(--mr-warm);margin-top:2px">Kostenrahmen: ' + esc(o.kosten) + '</div>';
+      h += '</div></div>';
     });
-  };
+    h += '</div>';
 
-  /* Intro */
-  if (step === 0 && Object.keys(answers).length === 0 && !done) {
-    return React.createElement('div', {ref: topRef},
-      React.createElement('header', {style:{padding:'48px 0 32px'}},
-        React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)',marginBottom:16}},
-          React.createElement('a', {href:'/',style:{color:'var(--mr-warm)',textDecoration:'none'}}, 'Start'), ' \u203A ',
-          React.createElement('a', {href:'/beerdigung-planen',style:{color:'var(--mr-warm)',textDecoration:'none'}}, 'Beerdigung planen'), ' \u203A Planer'
-        ),
-        React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(26px,4.5vw,36px)',fontWeight:800,lineHeight:1.25,marginBottom:12}}, 'Beerdigungsplaner'),
-        React.createElement('p', {style:{fontSize:17,lineHeight:1.7,color:'var(--mr-text-muted)',maxWidth:600}}, 'Dieser Planer führt dich durch die wichtigsten Entscheidungen. Am Ende hast du einen persönlichen Plan, den du ausdrucken und mit dem Bestatter besprechen kannst.')
-      ),
-      React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',marginBottom:24,fontSize:14}},
-        React.createElement('strong', null, 'Deine Planung bleibt privat.'), ' Alles läuft in deinem Browser. Keine Daten werden gesendet. ',
-        React.createElement('a', {href:'/datenschutz',style:{color:'var(--mr-primary)'}}, 'Datenschutzerklärung')
-      ),
-      React.createElement('div', {style:{fontSize:14,color:'var(--mr-text-muted)',marginBottom:24}},
-        '8 Entscheidungen · ca. 10–15 Minuten · Druckbarer Plan am Ende'
-      ),
-      React.createElement('button', {
-        onClick: () => select(STEPS[0].options[0].value) || setStep(0),
-        style:{display:'none'}
-      }),
-      renderStep()
-    );
+    if (state.answers.redner === 'selbst') {
+      h += '<div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:20px;font-size:14px">';
+      h += 'Du möchtest die Trauerrede selbst halten? Unser <a href="/tools/trauerrede/" style="color:var(--mr-primary);font-weight:600">Trauerrede-Generator</a> hilft dir dabei.';
+      h += '</div>';
+    }
+
+    h += '<div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px">';
+    h += '<button type="button" id="bp-print" style="padding:12px 24px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;font-family:inherit">Drucken / PDF</button>';
+    h += '<button type="button" id="bp-copy" style="padding:12px 24px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;font-family:inherit">Text kopieren</button>';
+    h += '<button type="button" id="bp-restart" style="padding:12px 24px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;font-family:inherit">Neue Planung</button>';
+    h += '</div>';
+
+    h += '<div style="margin-bottom:32px">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:16px">Tipps für die Planung</h2>';
+    h += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+    TIPS.forEach(function(tip){
+      h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:14px 18px">';
+      h += '<strong style="font-size:14px;display:block;margin-bottom:4px">' + esc(tip.t) + '</strong>';
+      h += '<span style="font-size:13px;color:var(--mr-text-muted)">' + esc(tip.d) + '</span>';
+      h += '</div>';
+    });
+    h += '</div></div>';
+
+    h += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin-bottom:32px">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
+    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Druck den Plan aus und besprich ihn mit dem Bestatter. Bei weiteren Fragen:</p>';
+    h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    [['Checkliste Todesfall','/tools/checkliste-todesfall','Was sonst noch zu tun ist'],
+     ['Trauerrede schreiben','/tools/trauerrede/','Persönliche Abschiedsrede'],
+     ['Bestatter finden','/bestatter','In deiner Nähe']].forEach(function(l){
+      h += '<a href="' + l[1] + '" style="padding:16px 12px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;text-align:center;background:var(--mr-bg-card)" data-track="cta">';
+      h += '<strong style="font-size:14px;color:var(--mr-text);display:block">' + esc(l[0]) + '</strong>';
+      h += '<span style="font-size:12px;color:var(--mr-text-muted)">' + esc(l[2]) + '</span>';
+      h += '</a>';
+    });
+    h += '</div>';
+    h += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:16px">Kein Druck, kein Zeitlimit. Alles in deinem Tempo.</p>';
+    h += '</div>';
+
+    h += '<div style="text-align:center;padding:24px 0">';
+    h += '<p style="font-size:13px;color:var(--mr-text-muted)">Alle Angaben ohne Gewähr. Kostenrahmen sind Richtwerte. <a href="/methodik" style="color:var(--mr-primary);text-decoration:none">Methodik</a>.</p>';
+    h += '</div>';
+
+    var v = $('#bp-view-result');
+    v.innerHTML = h;
+
+    $('#bp-print').addEventListener('click', function(){
+      track('toolExport', {tool:'beerdigungsplaner', type:'print'});
+      window.print();
+    });
+    $('#bp-copy').addEventListener('click', function(){
+      var text = generatePlanText();
+      var btn = $('#bp-copy');
+      var done = function(){ btn.textContent = 'Kopiert!'; setTimeout(function(){ btn.textContent = 'Text kopieren'; }, 2000); };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(_){}
+        document.body.removeChild(ta);
+      }
+      track('toolExport', {tool:'beerdigungsplaner', type:'copy'});
+    });
+    $('#bp-restart').addEventListener('click', function(){
+      state.step = 0;
+      state.answers = {};
+      $('#bp-view-result').classList.remove('active');
+      $('#bp-view-step').classList.add('active');
+      renderStep();
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
   }
 
-  function renderStep() {
-    const s = STEPS[step];
-    return React.createElement('div', null,
-      React.createElement('div', {style:{display:'flex',alignItems:'center',gap:12,marginBottom:24}},
-        React.createElement('div', {style:{width:36,height:36,borderRadius:'50%',background:'var(--mr-accent)',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:700,fontSize:14,flexShrink:0}}, step + 1),
-        React.createElement('div', null,
-          React.createElement('div', {style:{fontSize:12,color:'var(--mr-text-muted)'}}, 'Schritt ' + (step + 1) + ' von ' + STEPS.length),
-          React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,margin:0}}, s.title)
-        )
-      ),
-      s.hint && React.createElement('p', {style:{fontSize:14,color:'var(--mr-text-muted)',marginBottom:16}}, s.hint),
-      React.createElement('div', {style:{display:'grid',gap:10}},
-        s.options.map(o =>
-          React.createElement('button', {
-            key: o.value,
-            onClick: () => select(o.value),
-            style:{padding:'16px 20px',border: answers[s.id]===o.value ? '2px solid var(--mr-accent)' : '1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',background: answers[s.id]===o.value ? 'var(--mr-safety)' : 'var(--mr-bg-card)',cursor:'pointer',textAlign:'left',transition:'border-color 0.2s'}
-          },
-            React.createElement('div', {style:{display:'flex',justifyContent:'space-between',alignItems:'center'}},
-              React.createElement('strong', {style:{fontSize:15}}, o.label),
-              o.kosten && React.createElement('span', {style:{fontSize:13,color:'var(--mr-warm)',fontWeight:600}}, o.kosten)
-            ),
-            React.createElement('span', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, o.desc)
-          )
-        )
-      ),
-      step > 0 && React.createElement('button', {
-        onClick: () => { setStep(step - 1); },
-        className: 'no-print',
-        style:{marginTop:16,fontSize:13,color:'var(--mr-text-muted)',background:'none',border:'none',cursor:'pointer',padding:'8px 0'}
-      }, '\u2190 Zurück'),
-      React.createElement('div', {style:{height:6,background:'var(--mr-border)',borderRadius:3,margin:'24px 0 0',overflow:'hidden'}},
-        React.createElement('div', {style:{height:'100%',width: ((step + 1) / STEPS.length * 100) + '%',background:'var(--mr-accent)',borderRadius:3,transition:'width 0.3s'}})
-      )
-    );
-  }
-
-  /* Question flow */
-  if (!done) {
-    return React.createElement('div', {ref: topRef},
-      React.createElement('header', {style:{padding:'32px 0 16px'}},
-        React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(22px,4vw,28px)',fontWeight:800}}, 'Beerdigungsplaner')
-      ),
-      renderStep()
-    );
-  }
-
-  /* Result */
-  return React.createElement('div', {ref: topRef},
-    React.createElement('header', {style:{padding:'32px 0 16px'}},
-      React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(22px,4vw,30px)',fontWeight:800}}, 'Dein Beerdigungsplan')
-    ),
-    React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',marginBottom:24,fontSize:14}},
-      'Dies ist eine Planungsgrundlage. Besprich diesen Plan mit dem Bestatter — er berät dich zu den konkreten Möglichkeiten in deiner Region.'
-    ),
-    React.createElement('div', {style:{marginBottom:32}},
-      STEPS.map(s => {
-        if (!answers[s.id]) return null;
-        const o = s.options.find(o => o.value === answers[s.id]);
-        return React.createElement('div', {key:s.id, className:'plan-item', style:{display:'flex',gap:16,padding:'16px 0',borderBottom:'1px solid var(--mr-border)'}},
-          React.createElement('div', {style:{width:28,height:28,borderRadius:'50%',background:'var(--mr-accent)',color:'#fff',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:700,fontSize:12,flexShrink:0,marginTop:2}}, s.id === 'bestattungsart' ? '1' : s.id === 'trauerfeier' ? '2' : s.id === 'teilnehmer' ? '3' : s.id === 'blumen' ? '4' : s.id === 'musik' ? '5' : s.id === 'redner' ? '6' : s.id === 'kaffee' ? '7' : '8'),
-          React.createElement('div', {style:{flex:1}},
-            React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, s.title),
-            React.createElement('div', {style:{fontSize:15,fontWeight:600,color:'var(--mr-text)'}}, o ? o.label : answers[s.id]),
-            o && o.kosten && React.createElement('div', {style:{fontSize:13,color:'var(--mr-warm)',marginTop:2}}, 'Kostenrahmen: ' + o.kosten)
-          )
-        );
-      })
-    ),
-    answers.redner === 'selbst' && React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'16px 20px',marginBottom:20,fontSize:14}},
-      'Du möchtest die Trauerrede selbst halten? Unser ', React.createElement('a', {href:'/tools/trauerrede/',style:{color:'var(--mr-primary)',fontWeight:600}}, 'Trauerrede-Generator'), ' hilft dir dabei.'
-    ),
-    React.createElement('div', {style:{display:'flex',gap:10,flexWrap:'wrap',marginBottom:32},className:'no-print'},
-      React.createElement('button', {onClick:()=>{window.print();if(window.mrTrack)window.mrTrack.toolExport('beerdigungsplaner','print')},style:{padding:'12px 24px',background:'var(--mr-primary)',color:'#fff',border:'none',borderRadius:99,fontWeight:600,fontSize:14,cursor:'pointer'}}, 'Drucken / PDF'),
-      React.createElement('button', {onClick:copyPlan,style:{padding:'12px 24px',background:'var(--mr-bg-card)',color:'var(--mr-text)',border:'1px solid var(--mr-border)',borderRadius:99,fontWeight:600,fontSize:14,cursor:'pointer'}}, copied ? 'Kopiert!' : 'Text kopieren'),
-      React.createElement('button', {onClick:()=>{setStep(0);setAnswers({});setDone(false)},style:{padding:'12px 24px',background:'var(--mr-bg-card)',color:'var(--mr-text)',border:'1px solid var(--mr-border)',borderRadius:99,fontWeight:600,fontSize:14,cursor:'pointer'}}, 'Neue Planung')
-    ),
-    React.createElement('div', {style:{marginBottom:32}},
-      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,marginBottom:16}}, 'Tipps für die Planung'),
-      React.createElement('div', {style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10}},
-        TIPS.map((tip,i) =>
-          React.createElement('div', {key:i,style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'14px 18px'}},
-            React.createElement('strong', {style:{fontSize:14,display:'block',marginBottom:4}}, tip.t),
-            React.createElement('span', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, tip.d)
-          )
-        )
-      )
-    ),
-    React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'2px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'32px 28px',textAlign:'center',marginBottom:32}},
-      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,marginBottom:8}}, 'Was kommt als Nächstes?'),
-      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',marginBottom:20}}, 'Druck den Plan aus und besprich ihn mit dem Bestatter. Bei weiteren Fragen:'),
-      React.createElement('div', {style:{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:12}},
-        [{l:'Checkliste Todesfall',h:'/tools/checkliste-todesfall',d:'Was sonst noch zu tun ist'},{l:'Trauerrede schreiben',h:'/tools/trauerrede/',d:'Persönliche Abschiedsrede'},{l:'Bestatter finden',h:'/bestatter',d:'In deiner Nähe'}].map(link =>
-          React.createElement('a', {key:link.h,href:link.h,style:{padding:'16px 12px',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',textDecoration:'none',textAlign:'center',background:'var(--mr-bg-card)'},'data-track':'cta'},
-            React.createElement('strong', {style:{fontSize:14,color:'var(--mr-text)',display:'block'}}, link.l),
-            React.createElement('span', {style:{fontSize:12,color:'var(--mr-text-muted)'}}, link.d)
-          )
-        )
-      ),
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',marginTop:16}}, 'Kein Druck, kein Zeitlimit. Alles in deinem Tempo.')
-    ),
-    React.createElement('div', {style:{textAlign:'center',padding:'24px 0'}},
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)'}},
-        'Alle Angaben ohne Gewähr. Kostenrahmen sind Richtwerte. ',
-        React.createElement('a', {href:'/methodik',style:{color:'var(--mr-primary)',textDecoration:'none'}}, 'Methodik'), '.'
-      )
-    )
-  );
-}
-
-ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(App));
+  // Initial render
+  renderStep();
+})();
 </script>
 </body>
 </html>
