@@ -16,7 +16,9 @@
 // Fire lead_qualified event on page-load (form-confirmation)
 window.addEventListener('load', function() {
   if (typeof window.plausible === 'function') {
-    window.plausible('lead_qualified', { props: { form: 'bestatter-anfrage' } });
+    var params = new URLSearchParams(window.location.search);
+    var source = params.get('source') || 'bestatter-anfrage';
+    window.plausible('lead_qualified', { props: { form: source } });
   }
 });
 </script>
