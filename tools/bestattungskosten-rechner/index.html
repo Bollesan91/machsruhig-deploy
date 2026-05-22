@@ -22,14 +22,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebApplication","name":"Bestattungskosten-Rechner","description":"Interaktiver Kostenkalkulator für Bestattungen in Deutschland nach Art, Region und Extras","url":"https://machsruhig.de/tools/bestattungskosten-rechner/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
-{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Kostenrechner","item":"https://machsruhig.de/tools/bestattungskosten-rechner"}]},
-{"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Ist der Rechner genau?","acceptedAnswer":{"@type":"Answer","text":"Der Rechner zeigt realistische Bandbreiten basierend auf aktuellen Marktdaten von 2024/2025. Die tatsächlichen Kosten können je nach Bestatter, Region und persönlichen Wünschen variieren. Hol immer 2–3 schriftliche Angebote von lokalen Bestattern ein."}},
-{"@type":"Question","name":"Warum sind die Kosten so unterschiedlich?","acceptedAnswer":{"@type":"Answer","text":"Friedhofsgebühren variieren regional um 300–400 %. Auch die Wahl von Sarg/Urne, Grabstein, Trauerfeier und Extras beeinflussen die Kosten stark. Ein Grabplatz in München kostet 5–10 mal mehr als auf dem Land."}},
-{"@type":"Question","name":"Wie spare ich bei Bestattungskosten?","acceptedAnswer":{"@type":"Answer","text":"Vergleiche Bestatter-Angebote, wähle einfache Materialien für Sarg/Urne, nutze Friedhofsgemeinden statt privater Friedhöfe, plane eine schlichte Trauerfeier und verzichte auf teure Extras. Eine Sozialbestattung ist möglich, wenn die Erben zu arm sind."}},
-{"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Rechner läuft komplett in deinem Browser. Deine Eingaben werden nicht an einen Server übertragen, nicht gespeichert und nicht für Marketing genutzt."}}
-]}
-]}
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Kostenrechner","item":"https://machsruhig.de/tools/bestattungskosten-rechner"}]}
 </script>
 
 <style>
@@ -230,35 +223,35 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Welche Bestattungsart möchtest du?</h2>
 
       <div class="card-grid" id="bestattungsart-cards">
-        <button type="button" class="bestattungsart-card" data-value="erdbestattung">
+        <button type="button" class="bestattungsart-card" data-value="erdbestattung" aria-pressed="false">
           <div class="bestattungsart-icon">⛪</div>
           <div class="bestattungsart-text">
             <strong>Erdbestattung</strong>
             <div class="desc">Traditionelle Beisetzung im Grab</div>
           </div>
         </button>
-        <button type="button" class="bestattungsart-card" data-value="feuerbestattung">
+        <button type="button" class="bestattungsart-card" data-value="feuerbestattung" aria-pressed="false">
           <div class="bestattungsart-icon">🔥</div>
           <div class="bestattungsart-text">
             <strong>Feuerbestattung</strong>
             <div class="desc">Einäscherung mit Urnenbeisetzung</div>
           </div>
         </button>
-        <button type="button" class="bestattungsart-card" data-value="seebestattung">
+        <button type="button" class="bestattungsart-card" data-value="seebestattung" aria-pressed="false">
           <div class="bestattungsart-icon">🌊</div>
           <div class="bestattungsart-text">
             <strong>Seebestattung</strong>
             <div class="desc">Beisetzung der Asche in der Nordsee</div>
           </div>
         </button>
-        <button type="button" class="bestattungsart-card" data-value="baumbestattung">
+        <button type="button" class="bestattungsart-card" data-value="baumbestattung" aria-pressed="false">
           <div class="bestattungsart-icon">🌳</div>
           <div class="bestattungsart-text">
             <strong>Baum- / Waldbestattung</strong>
             <div class="desc">Beisetzung in Friedwald oder Naturbestattung</div>
           </div>
         </button>
-        <button type="button" class="bestattungsart-card" data-value="anonyme">
+        <button type="button" class="bestattungsart-card" data-value="anonyme" aria-pressed="false">
           <div class="bestattungsart-icon">🤐</div>
           <div class="bestattungsart-text">
             <strong>Anonyme Bestattung</strong>
@@ -329,15 +322,15 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
         </label>
         <div id="trauerfeier-options" style="margin-top:12px;padding-left:28px;display:none">
           <div class="card-grid" data-radio-group="trauerfeierTyp">
-            <button type="button" class="choice-card" data-value="weltlich">
+            <button type="button" class="choice-card" data-value="weltlich" aria-pressed="false">
               <strong>Weltlich</strong>
               <div class="desc">mit Trauerredner</div>
             </button>
-            <button type="button" class="choice-card" data-value="kirchlich">
+            <button type="button" class="choice-card" data-value="kirchlich" aria-pressed="false">
               <strong>Kirchlich</strong>
               <div class="desc">mit Geistlichen</div>
             </button>
-            <button type="button" class="choice-card" data-value="frei">
+            <button type="button" class="choice-card" data-value="frei" aria-pressed="false">
               <strong>Frei gestaltet</strong>
               <div class="desc">Familie plant</div>
             </button>
@@ -352,19 +345,19 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
         </label>
         <div id="blumenschmuck-options" style="margin-top:12px;padding-left:28px;display:none">
           <div class="card-grid" data-radio-group="blumenschmuckTyp">
-            <button type="button" class="choice-card" data-value="einfach"><strong>Einfach</strong></button>
-            <button type="button" class="choice-card" data-value="mittel"><strong>Mittel</strong></button>
-            <button type="button" class="choice-card" data-value="aufwendig"><strong>Aufwendig</strong></button>
+            <button type="button" class="choice-card" data-value="einfach" aria-pressed="false"><strong>Einfach</strong></button>
+            <button type="button" class="choice-card" data-value="mittel" aria-pressed="false"><strong>Mittel</strong></button>
+            <button type="button" class="choice-card" data-value="aufwendig" aria-pressed="false"><strong>Aufwendig</strong></button>
           </div>
         </div>
       </div>
 
       <div style="margin-bottom:20px">
         <label style="display:block;margin-bottom:8px;font-weight:600;font-size:14px">Sarg-Qualität</label>
-        <div class="card-grid" data-radio-group="sarqQualitaet">
-          <button type="button" class="choice-card" data-value="einfach"><strong>Einfach</strong></button>
-          <button type="button" class="choice-card" data-value="mittel"><strong>Mittel</strong></button>
-          <button type="button" class="choice-card" data-value="hochwertig"><strong>Hochwertig</strong></button>
+        <div class="card-grid" data-radio-group="sargQualitaet">
+          <button type="button" class="choice-card" data-value="einfach" aria-pressed="false"><strong>Einfach</strong></button>
+          <button type="button" class="choice-card" data-value="mittel" aria-pressed="false"><strong>Mittel</strong></button>
+          <button type="button" class="choice-card" data-value="hochwertig" aria-pressed="false"><strong>Hochwertig</strong></button>
         </div>
       </div>
 
@@ -375,15 +368,15 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
         </label>
         <div id="grabstein-options" style="margin-top:12px;padding-left:28px;display:none">
           <div class="card-grid" data-radio-group="grabsteinTyp">
-            <button type="button" class="choice-card" data-value="einfach">
+            <button type="button" class="choice-card" data-value="einfach" aria-pressed="false">
               <strong>Einfach</strong>
               <div class="desc">Holzkreuz, Platte</div>
             </button>
-            <button type="button" class="choice-card" data-value="mittel">
+            <button type="button" class="choice-card" data-value="mittel" aria-pressed="false">
               <strong>Mittel</strong>
               <div class="desc">Naturstein</div>
             </button>
-            <button type="button" class="choice-card" data-value="aufwendig">
+            <button type="button" class="choice-card" data-value="aufwendig" aria-pressed="false">
               <strong>Aufwendig</strong>
               <div class="desc">großes Grabmal</div>
             </button>
@@ -609,7 +602,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
     trauerfeierTyp: 'weltlich',
     blumenschmuck: false,
     blumenschmuckTyp: 'einfach',
-    sarqQualitaet: 'mittel',
+    sargQualitaet: 'mittel',
     grabstein: false,
     grabsteinTyp: 'mittel',
     traueranzeige: false
@@ -652,8 +645,9 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
   // Step 0: Bestattungsart-Cards
   $$('#bestattungsart-cards .bestattungsart-card').forEach(function(card){
     card.addEventListener('click', function(){
-      $$('#bestattungsart-cards .bestattungsart-card').forEach(function(c){ c.classList.remove('selected'); });
+      $$('#bestattungsart-cards .bestattungsart-card').forEach(function(c){ c.classList.remove('selected'); c.setAttribute('aria-pressed','false'); });
       card.classList.add('selected');
+      card.setAttribute('aria-pressed','true');
       state.bestattungsart = card.dataset.value;
       $('#btn-step-0-next').disabled = false;
       updateGrabtypOptions();
@@ -703,10 +697,11 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
     var key = group.dataset.radioGroup;
     // Initial selection from state
     $$('.choice-card', group).forEach(function(card){
-      if (card.dataset.value === state[key]) card.classList.add('selected');
+      if (card.dataset.value === state[key]) { card.classList.add('selected'); card.setAttribute('aria-pressed','true'); }
       card.addEventListener('click', function(){
-        $$('.choice-card', group).forEach(function(c){ c.classList.remove('selected'); });
+        $$('.choice-card', group).forEach(function(c){ c.classList.remove('selected'); c.setAttribute('aria-pressed','false'); });
         card.classList.add('selected');
+        card.setAttribute('aria-pressed','true');
         state[key] = card.dataset.value;
       });
     });
@@ -737,18 +732,44 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       var cost = model[key];
 
       // Conditional items
-      if (
-        (key === 'aufbahrung' && !state.aufbahrung) ||
-        (key.indexOf('trauerfeier_') === 0 && !state.trauerfeier) ||
-        (key.indexOf('blumenschmuck_') === 0 && !state.blumenschmuck) ||
-        (key.indexOf('grabstein_') === 0 && !state.grabstein) ||
-        (key === 'traueranzeige' && !state.traueranzeige)
-      ) return;
+      if (key === 'aufbahrung' && !state.aufbahrung) return;
+      if (key === 'traueranzeige' && !state.traueranzeige) return;
+
+      // Trauerfeier: nur saal + redner wenn Checkbox an. Kein Typ-Filter im Modell, beide gehören dazu.
+      if (key.indexOf('trauerfeier_') === 0 && !state.trauerfeier) return;
+
+      // Blumenschmuck: NUR die gewählte Variante zählen (nicht alle 3!)
+      if (key.indexOf('blumenschmuck_') === 0) {
+        if (!state.blumenschmuck) return;
+        var bsType = key.substring('blumenschmuck_'.length); // 'einfach' | 'mittel' | 'aufwendig'
+        if (bsType !== state.blumenschmuckTyp) return;
+      }
+
+      // Grabstein: NUR die gewählte Variante zählen (nicht alle 3!)
+      if (key.indexOf('grabstein_') === 0) {
+        if (!state.grabstein) return;
+        var gsType = key.substring('grabstein_'.length);
+        if (gsType !== state.grabsteinTyp) return;
+      }
 
       if (!COST_MAPPING[key]) return;
 
-      var min = Math.round(cost.min * multiplier);
-      var max = Math.round(cost.max * multiplier);
+      // Sarg-Qualität als Multiplikator (einfach 0.7, mittel 1.0, hochwertig 1.4)
+      var qualityMult = 1.0;
+      if (key === 'sarg') {
+        var SARG_QUAL = {einfach:0.7, mittel:1.0, hochwertig:1.4};
+        qualityMult = SARG_QUAL[state.sargQualitaet] || 1.0;
+      }
+
+      // Grabtyp als Multiplikator auf Friedhofsgebühren
+      // (Einzel=1.0 Basis, Doppel=1.6, Reihen=0.7, Urne=0.5, Gemeinschaft=0.4)
+      if (key === 'friedhofsgebuehr' || key === 'friedhofsgebuehr_urne') {
+        var GRAB_MULT = {Einzelgrab:1.0, Doppelgrab:1.6, Reihengrab:0.7, Urnengrab:0.5, Gemeinschaftsgrab:0.4};
+        qualityMult = GRAB_MULT[state.grabGrab] || 1.0;
+      }
+
+      var min = Math.round(cost.min * multiplier * qualityMult);
+      var max = Math.round(cost.max * multiplier * qualityMult);
       items.push({
         name: COST_MAPPING[key].label,
         category: COST_MAPPING[key].category,
