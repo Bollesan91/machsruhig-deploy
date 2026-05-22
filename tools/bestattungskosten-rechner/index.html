@@ -401,10 +401,10 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
     <div class="rechner-step" data-step="2">
       <div class="rechner-progress-label">
         <span>Schritt 3 von 3</span>
-        <span>99%</span>
+        <span>100%</span>
       </div>
       <div class="rechner-progress">
-        <div class="rechner-progress-fill" style="width:99%"></div>
+        <div class="rechner-progress-fill" style="width:100%"></div>
       </div>
 
       <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Prüfe deine Angaben</h2>
@@ -735,8 +735,14 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       if (key === 'aufbahrung' && !state.aufbahrung) return;
       if (key === 'traueranzeige' && !state.traueranzeige) return;
 
-      // Trauerfeier: nur saal + redner wenn Checkbox an. Kein Typ-Filter im Modell, beide gehören dazu.
-      if (key.indexOf('trauerfeier_') === 0 && !state.trauerfeier) return;
+      // Trauerfeier: filter nach Typ
+      // - weltlich: saal + redner (weltlicher Trauerredner)
+      // - kirchlich: nur saal (Geistlicher meist über Kirchensteuer/Spende, nicht im Cost-Posten)
+      // - frei: nur saal (Familie übernimmt, kein professioneller Redner)
+      if (key.indexOf('trauerfeier_') === 0) {
+        if (!state.trauerfeier) return;
+        if (key === 'trauerfeier_redner' && state.trauerfeierTyp !== 'weltlich') return;
+      }
 
       // Blumenschmuck: NUR die gewählte Variante zählen (nicht alle 3!)
       if (key.indexOf('blumenschmuck_') === 0) {
@@ -848,7 +854,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
     html += '</div>';
 
     html += '<div class="cost-range">';
-    html += '<div class="cost-range-label">Gesamtkosten (Schätzung)</div>';
+    html += '<div class="cost-range-label">Gesamtkosten (Schätzung · Preisbasis Stand 2026, Quellen: Stiftung Warentest, BDB, Aeternitas)</div>';
     html += '<div class="cost-range-values">';
     html += '<div><strong>' + fmt(costs.minTotal) + ' €</strong> <span>bis</span></div>';
     html += '<div><strong>' + fmt(costs.maxTotal) + ' €</strong></div>';
