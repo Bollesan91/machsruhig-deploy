@@ -87,12 +87,31 @@ JPEGs nur wenn echte Unsicherheit. Sonst:
 
 ---
 
-## Die 240s-Cadence
+## Defaults — Tabs und Cadence
 
-Helper-V3 läuft mit **240-Sekunden-Loops**, nicht kürzer:
+### Default: 3 Streams, 240s Wakeup
+
+Standard-Dispatch ist **3 parallele Chat-Tabs** (Chat-A / Chat-B / Chat-C), **240s Wakeup-Cadence**.
+
+**Warum 3?**
+- Cognitive Load: 3 parallel können in einer Wake-up-Phase konsolidiert werden
+- Chrome-MCP-Overhead: jedes Tab ist ein eigenes Switch, ab 5 wird's Daten-heavy
+- Batch-Size 3 deckt typische "Top-X-Cities"-Reviews (HH/M/B, Stuttgart/Frankfurt/Köln, etc.)
+- Dieser Session: Batch 2 Top-3-BL war genau 3 Tabs, sauber konsolidierbar
+
+**Skalierung:**
+- 1–2 Streams: Overkill für Helper-V3 — Self-Verify oder Single-Tab
+- 3 Streams: Default für Multi-City-Reviewer-Sweep
+- 4–5 Streams: Möglich, aber Wake-up dauert länger zum Lesen aller Tabs
+- 6+: NICHT machen. Lieber zwei 3er-Batches sequenziell.
+
+**Warum 240s?**
 - Reviewer/Writer brauchen ~2–3 min für sinnvolle Output-Tiefe
 - Bei <240s liefern sie nur oberflächliche Verdicts
 - Bei >300s wird die Prompt-Cache-TTL (5 min) überschritten — teurer
+- 240s = Sweet-Spot zwischen Output-Tiefe und Cache-Hit
+
+**Wenn du nur 1 Stream brauchst** (z.B. einzelne Page sehr tief reviewen): Helper-V3 ist Overkill. Mach Self-Verify oder benutz nur 1 Tab ohne den ganzen Dispatch-Loop.
 
 Der Loop wird via Skill `/loop` oder `ScheduleWakeup` getriggert. Pattern:
 
