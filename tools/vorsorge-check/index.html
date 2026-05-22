@@ -41,6 +41,8 @@
 .pdf-export-btn:hover{background:#7A6B5D;color:#fff}
 body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf-export-btn{display:none!important}
 @media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important}.mr-content{max-width:100%;padding:0}}
+a[data-next-step]:hover{border-color:var(--mr-accent);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-shadow:0 0 0 2px var(--mr-accent),0 2px 8px rgba(0,0,0,0.08)}
 </style>
 </head>
 <body>
@@ -163,7 +165,7 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
 
 </main></div>
 
-<footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprueche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
+<footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprueche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Mai 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
 <script>
 (function(){
@@ -371,7 +373,31 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
     });
     h += '</div>';
 
+    // Tool-Kette: Nächster sinnvoller Schritt
+    h += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
+    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Du weißt, was vorgesorgt werden sollte. Konkret weiter:</p>';
+    h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    [{title:'Notfallkarte',sub:'In 5 Minuten erstellen',href:'/tools/notfallkarte/'},
+     {title:'Bestattungskosten',sub:'Realistische Schätzung',href:'/tools/bestattungskosten-rechner/'},
+     {title:'Checkliste Todesfall',sub:'Plan für Hinterbliebene',href:'/tools/checkliste-todesfall/'}].forEach(function(l){
+      h += '<a href="' + l.href + '" data-next-step="' + l.href + '" style="padding:16px 12px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;text-align:center;background:var(--mr-bg-card);transition:border-color 0.2s,box-shadow 0.2s">';
+      h += '<strong style="font-size:14px;color:var(--mr-text);display:block;margin-bottom:2px">' + l.title + '</strong>';
+      h += '<span style="font-size:12px;color:var(--mr-text-muted)">' + l.sub + '</span>';
+      h += '</a>';
+    });
+    h += '</div>';
+    h += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:16px">Kein Druck. Alles in deinem Tempo.</p>';
+    h += '</div>';
+
     $('#vc-step-3').innerHTML = h;
+
+    // Tool-Kette: Tracking auf Next-Step-Klicks
+    $$('a[data-next-step]', $('#vc-step-3')).forEach(function(a){
+      a.addEventListener('click', function(){
+        track('toolNextStep', {from:'vorsorge-check', to:a.getAttribute('data-next-step')});
+      });
+    });
 
     $('#vc-print-btn').addEventListener('click', function(){
       track('toolExport', {tool:'vorsorge-check', type:'print'});
