@@ -14,7 +14,7 @@
 <meta property="og:description" content="Kostenloser Bestattungskosten-Rechner: Realistische Kostenspanne in 5 Schritten.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://machsruhig.de/tools/kostenrechner/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Bestattungskosten-Rechner","description":"Kostenloser Rechner für Bestattungskosten — realistische Kostenspanne in 5 Schritten.","url":"https://machsruhig.de/tools/kostenrechner/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Kostenrechner","item":"https://machsruhig.de/tools/kostenrechner"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wie genau ist der Kostenrechner?","acceptedAnswer":{"@type":"Answer","text":"Der Rechner liefert realistische Richtwerte basierend auf Durchschnittsdaten des Bundesverbands Deutscher Bestatter und der Stiftung Warentest. Die tatsächlichen Kosten können je nach Bestatter, Region und individuellen Wünschen abweichen."}},{"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Alle Berechnungen laufen komplett in deinem Browser. Es werden keine persönlichen Daten gespeichert oder an einen Server gesendet."}},{"@type":"Question","name":"Was ist nicht in der Berechnung enthalten?","acceptedAnswer":{"@type":"Answer","text":"Die laufenden Grabpflegekosten (50–400 €/Jahr über 20–30 Jahre) sind separat ausgewiesen. Auch besondere Wünsche wie Auslandsüberführung oder spezielle Sargmodelle sind nicht pauschal kalkulierbar."}},{"@type":"Question","name":"Was kann ich tun, wenn ich mir die Bestattung nicht leisten kann?","acceptedAnswer":{"@type":"Answer","text":"Bei finanzieller Not kann das Sozialamt die Kosten übernehmen (Sozialbestattung). Die Vermögensgrenze liegt seit 2023 bei 10.000 € pro Person."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Bestattungskosten-Rechner","description":"Kostenloser Rechner für Bestattungskosten — realistische Kostenspanne in 5 Schritten.","url":"https://machsruhig.de/tools/kostenrechner/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Kostenrechner","item":"https://machsruhig.de/tools/kostenrechner"}]}]}</script>
 <script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
 <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 <script defer src="/js/tracking.js"></script>
@@ -67,8 +67,21 @@
     <strong>🔒 Deine Privatsphäre:</strong> Alle Berechnungen laufen komplett in deinem Browser. Es werden keine Daten gespeichert oder an uns gesendet.
   </div>
 
-  <!-- Wizard mount-point — JS renders steps + result here -->
-  <div id="wizard"></div>
+  <!-- Wizard mount-point — Step 0 statisch im Initial-HTML für SEO; JS überschreibt bei Interaktion -->
+  <div id="wizard">
+    <div style="margin:24px 0 8px">
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--mr-text-muted);margin-bottom:6px"><span>Schritt 1 von 5</span><span>20%</span></div>
+      <div style="height:6px;background:var(--mr-border);border-radius:3px"><div style="height:100%;width:20%;background:var(--mr-accent);border-radius:3px"></div></div>
+    </div>
+    <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Welche Bestattungsart?</h2>
+    <div style="display:grid;gap:10px" id="static-step0">
+      <button type="button" class="option-btn" data-value="erdbestattung"><span class="icon">⚰️</span><span><strong>Erdbestattung (Sarg)</strong><span class="desc">Klassisch im Sarg auf dem Friedhof</span></span></button>
+      <button type="button" class="option-btn" data-value="feuerbestattung"><span class="icon">🔥</span><span><strong>Feuerbestattung (Urne)</strong><span class="desc">Einäscherung + Urnenbeisetzung</span></span></button>
+      <button type="button" class="option-btn" data-value="seebestattung"><span class="icon">🌊</span><span><strong>Seebestattung</strong><span class="desc">Urne auf Nord- oder Ostsee</span></span></button>
+      <button type="button" class="option-btn" data-value="baumbestattung"><span class="icon">🌳</span><span><strong>Baumbestattung</strong><span class="desc">Urne am Baum im Bestattungswald</span></span></button>
+      <button type="button" class="option-btn" data-value="anonym"><span class="icon">🕊️</span><span><strong>Anonyme Bestattung</strong><span class="desc">Ohne namentliche Kennzeichnung</span></span></button>
+    </div>
+  </div>
 
 </main></div>
 
@@ -323,6 +336,17 @@
     track('toolStep', {tool:'kostenrechner', step:key, value:value});
     if (state.step < STEPS.length - 1) {
       state.step++;
+      // Skip Grabstein-Step für See-/Baum-/anonyme Bestattung (kein Grab → keine Grabstein-Optionen sinnvoll)
+      var nextStepId = STEPS[state.step].id;
+      var ba = state.auswahl.bestattungsart;
+      if (nextStepId === 'grabstein' && (ba === 'seebestattung' || ba === 'baumbestattung' || ba === 'anonym')) {
+        state.auswahl.grabstein = 'keiner';
+        track('toolStep', {tool:'kostenrechner', step:'grabstein', value:'keiner (auto-skip)'});
+        state.step = STEPS.length;
+        renderResult();
+        scrollTop();
+        return;
+      }
       renderStep();
     } else {
       state.step = STEPS.length;
