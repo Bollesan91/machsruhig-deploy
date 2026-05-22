@@ -93,110 +93,94 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .rechner-progress-fill{height:100%;background:var(--mr-accent);border-radius:3px;transition:width 0.3s}
 .rechner-progress-label{display:flex;justify-content:space-between;font-size:13px;color:var(--mr-text-muted);margin-bottom:6px;font-weight:500}
 
+/* Step container — only active is visible */
+.rechner-step{display:none}
+.rechner-step.active{display:block;animation:slideIn 0.3s ease-out}
+@keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
 /* Card grid */
 .card-grid{display:grid;gap:12px;margin:16px 0 24px}
 @media(max-width:640px){.card-grid{gap:10px}}
 
 /* Choice cards */
-.choice-card{padding:16px 20px;background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);cursor:pointer;transition:all 0.2s;text-align:left}
-.choice-card:hover{border-color:var(--mr-accent);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.choice-card.selected{background:var(--mr-accent);border-color:var(--mr-accent);color:#fff}
-.choice-card strong{display:block;margin-bottom:4px;font-size:16px}
-.choice-card .desc{font-size:13px;color:var(--mr-accent);opacity:0.8}
-.choice-card.selected .desc{color:rgba(255,255,255,0.7)}
-
-/* Bestattungsart cards (special styling) */
-.bestattungsart-card{display:flex;align-items:flex-start;gap:16px;padding:20px;background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);cursor:pointer;transition:all 0.2s}
-.bestattungsart-card:hover{border-color:var(--mr-accent);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.bestattungsart-card.selected{background:var(--mr-accent);border-color:var(--mr-accent);color:#fff}
-.bestattungsart-icon{font-size:32px;min-width:40px;text-align:center}
-.bestattungsart-text strong{display:block;font-size:15px;margin-bottom:2px}
-.bestattungsart-text .desc{font-size:13px;color:var(--mr-text-muted)}
-.bestattungsart-card.selected .desc{color:rgba(255,255,255,0.7)}
+.bestattungsart-card,.choice-card{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 18px;cursor:pointer;text-align:left;font-family:inherit;font-size:inherit;display:flex;align-items:center;gap:14px;transition:border-color 0.2s,background 0.2s;width:100%}
+.bestattungsart-card:hover,.choice-card:hover{border-color:var(--mr-primary)}
+.bestattungsart-card.selected,.choice-card.selected{border-color:var(--mr-accent);background:#FBF5EC}
+.bestattungsart-icon{font-size:28px;line-height:1;flex-shrink:0}
+.bestattungsart-text strong{display:block;font-size:15px;font-weight:600;color:var(--mr-text)}
+.bestattungsart-text .desc,.choice-card .desc{font-size:13px;color:var(--mr-text-muted);margin-top:2px}
+.choice-card{flex-direction:column;align-items:flex-start;text-align:left}
+.choice-card strong{font-size:14px;font-weight:600}
 
 /* Form elements */
-select,input{font-family:inherit;font-size:15px;padding:10px 14px;border:1px solid var(--mr-border);border-radius:8px;background:var(--mr-bg-card);color:var(--mr-text);transition:border-color 0.2s}
-select:focus,input:focus{outline:none;border-color:var(--mr-accent);box-shadow:0 0 0 3px rgba(134,110,69,0.1)}
+select,input[type="text"],input[type="email"]{padding:10px 12px;border:1px solid var(--mr-border);border-radius:8px;font-size:15px;font-family:inherit;background:#fff;color:var(--mr-text)}
+select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
 
 /* Buttons */
-.btn{display:inline-block;padding:12px 28px;border:none;border-radius:99px;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none;background:var(--mr-primary);color:#fff;text-align:center}
-.btn:hover{background:var(--mr-primary-hover)}
-.btn-secondary{background:none;border:1px solid var(--mr-border);color:var(--mr-text-muted)}
-.btn-secondary:hover{border-color:var(--mr-accent);color:var(--mr-text)}
+.btn{padding:12px 28px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit;transition:background 0.2s}
+.btn:hover:not(:disabled){background:var(--mr-primary-hover)}
+.btn:disabled{opacity:0.5;cursor:not-allowed}
+.btn-secondary{background:transparent;color:var(--mr-text-muted);border:1px solid var(--mr-border)}
+.btn-secondary:hover:not(:disabled){background:rgba(122,107,93,0.08);color:var(--mr-text)}
 
-/* Privacy notice */
-.privacy-notice{background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:32px 0;font-size:14px;line-height:1.6}
-.privacy-notice strong{color:var(--mr-text)}
-
-/* Results section */
-.results-container{margin:32px 0}
-
-.result-header{margin-bottom:32px}
-.result-header h2{font-family:'Fraunces',serif;font-size:28px;font-weight:800;margin-bottom:8px}
-.result-total{font-size:17px;color:var(--mr-text-muted);margin-bottom:16px}
-.cost-range{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px;margin-bottom:24px}
-.cost-range-label{font-size:13px;color:var(--mr-text-muted);font-weight:500;margin-bottom:8px}
-.cost-range-values{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
-.cost-range-values strong{font-size:24px;font-family:'Fraunces',serif;color:var(--mr-primary)}
+/* Results */
+.results-container{padding-top:8px}
+.result-header h2{font-family:'Fraunces',serif;font-size:26px;font-weight:700;margin-bottom:4px}
+.result-total{font-size:15px;color:var(--mr-text-muted);margin-bottom:24px}
+.cost-range{background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:20px 24px;margin-bottom:8px}
+.cost-range-label{font-size:13px;color:var(--mr-text-muted);font-weight:500;margin-bottom:4px}
+.cost-range-values{display:flex;align-items:baseline;gap:12px;font-family:'Fraunces',serif}
+.cost-range-values strong{font-size:32px;font-weight:700;color:var(--mr-text)}
 .cost-range-values span{font-size:14px;color:var(--mr-text-muted)}
 
-/* Cost breakdown */
-.cost-breakdown{margin:32px 0}
-.cost-category{margin-bottom:24px;border:1px solid var(--mr-border);border-radius:var(--mr-radius);overflow:hidden}
-.cost-category-header{padding:16px 20px;background:var(--mr-bg-card);border-bottom:1px solid var(--mr-border);cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;transition:background 0.2s}
-.cost-category-header:hover{background:#f5f2ed}
-.cost-category-header strong{font-size:15px}
-.cost-category-total{font-size:16px;font-weight:700;color:var(--mr-primary)}
-.cost-category-toggle{font-size:18px;color:var(--mr-text-muted);transition:transform 0.2s}
+.cost-breakdown{display:grid;gap:8px;margin-bottom:24px}
+.cost-category{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);overflow:hidden}
+.cost-category-header{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background 0.2s}
+.cost-category-header:hover{background:rgba(122,107,93,0.04)}
+.cost-category-header strong{font-size:15px;font-weight:600}
+.cost-category-total{font-size:14px;color:var(--mr-text-muted);font-weight:500}
+.cost-category-toggle{font-size:12px;color:var(--mr-text-muted);transition:transform 0.2s}
 .cost-category.expanded .cost-category-toggle{transform:rotate(180deg)}
-.cost-category-body{padding:16px 20px;display:none;background:var(--mr-safety)}
+.cost-category-body{display:none;padding:4px 18px 16px;border-top:1px solid var(--mr-border)}
 .cost-category.expanded .cost-category-body{display:block}
+.cost-item{display:flex;justify-content:space-between;padding:6px 0;font-size:14px}
+.cost-item-name{color:var(--mr-text-muted)}
+.cost-item-range{color:var(--mr-text);font-weight:500;text-align:right;white-space:nowrap;margin-left:12px}
 
-.cost-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:14px;line-height:1.6}
-.cost-item:last-child{margin-bottom:0}
-.cost-item-name{color:var(--mr-text-muted);flex:1}
-.cost-item-range{font-weight:600;color:var(--mr-text);text-align:right;min-width:100px}
+.chart-container{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin-bottom:24px}
+.chart-title{font-size:14px;font-weight:600;color:var(--mr-text-muted);margin-bottom:16px}
+.chart-bar{margin-bottom:12px}
+.chart-bar-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.chart-bar-bg{height:10px;background:var(--mr-border);border-radius:5px;overflow:hidden}
+.chart-bar-fill{height:100%;background:var(--mr-accent);border-radius:5px;transition:width 0.4s}
 
-/* Bar chart */
-.chart-container{margin:32px 0;padding:24px 20px;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius)}
-.chart-title{font-weight:700;font-size:15px;margin-bottom:16px}
-.chart-bar{margin-bottom:16px}
-.chart-bar-label{font-size:13px;color:var(--mr-text-muted);margin-bottom:6px;display:flex;justify-content:space-between}
-.chart-bar-label strong{color:var(--mr-text)}
-.chart-bar-bg{height:24px;background:var(--mr-border);border-radius:4px;overflow:hidden}
-.chart-bar-fill{height:100%;background:var(--mr-accent);border-radius:4px;transition:width 0.3s}
+.comparison-box,.tips-section{background:var(--mr-safety);border-left:4px solid var(--mr-accent);border-radius:var(--mr-radius);padding:20px 24px;margin-bottom:24px}
+.comparison-box h3,.tips-section h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:8px}
+.comparison-box p{font-size:14px;color:var(--mr-text-muted);margin-bottom:6px;line-height:1.6}
+.comparison-box p strong{color:var(--mr-text)}
 
-/* Comparison box */
-.comparison-box{background:linear-gradient(135deg, #FFFAF5 0%, #f9f4ed 100%);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px 28px;margin:32px 0}
-.comparison-box h3{font-family:'Fraunces',serif;font-size:16px;font-weight:700;margin-bottom:8px}
-.comparison-box p{font-size:14px;color:var(--mr-text-muted);line-height:1.7;margin-bottom:12px}
-.comparison-box p:last-child{margin-bottom:0}
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:640px){.tips-grid{grid-template-columns:1fr}}
+.tip-card{background:#fff;border:1px solid var(--mr-border);border-radius:8px;padding:12px 14px}
+.tip-card strong{display:block;font-size:14px;font-weight:600;margin-bottom:4px}
+.tip-card p{font-size:13px;color:var(--mr-text-muted);line-height:1.5}
 
-/* Tips section */
-.tips-section{margin:32px 0}
-.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-@media(max-width:520px){.tips-grid{grid-template-columns:1fr}}
-.tip-card{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px;font-size:14px;line-height:1.6}
-.tip-card strong{display:block;font-size:15px;color:var(--mr-text);margin-bottom:8px}
-.tip-card p{color:var(--mr-text-muted);margin:0}
+.privacy-notice{background:var(--mr-safety);border-left:4px solid var(--mr-accent);border-radius:var(--mr-radius);padding:16px 20px;margin:16px 0 24px;font-size:14px}
+.privacy-notice strong{display:block;margin-bottom:4px;font-size:14px}
+.privacy-notice p{color:var(--mr-text-muted);font-size:13px}
 
-/* CTA Section */
-.cta-section{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center}
+.cta-section{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px;margin-top:32px;text-align:center}
 .cta-section h2{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:8px}
-.cta-section p{font-size:15px;color:var(--mr-text-muted);margin-bottom:20px}
-.cta-section a{display:inline-block;background:var(--mr-primary);color:#fff;padding:14px 32px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;transition:background 0.2s}
-.cta-section a:hover{background:var(--mr-primary-hover)}
-
-/* Animations */
-@keyframes slideIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.results-container{animation:slideIn 0.3s ease-out}
+.cta-section p{font-size:14px;color:var(--mr-text-muted);margin-bottom:16px}
+.cta-section a{display:inline-block;padding:12px 28px;background:var(--mr-primary);color:#fff;border-radius:99px;font-weight:600;font-size:14px;text-decoration:none}
 
 /* Print styles */
 @media print{
-  .no-print,.mr-nav,.mr-footer,.cta-section{display:none!important}
-  body{background:#fff!important;color:#000!important;font-size:11pt}
-  .mr-content{max-width:100%;padding:0}
-  h1{font-size:18pt!important}
+  body{background:#fff!important}
+  .mr-nav,.mr-footer,.no-print,nav,footer,.btn,.skip-link,.mr-nav-toggle,.cta-section,.mr-cta-block{display:none!important}
+  .mr-content{max-width:100%!important;padding:0!important}
+  .rechner-step:not(.active){display:none!important}
+  .result-header h2{font-size:18pt!important}
   h2{font-size:14pt!important}
   .cost-category.expanded .cost-category-body{display:block!important}
   .cost-category-toggle{display:none}
@@ -204,10 +188,6 @@ select:focus,input:focus{outline:none;border-color:var(--mr-accent);box-shadow:0
   .privacy-notice{border-left:none;background:transparent;border:1px solid #ccc}
 }
 </style>
-
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
@@ -232,7 +212,227 @@ select:focus,input:focus{outline:none;border-color:var(--mr-accent);box-shadow:0
 </nav>
 
 <main id="main" class="mr-content">
-  <div id="app"></div>
+  <div id="app">
+
+    <!-- Step 0: Bestattungsart wählen — INITIAL HTML, indexable -->
+    <div class="rechner-step active" data-step="0">
+      <div class="rechner-progress-label">
+        <span>Schritt 1 von 3</span>
+        <span>33%</span>
+      </div>
+      <div class="rechner-progress">
+        <div class="rechner-progress-fill" style="width:33%"></div>
+      </div>
+
+      <h1 style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;margin:24px 0 8px">Bestattungskosten-Rechner</h1>
+      <p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Berechne in drei Schritten, was eine Bestattung in deiner Region typischerweise kostet — Bestattungsart, Bundesland und Extras. Ergebnis als Bandbreite mit Aufschlüsselung. Komplett im Browser, keine Daten verlassen dein Gerät.</p>
+
+      <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Welche Bestattungsart möchtest du?</h2>
+
+      <div class="card-grid" id="bestattungsart-cards">
+        <button type="button" class="bestattungsart-card" data-value="erdbestattung">
+          <div class="bestattungsart-icon">⛪</div>
+          <div class="bestattungsart-text">
+            <strong>Erdbestattung</strong>
+            <div class="desc">Traditionelle Beisetzung im Grab</div>
+          </div>
+        </button>
+        <button type="button" class="bestattungsart-card" data-value="feuerbestattung">
+          <div class="bestattungsart-icon">🔥</div>
+          <div class="bestattungsart-text">
+            <strong>Feuerbestattung</strong>
+            <div class="desc">Einäscherung mit Urnenbeisetzung</div>
+          </div>
+        </button>
+        <button type="button" class="bestattungsart-card" data-value="seebestattung">
+          <div class="bestattungsart-icon">🌊</div>
+          <div class="bestattungsart-text">
+            <strong>Seebestattung</strong>
+            <div class="desc">Beisetzung der Asche in der Nordsee</div>
+          </div>
+        </button>
+        <button type="button" class="bestattungsart-card" data-value="baumbestattung">
+          <div class="bestattungsart-icon">🌳</div>
+          <div class="bestattungsart-text">
+            <strong>Baum- / Waldbestattung</strong>
+            <div class="desc">Beisetzung in Friedwald oder Naturbestattung</div>
+          </div>
+        </button>
+        <button type="button" class="bestattungsart-card" data-value="anonyme">
+          <div class="bestattungsart-icon">🤐</div>
+          <div class="bestattungsart-text">
+            <strong>Anonyme Bestattung</strong>
+            <div class="desc">Beisetzung ohne Namensgrab, kostengünstig</div>
+          </div>
+        </button>
+      </div>
+
+      <button type="button" class="btn" id="btn-step-0-next" disabled style="margin-top:24px">Weiter →</button>
+    </div>
+
+    <!-- Step 1: Region + Details -->
+    <div class="rechner-step" data-step="1">
+      <div class="rechner-progress-label">
+        <span>Schritt 2 von 3</span>
+        <span>66%</span>
+      </div>
+      <div class="rechner-progress">
+        <div class="rechner-progress-fill" style="width:66%"></div>
+      </div>
+
+      <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Deine Region und Details</h2>
+
+      <div style="margin-bottom:20px">
+        <label for="bundesland-select" style="display:block;margin-bottom:8px;font-weight:600;font-size:14px">Bundesland</label>
+        <select id="bundesland-select" style="width:100%">
+          <option value="Baden-Württemberg">Baden-Württemberg</option>
+          <option value="Bayern">Bayern</option>
+          <option value="Berlin">Berlin</option>
+          <option value="Brandenburg">Brandenburg</option>
+          <option value="Bremen">Bremen</option>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Hessen">Hessen</option>
+          <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+          <option value="Niedersachsen">Niedersachsen</option>
+          <option value="Nordrhein-Westfalen" selected>Nordrhein-Westfalen</option>
+          <option value="Rheinland-Pfalz">Rheinland-Pfalz</option>
+          <option value="Saarland">Saarland</option>
+          <option value="Sachsen">Sachsen</option>
+          <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+          <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+          <option value="Thüringen">Thüringen</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px" id="grabtyp-wrapper">
+        <label for="grabtyp-select" style="display:block;margin-bottom:8px;font-weight:600;font-size:14px">Grabtyp</label>
+        <select id="grabtyp-select" style="width:100%">
+          <option value="Einzelgrab" selected>Einzelgrab</option>
+          <option value="Doppelgrab">Doppelgrab</option>
+          <option value="Reihengrab">Reihengrab</option>
+          <option value="Urnengrab" data-feuer-only="1">Urnengrab</option>
+          <option value="Gemeinschaftsgrab">Gemeinschaftsgrab</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+          <input type="checkbox" id="aufbahrung-check" style="width:18px;height:18px">
+          <span style="font-weight:500">Aufbahrung gewünscht?</span>
+        </label>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+          <input type="checkbox" id="trauerfeier-check" style="width:18px;height:18px">
+          <span style="font-weight:500">Trauerfeier?</span>
+        </label>
+        <div id="trauerfeier-options" style="margin-top:12px;padding-left:28px;display:none">
+          <div class="card-grid" data-radio-group="trauerfeierTyp">
+            <button type="button" class="choice-card" data-value="weltlich">
+              <strong>Weltlich</strong>
+              <div class="desc">mit Trauerredner</div>
+            </button>
+            <button type="button" class="choice-card" data-value="kirchlich">
+              <strong>Kirchlich</strong>
+              <div class="desc">mit Geistlichen</div>
+            </button>
+            <button type="button" class="choice-card" data-value="frei">
+              <strong>Frei gestaltet</strong>
+              <div class="desc">Familie plant</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+          <input type="checkbox" id="blumenschmuck-check" style="width:18px;height:18px">
+          <span style="font-weight:500">Blumenschmuck gewünscht?</span>
+        </label>
+        <div id="blumenschmuck-options" style="margin-top:12px;padding-left:28px;display:none">
+          <div class="card-grid" data-radio-group="blumenschmuckTyp">
+            <button type="button" class="choice-card" data-value="einfach"><strong>Einfach</strong></button>
+            <button type="button" class="choice-card" data-value="mittel"><strong>Mittel</strong></button>
+            <button type="button" class="choice-card" data-value="aufwendig"><strong>Aufwendig</strong></button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:block;margin-bottom:8px;font-weight:600;font-size:14px">Sarg-Qualität</label>
+        <div class="card-grid" data-radio-group="sarqQualitaet">
+          <button type="button" class="choice-card" data-value="einfach"><strong>Einfach</strong></button>
+          <button type="button" class="choice-card" data-value="mittel"><strong>Mittel</strong></button>
+          <button type="button" class="choice-card" data-value="hochwertig"><strong>Hochwertig</strong></button>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+          <input type="checkbox" id="grabstein-check" style="width:18px;height:18px">
+          <span style="font-weight:500">Grabstein gewünscht?</span>
+        </label>
+        <div id="grabstein-options" style="margin-top:12px;padding-left:28px;display:none">
+          <div class="card-grid" data-radio-group="grabsteinTyp">
+            <button type="button" class="choice-card" data-value="einfach">
+              <strong>Einfach</strong>
+              <div class="desc">Holzkreuz, Platte</div>
+            </button>
+            <button type="button" class="choice-card" data-value="mittel">
+              <strong>Mittel</strong>
+              <div class="desc">Naturstein</div>
+            </button>
+            <button type="button" class="choice-card" data-value="aufwendig">
+              <strong>Aufwendig</strong>
+              <div class="desc">großes Grabmal</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+          <input type="checkbox" id="traueranzeige-check" style="width:18px;height:18px">
+          <span style="font-weight:500">Traueranzeige in der Zeitung?</span>
+        </label>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:24px">
+        <button type="button" class="btn btn-secondary" data-goto-step="0">← Zurück</button>
+        <button type="button" class="btn" data-goto-step="2">Weiter →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Review -->
+    <div class="rechner-step" data-step="2">
+      <div class="rechner-progress-label">
+        <span>Schritt 3 von 3</span>
+        <span>99%</span>
+      </div>
+      <div class="rechner-progress">
+        <div class="rechner-progress-fill" style="width:99%"></div>
+      </div>
+
+      <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Prüfe deine Angaben</h2>
+
+      <div id="review-summary" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px;margin-bottom:24px"></div>
+
+      <div class="privacy-notice">
+        <strong>🔐 Deine Daten bleiben bei dir</strong>
+        <p>Dieser Rechner läuft komplett in deinem Browser. Deine Eingaben werden nicht an einen Server übertragen, nicht gespeichert und nicht für Marketing genutzt. Deine Privatsphäre ist heilig.</p>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:24px">
+        <button type="button" class="btn btn-secondary" data-goto-step="1">← Zurück</button>
+        <button type="button" class="btn" id="btn-calculate">Ergebnis berechnen</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Results — gerendert per JS -->
+    <div class="rechner-step" data-step="3" id="results-step"></div>
+
+  </div>
 
 
   <section style="max-width:680px;margin:48px auto 0;padding:0 20px">
@@ -309,195 +509,98 @@ select:focus,input:focus{outline:none;border-color:var(--mr-accent);box-shadow:0
   </div>
 </footer>
 
-<script type="text/babel">
-const {useState, useEffect} = React;
+<script>
+(function(){
+  'use strict';
 
-// Cost data structure
-const BESTATTUNGSARTEN = {
-  'erdbestattung': {name: 'Erdbestattung', desc: 'Traditionelle Beisetzung im Grab'},
-  'feuerbestattung': {name: 'Feuerbestattung', desc: 'Einäscherung mit Urnenbeisetzung'},
-  'seebestattung': {name: 'Seebestattung', desc: 'Beisetzung der Asche in der Nordsee'},
-  'baumbestattung': {name: 'Baum- / Waldbestattung', desc: 'Beisetzung in Friedwald oder Naturbestattung'},
-  'anonyme': {name: 'Anonyme Bestattung', desc: 'Beisetzung ohne Namensgrab, kostengünstig'}
-};
-
-const BUNDESLAENDER = [
-  'Baden-Württemberg','Bayern','Berlin','Brandenburg','Bremen','Hamburg',
-  'Hessen','Mecklenburg-Vorpommern','Niedersachsen','Nordrhein-Westfalen',
-  'Rheinland-Pfalz','Saarland','Sachsen','Sachsen-Anhalt','Schleswig-Holstein','Thüringen'
-];
-
-// Regional cost multipliers (affects all costs)
-const REGIONAL_MULTIPLIERS = {
-  'Baden-Württemberg': 1.20, 'Bayern': 1.22, 'Berlin': 1.15, 'Brandenburg': 0.80,
-  'Bremen': 1.05, 'Hamburg': 1.20, 'Hessen': 1.15, 'Mecklenburg-Vorpommern': 0.78,
-  'Niedersachsen': 1.02, 'Nordrhein-Westfalen': 1.05, 'Rheinland-Pfalz': 0.95,
-  'Saarland': 0.90, 'Sachsen': 0.82, 'Sachsen-Anhalt': 0.78, 'Schleswig-Holstein': 0.95,
-  'Thüringen': 0.80
-};
-
-// Cost base data (before regional multiplier)
-const KOSTENMODELL = {
-  'erdbestattung': {
-    'bestatterleistungen': {min: 2000, max: 3500},
-    'sarg': {min: 800, max: 2200},
-    'friedhofsgebuehr': {min: 600, max: 2800},
-    'beisetzung': {min: 300, max: 800},
-    'aufbahrung': {min: 200, max: 500},
-    'trauerfeier_saal': {min: 100, max: 400},
-    'trauerfeier_redner': {min: 0, max: 600},
-    'blumenschmuck_einfach': {min: 80, max: 200},
-    'blumenschmuck_mittel': {min: 200, max: 400},
-    'blumenschmuck_aufwendig': {min: 400, max: 900},
-    'grabstein_einfach': {min: 400, max: 1000},
-    'grabstein_mittel': {min: 1500, max: 3000},
-    'grabstein_aufwendig': {min: 3000, max: 7000},
-    'traueranzeige': {min: 200, max: 800},
-    'grabpflege_jahresgebuehr': {min: 80, max: 250},
-    'grabpflege_jahre': 20
-  },
-  'feuerbestattung': {
-    'bestatterleistungen': {min: 1800, max: 3200},
-    'sarg': {min: 600, max: 1800},
-    'einaescherung': {min: 300, max: 550},
-    'zweite_leichenuntersuchung': {min: 50, max: 150},
-    'urne': {min: 80, max: 400},
-    'friedhofsgebuehr_urne': {min: 300, max: 1500},
-    'beisetzung': {min: 250, max: 600},
-    'aufbahrung': {min: 150, max: 400},
-    'trauerfeier_saal': {min: 100, max: 400},
-    'trauerfeier_redner': {min: 0, max: 600},
-    'blumenschmuck_einfach': {min: 80, max: 200},
-    'blumenschmuck_mittel': {min: 200, max: 400},
-    'blumenschmuck_aufwendig': {min: 400, max: 900},
-    'grabstein_einfach': {min: 300, max: 800},
-    'grabstein_mittel': {min: 1200, max: 2500},
-    'grabstein_aufwendig': {min: 2500, max: 6000},
-    'traueranzeige': {min: 200, max: 800},
-    'grabpflege_jahresgebuehr': {min: 40, max: 150},
-    'grabpflege_jahre': 10
-  },
-  'seebestattung': {
-    'bestatterleistungen': {min: 1600, max: 2800},
-    'sarg': {min: 500, max: 1500},
-    'einaescherung': {min: 300, max: 550},
-    'zweite_leichenuntersuchung': {min: 50, max: 150},
-    'seebestattung_verwaltung': {min: 400, max: 1200},
-    'trauerfeier_saal': {min: 100, max: 400},
-    'trauerfeier_redner': {min: 0, max: 600},
-    'blumenschmuck_einfach': {min: 80, max: 200},
-    'blumenschmuck_mittel': {min: 200, max: 400},
-    'blumenschmuck_aufwendig': {min: 400, max: 900},
-    'traueranzeige': {min: 200, max: 800}
-  },
-  'baumbestattung': {
-    'bestatterleistungen': {min: 1600, max: 2900},
-    'sarg': {min: 500, max: 1600},
-    'einaescherung': {min: 300, max: 550},
-    'zweite_leichenuntersuchung': {min: 50, max: 150},
-    'baum_bestattung': {min: 600, max: 1800},
-    'trauerfeier_saal': {min: 100, max: 400},
-    'trauerfeier_redner': {min: 0, max: 600},
-    'blumenschmuck_einfach': {min: 80, max: 200},
-    'blumenschmuck_mittel': {min: 200, max: 400},
-    'blumenschmuck_aufwendig': {min: 400, max: 900},
-    'traueranzeige': {min: 200, max: 800}
-  },
-  'anonyme': {
-    'bestatterleistungen': {min: 800, max: 1200},
-    'sarg': {min: 400, max: 800},
-    'einaescherung': {min: 300, max: 500},
-    'zweite_leichenuntersuchung': {min: 50, max: 150},
-    'friedhofsgebuehr_anonym': {min: 150, max: 400},
-    'beisetzung': {min: 100, max: 300}
-  }
-};
-
-// Helper: Calculate base cost range
-function calculateCosts(bestattungsart, options) {
-  const model = KOSTENMODELL[bestattungsart];
-  const multiplier = REGIONAL_MULTIPLIERS[options.bundesland] || 1.0;
-  const items = [];
-  let minTotal = 0, maxTotal = 0;
-
-  // Map cost items
-  const costMapping = {
-    'bestatterleistungen': {label: 'Bestatterleistungen (Überführung, Versorgung, Behörden)', category: 'Bestatterleistungen'},
-    'sarg': {label: 'Sarg', category: 'Sarg/Urne'},
-    'urne': {label: 'Urne', category: 'Sarg/Urne'},
-    'einaescherung': {label: 'Einäscherung', category: 'Kremierung'},
-    'zweite_leichenuntersuchung': {label: 'Zweite Leichenschau', category: 'Kremierung'},
-    'friedhofsgebuehr': {label: 'Friedhofsgebühren (20 Jahre)', category: 'Friedhof'},
-    'friedhofsgebuehr_urne': {label: 'Friedhofsgebühren Urnengrab (10 Jahre)', category: 'Friedhof'},
-    'friedhofsgebuehr_anonym': {label: 'Friedhofsgebühren anonym', category: 'Friedhof'},
-    'beisetzung': {label: 'Beisetzungsgebühr', category: 'Friedhof'},
-    'seebestattung_verwaltung': {label: 'Seebestattung (Organisation, Verwaltung)', category: 'Friedhof'},
-    'baum_bestattung': {label: 'Waldfriedhof-Gebühren', category: 'Friedhof'},
-    'aufbahrung': {label: 'Aufbahrung', category: 'Sonstiges'},
-    'trauerfeier_saal': {label: 'Saalmiete Trauerfeier', category: 'Trauerfeier'},
-    'trauerfeier_redner': {label: 'Trauerredner (weltlich/frei)', category: 'Trauerfeier'},
-    'blumenschmuck_einfach': {label: 'Blumenschmuck (einfach)', category: 'Extras'},
-    'blumenschmuck_mittel': {label: 'Blumenschmuck (mittel)', category: 'Extras'},
-    'blumenschmuck_aufwendig': {label: 'Blumenschmuck (aufwendig)', category: 'Extras'},
-    'grabstein_einfach': {label: 'Grabstein (einfach)', category: 'Grabstein'},
-    'grabstein_mittel': {label: 'Grabstein (mittel)', category: 'Grabstein'},
-    'grabstein_aufwendig': {label: 'Grabstein (aufwendig)', category: 'Grabstein'},
-    'traueranzeige': {label: 'Traueranzeige in Zeitung', category: 'Extras'}
+  // ===== Cost data =====
+  var BESTATTUNGSARTEN = {
+    erdbestattung:    {name: 'Erdbestattung',          desc: 'Traditionelle Beisetzung im Grab', icon: '⛪'},
+    feuerbestattung:  {name: 'Feuerbestattung',        desc: 'Einäscherung mit Urnenbeisetzung', icon: '🔥'},
+    seebestattung:    {name: 'Seebestattung',          desc: 'Beisetzung der Asche in der Nordsee', icon: '🌊'},
+    baumbestattung:   {name: 'Baum- / Waldbestattung', desc: 'Beisetzung in Friedwald', icon: '🌳'},
+    anonyme:          {name: 'Anonyme Bestattung',     desc: 'Beisetzung ohne Namensgrab', icon: '🤐'}
   };
 
-  // Add items based on bestattungsart and options
-  for (const [key, cost] of Object.entries(model)) {
-    if (key === 'grabpflege_jahresgebuehr' || key === 'grabpflege_jahre') continue;
+  var REGIONAL_MULTIPLIERS = {
+    'Baden-Württemberg': 1.20, 'Bayern': 1.22, 'Berlin': 1.15, 'Brandenburg': 0.80,
+    'Bremen': 1.05, 'Hamburg': 1.20, 'Hessen': 1.15, 'Mecklenburg-Vorpommern': 0.78,
+    'Niedersachsen': 1.02, 'Nordrhein-Westfalen': 1.05, 'Rheinland-Pfalz': 0.95,
+    'Saarland': 0.90, 'Sachsen': 0.82, 'Sachsen-Anhalt': 0.78, 'Schleswig-Holstein': 0.95,
+    'Thüringen': 0.80
+  };
 
-    let shouldInclude = true;
-
-    // Conditional items
-    if ((key === 'aufbahrung' && !options.aufbahrung) ||
-        (key.startsWith('trauerfeier_') && !options.trauerfeier) ||
-        (key.startsWith('blumenschmuck_') && !options.blumenschmuck) ||
-        (key.startsWith('grabstein_') && !options.grabstein)) {
-      shouldInclude = false;
+  var KOSTENMODELL = {
+    erdbestattung: {
+      bestatterleistungen:{min:2000,max:3500}, sarg:{min:800,max:2200},
+      friedhofsgebuehr:{min:600,max:2800}, beisetzung:{min:300,max:800},
+      aufbahrung:{min:200,max:500}, trauerfeier_saal:{min:100,max:400},
+      trauerfeier_redner:{min:0,max:600},
+      blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
+      grabstein_einfach:{min:400,max:1000}, grabstein_mittel:{min:1500,max:3000}, grabstein_aufwendig:{min:3000,max:7000},
+      traueranzeige:{min:200,max:800},
+      grabpflege_jahresgebuehr:{min:80,max:250}, grabpflege_jahre:20
+    },
+    feuerbestattung: {
+      bestatterleistungen:{min:1800,max:3200}, sarg:{min:600,max:1800},
+      einaescherung:{min:300,max:550}, zweite_leichenuntersuchung:{min:50,max:150},
+      urne:{min:80,max:400}, friedhofsgebuehr_urne:{min:300,max:1500}, beisetzung:{min:250,max:600},
+      aufbahrung:{min:150,max:400}, trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:0,max:600},
+      blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
+      grabstein_einfach:{min:300,max:800}, grabstein_mittel:{min:1200,max:2500}, grabstein_aufwendig:{min:2500,max:6000},
+      traueranzeige:{min:200,max:800},
+      grabpflege_jahresgebuehr:{min:40,max:150}, grabpflege_jahre:10
+    },
+    seebestattung: {
+      bestatterleistungen:{min:1600,max:2800}, sarg:{min:500,max:1500},
+      einaescherung:{min:300,max:550}, zweite_leichenuntersuchung:{min:50,max:150},
+      seebestattung_verwaltung:{min:400,max:1200},
+      trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:0,max:600},
+      blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
+      traueranzeige:{min:200,max:800}
+    },
+    baumbestattung: {
+      bestatterleistungen:{min:1600,max:2900}, sarg:{min:500,max:1600},
+      einaescherung:{min:300,max:550}, zweite_leichenuntersuchung:{min:50,max:150},
+      baum_bestattung:{min:600,max:1800},
+      trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:0,max:600},
+      blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
+      traueranzeige:{min:200,max:800}
+    },
+    anonyme: {
+      bestatterleistungen:{min:800,max:1200}, sarg:{min:400,max:800},
+      einaescherung:{min:300,max:500}, zweite_leichenuntersuchung:{min:50,max:150},
+      friedhofsgebuehr_anonym:{min:150,max:400}, beisetzung:{min:100,max:300}
     }
+  };
 
-    if (shouldInclude && costMapping[key]) {
-      const min = Math.round(cost.min * multiplier);
-      const max = Math.round(cost.max * multiplier);
-      items.push({
-        name: costMapping[key].label,
-        category: costMapping[key].category,
-        min,
-        max,
-        key
-      });
-      minTotal += min;
-      maxTotal += max;
-    }
-  }
+  var COST_MAPPING = {
+    bestatterleistungen:        {label:'Bestatterleistungen (Überführung, Versorgung, Behörden)', category:'Bestatterleistungen'},
+    sarg:                       {label:'Sarg', category:'Sarg/Urne'},
+    urne:                       {label:'Urne', category:'Sarg/Urne'},
+    einaescherung:              {label:'Einäscherung', category:'Kremierung'},
+    zweite_leichenuntersuchung: {label:'Zweite Leichenschau', category:'Kremierung'},
+    friedhofsgebuehr:           {label:'Friedhofsgebühren (20 Jahre)', category:'Friedhof'},
+    friedhofsgebuehr_urne:      {label:'Friedhofsgebühren Urnengrab (10 Jahre)', category:'Friedhof'},
+    friedhofsgebuehr_anonym:    {label:'Friedhofsgebühren anonym', category:'Friedhof'},
+    beisetzung:                 {label:'Beisetzungsgebühr', category:'Friedhof'},
+    seebestattung_verwaltung:   {label:'Seebestattung (Organisation, Verwaltung)', category:'Friedhof'},
+    baum_bestattung:            {label:'Waldfriedhof-Gebühren', category:'Friedhof'},
+    aufbahrung:                 {label:'Aufbahrung', category:'Sonstiges'},
+    trauerfeier_saal:           {label:'Saalmiete Trauerfeier', category:'Trauerfeier'},
+    trauerfeier_redner:         {label:'Trauerredner (weltlich/frei)', category:'Trauerfeier'},
+    blumenschmuck_einfach:      {label:'Blumenschmuck (einfach)', category:'Extras'},
+    blumenschmuck_mittel:       {label:'Blumenschmuck (mittel)', category:'Extras'},
+    blumenschmuck_aufwendig:    {label:'Blumenschmuck (aufwendig)', category:'Extras'},
+    grabstein_einfach:          {label:'Grabstein (einfach)', category:'Grabstein'},
+    grabstein_mittel:           {label:'Grabstein (mittel)', category:'Grabstein'},
+    grabstein_aufwendig:        {label:'Grabstein (aufwendig)', category:'Grabstein'},
+    traueranzeige:              {label:'Traueranzeige in Zeitung', category:'Extras'}
+  };
 
-  // Add grabpflege if applicable
-  if (model.grabpflege_jahresgebuehr) {
-    const years = model.grabpflege_jahre || 20;
-    const yearMin = Math.round(model.grabpflege_jahresgebuehr.min * multiplier);
-    const yearMax = Math.round(model.grabpflege_jahresgebuehr.max * multiplier);
-    const min = yearMin * years;
-    const max = yearMax * years;
-    items.push({
-      name: `Grabpflegegebühren (${years} Jahre, ca. ${yearMin}–${yearMax} €/Jahr)`,
-      category: 'Grabpflege',
-      min,
-      max,
-      key: 'grabpflege'
-    });
-    minTotal += min;
-    maxTotal += max;
-  }
-
-  return {items, minTotal, maxTotal};
-}
-
-function App() {
-  const [step, setStep] = useState(0);
-  const [selections, setSelections] = useState({
+  // ===== State =====
+  var state = {
+    step: 0,
     bestattungsart: '',
     bundesland: 'Nordrhein-Westfalen',
     grabGrab: 'Einzelgrab',
@@ -510,512 +613,315 @@ function App() {
     grabstein: false,
     grabsteinTyp: 'mittel',
     traueranzeige: false
+  };
+
+  // ===== Helpers =====
+  function esc(s){
+    return String(s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function fmt(n){ return Math.round(n).toLocaleString('de-DE'); }
+  function $(sel, root){ return (root||document).querySelector(sel); }
+  function $$(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+
+  function track(event, props){
+    try {
+      if (window.mrTrack) window.mrTrack(event, props);
+      else if (window.plausible) window.plausible(event, props ? {props:props} : undefined);
+    } catch(e){}
+  }
+
+  // ===== Step navigation =====
+  function setStep(n){
+    state.step = n;
+    $$('.rechner-step').forEach(function(el){
+      el.classList.toggle('active', parseInt(el.dataset.step,10) === n);
+    });
+    track('toolStep', {tool:'bestattungskosten-rechner', step:'schritt_' + (n+1)});
+
+    if (n === 2) renderReview();
+    if (n === 3) renderResults();
+
+    // Scroll to top of tool
+    window.scrollTo({top: $('#app').offsetTop - 80, behavior:'smooth'});
+  }
+
+  // ===== Initial bindings =====
+
+  // Step 0: Bestattungsart-Cards
+  $$('#bestattungsart-cards .bestattungsart-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      $$('#bestattungsart-cards .bestattungsart-card').forEach(function(c){ c.classList.remove('selected'); });
+      card.classList.add('selected');
+      state.bestattungsart = card.dataset.value;
+      $('#btn-step-0-next').disabled = false;
+      updateGrabtypOptions();
+    });
+  });
+  $('#btn-step-0-next').addEventListener('click', function(){
+    if (state.bestattungsart) setStep(1);
   });
 
-  const handleSelect = (key, value) => {
-    setSelections({...selections, [key]: value});
-  };
+  // Step 1: Bundesland
+  $('#bundesland-select').addEventListener('change', function(e){
+    state.bundesland = e.target.value;
+  });
 
-  const handleToggle = (key) => {
-    setSelections({...selections, [key]: !selections[key]});
-  };
+  // Step 1: Grabtyp (visible only for erdbestattung+feuerbestattung)
+  $('#grabtyp-select').addEventListener('change', function(e){
+    state.grabGrab = e.target.value;
+  });
+  function updateGrabtypOptions(){
+    var wrapper = $('#grabtyp-wrapper');
+    var sel = $('#grabtyp-select');
+    var ba = state.bestattungsart;
+    var visible = ba === 'erdbestattung' || ba === 'feuerbestattung';
+    wrapper.style.display = visible ? '' : 'none';
+    // Urnengrab nur bei Feuerbestattung
+    $$('option[data-feuer-only]', sel).forEach(function(opt){
+      opt.hidden = ba !== 'feuerbestattung';
+      if (opt.hidden && sel.value === opt.value) sel.value = 'Einzelgrab';
+    });
+  }
 
-  const allFilled = selections.bestattungsart && selections.bundesland;
+  // Step 1: Checkboxes
+  function bindCheck(id, key, optionsId){
+    $('#' + id).addEventListener('change', function(e){
+      state[key] = e.target.checked;
+      if (optionsId) $('#' + optionsId).style.display = e.target.checked ? '' : 'none';
+    });
+  }
+  bindCheck('aufbahrung-check', 'aufbahrung');
+  bindCheck('trauerfeier-check', 'trauerfeier', 'trauerfeier-options');
+  bindCheck('blumenschmuck-check', 'blumenschmuck', 'blumenschmuck-options');
+  bindCheck('grabstein-check', 'grabstein', 'grabstein-options');
+  bindCheck('traueranzeige-check', 'traueranzeige');
 
-  // Track step
-  useEffect(() => {
-    if (window.mrTrack) {
-      window.mrTrack('toolStep', {tool: 'bestattungskosten-rechner', step: `schritt_${step + 1}`});
+  // Step 1: Radio-Groups (card-style)
+  $$('[data-radio-group]').forEach(function(group){
+    var key = group.dataset.radioGroup;
+    // Initial selection from state
+    $$('.choice-card', group).forEach(function(card){
+      if (card.dataset.value === state[key]) card.classList.add('selected');
+      card.addEventListener('click', function(){
+        $$('.choice-card', group).forEach(function(c){ c.classList.remove('selected'); });
+        card.classList.add('selected');
+        state[key] = card.dataset.value;
+      });
+    });
+  });
+
+  // Generic step-nav buttons
+  $$('[data-goto-step]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setStep(parseInt(btn.dataset.gotoStep, 10));
+    });
+  });
+
+  // Step 2: Calculate-Button
+  $('#btn-calculate').addEventListener('click', function(){
+    track('toolExport', {tool:'bestattungskosten-rechner', type:'result'});
+    setStep(3);
+  });
+
+  // ===== Cost calculation =====
+  function calculateCosts(){
+    var model = KOSTENMODELL[state.bestattungsart];
+    var multiplier = REGIONAL_MULTIPLIERS[state.bundesland] || 1.0;
+    var items = [];
+    var minTotal = 0, maxTotal = 0;
+
+    Object.keys(model).forEach(function(key){
+      if (key === 'grabpflege_jahresgebuehr' || key === 'grabpflege_jahre') return;
+      var cost = model[key];
+
+      // Conditional items
+      if (
+        (key === 'aufbahrung' && !state.aufbahrung) ||
+        (key.indexOf('trauerfeier_') === 0 && !state.trauerfeier) ||
+        (key.indexOf('blumenschmuck_') === 0 && !state.blumenschmuck) ||
+        (key.indexOf('grabstein_') === 0 && !state.grabstein) ||
+        (key === 'traueranzeige' && !state.traueranzeige)
+      ) return;
+
+      if (!COST_MAPPING[key]) return;
+
+      var min = Math.round(cost.min * multiplier);
+      var max = Math.round(cost.max * multiplier);
+      items.push({
+        name: COST_MAPPING[key].label,
+        category: COST_MAPPING[key].category,
+        min: min, max: max, key: key
+      });
+      minTotal += min;
+      maxTotal += max;
+    });
+
+    // Grabpflege
+    if (model.grabpflege_jahresgebuehr) {
+      var years = model.grabpflege_jahre || 20;
+      var yearMin = Math.round(model.grabpflege_jahresgebuehr.min * multiplier);
+      var yearMax = Math.round(model.grabpflege_jahresgebuehr.max * multiplier);
+      var gpMin = yearMin * years;
+      var gpMax = yearMax * years;
+      items.push({
+        name: 'Grabpflegegebühren (' + years + ' Jahre, ca. ' + yearMin + '–' + yearMax + ' €/Jahr)',
+        category: 'Grabpflege',
+        min: gpMin, max: gpMax, key: 'grabpflege'
+      });
+      minTotal += gpMin;
+      maxTotal += gpMax;
     }
-  }, [step]);
 
-  // Calculate costs
-  const costs = allFilled ? calculateCosts(selections.bestattungsart, selections) : null;
+    return {items: items, minTotal: minTotal, maxTotal: maxTotal};
+  }
 
-  // Render step
-  const renderStep = () => {
-    if (step === 0) return renderStep0();
-    if (step === 1) return renderStep1();
-    if (step === 2) return renderStep2();
-    if (step === 3) return renderResults();
-  };
+  // ===== Review render =====
+  function renderReview(){
+    var ba = BESTATTUNGSARTEN[state.bestattungsart];
+    var html = '';
+    html += '<p style="margin-bottom:12px"><strong>Bestattungsart:</strong> ' + esc(ba ? ba.name : '') + '</p>';
+    html += '<p style="margin-bottom:12px"><strong>Region:</strong> ' + esc(state.bundesland) + '</p>';
+    if (state.aufbahrung) html += '<p style="margin-bottom:12px"><strong>Aufbahrung:</strong> Ja</p>';
+    if (state.trauerfeier) html += '<p style="margin-bottom:12px"><strong>Trauerfeier:</strong> ' + esc(state.trauerfeierTyp) + '</p>';
+    if (state.blumenschmuck) html += '<p style="margin-bottom:12px"><strong>Blumenschmuck:</strong> ' + esc(state.blumenschmuckTyp) + '</p>';
+    if (state.grabstein) html += '<p style="margin-bottom:0"><strong>Grabstein:</strong> ' + esc(state.grabsteinTyp) + '</p>';
+    if (!state.aufbahrung && !state.trauerfeier && !state.blumenschmuck && !state.grabstein) {
+      html += '<p style="margin-bottom:0;color:var(--mr-text-muted);font-size:14px">Keine Extras gewählt</p>';
+    }
+    $('#review-summary').innerHTML = html;
+  }
 
-  const renderStep0 = () => (
-    <div style={{animation: 'slideIn 0.3s ease-out'}}>
-      <div className="rechner-progress-label">
-        <span>Schritt 1 von 3</span>
-        <span>33%</span>
-      </div>
-      <div className="rechner-progress">
-        <div className="rechner-progress-fill" style={{width: '33%'}}></div>
-      </div>
-
-      <h2 style={{fontFamily: "'Fraunces',serif", fontSize: 22, fontWeight: 700, margin: '24px 0 16px'}}>
-        Welche Bestattungsart möchtest du?
-      </h2>
-
-      <div className="card-grid">
-        {Object.entries(BESTATTUNGSARTEN).map(([key, data]) => (
-          <div
-            key={key}
-            className={`bestattungsart-card ${selections.bestattungsart === key ? 'selected' : ''}`}
-            onClick={() => handleSelect('bestattungsart', key)}
-          >
-            <div className="bestattungsart-icon">
-              {key === 'erdbestattung' && '⛪'}
-              {key === 'feuerbestattung' && '🔥'}
-              {key === 'seebestattung' && '🌊'}
-              {key === 'baumbestattung' && '🌳'}
-              {key === 'anonyme' && '🤐'}
-            </div>
-            <div className="bestattungsart-text">
-              <strong>{data.name}</strong>
-              <div className="desc">{data.desc}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <button
-        onClick={() => setStep(1)}
-        disabled={!selections.bestattungsart}
-        className="btn"
-        style={{marginTop: 24, opacity: !selections.bestattungsart ? 0.5 : 1, cursor: !selections.bestattungsart ? 'not-allowed' : 'pointer'}}
-      >
-        Weiter →
-      </button>
-    </div>
-  );
-
-  const renderStep1 = () => (
-    <div style={{animation: 'slideIn 0.3s ease-out'}}>
-      <div className="rechner-progress-label">
-        <span>Schritt 2 von 3</span>
-        <span>66%</span>
-      </div>
-      <div className="rechner-progress">
-        <div className="rechner-progress-fill" style={{width: '66%'}}></div>
-      </div>
-
-      <h2 style={{fontFamily: "'Fraunces',serif", fontSize: 22, fontWeight: 700, margin: '24px 0 16px'}}>
-        Deine Region und Details
-      </h2>
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'block', marginBottom: 8, fontWeight: 600, fontSize: 14}}>
-          Bundesland
-        </label>
-        <select value={selections.bundesland} onChange={e => handleSelect('bundesland', e.target.value)} style={{width: '100%'}}>
-          {BUNDESLAENDER.map(bl => (
-            <option key={bl} value={bl}>{bl}</option>
-          ))}
-        </select>
-      </div>
-
-      {(selections.bestattungsart === 'erdbestattung' || selections.bestattungsart === 'feuerbestattung') && (
-        <div style={{marginBottom: 20}}>
-          <label style={{display: 'block', marginBottom: 8, fontWeight: 600, fontSize: 14}}>
-            Grabtyp
-          </label>
-          <select value={selections.grabGrab} onChange={e => handleSelect('grabGrab', e.target.value)} style={{width: '100%'}}>
-            <option value="Einzelgrab">Einzelgrab</option>
-            <option value="Doppelgrab">Doppelgrab</option>
-            <option value="Reihengrab">Reihengrab</option>
-            {selections.bestattungsart === 'feuerbestattung' && <option value="Urnengrab">Urnengrab</option>}
-            <option value="Gemeinschaftsgrab">Gemeinschaftsgrab</option>
-          </select>
-        </div>
-      )}
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer'}}>
-          <input
-            type="checkbox"
-            checked={selections.aufbahrung}
-            onChange={() => handleToggle('aufbahrung')}
-            style={{width: 18, height: 18}}
-          />
-          <span style={{fontWeight: 500}}>Aufbahrung gewünscht?</span>
-        </label>
-      </div>
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer'}}>
-          <input
-            type="checkbox"
-            checked={selections.trauerfeier}
-            onChange={() => handleToggle('trauerfeier')}
-            style={{width: 18, height: 18}}
-          />
-          <span style={{fontWeight: 500}}>Trauerfeier?</span>
-        </label>
-        {selections.trauerfeier && (
-          <div style={{marginTop: 12, paddingLeft: 28}}>
-            <div className="card-grid">
-              <button
-                className={`choice-card ${selections.trauerfeierTyp === 'weltlich' ? 'selected' : ''}`}
-                onClick={() => handleSelect('trauerfeierTyp', 'weltlich')}
-              >
-                <strong>Weltlich</strong>
-                <div className="desc">mit Trauerredner</div>
-              </button>
-              <button
-                className={`choice-card ${selections.trauerfeierTyp === 'kirchlich' ? 'selected' : ''}`}
-                onClick={() => handleSelect('trauerfeierTyp', 'kirchlich')}
-              >
-                <strong>Kirchlich</strong>
-                <div className="desc">mit Geistlichen</div>
-              </button>
-              <button
-                className={`choice-card ${selections.trauerfeierTyp === 'frei' ? 'selected' : ''}`}
-                onClick={() => handleSelect('trauerfeierTyp', 'frei')}
-              >
-                <strong>Frei gestaltet</strong>
-                <div className="desc">Familie plant</div>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer'}}>
-          <input
-            type="checkbox"
-            checked={selections.blumenschmuck}
-            onChange={() => handleToggle('blumenschmuck')}
-            style={{width: 18, height: 18}}
-          />
-          <span style={{fontWeight: 500}}>Blumenschmuck gewünscht?</span>
-        </label>
-        {selections.blumenschmuck && (
-          <div style={{marginTop: 12, paddingLeft: 28}}>
-            <div className="card-grid">
-              <button
-                className={`choice-card ${selections.blumenschmuckTyp === 'einfach' ? 'selected' : ''}`}
-                onClick={() => handleSelect('blumenschmuckTyp', 'einfach')}
-              >
-                <strong>Einfach</strong>
-              </button>
-              <button
-                className={`choice-card ${selections.blumenschmuckTyp === 'mittel' ? 'selected' : ''}`}
-                onClick={() => handleSelect('blumenschmuckTyp', 'mittel')}
-              >
-                <strong>Mittel</strong>
-              </button>
-              <button
-                className={`choice-card ${selections.blumenschmuckTyp === 'aufwendig' ? 'selected' : ''}`}
-                onClick={() => handleSelect('blumenschmuckTyp', 'aufwendig')}
-              >
-                <strong>Aufwendig</strong>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'block', marginBottom: 8, fontWeight: 600, fontSize: 14}}>
-          Sarg-Qualität
-        </label>
-        <div className="card-grid">
-          <button
-            className={`choice-card ${selections.sarqQualitaet === 'einfach' ? 'selected' : ''}`}
-            onClick={() => handleSelect('sarqQualitaet', 'einfach')}
-          >
-            <strong>Einfach</strong>
-          </button>
-          <button
-            className={`choice-card ${selections.sarqQualitaet === 'mittel' ? 'selected' : ''}`}
-            onClick={() => handleSelect('sarqQualitaet', 'mittel')}
-          >
-            <strong>Mittel</strong>
-          </button>
-          <button
-            className={`choice-card ${selections.sarqQualitaet === 'hochwertig' ? 'selected' : ''}`}
-            onClick={() => handleSelect('sarqQualitaet', 'hochwertig')}
-          >
-            <strong>Hochwertig</strong>
-          </button>
-        </div>
-      </div>
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer'}}>
-          <input
-            type="checkbox"
-            checked={selections.grabstein}
-            onChange={() => handleToggle('grabstein')}
-            style={{width: 18, height: 18}}
-          />
-          <span style={{fontWeight: 500}}>Grabstein gewünscht?</span>
-        </label>
-        {selections.grabstein && (
-          <div style={{marginTop: 12, paddingLeft: 28}}>
-            <div className="card-grid">
-              <button
-                className={`choice-card ${selections.grabsteinTyp === 'einfach' ? 'selected' : ''}`}
-                onClick={() => handleSelect('grabsteinTyp', 'einfach')}
-              >
-                <strong>Einfach</strong>
-                <div className="desc">Holzkreuz, Platte</div>
-              </button>
-              <button
-                className={`choice-card ${selections.grabsteinTyp === 'mittel' ? 'selected' : ''}`}
-                onClick={() => handleSelect('grabsteinTyp', 'mittel')}
-              >
-                <strong>Mittel</strong>
-                <div className="desc">Naturstein</div>
-              </button>
-              <button
-                className={`choice-card ${selections.grabsteinTyp === 'aufwendig' ? 'selected' : ''}`}
-                onClick={() => handleSelect('grabsteinTyp', 'aufwendig')}
-              >
-                <strong>Aufwendig</strong>
-                <div className="desc">großes Grabmal</div>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <div style={{marginBottom: 20}}>
-        <label style={{display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer'}}>
-          <input
-            type="checkbox"
-            checked={selections.traueranzeige}
-            onChange={() => handleToggle('traueranzeige')}
-            style={{width: 18, height: 18}}
-          />
-          <span style={{fontWeight: 500}}>Traueranzeige in der Zeitung?</span>
-        </label>
-      </div>
-
-      <div style={{display: 'flex', gap: 12, marginTop: 24}}>
-        <button onClick={() => setStep(0)} className="btn btn-secondary">
-          ← Zurück
-        </button>
-        <button onClick={() => setStep(2)} className="btn">
-          Weiter →
-        </button>
-      </div>
-    </div>
-  );
-
-  const renderStep2 = () => (
-    <div style={{animation: 'slideIn 0.3s ease-out'}}>
-      <div className="rechner-progress-label">
-        <span>Schritt 3 von 3</span>
-        <span>99%</span>
-      </div>
-      <div className="rechner-progress">
-        <div className="rechner-progress-fill" style={{width: '99%'}}></div>
-      </div>
-
-      <h2 style={{fontFamily: "'Fraunces',serif", fontSize: 22, fontWeight: 700, margin: '24px 0 16px'}}>
-        Prüfe deine Angaben
-      </h2>
-
-      <div style={{background: 'var(--mr-bg-card)', border: '1px solid var(--mr-border)', borderRadius: 'var(--mr-radius)', padding: 20, marginBottom: 24}}>
-        <p style={{marginBottom: 12}}><strong>Bestattungsart:</strong> {BESTATTUNGSARTEN[selections.bestattungsart].name}</p>
-        <p style={{marginBottom: 12}}><strong>Region:</strong> {selections.bundesland}</p>
-        {selections.aufbahrung && <p style={{marginBottom: 12}}><strong>Aufbahrung:</strong> Ja</p>}
-        {selections.trauerfeier && <p style={{marginBottom: 12}}><strong>Trauerfeier:</strong> {selections.trauerfeierTyp}</p>}
-        {selections.blumenschmuck && <p style={{marginBottom: 12}}><strong>Blumenschmuck:</strong> {selections.blumenschmuckTyp}</p>}
-        {selections.grabstein && <p style={{marginBottom: 0}}><strong>Grabstein:</strong> {selections.grabsteinTyp}</p>}
-      </div>
-
-      <div className="privacy-notice">
-        <strong>🔐 Deine Daten bleiben bei dir</strong>
-        <p style={{margin: '8px 0 0'}}>
-          Dieser Rechner läuft komplett in deinem Browser. Deine Eingaben werden nicht an einen Server übertragen, nicht gespeichert und nicht für Marketing genutzt. Deine Privatsphäre ist heilig.
-        </p>
-      </div>
-
-      <div style={{display: 'flex', gap: 12, marginTop: 24}}>
-        <button onClick={() => setStep(1)} className="btn btn-secondary">
-          ← Zurück
-        </button>
-        <button onClick={() => {setStep(3); if(window.mrTrack) window.mrTrack('toolExport', {tool: 'bestattungskosten-rechner', type: 'result'});}} className="btn">
-          Ergebnis berechnen
-        </button>
-      </div>
-    </div>
-  );
-
-  const renderResults = () => {
-    const {items, minTotal, maxTotal} = costs;
+  // ===== Results render =====
+  function renderResults(){
+    var costs = calculateCosts();
+    var items = costs.items;
 
     // Group items by category
-    const categories = {};
-    items.forEach(item => {
+    var categories = {};
+    items.forEach(function(item){
       if (!categories[item.category]) categories[item.category] = [];
       categories[item.category].push(item);
     });
 
-    const categoryTotals = {};
-    Object.entries(categories).forEach(([cat, items]) => {
+    var categoryTotals = {};
+    Object.keys(categories).forEach(function(cat){
+      var arr = categories[cat];
       categoryTotals[cat] = {
-        min: items.reduce((s, i) => s + i.min, 0),
-        max: items.reduce((s, i) => s + i.max, 0)
+        min: arr.reduce(function(s,i){return s+i.min;}, 0),
+        max: arr.reduce(function(s,i){return s+i.max;}, 0)
       };
     });
 
-    const maxCategoryTotal = Math.max(...Object.values(categoryTotals).map(c => c.max));
+    var maxCategoryTotal = 0;
+    Object.keys(categoryTotals).forEach(function(c){
+      if (categoryTotals[c].max > maxCategoryTotal) maxCategoryTotal = categoryTotals[c].max;
+    });
 
-    return (
-      <div className="results-container">
-        <div className="result-header">
-          <h2>Deine geschätzten Bestattungskosten</h2>
-          <p className="result-total">
-            {BESTATTUNGSARTEN[selections.bestattungsart].name} in {selections.bundesland}
-          </p>
-        </div>
+    var ba = BESTATTUNGSARTEN[state.bestattungsart];
+    var html = '<div class="results-container">';
+    html += '<div class="result-header">';
+    html += '<h2>Deine geschätzten Bestattungskosten</h2>';
+    html += '<p class="result-total">' + esc(ba.name) + ' in ' + esc(state.bundesland) + '</p>';
+    html += '</div>';
 
-        <div className="cost-range">
-          <div className="cost-range-label">Gesamtkosten (Schätzung)</div>
-          <div className="cost-range-values">
-            <div>
-              <strong>{Math.round(minTotal).toLocaleString('de-DE')} €</strong>
-              <span style={{fontSize: 12}}>bis</span>
-            </div>
-            <div>
-              <strong>{Math.round(maxTotal).toLocaleString('de-DE')} €</strong>
-            </div>
-          </div>
-        </div>
+    html += '<div class="cost-range">';
+    html += '<div class="cost-range-label">Gesamtkosten (Schätzung)</div>';
+    html += '<div class="cost-range-values">';
+    html += '<div><strong>' + fmt(costs.minTotal) + ' €</strong> <span>bis</span></div>';
+    html += '<div><strong>' + fmt(costs.maxTotal) + ' €</strong></div>';
+    html += '</div></div>';
 
-        <h3 style={{fontFamily: "'Fraunces',serif", fontSize: 18, fontWeight: 700, margin: '32px 0 16px'}}>
-          Kostenaufschlüsselung
-        </h3>
+    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:32px 0 16px">Kostenaufschlüsselung</h3>';
 
-        <div className="cost-breakdown">
-          {Object.entries(categories).map(([category, categoryItems]) => {
-            const catMin = categoryTotals[category].min;
-            const catMax = categoryTotals[category].max;
-            const catAvg = (catMin + catMax) / 2;
+    html += '<div class="cost-breakdown">';
+    Object.keys(categories).forEach(function(cat){
+      var catMin = categoryTotals[cat].min;
+      var catMax = categoryTotals[cat].max;
+      html += '<div class="cost-category">';
+      html += '<div class="cost-category-header" data-toggle="1">';
+      html += '<strong>' + esc(cat) + '</strong>';
+      html += '<div style="display:flex;gap:16px;align-items:center">';
+      html += '<span class="cost-category-total">' + fmt(catMin) + ' – ' + fmt(catMax) + ' €</span>';
+      html += '<div class="cost-category-toggle">▼</div>';
+      html += '</div></div>';
+      html += '<div class="cost-category-body">';
+      categories[cat].forEach(function(item){
+        html += '<div class="cost-item">';
+        html += '<span class="cost-item-name">' + esc(item.name) + '</span>';
+        html += '<span class="cost-item-range">' + fmt(item.min) + '–' + fmt(item.max) + ' €</span>';
+        html += '</div>';
+      });
+      html += '</div></div>';
+    });
+    html += '</div>';
 
-            return (
-              <div key={category} className="cost-category">
-                <div className="cost-category-header" onClick={e => {
-                  e.currentTarget.closest('.cost-category').classList.toggle('expanded');
-                }}>
-                  <strong>{category}</strong>
-                  <div style={{display: 'flex', gap: 16, alignItems: 'center'}}>
-                    <span className="cost-category-total">
-                      {Math.round(catMin).toLocaleString('de-DE')} – {Math.round(catMax).toLocaleString('de-DE')} €
-                    </span>
-                    <div className="cost-category-toggle">▼</div>
-                  </div>
-                </div>
-                <div className="cost-category-body">
-                  {categoryItems.map(item => (
-                    <div key={item.key} className="cost-item">
-                      <span className="cost-item-name">{item.name}</span>
-                      <span className="cost-item-range">
-                        {Math.round(item.min).toLocaleString('de-DE')}–{Math.round(item.max).toLocaleString('de-DE')} €
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    html += '<div class="chart-container">';
+    html += '<div class="chart-title">Kostenverteilung nach Kategorie</div>';
+    Object.keys(categories).forEach(function(cat){
+      var catAvg = (categoryTotals[cat].min + categoryTotals[cat].max) / 2;
+      var pct = maxCategoryTotal > 0 ? (catAvg / maxCategoryTotal) * 100 : 0;
+      html += '<div class="chart-bar">';
+      html += '<div class="chart-bar-label"><strong>' + esc(cat) + '</strong><span>' + fmt(catAvg) + ' €</span></div>';
+      html += '<div class="chart-bar-bg"><div class="chart-bar-fill" style="width:' + pct + '%"></div></div>';
+      html += '</div>';
+    });
+    html += '</div>';
 
-        <div className="chart-container">
-          <div className="chart-title">Kostenverteilung nach Kategorie</div>
-          {Object.entries(categories).map(([category]) => {
-            const catAvg = (categoryTotals[category].min + categoryTotals[category].max) / 2;
-            const pct = (catAvg / maxCategoryTotal) * 100;
+    html += '<div class="comparison-box"><h3>Im Vergleich</h3>';
+    html += '<p><strong>Durchschnittliche Bestattung in Deutschland: 6.000–8.000 €</strong></p>';
+    html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Regionale Unterschiede können bis zu 300–400 % betragen (Großstädte vs. ländliche Gebiete).</p>';
+    html += '</div>';
 
-            return (
-              <div key={category} className="chart-bar">
-                <div className="chart-bar-label">
-                  <strong>{category}</strong>
-                  <span>{Math.round(catAvg).toLocaleString('de-DE')} €</span>
-                </div>
-                <div className="chart-bar-bg">
-                  <div className="chart-bar-fill" style={{width: `${pct}%`}}></div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    html += '<div class="tips-section">';
+    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin-bottom:16px">💡 So kannst du sparen</h3>';
+    html += '<div class="tips-grid">';
+    html += '<div class="tip-card"><strong>Bestatter vergleichen</strong><p>Hole 3 schriftliche Angebote ein. Die Unterschiede sind oft 30–50 %.</p></div>';
+    html += '<div class="tip-card"><strong>Einfache Materialien</strong><p>Ein Sarg aus Kiefer oder eine einfache Urne kosten ein Drittel weniger.</p></div>';
+    html += '<div class="tip-card"><strong>Friedhofsgemeinde nutzen</strong><p>Gemeindliche Friedhöfe sind günstiger als private Friedhöfe.</p></div>';
+    html += '<div class="tip-card"><strong>Grabpflege optimieren</strong><p>Wildbepflanzung oder anonyme Gräber sparen Pflegekosten über Jahre.</p></div>';
+    html += '<div class="tip-card"><strong>Trauerfeier schlicht halten</strong><p>Eine frei gestaltete Feier kostet weniger als Saalmiete + Redner.</p></div>';
+    html += '<div class="tip-card"><strong>Sozialbestattung prüfen</strong><p>Das Sozialamt übernimmt Kosten, wenn Erben zu arm sind (ca. 1.500–2.500 €).</p></div>';
+    html += '</div></div>';
 
-        <div className="comparison-box">
-          <h3>Im Vergleich</h3>
-          <p>
-            <strong>Durchschnittliche Bestattung in Deutschland: 6.000–8.000 €</strong>
-          </p>
-          <p>
-            Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Regionale Unterschiede können bis zu 300–400 % betragen (Großstädte vs. ländliche Gebiete).
-          </p>
-        </div>
+    html += '<div style="display:flex;gap:12px;margin:24px 0">';
+    html += '<button type="button" class="btn" id="btn-print">🖨️ Als PDF speichern</button>';
+    html += '<button type="button" class="btn btn-secondary" data-goto-step="0">← Neuer Rechner</button>';
+    html += '</div>';
 
-        <div className="tips-section">
-          <h3 style={{fontFamily: "'Fraunces',serif", fontSize: 18, fontWeight: 700, marginBottom: 16}}>
-            💡 So kannst du sparen
-          </h3>
-          <div className="tips-grid">
-            <div className="tip-card">
-              <strong>Bestatter vergleichen</strong>
-              <p>Hole 3 schriftliche Angebote ein. Die Unterschiede sind oft 30–50 %.</p>
-            </div>
-            <div className="tip-card">
-              <strong>Einfache Materialien</strong>
-              <p>Ein Sarg aus Kiefer oder eine einfache Urne kosten ein Drittel weniger.</p>
-            </div>
-            <div className="tip-card">
-              <strong>Friedhofsgemeinde nutzen</strong>
-              <p>Gemeindliche Friedhöfe sind günstiger als private Friedhöfe.</p>
-            </div>
-            <div className="tip-card">
-              <strong>Grabpflege optimieren</strong>
-              <p>Wildbepflanzung oder anonyme Gräber sparen Pflegekosten über Jahre.</p>
-            </div>
-            <div className="tip-card">
-              <strong>Trauerfeier schlicht halten</strong>
-              <p>Eine frei gestaltete Feier kostet weniger als Saalmiete + Redner.</p>
-            </div>
-            <div className="tip-card">
-              <strong>Sozialbestattung prüfen</strong>
-              <p>Das Sozialamt übernimmt Kosten, wenn Erben zu arm sind (ca. 1.500–2.500 €).</p>
-            </div>
-          </div>
-        </div>
+    html += '<div class="cta-section no-print">';
+    html += '<h2>Bestatter in deiner Nähe</h2>';
+    html += '<p>Erhalte jetzt konkrete Angebote von geprüften Bestattern vor Ort.</p>';
+    html += '<a href="/bestatter/muenchen/">Bestatter finden</a>';
+    html += '</div>';
 
-        <div style={{display: 'flex', gap: 12, margin: '24px 0'}}>
-          <button
-            onClick={() => {
-              if (window.mrTrack) window.mrTrack('toolExport', {tool: 'bestattungskosten-rechner', type: 'print'});
-              window.print();
-            }}
-            className="btn"
-          >
-            🖨️ Als PDF speichern
-          </button>
-          <button
-            onClick={() => setStep(0)}
-            className="btn btn-secondary"
-          >
-            ← Neuer Rechner
-          </button>
-        </div>
+    html += '</div>';
 
-        <div className="cta-section no-print">
-          <h2>Bestatter in deiner Nähe</h2>
-          <p>Erhalte jetzt konkrete Angebote von geprüften Bestattern vor Ort.</p>
-          <a href="/bestatter/muenchen/">Bestatter finden</a>
-        </div>
-      </div>
-    );
-  };
+    var resultsStep = $('#results-step');
+    resultsStep.innerHTML = html;
 
-  return <div>{renderStep()}</div>;
-}
+    // Bind print + back buttons inside dynamic content
+    $('#btn-print').addEventListener('click', function(){
+      track('toolExport', {tool:'bestattungskosten-rechner', type:'print'});
+      window.print();
+    });
+    $$('[data-goto-step]', resultsStep).forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setStep(parseInt(btn.dataset.gotoStep, 10));
+      });
+    });
+    // Bind category toggle
+    $$('.cost-category-header', resultsStep).forEach(function(hdr){
+      hdr.addEventListener('click', function(){
+        hdr.parentElement.classList.toggle('expanded');
+      });
+    });
+  }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+  // Initial first track
+  track('toolStep', {tool:'bestattungskosten-rechner', step:'schritt_1'});
+})();
 </script>
 
 </body>
