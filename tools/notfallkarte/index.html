@@ -14,7 +14,7 @@
 <meta property="og:description" content="Kostenlose Notfallkarte zum Ausdrucken: Notfallkontakte, Vorerkrankungen, Medikamente, Dokument-Standorte. In 2 Minuten erstellt.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://machsruhig.de/tools/notfallkarte/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Notfallkarte erstellen","description":"Kostenlose Notfallkarte zum Ausdrucken: Notfallkontakte, Vorerkrankungen, Medikamente, Dokument-Standorte. In 2 Minuten erstellt, im Portemonnaie immer dabei.","url":"https://machsruhig.de/tools/notfallkarte/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Vorsorge","item":"https://machsruhig.de/vorsorge"},{"@type":"ListItem","position":3,"name":"Notfallkarte","item":"https://machsruhig.de/tools/notfallkarte"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Warum brauche ich eine Notfallkarte?","acceptedAnswer":{"@type":"Answer","text":"Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist."}},{"@type":"Question","name":"Was gehört auf eine Notfallkarte?","acceptedAnswer":{"@type":"Answer","text":"Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht."}},{"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein, alle Eingaben bleiben ausschließlich in deinem Browser. Es werden keine Daten an einen Server gesendet oder gespeichert. Die Karte wird direkt in deinem Browser generiert und gedruckt."}},{"@type":"Question","name":"Wie groß ist die Karte?","acceptedAnswer":{"@type":"Answer","text":"Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Es werden zwei Karten pro A4-Seite gedruckt, damit du eine zum Laminieren und eine als Reserve hast."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Notfallkarte erstellen","description":"Kostenlose Notfallkarte zum Ausdrucken: Notfallkontakte, Vorerkrankungen, Medikamente, Dokument-Standorte. In 2 Minuten erstellt, im Portemonnaie immer dabei.","url":"https://machsruhig.de/tools/notfallkarte/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Vorsorge","item":"https://machsruhig.de/vorsorge"},{"@type":"ListItem","position":3,"name":"Notfallkarte","item":"https://machsruhig.de/tools/notfallkarte"}]}]}</script>
 <script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.js"></script>
 <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 <script defer src="/js/tracking.js"></script>
@@ -56,19 +56,22 @@
 .nk-preview-row.bold .val{font-weight:700}
 .nk-preview-card .brand{margin-top:auto;text-align:right;font-size:8px;color:#999}
 
+/* Karten-Layout — medium-unabhängig, damit auch html2canvas/PDF korrekt rendert */
+.nk-print-page{padding:10mm}
+.nk-card-wrapper{margin:0 auto 12mm;width:85.6mm;height:53.98mm;border:1px dashed #999;border-radius:3mm;overflow:hidden;position:relative;page-break-inside:avoid;background:#fff}
+.nk-card-inner{width:100%;height:100%;padding:3.5mm 4mm;font-size:7pt;line-height:1.35;color:#000;font-family:'DM Sans',Arial,Helvetica,sans-serif}
+.nk-card-inner h3{font-family:'Fraunces',Georgia,serif;font-size:9pt;font-weight:700;margin:0 0 1.5mm;color:#000;border-bottom:0.5pt solid #ccc;padding-bottom:1mm}
+.nk-card-inner .nk-card-row{display:flex;margin-bottom:0.8mm}
+.nk-card-inner .nk-card-label{font-weight:600;min-width:18mm;color:#333;flex-shrink:0}
+.nk-card-inner .nk-card-value{color:#000;word-break:break-word}
+.nk-card-inner .nk-card-branding{position:absolute;bottom:1.5mm;right:3mm;font-size:5.5pt;color:#999}
+.nk-cut-line{text-align:center;font-size:8pt;color:#999;margin:2mm 0;letter-spacing:1px}
+
 @media print{
   .no-print,.mr-nav,.mr-footer{display:none!important}
   body{background:#fff!important;margin:0;padding:0}
   .mr-content{max-width:100%;padding:0;margin:0}
-  .nk-print-page{display:block!important;padding:10mm;page-break-after:always}
-  .nk-card-wrapper{margin:0 auto 12mm;width:85.6mm;height:53.98mm;border:1px dashed #999;border-radius:3mm;overflow:hidden;position:relative;page-break-inside:avoid}
-  .nk-card-inner{width:100%;height:100%;padding:3.5mm 4mm;font-size:7pt;line-height:1.35;color:#000;font-family:'DM Sans',Arial,Helvetica,sans-serif}
-  .nk-card-inner h3{font-family:'Fraunces',Georgia,serif;font-size:9pt;font-weight:700;margin:0 0 1.5mm;color:#000;border-bottom:0.5pt solid #ccc;padding-bottom:1mm}
-  .nk-card-inner .nk-card-row{display:flex;margin-bottom:0.8mm}
-  .nk-card-inner .nk-card-label{font-weight:600;min-width:18mm;color:#333;flex-shrink:0}
-  .nk-card-inner .nk-card-value{color:#000;word-break:break-word}
-  .nk-card-inner .nk-card-branding{position:absolute;bottom:1.5mm;right:3mm;font-size:5.5pt;color:#999}
-  .nk-cut-line{text-align:center;font-size:8pt;color:#999;margin:2mm 0;letter-spacing:1px}
+  .nk-print-page{display:block!important;page-break-after:always}
 }
 
 .pdf-export-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#FFFDF9;color:#7A6B5D;border:2px solid #7A6B5D;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;margin-left:8px;transition:background 0.2s}
@@ -274,8 +277,14 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
     else { b.style.background = 'var(--mr-border)'; b.style.color = 'var(--mr-text-muted)'; b.style.cursor = 'not-allowed'; }
   }
   $('#f-name').addEventListener('input', check1);
+  $('#f-name').addEventListener('change', check1); // Autofill fires change, not always input
   $('#f-kontakt1Name').addEventListener('input', check2);
+  $('#f-kontakt1Name').addEventListener('change', check2);
   $('#f-kontakt1Tel').addEventListener('input', check2);
+  $('#f-kontakt1Tel').addEventListener('change', check2);
+  // Initial check (Browser-Autofill kann Felder vor JS-Load füllen)
+  check1();
+  check2();
 
   function setStep(n){
     $$('.nk-step').forEach(function(el){
@@ -430,7 +439,7 @@ body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf
       {q:'Warum brauche ich eine Notfallkarte?', a:'Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist.'},
       {q:'Was gehört auf eine Notfallkarte?', a:'Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht.'},
       {q:'Werden meine Daten gespeichert?', a:'Nein, alle Eingaben bleiben ausschließlich in deinem Browser. Es werden keine Daten an einen Server gesendet oder gespeichert. Die Karte wird direkt in deinem Browser generiert und gedruckt.'},
-      {q:'Wie groß ist die Karte?', a:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Es werden zwei Karten pro A4-Seite gedruckt, damit du eine zum Laminieren und eine als Reserve hast.'}
+      {q:'Wie groß ist die Karte?', a:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Pro A4-Seite werden je eine Originalkarte und eine Reservekarte mit Vorder- und Rückseite gedruckt — Vorder- und Rückseite werden zusammengeklebt oder laminiert.'}
     ];
     h += '<div class="no-print" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:22px;font-weight:700;margin-bottom:24px">Häufig gefragt</h2>';
