@@ -106,7 +106,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   </div>
 
   <div class="ap-progress-label no-print"><span id="ap-step-label">Schritt 1 von 5</span><span id="ap-step-pct">20 %</span></div>
-  <div class="ap-progress no-print"><div class="ap-progress-fill" id="ap-progress-fill" style="width:20%"></div></div>
+  <div class="ap-progress no-print" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" id="ap-progress-bar"><div class="ap-progress-fill" id="ap-progress-fill" style="width:20%"></div></div>
 
   <!-- Step 1: Bestattungsart -->
   <div class="ap-step active" id="ap-step-1">
@@ -163,7 +163,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   <!-- Step 5: Result -->
   <div class="ap-step" id="ap-step-5">
-    <div id="ap-result"></div>
+    <div id="ap-result" role="region" aria-live="polite" aria-label="Ergebnis des Angebots-Checks"></div>
   </div>
 
 </main></div>
@@ -183,14 +183,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     anonyme:{name:'Anonyme Bestattung',icon:'🕊',desc:'Einfache Bestattung ohne Grabstelle',baseMin:1500,baseMax:3500}
   };
 
+  // Multiplier 1:1 aus bestattungskosten-rechner (single source of truth, Mai 2026)
   var BUNDESLAENDER = [
-    {code:'BY',name:'Bayern',mult:1.22},{code:'BW',name:'Baden-Württemberg',mult:1.22},{code:'HE',name:'Hessen',mult:1.18},
-    {code:'BE',name:'Berlin',mult:1.18},{code:'HH',name:'Hamburg',mult:1.20},{code:'BR',name:'Bremen',mult:1.10},
-    {code:'NW',name:'Nordrhein-Westfalen',mult:1.12},{code:'NI',name:'Niedersachsen',mult:1.00},
-    {code:'SH',name:'Schleswig-Holstein',mult:1.00},{code:'RP',name:'Rheinland-Pfalz',mult:1.00},
-    {code:'SL',name:'Saarland',mult:0.98},{code:'BB',name:'Brandenburg',mult:0.88},
-    {code:'TH',name:'Thüringen',mult:0.85},{code:'SN',name:'Sachsen',mult:0.85},
-    {code:'ST',name:'Sachsen-Anhalt',mult:0.85},{code:'MV',name:'Mecklenburg-Vorpommern',mult:0.78}
+    {code:'BY',name:'Bayern',mult:1.22},{code:'BW',name:'Baden-Württemberg',mult:1.20},{code:'HE',name:'Hessen',mult:1.15},
+    {code:'BE',name:'Berlin',mult:1.15},{code:'HH',name:'Hamburg',mult:1.20},{code:'BR',name:'Bremen',mult:1.05},
+    {code:'NW',name:'Nordrhein-Westfalen',mult:1.05},{code:'NI',name:'Niedersachsen',mult:1.02},
+    {code:'SH',name:'Schleswig-Holstein',mult:0.95},{code:'RP',name:'Rheinland-Pfalz',mult:0.95},
+    {code:'SL',name:'Saarland',mult:0.90},{code:'BB',name:'Brandenburg',mult:0.80},
+    {code:'TH',name:'Thüringen',mult:0.80},{code:'SN',name:'Sachsen',mult:0.82},
+    {code:'ST',name:'Sachsen-Anhalt',mult:0.78},{code:'MV',name:'Mecklenburg-Vorpommern',mult:0.78}
   ];
 
   // Posten-Definition: pflicht-flag = muss im Standard-Angebot enthalten sein
@@ -204,7 +205,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {key:'urne',label:'Urne',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme'],info:'Bei Feuerbestattung, See-, Baum-, anonymer Bestattung'},
     {key:'aufbahrung',label:'Aufbahrung (falls gewünscht)',pflicht:false,info:'Optional — falls Angehörige Abschied nehmen wollen'},
     {key:'krematorium',label:'Krematorium / Einäscherung',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
-    {key:'zweite_lu',label:'Zweite Leichenschau (bei Feuerbestattung Pflicht)',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme'],info:'Gesetzlich vorgeschrieben vor jeder Einäscherung'},
+    {key:'zweite_lu',label:'Zweite Leichenschau (bei Feuerbestattung Pflicht)',pflicht:false,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme'],info:'Gesetzlich vorgeschrieben — meist im Krematoriumsposten enthalten, manchmal separat ausgewiesen'},
     {key:'friedhof',label:'Friedhofsgebühren (Grabstelle, Beisetzung, Nutzungsrecht)',pflicht:true,excludeBA:['seebestattung'],info:'Kommunale Gebühren — bei Seebestattung entfällt'},
     {key:'beisetzung',label:'Beisetzungs-Service auf dem Friedhof',pflicht:true,excludeBA:['seebestattung','anonyme']},
     {key:'see_service',label:'Schiffs-/Boots-Service zur Seebestattung',pflicht:true,condBA:['seebestattung'],info:'See-Reederei-Kosten'},
@@ -252,12 +253,20 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function setStep(n){
     state.currentStep=n;
     $$('.ap-step').forEach(function(el){el.classList.remove('active');});
-    $('#ap-step-'+n).classList.add('active');
+    var step=$('#ap-step-'+n);
+    step.classList.add('active');
     var pct=Math.round(n/5*100);
     $('#ap-progress-fill').style.width=pct+'%';
+    $('#ap-progress-bar').setAttribute('aria-valuenow',pct);
     $('#ap-step-label').textContent='Schritt '+n+' von 5';
     $('#ap-step-pct').textContent=pct+' %';
     window.scrollTo({top:0,behavior:'smooth'});
+    // M1 A11y: Move focus to the step's heading after transition (keyboard/screenreader orientation)
+    var heading=step.querySelector('h2');
+    if(heading){
+      heading.setAttribute('tabindex','-1');
+      setTimeout(function(){heading.focus({preventScroll:true});},100);
+    }
     track('toolStep',{tool:'angebotspruefer',step:String(n)});
   }
 
@@ -299,10 +308,39 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // ===== Step 3 — Gesamtsumme =====
   function renderStep3(){
     var inp=$('#ap-gesamtsumme');
+    inp.setAttribute('inputmode','numeric');
+    inp.setAttribute('aria-describedby','ap-gesamtsumme-hint');
+    // Inject hint element after input wrapper
+    var wrap=inp.parentElement;
+    var hint=document.createElement('p');
+    hint.id='ap-gesamtsumme-hint';
+    hint.setAttribute('aria-live','polite');
+    hint.style.cssText='font-size:13px;color:var(--mr-text-muted);margin-top:8px;min-height:18px';
+    hint.textContent='Eine ungefähre Zahl reicht — wir vergleichen mit typischen Preisrahmen.';
+    wrap.parentElement.insertBefore(hint,wrap.nextSibling);
+    // Remove the static p tag that lives next in DOM (older hint)
+    var oldHint=hint.nextElementSibling;
+    if(oldHint && oldHint.tagName==='P' && oldHint.textContent.indexOf('ungefähre Zahl')>=0) oldHint.remove();
+    // M4: Strip German thousand-dots/commas, validate
     inp.addEventListener('input',function(){
-      var v=parseInt(inp.value,10);
-      if(v>=500 && v<=50000){state.gesamtsumme=v;$('#ap-next-3').disabled=false;}
-      else{state.gesamtsumme=0;$('#ap-next-3').disabled=true;}
+      var raw=inp.value.replace(/[.\s]/g,'').replace(/,\d*$/,'');
+      var v=parseInt(raw,10);
+      if(isNaN(v)||v<500){
+        state.gesamtsumme=0;
+        $('#ap-next-3').disabled=true;
+        if(inp.value.trim()===''){hint.textContent='Eine ungefähre Zahl reicht — wir vergleichen mit typischen Preisrahmen.';hint.style.color='var(--mr-text-muted)';}
+        else{hint.textContent='Bitte eine Zahl ≥ 500 € eingeben.';hint.style.color='var(--mr-urgent)';}
+      } else if(v>50000){
+        state.gesamtsumme=0;
+        $('#ap-next-3').disabled=true;
+        hint.textContent='Bitte eine Zahl ≤ 50.000 € eingeben.';
+        hint.style.color='var(--mr-urgent)';
+      } else {
+        state.gesamtsumme=v;
+        $('#ap-next-3').disabled=false;
+        hint.textContent='✓ Verstanden: '+new Intl.NumberFormat('de-DE').format(v)+' €';
+        hint.style.color='var(--mr-success)';
+      }
     });
     $('#ap-next-3').addEventListener('click',function(){setStep(4);});
   }
@@ -370,20 +408,27 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     var status='green';
     var reasons=[];
-    var criticalMissing=missingPflicht.length>=3;
-    var someMissing=missingPflicht.length>=1 && missingPflicht.length<=2;
+    // Schwellen relativ zur Anzahl sichtbarer Pflicht-Posten (M3-Fix)
+    var pflichtTotal=pflicht.length;
+    var missingRatio=pflichtTotal>0?missingPflicht.length/pflichtTotal:0;
+    var criticalMissing=missingRatio>=0.5 && missingPflicht.length>=2; // ≥50% UND mind. 2 fehlen
+    var someMissing=missingPflicht.length>=1 && !criticalMissing;
 
     if(criticalMissing){
       status='red';
-      reasons.push('Mehrere Pflicht-Posten sind nicht klar im Angebot ausgewiesen ('+missingPflicht.length+' fehlen oder sind unklar).');
+      reasons.push('Mehrere Pflicht-Posten sind nicht klar im Angebot ausgewiesen ('+missingPflicht.length+' von '+pflichtTotal+' fehlen oder sind unklar).');
     } else if(someMissing){
       status='yellow';
-      reasons.push('Einige Pflicht-Posten sind nicht eindeutig ausgewiesen ('+missingPflicht.length+' offen). Vor Entscheidung klären.');
+      reasons.push('Einige Pflicht-Posten sind nicht eindeutig ausgewiesen ('+missingPflicht.length+' von '+pflichtTotal+' offen). Vor Entscheidung klären.');
     }
 
     if(belowRange){
       var diff=Math.round((1-sum/rangeMin)*100);
-      if(diff>=25){
+      // B3-Fix: extremer Unterpreis (≥50%) = Rot, Lockvogel-Verdacht
+      if(diff>=50){
+        status='red';
+        reasons.push('Die Gesamtsumme liegt drastisch unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+state.bundesland+', −'+diff+' %). Das kann ein Hinweis auf ein Lockangebot sein, bei dem später hohe Nachforderungen entstehen. Lass dir alle Posten + Folgekosten schriftlich bestätigen.');
+      } else if(diff>=25){
         status=status==='green'?'yellow':status;
         reasons.push('Die Gesamtsumme liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+state.bundesland+'). Prüfe, ob wichtige Posten wirklich enthalten sind.');
       }
