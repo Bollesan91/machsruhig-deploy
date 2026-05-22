@@ -34,6 +34,7 @@
 .option-btn .desc{font-size:13px;color:var(--mr-text-muted)}
 .back-btn{margin-top:16px;padding:10px 20px;background:none;border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-size:14px;color:var(--mr-text-muted);font-family:inherit}
 .back-btn:hover{background:rgba(122,107,93,0.05)}
+details[open] summary span[aria-hidden]{transform:rotate(180deg)}
 @media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt;color:#000!important}.mr-content{max-width:100%;padding:0}h1{font-size:18pt!important}h2{font-size:14pt!important}.result-row{break-inside:avoid;page-break-inside:avoid}}
 </style>
 </head>
@@ -253,6 +254,7 @@
     html += '<button type="button" id="btn-copy" style="flex:1;min-width:140px;padding:14px 20px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit">📋 Kopieren</button>';
     html += '<button type="button" id="btn-restart" style="flex:1;min-width:140px;padding:14px 20px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit">↺ Neu berechnen</button>';
     html += '</div>';
+    html += '<div id="copy-status" role="status" aria-live="polite" style="min-height:20px;font-size:13px;color:var(--mr-success,#5a8a5a);margin:0 0 16px;text-align:center"></div>';
 
     // Next-Step CTAs
     html += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
@@ -274,7 +276,7 @@
     html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)">Häufige Fragen</h3>';
     FAQS.forEach(function(faq){
       html += '<details style="border:1px solid var(--mr-border);border-radius:8px;margin-bottom:8px;background:var(--mr-bg-card)">';
-      html += '<summary style="padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">' + esc(faq.q) + '</summary>';
+      html += '<summary style="padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">' + esc(faq.q) + '<span aria-hidden="true" style="color:var(--mr-text-muted);font-size:18px;line-height:1;transition:transform 0.2s">▾</span></summary>';
       html += '<div style="padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--mr-text-muted)">' + esc(faq.a) + '</div>';
       html += '</details>';
     });
@@ -309,13 +311,24 @@
       }
       text += '\nHINWEIS: Dies sind Richtwerte. Tatsächliche Kosten können abweichen.\n';
       text += 'Empfehlung: Hole mindestens 3 Angebote von Bestattern ein.\n';
+      var status = $('#copy-status');
+      var showStatus = function(msg, isError){
+        if (!status) return;
+        status.textContent = msg;
+        status.style.color = isError ? 'var(--mr-urgent,#c45e3a)' : 'var(--mr-success,#5a8a5a)';
+        setTimeout(function(){ status.textContent = ''; }, 3500);
+      };
       if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function(){ alert('Kostenübersicht kopiert!'); });
+        navigator.clipboard.writeText(text).then(
+          function(){ showStatus('✓ Kostenübersicht in Zwischenablage kopiert'); },
+          function(){ showStatus('Kopieren fehlgeschlagen — Text manuell markieren', true); }
+        );
       } else {
         // Fallback
         var ta = document.createElement('textarea');
         ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); alert('Kostenübersicht kopiert!'); } catch(_){}
+        try { document.execCommand('copy'); showStatus('✓ Kostenübersicht in Zwischenablage kopiert'); }
+        catch(_){ showStatus('Kopieren fehlgeschlagen — Text manuell markieren', true); }
         document.body.removeChild(ta);
       }
       track('toolExport', {tool:'kostenrechner', type:'copy'});

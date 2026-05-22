@@ -306,6 +306,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
           <option value="Urnengrab" data-feuer-only="1">Urnengrab</option>
           <option value="Gemeinschaftsgrab">Gemeinschaftsgrab</option>
         </select>
+        <p id="grabtyp-hint" style="font-size:12px;color:var(--mr-text-muted);margin-top:6px;line-height:1.5;display:none"><strong>Hinweis:</strong> Bei einem Gemeinschaftsgrab ist ein individueller Grabstein meist nicht zulässig (Friedhofsordnung). Wähle ggf. „Kein Grabstein" weiter unten.</p>
       </div>
 
       <div style="margin-bottom:20px">
@@ -662,8 +663,13 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
   });
 
   // Step 1: Grabtyp (visible only for erdbestattung+feuerbestattung)
+  function updateGrabtypHint(){
+    var hint = $('#grabtyp-hint');
+    if (hint) hint.style.display = state.grabGrab === 'Gemeinschaftsgrab' ? 'block' : 'none';
+  }
   $('#grabtyp-select').addEventListener('change', function(e){
     state.grabGrab = e.target.value;
+    updateGrabtypHint();
   });
   function updateGrabtypOptions(){
     var wrapper = $('#grabtyp-wrapper');
@@ -898,6 +904,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
     html += '<div class="comparison-box"><h3>Im Vergleich</h3>';
     html += '<p><strong>Durchschnittliche Bestattung in Deutschland: 6.000–8.000 €</strong></p>';
     html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Regionale Unterschiede können bis zu 300–400 % betragen (Großstädte vs. ländliche Gebiete).</p>';
+    html += '<p style="font-size:12px;color:var(--mr-text-muted);margin-top:8px"><em>Stand 2026 · Quellen: Stiftung Warentest, Bundesverband Deutscher Bestatter (BDB), Aeternitas e.V.</em></p>';
     html += '</div>';
 
     html += '<div class="tips-section">';
