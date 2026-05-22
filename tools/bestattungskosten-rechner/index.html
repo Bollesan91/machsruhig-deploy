@@ -175,7 +175,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
   .rechner-step:not(.active){display:none!important}
   .result-header h2{font-size:18pt!important}
   h2{font-size:14pt!important}
-  .cost-category.expanded .cost-category-body{display:block!important}
+  .cost-category-body{display:block!important}
   .cost-category-toggle{display:none}
   .cost-category-header:hover{background:transparent}
   .privacy-notice{border-left:none;background:transparent;border:1px solid #ccc}
@@ -528,7 +528,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       bestatterleistungen:{min:2000,max:3500}, sarg:{min:800,max:2200},
       friedhofsgebuehr:{min:600,max:2800}, beisetzung:{min:300,max:800},
       aufbahrung:{min:200,max:500}, trauerfeier_saal:{min:100,max:400},
-      trauerfeier_redner:{min:0,max:600},
+      trauerfeier_redner:{min:200,max:600},
       blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
       grabstein_einfach:{min:400,max:1000}, grabstein_mittel:{min:1500,max:3000}, grabstein_aufwendig:{min:3000,max:7000},
       traueranzeige:{min:200,max:800},
@@ -538,7 +538,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       bestatterleistungen:{min:1800,max:3200}, sarg:{min:600,max:1800},
       einaescherung:{min:300,max:550}, zweite_leichenuntersuchung:{min:50,max:150},
       urne:{min:80,max:400}, friedhofsgebuehr_urne:{min:300,max:1500}, beisetzung:{min:250,max:600},
-      aufbahrung:{min:150,max:400}, trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:0,max:600},
+      aufbahrung:{min:150,max:400}, trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:200,max:600},
       blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
       grabstein_einfach:{min:300,max:800}, grabstein_mittel:{min:1200,max:2500}, grabstein_aufwendig:{min:2500,max:6000},
       traueranzeige:{min:200,max:800},
@@ -548,7 +548,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       bestatterleistungen:{min:1600,max:2800}, sarg:{min:500,max:1500},
       einaescherung:{min:300,max:550}, zweite_leichenuntersuchung:{min:50,max:150},
       seebestattung_verwaltung:{min:400,max:1200},
-      trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:0,max:600},
+      trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:200,max:600},
       blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
       traueranzeige:{min:200,max:800}
     },
@@ -556,7 +556,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       bestatterleistungen:{min:1600,max:2900}, sarg:{min:500,max:1600},
       einaescherung:{min:300,max:550}, zweite_leichenuntersuchung:{min:50,max:150},
       baum_bestattung:{min:600,max:1800},
-      trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:0,max:600},
+      trauerfeier_saal:{min:100,max:400}, trauerfeier_redner:{min:200,max:600},
       blumenschmuck_einfach:{min:80,max:200}, blumenschmuck_mittel:{min:200,max:400}, blumenschmuck_aufwendig:{min:400,max:900},
       traueranzeige:{min:200,max:800}
     },
@@ -620,8 +620,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
 
   function track(event, props){
     try {
-      if (window.mrTrack) window.mrTrack(event, props);
-      else if (window.plausible) window.plausible(event, props ? {props:props} : undefined);
+      if (window.plausible) window.plausible(event, props ? {props:props} : undefined);
     } catch(e){}
   }
 
@@ -867,7 +866,7 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
       var catMin = categoryTotals[cat].min;
       var catMax = categoryTotals[cat].max;
       html += '<div class="cost-category">';
-      html += '<div class="cost-category-header" data-toggle="1">';
+      html += '<div class="cost-category-header" role="button" tabindex="0" aria-expanded="false" aria-label="Kategorie ' + esc(cat) + ' ein- oder ausklappen" data-toggle="1">';
       html += '<strong>' + esc(cat) + '</strong>';
       html += '<div style="display:flex;gap:16px;align-items:center">';
       html += '<span class="cost-category-total">' + fmt(catMin) + ' – ' + fmt(catMax) + ' €</span>';
@@ -938,10 +937,26 @@ select:focus,input:focus{outline:2px solid var(--mr-accent);outline-offset:1px}
         setStep(parseInt(btn.dataset.gotoStep, 10));
       });
     });
-    // Bind category toggle
+    // Bind category toggle (click + keyboard a11y)
     $$('.cost-category-header', resultsStep).forEach(function(hdr){
-      hdr.addEventListener('click', function(){
-        hdr.parentElement.classList.toggle('expanded');
+      var toggleFn = function(){
+        var isExpanded = hdr.parentElement.classList.toggle('expanded');
+        hdr.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      };
+      hdr.addEventListener('click', toggleFn);
+      hdr.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleFn();
+        }
+      });
+    });
+    // Before print: auto-expand all categories so PDF includes full breakdown
+    window.addEventListener('beforeprint', function(){
+      $$('.cost-category', resultsStep).forEach(function(c){
+        c.classList.add('expanded');
+        var hdr = c.querySelector('.cost-category-header');
+        if (hdr) hdr.setAttribute('aria-expanded', 'true');
       });
     });
   }
