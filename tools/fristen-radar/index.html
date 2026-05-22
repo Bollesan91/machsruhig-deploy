@@ -208,8 +208,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     {id:'sterbegeld',name:'Sterbegeldversicherung melden',days:3,category:'versicherung',consequence:'Verzögerung der Auszahlung',link:'/vorsorge/sterbegeldversicherung',hint:'Policennummer suchen, Sterbeurkunde beifügen'},
     {id:'krankenkasse',name:'Krankenkasse informieren',days:14,category:'behoerde',consequence:'Beiträge laufen weiter',link:'/vertraege-kuendigen',hint:'Familienversicherung für Angehörige prüfen'},
     {id:'sterbevierteljahr',name:'Sterbevierteljahr beantragen',days:30,category:'finanzen',consequence:'Vorschuss auf 3 Monate volle Rente geht verloren',link:'#',hint:'Beim Renten-Service der Deutschen Post beantragen — gilt nur für Ehepartner',showIf:'spouse'},
-    {id:'mietvertrag',name:'Mietvertrag — Sonderkündigung',days:30,category:'wohnung',consequence:'Normaler Kündigungsschutz greift (ggf. 3+ Monate extra Miete)',link:'/vertraege-kuendigen',hint:'§ 580 BGB: Sonderkündigungsrecht innerhalb 1 Monat, dann 3 Monate Frist',showIf:'rental'},
-    {id:'erbausschlagung',name:'Erbausschlagung',days:42,category:'recht',consequence:'Erbe gilt als ANGENOMMEN — auch Schulden! Nicht mehr rückgängig zu machen',link:'/vorsorge/testament',hint:'KRITISCH: Prüfe ob Schulden vorhanden sind. Ausschlagung beim Nachlassgericht erklären'},
+    {id:'mietvertrag',name:'Mietvertrag — Sonderkündigung',days:30,category:'wohnung',consequence:'Normaler Kündigungsschutz greift (ggf. 3+ Monate extra Miete)',link:'/vertraege-kuendigen',hint:'§ 580 BGB: Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod, dann 3 Monate Frist. Datum unten ist Richtwert (Frist beginnt rechtlich ab Kenntnis, nicht Todestag)',showIf:'rental',abKenntnis:true},
+    {id:'erbausschlagung',name:'Erbausschlagung',days:42,category:'recht',consequence:'Erbe gilt als ANGENOMMEN — auch Schulden! Nicht mehr rückgängig zu machen',link:'/vorsorge/testament',hint:'KRITISCH: Die 6-Wochen-Frist (§ 1944 BGB) beginnt erst AB KENNTNIS vom Erbfall und der eigenen Erbenstellung — nicht ab Todestag. Bei testamentarischer Erbfolge: ab Bekanntgabe durch Nachlassgericht. Das angezeigte Datum ist der frühestmögliche Fristablauf, falls Du am Todestag Kenntnis hattest. Bei späterer Kenntnis: 6 Wochen ab dem Tag dazurechnen.',abKenntnis:true},
     {id:'erbschaftsteuer',name:'Erbschaftsteuer — Anzeige beim Finanzamt',days:90,category:'finanzen',consequence:'Ordnungswidrigkeit, Steuerzuschläge möglich',link:'#',hint:'Pflicht unabhängig von der Höhe. Freibeträge: 500.000 € (Ehepartner), 400.000 € (Kinder)'},
     {id:'witwenrente',name:'Witwenrente beantragen',days:365,category:'finanzen',consequence:'Rückwirkende Zahlung nur innerhalb 12 Monaten möglich',link:'#',hint:'Große Witwenrente: 55% der Rente. Kleine Witwenrente: 25% (max. 2 Jahre)',showIf:'spouse'},
     {id:'steuererklaerung',name:'Letzte Steuererklärung abgeben',days:540,category:'finanzen',consequence:'Verspätungszuschläge, Schätzung durch Finanzamt',link:'#',hint:'Frist: 31. Juli des Folgejahres. Mit Steuerberater: verlängerte Fristen'}
@@ -247,7 +247,11 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   }
   function formatDate(d){ return d.toLocaleDateString('de-DE', {day:'2-digit', month:'2-digit', year:'numeric'}); }
   function addDays(date, days){ var r = new Date(date); r.setDate(r.getDate()+days); return r; }
-  function daysBetween(a,b){ return Math.ceil((b - a) / 86400000); }
+  function daysBetween(a,b){
+    // DST-safe: use UTC date-only differences (ignores hour drift from setDate across DST boundaries)
+    var ms = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()) - Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+    return Math.round(ms / 86400000);
+  }
   function getUrgency(rem){
     if (rem <= 3) return {level:'red', label:'DRINGEND'};
     if (rem <= 14) return {level:'orange', label:'BALD'};
@@ -488,7 +492,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
     html += '</div>';
 
     html += '<div style="display:flex;align-items:center;gap:16px;font-size:14px;color:var(--mr-text-muted);margin-bottom:10px;margin-left:30px;flex-wrap:wrap">';
-    html += '<span>Frist: <strong style="color:var(--mr-text)">' + formatDate(deadlineDate) + '</strong></span>';
+    html += '<span>Frist: <strong style="color:var(--mr-text)">' + formatDate(deadlineDate) + '</strong>' + (d.abKenntnis ? ' <em style="font-size:12px;color:var(--fr-orange);font-weight:600">(Richtwert — Frist ab Kenntnis)</em>' : '') + '</span>';
     html += '<span style="color:' + (isPast ? 'var(--fr-red)' : 'var(--mr-text-muted)') + ';font-weight:' + (isPast ? '600' : 'normal') + '">' + daysLabel + '</span>';
     html += '</div>';
 
