@@ -27,11 +27,15 @@
 @media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
 .mr-footer{background:#f4f0eb;border-top:1px solid var(--mr-border);margin-top:64px;padding:40px 20px 32px}.mr-footer-inner{max-width:720px;margin:0 auto}.mr-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}@media(max-width:640px){.mr-footer-grid{grid-template-columns:1fr;gap:24px}}.mr-footer h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--mr-text);margin-bottom:8px}.mr-footer p,.mr-footer a{font-size:13px;color:var(--mr-text-muted);line-height:1.6}.mr-footer a{text-decoration:none;display:block;padding:2px 0;transition:color 0.2s}.mr-footer a:hover{color:var(--mr-primary)}.mr-footer-bottom{border-top:1px solid var(--mr-border);padding-top:20px;text-align:center}.mr-footer-bottom p{font-size:12px;color:#73655A}
 .mr-content{max-width:720px;margin:0 auto;padding:0 20px}
+.option-btn{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);cursor:pointer;text-align:left;transition:border-color 0.2s,box-shadow 0.2s;font-size:15px;font-family:inherit;width:100%}
+.option-btn:hover{border-color:var(--mr-accent);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.option-btn .icon{font-size:24px;min-width:36px;text-align:center}
+.option-btn strong{display:block;margin-bottom:2px}
+.option-btn .desc{font-size:13px;color:var(--mr-text-muted)}
+.back-btn{margin-top:16px;padding:10px 20px;background:none;border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-size:14px;color:var(--mr-text-muted);font-family:inherit}
+.back-btn:hover{background:rgba(122,107,93,0.05)}
 @media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt;color:#000!important}.mr-content{max-width:100%;padding:0}h1{font-size:18pt!important}h2{font-size:14pt!important}.result-row{break-inside:avoid;page-break-inside:avoid}}
 </style>
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
@@ -46,285 +50,307 @@
       <a href="/tools/vorsorge-check">Vorsorge</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <a href="/bestatter/muenchen/">Bestatter finden</a></div></div></nav>
-<div class="mr-content"><main id="main"><div id="app"></div></main></div>
+
+<div class="mr-content"><main id="main">
+
+  <!-- Static Header — indexable -->
+  <div style="padding:32px 0 8px" id="rechner-top">
+    <div style="font-size:13px;color:var(--mr-text-muted);margin-bottom:12px">
+      <a href="/" style="color:var(--mr-warm);text-decoration:none">Start</a> ›
+      <a href="/bestattungskosten" style="color:var(--mr-warm);text-decoration:none">Bestattungskosten</a> › Kostenrechner
+    </div>
+    <h1 style="font-family:'Fraunces',serif;font-size:clamp(24px,4vw,32px);font-weight:800;line-height:1.25;margin-bottom:8px">Bestattungskosten-Rechner</h1>
+    <p style="font-size:15px;color:var(--mr-text-muted);line-height:1.7;max-width:600px">In 5 Schritten zu einer realistischen Kostenspanne. Keine Pseudopräzision, sondern ehrliche Richtwerte.</p>
+  </div>
+
+  <div id="privacy-banner" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin:16px 0 8px;font-size:14px;line-height:1.6">
+    <strong>🔒 Deine Privatsphäre:</strong> Alle Berechnungen laufen komplett in deinem Browser. Es werden keine Daten gespeichert oder an uns gesendet.
+  </div>
+
+  <!-- Wizard mount-point — JS renders steps + result here -->
+  <div id="wizard"></div>
+
+</main></div>
+
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprüche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
-<script type="text/babel">
-const {useState, useRef} = React;
+<script>
+(function(){
+  'use strict';
 
-const STEPS = [
-  {id:'bestattungsart',frage:'Welche Bestattungsart?',optionen:[
-    {id:'erdbestattung',label:'Erdbestattung',desc:'Klassisch im Sarg auf dem Friedhof',icon:'⚰️'},
-    {id:'feuerbestattung',label:'Feuerbestattung',desc:'Einäscherung + Urnenbeisetzung',icon:'🔥'},
-    {id:'seebestattung',label:'Seebestattung',desc:'Urne auf Nord- oder Ostsee',icon:'🌊'},
-    {id:'baumbestattung',label:'Baumbestattung',desc:'Urne am Baum im Bestattungswald',icon:'🌳'},
-    {id:'anonym',label:'Anonyme Bestattung',desc:'Ohne namentliche Kennzeichnung',icon:'🕊️'}
-  ]},
-  {id:'region',frage:'In welcher Region?',optionen:[
-    {id:'grossstadt',label:'Großstadt',desc:'Berlin, Hamburg, München, Köln etc.',icon:'🏙️'},
-    {id:'mittelstadt',label:'Mittelstadt',desc:'50.000–500.000 Einwohner',icon:'🏘️'},
-    {id:'land',label:'Ländlicher Raum',desc:'Kleinstadt oder Dorf',icon:'🌾'}
-  ]},
-  {id:'ausstattung',frage:'Welche Ausstattung?',optionen:[
-    {id:'einfach',label:'Einfach & schlicht',desc:'Zweckmäßig, ohne Extras',icon:'○'},
-    {id:'standard',label:'Standard',desc:'Angemessene Gestaltung',icon:'◉'},
-    {id:'gehoben',label:'Gehoben',desc:'Hochwertige Materialien & Gestaltung',icon:'◆'}
-  ]},
-  {id:'trauerfeier',frage:'Trauerfeier gewünscht?',optionen:[
-    {id:'keine',label:'Keine Trauerfeier',desc:'Stille Beisetzung',icon:'—'},
-    {id:'klein',label:'Kleine Feier',desc:'Engster Kreis, schlicht',icon:'👤'},
-    {id:'mittel',label:'Mittlere Feier',desc:'Familie & Freunde, mit Redner',icon:'👥'},
-    {id:'gross',label:'Große Feier',desc:'Viele Gäste, Musik, Blumen, Kaffeetafel',icon:'👥👥'}
-  ]},
-  {id:'grabstein',frage:'Grabstein oder Grabplatte?',optionen:[
-    {id:'keiner',label:'Keiner nötig',desc:'Bei See-/Baum-/anonymer Bestattung',icon:'—'},
-    {id:'platte',label:'Einfache Grabplatte',desc:'Liegestein mit Gravur',icon:'▬'},
-    {id:'stein',label:'Grabstein (Standard)',desc:'Stehender Stein mit Gravur',icon:'▮'},
-    {id:'premium',label:'Grabstein (Premium)',desc:'Hochwertiger Stein, aufwändige Gestaltung',icon:'▰'}
-  ]}
-];
-
-const BASIS = {
-  erdbestattung:{min:3500,max:5500},
-  feuerbestattung:{min:2000,max:3500},
-  seebestattung:{min:1500,max:3000},
-  baumbestattung:{min:2000,max:3500},
-  anonym:{min:800,max:1500}
-};
-const REGION_FAKTOR = {grossstadt:1.3,mittelstadt:1.0,land:0.8};
-const AUSSTATTUNG_FAKTOR = {einfach:0.7,standard:1.0,gehoben:1.4};
-const TRAUERFEIER_AUFSCHLAG = {keine:0,klein:500,mittel:1200,gross:2500};
-const GRABSTEIN_AUFSCHLAG = {keiner:0,platte:800,stein:2000,premium:4000};
-
-const GRABPFLEGE = {
-  erdbestattung:{min:50,max:400,jahre:25,hinweis:'Erdgrab benötigt regelmäßige Pflege'},
-  feuerbestattung:{min:30,max:250,jahre:20,hinweis:'Urnengrab ist kleiner und pflegeleichter'},
-  seebestattung:null,
-  baumbestattung:null,
-  anonym:null
-};
-
-const POSTEN_LABELS = {
-  erdbestattung:['Bestatterleistungen','Sarg','Friedhofsgebühren (20–30 J.)','Überführung & Formalitäten'],
-  feuerbestattung:['Bestatterleistungen','Verbrennungssarg','Einäscherung','Urne','Friedhofsgebühren','Formalitäten'],
-  seebestattung:['Bestatterleistungen','Einäscherung','Seeurne','Reederei & Schiffsfahrt','Formalitäten'],
-  baumbestattung:['Bestatterleistungen','Einäscherung','Bio-Urne','Baumplatz (Nutzungsrecht)','Formalitäten'],
-  anonym:['Bestatterleistungen (minimal)','Einäscherung','Einfache Urne','Friedhofsgebühren (reduziert)']
-};
-
-function berechne(auswahl) {
-  const basis = BASIS[auswahl.bestattungsart];
-  const rf = REGION_FAKTOR[auswahl.region];
-  const af = AUSSTATTUNG_FAKTOR[auswahl.ausstattung];
-  const tf = TRAUERFEIER_AUFSCHLAG[auswahl.trauerfeier];
-  const gs = GRABSTEIN_AUFSCHLAG[auswahl.grabstein];
-  const min = Math.round((basis.min * rf * af + tf + gs) / 100) * 100;
-  const max = Math.round((basis.max * rf * af + tf + gs) / 100) * 100;
-  return {min, max};
-}
-
-function ProgressBar({current, total}) {
-  const pct = Math.round((current / total) * 100);
-  return React.createElement('div', {style:{margin:'24px 0 8px'}},
-    React.createElement('div', {style:{display:'flex',justifyContent:'space-between',fontSize:13,color:'var(--mr-text-muted)',marginBottom:6}},
-      React.createElement('span', null, `Schritt ${current} von ${total}`),
-      React.createElement('span', null, `${pct}%`)
-    ),
-    React.createElement('div', {style:{height:6,background:'var(--mr-border)',borderRadius:3}},
-      React.createElement('div', {style:{height:'100%',width:`${pct}%`,background:'var(--mr-accent)',borderRadius:3,transition:'width 0.3s'}})
-    )
-  );
-}
-
-function StepView({step, stepIndex, total, onSelect, onBack}) {
-  return React.createElement('div', null,
-    React.createElement(ProgressBar, {current:stepIndex+1, total}),
-    React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:22,fontWeight:700,margin:'24px 0 16px'}}, step.frage),
-    React.createElement('div', {style:{display:'grid',gap:10}},
-      step.optionen.map(opt =>
-        React.createElement('button', {
-          key:opt.id,
-          onClick:()=>onSelect(opt.id),
-          style:{display:'flex',alignItems:'center',gap:14,padding:'16px 20px',background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',cursor:'pointer',textAlign:'left',transition:'border-color 0.2s,box-shadow 0.2s',fontSize:15},
-          onMouseOver:e=>{e.currentTarget.style.borderColor='var(--mr-accent)';e.currentTarget.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'},
-          onMouseOut:e=>{e.currentTarget.style.borderColor='var(--mr-border)';e.currentTarget.style.boxShadow='none'}
-        },
-          React.createElement('span', {style:{fontSize:24,minWidth:36,textAlign:'center'}}, opt.icon),
-          React.createElement('div', null,
-            React.createElement('strong', {style:{display:'block',marginBottom:2}}, opt.label),
-            React.createElement('span', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, opt.desc)
-          )
-        )
-      )
-    ),
-    stepIndex > 0 && React.createElement('button', {
-      onClick:onBack,
-      style:{marginTop:16,padding:'10px 20px',background:'none',border:'1px solid var(--mr-border)',borderRadius:99,cursor:'pointer',fontSize:14,color:'var(--mr-text-muted)'}
-    }, '← Zurück')
-  );
-}
-
-function ResultView({auswahl, onRestart}) {
-  const result = berechne(auswahl);
-  const art = STEPS[0].optionen.find(o=>o.id===auswahl.bestattungsart);
-  const region = STEPS[1].optionen.find(o=>o.id===auswahl.region);
-  const ausst = STEPS[2].optionen.find(o=>o.id===auswahl.ausstattung);
-  const feier = STEPS[3].optionen.find(o=>o.id===auswahl.trauerfeier);
-  const grabst = STEPS[4].optionen.find(o=>o.id===auswahl.grabstein);
-  const pflege = GRABPFLEGE[auswahl.bestattungsart];
-
-  const zusammenfassung = [
-    {label:'Bestattungsart', wert:art.label},
-    {label:'Region', wert:region.label},
-    {label:'Ausstattung', wert:ausst.label},
-    {label:'Trauerfeier', wert:feier.label},
-    {label:'Grabstein', wert:grabst.label}
+  var STEPS = [
+    {id:'bestattungsart', frage:'Welche Bestattungsart?', optionen:[
+      {id:'erdbestattung',  label:'Erdbestattung',       desc:'Klassisch im Sarg auf dem Friedhof', icon:'⚰️'},
+      {id:'feuerbestattung',label:'Feuerbestattung',     desc:'Einäscherung + Urnenbeisetzung', icon:'🔥'},
+      {id:'seebestattung',  label:'Seebestattung',       desc:'Urne auf Nord- oder Ostsee', icon:'🌊'},
+      {id:'baumbestattung', label:'Baumbestattung',      desc:'Urne am Baum im Bestattungswald', icon:'🌳'},
+      {id:'anonym',         label:'Anonyme Bestattung',  desc:'Ohne namentliche Kennzeichnung', icon:'🕊️'}
+    ]},
+    {id:'region', frage:'In welcher Region?', optionen:[
+      {id:'grossstadt',  label:'Großstadt',         desc:'Berlin, Hamburg, München, Köln etc.', icon:'🏙️'},
+      {id:'mittelstadt', label:'Mittelstadt',       desc:'50.000–500.000 Einwohner', icon:'🏘️'},
+      {id:'land',        label:'Ländlicher Raum',   desc:'Kleinstadt oder Dorf', icon:'🌾'}
+    ]},
+    {id:'ausstattung', frage:'Welche Ausstattung?', optionen:[
+      {id:'einfach',  label:'Einfach & schlicht', desc:'Zweckmäßig, ohne Extras', icon:'○'},
+      {id:'standard', label:'Standard',           desc:'Angemessene Gestaltung', icon:'◉'},
+      {id:'gehoben',  label:'Gehoben',            desc:'Hochwertige Materialien & Gestaltung', icon:'◆'}
+    ]},
+    {id:'trauerfeier', frage:'Trauerfeier gewünscht?', optionen:[
+      {id:'keine',  label:'Keine Trauerfeier', desc:'Stille Beisetzung', icon:'—'},
+      {id:'klein',  label:'Kleine Feier',      desc:'Engster Kreis, schlicht', icon:'👤'},
+      {id:'mittel', label:'Mittlere Feier',    desc:'Familie & Freunde, mit Redner', icon:'👥'},
+      {id:'gross',  label:'Große Feier',       desc:'Viele Gäste, Musik, Blumen, Kaffeetafel', icon:'👥👥'}
+    ]},
+    {id:'grabstein', frage:'Grabstein oder Grabplatte?', optionen:[
+      {id:'keiner',  label:'Keiner nötig',          desc:'Bei See-/Baum-/anonymer Bestattung', icon:'—'},
+      {id:'platte',  label:'Einfache Grabplatte',   desc:'Liegestein mit Gravur', icon:'▬'},
+      {id:'stein',   label:'Grabstein (Standard)',  desc:'Stehender Stein mit Gravur', icon:'▮'},
+      {id:'premium', label:'Grabstein (Premium)',   desc:'Hochwertiger Stein, aufwändige Gestaltung', icon:'▰'}
+    ]}
   ];
 
-  const handlePrint = () => {
-    if(window.mrTrack) window.mrTrack('toolExport',{tool:'kostenrechner',type:'print'});
-    window.print();
+  var BASIS = {
+    erdbestattung:  {min:3500, max:5500},
+    feuerbestattung:{min:2000, max:3500},
+    seebestattung:  {min:1500, max:3000},
+    baumbestattung: {min:2000, max:3500},
+    anonym:         {min:800,  max:1500}
+  };
+  var REGION_FAKTOR = {grossstadt:1.3, mittelstadt:1.0, land:0.8};
+  var AUSSTATTUNG_FAKTOR = {einfach:0.7, standard:1.0, gehoben:1.4};
+  var TRAUERFEIER_AUFSCHLAG = {keine:0, klein:500, mittel:1200, gross:2500};
+  var GRABSTEIN_AUFSCHLAG = {keiner:0, platte:800, stein:2000, premium:4000};
+
+  var GRABPFLEGE = {
+    erdbestattung:  {min:50, max:400, jahre:25, hinweis:'Erdgrab benötigt regelmäßige Pflege'},
+    feuerbestattung:{min:30, max:250, jahre:20, hinweis:'Urnengrab ist kleiner und pflegeleichter'},
+    seebestattung:  null,
+    baumbestattung: null,
+    anonym:         null
   };
 
-  const handleCopy = () => {
-    let text = `BESTATTUNGSKOSTEN — RICHTWERT\n`;
-    text += `Erstellt mit machsruhig.de/tools/kostenrechner\n\n`;
-    text += `GESCHÄTZTE KOSTEN: ca. ${result.min.toLocaleString('de-DE')}–${result.max.toLocaleString('de-DE')} €\n\n`;
-    text += `DEINE AUSWAHL:\n`;
-    zusammenfassung.forEach(z => text += `• ${z.label}: ${z.wert}\n`);
-    if(pflege) {
-      text += `\nLAUFENDE KOSTEN:\n`;
-      text += `• Grabpflege: ${pflege.min}–${pflege.max} €/Jahr (${pflege.jahre} Jahre)\n`;
-      text += `• Gesamt Grabpflege: ca. ${pflege.min*pflege.jahre}–${pflege.max*pflege.jahre} €\n`;
+  var FAQS = [
+    {q:'Wie genau ist der Kostenrechner?', a:'Der Rechner liefert realistische Richtwerte basierend auf Durchschnittsdaten des BDB und der Stiftung Warentest. Tatsächliche Kosten können je nach Bestatter, Region und individuellen Wünschen abweichen — daher immer als Spanne.'},
+    {q:'Werden meine Daten gespeichert?', a:'Nein. Alle Berechnungen laufen komplett in deinem Browser. Es werden keine persönlichen Daten gespeichert oder an einen Server gesendet.'},
+    {q:'Was kann ich tun, wenn ich mir die Bestattung nicht leisten kann?', a:'Bei finanzieller Not kann das Sozialamt die Kosten für eine einfache Bestattung übernehmen (Sozialbestattung). Die Vermögensgrenze liegt seit 2023 bei 10.000 € pro Person. Wende dich an das Sozialamt deines Wohnorts.'},
+    {q:'Warum zeigt der Rechner Spannen statt exakter Beträge?', a:'Weil exakte Beträge nicht seriös wären. Die tatsächlichen Kosten hängen von zu vielen individuellen Faktoren ab. Spannen geben dir eine ehrliche Orientierung.'}
+  ];
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function fmt(n){ return Math.round(n).toLocaleString('de-DE'); }
+  function $(s,r){ return (r||document).querySelector(s); }
+  function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+  function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
+
+  var state = {step:0, auswahl:{}};
+
+  function berechne(a){
+    var basis = BASIS[a.bestattungsart];
+    var rf = REGION_FAKTOR[a.region];
+    var af = AUSSTATTUNG_FAKTOR[a.ausstattung];
+    var tf = TRAUERFEIER_AUFSCHLAG[a.trauerfeier];
+    var gs = GRABSTEIN_AUFSCHLAG[a.grabstein];
+    var min = Math.round((basis.min * rf * af + tf + gs) / 100) * 100;
+    var max = Math.round((basis.max * rf * af + tf + gs) / 100) * 100;
+    return {min:min, max:max};
+  }
+
+  function renderStep(){
+    var step = STEPS[state.step];
+    var pct = Math.round(((state.step + 1) / STEPS.length) * 100);
+    var html = '';
+    html += '<div style="margin:24px 0 8px">';
+    html += '<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--mr-text-muted);margin-bottom:6px"><span>Schritt ' + (state.step+1) + ' von ' + STEPS.length + '</span><span>' + pct + '%</span></div>';
+    html += '<div style="height:6px;background:var(--mr-border);border-radius:3px"><div style="height:100%;width:' + pct + '%;background:var(--mr-accent);border-radius:3px;transition:width 0.3s"></div></div>';
+    html += '</div>';
+    html += '<h2 style="font-family:\'Fraunces\',serif;font-size:22px;font-weight:700;margin:24px 0 16px">' + esc(step.frage) + '</h2>';
+    html += '<div style="display:grid;gap:10px">';
+    step.optionen.forEach(function(opt){
+      html += '<button type="button" class="option-btn" data-value="' + esc(opt.id) + '">';
+      html += '<span class="icon">' + esc(opt.icon) + '</span>';
+      html += '<span><strong>' + esc(opt.label) + '</strong><span class="desc">' + esc(opt.desc) + '</span></span>';
+      html += '</button>';
+    });
+    html += '</div>';
+    if (state.step > 0) {
+      html += '<button type="button" class="back-btn" data-back="1">← Zurück</button>';
     }
-    text += `\nHINWEIS: Dies sind Richtwerte. Tatsächliche Kosten können abweichen.\n`;
-    text += `Empfehlung: Hole mindestens 3 Angebote von Bestattern ein.\n`;
-    navigator.clipboard.writeText(text).then(()=>alert('Kostenübersicht kopiert!'));
-    if(window.mrTrack) window.mrTrack('toolExport',{tool:'kostenrechner',type:'copy'});
-  };
+    var w = $('#wizard');
+    w.innerHTML = html;
+    $$('.option-btn', w).forEach(function(btn){
+      btn.addEventListener('click', function(){ handleSelect(btn.dataset.value); });
+    });
+    var back = $('[data-back]', w);
+    if (back) back.addEventListener('click', handleBack);
+  }
 
-  if(window.mrTrack) window.mrTrack('toolStep',{tool:'kostenrechner',step:'ergebnis'});
+  function renderResult(){
+    var a = state.auswahl;
+    var result = berechne(a);
+    function findLabel(stepId, valId){
+      var s = STEPS.filter(function(s){return s.id===stepId})[0];
+      var o = s.optionen.filter(function(o){return o.id===valId})[0];
+      return o ? o.label : valId;
+    }
+    var pflege = GRABPFLEGE[a.bestattungsart];
+    var zus = [
+      {label:'Bestattungsart', wert:findLabel('bestattungsart', a.bestattungsart)},
+      {label:'Region',         wert:findLabel('region', a.region)},
+      {label:'Ausstattung',    wert:findLabel('ausstattung', a.ausstattung)},
+      {label:'Trauerfeier',    wert:findLabel('trauerfeier', a.trauerfeier)},
+      {label:'Grabstein',      wert:findLabel('grabstein', a.grabstein)}
+    ];
 
-  return React.createElement('div', null,
-    React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'2px solid var(--mr-accent)',borderRadius:'var(--mr-radius)',padding:'32px 28px',textAlign:'center',margin:'32px 0'}},
-      React.createElement('p', {style:{fontSize:14,color:'var(--mr-text-muted)',marginBottom:8}}, 'Geschätzte Bestattungskosten'),
-      React.createElement('h2', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(28px,5vw,40px)',fontWeight:800,color:'var(--mr-text)',margin:'0 0 8px'}},
-        `ca. ${result.min.toLocaleString('de-DE')}–${result.max.toLocaleString('de-DE')} €`
-      ),
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-warm)'}}, 'Einmalige Kosten (ohne laufende Grabpflege)')
-    ),
+    var html = '';
+    // Result hero
+    html += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:32px 0">';
+    html += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:8px">Geschätzte Bestattungskosten</p>';
+    html += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--mr-text);margin:0 0 8px">ca. ' + fmt(result.min) + '–' + fmt(result.max) + ' €</h2>';
+    html += '<p style="font-size:13px;color:var(--mr-warm)">Einmalige Kosten (ohne laufende Grabpflege)</p>';
+    html += '</div>';
 
-    React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:18,fontWeight:700,margin:'28px 0 12px'}}, 'Deine Auswahl'),
-    React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',overflow:'hidden'}},
-      zusammenfassung.map((z, i) =>
-        React.createElement('div', {key:i, className:'result-row', style:{display:'flex',justifyContent:'space-between',padding:'12px 20px',borderBottom:i<zusammenfassung.length-1?'1px solid var(--mr-border)':'none',fontSize:14}},
-          React.createElement('span', {style:{color:'var(--mr-text-muted)'}}, z.label),
-          React.createElement('strong', null, z.wert)
-        )
-      )
-    ),
+    // Auswahl-Tabelle
+    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:28px 0 12px">Deine Auswahl</h3>';
+    html += '<div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);overflow:hidden">';
+    zus.forEach(function(z, i){
+      html += '<div class="result-row" style="display:flex;justify-content:space-between;padding:12px 20px;' + (i<zus.length-1?'border-bottom:1px solid var(--mr-border);':'') + 'font-size:14px">';
+      html += '<span style="color:var(--mr-text-muted)">' + esc(z.label) + '</span>';
+      html += '<strong>' + esc(z.wert) + '</strong>';
+      html += '</div>';
+    });
+    html += '</div>';
 
-    pflege && React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'20px 0',fontSize:14,lineHeight:1.6}},
-      React.createElement('strong', null, 'Laufende Kosten: Grabpflege'),
-      React.createElement('p', {style:{margin:'8px 0 0',color:'var(--mr-text-muted)'}},
-        `${pflege.hinweis}. Rechne mit ${pflege.min}–${pflege.max} €/Jahr über ${pflege.jahre} Jahre = ca. ${(pflege.min*pflege.jahre).toLocaleString('de-DE')}–${(pflege.max*pflege.jahre).toLocaleString('de-DE')} € Gesamtkosten für Grabpflege.`
-      )
-    ),
-
-    !pflege && React.createElement('div', {style:{background:'#f0f7f0',border:'1px solid #d4e8d4',borderLeft:'4px solid #7ab87a',borderRadius:8,padding:'16px 20px',margin:'20px 0',fontSize:14,lineHeight:1.6}},
-      React.createElement('strong', null, 'Keine laufenden Grabpflegekosten'),
-      React.createElement('p', {style:{margin:'8px 0 0',color:'var(--mr-text-muted)'}},
-        'Bei dieser Bestattungsart fallen keine Kosten für Grabpflege an.'
-      )
-    ),
-
-    React.createElement('div', {style:{display:'flex',flexWrap:'wrap',gap:10,margin:'28px 0 16px'}},
-      React.createElement('button', {onClick:handlePrint, style:{flex:1,minWidth:140,padding:'14px 20px',background:'var(--mr-primary)',color:'#fff',border:'none',borderRadius:99,cursor:'pointer',fontWeight:600,fontSize:15,transition:'background 0.2s'},onMouseOver:e=>e.currentTarget.style.background='var(--mr-primary-hover)',onMouseOut:e=>e.currentTarget.style.background='var(--mr-primary)'}, '🖨️ Drucken / PDF'),
-      React.createElement('button', {onClick:handleCopy, style:{flex:1,minWidth:140,padding:'14px 20px',background:'var(--mr-bg-card)',color:'var(--mr-text)',border:'1px solid var(--mr-border)',borderRadius:99,cursor:'pointer',fontWeight:600,fontSize:15}}, '📋 Kopieren'),
-      React.createElement('button', {onClick:onRestart, style:{flex:1,minWidth:140,padding:'14px 20px',background:'var(--mr-bg-card)',color:'var(--mr-text)',border:'1px solid var(--mr-border)',borderRadius:99,cursor:'pointer',fontWeight:600,fontSize:15}}, '↺ Neu berechnen')
-    ),
-
-    React.createElement('div', {style:{background:'var(--mr-bg-card)',border:'2px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'32px 28px',margin:'40px 0',textAlign:'center'}},
-      React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:20,fontWeight:700,marginBottom:8}}, 'Du kennst jetzt die Richtwerte'),
-      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',marginBottom:20}}, 'Lass dir von Bestattern in deiner Nähe konkrete Angebote machen — kostenlos und unverbindlich.'),
-      React.createElement('div', {style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(180px,1fr))',gap:12}},
-        [{label:'Bestatter in deiner Nähe finden',url:'/bestatter/',primary:true},{label:'Checkliste Todesfall',url:'/tools/checkliste-todesfall/'},{label:'Beerdigung Schritt für Schritt',url:'/tools/beerdigungsplaner/'}].map((link, i) =>
-          React.createElement('a', {key:i, href:link.url, style:{display:'block',padding:'14px 16px',background:link.primary?'var(--mr-primary)':'var(--mr-bg)',color:link.primary?'#fff':'var(--mr-text)',border:link.primary?'none':'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',textDecoration:'none',fontWeight:600,fontSize:14,transition:'transform 0.2s'},onMouseOver:e=>e.currentTarget.style.transform='translateY(-2px)',onMouseOut:e=>e.currentTarget.style.transform='none'}, link.label)
-        )
-      )
-    ),
-
-    React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderLeft:'4px solid var(--mr-accent)',borderRadius:8,padding:'16px 20px',margin:'24px 0',fontSize:13,lineHeight:1.7,color:'var(--mr-text-muted)'}},
-      React.createElement('strong', {style:{color:'var(--mr-text)'}}, 'Wichtiger Hinweis: '),
-      'Dies sind Richtwerte auf Basis öffentlich zugänglicher Quellen (BDB, Stiftung Warentest, Verbraucherzentralen). Tatsächliche Kosten hängen von Region, Bestatter und individuellen Wünschen ab. ',
-      React.createElement('strong', null, 'Empfehlung der Stiftung Warentest:'),
-      ' Hole mindestens 2–3 Angebote ein und vergleiche die Einzelposten.'
-    ),
-
-    React.createElement('div', {style:{margin:'32px 0'}},
-      React.createElement('h3', {style:{fontFamily:"'Fraunces',serif",fontSize:18,fontWeight:700,marginBottom:16,paddingBottom:8,borderBottom:'2px solid var(--mr-border)'}}, 'Häufige Fragen'),
-      [{q:'Wie genau ist der Kostenrechner?',a:'Der Rechner liefert realistische Richtwerte basierend auf Durchschnittsdaten des BDB und der Stiftung Warentest. Tatsächliche Kosten können je nach Bestatter, Region und individuellen Wünschen abweichen — daher immer als Spanne.'},{q:'Werden meine Daten gespeichert?',a:'Nein. Alle Berechnungen laufen komplett in deinem Browser. Es werden keine persönlichen Daten gespeichert oder an einen Server gesendet.'},{q:'Was kann ich tun, wenn ich mir die Bestattung nicht leisten kann?',a:'Bei finanzieller Not kann das Sozialamt die Kosten für eine einfache Bestattung übernehmen (Sozialbestattung). Die Vermögensgrenze liegt seit 2023 bei 10.000 € pro Person. Wende dich an das Sozialamt deines Wohnorts.'},{q:'Warum zeigt der Rechner Spannen statt exakter Beträge?',a:'Weil exakte Beträge nicht seriös wären. Die tatsächlichen Kosten hängen von zu vielen individuellen Faktoren ab. Spannen geben dir eine ehrliche Orientierung.'}].map((faq, i) =>
-        React.createElement('details', {key:i, style:{border:'1px solid var(--mr-border)',borderRadius:8,marginBottom:8,background:'var(--mr-bg-card)'}},
-          React.createElement('summary', {style:{padding:'16px 20px',fontWeight:600,fontSize:15,cursor:'pointer',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}, faq.q),
-          React.createElement('div', {style:{padding:'0 20px 16px',fontSize:14,lineHeight:1.7,color:'var(--mr-text-muted)'}}, faq.a)
-        )
-      )
-    ),
-
-    React.createElement('div', {style:{textAlign:'center',padding:'24px 0'}},
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)'}}, 'Quellen: BDB, Stiftung Warentest, Verbraucherzentralen, Aeternitas e.V.'),
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',marginTop:4}}, 'Kostendaten Stand 2025/2026. Keine Rechtsberatung, keine Gewähr.'),
-      React.createElement('p', {style:{fontSize:13,color:'var(--mr-text-muted)',marginTop:4}}, React.createElement('a', {href:'/methodik',style:{color:'var(--mr-primary)',textDecoration:'none'}}, 'So arbeiten wir'))
-    )
-  );
-}
-
-function App() {
-  const [step, setStep] = useState(0);
-  const [auswahl, setAuswahl] = useState({});
-  const topRef = useRef(null);
-
-  const handleSelect = (value) => {
-    const key = STEPS[step].id;
-    const newAuswahl = {...auswahl, [key]: value};
-    setAuswahl(newAuswahl);
-    if(window.mrTrack) window.mrTrack('toolStep', {tool:'kostenrechner', step:key, value});
-    if(step < STEPS.length - 1) {
-      setStep(step + 1);
-      topRef.current?.scrollIntoView({behavior:'smooth'});
+    // Grabpflege Hinweis
+    if (pflege) {
+      html += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.6">';
+      html += '<strong>Laufende Kosten: Grabpflege</strong>';
+      html += '<p style="margin:8px 0 0;color:var(--mr-text-muted)">' + esc(pflege.hinweis) + '. Rechne mit ' + pflege.min + '–' + pflege.max + ' €/Jahr über ' + pflege.jahre + ' Jahre = ca. ' + fmt(pflege.min*pflege.jahre) + '–' + fmt(pflege.max*pflege.jahre) + ' € Gesamtkosten für Grabpflege.</p>';
+      html += '</div>';
     } else {
-      setStep(STEPS.length);
-      topRef.current?.scrollIntoView({behavior:'smooth'});
+      html += '<div style="background:#f0f7f0;border:1px solid #d4e8d4;border-left:4px solid #7ab87a;border-radius:8px;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.6">';
+      html += '<strong>Keine laufenden Grabpflegekosten</strong>';
+      html += '<p style="margin:8px 0 0;color:var(--mr-text-muted)">Bei dieser Bestattungsart fallen keine Kosten für Grabpflege an.</p>';
+      html += '</div>';
     }
-  };
 
-  const handleBack = () => { if(step > 0) setStep(step - 1); };
-  const handleRestart = () => { setStep(0); setAuswahl({}); topRef.current?.scrollIntoView({behavior:'smooth'}); };
+    // Action buttons
+    html += '<div style="display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 16px">';
+    html += '<button type="button" id="btn-print" style="flex:1;min-width:140px;padding:14px 20px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit">🖨️ Drucken / PDF</button>';
+    html += '<button type="button" id="btn-copy" style="flex:1;min-width:140px;padding:14px 20px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit">📋 Kopieren</button>';
+    html += '<button type="button" id="btn-restart" style="flex:1;min-width:140px;padding:14px 20px;background:var(--mr-bg-card);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit">↺ Neu berechnen</button>';
+    html += '</div>';
 
-  return React.createElement('div', {ref:topRef},
-    React.createElement('div', {style:{padding:'32px 0 8px'}},
-      React.createElement('div', {style:{fontSize:13,color:'var(--mr-text-muted)',marginBottom:12}},
-        React.createElement('a', {href:'/',style:{color:'var(--mr-warm)',textDecoration:'none'}}, 'Start'),
-        ' › ',
-        React.createElement('a', {href:'/bestattungskosten',style:{color:'var(--mr-warm)',textDecoration:'none'}}, 'Bestattungskosten'),
-        ' › Kostenrechner'
-      ),
-      React.createElement('h1', {style:{fontFamily:"'Fraunces',serif",fontSize:'clamp(24px,4vw,32px)',fontWeight:800,lineHeight:1.25,marginBottom:8}}, 'Bestattungskosten-Rechner'),
-      React.createElement('p', {style:{fontSize:15,color:'var(--mr-text-muted)',lineHeight:1.7,maxWidth:600}}, 'In 5 Schritten zu einer realistischen Kostenspanne. Keine Pseudopräzision, sondern ehrliche Richtwerte.')
-    ),
+    // Next-Step CTAs
+    html += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
+    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Du kennst jetzt die Richtwerte</h3>';
+    html += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Lass dir von Bestattern in deiner Nähe konkrete Angebote machen — kostenlos und unverbindlich.</p>';
+    html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">';
+    html += '<a href="/bestatter/" style="display:block;padding:14px 16px;background:var(--mr-primary);color:#fff;border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Bestatter in deiner Nähe finden</a>';
+    html += '<a href="/tools/checkliste-todesfall/" style="display:block;padding:14px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Checkliste Todesfall</a>';
+    html += '<a href="/tools/beerdigungsplaner/" style="display:block;padding:14px 16px;background:var(--mr-bg);color:var(--mr-text);border:1px solid var(--mr-border);border-radius:var(--mr-radius);text-decoration:none;font-weight:600;font-size:14px">Beerdigung Schritt für Schritt</a>';
+    html += '</div></div>';
 
-    step === 0 && React.createElement('div', {style:{background:'var(--mr-safety)',border:'1px solid var(--mr-border)',borderRadius:'var(--mr-radius)',padding:'16px 20px',margin:'16px 0 8px',fontSize:14,lineHeight:1.6}},
-      React.createElement('strong', null, '🔒 Deine Privatsphäre: '),
-      'Alle Berechnungen laufen komplett in deinem Browser. Es werden keine Daten gespeichert oder an uns gesendet.'
-    ),
+    // Disclaimer
+    html += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:13px;line-height:1.7;color:var(--mr-text-muted)">';
+    html += '<strong style="color:var(--mr-text)">Wichtiger Hinweis: </strong>Dies sind Richtwerte auf Basis öffentlich zugänglicher Quellen (BDB, Stiftung Warentest, Verbraucherzentralen). Tatsächliche Kosten hängen von Region, Bestatter und individuellen Wünschen ab. <strong>Empfehlung der Stiftung Warentest:</strong> Hole mindestens 2–3 Angebote ein und vergleiche die Einzelposten.';
+    html += '</div>';
 
-    step < STEPS.length
-      ? React.createElement(StepView, {step:STEPS[step], stepIndex:step, total:STEPS.length, onSelect:handleSelect, onBack:handleBack})
-      : React.createElement(ResultView, {auswahl, onRestart:handleRestart})
-  );
-}
+    // FAQs
+    html += '<div style="margin:32px 0">';
+    html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)">Häufige Fragen</h3>';
+    FAQS.forEach(function(faq){
+      html += '<details style="border:1px solid var(--mr-border);border-radius:8px;margin-bottom:8px;background:var(--mr-bg-card)">';
+      html += '<summary style="padding:16px 20px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">' + esc(faq.q) + '</summary>';
+      html += '<div style="padding:0 20px 16px;font-size:14px;line-height:1.7;color:var(--mr-text-muted)">' + esc(faq.a) + '</div>';
+      html += '</details>';
+    });
+    html += '</div>';
 
-ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(App));
+    // Quellen
+    html += '<div style="text-align:center;padding:24px 0">';
+    html += '<p style="font-size:13px;color:var(--mr-text-muted)">Quellen: BDB, Stiftung Warentest, Verbraucherzentralen, Aeternitas e.V.</p>';
+    html += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:4px">Kostendaten Stand 2025/2026. Keine Rechtsberatung, keine Gewähr.</p>';
+    html += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:4px"><a href="/methodik" style="color:var(--mr-primary);text-decoration:none">So arbeiten wir</a></p>';
+    html += '</div>';
+
+    var w = $('#wizard');
+    w.innerHTML = html;
+    $('#privacy-banner').style.display = 'none';
+
+    // Bind buttons
+    $('#btn-print').addEventListener('click', function(){
+      track('toolExport', {tool:'kostenrechner', type:'print'});
+      window.print();
+    });
+    $('#btn-copy').addEventListener('click', function(){
+      var text = 'BESTATTUNGSKOSTEN — RICHTWERT\n';
+      text += 'Erstellt mit machsruhig.de/tools/kostenrechner\n\n';
+      text += 'GESCHÄTZTE KOSTEN: ca. ' + fmt(result.min) + '–' + fmt(result.max) + ' €\n\n';
+      text += 'DEINE AUSWAHL:\n';
+      zus.forEach(function(z){ text += '• ' + z.label + ': ' + z.wert + '\n'; });
+      if (pflege) {
+        text += '\nLAUFENDE KOSTEN:\n';
+        text += '• Grabpflege: ' + pflege.min + '–' + pflege.max + ' €/Jahr (' + pflege.jahre + ' Jahre)\n';
+        text += '• Gesamt Grabpflege: ca. ' + fmt(pflege.min*pflege.jahre) + '–' + fmt(pflege.max*pflege.jahre) + ' €\n';
+      }
+      text += '\nHINWEIS: Dies sind Richtwerte. Tatsächliche Kosten können abweichen.\n';
+      text += 'Empfehlung: Hole mindestens 3 Angebote von Bestattern ein.\n';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function(){ alert('Kostenübersicht kopiert!'); });
+      } else {
+        // Fallback
+        var ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); alert('Kostenübersicht kopiert!'); } catch(_){}
+        document.body.removeChild(ta);
+      }
+      track('toolExport', {tool:'kostenrechner', type:'copy'});
+    });
+    $('#btn-restart').addEventListener('click', handleRestart);
+
+    track('toolStep', {tool:'kostenrechner', step:'ergebnis'});
+  }
+
+  function scrollTop(){
+    var top = $('#rechner-top');
+    if (top) top.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function handleSelect(value){
+    var key = STEPS[state.step].id;
+    state.auswahl[key] = value;
+    track('toolStep', {tool:'kostenrechner', step:key, value:value});
+    if (state.step < STEPS.length - 1) {
+      state.step++;
+      renderStep();
+    } else {
+      state.step = STEPS.length;
+      renderResult();
+    }
+    scrollTop();
+  }
+
+  function handleBack(){
+    if (state.step > 0) {
+      state.step--;
+      renderStep();
+      scrollTop();
+    }
+  }
+
+  function handleRestart(){
+    state.step = 0;
+    state.auswahl = {};
+    $('#privacy-banner').style.display = '';
+    renderStep();
+    scrollTop();
+  }
+
+  // Initial render
+  renderStep();
+})();
 </script>
+
 </body>
 </html>
