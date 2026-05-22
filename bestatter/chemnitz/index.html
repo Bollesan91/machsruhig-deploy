@@ -12,6 +12,12 @@
 <meta property="og:title" content="Bestattung in Chemnitz: Friedhöfe, Kosten & Abläufe" />
 <meta property="og:description" content="Vier Chemnitzer Friedhöfe im Profil, die offizielle Gebührensatzung der Stadt Chemnitz (Stand Januar 2024) und die nach SächsBestG geltenden Fristen." />
 <meta property="og:url" content="https://machsruhig.de/bestatter/chemnitz/" />
+<meta property="og:image" content="https://machsruhig.de/assets/og-cities/chemnitz.png">
+<meta property="og:image:secure_url" content="https://machsruhig.de/assets/og-cities/chemnitz.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bestattung in Chemnitz — machsruhig.de">
 <meta property="og:locale" content="de_DE" />
 
 <meta name="twitter:card" content="summary_large_image" />
@@ -614,7 +620,67 @@
     <p>Anlaufstellen für die Qualitätsprüfung sind der Bundesverband Deutscher Bestatter (BDB), bei dem ein Teil der Chemnitzer Bestatter Mitglied ist, sowie das Markenzeichen „Geprüfter Bestattungsbetrieb" der Markenzeichen GmbH. Krematorien werden nach den Standards des Arbeitskreises Kommunaler Krematorien zertifiziert — das Krematorium Chemnitz nimmt daran teil. Sinnvolle Anhaltspunkte für die Auswahl eines Bestatters sind: ein detailliertes schriftliches Angebot mit Einzelpositionen statt einer Pauschalsumme, Transparenz bei den Friedhofsgebühren (die der Bestatter nicht festsetzt, sondern nur weiterreicht), 24/7-Erreichbarkeit, eigene Räumlichkeiten zur Aufbahrung und Kühlung sowie nachvollziehbare Vorsorgekonzepte.</p>
 
     <p>Der Preisvergleich zwischen Chemnitzer Anbietern lohnt sich, weil die Spannen erheblich sein können — die Verbraucherzentrale Sachsen empfiehlt, mindestens drei schriftliche Angebote einzuholen und auf Einzelpositionen statt Pauschalsummen zu bestehen. Wer Vorsorge treffen möchte, kann mit einem Bestatter einen Bestattungsvorsorgevertrag schließen, dessen Summe über ein Treuhandkonto bei der Deutschen Bestattungsvorsorge-Treuhand AG abgesichert wird — die Mittel sind dann insolvenz- und pfändungssicher hinterlegt.</p>
-  </section>
+      <div class="mr-cta-block" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);text-align:left;padding:28px 24px">
+      <h2 style="text-align:center">Kostenlose Anfrage an Bestatter in Chemnitz</h2>
+      <p style="text-align:center">Wir leiten Deine Anfrage an bis zu 3 geprüfte Bestatter weiter. Innerhalb von 24 Stunden erhältst Du unverbindliche Angebote per Telefon oder Email. Kein Vertrag, kein Risiko, kein Druck.</p>
+      <form name="bestatter-anfrage" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke-bestatter-anfrage?source=bestatter-anfrage-city" style="margin-top:20px;display:grid;gap:12px">
+        <input type="hidden" name="form-name" value="bestatter-anfrage">
+        <input type="hidden" name="stadt" value="Chemnitz">
+        <p hidden><label>Lass dieses Feld leer: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Dein Name *</span>
+          <input type="text" name="name" required style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+        </label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">PLZ *</span>
+            <input type="text" name="plz" required pattern="[0-9]{5}" maxlength="5" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+          </label>
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Zeitrahmen *</span>
+            <select name="zeitrahmen" required style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px;background:#fff">
+              <option value="">Bitte wählen</option>
+              <option value="akut">Akut — Bestattung steht an</option>
+              <option value="planung">In den nächsten Wochen</option>
+              <option value="vorsorge">Vorsorge für später</option>
+            </select>
+          </label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Email</span>
+            <input type="email" name="email" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+          </label>
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Telefon (optional)</span>
+            <input type="tel" name="telefon" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+          </label>
+        </div>
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Bestattungsart (optional)</span>
+          <select name="bestattungsart" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px;background:#fff">
+            <option value="">Noch unentschieden / Beratungsbedarf</option>
+            <option value="erdbestattung">Erdbestattung</option>
+            <option value="feuerbestattung">Feuerbestattung (Urne)</option>
+            <option value="seebestattung">Seebestattung</option>
+            <option value="waldbestattung">Wald-/Baumbestattung</option>
+            <option value="anonym">Anonyme Beisetzung</option>
+          </select>
+        </label>
+        <label style="display:block">
+          <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Anmerkungen (optional)</span>
+          <textarea name="anmerkungen" rows="3" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px;resize:vertical"></textarea>
+        </label>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mr-text-muted)">
+          <input type="checkbox" name="datenschutz" required style="margin-top:3px">
+          <span>Ich bin einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert und an passende Bestatter weitergeleitet werden. <a href="/datenschutz" target="_blank">Datenschutz</a></span>
+        </label>
+        <button type="submit" class="cta-primary" style="margin-top:8px;border:none;cursor:pointer;font-family:inherit">Anfrage senden — kostenlos &amp; unverbindlich</button>
+        <p style="font-size:12px;color:var(--mr-text-muted);text-align:center;margin-top:4px">Wir leiten Deine Anfrage spamfrei weiter. Du erhältst Angebote von bis zu 3 Bestattern in Chemnitz. Kein automatischer Vertrag, kein Newsletter ohne Einwilligung.</p>
+      </form>
+    </div>
+
+</section>
 
   <section class="mr-section">
     <h2>Sozialbestattung in Chemnitz: Wenn die Kosten nicht zu tragen sind</h2>
@@ -629,7 +695,10 @@
     <p>Übernommen werden die ortsüblichen Grundkosten einer einfachen Bestattung: Sarg oder Urne in einfacher Ausführung, Überführung, Friedhofsgrundgebühr, Beisetzungsgebühr (Erdgrab öffnen 297,20 € bzw. Urnengrab öffnen 49,40 €), Grabnutzungsgebühr für ein Reihen- oder Urnenlösestellen-Grab nach der Gebührensatzung der Stadt Chemnitz sowie Trauerredner und einfache Trauerfeier in der Feierhalle (90,70 €). <strong>Nicht übernommen</strong> werden Wahlgräber in bevorzugter Lage, aufwendige Grabsteine, Floristik über das einfache Maß hinaus, Trauerdrucksachen, Bewirtung und Grabpflege. Vorrangig einzusetzen sind Nachlassvermögen, Sterbegelder, Lebensversicherungen und Unterhaltsansprüche.</p>
     <h3>Antragszeitpunkt</h3>
     <p>Der Antrag sollte so früh wie möglich gestellt werden — idealerweise vor der Beauftragung des Bestatters. Eine Vorab-Bewilligung ist nicht zwingend; die Kostenübernahme kann auch nach der Bestattung beantragt werden. Wer in Vorleistung getreten ist, muss die Erforderlichkeit der einzelnen Posten belegen — Originalrechnungen mit Einzelpositionen sind unverzichtbar. Vorsicht bei der Auswahl des Bestatters: Pauschalangebote ohne Einzelpositionen erschweren die Prüfung durch das Sozialamt und führen häufig dazu, dass Teilbeträge als nicht erforderlich abgelehnt werden.</p>
-  </section>
+      <div class="mr-hint" style="border-left-color:var(--mr-accent);background:var(--mr-bg-card)">
+      <strong>Vorsorge-Tipp gegen Sozialbestattung:</strong> Eine Sterbegeldversicherung deckt die Bestattungskosten ab, damit Angehörige nicht in die § 74-Lage geraten. Vergleichsrechner für Tarife und Versicherungssummen: <a href="https://www.check24.de/sterbegeldversicherung/" rel="sponsored noopener" target="_blank">→ Sterbegeldversicherung vergleichen (Check24)</a>. Hinweis: machsruhig verlinkt diesen Vergleich als Affiliate, der dabei verdiente Anteil finanziert die Redaktion — ohne Mehrkosten für Dich.
+    </div>
+</section>
 
   <section class="mr-section">
     <h2>Häufige Fragen zur Bestattung in Chemnitz</h2>

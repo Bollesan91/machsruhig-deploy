@@ -46,7 +46,51 @@
       <a href="/tools/vorsorge-check">Vorsorge</a>
       <a href="/bestattungsarten">Bestattungsarten</a>
       <a href="/bestatter/muenchen/">Bestatter finden</a></div></div></nav>
-<div class="mr-content"><main id="main"><div id="app"></div></main></div>
+<div class="mr-content"><main id="main"><div id="app"></div>
+
+  <section style="max-width:680px;margin:48px auto 0;padding:0 20px">
+    <div class="mr-cta-block" style="background:#FFFDF9;border:2px solid #E8E0D6;border-radius:12px;padding:28px 24px;text-align:left">
+      <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:8px;text-align:center">Vorsorge-Plan per Email &mdash; mit Folge-Tipps</h2>
+      <p style="font-size:15px;color:#73655A;margin-bottom:20px;text-align:center">Wir mailen Dir Deine Vorsorge-Lücken-Auswertung. Optional: 7-tägige Email-Sequenz mit konkreten Schritten (Patientenverfügung, Testament, Vorsorgevollmacht).</p>
+      <form name="tool-lead-vorsorgecheck" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke-bestatter-anfrage?source=tool-lead-vorsorgecheck" style="display:grid;gap:12px">
+        <input type="hidden" name="form-name" value="tool-lead-vorsorgecheck">
+        <p hidden><label>Lass dieses Feld leer: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Dein Name *</span>
+            <input type="text" name="name" required style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+          </label>
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Email *</span>
+            <input type="email" name="email" required style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+          </label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">PLZ (optional)</span>
+            <input type="text" name="plz" pattern="[0-9]{5}" maxlength="5" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px">
+          </label>
+          <label style="display:block">
+            <span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Zeitrahmen (optional)</span>
+            <select name="zeitrahmen" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px;background:#fff">
+              <option value="">Bitte wählen</option>
+              <option value="akut">Akut</option>
+              <option value="planung">Planung</option>
+              <option value="vorsorge">Vorsorge</option>
+            </select>
+          </label>
+        </div>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#73655A">
+          <input type="checkbox" name="datenschutz" required style="margin-top:3px">
+          <span>Ich bin einverstanden, dass meine Email-Adresse zur Bearbeitung meiner Anfrage gespeichert wird. <a href="/datenschutz" target="_blank">Datenschutz</a></span>
+        </label>
+        <button type="submit" class="cta-primary" style="margin-top:8px;padding:14px 32px;background:#7A6B5D;color:#fff;border:none;border-radius:99px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit">Anfrage senden &mdash; kostenlos &amp; unverbindlich</button>
+        <p style="font-size:12px;color:#73655A;text-align:center;margin-top:4px">Spamfrei · DSGVO-konform · Du kannst jederzeit widersprechen</p>
+      </form>
+    </div>
+  </section>
+
+</main></div>
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprüche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
 <script type="text/babel">
@@ -380,6 +424,76 @@ function App() {
 }
 
 ReactDOM.render(React.createElement(App), document.getElementById('app'));
+</script>
+
+
+<!-- PDF-Export via html2pdf.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<style>
+  .pdf-export-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#FFFDF9;color:#7A6B5D;border:2px solid #7A6B5D;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;margin-left:8px;transition:background 0.2s}
+  .pdf-export-btn:hover{background:#7A6B5D;color:#fff}
+  body.exporting-pdf .mr-nav,body.exporting-pdf .mr-footer,body.exporting-pdf .pdf-export-btn,body.exporting-pdf [class*="export-controls"]{display:none!important}
+</style>
+<script>
+(function(){
+  var EXPORT_SELECTOR = '#app';
+  var FILENAME = 'vorsorge-check';
+  var TOOL_LABEL = 'vorsorge-check';
+  var injected = false;
+
+  function exportPDF() {
+    var target = document.querySelector(EXPORT_SELECTOR) || document.getElementById('app');
+    if (!target || target.children.length === 0) {
+      alert('Bitte erst Tool ausfüllen, dann PDF exportieren.');
+      return;
+    }
+    if (window.plausible) window.plausible('tool_export', { props: { type: 'pdf', tool: TOOL_LABEL } });
+    document.body.classList.add('exporting-pdf');
+    var opt = {
+      margin: 12,
+      filename: FILENAME + '.pdf',
+      image: { type: 'jpeg', quality: 0.95 },
+      html2canvas: { scale: 2, useCORS: true, logging: false },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    if (typeof html2pdf === 'undefined') {
+      alert('PDF-Bibliothek lädt noch — bitte einen Moment warten und nochmal versuchen.');
+      document.body.classList.remove('exporting-pdf');
+      return;
+    }
+    html2pdf().set(opt).from(target).save().then(function() {
+      document.body.classList.remove('exporting-pdf');
+    }).catch(function(err) {
+      console.error('PDF-Export-Fehler:', err);
+      document.body.classList.remove('exporting-pdf');
+      alert('PDF-Export fehlgeschlagen. Bitte versuche es mit der Drucken-Funktion (Drucker: Als PDF speichern).');
+    });
+  }
+
+  function injectButton() {
+    if (injected) return;
+    var printBtns = [].slice.call(document.querySelectorAll('button')).filter(function(b) {
+      var t = (b.textContent || '').toLowerCase();
+      return t.indexOf('drucken') !== -1 || t.indexOf('print') !== -1;
+    });
+    if (printBtns.length === 0) return;
+    printBtns.forEach(function(printBtn) {
+      if (printBtn.nextElementSibling && printBtn.nextElementSibling.classList.contains('pdf-export-btn')) return;
+      var pdfBtn = document.createElement('button');
+      pdfBtn.textContent = 'Als PDF speichern';
+      pdfBtn.className = 'pdf-export-btn';
+      pdfBtn.type = 'button';
+      pdfBtn.onclick = exportPDF;
+      printBtn.parentNode.insertBefore(pdfBtn, printBtn.nextSibling);
+    });
+    injected = true;
+  }
+
+  // Try immediately + observe DOM for late React-renders
+  window.addEventListener('load', injectButton);
+  var observer = new MutationObserver(function() { injectButton(); });
+  observer.observe(document.body, { childList: true, subtree: true });
+})();
 </script>
 </body>
 </html>
