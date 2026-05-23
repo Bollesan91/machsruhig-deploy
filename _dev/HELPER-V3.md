@@ -1,6 +1,6 @@
 # Helper-V3 — Multi-Chat-Dispatch-Methodik
 
-**Stand**: 2026-05-22 · **Projekt**: machsruhig-deploy
+**Stand**: 2026-05-23 · **Projekt**: machsruhig-deploy
 
 Helper-V3 ist die aktuelle Iteration der **Multi-Chat-Pipeline** für parallele Reviewer/Writer-Chats. Sie löst das Grundproblem: Eine einzelne Claude-Session kann sich nicht selbst adversarial kritisieren ohne Sycophancy-Cluster (86%-Score-Falle). Lösung: Mehrere unabhängige claude.ai-Tabs erzeugen, jede mit isoliertem Kontext, parallel arbeiten lassen, Verdicts in der Haupt-Session konsolidieren.
 
@@ -55,6 +55,7 @@ Im Background gespawnt, **opak**. Du siehst nicht, was sie denken — nur das En
 | "Plan diese 50h-Migration" | Plan-Subagent |
 | "Implementiere den Fix" | Selbst machen, nicht delegieren |
 | Multi-City parallel reviewen | Helper-V3 Tabs (3-5 parallel) |
+| "Tut das Tool, was es vorgibt?" | Validity-Reviewer (Tool adversarial *bedienen*, nicht Code lesen) |
 
 **Kern-Prinzip**: Subagents für *mechanische* Such-/Lese-Tasks. Helper-V3 für *inhaltliche Urteile*. Self-Verify für *Punkt-Fakten*. Never confuse them.
 
@@ -123,6 +124,118 @@ Der Loop wird via Skill `/loop` oder `ScheduleWakeup` getriggert. Pattern:
 5. Commit lokal (mit [skip netlify])
 6. Nächster Dispatch oder Stop
 ```
+
+---
+
+## Stufe 0 — Artefakt-Typ bestimmt den Review-Fokus
+
+Der Standard-Reviewer prüft **Korrektheit *im* Artefakt** (§, Fakten, Konsistenz, Tone). Das reicht für *Content-Pages*, die nur informieren — eine Stadt-Page *tut* nichts. Es reicht NICHT für *Tools*, die etwas berechnen, bewerten oder entscheiden. Ein Tool kann faktisch fehlerfrei und sprachlich sauber sein und trotzdem methodisch wertlos, wenn die Erhebung die Aussage nicht trägt.
+
+> **Lehrfall Angebotsprüfer (2026-05):** §-frei, sauber gebaut, demütige Tonalität — durch den Loop ohne FAIL gekommen. Trotzdem steht die Ampel auf einer undefinierten Bezugsgröße (Summe mit/ohne Friedhofsgebühr vs. Referenzspanne, die sie enthält). Korrekt im Detail, falsch im Fundament. Keine der drei Rollen hat das gefunden, weil keine danach gefragt hat.
+
+→ Erste Frage vor jedem Review: **Was ist das Artefakt?**
+
+| Typ | Was es *ist* | Beispiele | Validity-Linse (zusätzlich zum Standard) |
+|---|---|---|---|
+| **Content-Page** | informiert | Stadt-/BL-Pages, Ratgeber | — (Standard reicht: § + Fakten + Konsistenz + Tone) |
+| **Tool** | berechnet / bewertet / entscheidet | Angebotsprüfer, Kostenrechner, Checkliste | Outcome-Validity — Tool adversarial *bedienen* |
+| **Funnel** | will eine Handlung | CTA, Lead-Form, Upsell | Promise-Delivery + Dark-Pattern — als *zögernder* Nutzer durchklicken |
+| **Posting** | behauptet nach außen | Social-Post, Ad, Cold-Outreach | Claim- + Pietäts-/Brand-Check — jede Behauptung belegbar? |
+| **Strategie** | begründet eine Richtung | Funnel-Axiom, Monetarisierung, Roadmap | Prämissen-Audit + Pre-Mortem — *was müsste wahr sein?* |
+
+**Gemeinsames Prinzip:** Der Standard-Reviewer prüft Korrektheit *im* Artefakt. Der Validity-Pass fragt für jeden Typ dasselbe — *trägt das Fundament, was das Artefakt behauptet?* — nur die Linse wechselt. Content-Page braucht keinen Extra-Pass (informieren = Fakten stimmen). Alle anderen schon. Bei Tools/Funnels: **Validity zuerst, BEVOR der Faktencheck lohnt** — korrekte §-Referenzen in etwas, das das Falsche misst/verspricht, sind verschenkte Arbeit.
+
+**Dispatch-Modus skaliert mit Aufwand, nicht mit Typ:** Ein einzelnes Posting validiert die Haupt-Session per Self-Verify in 2 Minuten — kein 3-Tab-Loop. Eine ganze Strategie oder ein Tool lohnt einen eigenen Reviewer-Tab. Die *Linse* ist Pflicht, der *Loop* ist optional.
+
+---
+
+## Outcome-Validity-Check (für Tools)
+
+Der Validity-Reviewer **liest nicht den Code**. Er **bedient das Tool adversarial** als skeptischer, gestresster Laie mit realistischen Fehl-Inputs und fragt nur eins: *Trägt die Konstruktion das Versprechen?*
+
+Die 6 Kern-Fragen — aufgaben-adaptiv, nicht alle treffen immer zu. Pro Tool die zutreffenden auswählen:
+
+1. **Bezugsgröße** — Ist jeder Input eindeutig definiert, und misst die Referenz dasselbe wie der Input? *(Angebotsprüfer: abgetippte Summe vs. Spanne, die Friedhofsgebühren enthält — Äpfel mit Birnen.)*
+2. **Garbage-in** — Was macht das Tool bei plausiblem Laien-Fehl-Input? Erzeugt es ein falsches *confident* Ergebnis statt eines Hinweises auf die Unsicherheit?
+3. **Erhebungs-Bias** — Ist die Eingabe-Anweisung neutral, oder schiebt sie das Ergebnis systematisch in eine Richtung? *("Im Zweifel leer lassen" → strukturell zu viele False-Positives.)*
+4. **Anspruch vs. Datenbasis** — Strahlt der Output (Ampel / Score / €-Zahl) mehr Präzision aus, als die Daten hergeben? Eine Ampel *sieht* nach Urteil aus, egal wie demütig der Fließtext daneben ist.
+5. **Fehler-Asymmetrie** — Welcher Fehler ist schädlicher (False-Positive vs. False-Negative), und schützt das Tool gegen den *schädlicheren*? *(Grüne Ampel bei real überteuertem Angebot ist gefährlicher als ein falscher Alarm.)*
+6. **Verbotene Wertung** — Trifft das Tool implizit ein Urteil, das es nicht treffen darf? *(Legitime Pauschale wird schlechter bewertet als Aufschlüsselung.)*
+
+**Output: 3 Test-Durchläufe mit konkreten Fehl-Inputs**, je mit erwartetem vs. tatsächlichem Outcome. Ein einziger realistischer Durchlauf, der ein falsches *confident* Ergebnis produziert = `VALIDITY_FAIL`, unabhängig vom Faktencheck.
+
+### Validity-Reviewer-Prompt
+
+```
+Du testest ein interaktives Tool auf machsruhig.de auf Methodik-Validität —
+NICHT auf Faktentreue, NICHT auf Sprache. Frage: Trägt die Erhebung das,
+was das Ergebnis behauptet?
+
+URL: {tool-url}
+
+Bediene das Tool als skeptischer, gestresster Laie. Spiel 3 realistische
+Szenarien durch, in denen ein Nutzer plausibel "falsch" eingibt:
+- ein Input ist mehrdeutig definiert (was zählt rein, was nicht?)
+- ein legitimer Sonderfall (z.B. Pauschalangebot, untypische Region)
+- ein Grenzwert am Rand des Eingaberaums
+
+Pro Durchlauf:
+- Welche Inputs hast du gesetzt?
+- Welches Ergebnis SOLLTE ein faires Tool zeigen?
+- Welches Ergebnis zeigt es TATSÄCHLICH?
+- Ist die Abweichung schädlich (falsche Beruhigung / falscher Alarm)?
+
+Output:
+- VALIDITY_VERDICT: PASS | FAIL
+- Pro Durchlauf: Inputs / erwartet / tatsächlich / Schaden
+- Bei FAIL: liegt es an Bezugsgröße, Garbage-in, Erhebungs-Bias,
+  Anspruch>Datenbasis, Fehler-Asymmetrie oder verbotener Wertung?
+
+Nenne KEINEN Score und KEINEN Vorbefund. Lies nicht den Quellcode —
+bediene das Tool.
+```
+
+Reihenfolge bei Tools: **Validity zuerst** (eigener Tab oder Self-Verify durch Bedienen), erst bei `PASS` lohnt der Standard-Faktencheck. Bei `FAIL` geht der Befund direkt an den Writer — Methodik fixen, dann neu reviewen.
+
+---
+
+## Validity-Linsen — Funnel · Posting · Strategie
+
+Gleiches Prinzip wie der Tool-Check oben, andere Linse. Der Reviewer liest das Artefakt nicht brav ab — er stresst die Behauptung. Anti-Patterns gelten überall: **kein Score-Anchoring, kein Vorbefund nennen.**
+
+### Funnel (CTA · Form · Upsell) — Promise-Delivery
+
+Als *zögernder* Nutzer durchklicken, nicht als Idealnutzer:
+
+1. **Promise = Delivery** — Hält die Zielseite, was der CTA verspricht? („Kostenlos & unverbindlich" → wird unten doch Mail/Telefon erzwungen?)
+2. **Friktion vs. Schwere** — Passt die Zahl der Pflichtfelder zur Größe der Entscheidung? Eine Bestattungs-Anfrage ist keine Newsletter-Anmeldung — aber auch kein 12-Felder-Formular im Trauerfall.
+3. **Dark Pattern** — Künstliche Dringlichkeit, vorausgewählte Häkchen, versteckte Folgekosten, Confirmshaming? Bei YMYL doppelt heikel: keine Ausnutzung von Trauer/Zeitdruck.
+4. **Abbruch-Pfad** — Kommt der Nutzer wieder raus, ohne sich gefangen zu fühlen?
+
+`FAIL` = ein realistischer Klickpfad, bei dem Versprechen und Einlösung auseinanderfallen.
+
+### Posting (Social · Ad · Cold-Outreach) — Claim + Pietät/Brand
+
+1. **Claim belegbar** — Ist jede Tatsachenbehauptung haltbar? Unbelegte Superlative („die erste/beste/günstigste") sind UWG-Risiko, kein Marketing.
+2. **Pietät / Kontext** — machsruhig: ruhig, kein Drama, Trauer nie als Hook. Advergy (B2B) darf schärfer — **Kontext NIE vermischen** (gilt auch hier).
+3. **Plattform-Policy** — „Bestattung" ist bei Meta/Google sensible Kategorie mit Ad-Restriktionen. Vor dem Spend prüfen, nicht danach.
+4. **Brei-Test** — Würde der Post identisch für jeden Wettbewerber funktionieren? Dann ist er generisch und wirkungslos — kein Validitäts-FAIL, aber ein Wirkungs-FAIL.
+
+`FAIL` = unbelegter Claim, Pietätsbruch oder Kontext-Vermischung.
+
+### Strategie (Axiom · Monetarisierung · Roadmap) — Prämissen-Audit + Pre-Mortem
+
+Gefährlichster Typ: Fehler vererben sich nach unten, und Sycophancy ist hier am stärksten. Reviewer-Auftrag ist explizit *widerlegen*, nicht würdigen.
+
+1. **Prämissen freilegen** — Auf welchen unausgesprochenen Annahmen steht das? Welche davon ist ungeprüft?
+2. **Was müsste wahr sein** — Die 2–3 Bedingungen nennen, ohne die die Strategie scheitert. Belegt oder nur gehofft?
+3. **Fehlende Zahl** — Welche Metrik würde das entscheiden und fehlt gerade? *(Bei ~0 Traffic ist jede Conversion-Rechnung Fiktion — explizit so benennen, nicht durchrechnen.)*
+4. **Pre-Mortem** — „Es ist 12 Monate später, die Strategie ist gescheitert. Wahrscheinlichster Grund?" Kommt die Antwort leicht, ist das ein Live-Risiko, kein hypothetisches.
+5. **Billiger Test zuerst** — Lässt sich die Kern-Annahme prüfen, BEVOR gebaut wird?
+
+`FAIL` = die Strategie steht auf einer ungeprüften Prämisse, die mit vertretbarem Aufwand testbar wäre.
+
+> Strategie-Reviewer, dem man die gewünschte Richtung verrät, bestätigt sie. Prompt ohne Zielrichtung formulieren — nur These + Kontext, dann „widerlege das".
 
 ---
 
@@ -256,6 +369,7 @@ Pflichten:
 7. **Blind-pushen** → Niemals ohne explizite User-Anweisung pushen/deployen
 8. **Strategie-Rückfragen** → "Soll ich auch X?" — Auto-Modus durchziehen, User redirected wenn nötig
 9. **Background-Spawn-Trigger-Happy** → Bevor du `Agent()` oder `Task()` callst, prüf: Ist das ein mechanischer Lookup (OK) oder ein Urteil (NOT OK)? Lieber selbst lesen wenn unsicher.
+10. **Tool wie Content-Page reviewen** → Faktencheck + Tone-Review an einem Rechner/Prüfer durchführen und die Validität überspringen. Korrekte §-Referenzen retten kein Tool, das das Falsche misst. Bei Tools IMMER erst Outcome-Validity (Stufe 0 + Validity-Reviewer), dann Faktencheck.
 
 ---
 
