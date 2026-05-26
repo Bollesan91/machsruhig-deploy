@@ -822,7 +822,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var html = '';
     // FIX-2026-05-26 (Validity-Rebuild): Default-Annahmen explizit machen, bevor User auf "Berechnen" klickt.
     // Vorher liefen Grabpflege/Friedhofsgebühr per Default in die Summe, ohne dass User sie aktiv bestätigt hatte.
-    var _baLowReview = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonym');
+    var _baLowReview = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonyme');
     var _defaults = [];
     if (!_baLowReview) {
       _defaults.push('Grabtyp <strong>' + esc(state.grabGrab) + '</strong>');
@@ -942,7 +942,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     // FIX-2026-05-26 (Validity-Rebuild): Vergleichsbox kontextualisiert.
     // Vorher statisch "6.000-8.000 €" — schuf bei legitimen Sparszenarien (anonym/See/Baum) impliziten False-Alarm.
-    var _baLow = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonym');
+    var _baLow = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonyme');
     var _baLabel = BESTATTUNGSARTEN[state.bestattungsart] ? BESTATTUNGSARTEN[state.bestattungsart].name : 'Bestattung';
     html += '<div class="comparison-box"><h3>Im Vergleich</h3>';
     html += '<p><strong>Bundesweiter Durchschnitt (alle Bestattungsarten gemischt): 6.000–8.000 €</strong></p>';

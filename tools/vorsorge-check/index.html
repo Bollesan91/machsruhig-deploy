@@ -102,6 +102,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       </div>
 
       <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Welche Dokumente hast du bereits?</h2>
+      <label class="vc-check" id="vc-children-card" style="margin-bottom:14px;align-items:flex-start;background:var(--mr-safety)"><input type="checkbox" id="vc-minor-children" style="width:20px;height:20px;cursor:pointer;margin-top:2px"><span><strong style="display:block">Hast du minderjährige Kinder (unter 18 Jahren)?</strong><span style="font-size:13px;color:var(--mr-text-muted)">Wenn ja, wird die Sorgerechtsverfügung zusätzlich angezeigt — unabhängig vom oben gewählten Familienstand. Sie regelt, wer die Vormundschaft übernehmen soll, falls beide Eltern versterben.</span></span></label>
       <div style="display:grid;gap:12px" id="vc-docs-options">
         <label class="vc-check"><input type="checkbox" data-doc="patientenverfuegung" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Patientenverfügung</strong><span style="font-size:13px;color:var(--mr-text-muted)">Medizinische Entscheidungen im Notfall</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="vorsorgevollmacht" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Vorsorgevollmacht</strong><span style="font-size:13px;color:var(--mr-text-muted)">Finanz- und Alltagsverwaltung</span></span></label>
@@ -188,7 +189,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       selfCheck:['Ist die gewünschte Betreuerin / der gewünschte Betreuer namentlich benannt?','Sind, falls gewollt, bestimmte Personen ausdrücklich ausgeschlossen?']},
     {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet die gesetzliche Erbfolge. Das gesetzliche Erbrecht des Partners (§ 1931 BGB) gilt nur bei Ehe oder eingetragener Lebenspartnerschaft — Partner ohne Trauschein erben kraft Gesetzes nichts. Auch Patenkinder oder Vereine werden ohne Testament nicht bedacht.',link:'/vorsorge/testament',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'empfohlen',unverheiratet:'dringend',verheiratet:'dringend',kindern:'dringend',alleinerziehend:'dringend'},
       selfCheck:['Ist es entweder vollständig eigenhändig geschrieben — mit Ort, Datum und Unterschrift (§ 2247 BGB)?','Oder ist es notariell beurkundet?','Ist es sicher verwahrt (z. B. amtliche Verwahrung beim Nachlassgericht)?']},
-    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'#',situation:['kindern','alleinerziehend'],priority:'dringend',
+    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'#',situation:['kindern','alleinerziehend'],requireChildren:true,priority:'dringend',
       selfCheck:['Sind die minderjährigen Kinder erfasst, für die sie gelten soll?','Ist der Wunsch-Vormund namentlich benannt?','Ist sie formgültig festgehalten (in einem Testament oder eigener letztwilliger Verfügung)?']},
     {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
       selfCheck:['Ist die Bestattungsart festgelegt (Erd-, Feuer-, See- oder andere Bestattung)?','Ist ein Ort oder Friedhof benannt?','Weiß die Person, die sich kümmern soll, von deinen Wünschen?']},
@@ -219,7 +220,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
   function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
-  var state = {step:0, situation:null, ownedDocs:[], housing:null, auslandsbezug:false};
+  var state = {step:0, situation:null, ownedDocs:[], housing:null, auslandsbezug:false, hasMinorChildren:false};
 
   function setStep(n){
     state.step = n;
@@ -287,6 +288,16 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if (t) t.addEventListener('change', function(){
       state.auslandsbezug = t.checked;
       track('toolStep', {tool:'vorsorge-check', step:'auslandsbezug', value:t.checked});
+    });
+  })();
+
+  // FIX-2026-05-26 (Re-Audit-Iteration): hasMinorChildren-Toggle in Step-1.
+  // Entkoppelt Sorgerechtsverfügung vom Single-Select-Familienstand.
+  (function(){
+    var t = $('#vc-minor-children');
+    if (t) t.addEventListener('change', function(){
+      state.hasMinorChildren = t.checked;
+      track('toolStep', {tool:'vorsorge-check', step:'minorChildren', value:t.checked});
     });
   })();
 
@@ -376,8 +387,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   function renderResult(){
-    var missing = DOCUMENTS.filter(function(d){ return d.situation.indexOf(state.situation) >= 0 && state.ownedDocs.indexOf(d.id) < 0; });
-    var has = DOCUMENTS.filter(function(d){ return d.situation.indexOf(state.situation) >= 0 && state.ownedDocs.indexOf(d.id) >= 0; });
+    // FIX-2026-05-26 (Re-Audit-Iteration): isInScope entkoppelt Sorgerechtsverfügung
+    // von Single-Select Familienstand — Eltern minderjähriger Kinder in Partnerschaft
+    // (verheiratet/unverheiratet) bekommen sie sonst nie angezeigt (Re-Audit-FAIL Linse 1/5).
+    function isInScope(d){
+      return d.situation.indexOf(state.situation) >= 0
+          || (d.requireChildren && state.hasMinorChildren);
+    }
+    var missing = DOCUMENTS.filter(function(d){ return isInScope(d) && state.ownedDocs.indexOf(d.id) < 0; });
+    var has = DOCUMENTS.filter(function(d){ return isInScope(d) && state.ownedDocs.indexOf(d.id) >= 0; });
 
     var relevant = has.length + missing.length;
 
