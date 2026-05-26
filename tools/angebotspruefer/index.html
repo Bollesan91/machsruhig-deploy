@@ -260,7 +260,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // Grabstein und Grabpflege sind NICHT in baseRange (kommen separat NACH der Bestattung).
   // Werte in EUR, vor Region-Multiplier.
   var SEPARAT_KOSTEN={
-    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:600,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','anonyme']},
+    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','anonyme']},
     krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
     trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400}
   };
@@ -517,7 +517,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Das kann legitim sein (Premium-Sarg, aufwendige Trauerfeier, individueller Grabstein) — lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
       } else if(diffHigh>=10){
         status='yellow';
-        reasons.push('Die Summe liegt am oberen Rand des üblichen Rahmens. Im Rahmen, aber frage nach welche Posten den Preis treiben.');
+        reasons.push('Die Summe liegt leicht über dem üblichen Rahmen (+'+diffHigh+' %). Das kann an einer höheren Sarg-/Trauerfeier-/Floristik-Wahl liegen — frag den Bestatter, welche Posten den Preis treiben.');
       }
     }
 
