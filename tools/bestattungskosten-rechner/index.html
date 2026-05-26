@@ -820,6 +820,24 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function renderReview(){
     var ba = BESTATTUNGSARTEN[state.bestattungsart];
     var html = '';
+    // FIX-2026-05-26 (Validity-Rebuild): Default-Annahmen explizit machen, bevor User auf "Berechnen" klickt.
+    // Vorher liefen Grabpflege/Friedhofsgebühr per Default in die Summe, ohne dass User sie aktiv bestätigt hatte.
+    var _baLowReview = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonym');
+    var _defaults = [];
+    if (!_baLowReview) {
+      _defaults.push('Grabtyp <strong>' + esc(state.grabGrab) + '</strong>');
+    }
+    _defaults.push('Sarg-Qualität <strong>' + esc(state.sargQualitaet) + '</strong>');
+    if (state.bestattungsart === 'erdbestattung' || state.bestattungsart === 'feuerbestattung') {
+      var _gpYears = (state.bestattungsart === 'erdbestattung') ? 20 : 10;
+      _defaults.push('Grabpflegegebühren über <strong>' + _gpYears + ' Jahre</strong> (Standard-Nutzungsdauer)');
+    }
+    if (_defaults.length) {
+      html += '<div role="note" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:14px 18px;margin:0 0 20px;font-size:13px;line-height:1.65;color:var(--mr-text-muted)">';
+      html += '<strong style="color:var(--mr-text);display:block;margin-bottom:6px">Mitgerechnete Default-Annahmen</strong>';
+      html += 'In dein Ergebnis fließen ohne weitere Auswahl ein: ' + _defaults.join(', ') + '. Korrigiere oben, falls sie für deinen Fall nicht zutreffen.';
+      html += '</div>';
+    }
     html += '<p style="margin-bottom:12px"><strong>Bestattungsart:</strong> ' + esc(ba ? ba.name : '') + '</p>';
     html += '<p style="margin-bottom:12px"><strong>Region:</strong> ' + esc(state.bundesland) + '</p>';
     if (state.aufbahrung) html += '<p style="margin-bottom:12px"><strong>Aufbahrung:</strong> Ja</p>';
@@ -922,9 +940,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
     html += '</div>';
 
+    // FIX-2026-05-26 (Validity-Rebuild): Vergleichsbox kontextualisiert.
+    // Vorher statisch "6.000-8.000 €" — schuf bei legitimen Sparszenarien (anonym/See/Baum) impliziten False-Alarm.
+    var _baLow = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonym');
+    var _baLabel = BESTATTUNGSARTEN[state.bestattungsart] ? BESTATTUNGSARTEN[state.bestattungsart].name : 'Bestattung';
     html += '<div class="comparison-box"><h3>Im Vergleich</h3>';
-    html += '<p><strong>Durchschnittliche Bestattung in Deutschland: 6.000–8.000 €</strong></p>';
-    html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Regionale Unterschiede können bis zu 300–400 % betragen (Großstädte vs. ländliche Gebiete).</p>';
+    html += '<p><strong>Bundesweiter Durchschnitt (alle Bestattungsarten gemischt): 6.000–8.000 €</strong></p>';
+    if (_baLow) {
+      html += '<p><strong>Deine Wahl (' + esc(_baLabel) + ')</strong> liegt bewusst unter dem Durchschnitt — ohne kommunale Friedhofsgebühren und ohne klassisches Grab/Grabstein. Ein niedrigeres Ergebnis ist hier normal und kein Hinweis auf etwas „Lückenhaftes".</p>';
+    } else {
+      html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Regionale Unterschiede können bis zu 300–400 % betragen (Großstädte vs. ländliche Gebiete).</p>';
+    }
     html += '<p style="font-size:12px;color:var(--mr-text-muted);margin-top:8px"><em>Stand 2026 · Quellen: Stiftung Warentest, Bundesverband Deutscher Bestatter (BDB), Aeternitas e.V.</em></p>';
     html += '</div>';
 

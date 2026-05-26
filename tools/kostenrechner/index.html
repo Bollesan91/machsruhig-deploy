@@ -164,14 +164,25 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   var state = {step:0, auswahl:{}};
 
+  // FIX-2026-05-26 (Validity-Rebuild): Floor je Bestattungsart gegen Sub-Real-Beträge
+  // (Krematorium allein ~400 €, einfachster Bestatter-Service kommt nicht unter ~1.200 €)
+  var FLOOR = {erdbestattung:2500, feuerbestattung:1500, seebestattung:1500, baumbestattung:1800, anonym:1200};
+
   function berechne(a){
     var basis = BASIS[a.bestattungsart];
-    var rf = REGION_FAKTOR[a.region];
+    // FIX-2026-05-26: Region-Faktor irrelevant bei See/Baum/Anonym — kein kommunaler Friedhof
+    // existiert dort, der Wohnort-Region wäre ein Kategoriefehler.
+    var noRegion = (a.bestattungsart === 'seebestattung' || a.bestattungsart === 'baumbestattung' || a.bestattungsart === 'anonym');
+    var rf = noRegion ? 1.0 : REGION_FAKTOR[a.region];
     var af = AUSSTATTUNG_FAKTOR[a.ausstattung];
     var tf = TRAUERFEIER_AUFSCHLAG[a.trauerfeier];
     var gs = GRABSTEIN_AUFSCHLAG[a.grabstein];
     var min = Math.round((basis.min * rf * af + tf + gs) / 100) * 100;
     var max = Math.round((basis.max * rf * af + tf + gs) / 100) * 100;
+    // FIX-2026-05-26: Floor-Clamp — vermeidet unrealistisch tiefe Beträge an Faktor-Untergrenzen
+    var floor = FLOOR[a.bestattungsart] || 0;
+    if (min < floor) min = floor;
+    if (max < floor) max = floor + 200;
     return {min:min, max:max};
   }
 
@@ -224,9 +235,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var html = '';
     // Result hero
     html += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:32px 0">';
-    html += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:8px">Geschätzte Bestattungskosten</p>';
+    html += '<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:8px">Geschätzte Bestatter- &amp; Grundleistung</p>';
     html += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--mr-text);margin:0 0 8px">ca. ' + fmt(result.min) + '–' + fmt(result.max) + ' €</h2>';
-    html += '<p style="font-size:13px;color:var(--mr-warm)">Einmalige Kosten (ohne laufende Grabpflege)</p>';
+    html += '<p style="font-size:13px;color:var(--mr-warm)">Ohne kommunale Friedhofsgebühr (1.000–4.000 €+ separat) und ohne laufende Grabpflege</p>';
     html += '</div>';
 
     // Welle A.3: 5-Ebenen-Kostenlogik-Erklärung (compact, expandable)
@@ -239,7 +250,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Fremdleistungen</strong> — Krematorium, Floristik, Anzeigen, Druckaufträge — der Bestatter rechnet sie durch, der Preis kommt vom Drittanbieter.</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Friedhofsgebühren</strong> — Grab, Nutzung, Beisetzung, Verlängerung — kommunale Gebühren, regional sehr unterschiedlich (300–400 %).</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Zusatzkosten</strong> — Grabstein, Grabpflege über Jahre, Trauerfeier, Anzeigen — fallen oft <em>nach</em> der Bestattung an.</li>';
-    html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Gesamtkosten</strong> — Was die Familie am Ende wirklich zahlt. Das ist die Zahl oben.</li>';
+    html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Bestatter- &amp; Grundleistung</strong> — Was der Bestatter selbst abrechnet (Ebenen 1+2). Das ist die Zahl oben — kommunale Friedhofsgebühren (Ebene 3) und Folgekosten (Ebene 4) kommen <em>zusätzlich</em>.</li>';
     html += '</ol>';
     html += '</div></details>';
 
@@ -396,9 +407,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     track('toolStep', {tool:'kostenrechner', step:key, value:value});
     if (state.step < STEPS.length - 1) {
       state.step++;
-      // Skip Grabstein-Step für See-/Baum-/anonyme Bestattung (kein Grab → keine Grabstein-Optionen sinnvoll)
       var nextStepId = STEPS[state.step].id;
       var ba = state.auswahl.bestattungsart;
+      // FIX-2026-05-26: Skip Region-Step bei See/Baum/Anonym (kein Friedhofs-Bezug)
+      if (nextStepId === 'region' && (ba === 'seebestattung' || ba === 'baumbestattung' || ba === 'anonym')) {
+        state.auswahl.region = 'mittelstadt';
+        track('toolStep', {tool:'kostenrechner', step:'region', value:'mittelstadt (auto-skip)'});
+        state.step++;
+        renderStep();
+        scrollTop();
+        return;
+      }
+      // Skip Grabstein-Step für See-/Baum-/anonyme Bestattung (kein Grab → keine Grabstein-Optionen sinnvoll)
       if (nextStepId === 'grabstein' && (ba === 'seebestattung' || ba === 'baumbestattung' || ba === 'anonym')) {
         state.auswahl.grabstein = 'keiner';
         track('toolStep', {tool:'kostenrechner', step:'grabstein', value:'keiner (auto-skip)'});
