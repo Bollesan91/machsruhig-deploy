@@ -36,6 +36,14 @@
   - KR: Floor-Band-Kollaps gefixt — `max = Math.max(floor+200, max)` statt fix `floor+200`. Vorher Spar-Szenario auf 200 €-Breite gestaucht.
   - Validation via 1 Helper-V3-Tab gegen content-loop-pipeline raw-URL (commit 953fc0c), 5/8 Punkte direkt PASS, 3 weitere lokal verifiziert. BSG-Az-Wording B 8 SO 20/22 R gegen BSG-Primärquelle (bsg.bund.de) selbst-verifiziert: korrekt — Urteil betrifft SGB-II-Bezieher, nicht SGB-XII (dejure-Titel war irreführend).
 
+
+
+- **Review-Konsolidierung (Commit c1b9159 + Trigger): 7 Punkt-Fakten + Wording-Fixes aus 2 externen Audits.**
+  - Datenfehler: Stuttgart 41→42, Hannover 16→19, Bonn Dutzend→40 (FAQ JSON-LD ≡ HTML synchron)
+  - Trust: Bremen Fake-Reviewer-Label raus
+  - Konsistenz: Homepage 50→48 Städte + ehrliches Vermittlungs-Wording, Berlin H1 Template-konsistent, Köln Du/Sie auf Du
+  - NICHT in dieser Welle (eigene Phasen): Akutfall-Hero (6-8h, Phase A), Trustbox+Lead-Form-Disclosure-Komponente (Cross-Page), Schema-Pakete (WebPage+Article statt LocalBusiness), Top-15 Stadt-Pages auf Gold (10-15h pro Stadt), externe Reviewer (Messgate)
+
 ## Nächste Schritte (priorisiert, Messgate-Logik)
 
 **Tools — Optional-Findings (kein Validity-FAIL mehr, Phase 2 wenn Bandbreite):**
