@@ -1,7 +1,29 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 26. Mai 2026 (Repo-Reality-Check gegen externes Marktreife-Beraterpapier — Doppelsession ruhig+leicht, NUR Analyse, kein Code/Content geändert)
+**Datum:** 26. Mai 2026 (Abend — Angebotsprüfer-Rebuild v2.4 + ASCII-Canonical-Fix LIVE)
+
+## Was wurde gemacht
+- **Angebotsprüfer v2.4 LIVE, Validity-PASS:** Internes VALIDITY_FAIL (3/3) durch unabhängigen Helper-V3-Audit (frischer Chrome-Tab gegen Live-URL) bestätigt → 5 Iterationen Rebuild (v2 → v2.4-Polish). v2.4 hat im finalen Fresh-Tab-Audit (Tab 1532777164) bestanden. Kern-Änderungen: SEPARAT_KOSTEN-Logik (Friedhofsgebühren raus aus Range), INFO_POSTEN-Konstante (Grabstein/Grabpflege ohne Range-Abzug), pflicht-Flag aktiviert, Pauschale nicht abgestraft, ROT nur bei kumuliertem Risiko (sumRatio<0.3 AND klärungsRatio>=0.7 AND !userHasExplained), High-Side-ROT bei >=2x, YMYL-Wording ("Lockangebot" raus → neutrale Klärungs-Sprache).
+- **P0-Versicherung während Rebuild:** Tool noindex + 16 CTAs (8 Seiten × 2) neutralisiert während v2-Bauphase, nach v2.3-Pass sauberer Rollback.
+- **ASCII-Canonical-Fix:** `bestatter/luebeck/` + `bestatter/moenchengladbach/` ASCII-Stubs zeigen jetzt percent-encoded canonical auf Umlaut-Hauptversion (`l%C3%BCbeck` / `m%C3%B6nchengladbach`). Commit `123bb90`.
+- **Methodik-Lesson:** Erster Helper-V3-Lauf nutzte fälschlich denselben Tab für iteratives Review → Sycophancy-Risiko. Korrektur: pro Iteration frischer Tab. Lesson dokumentiert für Memory-Update.
+
+## Nächste Schritte (priorisiert, Messgate-Logik)
+**Hinter dem Messgate (erst wenn machsleicht-Indexierung beweist, dass Content rankt):**
+1. Lead-Funnel + Einwilligung sauber (12–30h).
+2. Autoren-/Redaktionsprofil + Trust (8–20h).
+3. Welle C (Sozialbestattung) + Welle D (Vorsorge für Singles 60+) aus 90-Tage-Roadmap.
+
+## Offene Fragen
+- Keine akuten. Trust-Risiko Angebotsprüfer entschärft, SEO-Hygiene-Mini-Rest erledigt.
+
+---
+
+# ───────── ARCHIV: frühere Sessions ─────────
+
+## Session
+**Datum:** 26. Mai 2026 (Vormittag — Repo-Reality-Check gegen externes Marktreife-Beraterpapier — Doppelsession ruhig+leicht, NUR Analyse, kein Code/Content geändert)
 
 ## Was wurde gemacht
 Externes Beraterpapier ("Aufwand bis Marktreife, 260–480h") gegen den echten Repo-Stand geprüft (frischer Clone, Dateien einzeln gelesen, kein Pauschalurteil). Kernergebnis: **Das Papier ist featurelastig und unterschätzt den Ist-Stand massiv. machsruhig hat KEIN Contentproblem — es hat ein Trust-Tool-Problem und ein SEO-Hygiene-Detail.**
