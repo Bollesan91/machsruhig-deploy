@@ -86,7 +86,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:24px 0 16px">Wie ist deine persönliche Situation?</h2>
       <div style="display:grid;gap:10px" id="vc-situation-options">
         <button type="button" class="vc-opt-btn" data-value="single"><span class="icon">👤</span><span><strong>Single</strong><span class="desc">Lebe alleine</span></span></button>
-        <button type="button" class="vc-opt-btn" data-value="verheiratet"><span class="icon">💑</span><span><strong>Verheiratet/Verpartnert</strong><span class="desc">Mit Partner zusammen</span></span></button>
+        <button type="button" class="vc-opt-btn" data-value="unverheiratet"><span class="icon">👫</span><span><strong>Unverheiratet zusammenlebend</strong><span class="desc">Feste Partnerschaft ohne Trauschein</span></span></button>
+        <button type="button" class="vc-opt-btn" data-value="verheiratet"><span class="icon">💑</span><span><strong>Verheiratet/Verpartnert</strong><span class="desc">Ehe oder eingetragene Partnerschaft</span></span></button>
         <button type="button" class="vc-opt-btn" data-value="kindern"><span class="icon">👨‍👩‍👧‍👦</span><span><strong>Mit Kindern</strong><span class="desc">Habe Kinder zu versorgen</span></span></button>
         <button type="button" class="vc-opt-btn" data-value="alleinerziehend"><span class="icon">👨‍👧</span><span><strong>Alleinerziehend</strong><span class="desc">Allein für Kind verantwortlich</span></span></button>
       </div>
@@ -112,7 +113,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         <label class="vc-check"><input type="checkbox" data-doc="kontovollmacht" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Kontovollmacht / Bankenvollmacht</strong><span style="font-size:13px;color:var(--mr-text-muted)">Bankzugang für Vertrauensperson</span></span></label>
         <label class="vc-check"><input type="checkbox" data-doc="digitalerbe" style="width:20px;height:20px;cursor:pointer"><span><strong style="display:block">Digitalerbe</strong><span style="font-size:13px;color:var(--mr-text-muted)">Zugang zu Online-Konten geregelt</span></span></label>
       </div>
-      <p style="font-size:12px;color:var(--mr-text-muted);margin-top:12px">Tipp: Wähle „Habe ich" für alle, die du schon hast. Falls keines davon zutrifft, wähle einfach „Keines davon" und gehe weiter.</p>
+      <p style="font-size:12px;color:var(--mr-text-muted);margin-top:12px">Tipp: Hake alle Dokumente an, die du bereits hast. Wenn du noch keines hast, lass einfach alle Felder leer und geh weiter — die Auswertung zeigt dir dann, was zu deiner Situation passt.</p>
       <div style="display:flex;gap:12px;margin-top:16px">
         <button type="button" data-back="0" style="padding:10px 20px;background:none;border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-size:14px;color:var(--mr-text-muted);font-family:inherit">← Zurück</button>
         <button type="button" id="vc-next-1" style="flex:1;padding:14px 20px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;cursor:pointer;font-weight:600;font-size:15px;font-family:inherit;transition:background 0.2s">Weiter →</button>
@@ -132,6 +133,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         <button type="button" class="vc-opt-btn" data-value="miete"><span class="icon">🏘️</span><span><strong>Miete</strong><span class="desc">Du mietest deine Unterkunft</span></span></button>
         <button type="button" class="vc-opt-btn" data-value="pflegeheim"><span class="icon">🏥</span><span><strong>Pflegeheim/Betreuung</strong><span class="desc">Lebst in Betreuungseinrichtung</span></span></button>
       </div>
+
+      <label class="vc-check" id="vc-ausland-card" style="margin-top:16px;align-items:flex-start"><input type="checkbox" id="vc-ausland-toggle" style="width:20px;height:20px;cursor:pointer;margin-top:2px"><span><strong style="display:block">Wohnsitz oder Vermögen im Ausland?</strong><span style="font-size:13px;color:var(--mr-text-muted)">Z. B. Immobilie, Konto oder gewöhnlicher Aufenthalt außerhalb Deutschlands. Wirkt sich auf das anwendbare Erbrecht aus.</span></span></label>
+
       <div style="display:flex;gap:12px;margin-top:24px">
         <button type="button" data-back="1" style="padding:10px 20px;background:none;border:1px solid var(--mr-border);border-radius:99px;cursor:pointer;font-size:14px;color:var(--mr-text-muted);font-family:inherit">← Zurück</button>
         <button type="button" id="vc-next-2" disabled style="flex:1;padding:14px 20px;background:var(--mr-border);color:var(--mr-text-muted);border:none;border-radius:99px;cursor:not-allowed;font-weight:600;font-size:15px;font-family:inherit;transition:background 0.2s">Ergebnis anzeigen →</button>
@@ -168,24 +172,32 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
 </main></div>
 
-<footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprueche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Mai 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
-
-<script>
+<footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall">Checkliste Todesfall</a><a href="/trauerrede-schreiben">Trauerrede schreiben</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/kondolenzschreiben">Kondolenzschreiben</a><a href="/trauersprueche">Trauersprueche</a><a href="/tools/vorsorge-check">Vorsorge-Check</a><a href="/vorsorge/patientenverfuegung">Patientenverfügung</a><a href="/vorsorge/testament">Testament</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Mai 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer><script>
 (function(){
   'use strict';
 
   // DOCUMENTS mit situationsspezifischer priority. priorityBy[situation]
   // mappt {dringend|empfohlen|optional}. Fallback: priority-Default.
+  // selfCheck: Wirksamkeits-Selbstprüfpunkte je Doc (Spec 2).
   var DOCUMENTS = [
-    {id:'patientenverfuegung',name:'Patientenverfügung',icon:'📋',description:'Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.',why:'Du kannst nicht selbst entscheiden — wer entscheidet dann für dich?',link:'/vorsorge/patientenverfuegung',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'dringend'},
-    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann der Staat eine Person einsetzen, die du nicht kennst.',link:'/vorsorge/vorsorgevollmacht',situation:['single','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'}},
-    {id:'betreuungsverfuegung',name:'Betreuungsverfügung',icon:'👤',description:'Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.',why:'Verhindert, dass das Gericht eine fremde Person bestellt.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'empfohlen'},
-    {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet das Gesetz. Für Singles: gesetzliche Erbfolge geht ggf. an entfernte Verwandte/Fiskus, nicht an Partner ohne Trauschein, Patenkinder oder Vereine.',link:'/vorsorge/testament',situation:['single','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'empfohlen',verheiratet:'dringend',kindern:'dringend',alleinerziehend:'dringend'}},
-    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Sorgerechtsverfügung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. § 1777 BGB ist vom Testament getrennt.',link:'#',situation:['kindern','alleinerziehend'],priority:'dringend'},
-    {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'empfohlen'},
-    {id:'organspendeausweis',name:'Organspendeausweis',icon:'💝',description:'Dokumentiert deine Entscheidung zu Organ- und Gewebespende.',why:'Gibt Gewissheit für deine Angehörigen und kann Leben retten.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'optional'},
-    {id:'kontovollmacht',name:'Kontovollmacht / Bankenvollmacht',icon:'🏦',description:'Ermöglicht Zugang zu Konten und Bankangelegenheiten für deine Vertrauensperson.',why:'Ohne Bankenvollmacht können deine Konten eingefroren sein.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'empfohlen'},
-    {id:'digitalerbe',name:'Digitalerbe (Online-Konten)',icon:'💻',description:'Regelung des Zugangs zu E-Mails, Sozialen Medien, Cloud-Speichern und Dateien.',why:'Ohne Regelung können wichtige digitale Vermögenswerte verloren gehen.',link:'#',situation:['single','verheiratet','kindern','alleinerziehend'],priority:'optional'}
+    {id:'patientenverfuegung',name:'Patientenverfügung',icon:'📋',description:'Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.',why:'Du kannst nicht selbst entscheiden — wer entscheidet dann für dich? Eine zu unbestimmt formulierte Patientenverfügung kann zudem unwirksam sein (vgl. BGH XII ZB 61/16).',link:'/vorsorge/patientenverfuegung',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'dringend',
+      selfCheck:['Sind konkrete Behandlungssituationen benannt — nicht nur „keine lebenserhaltenden Maßnahmen"? (Zu unbestimmte Formulierungen können unwirksam sein.)','Ist sie aktuell, also in den letzten rund 5 Jahren überprüft?','Ist sie eigenhändig unterschrieben?','Wissen deine Vertrauensperson und der Hausarzt, wo sie liegt?']},
+    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann das Betreuungsgericht eine Person einsetzen, die du nicht kennst. Auch Ehe- oder Lebenspartner sind nicht automatisch vertretungsbefugt.',link:'/vorsorge/vorsorgevollmacht',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',unverheiratet:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'},
+      selfCheck:['Ist die Vollmacht über den Tod hinaus formuliert (transmortal)?','Ist sie im Zentralen Vorsorgeregister der Bundesnotarkammer eingetragen, damit Gerichte sie finden?','Deckt sie die wichtigen Bereiche ab (Gesundheit, Finanzen, Behörden, Aufenthalt)?']},
+    {id:'betreuungsverfuegung',name:'Betreuungsverfügung',icon:'👤',description:'Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.',why:'Verhindert, dass das Gericht eine fremde Person bestellt.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
+      selfCheck:['Ist die gewünschte Betreuerin / der gewünschte Betreuer namentlich benannt?','Sind, falls gewollt, bestimmte Personen ausdrücklich ausgeschlossen?']},
+    {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet die gesetzliche Erbfolge. Das gesetzliche Erbrecht des Partners (§ 1931 BGB) gilt nur bei Ehe oder eingetragener Lebenspartnerschaft — Partner ohne Trauschein erben kraft Gesetzes nichts. Auch Patenkinder oder Vereine werden ohne Testament nicht bedacht.',link:'/vorsorge/testament',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'empfohlen',unverheiratet:'dringend',verheiratet:'dringend',kindern:'dringend',alleinerziehend:'dringend'},
+      selfCheck:['Ist es entweder vollständig eigenhändig geschrieben — mit Ort, Datum und Unterschrift (§ 2247 BGB)?','Oder ist es notariell beurkundet?','Ist es sicher verwahrt (z. B. amtliche Verwahrung beim Nachlassgericht)?']},
+    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'#',situation:['kindern','alleinerziehend'],priority:'dringend',
+      selfCheck:['Sind die minderjährigen Kinder erfasst, für die sie gelten soll?','Ist der Wunsch-Vormund namentlich benannt?','Ist sie formgültig festgehalten (in einem Testament oder eigener letztwilliger Verfügung)?']},
+    {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
+      selfCheck:['Ist die Bestattungsart festgelegt (Erd-, Feuer-, See- oder andere Bestattung)?','Ist ein Ort oder Friedhof benannt?','Weiß die Person, die sich kümmern soll, von deinen Wünschen?']},
+    {id:'organspendeausweis',name:'Organspendeausweis',icon:'💝',description:'Dokumentiert deine Entscheidung zu Organ- und Gewebespende.',why:'Gibt Gewissheit für deine Angehörigen und kann Leben retten.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'optional',
+      selfCheck:['Ist deine Entscheidung eindeutig angekreuzt (Zustimmung, Einschränkung oder Widerspruch)?','Führst du den Ausweis bei dir oder ist er leicht auffindbar?']},
+    {id:'kontovollmacht',name:'Kontovollmacht / Bankenvollmacht',icon:'🏦',description:'Ermöglicht Zugang zu Konten und Bankangelegenheiten für deine Vertrauensperson.',why:'Ohne Bankenvollmacht kann der Zugriff auf deine Konten im Ernstfall blockiert sein.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
+      selfCheck:['Wurde ein von der Bank akzeptiertes Vollmachtsformular verwendet?','Ist geregelt, ob die Vollmacht über den Tod hinaus gilt?','Kennt die bevollmächtigte Person die Konten und Zugänge?']},
+    {id:'digitalerbe',name:'Digitalerbe (Online-Konten)',icon:'💻',description:'Regelung des Zugangs zu E-Mails, Sozialen Medien, Cloud-Speichern und Dateien.',why:'Ohne Regelung können wichtige digitale Konten und Daten unzugänglich werden oder verloren gehen.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'optional',
+      selfCheck:['Gibt es eine aktuelle Liste der wichtigen Online-Konten?','Sind die Passwörter für die Vertrauensperson zugänglich (z. B. über einen Passwort-Manager)?','Ist eine vertrauenswürdige Person benannt, die sich darum kümmern darf?']}
   ];
 
   // Housing-Modifikatoren: erhöht Priorität bestimmter Docs je nach Wohnsituation
@@ -207,7 +219,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
   function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
-  var state = {step:0, situation:null, ownedDocs:[], housing:null};
+  var state = {step:0, situation:null, ownedDocs:[], housing:null, auslandsbezug:false};
 
   function setStep(n){
     state.step = n;
@@ -269,6 +281,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     setStep(3);
   });
 
+  // Auslandsbezug-Toggle (EU-ErbVO)
+  (function(){
+    var t = $('#vc-ausland-toggle');
+    if (t) t.addEventListener('change', function(){
+      state.auslandsbezug = t.checked;
+      track('toolStep', {tool:'vorsorge-check', step:'auslandsbezug', value:t.checked});
+    });
+  })();
+
   // ===== Back buttons =====
   $$('[data-back]').forEach(function(b){
     b.addEventListener('click', function(){ setStep(parseInt(b.dataset.back, 10)); });
@@ -322,26 +343,72 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     return h;
   }
 
+  // Wirksamkeits-Selbstcheck als aufklappbare Liste (Spec 2)
+  function renderSelfCheck(doc){
+    if (!doc.selfCheck || !doc.selfCheck.length) return '';
+    var h = '<details style="margin-top:14px;border:1px solid var(--mr-border);border-radius:8px;background:var(--mr-safety)">';
+    h += '<summary style="cursor:pointer;padding:12px 16px;font-size:14px;font-weight:600;color:var(--mr-text);list-style:none">Ist es auch wirksam? Selbst-Check &#9662;</summary>';
+    h += '<div style="padding:0 16px 14px">';
+    h += '<p style="font-size:12px;color:var(--mr-text-muted);margin:0 0 10px">Angekreuzt heißt nur: du hast dieses Dokument. Ob es im Ernstfall greift, hängt von Inhalt und Form ab. Geh die Punkte für dich durch:</p>';
+    doc.selfCheck.forEach(function(item){
+      h += '<label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.55;color:var(--mr-text);padding:5px 0">';
+      h += '<input type="checkbox" style="width:16px;height:16px;margin-top:2px;cursor:pointer;flex-shrink:0">';
+      h += '<span>' + esc(item) + '</span></label>';
+    });
+    h += '<p style="font-size:12px;color:var(--mr-text-muted);margin:10px 0 0">Bleibt ein Punkt offen, lohnt sich ein zweiter Blick — im Zweifel mit Notar:in oder Beratungsstelle.</p>';
+    h += '</div></details>';
+    return h;
+  }
+
+  // Karte für benannte Dokumente: neutral (kein grünes ✓) + Selbst-Check (Spec 2)
+  function renderOwnedCard(doc){
+    var h = '<div class="doc-card" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:var(--mr-radius);padding:20px 22px;margin-bottom:16px">';
+    h += '<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">';
+    h += '<div style="display:flex;gap:12px;align-items:flex-start;flex:1">';
+    h += '<span style="font-size:28px;min-width:36px;text-align:center">' + doc.icon + '</span>';
+    h += '<div><h3 style="font-family:\'Fraunces\',serif;font-size:17px;font-weight:700;margin:0 0 4px">' + esc(doc.name) + '</h3>';
+    h += '<p style="font-size:13px;color:var(--mr-text-muted);margin:0">' + esc(doc.description) + '</p></div></div>';
+    h += '<span style="background:var(--mr-bg);color:var(--mr-text-muted);border:1px solid var(--mr-border);padding:4px 10px;border-radius:4px;font-size:12px;font-weight:600;white-space:nowrap">Benannt</span>';
+    h += '</div>';
+    h += renderSelfCheck(doc);
+    h += '</div>';
+    return h;
+  }
+
   function renderResult(){
     var missing = DOCUMENTS.filter(function(d){ return d.situation.indexOf(state.situation) >= 0 && state.ownedDocs.indexOf(d.id) < 0; });
     var has = DOCUMENTS.filter(function(d){ return d.situation.indexOf(state.situation) >= 0 && state.ownedDocs.indexOf(d.id) >= 0; });
 
+    var relevant = has.length + missing.length;
+
     var h = '';
-    h += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:32px 0">';
-    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(24px,5vw,36px);font-weight:800;color:var(--mr-text);margin:0 0 12px">';
-    h += missing.length === 0 ? 'Super! Du hast alle wichtigen Dokumente.' : 'Dir fehlen ' + missing.length + ' Dokument' + (missing.length === 1 ? '' : 'e');
+    h += '<div role="note" style="background:#fef4e7;border:1px solid #d4852e;border-left:4px solid #d4852e;border-radius:10px;padding:14px 18px;margin:32px 0 16px;font-size:13px;line-height:1.6;color:#2D2319">';
+    h += '<strong style="color:#c45e3a">Bevor du weiterliest:</strong> Dieses Tool prüft nur, ob ein Dokument <strong>benannt</strong> ist — nicht, ob es inhaltlich und formal wirksam ist. Bei Patientenverfügung und Testament ist das besonders kritisch. Nutze den Selbst-Check je Dokument unten.';
+    h += '</div>';
+
+    h += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:0 0 32px">';
+    h += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(22px,4.5vw,32px);font-weight:800;color:var(--mr-text);margin:0 0 12px;line-height:1.25">';
+    h += 'Du hast ' + has.length + ' von ' + relevant + ' Dokument' + (relevant === 1 ? '' : 'en') + ' benannt';
     h += '</h2>';
-    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin:0">' + (missing.length === 0 ? 'Du bist gut vorbereitet. Bewahre die Dokumente sicher auf und informiere deine Vertrauensperson.' : 'Hier sind die Dokumente, die du noch brauchst:') + '</p>';
+    h += '<p style="font-size:15px;color:var(--mr-text-muted);margin:0">Angekreuzt heißt nicht rechtswirksam. Diese Auswertung zeigt, was zu deiner Situation passt — ob die benannten Dokumente auch greifen, prüfst du im Selbst-Check je Karte.</p>';
     h += '</div>';
 
     if (has.length > 0) {
-      h += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:28px 0 12px">✓ Du hast bereits</h3>';
-      has.forEach(function(d){ h += renderDocCard(d, true); });
+      h += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:28px 0 12px">Bereits benannt — bitte auf Wirksamkeit prüfen</h3>';
+      has.forEach(function(d){ h += renderOwnedCard(d); });
     }
 
     if (missing.length > 0) {
       h += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:28px 0 12px">Das brauchst du noch:</h3>';
       missing.forEach(function(d){ h += renderDocCard(d, false); });
+    }
+
+    if (state.auslandsbezug) {
+      h += '<div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:var(--mr-radius);padding:20px 22px;margin:28px 0;font-size:14px;line-height:1.7">';
+      h += '<h3 style="font-family:\'Fraunces\',serif;font-size:16px;font-weight:700;margin:0 0 8px">Hinweis: Wohnsitz oder Vermögen im Ausland</h3>';
+      h += '<p style="margin:0 0 8px;color:var(--mr-text-muted)">Bei einem Auslandsbezug kann sich richten, welches nationale Erbrecht überhaupt anwendbar ist. Nach der EU-Erbrechtsverordnung (EU-ErbVO, Verordnung (EU) Nr. 650/2012) gilt grundsätzlich das Recht des Staates des letzten gewöhnlichen Aufenthalts — eine Rechtswahl zugunsten des Heimatrechts kann aber möglich sein.</p>';
+      h += '<p style="margin:0;color:var(--mr-text-muted)">Bei binationalen Ehen kann zusätzlich abweichendes Familien- und Scheidungsrecht eine Rolle spielen (u. a. Rom-III-Verordnung). Das kann deine Vorsorge-Dokumente betreffen — hier ist eine fachliche Beratung besonders sinnvoll.</p>';
+      h += '</div>';
     }
 
     h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:28px 0;font-size:13px;line-height:1.7;color:var(--mr-text-muted)">';
@@ -410,8 +477,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       state.situation = null;
       state.ownedDocs = [];
       state.housing = null;
+      state.auslandsbezug = false;
       $$('.vc-opt-btn.selected').forEach(function(b){ b.classList.remove('selected'); });
       $$('#vc-docs-options input').forEach(function(cb){ cb.checked = false; });
+      var at = $('#vc-ausland-toggle'); if (at) at.checked = false;
       enableBtn('#vc-next-0', false);
       enableBtn('#vc-next-2', false);
       setStep(0);
