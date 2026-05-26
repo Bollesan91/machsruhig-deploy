@@ -61,6 +61,45 @@
 10. Autoren-/Redaktionsprofil + Trust.
 11. Welle E (Tier-Bestattung, Auswanderer, Patchwork-Familie).
 
+## Nächste Session — Stadt-Polish-Welle (Top 5)
+
+Aus 2 externen Audits konsolidiert. Pro Stadt 2–4h UI-Re-Arrangement (keine Recherche-Neu-Welle — Inhalte sind da, müssen prominenter werden). Validation via Helper-V3 Tab gegen content-loop-pipeline raw-URL nach jeder Stadt oder am Ende der Welle.
+
+**Berlin** (~3h):
+- Bezirks-Matrix der 12 Standesämter als Tabelle oben
+- FAQ-Block direkt auf der Seite sichtbar (nicht nur JSON-LD)
+- Schnelle Träger-Übersicht „landeseigen / evangelisch / katholisch / sonstige"
+
+**Hamburg** (~2h):
+- Kontaktbox Hamburger Friedhöfe AöR prominent über dem Formular
+- Gebühren-Mini-Tabelle (Urnen-Reihengrab, Sarg-Reihengrab, Kapelle)
+- Standesamt-Sammellink (7 Bezirke)
+
+**München** (~2h):
+- Akutfall-Box VOR der kulturellen Einleitung (aktuell zu spät)
+- Kontaktkarte Städtische Friedhöfe München: Damenstiftstr. 8, Tel +49 89 23199 01
+- Quellenblock straffen — Primärquellen zuerst, Sekundäres weiter unten
+
+**Köln** (~3h):
+- FAQ als sichtbarer HTML-Block (aktuell nur JSON-LD)
+- Gebührenlink Stadt Köln nach oben (operatives Tool)
+- Stadt-Köln-Hinweis „persönliche Vorsprache meist nicht nötig" prominent
+- Gebühren gelten für ALLE städtischen Friedhöfe (häufiges Missverständnis)
+
+**Frankfurt** (~3h):
+- Trustbox (Autor + Stand + Quellen) oben
+- Akutfall-Box direkt unter H1
+- Verwaltungs-Kontakt: Adam-Riese-Straße 25, Tel 069 212 36480, Gebührenordnung gültig ab 01.01.2025
+
+Total ~13h. Welle in einem Branch (content-loop-pipeline) → Helper-V3-Validation pro Stadt oder am Ende → ein Commit + Push.
+
+NICHT in dieser Welle:
+- Trustbox-Komponente auf ALLEN 48 Pages (eigene Cross-Page-Welle)
+- Schema-Pakete WebPage+Article (statt LocalBusiness) — eigene technische Welle
+- Akutfall-Hero-Umbau auf Homepage (6-8h, Phase A laut BACKLOG.md)
+- Standardisierter Lead-Form-Disclosure-Block auf allen Stadt-Pages
+- Externe Reviewer-Pool real aufbauen (Messgate)
+
 ## Offene Fragen
 - Keine akuten. 3 Tools strukturell durch Helper-V3-Adversarial-Audit (6 Iterationen) gegangen, alle VALIDITY_PASS, live ab diesem Deploy. Optional-Findings für Phase 2 dokumentiert.
 
