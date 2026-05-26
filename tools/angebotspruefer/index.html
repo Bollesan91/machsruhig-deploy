@@ -250,13 +250,20 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     currentStep:1
   };
 
-  // V2: Cost-Beitrag pro Posten (zum Rausrechnen aus Range, wenn "kommt separat")
-  // Werte in EUR, vor Region-Multiplier
+  // V2.2: Cost-Beitrag pro Posten (zum Rausrechnen aus Range, wenn "kommt separat")
+  // WICHTIG: Nur Posten hier listen, die TATSÄCHLICH in der baseRange enthalten sind.
+  // baseRange (z.B. Erd 4500-9500) = Bestattung selbst inkl. Friedhof + Krematorium.
+  // Grabstein und Grabpflege sind NICHT in baseRange (kommen separat NACH der Bestattung).
+  // Werte in EUR, vor Region-Multiplier.
   var SEPARAT_KOSTEN={
     friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:600,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','anonyme']},
     krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
-    trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400},
-    grabstein:{label:'Grabstein (bestelle ich später separat)',min:400,max:7000,excludeBA:['anonyme','seebestattung']}
+    trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400}
+  };
+  // Hinweis-Posten (NICHT in baseRange, kein Abzug — nur Info im Ergebnis)
+  var INFO_POSTEN={
+    grabstein:{label:'Grabstein bestelle ich später separat',excludeBA:['anonyme','seebestattung']},
+    grabpflege:{label:'Grabpflege regele ich separat'}
   };
 
   // ===== Helpers =====
