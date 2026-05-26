@@ -7,20 +7,18 @@
 - **Angebotsprüfer v2.4 LIVE, Validity-PASS:** Internes VALIDITY_FAIL (3/3) durch unabhängigen Helper-V3-Audit (frischer Chrome-Tab gegen Live-URL) bestätigt → 5 Iterationen Rebuild (v2 → v2.4-Polish). v2.4 hat im finalen Fresh-Tab-Audit (Tab 1532777164) bestanden. Kern-Änderungen: SEPARAT_KOSTEN-Logik (Friedhofsgebühren raus aus Range), INFO_POSTEN-Konstante (Grabstein/Grabpflege ohne Range-Abzug), pflicht-Flag aktiviert, Pauschale nicht abgestraft, ROT nur bei kumuliertem Risiko (sumRatio<0.3 AND klärungsRatio>=0.7 AND !userHasExplained), High-Side-ROT bei >=2x, YMYL-Wording ("Lockangebot" raus → neutrale Klärungs-Sprache).
 - **P0-Versicherung während Rebuild:** Tool noindex + 16 CTAs (8 Seiten × 2) neutralisiert während v2-Bauphase, nach v2.3-Pass sauberer Rollback.
 - **ASCII-Canonical-Fix:** `bestatter/luebeck/` + `bestatter/moenchengladbach/` ASCII-Stubs zeigen jetzt percent-encoded canonical auf Umlaut-Hauptversion (`l%C3%BCbeck` / `m%C3%B6nchengladbach`). Commit `123bb90`.
-- **Cluster × v2.4 Konsistenz-Sweep (Helper-V3 Outcome-Validity-Audit):** Reviewer fand 0/8 PASS — alle 8 Cluster-Pages versprachen v1-Tool-Verhalten. 3-Pass-Sweep deployed (`2e77b43`, `01a2ab2`): "Lockangebot"/"Pflicht-Posten"/"vermisste Posten"/"18 Posten"/"10 Fragen"/Friedhof-Red-Flag-Logik konsistent auf v2.4-Wording angeglichen (Klärungspunkte / Kern-Posten / 9–18 / "auffällig niedrig statt Lockangebot"). Plus Seebestattung-Selbstwiderspruch (Intro: "keine Friedhofsgebühren" vs Template-Sektionen mit Friedhof-Bullets) durch See-Pendants ersetzt (Reederei, Begleitfahrt, seetaugliche Urne). Plus Tool-meta-description und Page-1-OG/Article angeglichen. Re-Audit → 2 PASS / 4 TUNE / 1 RE-OPEN, alle Findings ausser Page 5 Body-Intent gefixt + Final-Verify PASS.
-- **Methodik-Lesson:** Erster Helper-V3-Lauf nutzte fälschlich denselben Tab für iteratives Review → Sycophancy-Risiko. Korrektur: pro Iteration frischer Tab. Lesson dokumentiert für Memory-Update.
+- **Cluster × v2.4 Konsistenz-Sweep (Helper-V3 Outcome-Validity-Audit):** Reviewer fand 0/8 PASS — alle 8 Cluster-Pages versprachen v1-Tool-Verhalten. 3-Pass-Sweep deployed (`2e77b43`, `01a2ab2`): "Lockangebot"/"Pflicht-Posten"/"vermisste Posten"/"18 Posten"/"10 Fragen"/Friedhof-Red-Flag-Logik konsistent auf v2.4-Wording angeglichen (Klärungspunkte / Kern-Posten / 9–18 / "auffällig niedrig statt Lockangebot"). Plus Seebestattung-Selbstwiderspruch (Intro: "keine Friedhofsgebühren" vs Template-Sektionen mit Friedhof-Bullets) durch See-Pendants ersetzt (Reederei, Begleitfahrt, seetaugliche Urne). Plus Tool-meta-description und Page-1-OG/Article angeglichen. Re-Audit → 2 PASS / 4 TUNE / 1 RE-OPEN, alle Findings gefixt + Final-Verify PASS.
+- **Page 5 (`bestatter-rechnung-pruefen`) Body-Rewrite (`2912895` + YMYL-Rollback `9304188`):** Page hatte H1 "Bestatter-Rechnung prüfen" und 90 % Vor-Unterschrift-Body. Neuer Body: TRIAGE (Festpreis vs KV vs kein Angebot), Schritt-für-Schritt-Abgleich, Fremdleistungen/durchlaufende Posten (mit MwSt-Heuristik: Sarg/Urne 19 %, Friedhofsgebühren USt-frei, Floristik 7 %/19 %), Rote Flaggen IN DER RECHNUNG, Was-tun-bei-zu-hoher-Rechnung. FAQ-Erweiterung (HTML + JSON-LD wortgleich): § 649 Abs. 2 BGB Anzeigepflicht, § 280 BGB Schadensersatz-Hebel (konjunktivisch), § 632 BGB ortsüblicher Preis bei fehlendem Angebot, § 195 BGB Verjährung (keine Reklamationsfrist-Hallu). Final WebFetch-Verify: Section-Reihenfolge sauber, 6 §-Refs korrekt.
+- **Methodik-Lessons:** (a) Erster Helper-V3-Lauf nutzte fälschlich denselben Tab für iteratives Review → Sycophancy-Risiko. Korrektur: pro Iteration frischer Tab. (b) **YMYL-§-Lesson**: Plan-Reviewer hatte WebSearch gemacht und behauptet, § 650 BGB sei der Kostenanschlag-Paragraph. Re-Audit-Reviewer korrigierte zu § 649 BGB — dejure.org/gesetze-im-internet.de bestätigte: § 649 BGB n.F. = Kostenanschlag, § 650 BGB = Werklieferungsvertrag, § 648 BGB = freie Kündigung (was historisch § 649 a.F. war). Bei §-Aussagen IMMER selbst gegen Primärquelle prüfen, auch wenn Reviewer behauptet, verifiziert zu haben.
 
 ## Nächste Schritte (priorisiert, Messgate-Logik)
-**Offener Cluster-Rest:**
-1. **Page 5 `bestatter-rechnung-pruefen` Body-Rewrite** (Task #35): Hero ist auf "Rechnungsprüfung NACH Beisetzung" entkoppelt, Body bleibt aber 90% Vor-Unterschrift-Content (5-Ebenen, Rote Flaggen, 10 Fragen). Brauche Post-Beisetzung-Sektionen: Rechnung vs KV abgleichen, §649-Toleranz, Reklamationsrecht, Schlussabnahme.
-
 **Hinter dem Messgate (erst wenn machsleicht-Indexierung beweist, dass Content rankt):**
-2. Lead-Funnel + Einwilligung sauber (12–30h).
-3. Autoren-/Redaktionsprofil + Trust (8–20h).
-4. Welle C (Sozialbestattung) + Welle D (Vorsorge für Singles 60+) aus 90-Tage-Roadmap.
+1. Lead-Funnel + Einwilligung sauber (12–30h).
+2. Autoren-/Redaktionsprofil + Trust (8–20h).
+3. Welle C (Sozialbestattung) + Welle D (Vorsorge für Singles 60+) aus 90-Tage-Roadmap.
 
 ## Offene Fragen
-- Keine akuten. Trust-Risiko Angebotsprüfer entschärft, Cluster-Konsistenz hergestellt, SEO-Hygiene-Mini-Rest erledigt.
+- Keine akuten. Trust-Risiko Angebotsprüfer entschärft, Cluster-Konsistenz hergestellt, Page-5-Body-Intent gelöst inkl. YMYL-§-Korrektur, SEO-Hygiene-Mini-Rest erledigt.
 
 ---
 
