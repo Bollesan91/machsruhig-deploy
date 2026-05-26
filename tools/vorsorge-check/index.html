@@ -189,7 +189,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       selfCheck:['Ist die gewünschte Betreuerin / der gewünschte Betreuer namentlich benannt?','Sind, falls gewollt, bestimmte Personen ausdrücklich ausgeschlossen?']},
     {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet die gesetzliche Erbfolge. Das gesetzliche Erbrecht des Partners (§ 1931 BGB) gilt nur bei Ehe oder eingetragener Lebenspartnerschaft — Partner ohne Trauschein erben kraft Gesetzes nichts. Auch Patenkinder oder Vereine werden ohne Testament nicht bedacht.',link:'/vorsorge/testament',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'empfohlen',unverheiratet:'dringend',verheiratet:'dringend',kindern:'dringend',alleinerziehend:'dringend'},
       selfCheck:['Ist es entweder vollständig eigenhändig geschrieben — mit Ort, Datum und Unterschrift (§ 2247 BGB)?','Oder ist es notariell beurkundet?','Ist es sicher verwahrt (z. B. amtliche Verwahrung beim Nachlassgericht)?']},
-    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'#',situation:['kindern','alleinerziehend'],requireChildren:true,priority:'dringend',
+    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'#',situation:[],requireChildren:true,priority:'dringend',
       selfCheck:['Sind die minderjährigen Kinder erfasst, für die sie gelten soll?','Ist der Wunsch-Vormund namentlich benannt?','Ist sie formgültig festgehalten (in einem Testament oder eigener letztwilliger Verfügung)?']},
     {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
       selfCheck:['Ist die Bestattungsart festgelegt (Erd-, Feuer-, See- oder andere Bestattung)?','Ist ein Ort oder Friedhof benannt?','Weiß die Person, die sich kümmern soll, von deinen Wünschen?']},
@@ -248,7 +248,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
   });
   $('#vc-next-0').addEventListener('click', function(){
-    if (state.situation) setStep(1);
+    if (!state.situation) return;
+    // FIX-2026-05-26 (Re-Audit-Iter-3): hasMinorChildren vorbelegen bei Eltern-Familienstand
+    if (state.situation === 'kindern' || state.situation === 'alleinerziehend') {
+      state.hasMinorChildren = true;
+      var cb = document.getElementById('vc-minor-children');
+      if (cb) cb.checked = true;
+    }
+    setStep(1);
   });
 
   // ===== Step 1: Documents =====
@@ -387,12 +394,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   function renderResult(){
-    // FIX-2026-05-26 (Re-Audit-Iteration): isInScope entkoppelt Sorgerechtsverfügung
-    // von Single-Select Familienstand — Eltern minderjähriger Kinder in Partnerschaft
-    // (verheiratet/unverheiratet) bekommen sie sonst nie angezeigt (Re-Audit-FAIL Linse 1/5).
+    // FIX-2026-05-26 (Re-Audit-Iter-3): requireChildren-Docs EXKLUSIV via hasMinorChildren.
+    // Vorher Iter-1.1: kindern/alleinerziehend → sorgerechtsverfuegung in scope unabhängig vom Alter
+    // → False-Alarm bei erwachsenen Kindern. Jetzt: NUR das Alters-Flag entscheidet.
     function isInScope(d){
-      return d.situation.indexOf(state.situation) >= 0
-          || (d.requireChildren && state.hasMinorChildren);
+      if (d.requireChildren) return state.hasMinorChildren;
+      return d.situation.indexOf(state.situation) >= 0;
     }
     var missing = DOCUMENTS.filter(function(d){ return isInScope(d) && state.ownedDocs.indexOf(d.id) < 0; });
     var has = DOCUMENTS.filter(function(d){ return isInScope(d) && state.ownedDocs.indexOf(d.id) >= 0; });

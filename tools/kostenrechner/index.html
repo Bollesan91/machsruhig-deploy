@@ -352,7 +352,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     $('#btn-copy').addEventListener('click', function(){
       var text = 'BESTATTUNGSKOSTEN — RICHTWERT\n';
       text += 'Erstellt mit machsruhig.de/tools/kostenrechner\n\n';
-      text += 'GESCHÄTZTE KOSTEN: ca. ' + fmt(result.min) + '–' + fmt(result.max) + ' €\n\n';
+      text += 'GESCHÄTZTE BESTATTER- & GRUNDLEISTUNG: ca. ' + fmt(result.min) + '–' + fmt(result.max) + ' €\n';
+      text += '(OHNE kommunale Friedhofsgebühr — 1.000–4.000 € separat erfragen)\n\n';
       text += 'DEINE AUSWAHL:\n';
       zus.forEach(function(z){ text += '• ' + z.label + ': ' + z.wert + '\n'; });
       if (pflege) {
