@@ -772,10 +772,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if (!COST_MAPPING[key]) return;
 
       // Sarg-Qualität als Multiplikator (einfach 0.7, mittel 1.0, hochwertig 1.4)
+      // FIX-2026-05-26 (Iter-7 Polish): Bei See/Baum/anonyme ist Kremationssarg Pflicht
+      // (wird verbrannt) — keine sinnvolle "hochwertig"-Stellschraube. Multiplier auf 1.0 deckeln.
       var qualityMult = 1.0;
       if (key === 'sarg') {
-        var SARG_QUAL = {einfach:0.7, mittel:1.0, hochwertig:1.4};
-        qualityMult = SARG_QUAL[state.sargQualitaet] || 1.0;
+        var _isCremationOnly = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonyme');
+        if (_isCremationOnly) {
+          qualityMult = 1.0;
+        } else {
+          var SARG_QUAL = {einfach:0.7, mittel:1.0, hochwertig:1.4};
+          qualityMult = SARG_QUAL[state.sargQualitaet] || 1.0;
+        }
       }
 
       // Grabtyp als Multiplikator auf Friedhofsgebühren
