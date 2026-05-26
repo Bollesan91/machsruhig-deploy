@@ -409,12 +409,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
 
     // V2.3: INFO_POSTEN render (Grabstein/Grabpflege als "kommt später separat")
+    // V2.4: default vorangehakt für alle Bestattungsarten (außer wo explizit ausgeschlossen),
+    //       da die Posten typisch NICHT im Bestatter-Erstangebot stehen. User kann es deaktivieren
+    //       wenn das Angebot ausnahmsweise doch Grabstein/Grabpflege enthält.
     var infoHtml='';
     Object.keys(INFO_POSTEN).forEach(function(key){
       var ip=INFO_POSTEN[key];
       if(ip.condBA && ip.condBA.indexOf(ba)===-1)return;
       if(ip.excludeBA && ip.excludeBA.indexOf(ba)>=0)return;
-      infoHtml+='<div class="ap-check-row"><input type="checkbox" id="ap-i-'+key+'" data-key="'+key+'">';
+      // Default vorangehakt
+      state.info[key]=true;
+      infoHtml+='<div class="ap-check-row"><input type="checkbox" id="ap-i-'+key+'" data-key="'+key+'" checked>';
       infoHtml+='<label for="ap-i-'+key+'">'+esc(ip.label)+'</label></div>';
     });
     $('#ap-info-list').innerHTML=infoHtml;
@@ -468,8 +473,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if(p.excludeBA && p.excludeBA.indexOf(state.bestattungsart)>=0)return false;
       return true;
     });
-    // Separat-deklarierte ODER info-deklarierte Posten sind NICHT Klärungsbedarf (User hat sie erklärt)
+    // V2.4: Nur PFLICHT-Posten zählen als Klärungsbedarf. Optionale Posten (Floristik, Aufbahrung etc.)
+    // ohne Häkchen heißen "nicht gewählt" — nicht "muss geklärt werden".
+    // Separat-deklarierte ODER info-deklarierte Posten sind ebenfalls NICHT Klärungsbedarf.
     var klärung=visible.filter(function(p){
+      if(!p.pflicht)return false; // V2.4: optionale Posten nie Klärungsbedarf
       if(state.posten[p.key])return false; // angehakt
       if(state.separat[p.key])return false; // als separat deklariert
       if(state.info[p.key])return false; // als "kommt typischerweise später separat" deklariert
@@ -514,7 +522,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     }
 
     // Klärungsbedarf-Signal (v3: striktere Schwellen, Discounter-Toleranz)
-    var klärungsTotal=visible.length;
+    // V2.4: nur Pflicht-Posten als Bezugsgröße (sonst verzerrt Ratio durch viele Optionale)
+    var klärungsTotal=visible.filter(function(p){return p.pflicht;}).length;
     var klärungsRatio=klärungsTotal>0?klärung.length/klärungsTotal:0;
 
     // Bei Pauschale: Posten-Liste skip
@@ -533,10 +542,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       }
     }
 
-    // Pauschal-Flag: bewusste Wahl, nicht automatisch schlecht — nur Klärung erbitten
+    // V2.4: Pauschal-Flag = NUR Hinweis, KEIN automatischer Gelb-Downgrade.
+    // Eine Pauschale mit Preis-im-Rahmen ist legitim. Reasons werden zugefügt aber Status bleibt GRÜN
+    // wenn kein Preis-Signal oder Klärungsbedarf vorliegt.
     if(state.pauschal){
-      if(status==='green')status='yellow';
-      reasons.push('Du hast ein Komplettpaket / eine Pauschale. Bitte den Bestatter um eine aufgeschlüsselte Variante — nicht weil die Pauschale falsch wäre, sondern damit du vergleichen kannst, was enthalten ist.');
+      reasons.push('Du hast ein Komplettpaket / eine Pauschale. Falls du vergleichen willst: bitte den Bestatter um eine aufgeschlüsselte Variante — Pauschalen sind nicht automatisch schlecht.');
     }
 
     return {
