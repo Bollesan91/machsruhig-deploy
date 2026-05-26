@@ -147,14 +147,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   <!-- Step 4: Posten-Checkliste -->
   <div class="ap-step" id="ap-step-4">
     <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:32px 0 8px">Welche Posten sind im Angebot enthalten?</h2>
-    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:20px">Hake ab, was auf dem Angebot konkret aufgeführt ist. Sei eher streng — wenn ein Posten nur pauschal genannt wird oder du dir unsicher bist, lass ihn lieber leer.</p>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:8px">Hake ab, was auf dem Angebot konkret und einzeln ausgewiesen ist.</p>
+    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:20px;font-style:italic">Wenn ein Posten nicht angekreuzt ist, heißt das nicht „fehlt" — es heißt nur „bitte klären, was damit ist". Pauschalen sind ok (siehe unten).</p>
     <div id="ap-posten-list" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:8px 20px"></div>
-    <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px;margin-top:16px;font-size:13px;line-height:1.6;color:var(--mr-text-muted)">
-      <strong style="color:var(--mr-text)">Tipp:</strong> Wenn das Angebot einen einzelnen großen Pauschal-Posten ohne genaue Aufschlüsselung enthält (z.B. „Organisation und Betreuung: 1.900 €" ohne weitere Erklärung), markiere unten den entsprechenden Verdacht.
-    </div>
-    <label style="display:flex;align-items:flex-start;gap:12px;margin-top:16px;cursor:pointer;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px">
+
+    <!-- V2: Separat-Posten — werden aus dem Vergleichsrahmen rausgerechnet -->
+    <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:28px 0 8px">Kommen einzelne Posten separat (außerhalb des Angebots)?</h3>
+    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:14px">Manche Kosten rechnest du direkt mit anderen Stellen ab. Markiere, was bei dir zutrifft — wir ziehen das vom Vergleichsrahmen ab, damit die Bewertung fair bleibt:</p>
+    <div id="ap-separat-list" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:8px 20px"></div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:28px 0 8px">Komplettpaket oder Pauschale?</h3>
+    <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px">
       <input type="checkbox" id="ap-pauschal" style="width:20px;height:20px;margin-top:2px;cursor:pointer;flex-shrink:0">
-      <span style="font-size:14px;line-height:1.5">Mein Angebot enthält einen hohen, undeklarierten Pauschal-Posten (z.B. „Organisation", „Betreuung", „Komplettpaket" über 1.500 € ohne Aufschlüsselung).</span>
+      <span style="font-size:14px;line-height:1.5">Mein Angebot ist ein Komplett-Paket / Pauschale — Einzelposten werden nicht im Detail aufgeführt. <em style="color:var(--mr-text-muted)">(Markiere das, wenn du gar nicht erst versuchen kannst, oben einzeln abzuhaken. Pauschalen sind nicht automatisch schlecht — aber wir bitten dich dann, eine Aufschlüsselung zu erfragen.)</em></span>
     </label>
     <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
       <button type="button" class="back-btn" data-goto="3">← Zurück</button>
@@ -241,7 +246,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     gesamtsumme:0,
     posten:{},
     pauschal:false,
+    separat:{},
     currentStep:1
+  };
+
+  // V2: Cost-Beitrag pro Posten (zum Rausrechnen aus Range, wenn "kommt separat")
+  // Werte in EUR, vor Region-Multiplier
+  var SEPARAT_KOSTEN={
+    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:600,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','anonyme']},
+    krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
+    trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400},
+    grabstein:{label:'Grabstein (bestelle ich später separat)',min:400,max:7000,excludeBA:['anonyme','seebestattung']}
   };
 
   // ===== Helpers =====
@@ -347,9 +362,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     $('#ap-next-3').addEventListener('click',function(){setStep(4);});
   }
 
-  // ===== Step 4 — Posten =====
+  // ===== Step 4 — Posten + Separat =====
   function renderStep4(){
     var ba=state.bestattungsart;
+    // V2: "PFLICHT"-Markierung entfernt — Posten sind Klärungspunkte, kein Fehler bei leer
     var html='';
     var visible=POSTEN.filter(function(p){
       if(p.condBA && p.condBA.indexOf(ba)===-1)return false;
@@ -359,7 +375,6 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     visible.forEach(function(p){
       html+='<div class="ap-check-row"><input type="checkbox" id="ap-p-'+p.key+'" data-key="'+p.key+'">';
       html+='<label for="ap-p-'+p.key+'">'+esc(p.label);
-      if(p.pflicht)html+='<span class="pflicht">PFLICHT</span>';
       if(p.info)html+='<span class="info">'+esc(p.info)+'</span>';
       html+='</label></div>';
     });
@@ -367,6 +382,21 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     $$('#ap-posten-list input[type="checkbox"]').forEach(function(cb){
       cb.addEventListener('change',function(){state.posten[cb.dataset.key]=cb.checked;});
     });
+
+    // V2: Separat-Posten-Liste
+    var separatHtml='';
+    Object.keys(SEPARAT_KOSTEN).forEach(function(key){
+      var sp=SEPARAT_KOSTEN[key];
+      if(sp.condBA && sp.condBA.indexOf(ba)===-1)return;
+      if(sp.excludeBA && sp.excludeBA.indexOf(ba)>=0)return;
+      separatHtml+='<div class="ap-check-row"><input type="checkbox" id="ap-s-'+key+'" data-key="'+key+'">';
+      separatHtml+='<label for="ap-s-'+key+'">'+esc(sp.label)+'</label></div>';
+    });
+    $('#ap-separat-list').innerHTML=separatHtml;
+    $$('#ap-separat-list input[type="checkbox"]').forEach(function(cb){
+      cb.addEventListener('change',function(){state.separat[cb.dataset.key]=cb.checked;});
+    });
+
     $('#ap-pauschal').addEventListener('change',function(e){state.pauschal=e.target.checked;});
     $('#ap-next-4').addEventListener('click',function(){
       analyzeAndRender();
@@ -382,73 +412,100 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   // ===== Analyse =====
+  // V2 — Range-Adjustment + Klärungs-Logik (statt Fehl-Posten-Audit)
   function analyze(){
     var ba=BESTATTUNGSARTEN[state.bestattungsart];
-    var rangeMin=Math.round(ba.baseMin*state.bundeslandMult);
-    var rangeMax=Math.round(ba.baseMax*state.bundeslandMult);
+    var mult=state.bundeslandMult;
     var sum=state.gesamtsumme;
 
-    // Visible Pflicht-Posten
-    var pflicht=POSTEN.filter(function(p){
-      if(!p.pflicht)return false;
+    // V2.1: Adjusted Range — wenn User Posten als "separat" markiert, aus Vergleich rausrechnen
+    var baseMin=ba.baseMin, baseMax=ba.baseMax;
+    var separatList=[];
+    Object.keys(SEPARAT_KOSTEN).forEach(function(key){
+      var sp=SEPARAT_KOSTEN[key];
+      if(sp.condBA && sp.condBA.indexOf(state.bestattungsart)===-1)return;
+      if(sp.excludeBA && sp.excludeBA.indexOf(state.bestattungsart)>=0)return;
+      if(state.separat[key]){
+        baseMin-=sp.min;
+        baseMax-=sp.max;
+        separatList.push(sp);
+      }
+    });
+    // Untergrenze sichern
+    if(baseMin<0)baseMin=200;
+    if(baseMax<baseMin)baseMax=baseMin+1000;
+    var rangeMin=Math.round(baseMin*mult);
+    var rangeMax=Math.round(baseMax*mult);
+
+    // V2.2: Klärungs-Posten (NICHT "fehlt"). Sichtbare Posten ohne Haken UND nicht als "separat" deklariert.
+    var visible=POSTEN.filter(function(p){
       if(p.condBA && p.condBA.indexOf(state.bestattungsart)===-1)return false;
       if(p.excludeBA && p.excludeBA.indexOf(state.bestattungsart)>=0)return false;
       return true;
     });
-    var missingPflicht=pflicht.filter(function(p){return !state.posten[p.key];});
-    var missingOptional=POSTEN.filter(function(p){
-      if(p.pflicht)return false;
-      if(p.condBA && p.condBA.indexOf(state.bestattungsart)===-1)return false;
-      if(p.excludeBA && p.excludeBA.indexOf(state.bestattungsart)>=0)return false;
-      return !state.posten[p.key];
+    // Separat-deklarierte Posten sind NICHT Klärungsbedarf (User hat sie erklärt)
+    var klärung=visible.filter(function(p){
+      if(state.posten[p.key])return false; // angehakt
+      if(state.separat[p.key])return false; // als separat deklariert
+      return true;
     });
 
-    // Ampel-Logik
-    var inRange=sum>=rangeMin && sum<=rangeMax;
-    var aboveRange=sum>rangeMax;
-    var belowRange=sum<rangeMin;
-
+    // V2.3: Ampel-Logik — Default GRÜN, ROT NUR bei kumuliertem RISIKO + keine User-Erklärung
     var status='green';
     var reasons=[];
-    // Schwellen relativ zur Anzahl sichtbarer Pflicht-Posten (M3-Fix)
-    var pflichtTotal=pflicht.length;
-    var missingRatio=pflichtTotal>0?missingPflicht.length/pflichtTotal:0;
-    var criticalMissing=missingRatio>=0.5 && missingPflicht.length>=2; // ≥50% UND mind. 2 fehlen
-    var someMissing=missingPflicht.length>=1 && !criticalMissing;
 
-    if(criticalMissing){
-      status='red';
-      reasons.push('Mehrere Pflicht-Posten sind nicht klar im Angebot ausgewiesen ('+missingPflicht.length+' von '+pflichtTotal+' fehlen oder sind unklar).');
-    } else if(someMissing){
-      status='yellow';
-      reasons.push('Einige Pflicht-Posten sind nicht eindeutig ausgewiesen ('+missingPflicht.length+' von '+pflichtTotal+' offen). Vor Entscheidung klären.');
+    // Hat User aktiv erklärt? (separat-Markierung ODER Pauschale)
+    var userHasExplained=state.pauschal===true || Object.keys(state.separat||{}).some(function(k){return state.separat[k];});
+
+    // Preis-Signal: nie allein ROT, max GELB. ROT nur in Kombination mit Klärungsbedarf + keine Erklärung + extremer Unterpreis
+    var priceSignal=null; // null | 'low' | 'high'
+    var sumRatio=rangeMin>0?sum/rangeMin:1;
+    if(sum<rangeMin){
+      var diffLow=Math.round((1-sum/rangeMin)*100);
+      priceSignal='low';
+      if(diffLow>=50){
+        status='yellow';
+        reasons.push('Die Summe liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € für '+esc(ba.name)+' in '+esc(state.bundesland)+'; −'+diffLow+' %). Das kann legitim sein (z.B. Direktkremation, Discounter, oder weil Posten separat abgerechnet werden) — lass dir schriftlich bestätigen, was im Preis enthalten ist.');
+      } else if(diffLow>=25){
+        status='yellow';
+        reasons.push('Die Summe liegt unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Frage nach, ob alle für dich relevanten Posten enthalten sind.');
+      }
+    } else if(sum>rangeMax){
+      var diffHigh=Math.round((sum/rangeMax-1)*100);
+      priceSignal='high';
+      if(diffHigh>=30){
+        status='yellow';
+        reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
+      } else if(diffHigh>=10){
+        status='yellow';
+        reasons.push('Die Summe liegt am oberen Rand des üblichen Rahmens. Im Rahmen, aber frage nach welche Posten den Preis treiben.');
+      }
     }
 
-    if(belowRange){
-      var diff=Math.round((1-sum/rangeMin)*100);
-      // B3-Fix: extremer Unterpreis (≥50%) = Rot, Lockvogel-Verdacht
-      if(diff>=50){
+    // Klärungsbedarf-Signal (v3: striktere Schwellen, Discounter-Toleranz)
+    var klärungsTotal=visible.length;
+    var klärungsRatio=klärungsTotal>0?klärung.length/klärungsTotal:0;
+
+    // Bei Pauschale: Posten-Liste skip
+    if(!state.pauschal){
+      // ROT NUR bei: extremer Unterpreis (>70%) UND viele unklare Posten UND User hat NICHTS erklärt
+      // Das ist das pathologische Szenario "ich weiß nichts, alles ist undeklariert, Preis macht keinen Sinn"
+      if(sumRatio<0.3 && klärungsRatio>=0.7 && !userHasExplained){
         status='red';
-        reasons.push('Die Gesamtsumme liegt drastisch unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+state.bundesland+', −'+diff+' %). Das kann ein Hinweis auf ein Lockangebot sein, bei dem später hohe Nachforderungen entstehen. Lass dir alle Posten + Folgekosten schriftlich bestätigen.');
-      } else if(diff>=25){
-        status=status==='green'?'yellow':status;
-        reasons.push('Die Gesamtsumme liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+state.bundesland+'). Prüfe, ob wichtige Posten wirklich enthalten sind.');
-      }
-    }
-    if(aboveRange){
-      var diff2=Math.round((sum/rangeMax-1)*100);
-      if(diff2>=30){
-        status=status==='green'?'yellow':status;
-        reasons.push('Die Gesamtsumme liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+state.bundesland+'). Lass dir aufschlüsseln, was den höheren Preis ausmacht.');
-      } else if(diff2>=10){
+        reasons.push('Mehrere Klärungspunkte ('+klärung.length+' von '+klärungsTotal+') kombiniert mit einem auffällig niedrigen Preis. Das ist kein Urteil über den Bestatter — aber bitte gemeinsam mit ihm durchgehen, was im Angebot enthalten ist und was separat dazukommen kann.');
+      } else if(klärung.length>=3 && klärungsRatio>=0.5){
         if(status==='green')status='yellow';
-        reasons.push('Die Gesamtsumme liegt am oberen Rand des üblichen Rahmens. Im Rahmen, aber klärbar — frage nach, welche Posten den Preis treiben.');
+        reasons.push('Mehrere Posten sind nicht eindeutig ausgewiesen ('+klärung.length+' von '+klärungsTotal+'). Bei Discount-Angeboten ist das normal — frage einfach beim Bestatter nach, was inkludiert ist und was nicht.');
+      } else if(klärung.length>=1){
+        if(status==='green')status='yellow';
+        reasons.push('Einzelne Posten sind nicht ausgewiesen ('+klärung.length+' Punkte zum Klären). Beim Bestatter-Gespräch kurz ansprechen.');
       }
     }
 
+    // Pauschal-Flag: bewusste Wahl, nicht automatisch schlecht — nur Klärung erbitten
     if(state.pauschal){
-      status=status==='green'?'yellow':status;
-      reasons.push('Du hast einen hohen, undeklarierten Pauschal-Posten markiert. Bitte um eine konkrete Aufschlüsselung dieses Postens.');
+      if(status==='green')status='yellow';
+      reasons.push('Du hast ein Komplettpaket / eine Pauschale. Bitte den Bestatter um eine aufgeschlüsselte Variante — nicht weil die Pauschale falsch wäre, sondern damit du vergleichen kannst, was enthalten ist.');
     }
 
     return {
@@ -456,8 +513,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       reasons:reasons,
       rangeMin:rangeMin,
       rangeMax:rangeMax,
-      missingPflicht:missingPflicht,
-      missingOptional:missingOptional,
+      klärung:klärung,
+      separatList:separatList,
+      priceSignal:priceSignal,
       sum:sum,
       ba:ba
     };
@@ -465,17 +523,23 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   function generateFragen(result){
     var fragen=FRAGEN_STANDARD.slice();
-    // Dynamische Zusatzfragen
+    // Dynamische Zusatzfragen (V2: Klärung statt Fehl-Posten)
     var dynFragen=[];
-    if(result.missingPflicht.length>0){
-      var missingNames=result.missingPflicht.map(function(p){return p.label;}).slice(0,3);
-      dynFragen.push('Wo finden sich diese Posten im Angebot: '+missingNames.join(' / ')+'?');
+    if(result.klärung && result.klärung.length>0){
+      var names=result.klärung.map(function(p){return p.label;}).slice(0,3);
+      dynFragen.push('Wo finden sich diese Posten im Angebot — oder sind sie in einer Pauschale enthalten: '+names.join(' / ')+'?');
     }
     if(state.pauschal){
-      dynFragen.push('Was steckt konkret im Pauschal-Posten? Bitte aufschlüsseln nach Einzelleistungen.');
+      dynFragen.push('Können wir das Komplettpaket aufgeschlüsselt sehen — nicht zum Neu-Verhandeln, sondern damit ich die Posten verstehe?');
     }
-    if(result.status==='red'){
-      dynFragen.push('Können wir eine vollständig aufgeschlüsselte Variante des Angebots bekommen?');
+    if(result.priceSignal==='low'){
+      dynFragen.push('Welche Folgekosten können nach dem Angebot noch dazukommen?');
+    }
+    if(result.priceSignal==='high'){
+      dynFragen.push('Welche Premium-Posten oder Mehrleistungen treiben den Preis?');
+    }
+    if(result.separatList && result.separatList.length>0){
+      dynFragen.push('Welche Stellen muss ich für die separat-abgerechneten Posten (Friedhof, Krematorium etc.) kontaktieren?');
     }
     // Dynamische Fragen zuerst, dann Standard-Fragen, max. 12 insgesamt
     return dynFragen.concat(fragen).slice(0,12);
@@ -486,16 +550,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var result=analyze();
     var fragen=generateFragen(result);
 
+    // V2: Neutrale, klärungs-orientierte Texte. Kein "Lockangebot"-Wording mehr.
     var statusMap={
-      green:{icon:'✓',title:'Plausibel im Rahmen',text:'Auf Basis deiner Eingaben wirkt das Angebot im üblichen Rahmen für '+result.ba.name+' in '+state.bundesland+'. Es ist trotzdem sinnvoll, die folgenden Fragen vor der Entscheidung mit dem Bestatter zu klären.'},
-      yellow:{icon:'!',title:'Klärungsbedürftig',text:'Auf Basis deiner Eingaben gibt es offene Punkte, die du vor der Entscheidung klären solltest. Es ist nicht automatisch zu teuer oder unseriös — aber das Angebot ist in dieser Form noch nicht vollständig vergleichbar.'},
-      red:{icon:'!!',title:'Vor Entscheidung klären',text:'Auf Basis deiner Eingaben fehlen mehrere Pflicht-Posten oder die Preisspanne weicht stark ab. Das ist kein Urteil über den Bestatter — aber wir empfehlen dringend, die folgenden Fragen vor der Beauftragung zu klären, ggf. ein zweites Angebot einzuholen.'}
+      green:{icon:'✓',title:'Wirkt plausibel',text:'Auf Basis deiner Eingaben wirkt das Angebot im üblichen Rahmen für '+result.ba.name+' in '+state.bundesland+'. Trotzdem sinnvoll: Vor der Entscheidung die Fragen unten mit dem Bestatter durchsprechen.'},
+      yellow:{icon:'?',title:'Ein paar Punkte klären',text:'Auf Basis deiner Eingaben gibt es Punkte, die du vor der Entscheidung mit dem Bestatter besprechen solltest. Das ist KEIN Vorwurf gegen den Bestatter und KEIN Hinweis auf Lockangebote — es heißt nur: das Angebot ist in dieser Form noch nicht vollständig vergleichbar.'},
+      red:{icon:'!',title:'Vor Entscheidung gründlich klären',text:'Auf Basis deiner Eingaben kommen mehrere Klärungspunkte mit einem Preis-Signal zusammen. Das ist nicht automatisch ein schlechtes Angebot — wir empfehlen aber dringend, die Fragen unten gemeinsam mit dem Bestatter durchzugehen, bevor du unterschreibst.'}
     };
     var s=statusMap[result.status];
 
     var html='';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:24px;font-weight:700;margin:32px 0 8px">Dein Angebots-Check</h2>';
-    html+='<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">'+esc(result.ba.name)+' in '+esc(state.bundesland)+' · Angebots-Gesamtsumme: <strong>'+fmt(result.sum)+' €</strong> · üblicher Rahmen: <strong>'+fmt(result.rangeMin)+'–'+fmt(result.rangeMax)+' €</strong></p>';
+    var rangeNote=result.separatList.length>0?' · <em style="color:var(--mr-text-muted)">(Rahmen angepasst um '+result.separatList.length+' separat-abgerechnete Posten)</em>':'';
+    html+='<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">'+esc(result.ba.name)+' in '+esc(state.bundesland)+' · Angebots-Gesamtsumme: <strong>'+fmt(result.sum)+' €</strong> · vergleichbarer Rahmen: <strong>'+fmt(result.rangeMin)+'–'+fmt(result.rangeMax)+' €</strong>'+rangeNote+'</p>';
 
     // Ampel
     html+='<div class="ampel-box '+result.status+'">';
@@ -504,10 +570,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html+='<p class="ampel-text">'+s.text+'</p>';
     html+='</div>';
 
-    // Reasons
+    // Was du beim Bestatter klären solltest (Zusammenfassung)
     if(result.reasons.length>0){
       html+='<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin-bottom:24px">';
-      html+='<h3 style="font-family:\'Fraunces\',serif;font-size:17px;font-weight:700;margin-bottom:12px">Auffällige Punkte</h3>';
+      html+='<h3 style="font-family:\'Fraunces\',serif;font-size:17px;font-weight:700;margin-bottom:12px">Worauf wir aufmerksam machen wollen</h3>';
       html+='<ul style="list-style:none;padding:0">';
       result.reasons.forEach(function(r){
         html+='<li style="padding:8px 0 8px 20px;position:relative;font-size:14px;line-height:1.6"><span style="position:absolute;left:0;color:var(--mr-accent)">→</span>'+esc(r)+'</li>';
@@ -515,23 +581,23 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       html+='</ul></div>';
     }
 
-    // Missing pflicht
-    if(result.missingPflicht.length>0){
-      html+='<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:24px 0 12px">Nicht eindeutig im Angebot</h3>';
-      result.missingPflicht.forEach(function(p){
-        html+='<div class="missing-card critical"><strong>'+esc(p.label)+'</strong>';
+    // Separat-Posten — werden NICHT als Mangel dargestellt sondern als Info
+    if(result.separatList.length>0){
+      html+='<div style="background:#f0f6f0;border:1px solid #cce0cc;border-left:4px solid var(--mr-success,#5a8a5a);border-radius:8px;padding:14px 18px;margin-bottom:16px;font-size:14px;line-height:1.6">';
+      html+='<strong style="color:var(--mr-text)">Du hast markiert, dass diese Posten separat abgerechnet werden:</strong><ul style="padding-left:20px;margin-top:6px">';
+      result.separatList.forEach(function(p){html+='<li>'+esc(p.label)+'</li>';});
+      html+='</ul><p style="margin-top:6px;color:var(--mr-text-muted);font-size:13px">Diese sind aus dem Vergleichsrahmen rausgerechnet — gut, dass du sie kennst!</p></div>';
+    }
+
+    // Klärungs-Posten (NICHT "fehlt", NICHT critical-Red)
+    if(result.klärung.length>0 && !state.pauschal){
+      html+='<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:24px 0 12px">Bitte beim Bestatter klären</h3>';
+      html+='<p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:12px">Diese Posten waren auf deinem Angebot nicht eindeutig aufgeführt. Sie könnten in einer Pauschale enthalten, separat abrechenbar oder schlicht nicht relevant sein — frag einfach nach:</p>';
+      result.klärung.forEach(function(p){
+        html+='<div class="missing-card"><strong>'+esc(p.label)+'</strong>';
         if(p.info)html+='<br><span style="font-size:13px;color:var(--mr-text-muted)">'+esc(p.info)+'</span>';
         html+='</div>';
       });
-    }
-
-    // Missing optional (Hinweis, nicht critical)
-    if(result.missingOptional.length>=3){
-      html+='<details style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;margin:16px 0;padding:0">';
-      html+='<summary style="padding:14px 18px;font-weight:600;font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">Auch nicht im Angebot: optionale Posten ('+result.missingOptional.length+')<span aria-hidden="true" style="color:var(--mr-text-muted);font-size:16px">▾</span></summary>';
-      html+='<div style="padding:0 18px 14px;font-size:13px;color:var(--mr-text-muted);line-height:1.6">Das sind oft NICHT zwingend enthaltene Posten. Wenn du sie willst, müssen sie separat besprochen werden:<ul style="padding-left:20px;margin-top:8px">';
-      result.missingOptional.forEach(function(p){html+='<li>'+esc(p.label)+'</li>';});
-      html+='</ul></div></details>';
     }
 
     // 10 Fragen
@@ -584,10 +650,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
     $('#ap-restart').addEventListener('click',function(){
       state.bestattungsart=null;state.bundesland=null;state.bundeslandMult=1.0;
-      state.gesamtsumme=0;state.posten={};state.pauschal=false;
+      state.gesamtsumme=0;state.posten={};state.pauschal=false;state.separat={};
       $('#ap-bundesland').value='';$('#ap-gesamtsumme').value='';$('#ap-pauschal').checked=false;
       $('#ap-next-2').disabled=true;$('#ap-next-3').disabled=true;
       $$('#ap-posten-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
+      $$('#ap-separat-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
       setStep(1);
     });
     // Tool-Kette tracking
