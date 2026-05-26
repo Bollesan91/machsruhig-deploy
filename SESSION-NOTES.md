@@ -20,7 +20,21 @@
 
 - **P0-Rollback (in dieser Session):** noindex,nofollow → index,follow auf allen 3 Tools, P0-Kommentar entfernt. 12 Body-CTA-Blöcke auf 10 Trust-Pages aus pre-P0-Stand (483c9f1) restored — direkte Tool-Links statt Fallback-Ratgeber. Neutraler Scope-Hinweis im Tool-Body bleibt (informativ, nicht warnend).
 
-- **Deploy:** main aktualisiert mit content-loop-pipeline (Merge-Commit 5a2457b) + P0-Rollback + dieser Commit. Push löst Netlify-Deploy aus.
+- **Deploy (Welle 1):** main aktualisiert mit content-loop-pipeline (Merge-Commit 5a2457b) + P0-Rollback (Commit 4f98ff7). Push löst Netlify-Deploy aus.
+
+- **Hygiene-Welle (Commit 0b158d4):** 
+  - Sitemap +9 URLs (Angebotsprüfer + 8 Cluster-Pages), 100→109
+  - _redirects +15 /ratgeber/-Regeln (Stadt-Pages-Cleanup, 4 echte Mappings + 10 best-fit + catch-all)
+  - vorsorge/index.html +6 Cards (Bestattungsvorsorge, Sorgerechtsverfügung, Digitaler Nachlass, Vorsorge-allein-leben, Sozialbestattung, Ohne-Vorsorge) — Hub jetzt 10 Cards total
+  - sozialbestattung.html Quellenliste +2 BSG-Az (B 8 SO 20/10 R + B 8 SO 20/22 R) + VG-Münster als verlinkte Quellen
+  - Lübeck/Mönchengladbach Cross-Canonical-Schleife behoben (Umlaut-Hauptversionen jetzt self-canonical statt zur noindex-ASCII zu zeigen)
+
+- **Polish-Welle (Tool-Optional-Findings) — Helper-V3 GO_LIVE PASS:**
+  - bestattungskosten.html: Inline-Link "Pillar-Ratgeber Sozialbestattung" nach Sozial-Section
+  - beerdigung-planen.html: Inline-Link "Pillar Vorsorge allein leben"
+  - BKR: Sarg-Multiplier-Cap (qualityMult=1.0) bei See/Baum/anonyme Bestattungsart — Kremationssarg ist Pflicht, "hochwertig 1,4×" macht dort keinen Sinn
+  - KR: Floor-Band-Kollaps gefixt — `max = Math.max(floor+200, max)` statt fix `floor+200`. Vorher Spar-Szenario auf 200 €-Breite gestaucht.
+  - Validation via 1 Helper-V3-Tab gegen content-loop-pipeline raw-URL (commit 953fc0c), 5/8 Punkte direkt PASS, 3 weitere lokal verifiziert. BSG-Az-Wording B 8 SO 20/22 R gegen BSG-Primärquelle (bsg.bund.de) selbst-verifiziert: korrekt — Urteil betrifft SGB-II-Bezieher, nicht SGB-XII (dejure-Titel war irreführend).
 
 ## Nächste Schritte (priorisiert, Messgate-Logik)
 
