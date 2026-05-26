@@ -224,13 +224,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       return o ? o.label : valId;
     }
     var pflege = GRABPFLEGE[a.bestattungsart];
-    var zus = [
-      {label:'Bestattungsart', wert:findLabel('bestattungsart', a.bestattungsart)},
-      {label:'Region',         wert:findLabel('region', a.region)},
+    // FIX-2026-05-26 (Iter-5): Region nur anzeigen, wenn sie tatsächlich relevant war.
+    // Bei See/Baum/anonym wird Region intern auf 'mittelstadt' gesetzt (rf=1,0), darf aber nicht
+    // als "Deine Auswahl" auftauchen — sonst Phantom-Wert in Tabelle + Print + Copy.
+    var _noRegion = (a.bestattungsart === 'seebestattung' || a.bestattungsart === 'baumbestattung' || a.bestattungsart === 'anonym');
+    var zus = [{label:'Bestattungsart', wert:findLabel('bestattungsart', a.bestattungsart)}];
+    if (!_noRegion) zus.push({label:'Region', wert:findLabel('region', a.region)});
+    zus.push(
       {label:'Ausstattung',    wert:findLabel('ausstattung', a.ausstattung)},
       {label:'Trauerfeier',    wert:findLabel('trauerfeier', a.trauerfeier)},
       {label:'Grabstein',      wert:findLabel('grabstein', a.grabstein)}
-    ];
+    );
 
     var html = '';
     // Result hero
