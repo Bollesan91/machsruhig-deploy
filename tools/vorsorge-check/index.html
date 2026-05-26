@@ -67,7 +67,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <p style="font-size:clamp(15px,2.5vw,18px);color:var(--mr-text-muted);max-width:540px;margin:0 auto">In 3 Schritten zur persönlichen Vorsorge-Auswertung. Welche Dokumente fehlen dir?</p>
   </header>
 
-  <div role="alert" style="background:#fef4e7;border:2px solid #d4852e;border-radius:12px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6;color:#2D2319" class="no-print"><strong style="color:#c45e3a;display:block;margin-bottom:6px">⚠ Tool gerade in Überarbeitung</strong>Das Tool prüft aktuell nur, ob ein Dokument angekreuzt ist — nicht, ob es inhaltlich rechtswirksam ist. „Du hast alle wichtigen Dokumente" kann trotz unbestimmter Patientenverfügung (BGH XII ZB 61/16) oder formunwirksamem Testament erscheinen. Nutze die Liste als <strong>Inventar</strong>, nicht als Wirksamkeits-Bestätigung.</div>
+  <div role="note" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:14px 18px;margin:24px 0;font-size:13px;line-height:1.65;color:var(--mr-text-muted)" class="no-print"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Was der Check liefert</strong>Eine Liste der Vorsorge-Dokumente, die du in deiner Situation <em>benannt</em> hast — und welche fehlen. <strong>Angekreuzt heißt nicht rechtswirksam</strong>: pro Dokument findest du einen Selbst-Check (Form, Inhalt, Aktualität). Dieses Tool ersetzt keine Rechtsberatung.</div>
 
   <div id="vc-app">
 
@@ -249,12 +249,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   });
   $('#vc-next-0').addEventListener('click', function(){
     if (!state.situation) return;
-    // FIX-2026-05-26 (Re-Audit-Iter-3): hasMinorChildren vorbelegen bei Eltern-Familienstand
-    if (state.situation === 'kindern' || state.situation === 'alleinerziehend') {
-      state.hasMinorChildren = true;
-      var cb = document.getElementById('vc-minor-children');
-      if (cb) cb.checked = true;
-    }
+    // FIX-2026-05-26 (Iter-4): KEIN Prefill mehr — Iter-3-Reviewer "Default als
+    // Tatsachenbehauptung" für hasMinorChildren bei kindern/alleinerziehend
+    // führte zu False-Alarm bei erwachsenen Kindern. User entscheidet aktiv via Checkbox.
     setStep(1);
   });
 
@@ -503,6 +500,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       state.ownedDocs = [];
       state.housing = null;
       state.auslandsbezug = false;
+      // FIX-2026-05-26 (Iter-4): Restart-Leak hasMinorChildren beheben
+      state.hasMinorChildren = false;
+      var mcCb = document.getElementById('vc-minor-children');
+      if (mcCb) mcCb.checked = false;
+      var alCb = document.getElementById('vc-ausland-toggle');
+      if (alCb) alCb.checked = false;
       $$('.vc-opt-btn.selected').forEach(function(b){ b.classList.remove('selected'); });
       $$('#vc-docs-options input').forEach(function(cb){ cb.checked = false; });
       var at = $('#vc-ausland-toggle'); if (at) at.checked = false;

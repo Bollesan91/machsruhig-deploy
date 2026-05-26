@@ -71,7 +71,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <strong>🔒 Deine Privatsphäre:</strong> Alle Berechnungen laufen komplett in deinem Browser. Es werden keine Daten gespeichert oder an uns gesendet.
   </div>
 
-  <div role="alert" style="background:#fef4e7;border:2px solid #d4852e;border-radius:12px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6;color:#2D2319" class="no-print"><strong style="color:#c45e3a;display:block;margin-bottom:6px">⚠ Tool gerade in Überarbeitung</strong>Die kommunalen Friedhofsgebühren sind in der Berechnung aktuell nicht enthalten — das Ergebnis kann je nach Kommune 1.000–4.000 €+ unter den tatsächlichen Gesamtkosten liegen. Außerdem fehlt ein Mindestwert (Floor) für sehr günstige Kombinationen. Verstehe die Spanne als <strong>Bestatter-Grundleistung</strong>, nicht als „Gesamtkosten".</div>
+  <div role="note" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:14px 18px;margin:24px 0;font-size:13px;line-height:1.65;color:var(--mr-text-muted)" class="no-print"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Was der Rechner liefert</strong>Bandbreite für <strong>Bestatter- &amp; Grundleistung</strong> (Bestatter, Sarg/Urne, Trauerfeier, Grabstein). <strong>Nicht enthalten</strong>: kommunale Friedhofsgebühren (typ. 1.000–4.000 €, separat beim Friedhofsamt erfragen) und laufende Grabpflege.</div>
 
   <!-- Wizard mount-point — Step 0 statisch im Initial-HTML für SEO; JS überschreibt bei Interaktion -->
   <div id="wizard">
@@ -250,7 +250,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Fremdleistungen</strong> — Krematorium, Floristik, Anzeigen, Druckaufträge — der Bestatter rechnet sie durch, der Preis kommt vom Drittanbieter.</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Friedhofsgebühren</strong> — Grab, Nutzung, Beisetzung, Verlängerung — kommunale Gebühren, regional sehr unterschiedlich (300–400 %).</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Zusatzkosten</strong> — Grabstein, Grabpflege über Jahre, Trauerfeier, Anzeigen — fallen oft <em>nach</em> der Bestattung an.</li>';
-    html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Bestatter- &amp; Grundleistung</strong> — Was der Bestatter selbst abrechnet (Ebenen 1+2). Das ist die Zahl oben — kommunale Friedhofsgebühren (Ebene 3) und Folgekosten (Ebene 4) kommen <em>zusätzlich</em>.</li>';
+    html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Was steckt in der Zahl oben?</strong> Bestatterleistung + Sarg/Urne + Trauerfeier-Aufschlag + Grabstein-Aufschlag (also Ebenen 1, 2 und der Bestatter-Anteil von 4). <strong>Nicht enthalten:</strong> kommunale Friedhofsgebühren (Ebene 3, typ. 1.000–4.000 €) und laufende Grabpflege (Ebene 4 Folgekosten). Beide separat bei der Friedhofsverwaltung erfragen.</li>';
     html += '</ol>';
     html += '</div></details>';
 
