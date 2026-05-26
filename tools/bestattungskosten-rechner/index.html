@@ -8,8 +8,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bestattungskosten-Rechner — Was kostet eine Bestattung? | mach's ruhig</title>
 <meta name="description" content="Kostenloser Bestattungskosten-Rechner: Berechne realistische Kosten für deine Bestattung in wenigen Schritten. Nach Bestattungsart, Region und Extras. Ohne Anmeldung, 100% privat.">
-<meta name="robots" content="noindex,nofollow">
-<!-- noindex seit 2026-05-26: Tool in struktureller Überarbeitung wg. Validity-FAIL 3/3 (Helper-V3 Live-Audit). Siehe _dev/audit/validity-tools-sweep-2026-05-26.md. Rebuild läuft, Wieder-Indexierung nach Validity-PASS. -->
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://machsruhig.de/tools/bestattungskosten-rechner/">
 <meta property="og:title" content="Bestattungskosten-Rechner — Was kostet eine Bestattung?">
 <meta property="og:description" content="Interaktiver Rechner für Bestattungskosten. Berechne transparent, was eine Beerdigung oder Feuerbestattung kostet.">
@@ -773,10 +772,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if (!COST_MAPPING[key]) return;
 
       // Sarg-Qualität als Multiplikator (einfach 0.7, mittel 1.0, hochwertig 1.4)
+      // FIX-2026-05-26 (Iter-7 Polish): Bei See/Baum/anonyme ist Kremationssarg Pflicht
+      // (wird verbrannt) — keine sinnvolle "hochwertig"-Stellschraube. Multiplier auf 1.0 deckeln.
       var qualityMult = 1.0;
       if (key === 'sarg') {
-        var SARG_QUAL = {einfach:0.7, mittel:1.0, hochwertig:1.4};
-        qualityMult = SARG_QUAL[state.sargQualitaet] || 1.0;
+        var _isCremationOnly = (state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung' || state.bestattungsart === 'anonyme');
+        if (_isCremationOnly) {
+          qualityMult = 1.0;
+        } else {
+          var SARG_QUAL = {einfach:0.7, mittel:1.0, hochwertig:1.4};
+          qualityMult = SARG_QUAL[state.sargQualitaet] || 1.0;
+        }
       }
 
       // Grabtyp als Multiplikator auf Friedhofsgebühren

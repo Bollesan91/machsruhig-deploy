@@ -65,3 +65,20 @@
 # Bestattung-in shortcut
 /bestattung      /bestattung-in/   301
 /bestattung-in   /bestattung-in/   301
+
+# /ratgeber/-Aufräumarbeiten 2026-05-26 (Stadt-Page-Cleanup)
+/ratgeber/sozialbestattung*       /sozialbestattung                     301
+/ratgeber/bestattungsvorsorge*    /vorsorge/bestattungsvorsorge/        301
+/ratgeber/patientenverfuegung*    /vorsorge/patientenverfuegung/        301
+/ratgeber/checkliste-todesfall*   /tools/checkliste-todesfall/          301
+/ratgeber/vorsorge*               /vorsorge/                            301
+/ratgeber/seebestattung*          /seebestattung-angebot-pruefen        301
+/ratgeber/bestattungsverfuegung*  /vorsorge/                            301
+/ratgeber/trauerfeier*            /beerdigung-planen                    301
+/ratgeber/trauerredner*           /trauerrede-schreiben                 301
+/ratgeber/trauerhilfe*            /kondolenzschreiben                   301
+/ratgeber/bestatter-auswaehlen*   /bestatter-angebot-pruefen            301
+/ratgeber/erbschein-antrag*       /vorsorge/testament/                  301
+/ratgeber/sterbeurkunde*          /tools/checkliste-todesfall/          301
+/ratgeber/friedwald-ruheforst*    /bestattungsarten                     301
+/ratgeber/*                       /                                     301
