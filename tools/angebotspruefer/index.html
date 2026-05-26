@@ -8,8 +8,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Bestatter-Angebot prüfen — Ampel-Check in 3 Minuten | mach's ruhig</title>
 <meta name="description" content="Kostenloser Angebots-Check: Ist dein Bestatter-Angebot vollständig und plausibel? Ampel-Bewertung, Liste vermisster Posten und 10 konkrete Fragen für den Bestatter.">
-<meta name="robots" content="noindex,nofollow">
-<!-- noindex seit 2026-05-26: Tool in struktureller Überarbeitung wg. Validity-FAIL 3/3 (Range-Mismatch + Checkbox=Wahrheit). Siehe _dev/audit/angebotspruefer-validity-fail-2026-05-23.md. Rebuild läuft, Wieder-Indexierung nach Validity-PASS. -->
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://machsruhig.de/tools/angebotspruefer/">
 <meta property="og:title" content="Bestatter-Angebot prüfen — Ampel-Check in 3 Minuten">
 <meta property="og:description" content="Prüfe in 3 Minuten, ob dein Bestatter-Angebot vollständig und plausibel ist. Ampel + Fragenliste — kostenlos.">
@@ -156,6 +155,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:14px">Manche Kosten rechnest du direkt mit anderen Stellen ab. Markiere, was bei dir zutrifft — wir ziehen das vom Vergleichsrahmen ab, damit die Bewertung fair bleibt:</p>
     <div id="ap-separat-list" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:8px 20px"></div>
 
+    <!-- V2.3: INFO-Posten — kein Range-Abzug, nur Klärung-Filter (Grabstein/Grabpflege kommen typischerweise später separat) -->
+    <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:28px 0 8px">Posten, die typischerweise später separat geregelt werden</h3>
+    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:14px">Diese Posten sind meist <strong>nicht</strong> im Bestatter-Erstangebot enthalten. Markiere, wenn das bei dir zutrifft — wir nehmen sie dann von der Klärungs-Liste raus:</p>
+    <div id="ap-info-list" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:8px 20px"></div>
+
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:28px 0 8px">Komplettpaket oder Pauschale?</h3>
     <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px">
       <input type="checkbox" id="ap-pauschal" style="width:20px;height:20px;margin-top:2px;cursor:pointer;flex-shrink:0">
@@ -169,7 +173,6 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   <!-- Step 5: Result -->
   <div class="ap-step" id="ap-step-5">
-    <div role="alert" style="background:#fef4e7;border:2px solid #d4852e;border-radius:12px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6;color:#2D2319"><strong style="color:#c45e3a;display:block;margin-bottom:6px">⚠ Tool gerade in Überarbeitung</strong>Wir reparieren die Bewertungs-Logik aktuell auf Basis echter Bestattungs-Angebote. Das angezeigte Ergebnis kann seriöse Angebote fälschlich als „kritisch" einstufen — bitte <strong>NICHT</strong> auf das Ampel-Ergebnis verlassen. Nutze die Fragenliste unten als Inspiration für dein Bestatter-Gespräch.</div>
     <div id="ap-result" role="region" aria-live="polite" aria-label="Ergebnis des Angebots-Checks"></div>
   </div>
 
@@ -247,6 +250,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     posten:{},
     pauschal:false,
     separat:{},
+    info:{},
     currentStep:1
   };
 
@@ -404,6 +408,20 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       cb.addEventListener('change',function(){state.separat[cb.dataset.key]=cb.checked;});
     });
 
+    // V2.3: INFO_POSTEN render (Grabstein/Grabpflege als "kommt später separat")
+    var infoHtml='';
+    Object.keys(INFO_POSTEN).forEach(function(key){
+      var ip=INFO_POSTEN[key];
+      if(ip.condBA && ip.condBA.indexOf(ba)===-1)return;
+      if(ip.excludeBA && ip.excludeBA.indexOf(ba)>=0)return;
+      infoHtml+='<div class="ap-check-row"><input type="checkbox" id="ap-i-'+key+'" data-key="'+key+'">';
+      infoHtml+='<label for="ap-i-'+key+'">'+esc(ip.label)+'</label></div>';
+    });
+    $('#ap-info-list').innerHTML=infoHtml;
+    $$('#ap-info-list input[type="checkbox"]').forEach(function(cb){
+      cb.addEventListener('change',function(){state.info[cb.dataset.key]=cb.checked;});
+    });
+
     $('#ap-pauschal').addEventListener('change',function(e){state.pauschal=e.target.checked;});
     $('#ap-next-4').addEventListener('click',function(){
       analyzeAndRender();
@@ -450,10 +468,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if(p.excludeBA && p.excludeBA.indexOf(state.bestattungsart)>=0)return false;
       return true;
     });
-    // Separat-deklarierte Posten sind NICHT Klärungsbedarf (User hat sie erklärt)
+    // Separat-deklarierte ODER info-deklarierte Posten sind NICHT Klärungsbedarf (User hat sie erklärt)
     var klärung=visible.filter(function(p){
       if(state.posten[p.key])return false; // angehakt
       if(state.separat[p.key])return false; // als separat deklariert
+      if(state.info[p.key])return false; // als "kommt typischerweise später separat" deklariert
       return true;
     });
 
@@ -665,11 +684,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
     $('#ap-restart').addEventListener('click',function(){
       state.bestattungsart=null;state.bundesland=null;state.bundeslandMult=1.0;
-      state.gesamtsumme=0;state.posten={};state.pauschal=false;state.separat={};
+      state.gesamtsumme=0;state.posten={};state.pauschal=false;state.separat={};state.info={};
       $('#ap-bundesland').value='';$('#ap-gesamtsumme').value='';$('#ap-pauschal').checked=false;
       $('#ap-next-2').disabled=true;$('#ap-next-3').disabled=true;
       $$('#ap-posten-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
       $$('#ap-separat-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
+      $$('#ap-info-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
       setStep(1);
     });
     // Tool-Kette tracking
