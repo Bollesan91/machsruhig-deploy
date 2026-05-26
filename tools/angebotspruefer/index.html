@@ -472,10 +472,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       }
     } else if(sum>rangeMax){
       var diffHigh=Math.round((sum/rangeMax-1)*100);
+      var sumRatioMax=sum/rangeMax;
       priceSignal='high';
-      if(diffHigh>=30){
+      // V3 NEW: Sehr extreme Überschreitung (>+100%) → ROT, da auch ein Premium-Paket realistisch maximal +80-90% kostet
+      if(sumRatioMax>=2.0){
+        status='red';
+        reasons.push('Die Summe liegt sehr deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'; +'+diffHigh+' %). Selbst ein Premium-Paket bewegt sich meist innerhalb des doppelten Rahmens. Bitte den Bestatter dringend, Posten für Posten aufzuschlüsseln — und hole ein zweites Vergleichsangebot ein.');
+      } else if(diffHigh>=30){
         status='yellow';
-        reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
+        reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Das kann legitim sein (Premium-Sarg, aufwendige Trauerfeier, individueller Grabstein) — lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
       } else if(diffHigh>=10){
         status='yellow';
         reasons.push('Die Summe liegt am oberen Rand des üblichen Rahmens. Im Rahmen, aber frage nach welche Posten den Preis treiben.');
@@ -537,6 +542,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     }
     if(result.priceSignal==='high'){
       dynFragen.push('Welche Premium-Posten oder Mehrleistungen treiben den Preis?');
+    }
+    if(result.status==='red' && result.priceSignal==='high'){
+      dynFragen.push('Können wir das Angebot Posten für Posten durchgehen — und wie kommen wir gemeinsam auf eine Variante im üblichen Rahmen?');
     }
     if(result.separatList && result.separatList.length>0){
       dynFragen.push('Welche Stellen muss ich für die separat-abgerechneten Posten (Friedhof, Krematorium etc.) kontaktieren?');
