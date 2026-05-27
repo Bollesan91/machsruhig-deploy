@@ -38,3 +38,31 @@
 - Affiliate-Platzierung in Sozialbestattung-Blöcken (Stuttgart + Düsseldorf haben gleiche Issue wie Berlin hatte)
 - Du-Kasus-Mix global (klein vs groß) — affects 4 Cities
 - Datums-Hinweise an Gebühren-Tabellen (München, Stuttgart)
+
+---
+
+## Update: Wave 4 (post Iter-5) — Reviewer-Variance erkannt
+
+| City | Score | Δ Wave 3 → Wave 4 |
+|---|---|---|
+| Stuttgart | 88 | unverändert |
+| Düsseldorf | 89 | unverändert |
+| **Frankfurt** | **70** | **-14 (Reviewer-Variance + Iter-2-Bug)** |
+| Dortmund | — | Quota |
+
+### Reviewer-Variance Frankfurt
+Wave-1 + Wave-4 Reviewer geben gegensätzliche Primärquellen-Behauptungen für GVBl-Zitierung:
+- Wave-1: "Nr. 64 vom 6.10.2025 existiert nicht"
+- Wave-4: "Nr. 101 vom 16.12.2025 ist erfunden"
+
+Inhaltlich ungeklärt — braucht echte Primärquellen-Prüfung (Hessisches Landesrecht).
+
+### Iter-2-Bug in Frankfurt
+Welle B hat einen Hessen-Block hinzugefügt der sich mit dem Frankfurt-Original-Block duppliziert (Rat-Beil 2x, doppelte Fristen). Echtes In-Doc-Konsistenz-Problem.
+
+## Stop-Bedingung definiert (Diminishing Returns)
+- Stuttgart/Düsseldorf: Plateau bei 88/89 — Iter-5 hat Score nicht bewegt
+- Frankfurt: braucht menschliche Quellen-Prüfung
+- Dortmund: braucht Quota-Reset
+
+**Realistischer Endstand der Session: 7 von 8 ≥85 = Echtes Gold-Niveau.**
