@@ -20,7 +20,29 @@
 
 - **P0-Rollback (in dieser Session):** noindex,nofollow → index,follow auf allen 3 Tools, P0-Kommentar entfernt. 12 Body-CTA-Blöcke auf 10 Trust-Pages aus pre-P0-Stand (483c9f1) restored — direkte Tool-Links statt Fallback-Ratgeber. Neutraler Scope-Hinweis im Tool-Body bleibt (informativ, nicht warnend).
 
-- **Deploy:** main aktualisiert mit content-loop-pipeline (Merge-Commit 5a2457b) + P0-Rollback + dieser Commit. Push löst Netlify-Deploy aus.
+- **Deploy (Welle 1):** main aktualisiert mit content-loop-pipeline (Merge-Commit 5a2457b) + P0-Rollback (Commit 4f98ff7). Push löst Netlify-Deploy aus.
+
+- **Hygiene-Welle (Commit 0b158d4):** 
+  - Sitemap +9 URLs (Angebotsprüfer + 8 Cluster-Pages), 100→109
+  - _redirects +15 /ratgeber/-Regeln (Stadt-Pages-Cleanup, 4 echte Mappings + 10 best-fit + catch-all)
+  - vorsorge/index.html +6 Cards (Bestattungsvorsorge, Sorgerechtsverfügung, Digitaler Nachlass, Vorsorge-allein-leben, Sozialbestattung, Ohne-Vorsorge) — Hub jetzt 10 Cards total
+  - sozialbestattung.html Quellenliste +2 BSG-Az (B 8 SO 20/10 R + B 8 SO 20/22 R) + VG-Münster als verlinkte Quellen
+  - Lübeck/Mönchengladbach Cross-Canonical-Schleife behoben (Umlaut-Hauptversionen jetzt self-canonical statt zur noindex-ASCII zu zeigen)
+
+- **Polish-Welle (Tool-Optional-Findings) — Helper-V3 GO_LIVE PASS:**
+  - bestattungskosten.html: Inline-Link "Pillar-Ratgeber Sozialbestattung" nach Sozial-Section
+  - beerdigung-planen.html: Inline-Link "Pillar Vorsorge allein leben"
+  - BKR: Sarg-Multiplier-Cap (qualityMult=1.0) bei See/Baum/anonyme Bestattungsart — Kremationssarg ist Pflicht, "hochwertig 1,4×" macht dort keinen Sinn
+  - KR: Floor-Band-Kollaps gefixt — `max = Math.max(floor+200, max)` statt fix `floor+200`. Vorher Spar-Szenario auf 200 €-Breite gestaucht.
+  - Validation via 1 Helper-V3-Tab gegen content-loop-pipeline raw-URL (commit 953fc0c), 5/8 Punkte direkt PASS, 3 weitere lokal verifiziert. BSG-Az-Wording B 8 SO 20/22 R gegen BSG-Primärquelle (bsg.bund.de) selbst-verifiziert: korrekt — Urteil betrifft SGB-II-Bezieher, nicht SGB-XII (dejure-Titel war irreführend).
+
+
+
+- **Review-Konsolidierung (Commit c1b9159 + Trigger): 7 Punkt-Fakten + Wording-Fixes aus 2 externen Audits.**
+  - Datenfehler: Stuttgart 41→42, Hannover 16→19, Bonn Dutzend→40 (FAQ JSON-LD ≡ HTML synchron)
+  - Trust: Bremen Fake-Reviewer-Label raus
+  - Konsistenz: Homepage 50→48 Städte + ehrliches Vermittlungs-Wording, Berlin H1 Template-konsistent, Köln Du/Sie auf Du
+  - NICHT in dieser Welle (eigene Phasen): Akutfall-Hero (6-8h, Phase A), Trustbox+Lead-Form-Disclosure-Komponente (Cross-Page), Schema-Pakete (WebPage+Article statt LocalBusiness), Top-15 Stadt-Pages auf Gold (10-15h pro Stadt), externe Reviewer (Messgate)
 
 ## Nächste Schritte (priorisiert, Messgate-Logik)
 
@@ -38,6 +60,45 @@
 9. Lead-Funnel + Einwilligung sauber.
 10. Autoren-/Redaktionsprofil + Trust.
 11. Welle E (Tier-Bestattung, Auswanderer, Patchwork-Familie).
+
+## Nächste Session — Stadt-Polish-Welle (Top 5)
+
+Aus 2 externen Audits konsolidiert. Pro Stadt 2–4h UI-Re-Arrangement (keine Recherche-Neu-Welle — Inhalte sind da, müssen prominenter werden). Validation via Helper-V3 Tab gegen content-loop-pipeline raw-URL nach jeder Stadt oder am Ende der Welle.
+
+**Berlin** (~3h):
+- Bezirks-Matrix der 12 Standesämter als Tabelle oben
+- FAQ-Block direkt auf der Seite sichtbar (nicht nur JSON-LD)
+- Schnelle Träger-Übersicht „landeseigen / evangelisch / katholisch / sonstige"
+
+**Hamburg** (~2h):
+- Kontaktbox Hamburger Friedhöfe AöR prominent über dem Formular
+- Gebühren-Mini-Tabelle (Urnen-Reihengrab, Sarg-Reihengrab, Kapelle)
+- Standesamt-Sammellink (7 Bezirke)
+
+**München** (~2h):
+- Akutfall-Box VOR der kulturellen Einleitung (aktuell zu spät)
+- Kontaktkarte Städtische Friedhöfe München: Damenstiftstr. 8, Tel +49 89 23199 01
+- Quellenblock straffen — Primärquellen zuerst, Sekundäres weiter unten
+
+**Köln** (~3h):
+- FAQ als sichtbarer HTML-Block (aktuell nur JSON-LD)
+- Gebührenlink Stadt Köln nach oben (operatives Tool)
+- Stadt-Köln-Hinweis „persönliche Vorsprache meist nicht nötig" prominent
+- Gebühren gelten für ALLE städtischen Friedhöfe (häufiges Missverständnis)
+
+**Frankfurt** (~3h):
+- Trustbox (Autor + Stand + Quellen) oben
+- Akutfall-Box direkt unter H1
+- Verwaltungs-Kontakt: Adam-Riese-Straße 25, Tel 069 212 36480, Gebührenordnung gültig ab 01.01.2025
+
+Total ~13h. Welle in einem Branch (content-loop-pipeline) → Helper-V3-Validation pro Stadt oder am Ende → ein Commit + Push.
+
+NICHT in dieser Welle:
+- Trustbox-Komponente auf ALLEN 48 Pages (eigene Cross-Page-Welle)
+- Schema-Pakete WebPage+Article (statt LocalBusiness) — eigene technische Welle
+- Akutfall-Hero-Umbau auf Homepage (6-8h, Phase A laut BACKLOG.md)
+- Standardisierter Lead-Form-Disclosure-Block auf allen Stadt-Pages
+- Externe Reviewer-Pool real aufbauen (Messgate)
 
 ## Offene Fragen
 - Keine akuten. 3 Tools strukturell durch Helper-V3-Adversarial-Audit (6 Iterationen) gegangen, alle VALIDITY_PASS, live ab diesem Deploy. Optional-Findings für Phase 2 dokumentiert.
