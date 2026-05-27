@@ -1,109 +1,47 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 26. Mai 2026 (Abend/Nacht — Tools-Validity-Sweep + 6-Iter-Rebuild + Deploy)
+**Datum:** 27. Mai 2026 (Morgen — Stadt-Polish-Welle Top 5 + Konsistenz-Sweep + Deploy)
 
 ## Was wurde gemacht
-- **Audit + Validity-Sweep 3 Tools (Vorsorge-Check, Kostenrechner, Bestattungskosten-Rechner):** Initial-Audit via Helper-V3 Multi-Chat-Pipeline → 3 × `VALIDITY_FAIL`. Gleiche Pathologie-Klasse wie der Angebotsprüfer (Bezugsgröße + Anspruch>Datenbasis + Fehler-Asymmetrie). Audit-Doc: `_dev/audit/validity-tools-sweep-2026-05-26.md`.
+- **Stadt-Polish-Welle Top 5 (4 Städte, 5. Frankfurt offen):** Helper-V3 Writer parallel auf 2 Tabs pro Welle (Branch-Trick via Artifact-Download + Blob-Download). Constraint: KEINE Recherche-Neu-Welle, nur UI-Re-Arrangement.
+  - **Welle 1 (Commit 2621e85):** Berlin (+18k: Bezirks-Matrix 12 Standesämter, Träger-Tabelle 85/118/9/10=222, FAQ-Drift-Lesson respektiert — bestehender FAQ-Accordion unangetastet) + Hamburg (+11k: mr-contact-card Hamburger Friedhöfe AöR Fuhlsbüttler Str. 756, Gebühren-Mini-Tabelle aus Bestandscontent, Standesamt-Sammellink 7 Bezirke).
+  - **Welle 2 (Commit 8d20e14):** München (+20k: Akutbox unter H1 mit 3 Sofort-Schritten, mr-contact-card FBM Damenstiftstr. 8 +49 89 23199 01, Quellenblock-Straffung Primärquellen-first) + Köln (+14k: FAQ-Block als sichtbarer HTML-Accordion JSON-LD ≡ HTML wortgleich, Gebührenlink stadt-koeln.de prominent, Inline-Hinweis 'persönliche Vorsprache meist nicht nötig').
+- **Helper-V3-Validation per WebFetch (Bolle-Quota-Warnung war Threshold, kleine Outputs gingen durch — User-Korrektur 'Kann nicht sein' bestätigt):**
+  - Berlin Polish 6/6 PASS · Hamburg Polish 8/8 PASS · München Polish 8/8 PASS · Köln Polish 9/9 PASS
+- **End-Check Konsistenz-Sweep (Commit 3080c37 + 9e5e76d):**
+  - JSON-LD-Description Du-Form (Berlin + Hamburg): 'Vergleichen und finden Sie' → 'Finde'
+  - Berlin id=akut-todesfall → akutbox-berlin (Pattern-Naming einheitlich Hamburg/München/Köln)
+  - Köln id=akutbox-koeln + mr-contact-card Standesamt+Friedhofsamt + Träger-Übersicht-Tabelle (55 städt + 7 konfess + 2 muslimische Grabfelder)
+- **Konsistenz-Bilanz alle 4 Stadt-Pages:** H1-Format, akutbox-id, Träger-Info, Robots/Canonical, FAQ-Drift, Du-Anrede, § 74 SGB XII durchgängig OK. Berlin's mr-contact-card 'fehlt' bewusst (12 Bezirks-Standesämter = strukturell andere Verwaltungs-Lösung, Bezirks-Matrix erfüllt Pattern-Funktion).
+- **Deploy:** main aus content-loop-pipeline gemerged + Netlify-Build.
 
-- **P0-Versicherung (commit 8e04c46):** 3 Tools auf `noindex,nofollow` + Warn-Banner + 12 Body-CTA-Blöcke auf 10 Trust-Pages auf Fallback-Ratgeber umgeleitet. Pattern analog Angebotsprüfer-P0 (35c4008).
+## Nächste Schritte (priorisiert)
 
-- **Tool-Rebuild über 6 Helper-V3-Iterationen (Branch-Trick auf `content-loop-pipeline`):**
-  - **Iter-1 (Writer-Chat):** Vorsorge-Check v1 — Wirksamkeits-Selbstchecks pro Doc, Headline entkoppelt von missing.length (Reframe „N von M benannt"), Taxonomie erweitert (Unverheiratet-Slot + Auslands-Toggle), Sublabel-Klarheit, § 1777 → § 1782 BGB (Vormundschaftsreform 2023, Writer-Eigeninitiative). Kostenrechner mechanisch: Hero-Label „Bestatter- & Grundleistung", Friedhofsgebühr-Disclaimer, Region-Step-Skip See/Baum/anonym, Floor-Clamp. BKR mechanisch: Vergleichsbox kontextualisiert, Default-Annahmen-Block im Review-Step.
-  - **Iter-1.1:** BKR Enum-Bug `'anonym'` → `'anonyme'` (Sparszenario-Branch war tot). Vorsorge-Check: Sorgerechtsverfügung über `hasMinorChildren`-Flag entkoppelt vom Single-Select-Familienstand.
-  - **Iter-3:** Kostenrechner 5-Ebenen Punkt 5 (Doppelzähl-Falle: behauptete „Ebenen 1+2" obwohl auch Trauerfeier+Grabstein drin). Vorsorge-Check `isInScope`-Logik EXKLUSIV via `hasMinorChildren`-Flag (sorgerechtsverfuegung.situation:[]).
-  - **Iter-4:** Banner-Stale auf allen 3 Tools (P0-Warnungen waren obsolet, sagten Bugs die längst gefixt waren) → durch neutrale `role="note"`-Scope-Hinweise ersetzt. Vorsorge-Check Restart-Leak (hasMinorChildren wurde nicht zurückgesetzt) + Prefill-Tatsachenbehauptung entfernt.
-  - **Iter-5:** Kostenrechner Phantom-Region in „Deine Auswahl"-Tabelle + Print/Copy bei See/Baum/anonym (Region-Skip nur halb umgesetzt) — zus-Array conditional aufgebaut.
-  - **Iter-6 Kontroll-Audit:** Regressions-Check Kostenrechner-Fix — kein neuer Bug, Border-Logik arraylängen-relativ, Berechnung entkoppelt, Print-Hygiene intakt.
+**Phase A — Stadt-Polish-Welle abschließen:**
+1. **Frankfurt** (~3h) — letzte der Top-5 aus Reviews: Trustbox + Akutfall-Box + Verwaltungs-Kontakt Adam-Riese-Str. 25 / Tel 069 212 36480 / Gebührenordnung gültig ab 01.01.2025. Helper-V3 Writer + WebFetch-Validation.
 
-- **Finale Validity-Verdicts (alle drei PASS):** Vorsorge-Check ✅ (Iter-5), Kostenrechner ✅ (Iter-6), Bestattungskosten-Rechner ✅ (Iter-5).
+**Phase B — strukturelle Trust-Verdichtung (nach Frankfurt):**
+2. Trustbox-Komponente auf allen 48 Stadt-Pages (Autor + Stand + Quellen + Vermittlungs-Disclosure) als wiederverwendbares Pattern
+3. Lead-Form-Disclosure-Block einheitlich auf allen 48 Stadt-Pages (analog Standard aus Review 2: Wenn Beauftragung → Vermittlungsvergütung, Auswahl provisionsunabhängig)
+4. Schema-Audit: WebPage + Article + BreadcrumbList + FAQPage statt LocalBusiness (machsruhig ist kein Bestattungsunternehmen)
+5. Akutfall-Hero-Umbau auf Homepage — dreistufiger Einstieg (Akutfall / Planung / Vorsorge), Soforthilfe in Hero-Section
 
-- **P0-Rollback (in dieser Session):** noindex,nofollow → index,follow auf allen 3 Tools, P0-Kommentar entfernt. 12 Body-CTA-Blöcke auf 10 Trust-Pages aus pre-P0-Stand (483c9f1) restored — direkte Tool-Links statt Fallback-Ratgeber. Neutraler Scope-Hinweis im Tool-Body bleibt (informativ, nicht warnend).
+**Phase C — Stadt-Pages-Welle 2 (nach Phase A+B):**
+6. Berlin '116 vs 118 evangelische Friedhöfe' interne Inkonsistenz auflösen (Fact-Check gegen liste_friedhoefe.pdf der Stadt Berlin)
+7. weitere Stadt-Pages systematisch durch Polish-Pattern (Akutbox + mr-contact-card + Träger-Tabelle wo sinnvoll)
 
-- **Deploy (Welle 1):** main aktualisiert mit content-loop-pipeline (Merge-Commit 5a2457b) + P0-Rollback (Commit 4f98ff7). Push löst Netlify-Deploy aus.
-
-- **Hygiene-Welle (Commit 0b158d4):** 
-  - Sitemap +9 URLs (Angebotsprüfer + 8 Cluster-Pages), 100→109
-  - _redirects +15 /ratgeber/-Regeln (Stadt-Pages-Cleanup, 4 echte Mappings + 10 best-fit + catch-all)
-  - vorsorge/index.html +6 Cards (Bestattungsvorsorge, Sorgerechtsverfügung, Digitaler Nachlass, Vorsorge-allein-leben, Sozialbestattung, Ohne-Vorsorge) — Hub jetzt 10 Cards total
-  - sozialbestattung.html Quellenliste +2 BSG-Az (B 8 SO 20/10 R + B 8 SO 20/22 R) + VG-Münster als verlinkte Quellen
-  - Lübeck/Mönchengladbach Cross-Canonical-Schleife behoben (Umlaut-Hauptversionen jetzt self-canonical statt zur noindex-ASCII zu zeigen)
-
-- **Polish-Welle (Tool-Optional-Findings) — Helper-V3 GO_LIVE PASS:**
-  - bestattungskosten.html: Inline-Link "Pillar-Ratgeber Sozialbestattung" nach Sozial-Section
-  - beerdigung-planen.html: Inline-Link "Pillar Vorsorge allein leben"
-  - BKR: Sarg-Multiplier-Cap (qualityMult=1.0) bei See/Baum/anonyme Bestattungsart — Kremationssarg ist Pflicht, "hochwertig 1,4×" macht dort keinen Sinn
-  - KR: Floor-Band-Kollaps gefixt — `max = Math.max(floor+200, max)` statt fix `floor+200`. Vorher Spar-Szenario auf 200 €-Breite gestaucht.
-  - Validation via 1 Helper-V3-Tab gegen content-loop-pipeline raw-URL (commit 953fc0c), 5/8 Punkte direkt PASS, 3 weitere lokal verifiziert. BSG-Az-Wording B 8 SO 20/22 R gegen BSG-Primärquelle (bsg.bund.de) selbst-verifiziert: korrekt — Urteil betrifft SGB-II-Bezieher, nicht SGB-XII (dejure-Titel war irreführend).
-
-
-
-- **Review-Konsolidierung (Commit c1b9159 + Trigger): 7 Punkt-Fakten + Wording-Fixes aus 2 externen Audits.**
-  - Datenfehler: Stuttgart 41→42, Hannover 16→19, Bonn Dutzend→40 (FAQ JSON-LD ≡ HTML synchron)
-  - Trust: Bremen Fake-Reviewer-Label raus
-  - Konsistenz: Homepage 50→48 Städte + ehrliches Vermittlungs-Wording, Berlin H1 Template-konsistent, Köln Du/Sie auf Du
-  - NICHT in dieser Welle (eigene Phasen): Akutfall-Hero (6-8h, Phase A), Trustbox+Lead-Form-Disclosure-Komponente (Cross-Page), Schema-Pakete (WebPage+Article statt LocalBusiness), Top-15 Stadt-Pages auf Gold (10-15h pro Stadt), externe Reviewer (Messgate)
-
-## Nächste Schritte (priorisiert, Messgate-Logik)
-
-**Tools — Optional-Findings (kein Validity-FAIL mehr, Phase 2 wenn Bandbreite):**
-1. Vorsorge-Check: Testament-Priority „dringend" auch für vermögende Singles (will-an-Patenkind-Fall) statt nur „empfohlen".
-2. Vorsorge-Check: Out-of-Scope-Doc verschwindet lautlos (UX-Hinweis).
-3. Vorsorge-Check: Fehlt-Tag hartcodiert rot — Severity-Signaling pro Priorität-Stufe differenzieren.
-4. Kostenrechner: doppelte Flag-Definition `noRegion`/`_noRegion` → `isRegionlos(ba)`-Helper für DRY.
-5. Kostenrechner: Floor-Band-Kollaps (fixe 200 € Breite im Spar-Szenario) — `max = Math.max(floor+200, maxRoh)`.
-6. BKR: Sarg-Multiplier-Cap bei See/Baum/anonyme (Kremationssarg-Realismus).
-7. BKR: Sparbranch-Text bedingt formulieren (greift derzeit unbedingt — kann bei See+gehoben knapp an Obergrenze).
-
-**Hinter dem Messgate (erst wenn machsleicht-Indexierung beweist, dass Content rankt):**
-8. Sozialbestattung: BSG-Az + VG-Münster-Az in Quellenliste verlinken (~10 Min, Soft-Polish offen aus früherer Session).
-9. Lead-Funnel + Einwilligung sauber.
-10. Autoren-/Redaktionsprofil + Trust.
-11. Welle E (Tier-Bestattung, Auswanderer, Patchwork-Familie).
-
-## Nächste Session — Stadt-Polish-Welle (Top 5)
-
-Aus 2 externen Audits konsolidiert. Pro Stadt 2–4h UI-Re-Arrangement (keine Recherche-Neu-Welle — Inhalte sind da, müssen prominenter werden). Validation via Helper-V3 Tab gegen content-loop-pipeline raw-URL nach jeder Stadt oder am Ende der Welle.
-
-**Berlin** (~3h):
-- Bezirks-Matrix der 12 Standesämter als Tabelle oben
-- FAQ-Block direkt auf der Seite sichtbar (nicht nur JSON-LD)
-- Schnelle Träger-Übersicht „landeseigen / evangelisch / katholisch / sonstige"
-
-**Hamburg** (~2h):
-- Kontaktbox Hamburger Friedhöfe AöR prominent über dem Formular
-- Gebühren-Mini-Tabelle (Urnen-Reihengrab, Sarg-Reihengrab, Kapelle)
-- Standesamt-Sammellink (7 Bezirke)
-
-**München** (~2h):
-- Akutfall-Box VOR der kulturellen Einleitung (aktuell zu spät)
-- Kontaktkarte Städtische Friedhöfe München: Damenstiftstr. 8, Tel +49 89 23199 01
-- Quellenblock straffen — Primärquellen zuerst, Sekundäres weiter unten
-
-**Köln** (~3h):
-- FAQ als sichtbarer HTML-Block (aktuell nur JSON-LD)
-- Gebührenlink Stadt Köln nach oben (operatives Tool)
-- Stadt-Köln-Hinweis „persönliche Vorsprache meist nicht nötig" prominent
-- Gebühren gelten für ALLE städtischen Friedhöfe (häufiges Missverständnis)
-
-**Frankfurt** (~3h):
-- Trustbox (Autor + Stand + Quellen) oben
-- Akutfall-Box direkt unter H1
-- Verwaltungs-Kontakt: Adam-Riese-Straße 25, Tel 069 212 36480, Gebührenordnung gültig ab 01.01.2025
-
-Total ~13h. Welle in einem Branch (content-loop-pipeline) → Helper-V3-Validation pro Stadt oder am Ende → ein Commit + Push.
-
-NICHT in dieser Welle:
-- Trustbox-Komponente auf ALLEN 48 Pages (eigene Cross-Page-Welle)
-- Schema-Pakete WebPage+Article (statt LocalBusiness) — eigene technische Welle
-- Akutfall-Hero-Umbau auf Homepage (6-8h, Phase A laut BACKLOG.md)
-- Standardisierter Lead-Form-Disclosure-Block auf allen Stadt-Pages
-- Externe Reviewer-Pool real aufbauen (Messgate)
+**Hinter dem Messgate (wenn machsleicht-Indexierung rankt):**
+8. Externer Reviewer-Pool real aufbauen (Bestattungsfachkraft / Jurist / Trauerbegleitung) — heute mit Bremen-Fake-Label-Entfernung schon Trust-Schritt gemacht
+9. Lead-Funnel + Einwilligung sauber (12–30h)
+10. Welle E (Tier-Bestattung, Auswanderer, Patchwork-Familie)
 
 ## Offene Fragen
-- Keine akuten. 3 Tools strukturell durch Helper-V3-Adversarial-Audit (6 Iterationen) gegangen, alle VALIDITY_PASS, live ab diesem Deploy. Optional-Findings für Phase 2 dokumentiert.
+- Keine akuten. Stadt-Polish 4/5 deployed mit konsistentem Pattern; Frankfurt als nächste Welle vorgemerkt.
 
 ---
+
+# ───────── ARCHIV: frühere Sessions ─────────
 
 # ───────── ARCHIV: frühere Sessions ─────────
 
