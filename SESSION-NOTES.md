@@ -63,6 +63,11 @@
 
 ## Nächste Schritte (priorisiert)
 
+**Phase 0 — NEU: Ahrefs Site Audit auswerten (deterministischer Crawler, ergänzt LLM-Reviewer):**
+- Site Audit auf machsruhig.de triggern (nach heutigem Deploy-Build)
+- Top-Issues durchgehen: Schema/FAQPage-Validität, Canonical-Hygiene (Lübeck/Mönchengladbach percent-encoded, Berlin-Cross-Canonical), Broken Internal Links (heute 46 Fixes deployed, plus 2 entfernte tote AöR-Deeplinks Hamburg), Orphan Pages (48 Stadt-Pages, nur Top-9 im aktiven Pillar-Linking), Page Weight (Berlin ~73KB, München ~80KB), Duplicate H1/Title/Meta
+- Ahrefs-Findings vs Chrome-Reviewer-Findings vergleichen → blind spots beider Methoden identifizieren
+
 **Phase A — Frankfurt + Dortmund cleanup (klein):**
 1. **Frankfurt Zweit-Layer-Duplikat** aufräumen (Welle B hat Hessen-Block dazu gepackt, der sich mit Frankfurt-Original-Block dupliziert — Rat-Beil zweimal mit unterschiedlichen Zahlen, doppelte Fristen, In-Kraft-Framing inkonsistent)
 2. **Frankfurt GVBl-Zitierung** manuell beim Hessisches Landesrecht verifizieren (Bolle oder Jurist) — Reviewer-Variance gibt keine sichere Antwort
