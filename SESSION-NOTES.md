@@ -1,6 +1,66 @@
 # Session-Notizen
 
 ## Letzte Session
+**Datum:** 27. Mai 2026 (Nachmittag — Ahrefs-SEO-Welle + Analytics-Coverage 100%)
+
+## Was wurde gemacht (Nachmittag, nach Chrome-Audit-Pipeline vom Mittag)
+
+### Ahrefs-Audit Iter-6 bis Iter-8
+- **Ahrefs Site Audit installiert** (User-seitig) — deterministischer Crawler ergänzt LLM-Reviewer
+- **Health Score 48 → 74** (nach Iter-6+7), erwartet 80+ nach nächstem Re-Crawl
+- **Iter-6 Phase A (_redirects):** ~60 neue Regeln — 31 nicht-existente Stadt-Aliase → Hub, 4 Stadt-Alias-Redirects (an-Main, an-der-Ruhr, im-Breisgau), 8 generische Pages → Hubs, Bestattungsarten/Vorsorge-Subs → Hubs, Bundesland-Pages mit Umlaut-Targets, /cdn-cgi/-Catchall
+- **Iter-6 Phase B (Link-Cleanup):** 200 broken internal city-links in 83 Files entfernt (19 Production-Pages + 64 Dev-Archiv). Python-Script `<a href="/bestatter/{nonexistent}/">Text</a>` → `Text` (strip anchor, keep text)
+- **Iter-6 Phase C (Stub-Page):** /kontakt.html neu erstellt — 17 Inlinks die vorher 404'ten haben jetzt echtes Ziel
+- **Iter-7 (Polish nach Re-Crawl):** /kontakt.html OG-Tags + sitemap + Bundesland-Redirects auf Umlaut-Targets (Pages existieren mit ä/ö/ü)
+- **Iter-8 (Analytics-Coverage):** 53 ungetrackte Stadt-Pages bekommen Umami+Ahrefs WA. Vorher nur 3 von 116 getrackt, jetzt **100%**
+
+### Erkenntnisse Nachmittag
+- **Self-Verify-Sycophancy** vs **deterministisches Crawler-Audit** sind komplementär. Health 48 → 74 in 1 Stunde durch mechanische Fixes — keine LLM-Variance.
+- **Cloudflare Email Obfuscation war False-Alarm:** /cdn-cgi/l/email-protection 404s waren nur **Ahrefs-Cache** von früherer CF-Phase. User hat Toggle ausgeschaltet (Email Obfuscation OFF), aber Errors waren schon vorher weg. CF ist aktuell nicht im Request-Pfad.
+- **NEUE Lesson (Memory-würdig):** Cowork-Sandbox unter `/tmp/` zeigt phantom-deletions im git-status (Files im Repo, aber nicht physisch im Sandbox-Mount). `git add -A` darf NICHT verwendet werden ohne sanity-check. Stattdessen explizit Files staunen. Heute hat git add -A versehentlich 23.576 Deletionen mit-committed (`_dev/` + `data/*.json`). Recovery per `git checkout c391617 -- _dev/ data/` durchgeführt.
+- **Ahrefs WA + Umami komplementär:** Umami = On-Site-Behavior + Conversions; Ahrefs WA = Off-Site-Source-Korrelation + SEO-Verbindung
+
+### Endstand Site-Health
+- **YMYL** (Chrome-Audit, Vormittag): 7/8 Stadt-Pages ≥85, Frankfurt-Variance
+- **SEO** (Ahrefs, Nachmittag): Health 74 (Good), 404s 61→~3, Broken Links 47→~5
+- **Tracking-Coverage**: 116/116 Pages (vorher 3/116)
+- **Commits heute Nachmittag**: fe61e5f, 2bac5a2, c391617, 69b0fd1, b3a3307, + this commit
+
+## Nächste Schritte (priorisiert)
+
+**Phase A (klein, nach Quota-Reset Donnerstag 14:00):**
+1. **Frankfurt Zweit-Layer-Duplikat** aufräumen (Welle B hat Hessen-Block dazu gepackt, dupliziert mit Frankfurt-Original — Rat-Beil zweimal mit unterschiedlichen Zahlen)
+2. **Frankfurt GVBl-Citation** manuell beim Hessisches Landesrecht verifizieren (Bolle oder Jurist) — Reviewer-Variance gibt keine sichere Antwort
+3. **Dortmund Chrome-Re-Score** (war Quota-blocked, erstes Score nach Welle B 8 FAQ-Drift-Fixes)
+4. **Ahrefs Re-Crawl checken** — Health Score nach Iter-7+8 sollte 80+ sein
+
+**Phase B (SEO-Optimierung):**
+5. **9 Orphan Pages** in Ahrefs identifizieren und entweder von Hub-Pages aus verlinken oder noindex
+6. **2 Noindex in sitemap** + **2 Non-canonical in sitemap** identifizieren und cleanen
+7. **Redirect Chains** (3 Stück) auflösen — direkte Links statt A→B→C
+8. **3XX redirect: 105 Stellen "Page has links to redirect"** — interne Stadt-Page-Links direkt verdrahten statt via 301
+
+**Phase C (Polish, optional):**
+9. Du-Kasus-Mix global vereinheitlichen (Berlin 16× klein + 7× groß; Düsseldorf, Leipzig, Stuttgart ähnlich)
+10. Datums-Hinweise an Gebühren-Tabellen (München, Stuttgart) ergänzen — "Stand der Satzung verifizieren"
+
+**Phase D (Tracking-Reifung):**
+11. **Umami Goals/Events** einrichten — `lead_form_submit`, `tool_complete:kostenrechner`, `outbound_click:check24`, `phone_click` (Implementation im Code nötig)
+12. **Ahrefs WA Dashboard** beobachten — welche Pages konvertieren, welche Bounces
+
+**Hinter dem Messgate (wenn machsleicht-Indexierung rankt):**
+13. Echter Reviewer-Pool aufbauen (Bestatter / Jurist / Trauerbegleitung)
+14. Lead-Funnel + Einwilligung sauber
+15. Welle E (Tier-Bestattung, Auswanderer, Patchwork-Familie)
+
+## Offene Fragen
+- **Frankfurt GVBl-Citation:** "GVBl. Nr. 64 vom 6.10.2025" vs "GVBl. Nr. 101 vom 16.12.2025" — welches ist die echte Verkündung der FBG-Novelle 2025? Reviewer geben gegensätzliche Antworten.
+
+---
+
+# ───────── ARCHIV: frühere Sessions ─────────
+
+## Session
 **Datum:** 27. Mai 2026 (Mittag — Chrome-Audit-Retro 9 Cities + 5 Iter-Wellen + Deploy)
 
 ## Was wurde gemacht
