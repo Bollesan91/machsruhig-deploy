@@ -200,6 +200,17 @@
 .mr-article-meta a{color:var(--mr-warm);text-decoration:underline}
 .mr-article-meta a:hover{color:var(--mr-primary)}
 .mr-article-meta .mr-meta-sep{opacity:0.6}
+.mr-contact-card{background:var(--mr-bg-card);border:2px solid var(--mr-primary);border-radius:var(--mr-radius);padding:20px 24px;margin:0 0 20px}
+.mr-contact-card .mr-contact-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mr-primary);margin-bottom:6px}
+.mr-contact-card h2{font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--mr-text);margin:0 0 12px;padding:0;border:none}
+.mr-contact-card .mr-contact-row{font-size:14px;line-height:1.6;color:var(--mr-text);margin:0 0 4px}
+.mr-contact-card .mr-contact-row a{color:var(--mr-warm)}
+.mr-contact-card .mr-contact-note{font-size:13px;line-height:1.6;color:var(--mr-text-muted);margin-top:10px}
+.mr-feebox{background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin:0 0 32px}
+.mr-feebox h2{font-family:'Fraunces',serif;font-size:18px;font-weight:700;margin:0 0 12px;padding:0;border:none}
+.mr-feebox .mr-table-wrap{margin:0}
+.mr-feebox .mr-table{margin:0}
+.mr-feebox-note{font-size:12px;line-height:1.55;color:var(--mr-text-muted);margin-top:10px}
 </style>
 </head>
 <body>
@@ -235,6 +246,37 @@
     <div class="mr-article-meta"><div><strong>Redaktion machsruhig.de</strong><span class="mr-meta-sep" aria-hidden="true"> · </span><span>Stand: 11. Mai 2026</span></div><div><a href="/methodik">Wie entstehen unsere Inhalte?</a><span class="mr-meta-sep" aria-hidden="true"> · </span><span>Lesezeit: ca. 10 Minuten</span></div></div>
   </header>
 
+  <!-- Re-Arrangement (Stadt-Polish): Kontakt-Karte + Gebühren-Mini-Tabelle, ohne neue Recherche.
+       HINWEIS Trägerschaft: Briefing nannte "Volksdorf, Wohldorf"; Page-Bestand und H3-Abschnitte
+       nennen jedoch Ohlsdorf, Öjendorf, Bergedorf, Harburg als AöR-Friedhöfe. Page-konsistente
+       Variante übernommen, um internen Widerspruch zu vermeiden. Bitte gegenprüfen. -->
+  <aside class="mr-contact-card" aria-label="Kontakt Friedhofsverwaltung Hamburg">
+    <span class="mr-contact-eyebrow">Friedhofsverwaltung Hamburg</span>
+    <h2>Hamburger Friedhöfe AöR</h2>
+    <p class="mr-contact-row"><strong>Adresse:</strong> Fuhlsbüttler Straße 756, 22337 Hamburg</p>
+    <p class="mr-contact-row"><strong>Telefon:</strong> <a href="tel:+4940593880">040&nbsp;593&nbsp;88&nbsp;0</a></p>
+    <p class="mr-contact-row"><strong>Web:</strong> <a href="https://www.friedhof-hamburg.de/" rel="noopener" target="_blank">friedhof-hamburg.de</a></p>
+    <p class="mr-contact-row"><strong>Friedhöfe in Trägerschaft:</strong> Ohlsdorf, Öjendorf, Bergedorf und Harburg</p>
+    <p class="mr-contact-note">Über die AöR laufen Grabwahl, Trauerhallen-Reservierung und Friedhofsgebühren. Die Anmeldung übernimmt in der Regel der beauftragte Bestatter.</p>
+  </aside>
+
+  <section class="mr-feebox" aria-label="Gebühren-Überblick Hamburg">
+    <h2>Gebühren-Überblick (Auswahl)</h2>
+    <div class="mr-table-wrap">
+      <table class="mr-table">
+        <thead><tr><th>Position</th><th>Betrag</th></tr></thead>
+        <tbody>
+          <tr><td>Sargwahlgrab (25 Jahre Ruhezeit, Friedhof)</td><td>2.800–3.195&nbsp;€</td></tr>
+          <tr><td>Urnenwahlgrab (Friedhof)</td><td>2.000–2.230&nbsp;€</td></tr>
+          <tr><td>Anonyme Beisetzung (Friedhofsanteil)</td><td>1.250–1.420&nbsp;€</td></tr>
+          <tr><td>Seebestattung, unbegleitet (Reederei-Paket)</td><td>ab 1.049&nbsp;€</td></tr>
+          <tr><td>Seebestattung, begleitet (Ostsee)</td><td>ca. 1.646&nbsp;€</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mr-feebox-note">Friedhofsgebühren nach Gebührenordnung der Hamburger Friedhöfe AöR (Stand 2025); Seebestattungs-Beträge als Reederei-Paketpreise. Auswahl aus den weiter unten ausführlich aufgeschlüsselten Posten — Bestatterleistungen kommen je nach Bestattungsart hinzu. Stand der Seite: Mai 2026.</p>
+  </section>
+
   <div class="mr-section" id="akutbox-hamburg" style="background:#FFFAF5;border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:24px 28px;margin:0 0 32px;">
     <h2 style="border-bottom:none;padding-bottom:0;margin-bottom:8px;">Was nach einem Todesfall in Hamburg zu tun ist — die ersten Schritte</h2>
     <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px;">Wenn ein Mensch verstorben ist, drängt erst einmal nichts. Diese sechs Schritte ordnen die ersten Tage in der für Hamburg geltenden Reihenfolge — vom Totenschein bis zur Trauerfeier.</p>
@@ -250,6 +292,29 @@
     <p>Die Anmeldung der Bestattung bei der Hamburger Friedhöfe AöR übernimmt der Bestatter und stimmt Termin, Kapelle und Beisetzungsablauf ab. Eine Erdbestattung muss in Hamburg spätestens nach 10 Tagen erfolgt sein — eine vergleichsweise großzügige Frist. Bei Feuerbestattungen ist nach der Einäscherung in der Regel innerhalb eines Monats beizusetzen.</p>
     <h3>6. Trauerfeier gestalten</h3>
     <p>Trauerfeiern finden in einer der zwölf Kapellen auf Ohlsdorf, in der Aussegnungshalle Öjendorf oder in den Trauerhallen der bezirklichen Friedhöfe statt. Form und Umfang gestaltet die Familie frei: vom stillen Abschied am Grab bis zur Feier mit Musik, Rede und Predigt. Hilfreich für die Vorbereitung: <a href="/trauerrede-schreiben">Trauerrede schreiben</a> und <a href="/tools/checkliste-todesfall">Checkliste Todesfall</a>.</p>
+  </div>
+
+  <div class="mr-section" id="standesaemter-hamburg">
+    <h2>Die sieben Hamburger Standesämter</h2>
+    <p>Der Sterbefall muss spätestens am dritten auf den Tod folgenden Werktag dem Standesamt angezeigt werden (<a href="https://www.gesetze-im-internet.de/pstg/__28.html" rel="noopener" target="_blank">§ 28 PStG</a>). <strong>Zuständig ist das Standesamt am Sterbeort</strong> — also der Bezirk, in dem die Person verstorben ist, nicht der Wohnsitz-Bezirk. Anzeige und Beurkundung übernimmt in der Regel der beauftragte Bestatter.</p>
+    <div class="mr-table-wrap">
+      <table class="mr-table">
+        <thead><tr><th>Bezirk</th><th>Standesamt (Adresse, soweit auf dieser Seite belegt)</th></tr></thead>
+        <tbody>
+          <tr><td>Hamburg-Mitte</td><td>Caffamacherreihe 1–3, 20355 Hamburg</td></tr>
+          <tr><td>Altona</td><td>Bezirksamt Altona</td></tr>
+          <tr><td>Eimsbüttel</td><td>Grindelberg 62–66, 20144 Hamburg</td></tr>
+          <tr><td>Hamburg-Nord</td><td>Kümmellstraße 5–7, 20249 Hamburg</td></tr>
+          <tr><td>Wandsbek</td><td>Schloßstraße 60, 22041 Hamburg</td></tr>
+          <tr><td>Bergedorf</td><td>Bezirksamt Bergedorf</td></tr>
+          <tr><td>Harburg</td><td>Harburger Rathausforum 3, 21073 Hamburg</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- UNSURE: Adressen für Altona und Bergedorf sind im Page-Bestand nicht enthalten; bewusst kein
+         erfundener Eintrag. Pro-Bezirk-Deeplinks wurden zur Vermeidung toter Links nicht recherchiert
+         (no-research-Scope); stattdessen ein zentraler hamburg.de-Sammellink. -->
+    <p style="font-size:14px;margin-top:12px;"><a href="https://www.hamburg.de/" rel="noopener" target="_blank">Standesämter &amp; Behördenfinder auf hamburg.de</a> — dort lassen sich Öffnungszeiten, Online-Termine und Kontaktdaten des zuständigen Bezirks-Standesamts aufrufen.</p>
   </div>
 
   <div class="mr-keyfacts">
