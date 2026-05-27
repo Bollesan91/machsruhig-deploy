@@ -199,6 +199,78 @@
     .mr-friedhof{padding:1.3rem}
     th,td{padding:.55rem .7rem;font-size:.88rem}
   }
+
+  /* ===== Polish Welle 2B – rein additiv, ändert keine bestehende Regel ===== */
+  /* Fix: im Body referenzierte --mr-* Tokens waren nicht definiert (Boxen ohne BG/Rahmen) */
+  :root{
+    --mr-primary:var(--accent);
+    --mr-accent:var(--warm);
+    --mr-bg-card:var(--paper);
+    --mr-border:var(--line);
+    --mr-text-muted:var(--muted);
+  }
+  /* Fix: im Body verwendete Template-Klassen waren nicht definiert (Head = ältere Style-Variante) */
+  .mr-article-meta{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1.5rem;
+    font-size:.85rem;color:var(--muted);margin-top:1rem;
+  }
+  .mr-article-meta a{color:var(--muted)}
+  .mr-meta-sep{color:var(--line)}
+  .mr-hint{
+    background:var(--mr-bg-card);border:1px solid var(--line);
+    border-left:4px solid var(--accent);border-radius:6px;
+    padding:1.1rem 1.4rem;margin:1.5rem 0;font-size:.95rem;
+  }
+  .mr-hint strong{font-family:'Fraunces',serif}
+  .mr-cta-block{border-radius:8px;margin:2rem 0}
+  .cta-primary{
+    display:inline-block;background:var(--accent);color:#fff;
+    padding:.8rem 1.4rem;border-radius:8px;font-weight:600;
+    text-decoration:none;font-size:1rem;
+  }
+  .cta-primary:hover{background:var(--accent-dark);color:#fff}
+
+  /* Neu: Akutfall-Box (sanfte Prominenz über --warm, kein Alarm-Rot – Pietät) */
+  .mr-akutbox{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--warm);
+    border-radius:6px;
+    padding:1.5rem 1.8rem;
+    margin:0 0 2rem;
+  }
+  .mr-akutbox h2{
+    border:none;margin:0 0 .3rem;padding:0;font-size:1.15rem;
+    font-family:'DM Sans',sans-serif;text-transform:uppercase;
+    letter-spacing:.05em;color:var(--accent-dark);
+  }
+  .mr-akutbox .mr-akut-intro{font-size:.97rem;color:var(--ink-soft);margin-bottom:1rem}
+  .mr-akutbox ol{margin:0;padding-left:1.3rem}
+  .mr-akutbox li{margin-bottom:.7rem}
+  .mr-akutbox li strong{font-family:'DM Sans',sans-serif}
+  .mr-akutbox .mr-akut-quelle{font-size:.8rem;color:var(--muted);margin:1.1rem 0 0}
+
+  /* Neu: Kontakt-/Behörden-Card (analog Frankfurt-Pattern) */
+  .mr-contact-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:6px;
+    padding:1.5rem 1.8rem;margin:2rem 0;font-size:.95rem;
+  }
+  .mr-contact-card h3{margin-top:0;color:var(--accent-dark)}
+  .mr-contact-card h4{margin:1.1rem 0 .35rem;font-size:1rem;color:var(--ink-soft);font-family:'DM Sans',sans-serif;font-weight:600}
+  .mr-contact-card ul{margin:.3rem 0;padding-left:1.2rem}
+  .mr-contact-card li{margin-bottom:.35rem}
+  .mr-contact-card .mr-contact-grid{
+    margin:.4rem 0;display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem;
+  }
+  .mr-contact-card .mr-contact-grid dt{font-weight:500;color:var(--ink-soft)}
+  .mr-contact-card .mr-contact-grid dd{margin:0;color:var(--ink)}
+  @media (max-width:600px){
+    .mr-contact-card .mr-contact-grid{grid-template-columns:1fr}
+    .mr-contact-card .mr-contact-grid dt{margin-top:.4rem}
+  }
 </style>
 
 <script type="application/ld+json">{
@@ -211,7 +283,7 @@
       "description": "Vollständiger Überblick zur Bestattung in Dortmund: Friedhöfe, Gebühren, Sozialbestattung und Ablauf nach einem Todesfall.",
       "inLanguage": "de-DE",
       "datePublished": "2026-05-15",
-      "dateModified": "2026-05-18",
+      "dateModified": "2026-05-21",
       "mainEntityOfPage": {
         "@id": "https://machsruhig.de/bestatter/dortmund/#webpage"
       },
@@ -453,7 +525,17 @@
   <h1>Bestattung in Dortmund</h1>
   <p class="lead">Dortmund prägt seine Friedhofskultur seit der Industrialisierung. Wer hier eine Bestattung organisiert, bewegt sich zwischen dem rund 118 Hektar großen Hauptfriedhof in Brackel – einem der größten in Deutschland – und einem Geflecht aus über 30 städtischen Friedhöfen, die jeweils eigene Geschichten der Stadt erzählen. Dieser Überblick erklärt die wichtigsten Friedhöfe, die kommunale Gebührensystematik, die Sozialbestattung über das Dortmunder Sozialamt sowie die konkreten Schritte nach einem Todesfall.</p>
     <div class="mr-article-meta"><div><strong>Redaktion machsruhig.de</strong><span class="mr-meta-sep" aria-hidden="true"> · </span><span>Stand: 21. Mai 2026</span></div><div><a href="/methodik">Wie entstehen unsere Inhalte?</a><span class="mr-meta-sep" aria-hidden="true"> · </span><span>Lesezeit: ca. 10 Minuten</span></div></div>
-  <p class="mr-meta">Stand: 18.05.2026 · machsruhig Redaktion</p>
+</section>
+
+<section class="mr-section mr-akutbox" id="akutbox-dortmund" aria-labelledby="akut-h">
+  <h2 id="akut-h">Akutfall: Die ersten Schritte in Dortmund</h2>
+  <p class="mr-akut-intro">Ist ein Angehöriger gerade verstorben, zählen in den ersten Stunden nur drei Dinge. Alles Weitere hat Zeit.</p>
+  <ol>
+    <li><strong>Totenschein ausstellen lassen.</strong> Ein Arzt oder eine Ärztin muss den Tod feststellen und den Totenschein (ärztliche Leichenschau) ausstellen. Zu Hause rufst Du den Hausarzt, nachts oder am Wochenende den ärztlichen Bereitschaftsdienst unter <strong>116 117</strong>. Ohne Totenschein darf keine Überführung erfolgen (Leichenschau nach BestG NRW).</li>
+    <li><strong>Sterbefall beim Standesamt Dortmund beurkunden.</strong> Der Sterbefall wird beim Standesamt am Sterbeort angezeigt; das Standesamt Dortmund stellt anschließend die <strong>Sterbeurkunde</strong> aus, die Du für Bestatter, Bank, Renten- und Versicherungsträger benötigst (§ 28 PStG, Anzeige eines Sterbefalls). In der Praxis übernimmt die Anzeige meist der beauftragte Bestatter.</li>
+    <li><strong>Bestattungsart wählen und Friedhof kontaktieren.</strong> Erd- oder Feuerbestattung, Wahl- oder Reihengrab, Urnen- oder anonyme Beisetzung – die Wahl bestimmt das weitere Vorgehen. Viele Anträge kannst Du bei den Friedhöfen Dortmund direkt über die <a href="https://www.dortmund.de/themen/lebensende-und-sterben/" rel="external">städtischen Online-Formulare</a> stellen (Erdbestattung, Urnenbeisetzung, anonyme Urnenbeisetzung).</li>
+  </ol>
+  <p class="mr-akut-quelle">Rechtsgrundlagen: <a href="https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=5320141007092133713" rel="external">BestG NRW</a>, § 28 PStG. Ausführlich im Abschnitt „Was nach einem Todesfall in Dortmund zu tun ist".</p>
 </section>
 
 <section class="mr-keyfacts" aria-label="Kernfakten Bestattung Dortmund">
@@ -566,6 +648,28 @@
     <p class="mr-promi"><strong>Bestattet u. a.:</strong> Familie Siecke (Georg Siecke war ab 1897 erster Friedhofsinspektor des Nordfriedhofs, lebte mit seiner Familie im Verwalterhaus, Feld 1); Familie Quadbeck (Feld 5, Grabmal aus schwarzem schwedischem Granit in Renaissance-Imitation); Elisabeth (Elli) und Josef Dost (Schriftstellerin der Dortmunder Nordstadt, Feld 4).</p>
   </article>
 </section>
+
+<div class="mr-contact-card">
+  <h3>Friedhöfe Dortmund &amp; dortmund.de – Bestattungen online erledigen</h3>
+  <p>Zentrale Anlaufstelle für die über 30 kommunalen Friedhöfe ist der Eigenbetrieb <strong>Friedhöfe Dortmund</strong>. Viele Anträge lassen sich direkt online stellen; weitere Formulare, Satzungen und Gebührentabellen stehen zum Download bereit.</p>
+
+  <h4>Online-Formulare &amp; Anträge</h4>
+  <ul>
+    <li><a href="https://www.dortmund.de/themen/lebensende-und-sterben/" rel="external">Online-Anträge der Friedhöfe Dortmund</a> – u.&nbsp;a. Erdbestattung, Urnenbeisetzung und anonyme Urnenbeisetzung</li>
+    <li><a href="https://www.dortmund.de/services/bestattungen.html" rel="external">Bestattungen Dortmund – Übersicht, Satzung &amp; Gebührensatzung</a></li>
+  </ul>
+
+  <h4>Friedhöfe &amp; Verwaltung</h4>
+  <dl class="mr-contact-grid">
+    <dt>Hauptfriedhof (Verwaltung)</dt><dd>Rennweg 65, 44143 Dortmund</dd>
+    <dt>Ostfriedhof</dt><dd>Robert-Koch-Straße 35, 44143 Dortmund</dd>
+    <dt>Südfriedhof</dt><dd>Große Heimstraße 119, 44137 Dortmund</dd>
+    <dt>Nordfriedhof</dt><dd>Burgholzstraße 240, 44339 Dortmund-Eving</dd>
+  </dl>
+
+  <h4>Krematorium</h4>
+  <p style="margin:0">Das städtische Krematorium befindet sich auf dem Hauptfriedhof, Rennweg 65, 44143 Dortmund (Tel. (0231) 56209281), betrieben von der Krematorium Dortmund GmbH und an die Friedhöfe Dortmund verpachtet.</p>
+</div>
 
 <section class="mr-section">
   <h2>Bestattungskosten in Dortmund</h2>
