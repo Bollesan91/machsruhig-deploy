@@ -129,10 +129,10 @@
 /vorsorge/friedwald-baumbestattung/ /vorsorge/                        301
 
 # Bundesland-Pages fehlen → temporär Hub-Redirect
-/bestattung-in/baden-wuerttemberg   /bestattung-in/                   301
-/bestattung-in/baden-wuerttemberg/  /bestattung-in/                   301
-/bestattung-in/thueringen           /bestattung-in/                   301
-/bestattung-in/thueringen/          /bestattung-in/                   301
+/bestattung-in/baden-wuerttemberg   /bestattung-in/baden-w%C3%BCrttemberg/  301
+/bestattung-in/baden-wuerttemberg/  /bestattung-in/baden-w%C3%BCrttemberg/  301
+/bestattung-in/thueringen           /bestattung-in/th%C3%BCringen/    301
+/bestattung-in/thueringen/          /bestattung-in/th%C3%BCringen/    301
 
 # Anomale URLs (ohne trailing /)
 /bestatter-in-nordrhein-westfalen   /bestattung-in/nordrhein-westfalen 301
