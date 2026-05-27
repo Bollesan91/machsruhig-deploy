@@ -1,0 +1,20 @@
+Ich fetche die Datei und prüfe.
+
+Ich fetche die Datei und prüfe.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/mannheim/index.html
+
+Fact-Check abgeschlossen. Befund unten.
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+Sozialbestattung-Modul komplett fehlend. Es gibt keinen <h2>Sozialbestattung in Mannheim</h2>-Abschnitt im HTML. Im gesamten Dokument findet sich kein einziges Vorkommen von „Sozialbestattung", „§ 74 SGB XII", „§ 1968 BGB" (außer einer beiläufigen Erwähnung in § 31 BestattG-Absatz), Fachbereich Arbeit und Soziales, Adresse K 1 7–13, Telefon 0621 293-9218/-9219 oder mail arbeit.soziales@mannheim.de. Damit entfallen die Prüfpunkte 2, 3, 4 mangels Prüfgegenstand.
+BSG-Urteil B 8 SO 20/10 R vom 25.08.2011 nicht zitiert (logische Folge von Punkt 1).
+Friedhofsgebühr 910 € Erdreihengrab 15 J. ist bereits an anderer Stelle der Seite genannt (Gebührentabelle, Fassung 01.01.2022) und damit plausibel — kann im neuen Modul ohne neue Recherche übernommen werden.
+HTML-Balance: Tags sind balanced. Keine offenen <div>/<section>. Strukturell sauber.
+Keine neuen Faktenfehler oder Typos im bestehenden Code feststellbar.
+
+Kernproblem: Das Modul wurde nicht eingefügt — die Datei entspricht dem Stand vor dem Sozialbestattung-Insert. Push prüfen / Cache-Bust setzen / Re-Fetch nach Deploy.

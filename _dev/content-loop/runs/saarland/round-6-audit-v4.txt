@@ -1,0 +1,12 @@
+SAARLAND_SCORE: 81
+WORD_COUNT: 2693
+Internal links: 9 External links: 14
+Title len: 61 Meta-desc len: 135
+
+ISSUES:
+WARNINGS:
+ - Content sehr lang (2693 Wörter) - evtl. splitten
+ - Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). Penalty temporär ausgesetzt.
+WINS:
+ - lang-Attribut korrekt
+ - Schema: Question, Organization, Article, Answer, PostalAddress, FAQP

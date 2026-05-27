@@ -1,0 +1,81 @@
+{
+  "name": "Sachsen",
+  "slug": "sachsen",
+  "region": "Ostdeutschland",
+  "bestattungsgesetz": {
+    "name": "Sächsisches Bestattungsgesetz (SächsBestG)",
+    "short": "SächsBestG",
+    "reference": "BestG",
+    "link": "https://www.sachsen.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "8 Tage",
+    "ausnahmen": "Konservierung möglich"
+  },
+  "friedhofspflicht": {
+    "besteht": true,
+    "ausnahmen": "Waldbestattung"
+  },
+  "zweite_leichenschau_kremation": true,
+  "sargpflicht": {
+    "besteht": false,
+    "ausnahmen": "Biologisch abbaubar erlaubt"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Nicht möglich",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Sachsen hat moderne Bestattungsgesetze",
+    "Keine Sargpflicht — Kostenersparnis möglich",
+    "Waldbestattung in mehreren Regionen verfügbar",
+    "Hoher Anteil von Feuerbestattungen (ca. 85 %)",
+    "Innovative Friedhofskonzepte in Dresden und Leipzig",
+    "Günstiger als Bayern und Baden-Württemberg"
+  ],
+  "major_cities": [
+    {
+      "name": "Dresden",
+      "slug": "dresden",
+      "has_page": false
+    },
+    {
+      "name": "Leipzig",
+      "slug": "leipzig",
+      "has_page": false
+    },
+    {
+      "name": "Chemnitz",
+      "slug": "chemnitz",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Besteht Sargpflicht in Sachsen?",
+      "answer": "Nein, in Sachsen ist Sargpflicht nicht streng. Biologisch abbaubare Materialien sind erlaubt. Das spart Kosten bei der Beerdigung."
+    },
+    {
+      "question": "Wie lange muss ich nach dem Tod warten?",
+      "answer": "Mindestens 24 Stunden müssen vergehen. Die Beerdigung oder Kremation muss spätestens 8 Tage später erfolgen."
+    },
+    {
+      "question": "Gibt es Waldbestattung in Sachsen?",
+      "answer": "Ja, mehrere FriedWald-Standorte sind in der Umgebung verfügbar (z.B. Sächsische Schweiz, Erzgebirge). Kosten: ab ca. 900 € + Gebühren."
+    },
+    {
+      "question": "Kann ich die Urne zu Hause aufbewahren?",
+      "answer": "Nein, in Sachsen besteht Friedhofszwang für Urnen. Sie müssen auf einem Friedhof oder durch Waldbestattung beigesetzt werden."
+    }
+  ],
+  "sources": [
+    "Sächsisches Bestattungsgesetz",
+    "Sächsisches Staatsministerium für Gesundheit und Soziales",
+    "Verbraucherzentrale Sachsen"
+  ]
+}

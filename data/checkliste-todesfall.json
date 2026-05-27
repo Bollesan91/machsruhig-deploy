@@ -1,0 +1,543 @@
+{
+  "meta": {
+    "version": "1.0",
+    "lastUpdated": "2026-04-01",
+    "description": "Konfiguration für die interaktive Checkliste Todesfall auf machsruhig.de",
+    "seoTitle": "Checkliste Todesfall — Was jetzt zu tun ist | mach's ruhig",
+    "seoDescription": "Interaktive Checkliste für den Todesfall: Schritt für Schritt, personalisiert nach Bundesland. Abhakbar, druckbar, ohne Anmeldung.",
+    "canonical": "/tools/checkliste-todesfall"
+  },
+
+  "privacy": {
+    "headline": "Deine Daten bleiben bei dir.",
+    "text": "Diese Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Dein Fortschritt wird lokal gespeichert, solange du das Fenster nicht schließt.",
+    "linkText": "Datenschutzerklärung",
+    "linkHref": "/datenschutz"
+  },
+
+  "intro": {
+    "headline": "Checkliste nach Todesfall",
+    "subline": "Schritt für Schritt — in deinem Tempo",
+    "description": "Ein Mensch ist gestorben, und du weißt nicht, wo du anfangen sollst. Diese Checkliste führt dich durch alles, was in den nächsten Stunden, Tagen und Wochen zu tun ist — personalisiert nach deinem Bundesland.",
+    "cta": "Bundesland wählen und starten",
+    "hint": "Du kannst Aufgaben abhaken, pausieren und jederzeit zurückkehren. Nichts wird an uns gesendet."
+  },
+
+  "szenarien": {
+    "question": "Wo ist der Mensch verstorben?",
+    "hint": "Das bestimmt, welche Schritte zuerst nötig sind.",
+    "options": [
+      {"value": "zuhause", "label": "Zu Hause", "description": "Du bist vor Ort oder wurdest informiert"},
+      {"value": "krankenhaus", "label": "Im Krankenhaus oder Hospiz", "description": "Das Krankenhaus hat dich informiert"},
+      {"value": "pflegeheim", "label": "Im Pflegeheim", "description": "Das Pflegeheim hat dich informiert"},
+      {"value": "unbekannt", "label": "Woanders / Ich weiß es nicht", "description": "Unfall, unterwegs oder unklar"}
+    ]
+  },
+
+  "bundeslaender": [
+    {
+      "id": "bw", "name": "Baden-Württemberg",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 4,
+      "hoechstfristEinaescherung": 6,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Bestattungsgesetz Baden-Württemberg (BestattG BW)"
+    },
+    {
+      "id": "by", "name": "Bayern",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 4,
+      "hoechstfristEinaescherung": null,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Keine gesetzliche Höchstfrist für die Einäscherung selbst, nur für die Beisetzung der Urne.",
+      "gesetz": "Bestattungsgesetz Bayern (BestG BY)"
+    },
+    {
+      "id": "be", "name": "Berlin",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Relativ großzügige Fristen. Verlängerung auf Antrag möglich.",
+      "gesetz": "Bestattungsgesetz Berlin (BestG BE)"
+    },
+    {
+      "id": "bb", "name": "Brandenburg",
+      "ueberführungsfrist": 24,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Brandenburgisches Bestattungsgesetz (BbgBestG)"
+    },
+    {
+      "id": "hb", "name": "Bremen",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 5,
+      "hoechstfristEinaescherung": 7,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Seit 2015 darf die Asche unter bestimmten Bedingungen an Angehörige herausgegeben werden (Ausnahme von der Friedhofspflicht).",
+      "gesetz": "Bremisches Bestattungsgesetz (BremBestG)"
+    },
+    {
+      "id": "hh", "name": "Hamburg",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 5,
+      "hoechstfristEinaescherung": 7,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Hamburgisches Bestattungsgesetz (HmbBestG)"
+    },
+    {
+      "id": "he", "name": "Hessen",
+      "ueberführungsfrist": 24,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 6,
+      "hoechstfristEinaescherung": 8,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Friedhofs- und Bestattungsgesetz Hessen (FBG HE)"
+    },
+    {
+      "id": "mv", "name": "Mecklenburg-Vorpommern",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Bestattungsgesetz Mecklenburg-Vorpommern (BestattG MV)"
+    },
+    {
+      "id": "ni", "name": "Niedersachsen",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Bestattungsgesetz Niedersachsen (BestattG NI)"
+    },
+    {
+      "id": "nw", "name": "Nordrhein-Westfalen",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Verlängerung der Frist auf Antrag beim Ordnungsamt möglich.",
+      "gesetz": "Bestattungsgesetz Nordrhein-Westfalen (BestG NRW)"
+    },
+    {
+      "id": "rp", "name": "Rheinland-Pfalz",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 7,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Gesetzesänderung 2025 mit erweiterten Bestattungsformen.",
+      "gesetz": "Bestattungsgesetz Rheinland-Pfalz (BestG RP)"
+    },
+    {
+      "id": "sl", "name": "Saarland",
+      "ueberführungsfrist": 24,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 6,
+      "hoechstfristEinaescherung": 8,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Bestattungsgesetz Saarland (BestattG SL)"
+    },
+    {
+      "id": "sn", "name": "Sachsen",
+      "ueberführungsfrist": 24,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Sächsisches Bestattungsgesetz (SächsBestG)"
+    },
+    {
+      "id": "st", "name": "Sachsen-Anhalt",
+      "ueberführungsfrist": 24,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 8,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Ab Mai 2026 dürfen bis zu 5 Gramm Asche zur würdevollen Nutzung in Erinnerungsstücken (z. B. Gedenkdiamanten) entnommen werden.",
+      "gesetz": "Bestattungsgesetz Sachsen-Anhalt (BestattG ST)"
+    },
+    {
+      "id": "sh", "name": "Schleswig-Holstein",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 6,
+      "hoechstfristEinaescherung": 8,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": "Gesetzesänderung 2025.",
+      "gesetz": "Bestattungsgesetz Schleswig-Holstein (BestattG SH)"
+    },
+    {
+      "id": "th", "name": "Thüringen",
+      "ueberführungsfrist": 36,
+      "mindestfrist": 48,
+      "hoechstfristErdbestattung": 7,
+      "hoechstfristEinaescherung": 10,
+      "meldefristStandesamt": "nächster Werktag",
+      "besonderheiten": null,
+      "gesetz": "Thüringer Bestattungsgesetz (ThürBestG)"
+    }
+  ],
+
+  "phasen": [
+    {
+      "id": "sofort",
+      "label": "Sofort (erste Stunden)",
+      "zeitraum": "0–24 Stunden",
+      "beschreibung": "Die allerwichtigsten Schritte direkt nach dem Tod.",
+      "aufgaben": [
+        {
+          "id": "arzt-rufen",
+          "titel": "Arzt rufen / Totenschein ausstellen lassen",
+          "beschreibung": "Ein Arzt muss den Tod feststellen und einen Totenschein (Leichenschauschein) ausstellen. Zu Hause: Hausarzt oder ärztlichen Bereitschaftsdienst (116 117) rufen. Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",
+          "szenario": ["zuhause", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "sofort",
+          "dokumente": ["Personalausweis des Verstorbenen"],
+          "hinweis": "Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern."
+        },
+        {
+          "id": "angehoerige-informieren",
+          "titel": "Engste Angehörige informieren",
+          "beschreibung": "Informiere die engste Familie und Freunde. Das muss nicht alles auf einmal passieren — beginne mit den wichtigsten Personen. Andere können morgen erfahren.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "sofort",
+          "dokumente": [],
+          "hinweis": "Du musst das nicht allein machen. Bitte jemanden, dir beim Telefonieren zu helfen."
+        },
+        {
+          "id": "bestatter-beauftragen",
+          "titel": "Bestatter beauftragen (Überführung)",
+          "beschreibung": "Ein Bestatter übernimmt die Überführung des Verstorbenen und kümmert sich um die ersten Formalitäten. Wenn du keinen Bestatter kennst, kannst du über die Auskunft oder online einen finden.",
+          "szenario": ["zuhause", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "sofort",
+          "bundeslandAbhaengig": true,
+          "bundeslandFeld": "ueberführungsfrist",
+          "bundeslandHinweis": "In {bundesland} muss die Überführung innerhalb von {frist} Stunden nach dem Tod erfolgen.",
+          "dokumente": ["Totenschein"],
+          "hinweis": "Im Krankenhaus und Pflegeheim ist die Überführung nicht so dringlich, da der Verstorbene dort verbleiben kann."
+        },
+        {
+          "id": "dokumente-sichern",
+          "titel": "Wichtige Dokumente zusammensuchen",
+          "beschreibung": "Suche die wichtigsten Dokumente des Verstorbenen zusammen. Du brauchst sie für das Standesamt, den Bestatter und die Versicherungen.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "heute",
+          "dokumente": [
+            "Personalausweis / Reisepass",
+            "Geburtsurkunde",
+            "Heiratsurkunde (falls verheiratet)",
+            "Sterbeurkunde des Ehepartners (falls verwitwet)",
+            "Scheidungsurteil (falls geschieden)",
+            "Bestattungsverfügung / Vorsorgevertrag (falls vorhanden)",
+            "Versicherungsunterlagen (Lebensversicherung, Sterbegeldversicherung)",
+            "Testament (falls vorhanden)"
+          ],
+          "hinweis": "Nicht alles muss sofort da sein. Geburtsurkunde und Personalausweis sind am wichtigsten."
+        },
+        {
+          "id": "wohnung-sichern",
+          "titel": "Wohnung sichern (Heizung, Tiere, Post)",
+          "beschreibung": "Wenn der Verstorbene allein gelebt hat: Sorge dafür, dass die Wohnung sicher ist. Heizung runterdrehen, Haustiere versorgen, Postkasten leeren.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim"],
+          "pflicht": false,
+          "dringlichkeit": "heute",
+          "dokumente": [],
+          "hinweis": null
+        }
+      ]
+    },
+    {
+      "id": "erste-tage",
+      "label": "Erste Tage (Tag 1–3)",
+      "zeitraum": "1–3 Tage nach dem Tod",
+      "beschreibung": "Behördengänge und erste Entscheidungen zur Bestattung.",
+      "aufgaben": [
+        {
+          "id": "standesamt",
+          "titel": "Sterbefall beim Standesamt anzeigen",
+          "beschreibung": "Der Sterbefall muss beim Standesamt des Sterbeorts angezeigt werden. In der Regel übernimmt das der Bestatter. Du erhältst die Sterbeurkunde (mehrere Ausfertigungen bestellen — du brauchst ca. 5–10 Stück).",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "1-2 Tage",
+          "dokumente": ["Totenschein", "Personalausweis des Verstorbenen", "Geburtsurkunde", "Heiratsurkunde (falls verheiratet)"],
+          "hinweis": "Tipp: Bestelle mindestens 5 beglaubigte Sterbeurkunden. Jede kostet ca. 12 €. Du brauchst sie für Bank, Versicherungen, Rente, Vermieter und mehr."
+        },
+        {
+          "id": "bestattung-planen",
+          "titel": "Art der Bestattung besprechen",
+          "beschreibung": "Besprich mit dem Bestatter und der Familie, welche Bestattungsart gewünscht ist. Prüfe, ob der Verstorbene eine Bestattungsverfügung oder einen Vorsorgevertrag hinterlegt hat.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "1-3 Tage",
+          "bundeslandAbhaengig": true,
+          "bundeslandFeld": "hoechstfristErdbestattung",
+          "bundeslandHinweis": "In {bundesland} muss die Erdbestattung innerhalb von {frist} Tagen nach dem Tod erfolgen.",
+          "dokumente": ["Bestattungsverfügung (falls vorhanden)", "Vorsorgevertrag (falls vorhanden)"],
+          "hinweis": null
+        },
+        {
+          "id": "trauerfeier-planen",
+          "titel": "Trauerfeier planen",
+          "beschreibung": "Termin und Ort der Trauerfeier festlegen. Wer soll sprechen? Gibt es Musikwünsche? Soll die Feier kirchlich oder weltlich sein?",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "2-3 Tage",
+          "dokumente": [],
+          "hinweis": "Wenn du eine Trauerrede halten möchtest, kann unser <a href='/tools/trauerrede/'>Trauerrede-Generator</a> dir dabei helfen."
+        },
+        {
+          "id": "arbeitgeber-melden",
+          "titel": "Eigenen Arbeitgeber informieren (Sonderurlaub)",
+          "beschreibung": "In Deutschland hast du bei Tod eines nahen Angehörigen Anspruch auf Sonderurlaub (in der Regel 1–2 Tage, je nach Arbeitsvertrag/Tarifvertrag). Informiere deinen Arbeitgeber zeitnah.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "1-2 Tage",
+          "dokumente": ["Sterbeurkunde (Kopie für Arbeitgeber)"],
+          "hinweis": "Prüfe deinen Arbeitsvertrag oder Tarifvertrag — manche gewähren bis zu 5 Tage Sonderurlaub."
+        },
+        {
+          "id": "traueranzeige",
+          "titel": "Traueranzeige aufgeben (optional)",
+          "beschreibung": "Wenn gewünscht, eine Traueranzeige in der Zeitung aufgeben. Der Bestatter kann dabei helfen. Auch Online-Gedenkseiten sind eine Möglichkeit.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "2-3 Tage",
+          "dokumente": [],
+          "hinweis": "Kosten für Traueranzeigen variieren stark — von 50 € (kleine Lokalzeitung) bis 500 € (überregional)."
+        }
+      ]
+    },
+    {
+      "id": "erste-woche",
+      "label": "Erste Woche (Tag 3–7)",
+      "zeitraum": "3–7 Tage nach dem Tod",
+      "beschreibung": "Versicherungen, Bank und Verträge des Verstorbenen klären.",
+      "aufgaben": [
+        {
+          "id": "versicherungen-melden",
+          "titel": "Versicherungen informieren",
+          "beschreibung": "Melde den Todesfall bei allen Versicherungen des Verstorbenen. Besonders wichtig: Lebensversicherung, Sterbegeldversicherung, Unfallversicherung. Die Meldefrist beträgt oft nur 24–72 Stunden nach Kenntnis.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "3-5 Tage",
+          "dokumente": ["Sterbeurkunde", "Versicherungsunterlagen", "Personalausweis des Angehörigen"],
+          "hinweis": "Achtung: Bei Lebens- und Unfallversicherungen gelten oft sehr kurze Meldefristen (24–72 Stunden). Hier nicht zu lange warten."
+        },
+        {
+          "id": "bank-melden",
+          "titel": "Bank informieren / Konten klären",
+          "beschreibung": "Informiere die Bank über den Todesfall. Das Konto wird eingeschränkt — Daueraufträge und Lastschriften laufen zunächst weiter. Für den Zugriff brauchst du eine Vollmacht, einen Erbschein oder ein Testament mit Eröffnungsprotokoll.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "3-7 Tage",
+          "dokumente": ["Sterbeurkunde", "Erbschein oder Testament", "Personalausweis"],
+          "hinweis": "Tipp: Eine Kontovollmacht über den Tod hinaus erspart den Erbschein. Falls keine vorhanden ist, kann es 4–8 Wochen dauern, bis du Zugang zum Konto bekommst."
+        },
+        {
+          "id": "rente-melden",
+          "titel": "Rentenversicherung / Pensionsstelle informieren",
+          "beschreibung": "Melde den Todesfall bei der Deutschen Rentenversicherung oder der zuständigen Pensionsstelle. Die Rente wird bis zum Ende des Sterbemonats weitergezahlt. Hinterbliebene können Witwen-/Witwerrente beantragen.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "innerhalb 1 Woche",
+          "dokumente": ["Sterbeurkunde", "Rentenversicherungsnummer"],
+          "hinweis": "Die Rente wird automatisch bis Monatsende weitergezahlt. Danach entsteht ein Überzahlungsbetrag, der zurückgefordert wird."
+        },
+        {
+          "id": "krankenkasse-melden",
+          "titel": "Krankenkasse informieren",
+          "beschreibung": "Melde den Todesfall bei der Krankenkasse des Verstorbenen. Die Mitgliedschaft endet mit dem Tod. Familienversicherte Angehörige müssen sich ggf. selbst versichern.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "innerhalb 1 Woche",
+          "dokumente": ["Sterbeurkunde", "Krankenversicherungskarte"],
+          "hinweis": null
+        },
+        {
+          "id": "arbeitgeber-verstorbener",
+          "titel": "Arbeitgeber des Verstorbenen informieren",
+          "beschreibung": "Falls der Verstorbene berufstätig war: Informiere den Arbeitgeber. Kläre offene Gehaltsforderungen, Urlaubsansprüche und betriebliche Altersvorsorge.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "innerhalb 1 Woche",
+          "dokumente": ["Sterbeurkunde"],
+          "hinweis": null
+        },
+        {
+          "id": "vertraege-pruefen",
+          "titel": "Laufende Verträge prüfen und kündigen",
+          "beschreibung": "Prüfe alle laufenden Verträge: Strom, Gas, Telefon, Internet, Abonnements, Mitgliedschaften, Streaming-Dienste. Die meisten können mit Sterbeurkunde sofort gekündigt werden.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "innerhalb 1 Woche",
+          "dokumente": ["Sterbeurkunde"],
+          "hinweis": "Tipp: Mietvertrag nicht sofort kündigen — die Kündigungsfrist beginnt erst nach der Kündigung, und die Wohnung muss vorher geräumt werden."
+        }
+      ]
+    },
+    {
+      "id": "erster-monat",
+      "label": "Erster Monat (Woche 2–4)",
+      "zeitraum": "2–4 Wochen nach dem Tod",
+      "beschreibung": "Erbe, Wohnung und langfristige Regelungen.",
+      "aufgaben": [
+        {
+          "id": "testament-eroeffnung",
+          "titel": "Testament eröffnen lassen / Erbschein beantragen",
+          "beschreibung": "Falls ein Testament vorhanden ist, muss es beim Nachlassgericht abgegeben werden. Das Gericht eröffnet es und benachrichtigt die Erben. Ohne Testament gilt die gesetzliche Erbfolge — du brauchst dann ggf. einen Erbschein.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "2-4 Wochen",
+          "dokumente": ["Testament (Original)", "Sterbeurkunde", "Personalausweis"],
+          "hinweis": "Ein Erbschein kostet je nach Nachlasswert 75–1.000 €+ und dauert 4–8 Wochen. Prüfe vorher, ob du ihn wirklich brauchst — mit einem notariellen Testament oder einer Kontovollmacht geht es oft ohne."
+        },
+        {
+          "id": "wohnung-kuendigen",
+          "titel": "Mietvertrag kündigen / Wohnung auflösen",
+          "beschreibung": "Wenn der Verstorbene allein gelebt hat, muss die Wohnung gekündigt und geräumt werden. Die gesetzliche Kündigungsfrist beträgt 3 Monate. Beginne frühzeitig mit dem Räumen.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "2-4 Wochen",
+          "dokumente": ["Sterbeurkunde", "Mietvertrag"],
+          "hinweis": "Laut §580 BGB haben Erben ein Sonderkündigungsrecht mit 3 Monaten Frist. Das gilt auch bei befristeten Mietverträgen."
+        },
+        {
+          "id": "vermieter-melden",
+          "titel": "Vermieter informieren",
+          "beschreibung": "Informiere den Vermieter über den Todesfall. Bei gemeinsamer Wohnung: Der Mietvertrag geht auf den überlebenden Mieter über.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "2 Wochen",
+          "dokumente": ["Sterbeurkunde"],
+          "hinweis": null
+        },
+        {
+          "id": "finanzamt",
+          "titel": "Finanzamt informieren / Steuererklärung",
+          "beschreibung": "Das Finanzamt muss über den Todesfall informiert werden. Für das Todesjahr muss eine letzte Einkommensteuererklärung eingereicht werden. Auch eine Erbschaftsteuererklärung kann fällig werden.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": true,
+          "dringlichkeit": "4 Wochen",
+          "dokumente": ["Sterbeurkunde", "Steueridentifikationsnummer"],
+          "hinweis": "Die Frist für die Erbschaftsteuererklärung beträgt 3 Monate nach Kenntnis der Erbschaft. Bei Unsicherheit: Steuerberater konsultieren."
+        },
+        {
+          "id": "digitaler-nachlass",
+          "titel": "Digitalen Nachlass regeln",
+          "beschreibung": "Kümmere dich um E-Mail-Konten, Social-Media-Profile, Online-Banking, Cloud-Speicher und Abonnements. Viele Plattformen bieten Verfahren für den Todesfall an (z. B. Facebook Gedenkzustand).",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "2-4 Wochen",
+          "dokumente": ["Sterbeurkunde", "Zugangsdaten (falls vorhanden)"],
+          "hinweis": "Ohne Zugangsdaten ist der Zugriff schwierig. Die meisten Anbieter verlangen eine Sterbeurkunde und einen Nachweis der Erbberechtigung."
+        },
+        {
+          "id": "grabpflege",
+          "titel": "Grabpflege organisieren",
+          "beschreibung": "Nach der Beisetzung: Kläre, wer sich langfristig um das Grab kümmert. Alternativ gibt es Dauergrabpflege-Verträge über die Friedhofsgärtnerei.",
+          "szenario": ["zuhause", "krankenhaus", "pflegeheim", "unbekannt"],
+          "pflicht": false,
+          "dringlichkeit": "3-4 Wochen",
+          "dokumente": [],
+          "hinweis": "Dauergrabpflege-Verträge kosten je nach Laufzeit und Grab 2.000–8.000 €. Bei Urnen- oder Baumbestattungen entfällt die Grabpflege."
+        }
+      ]
+    }
+  ],
+
+  "sonderfaelle": [
+    {
+      "id": "todesfall-ausland",
+      "titel": "Todesfall im Ausland",
+      "beschreibung": "Kontaktiere die deutsche Botschaft/Konsulat im betreffenden Land. Sie hilft bei der Überführung und der Ausstellung von Dokumenten. Eine Auslandsrückholung kostet je nach Land 5.000–15.000 €.",
+      "wichtig": "Prüfe, ob eine Reiseversicherung mit Rückholklausel besteht."
+    },
+    {
+      "id": "polizei",
+      "titel": "Unnatürlicher Tod / Unfall / Verdacht auf Fremdeinwirkung",
+      "beschreibung": "Sofort die Polizei (110) rufen. Nichts verändern, nichts aufräumen. Die Polizei leitet die notwendigen Ermittlungen ein. Die Bestattung kann sich in diesen Fällen um Wochen verzögern.",
+      "wichtig": "Die Rechtsmedizin kann die Freigabe des Leichnams verweigern, bis die Untersuchung abgeschlossen ist."
+    },
+    {
+      "id": "organ-spende",
+      "titel": "Organspende",
+      "beschreibung": "Wenn der Verstorbene einen Organspendeausweis hat oder die Angehörigen zustimmen, muss das Krankenhaus schnell handeln. Die Organentnahme erfolgt vor der Bestattung.",
+      "wichtig": "Organspende verzögert die Bestattung nur um wenige Stunden."
+    },
+    {
+      "id": "sozialbestattung",
+      "titel": "Kein Geld für die Bestattung (Sozialbestattung)",
+      "beschreibung": "Wenn die Kosten nicht getragen werden können, kann beim Sozialamt eine Übernahme der Bestattungskosten beantragt werden (§74 SGB XII). Der Antrag sollte vor der Bestattung gestellt werden.",
+      "wichtig": "Das Sozialamt prüft die wirtschaftliche Zumutbarkeit. Einfache Bestattungen werden in der Regel übernommen."
+    }
+  ],
+
+  "trust": {
+    "disclaimer": "Diese Checkliste bietet eine Orientierung und ersetzt keine Rechtsberatung. Bestattungsrecht ist Ländersache — die genauen Fristen und Regelungen können variieren. Alle Angaben ohne Gewähr.",
+    "methodik": "Mehr zu unserer Arbeitsweise findest du auf unserer Methodik-Seite.",
+    "methodikLink": "/methodik",
+    "quellenHinweis": "Bundesland-Fristen basieren auf den jeweiligen Landesbestattungsgesetzen (Stand: April 2026). Einzelne Regelungen können sich ändern."
+  },
+
+  "cta": {
+    "afterCompletion": {
+      "headline": "Du hast viel geschafft.",
+      "text": "Nimm dir die Zeit, die du brauchst. Wenn du bei der weiteren Planung Unterstützung brauchst:",
+      "links": [
+        {"label": "Beerdigung planen", "href": "/beerdigung-planen", "description": "Schritt für Schritt zur Bestattung"},
+        {"label": "Bestattungskosten", "href": "/bestattungskosten", "description": "Was eine Bestattung kostet"},
+        {"label": "Bestatter finden", "href": "/bestatter", "description": "Vertrauensvolle Bestatter in deiner Nähe"}
+      ],
+      "note": "Kein Druck, kein Zeitlimit. Alles in deinem Tempo."
+    }
+  },
+
+  "faq": [
+    {
+      "question": "Was muss ich als erstes tun, wenn jemand stirbt?",
+      "answer": "Zuerst muss ein Arzt den Tod feststellen und einen Totenschein ausstellen. Zu Hause rufst du den Hausarzt oder den ärztlichen Bereitschaftsdienst (116 117). Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."
+    },
+    {
+      "question": "Wie schnell muss eine Bestattung stattfinden?",
+      "answer": "Das hängt vom Bundesland ab. Die früheste Bestattung ist nach 48 Stunden möglich. Die Höchstfrist liegt je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Unsere Checkliste zeigt dir die genauen Fristen für dein Bundesland."
+    },
+    {
+      "question": "Wer bezahlt die Bestattung?",
+      "answer": "In erster Linie die Erben. Wenn der Verstorbene eine Sterbegeldversicherung oder Bestattungsvorsorge hatte, werden die Kosten daraus gedeckt. Wenn niemand die Kosten tragen kann, kann beim Sozialamt eine Kostenübernahme beantragt werden (§74 SGB XII)."
+    },
+    {
+      "question": "Wie viele Sterbeurkunden brauche ich?",
+      "answer": "Wir empfehlen mindestens 5 beglaubigte Ausfertigungen. Du brauchst sie für: Bank, Versicherungen, Rentenversicherung, Finanzamt, Vermieter und ggf. Arbeitgeber. Jede Ausfertigung kostet ca. 12 €."
+    },
+    {
+      "question": "Werden meine Eingaben in der Checkliste gespeichert?",
+      "answer": "Dein Fortschritt wird nur in deinem Browser gespeichert (Local Storage). Es werden keine Daten an unsere Server übermittelt. Wenn du den Browser-Cache löschst, geht der Fortschritt verloren."
+    },
+    {
+      "question": "Kann ich die Checkliste ausdrucken?",
+      "answer": "Ja. Du kannst die Checkliste jederzeit über die Druckfunktion als PDF speichern oder ausdrucken. Auch ein WhatsApp-Share ist geplant, damit Familienmitglieder Aufgaben untereinander aufteilen können."
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-wiesbaden",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Wiesbaden",
+    "bundesland": "Hessen",
+    "einwohner": "290.000",
+    "slug": "wiesbaden"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Wiesbaden",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Wiesbaden",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Wiesbaden Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1200,
+      "max": 1600,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 300,
+      "max": 400,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 700,
+      "max": 1000,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Hessen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Wiesbaden bietet 4 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Hessen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Wiesbaden?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.200–1.600€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Wiesbaden?",
+      "antwort": "Ja. Urnengräber kosten nur 300–400€ und Baumbestattungen 700–1.000€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Wiesbaden?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Hessen?",
+      "antwort": "Hessen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Wiesbaden",
+    "description": "Bestatter in Wiesbaden: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Wiesbaden finden"
+  }
+}

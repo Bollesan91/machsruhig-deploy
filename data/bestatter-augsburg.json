@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-augsburg",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Augsburg",
+    "bundesland": "Bayern",
+    "einwohner": "305.000",
+    "slug": "augsburg"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Augsburg",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Augsburg",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Augsburg Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1300,
+      "max": 1700,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 330,
+      "max": 430,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 800,
+      "max": 1150,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Bayern Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Augsburg bietet 4 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Bayern."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Augsburg?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.300–1.700€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Augsburg?",
+      "antwort": "Ja. Urnengräber kosten nur 330–430€ und Baumbestattungen 800–1.150€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Augsburg?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Bayern?",
+      "antwort": "Bayern erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Augsburg",
+    "description": "Bestatter in Augsburg: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Augsburg finden"
+  }
+}

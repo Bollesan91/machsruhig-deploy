@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-bochum",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Bochum",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "365.000",
+    "slug": "bochum"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Bochum",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Bochum",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Bochum Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1200,
+      "max": 1600,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 280,
+      "max": 380,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 650,
+      "max": 900,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Nordrhein-Westfalen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Bochum bietet 5 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Nordrhein-Westfalen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Bochum?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.200–1.600€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Bochum?",
+      "antwort": "Ja. Urnengräber kosten nur 280–380€ und Baumbestattungen 650–900€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Bochum?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Nordrhein-Westfalen?",
+      "antwort": "Nordrhein-Westfalen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Bochum",
+    "description": "Bestatter in Bochum: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Bochum finden"
+  }
+}

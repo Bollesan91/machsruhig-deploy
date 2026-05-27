@@ -1,0 +1,37 @@
+Ich fetche die Datei und prüfe.
+
+Ich fetche die Datei und prüfe.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/oldenburg/index.html?cb=20260519b5
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/oldenburg/index.html?cb=20260519b5
+
+Ich prüfe die Adresse "Amt für Soziale Hilfen, Pferdemarkt 14" und die Telefonnummer 0441 235-4444 gegen Primärquellen, da dies die kritischsten Fakten sind.
+
+Web durchsucht
+Web durchsucht
+
+Die Suche liefert nur Oldenburg in Holstein. Ich suche gezielt nach Oldenburg Oldenburg (Niedersachsen).
+
+Web durchsucht
+Web durchsucht
+
+Primärquelle bestätigt: Pferdemarkt 14, 26121 Oldenburg, Tel. 0441 235-4444, Sprechzeiten korrekt. Allerdings: Die offizielle Bezeichnung lautet laut Serviceportal "Soziale Hilfen" (Fachdienst) — nicht "Amt für Soziale Hilfen". Letzteres ist die schleswig-holsteinische Variante. Ich prüfe das nochmals direkt.
+
+Web durchsucht
+Web durchsucht
+
+Damit habe ich genug. Ich prüfe noch das BSG-Urteil und das NBestattG-Kürzel.
+
+Aus früheren Memory-Daten und Standard-Wissen: Niedersächsisches Bestattungsgesetz wird offiziell als "BestattG" abgekürzt (ohne N-Präfix), so wie es auch im restlichen HTML-Text verwendet wird. Die im neuen Modul verwendete Abkürzung "NBestattG" weicht von der offiziellen Bezeichnung und vom Rest des Dokuments ab — das ist eine Inkonsistenz, aber nicht sachlich falsch (NBestattG wird inoffiziell gelegentlich verwendet).
+
+BSG B 8 SO 20/10 R vom 25.08.2011 — bekanntes und korrektes Grundsatzurteil zur Anspruchsinhaberschaft nach § 74 SGB XII.
+
+Jetzt die Bewertung:
+
+VERDICT: FAIL
+
+MUST-FIX-Liste:
+
+Behördenbezeichnung falsch. Der HTML-Text nennt "Amt für Soziale Hilfen der Stadt Oldenburg" bzw. "Fachdienst Soziale Hilfen". Die offizielle Bezeichnung der Stadt Oldenburg (Nds.) ist laut Serviceportal "Soziale Hilfen" als Fachdienst innerhalb des "Amt für Teilhabe und Soziales". "Amt für Soziale Hilfen" ist die Behördenbezeichnung in Schleswig-Holstein (Oldenburg in Holstein) — Verwechslungsrisiko. Korrekte Form: "Stadt Oldenburg, Amt für Teilhabe und Soziales – Fachdienst Soziale Hilfen".
+Gesetzes-Kürzel inkonsistent. Im neuen Modul steht "NBestattG" (4 ×), im Rest des Dokuments durchgängig "BestattG". Da § 8 Abs. 3 und § 8 Abs. 4 weiter oben bereits als "BestattG" zitiert wurden, muss das Kürzel im Sozialbestattungs-Modul vereinheitlicht werden (entweder konsequent "Nds. BestattG" überall oder "BestattG" überall).
+Adresse, Telefon, Mail, Sprechzeiten, kreisfreie-Stadt-Klarstellung, § 8 Abs. 3, § 74 SGB XII, BSG-Urteil B 8 SO 20/10 R v. 25.08.2011, HTML-Tags — alle korrekt/balanced.

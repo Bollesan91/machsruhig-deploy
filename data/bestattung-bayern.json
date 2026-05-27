@@ -1,0 +1,95 @@
+{
+  "name": "Bayern",
+  "slug": "bayern",
+  "region": "Süddeutschland",
+  "bestattungsgesetz": {
+    "name": "Bayerisches Bestattungsgesetz (BestG)",
+    "short": "BestG Bayern",
+    "reference": "BestG",
+    "link": "https://www.gesetze-bayern.de/Content/Document/BayBestG"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "96h (4 Tage)",
+    "ausnahmen": "Schnellleichen können früher beerdigt werden; Konservierungskosten möglich"
+  },
+  "friedhofspflicht": {
+    "besteht": true,
+    "ausnahmen": "Seebestattung, Waldbestattung (FriedWald)"
+  },
+  "zweite_leichenschau_kremation": true,
+  "sargpflicht": {
+    "besteht": true,
+    "ausnahmen": "Nicht bei Kremation"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Nur von Nord- und Ostsee",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner/Lebenspartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister",
+    "Großeltern",
+    "Enkel"
+  ],
+  "besonderheiten": [
+    "Bayern hat strenge Friedhofspflicht, aber FriedWald-Bestattung ist beliebt",
+    "Sargpflicht wird diskutiert, aber noch nicht gelockert",
+    "Hohe Grabpflegekosten in Bayern",
+    "Zahlreiche städtische und kirchliche Friedhöfe",
+    "Reform 2023: Digitale Bestattungsverfügung möglich"
+  ],
+  "major_cities": [
+    {
+      "name": "München",
+      "slug": "muenchen",
+      "has_page": true
+    },
+    {
+      "name": "Nürnberg",
+      "slug": "nuernberg",
+      "has_page": false
+    },
+    {
+      "name": "Augsburg",
+      "slug": "augsburg",
+      "has_page": false
+    },
+    {
+      "name": "Regensburg",
+      "slug": "regensburg",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Wie lange muss ich in Bayern nach dem Tod warten, bis die Beerdigung stattfinden kann?",
+      "answer": "In Bayern muss mindestens 24 Stunden nach dem festgestellten Tod verstreichen. Die Beerdigung muss innerhalb von 96 Stunden (4 Tagen) stattfinden. Konservierung kann nötig sein, falls dieser Zeitrahmen nicht ausreicht."
+    },
+    {
+      "question": "Gibt es in Bayern eine Sargpflicht?",
+      "answer": "Ja, in Bayern besteht Sargpflicht für Erdbestattungen. Der Sarg muss die geforderten Normen erfüllen. Bei Kremation ist kein Sarg erforderlich, der Verstorbene wird in einem Verbrennungssarg eingeäschert."
+    },
+    {
+      "question": "Kann ich in Bayern eine Waldbestattung machen?",
+      "answer": "Ja, Waldbestattung im FriedWald ist in Bayern möglich. Es gibt mehrere FriedWald-Standorte (z.B. in der Region Ebersberg). Die Asche wird unter einem Baum beigesetzt, kostet aber 1.500–4.000 € plus laufende Gebühren."
+    },
+    {
+      "question": "Wer zahlt die Bestattung in Bayern, wenn der Verstorbene mittellos ist?",
+      "answer": "Das Sozialamt Bayern kann Bestattungskosten als Fürsorgeleistung übernehmen. Der Anspruch besteht für Angehörige erste bis zweiter Ordnung. Ein kostengünstiger Sarg und Friedhofsgebühren müssen selbst bezahlt werden, soweit möglich."
+    },
+    {
+      "question": "Ist eine Hausbestattung in Bayern erlaubt?",
+      "answer": "Nein, in Bayern besteht strikte Friedhofspflicht für Erdbestattungen. Die Asche darf zu Hause aufbewahrt werden, aber nur bei Urnenbestattung. Informieren Sie sich beim Standesamt über lokale Regelungen."
+    },
+    {
+      "question": "Wie viel kostet eine Beerdigung in Bayern?",
+      "answer": "Eine einfache Erdbestattung kostet 3.000–6.000 €, eine Feuerbestattung 2.000–4.000 €. Waldbestattung kostet 1.500–4.000 €. Hinzu kommen Friedhofsgebühren (50–150 € für 10–20 Jahre), Bestattungsinstitut, Trauerfeier und optional Grabstein."
+    }
+  ],
+  "sources": [
+    "Bayerisches Bestattungsgesetz (BestG)",
+    "Verbraucherzentrale Bayern: Bestattungsrecht",
+    "Bundesverband Deutscher Bestatter (BDB)"
+  ]
+}

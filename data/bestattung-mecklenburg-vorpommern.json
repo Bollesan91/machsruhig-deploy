@@ -1,0 +1,81 @@
+{
+  "name": "Mecklenburg-Vorpommern",
+  "slug": "mecklenburg-vorpommern",
+  "region": "Nordostdeutschland",
+  "bestattungsgesetz": {
+    "name": "Bestattungsgesetz Mecklenburg-Vorpommern",
+    "short": "BestG M-V",
+    "reference": "BestG",
+    "link": "https://www.regierung-mv.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "10 Tage",
+    "ausnahmen": "Konservierung möglich"
+  },
+  "friedhofspflicht": {
+    "besteht": true,
+    "ausnahmen": "Seebestattung (Ostsee), Waldbestattung"
+  },
+  "zweite_leichenschau_kremation": true,
+  "sargpflicht": {
+    "besteht": false,
+    "ausnahmen": "Biologisch abbaubar erlaubt"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Ja, Ostsee möglich",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Mecklenburg-Vorpommern hat Zugang zur Ostsee — Seebestattung sehr beliebt",
+    "Friedhofsvielfalt: ländliche und urbane Friedhöfe",
+    "Waldbestattung in mehreren Regionen verfügbar",
+    "Günstiger als im Süden Deutschlands",
+    "Viele kleine Dorffriedhöfe noch traditionell gestaltet",
+    "Touristische Seebestattungen beliebt (Ostseeurlaub + Trauerfeier)"
+  ],
+  "major_cities": [
+    {
+      "name": "Rostock",
+      "slug": "rostock",
+      "has_page": false
+    },
+    {
+      "name": "Schwerin",
+      "slug": "schwerin",
+      "has_page": false
+    },
+    {
+      "name": "Greifswald",
+      "slug": "greifswald",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Ist Seebestattung von Mecklenburg-Vorpommern aus möglich?",
+      "answer": "Ja! Die Ostsee ermöglicht Seebestattung. Anbieter von Rostock oder Warnemünde organisieren Trauerfeier und Beisetzung. Kosten: ca. 800–1.500 €."
+    },
+    {
+      "question": "Wie lange nach dem Tod muss die Beerdigung sein?",
+      "answer": "Mindestens 24 Stunden müssen vergehen. Die Beerdigung muss spätestens 10 Tage später erfolgen."
+    },
+    {
+      "question": "Gibt es Waldbestattung in der Region?",
+      "answer": "Ja, mehrere FriedWald-Standorte sind in Mecklenburg-Vorpommern verfügbar (z.B. Lübeck-Umgebung). Kosten ab ca. 900 € + jährliche Gebühren."
+    },
+    {
+      "question": "Besteht Sargpflicht in Mecklenburg-Vorpommern?",
+      "answer": "Nein, nicht streng. Biologisch abbaubare Materialien sind erlaubt. Ein klassischer Sarg ist optional."
+    }
+  ],
+  "sources": [
+    "Bestattungsgesetz Mecklenburg-Vorpommern",
+    "Ministerium für Gesundheit M-V",
+    "Verbraucherzentrale Mecklenburg-Vorpommern"
+  ]
+}

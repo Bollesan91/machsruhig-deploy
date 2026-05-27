@@ -1,0 +1,41 @@
+Ich hole zuerst die Datei und verifiziere dann die Adresse des Sozialamts Mülheim.
+
+Ich hole zuerst die Datei und verifiziere dann die Adresse des Sozialamts Mülheim.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/muelheim/index.html
+
+Datei geladen. Jetzt verifiziere ich das Sozialamt Mülheim an der Ruhr.
+
+Web durchsucht
+Web durchsucht
+
+Alle Daten verifiziert. Hier der Insert-Plan:
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR: Einfügen direkt vor der Zeile <section class="mr-section" aria-labelledby="bestatter-h"> (also nach dem Schließen von </section> des Todesfall-Blocks, vor dem Bestatter-Block).
+
+INSERT-CODE:
+
+html
+<section class="mr-section" aria-labelledby="sozial-h">
+  <h2 id="sozial-h">Sozialbestattung in Mülheim an der Ruhr</h2>
+  <p>Reicht der Nachlass nicht aus und können die Bestattungspflichtigen die Kosten nicht aus eigenen Mitteln tragen, übernimmt das Sozialamt nach § 74 SGB XII die erforderlichen Bestattungskosten. Anspruchsgrundlage ist nicht Bedürftigkeit der Antragstellenden allein, sondern die <strong>Unzumutbarkeit</strong> der Kostentragung; das Bundessozialgericht hat in seiner Grundsatzentscheidung B 8 SO 20/10 R vom 25. August 2011 klargestellt, dass die Zumutbarkeit unter Berücksichtigung der gesamten Vermögens-, Einkommens- und persönlichen Verhältnisse zu prüfen ist – auch eine Erbausschlagung entbindet nicht automatisch von der Kostentragungspflicht. Wer in Mülheim bestattungspflichtig ist, ergibt sich aus § 8 BestG NRW: in dieser Reihenfolge Ehegatte oder eingetragener Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern und volljährige Enkelkinder.</p>
+
+  <h3>Zuständige Stelle</h3>
+  <p>Zuständig ist das Sozialamt am Sterbeort (§ 98 Abs. 3 SGB XII), in Mülheim also bei einem hier eingetretenen Todesfall:</p>
+  <p><strong>Sozialamt der Stadt Mülheim an der Ruhr</strong><br>
+  Ruhrstraße 1 (Gebäude Thyssen-Schachtbau), Zimmer 421<br>
+  45468 Mülheim an der Ruhr<br>
+  Telefon: 0208 / 455-5061<br>
+  E-Mail: sozialamt@muelheim-ruhr.de<br>
+  Vorsprache nur nach Terminvereinbarung.</p>
+  <p>Für Personen, die zu Lebzeiten Hilfe zum Lebensunterhalt nach dem 3. Kapitel SGB XII durch die Stadt Mülheim bezogen haben, ist Mülheim unabhängig vom Sterbeort zuständig.</p>
+
+  <h3>Was übernommen wird – und was nicht</h3>
+  <p>Übernahmefähig sind die für eine <strong>würdige, einfache Bestattung</strong> erforderlichen Kosten: einfacher Sarg oder Urne, Überführung, Friedhofsgebühren für ein Reihen- oder Urnenreihengrab nach der Mülheimer Gebührensatzung vom 20. Dezember 2022, einfache Trauerfeier, Sterbeurkunden. Für einen Grabstein sind drei Kostenvoranschläge vorzulegen. Nicht übernommen werden Repräsentationskosten wie aufwendige Wahlgräber, Traueranzeigen, Trauerkaffee, Blumenschmuck über das Notwendige hinaus oder gehobene Sargmodelle. Eigenes Einkommen und Vermögen der Bestattungspflichtigen sowie Guthaben auf Konten der verstorbenen Person sind vorrangig einzusetzen.</p>
+
+  <h3>Antragszeitpunkt</h3>
+  <p>Der Antrag ist nach gefestigter Rechtsprechung <strong>innerhalb von sechs Wochen ab Kenntnis der Bestattungspflicht</strong> beim Sozialamt zu stellen – spätere Anträge können abgelehnt werden. Praktisch heißt das: <strong>vor</strong> Beauftragung des Bestattungsunternehmens das Sozialamt informieren, damit der Bestatter den Auftrag von Anfang an im Rahmen der übernahmefähigen Kosten kalkulieren kann. Eine Vorabbewilligung ist nicht möglich; das Sozialamt prüft erst nach Vorlage der Rechnungen, der finanziellen Nachweise (Kontoauszüge der letzten drei Monate der verstorbenen Person) und gegebenenfalls der Erbausschlagung.</p>
+</section>

@@ -1,0 +1,191 @@
+{
+  "documents": [
+    {
+      "id": "patientenverfuegung",
+      "name": "Patientenverfügung",
+      "icon": "📋",
+      "description": "Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.",
+      "importance": "Dokumentationen deiner persönlichen Wünsche für Notfallmedizin.",
+      "why": "Du kannst nicht selbst entscheiden — wer entscheidet dann für dich?",
+      "link": "/vorsorge/patientenverfuegung",
+      "providers": [
+        {
+          "name": "Bundesärztekammer",
+          "url": "https://www.bundesaerztekammer.de"
+        },
+        {
+          "name": "Bundesnotarkammer",
+          "url": "https://www.bundesnotarkammer.de"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    },
+    {
+      "id": "vorsorgevollmacht",
+      "name": "Vorsorgevollmacht",
+      "icon": "🔑",
+      "description": "Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.",
+      "importance": "Ermöglicht Verwaltung und Entscheidungen in deinem Namen.",
+      "why": "Ohne Vollmacht kann der Staat eine Person einsetzen, die du nicht kennst.",
+      "link": "/vorsorge/vorsorgevollmacht",
+      "providers": [
+        {
+          "name": "Bundesnotarkammer",
+          "url": "https://www.bundesnotarkammer.de"
+        },
+        {
+          "name": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    },
+    {
+      "id": "betreuungsverfuegung",
+      "name": "Betreuungsverfügung",
+      "icon": "👤",
+      "description": "Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.",
+      "importance": "Vertrauensperson deiner Wahl in Betreuungsfällen.",
+      "why": "Verhindert, dass das Gericht eine fremde Person bestellt.",
+      "link": "#",
+      "providers": [
+        {
+          "name": "Bundesnotarkammer",
+          "url": "https://www.bundesnotarkammer.de"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    },
+    {
+      "id": "testament",
+      "name": "Testament",
+      "icon": "📜",
+      "description": "Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.",
+      "importance": "Dringende Regelung deines Vermögens nach deinem Wunsch.",
+      "why": "Ohne Testament entscheidet das Gesetz. Deine Liebsten könnten leer ausgehen.",
+      "link": "/vorsorge/testament",
+      "providers": [
+        {
+          "name": "Bundesnotarkammer",
+          "url": "https://www.bundesnotarkammer.de"
+        },
+        {
+          "name": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de"
+        }
+      ],
+      "situation": ["verheiratet", "kindern"],
+      "priority": "dringend"
+    },
+    {
+      "id": "bestattungsverfuegung",
+      "name": "Bestattungsverfügung",
+      "icon": "⚰️",
+      "description": "Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.",
+      "importance": "Deine persönlichen Wünsche für Abschied und Bestattung.",
+      "why": "Deine Familie weiß, wie du beerdigt werden möchtest.",
+      "link": "#",
+      "providers": [
+        {
+          "name": "Bestatter vor Ort",
+          "url": "/bestatter/"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    },
+    {
+      "id": "organspendeausweis",
+      "name": "Organspendeausweis",
+      "icon": "💝",
+      "description": "Dokumentiert deine Entscheidung zu Organ- und Gewebespende.",
+      "importance": "Klare Regelung deiner Bereitschaft zur Organspende.",
+      "why": "Gibt Gewissheit für deine Angehörigen und kann Leben retten.",
+      "link": "#",
+      "providers": [
+        {
+          "name": "Bundeszentrale für gesundheitliche Aufklärung",
+          "url": "https://www.organspende.de"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    },
+    {
+      "id": "kontovollmacht",
+      "name": "Kontovollmacht / Bankenvollmacht",
+      "icon": "🏦",
+      "description": "Ermöglicht Zugang zu Konten und Bankangelegenheiten für deine Vertrauensperson.",
+      "importance": "Regelt Bankzugang für Verwaltung und Abwicklung.",
+      "why": "Ohne Bankenvollmacht können deine Konten eingefroren sein.",
+      "link": "#",
+      "providers": [
+        {
+          "name": "Deine Hausbank",
+          "url": "#"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    },
+    {
+      "id": "digitalerbe",
+      "name": "Digitalerbe (Online-Konten)",
+      "icon": "💻",
+      "description": "Regelung des Zugangs zu E-Mails, Sozialen Medien, Cloud-Speichern und Dateien.",
+      "importance": "Sichert digitale Identität und persönliche Daten.",
+      "why": "Ohne Regelung können wichtige digitale Vermögenswerte verloren gehen.",
+      "link": "#",
+      "providers": [
+        {
+          "name": "Verbraucherzentrale",
+          "url": "https://www.verbraucherzentrale.de"
+        }
+      ],
+      "situation": ["single", "verheiratet", "kindern", "alleinerziehend"]
+    }
+  ],
+  "faq": [
+    {
+      "frage": "Muss ich alle Dokumente haben?",
+      "antwort": "Nein, aber je nach deiner Lebenssituation sind einige wichtiger als andere. Ein Testament ist für verheiratete Menschen mit Kindern dringend, eine Patientenverfügung für alle empfohlen. Wir zeigen dir, was für dich passt."
+    },
+    {
+      "frage": "Kann ich alles selbst erstellen?",
+      "antwort": "Ja, einfache Dokumente wie eine handschriftliche Patientenverfügung oder ein Privatschriftliches Testament sind gültig. Für rechtssicher komplexe Angelegenheiten (großes Vermögen, schwierige Familienverhältnisse) empfehlen wir einen Notar. Das kostet 100–300 €, gibt aber Sicherheit."
+    },
+    {
+      "frage": "Was kostet professionelle Vorsorge?",
+      "antwort": "Handschriftlich: kostenlos. Mit Notar: Testament 100–300 €, Vollmachten 50–150 € pro Dokument. Manche Organisationen (Verbraucherzentralen, Afilio) bieten Muster kostenlos oder für kleines Geld an. Es lohnt sich, mehrere Wege zu vergleichen."
+    },
+    {
+      "frage": "Wo bewahre ich die Dokumente auf?",
+      "antwort": "Papierversionen: Tresor zu Hause, Bankschließfach oder beim Notar. Digitale Kopien: sichere Cloud oder verschlüsselter USB-Stick, Zugänge bei Vertrauensperson hinterlegt. Wichtig: Deine Bevollmächtigte Person muss wissen, wo die Dokumente sind."
+    }
+  ],
+  "situationLabels": {
+    "single": "Single",
+    "verheiratet": "Verheiratet/Verpartnert",
+    "kindern": "Mit Kindern",
+    "alleinerziehend": "Alleinerziehend"
+  },
+  "wohnungLabels": {
+    "eigentum": "Eigentum",
+    "miete": "Miete",
+    "pflegeheim": "Pflegeheim/Betreuung"
+  },
+  "priorityColors": {
+    "dringend": {
+      "bg": "#fff3cd",
+      "border": "#ffc107",
+      "tag": "🔴 Dringend"
+    },
+    "empfohlen": {
+      "bg": "#d1ecf1",
+      "border": "#17a2b8",
+      "tag": "🟡 Empfohlen"
+    },
+    "optional": {
+      "bg": "#d4edda",
+      "border": "#28a745",
+      "tag": "🟢 Optional"
+    }
+  }
+}

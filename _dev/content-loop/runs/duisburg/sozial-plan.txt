@@ -1,0 +1,43 @@
+Ich fetche die Live-Version und verifiziere die Duisburger Behördendaten.
+
+Ich fetche die Live-Version und verifiziere die Duisburger Behördendaten.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/duisburg/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/duisburg/index.html
+
+Jetzt verifiziere ich die Duisburger Sozialamt-Adresse.
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert: Amt für Soziales und Wohnen, Schwanenstraße 5-7, 47051 Duisburg, Tel. 0203 94000, amt-fuer-soziales-und-wohnen@stadt-duisburg.de. Hier der Insert-Plan:
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR:
+
+  <div class="mr-section">
+    <h2>Bestatter-Wahl in Duisburg</h2>
+
+(Einfügen DIREKT VOR diesem Block — nach dem Schließen des "Was nach einem Todesfall zu tun ist"-Abschnitts.)
+
+INSERT-CODE:
+
+html
+  <div class="mr-section">
+    <h2>Sozialbestattung in Duisburg — wenn die Kosten nicht zu tragen sind</h2>
+    <p>Eine Bestattung kostet in Duisburg erfahrungsgemäß 6.000 bis 9.000 Euro. Können die nach § 8 BestG NRW bestattungspflichtigen Angehörigen (Reihenfolge: Ehegatte/eingetragener Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern, volljährige Enkelkinder) diese Kosten nicht aus eigenem Einkommen und Vermögen aufbringen, übernimmt das Sozialamt nach <strong>§ 74 SGB XII</strong> die erforderlichen Kosten — soweit ihnen die Kostentragung nicht zugemutet werden kann. Die Sozialbestattung ist abzugrenzen von der ordnungsbehördlichen Bestattung nach § 8 Abs. 1 BestG NRW, die das Bürger- und Ordnungsamt veranlasst, wenn überhaupt keine Angehörigen bestatten — bei der Sozialbestattung bleibt die Totenfürsorge bei den Angehörigen.</p>
+
+    <h3>Voraussetzungen — wer Anspruch hat</h3>
+    <p>Antragsberechtigt ist, wer nach Erbrecht, Unterhaltsrecht oder § 8 BestG NRW bestattungspflichtig ist und die Kosten nachweislich nicht tragen kann. Geprüft werden Einkommen und Vermögen der Antragsteller sowie das Erbe — der Nachlass des Verstorbenen ist vorrangig einzusetzen. Empfänger von Bürgergeld, Grundsicherung im Alter oder geringer Renten erfüllen die Voraussetzungen regelmäßig. Das Bundessozialgericht hat mit Urteil vom 25. August 2011 (Az. <strong>B 8 SO 20/10 R</strong>) klargestellt, dass auch Schulden, laufende Verpflichtungen und die individuelle Lebenslage in die Zumutbarkeitsprüfung einzubeziehen sind.</p>
+
+    <h3>Zuständige Stelle in Duisburg</h3>
+    <p>Zuständig ist das <strong>Amt für Soziales und Wohnen der Stadt Duisburg</strong>, Schwanenstraße 5–7, 47051 Duisburg. Erreichbar über die zentrale Behördennummer Call Duisburg: <strong>0203 94000</strong>, per E-Mail <a href="mailto:amt-fuer-soziales-und-wohnen@stadt-duisburg.de">amt-fuer-soziales-und-wohnen@stadt-duisburg.de</a>. Antragsformulare sind dort erhältlich; eine schriftliche Antragstellung ist nicht zwingend formgebunden, aber dringend empfohlen. War der Verstorbene zu Lebzeiten Sozialhilfeempfänger, bleibt der bislang zuständige Sozialhilfeträger zuständig.</p>
+
+    <h3>Was übernommen wird — und was nicht</h3>
+    <p>Übernommen werden die <strong>erforderlichen Kosten einer einfachen, ortsüblichen und würdigen Bestattung</strong>: einfacher Sarg oder Urne, hygienische Versorgung, Überführung im Stadtgebiet, Friedhofsgebühren für ein einfaches Reihengrab (bei Wahlgrabstellen nur, soweit ein Reihengrab nicht verfügbar ist), Krematoriumsgebühr bei Feuerbestattung, Trauerhallennutzung, Sterbeurkunden und ggf. ein einfaches Grabzeichen, soweit die Friedhofssatzung dies vorschreibt. Bei muslimischer Bestattung wird die rituelle Waschung anerkannt.</p>
+    <p><strong>Nicht übernommen</strong> werden: Trauerfeier-Erweiterungen (Musik, Blumenschmuck über das Übliche hinaus), Trauerredner-Honorare, Trauerkaffee, Todesanzeigen, Anreisekosten der Angehörigen, Auslandsüberführungen, aufwendige Grabsteine und die spätere Grabpflege.</p>
+
+    <h3>Antrag rechtzeitig stellen</h3>
+    <p>Der Antrag kann <strong>vor oder nach</strong> der Bestattung gestellt werden — empfohlen ist die Antragstellung <strong>vor</strong> der Beauftragung des Bestatters. Mit einer schriftlichen Kostenübernahmeerklärung des Sozialamts rechnet der Bestatter direkt mit der Behörde ab. Wird der Antrag erst nach der Bestattung gestellt, prüft das Amt nur noch die Kosten, die als erforderlich gelten — alles darüber Hinausgehende bleibt bei den Angehörigen. Erforderliche Unterlagen: Sterbeurkunde, Bestatter-Kostenvoranschlag, Gebührenbescheid des Friedhofs, Einkommens- und Vermögensnachweise (Renten-/Leistungsbescheide, Kontoauszüge der letzten drei Monate), Nachweise zum Erbe.</p>
+  </div>

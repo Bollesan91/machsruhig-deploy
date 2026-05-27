@@ -1,0 +1,76 @@
+{
+  "name": "Hamburg",
+  "slug": "hamburg",
+  "region": "Norddeutschland",
+  "bestattungsgesetz": {
+    "name": "Hamburgisches Bestattungsgesetz (HBestG)",
+    "short": "HBestG",
+    "reference": "HBestG",
+    "link": "https://www.hamburg.de/"
+  },
+  "bestattungsfrist": {
+    "mindestfrist": "24h",
+    "höchstfrist": "10 Tage",
+    "ausnahmen": "Bei Kremation kann Urne ausgegeben werden"
+  },
+  "friedhofspflicht": {
+    "besteht": false,
+    "ausnahmen": "Urnenherausgabe nach Kremation erlaubt"
+  },
+  "zweite_leichenschau_kremation": false,
+  "sargpflicht": {
+    "besteht": false,
+    "ausnahmen": "Biologisch abbaubare Materialien erlaubt"
+  },
+  "bestattungswald": true,
+  "seebestattung": "Ja, von der Nordseeküste",
+  "totenfürsorge_reihenfolge": [
+    "Ehepartner/Lebenspartner",
+    "Kinder",
+    "Eltern",
+    "Geschwister"
+  ],
+  "besonderheiten": [
+    "Hamburg hat liberale Bestattungsgesetze mit Urnenherausgabe",
+    "Hoher Anteil von Feuerbestattungen (ca. 80 %)",
+    "Seebestattung ist sehr beliebt in Hamburg",
+    "Waldbestattung in der Region verfügbar",
+    "Moderne Friedhofskultur mit viel Grün",
+    "Kolumbarium-Anlagen in mehreren Friedhöfen"
+  ],
+  "major_cities": [
+    {
+      "name": "Hamburg",
+      "slug": "hamburg",
+      "has_page": false
+    },
+    {
+      "name": "Hamburg-Wandsbek",
+      "slug": "hamburg-wandsbek",
+      "has_page": false
+    }
+  ],
+  "faq": [
+    {
+      "question": "Kann ich die Urne in Hamburg zu Hause aufbewahren?",
+      "answer": "Ja, in Hamburg ist Urnenherausgabe nach Kremation erlaubt. Sie können die Asche zu Hause aufbewahren, verstreuen oder zu Seebestattung nutzen."
+    },
+    {
+      "question": "Ist Seebestattung von Hamburg aus möglich?",
+      "answer": "Ja, die Seebestattung ist in Hamburg sehr beliebt. Die Asche wird in der Nord- oder Ostsee bestattet. Kosten liegen bei 600–1.500 € inklusive Überführung."
+    },
+    {
+      "question": "Wie lange dauert die Bestattung in Hamburg?",
+      "answer": "Mindestens 24 Stunden müssen nach dem Tod vergehen. Die Beerdigung oder Kremation muss spätestens nach 10 Tagen erfolgen."
+    },
+    {
+      "question": "Gibt es Waldbestattung in der Umgebung?",
+      "answer": "Ja, mehrere FriedWald-Standorte sind in Hamburg und Umgebung (z.B. Bad Segeberg, Trittau) verfügbar. Kosten: ca. 1.200–3.500 €."
+    }
+  ],
+  "sources": [
+    "Hamburgisches Bestattungsgesetz",
+    "Behörde für Gesundheit und Verbraucherschutz Hamburg",
+    "Verbraucherzentrale Hamburg"
+  ]
+}

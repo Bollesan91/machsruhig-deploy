@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "id": "sterbegeldversicherung-config",
+    "version": "1.0.0",
+    "stand": "2026-04-01",
+    "quellen": [
+      "Verband der Versicherungswirtschaft (VVV)",
+      "Bundesversicherungsamt (BVA)",
+      "Deutsches Institut für Altersvorsorge (DIA)",
+      "Stiftung Warentest — Bestattungsversicherungen",
+      "Verbraucherzentrale Deutschland",
+      "Bundesgesetzblatt: Krankenkassenreform 2004",
+      "SGB XII (Sozialgesetzbuch Zwölftes Buch) — Asylbewerberleistungsgesetz",
+      "Aeternitas e.V. — Verbraucherschutz Bestattungskultur"
+    ]
+  },
+  "kernfakten": [
+    "Sterbegeldversicherung ist eine Risikolebensversicherung für Bestattungskosten (typisch 3.000–15.000 €)",
+    "Sterbegeld der Krankenkassen wurde 2004 aboliert — private Versicherung ist seitdem notwendig",
+    "Versicherungssumme wird bei Tod vollständig an Angehörige ausgezahlt (zur freien Verwendung)",
+    "Monatliche Beiträge liegen zwischen 8–50 € je nach Alter, Gesundheit und Versicherungssumme",
+    "Mit Gesundheitsfragen: günstiger, kein oder kurzer Wartezeit — schneller Schutz",
+    "Ohne Gesundheitsfragen: teurer, aber Wartezeit bis 3 Jahre (bei Tod zahlt nur teilweise)",
+    "Überschussbeteiligung möglich — Versicherte erhalten Anteile an Unternehmensgewinnen zurück",
+    "Zählt als Schonvermögen bei Bürgergeld/Sozialhilfe bis zur vereinbarten Summe (§ 90 SGB XII)"
+  ],
+  "hero": {
+    "headline": "Sterbegeldversicherung — Bestattungskosten für Angehörige absichern",
+    "subheadline": "Welche Versicherung passt? Kosten, Wartezeiten und Alternativen im Überblick.",
+    "lead": "Eine Sterbegeldversicherung schützt deine Angehörigen vor hohen Bestattungskosten. Doch es gibt große Unterschiede: Mit oder ohne Gesundheitsfragen? Mit Wartezeit? Welche Summe ist sinnvoll? Dieser Leitfaden zeigt dir, wie du die richtige Versicherung findest — und wann Alternativen besser passen."
+  },
+  "vergleichKriterien": [
+    {
+      "kriterium": "Versicherungssumme",
+      "beschreibung": "Der Betrag, den Angehörige bei deinem Tod erhalten. Üblich: 3.000–15.000 €. 5.000–7.500 € decken durchschnittliche Bestattungskosten ab."
+    },
+    {
+      "kriterium": "Beitragshöhe",
+      "beschreibung": "Monatlich zu zahlen. Hängt ab von Alter, Gesundheit, Versicherungssumme und Wartezeit. Mit Gesundheitsfragen meist günstiger (ab 8 €/Monat)."
+    },
+    {
+      "kriterium": "Wartezeit",
+      "beschreibung": "Zeitraum nach Versicherungsbeginn, bis die volle Summe bei Tod gezahlt wird. 0 (mit Gesundheitsfragen), 12, 24 oder 36 Monate möglich."
+    },
+    {
+      "kriterium": "Gesundheitsprüfung",
+      "beschreibung": "Mit Fragen: Schnelle Deckung, aber Ablehnung oder Ausschlüsse möglich. Ohne: Automatischer Schutz, aber längere Wartezeit (3 Jahre)."
+    },
+    {
+      "kriterium": "Überschussbeteiligung",
+      "beschreibung": "Manche Versicherer zahlen Gewinne zurück. Bedeutsam bei langen Versicherungsdauern (20+ Jahre)."
+    },
+    {
+      "kriterium": "Kündigungsrechte",
+      "beschreibung": "Rückkehrgarantie: Wenn du kündigst, erhältst du einen Teil der eingezahlten Beiträge zurück (je nach Dauer und Versicherer)."
+    }
+  ],
+  "vergleichsTabelle": {
+    "kategorien": [
+      {
+        "kategorie": "Mit Gesundheitsfragen",
+        "unterzeile": "Günstiger, schneller Schutz",
+        "charakteristika": [
+          "Sofortschutz (0 Tage Wartezeit)",
+          "Niedrigere Beiträge",
+          "Ablehnung möglich bei Vorerkrankungen",
+          "Ideaal für: junge, gesunde Menschen"
+        ],
+        "beispiel": {
+          "alter": "45 Jahre",
+          "versicherungssumme": "7.500 €",
+          "monatlicherBeitrag": "ca. 12–18 €",
+          "wartezeit": "0 Monate"
+        }
+      },
+      {
+        "kategorie": "Ohne Gesundheitsfragen",
+        "unterzeile": "Höhere Beiträge, längere Wartezeit",
+        "charakteristika": [
+          "Automatischer Schutz (ohne Prüfung)",
+          "Wartezeit 12–36 Monate",
+          "Im Fall von Tod in Wartezeit: nur Teilauszahlung oder Beitragsstorno",
+          "Ideal für: Menschen mit Vorerkrankungen"
+        ],
+        "beispiel": {
+          "alter": "65 Jahre",
+          "versicherungssumme": "7.500 €",
+          "monatlicherBeitrag": "ca. 25–35 €",
+          "wartezeit": "36 Monate"
+        }
+      },
+      {
+        "kategorie": "Mit Einmalbeitrag",
+        "unterzeile": "Sofortiger Schutz, Gesamtbetrag zahlen",
+        "charakteristika": [
+          "Einzahlung der kompletten Versicherungssumme aufs Mal",
+          "Kein monatlicher Beitrag",
+          "Ideal für ältere Menschen oder Kapitalanlage",
+          "Geld bleibt Schonvermögen (§ 90 SGB XII)"
+        ],
+        "beispiel": {
+          "alter": "75 Jahre",
+          "versicherungssumme": "5.000 €",
+          "einmalbeitrag": "ca. 3.500–4.200 €",
+          "wartezeit": "0 Monate"
+        }
+      }
+    ]
+  },
+  "faq": [
+    {
+      "frage": "Lohnt sich eine Sterbegeldversicherung?",
+      "antwort": "Das hängt von deiner Situation ab: Hast du Ersparnis für Bestattungskosten (über 15.000 €), brauchst du eventuell keine Versicherung. Haben deine Angehörigen keine Mittel für Bestattung, ist sie sinnvoll. Menschen mit kleinen Renten oder älter als 50 Jahre sollten eine Versicherung erwägen, da selbst sparen schwer fällt und Bestattungskosten mindestens 3.000–5.000 € betragen."
+    },
+    {
+      "frage": "Was passiert, wenn ich die Versicherung kündige?",
+      "antwort": "Das ist versicherer-abhängig. Manche zahlen Teile der eingezahlten Beiträge zurück (sog. ‚Rückkehrgarantie'), andere behalten alles. Lies die Bedingungen! Wenn du die Versicherung beendest, verlieren Angehörige natürlich den Schutz für Bestattungskosten. Besser: Sie beitragsfrei stellen, anstatt zu kündigen."
+    },
+    {
+      "frage": "Ist die Auszahlung steuerfrei?",
+      "antwort": "Ja, die Ausschüttung einer Sterbegeldversicherung ist für die Angehörigen steuerfrei — es ist eine Versicherungsleistung, keine Erbschaft. Allerdings zählt die laufende Prämie nicht als Steuerersparnis (im Gegensatz zu manchen Altersvorsorge-Produkten)."
+    },
+    {
+      "frage": "Zählt die Sterbegeldversicherung als Schonvermögen?",
+      "antwort": "Ja! Nach § 90 SGB XII (Sozialgesetzbuch) zählt eine Sterbegeldversicherung bis zur Höhe der vereinbarten Versicherungssumme als Schonvermögen. Das bedeutet: Bei Bürgergeld oder Sozialhilfe wird sie nicht angerechnet, solange die Summe nicht überschritten wird. Das ist ein großer Vorteil für Rentner oder Arbeitslose mit kleinen Ersparnissen."
+    },
+    {
+      "frage": "Kann ich die Versicherungssumme erhöhen oder senken?",
+      "antwort": "Das ist möglich, hängt aber vom Vertrag ab. Eine Erhöhung erfordert oft neue Gesundheitsfragen und höhere Beiträge. Eine Senkung ist meist kostenlos möglich. Achte auf Fristen und Bedingungen im Kleingedruckten!"
+    },
+    {
+      "frage": "Was ist besser: Sterbegeldversicherung oder Sparbuch?",
+      "antwort": "Das kommt drauf an: Bei einem Sparbuch (oder Tagesgeldkonto) brauchst du Disziplin — regelmäßig einzahlen und nie abheben. Die Sterbegeldversicherung zwingt dich dazu. Außerdem: Im Todesfall ist Versicherungsgeld sofort und steuerfrei da, Sparbuch muss erst aufgefordert werden. Für ältere Menschen ist die Versicherung meist besser, weil sie in 3–5 Jahren mehr kostet zu sparen als eine Prämie."
+    }
+  ],
+  "alternativen": [
+    {
+      "name": "Tagesgeldkonto zweckgebunden",
+      "beschreibung": "Auf ein separates Konto regelmäßig Geld einzahlen. Zinsen sind Bonus.",
+      "vorteile": [
+        "Vollständige Kontrolle über das Geld",
+        "Jederzeit verfügbar",
+        "Zinsertrag (heute minimal, aber kostenlos)"
+      ],
+      "nachteile": [
+        "Erfordert Disziplin",
+        "Bei älteren Menschen: schwer zu sparen",
+        "Angehörige müssen Geld erst beantragen (kein sofortiger Zugriff)",
+        "Nicht geschützt vor Schuldeneintreibung (Betreibung)"
+      ]
+    },
+    {
+      "name": "Bestattungsvorsorgevertrag mit Bestatter",
+      "beschreibung": "Du zahlst direkt beim Bestatter ein. Das Geld wird in einen Treuhand-Fonds eingezahlt und für deine Bestattung reserviert.",
+      "vorteile": [
+        "Klar und transparent",
+        "Geld ist zweckgebunden",
+        "Du kannst Bestattungswünsche konkret festlegen",
+        "Schutz vor Inflation (Preise steigen oft, aber Vertrag bleibt gleich)"
+      ],
+      "nachteile": [
+        "Geld ist nur für Bestattung nutzbar (nicht für andere Kosten)",
+        "Bestatter-Wechsel ist schwierig",
+        "Bei Bestatter-Insolvenz: Risiko (abhängig von Treuhand-Qualität)",
+        "Oft teurer als Versicherung"
+      ]
+    },
+    {
+      "name": "Risikolebensversicherung für Hinterbliebene",
+      "beschreibung": "Eine allgemeine Risikolebensversicherung (mit höherer Summe) kann auch Bestattungskosten decken — plus Lebensunterhalt für Familie.",
+      "vorteile": [
+        "Flexibel einsetzbar (nicht nur für Bestattung)",
+        "Oft günstiger für junge Menschen",
+        "Höhere Summen möglich (200.000 € oder mehr)",
+        "Macht mehr Sinn, wenn Familie abhängig ist"
+      ],
+      "nachteile": [
+        "Overkill, wenn nur Bestattungskosten anfallen",
+        "Höhere Prämien für hohe Summen",
+        "Komplizierter zu verstehen"
+      ]
+    }
+  ]
+}

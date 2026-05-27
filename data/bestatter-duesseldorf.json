@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-duesseldorf",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Düsseldorf",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "630.000",
+    "slug": "duesseldorf"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Düsseldorf",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Düsseldorf",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Düsseldorf Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1600,
+      "max": 2000,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 400,
+      "max": 500,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 900,
+      "max": 1200,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Nordrhein-Westfalen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Düsseldorf bietet 7 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Nordrhein-Westfalen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Düsseldorf?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.600–2.000€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Düsseldorf?",
+      "antwort": "Ja. Urnengräber kosten nur 400–500€ und Baumbestattungen 900–1.200€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Düsseldorf?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Nordrhein-Westfalen?",
+      "antwort": "Nordrhein-Westfalen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Düsseldorf",
+    "description": "Bestatter in Düsseldorf: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Düsseldorf finden"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-osnabrueck",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Osnabrück",
+    "bundesland": "Niedersachsen",
+    "einwohner": "165.000",
+    "slug": "osnabrueck"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Osnabrück",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Osnabrück",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Osnabrück Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 900,
+      "max": 1300,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 220,
+      "max": 320,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 500,
+      "max": 750,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Niedersachsen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Osnabrück bietet 3 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Niedersachsen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Osnabrück?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 900–1.300€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Osnabrück?",
+      "antwort": "Ja. Urnengräber kosten nur 220–320€ und Baumbestattungen 500–750€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Osnabrück?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Niedersachsen?",
+      "antwort": "Niedersachsen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Osnabrück",
+    "description": "Bestatter in Osnabrück: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Osnabrück finden"
+  }
+}

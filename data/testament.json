@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "id": "testament-config",
+    "version": "1.0.0",
+    "stand": "2026-04-01",
+    "welle": "Welle 2",
+    "cluster": "Vorsorge-Cluster",
+    "riskClass": "A",
+    "disclaimer": "Keine Rechtsberatung — nur Informationen",
+    "quellen": [
+      "Bürgerliches Gesetzbuch (BGB) § 2247 ff.",
+      "Bundesnotarkammer",
+      "Verbraucherzentralen",
+      "Deutsches Zentrales Testamentsregister",
+      "Nachlassgerichte (Amtsgerichte)"
+    ]
+  },
+  "kernfakten": [
+    "Ein Testament legt fest, wer dein Vermögen erbt — ohne Testament regelt die gesetzliche Erbfolge",
+    "Handschriftliches Testament: eigenhändig geschrieben, mit Datum und Unterschrift (§ 2247 BGB)",
+    "Notarielles Testament: von Notar beglaubigt, kostspieliger, aber sicherer und rechtsgültig",
+    "Berliner Testament: Eheleute setzen sich gegenseitig ein, letzte Erben sind oft die Kinder",
+    "Pflichtanteil: Du kannst nahe Verwandte nicht vollständig enterben (Ehepartner, Kinder, Eltern)",
+    "Häufigste Fehler: Getippte Testamente, unklare Formulierungen, Widersprüche, keine Unterschrift",
+    "Aufbewahrung: Im Amtsgericht/Nachlassgericht oder im Zentralen Testamentsregister",
+    "Änderungen: Testament kann jederzeit geändert oder widerrufen werden — bei großen Lebensveränderungen ratsam",
+    "Kosten notarielles Testament: ca. 100–500 € je nach Vermögen (nach Gerichtskostengesetz, GNotKG)"
+  ],
+  "testamentTypes": [
+    {
+      "id": "handschriftlich",
+      "name": "Handschriftliches Testament",
+      "beschreibung": "Ein Testament, das du komplett eigenhändig, per Hand schreibst. Du brauchst keine Notare, Zeugen oder formalen Kram — nur ein Blatt Papier, einen Stift und eine Unterschrift.",
+      "anforderungen": [
+        "Komplett handschriftlich geschrieben (nicht getippt!)",
+        "Verständlich und nachvollziehbar — keine Kritzelei",
+        "Mit Datum versehen",
+        "Mit eigenem Namen unterschrieben",
+        "Kein Nötigter oder Einflüsterer (später überprüfbar)"
+      ],
+      "vorteile": [
+        "Kostenlos — keine Notargebühren",
+        "Privat und schnell — du brauchst niemanden",
+        "Sehr flexibel — jederzeit änderbar"
+      ],
+      "nachteile": [
+        "Fehleranfällig — ungültige Formulierungen, unklare Bestimmungen",
+        "Leicht verlierbar oder beschädigbar",
+        "Familie könnte es nicht finden (deshalb: registrieren im Zentralen Testamentsregister)",
+        "Bei Zweifeln kann es zu gerichtlichen Auseinandersetzungen kommen"
+      ],
+      "kosten": "0 €",
+      "gueltig": true,
+      "empfehlung": "Für einfache Verhältnisse geeignet, bei größerem Vermögen oder komplexen Familienkonstellationen ist notarielles Testament besser"
+    },
+    {
+      "id": "notariell",
+      "name": "Notarielles Testament",
+      "beschreibung": "Ein Testament, das du mit einem Notar verfasst und beglaubigen lässt. Der Notar berät dich, formuliert rechtssicher und beglaubigt das Dokument.",
+      "anforderungen": [
+        "Persönliche Anwesenheit bei Notar (nicht per E-Mail)",
+        "Vorlage von Personalausweis oder Pass",
+        "Unterschrift vor Notar",
+        "Notar fertigt amtliche Verwahrung an (Registerung)",
+        "Zwei Ausfertigungen möglich"
+      ],
+      "vorteile": [
+        "Rechtssicher — Notar berät und formuliert korrekt",
+        "Automatisch beim Zentralen Testamentsregister registriert",
+        "Gerichtliche Bewährungsverfahren meist unnötig",
+        "Großes Vermögen, komplexe Familien: sehr hilfreich",
+        "Steuersparende Formulierungen möglich"
+      ],
+      "nachteile": [
+        "Kostet Gebühren — je nach Vermögensumfang 100–500 €",
+        "Weniger Privatheit — Notar muss Details kennen",
+        "Ortsgebunden — muss zum Notar gehen"
+      ],
+      "kosten": "ca. 100–500 € (je nach Vermögen nach GNotKG)",
+      "gueltig": true,
+      "empfehlung": "Für größere Vermögen, komplexe Familiensituationen, Unternehmen, Immobilien — Sicherheit ist das Geld wert"
+    },
+    {
+      "id": "berliner-testament",
+      "name": "Berliner Testament",
+      "beschreibung": "Ein spezielles Testament für Ehepaare und Lebenspartner, in dem sich Partner gegenseitig als Alleinerbe einsetzen und die eigenen Kinder (oder Dritte) als Schlusserben.",
+      "struktur": [
+        "Partner 1 und Partner 2 setzen sich gegenseitig ein",
+        "Nach dem Tod beider: Kinder (oder andere Personen) erben alles",
+        "Zweck: Familie zusammenhalten, Vermögen schützen, Steuern sparen"
+      ],
+      "beispiel": "Ehemann und Ehefrau setzen sich gegenseitig ein. Nach beider Tod erben die gemeinsamen Kinder. So behält die Familie das Vermögen in der Hand.",
+      "vorteile": [
+        "Überlebender Partner ist vollständig versorgt",
+        "Kindern wird Vermögen später weitergegeben",
+        "Steuersparend bei richtigem Aufbau",
+        "Einfach und beliebt bei Ehepaaren"
+      ],
+      "nachteile": [
+        "Bindungswirkung: Ein Partner kann es nicht einfach widerrufen",
+        "Kinder bekommen sofort einen Pflichtteilsanspruch",
+        "Bei Streit kompliziert (Anfechtungsrecht)"
+      ],
+      "empfehlung": "Sehr häufig bei Ehepaaren mit gemeinsamen Kindern — aber auch hier: Notar konsultieren"
+    }
+  ],
+  "sections": [
+    {
+      "id": "was-ist-testament",
+      "title": "Was ist ein Testament — und warum brauchst du eins?",
+      "content": [
+        "Ein Testament ist eine Urkunde, in der du festlegst, wer dein Vermögen erbt. Ohne Testament entscheidet die Gesetze — die 'gesetzliche Erbfolge'. Deine Wünsche spielen keine Rolle.",
+        "Die gesetzliche Erbfolge bevorzugt nächste Verwandte: zuerst Ehepartner und Kinder, dann Eltern, Geschwister. Wenn du möchtest, dass eine Freundin, eine Wohltätigkeitsorganisation oder Pflegekinder erben, brauchst du ein Testament.",
+        "Ein Testament gibt dir Kontrolle über dein Lebenswerk — und erspart deinen Angehörigen lange rechtliche Streite."
+      ]
+    },
+    {
+      "id": "gesetzliche-vs-gewillkuerte",
+      "title": "Gesetzliche Erbfolge — oder deine eigene Erbfolge?",
+      "content": [
+        "Ohne Testament greift die 'gesetzliche Erbfolge' (BGB § 1924 ff.). Das bedeutet: Der Staat hat ein vordefiniertes System, wer wie viel erbt — basierend auf Verwandtschaftsgrad.",
+        "Typische Erbfolge: 1. Ehepartner + Kinder, 2. Eltern + Geschwister, 3. Großeltern + Tanten/Onkel.",
+        "Mit Testament kannst du deine 'gewillkürte Erbfolge' regeln — die Aufteilung, die du wünschst. Du entscheidest, ob dein Neffe erbt, ob ein Freund ein Vermächtnis bekommt, oder ob alles an eine Stiftung geht.",
+        "Wichtig: Auch mit Testament können dir nahestehende Verwandte nicht vollständig enterbt werden — sie haben Anspruch auf den 'Pflichtanteil'."
+      ]
+    },
+    {
+      "id": "anforderungen-handschriftlich",
+      "title": "Anforderungen für ein gültiges handschriftliches Testament",
+      "content": [
+        "Ein handschriftliches Testament ist nur gültig, wenn diese Bedingungen erfüllt sind (§ 2247 BGB):",
+        "1. EIGENHÄNDIG GESCHRIEBEN: Das ganze Testament muss von Hand geschrieben sein — nicht getippt, nicht per Computer, nicht teilweise von anderen. Der Grund: Das garantiert, dass du es selbst geschrieben und gemeint hast.",
+        "2. MIT DATUM: Tag, Monat, Jahr. Der Grund: Wichtig für Reihenfolge bei mehreren Testamenten.",
+        "3. MIT UNTERSCHRIFT: Dein Name, so wie du ihn normalerweise unterschreibst. Keine Initialen, keine Stempel.",
+        "4. VERSTÄNDLICH: Die Formulierungen müssen klar und nachvollziehbar sein. 'Mein Sohn kriegt alles' ist ungültig — 'Mein Sohn Max Müller erbt meinen gesamten Nachlass' ist besser.",
+        "5. OHNE NÖTIGUNG: Es muss klar sein, dass du freiwillig und ohne Druck das Testament geschrieben hast.",
+        "Wenn auch nur eine dieser Anforderungen fehlt, kann das Testament ungültig sein — und die gesetzliche Erbfolge greift."
+      ]
+    },
+    {
+      "id": "testament-inhalt",
+      "title": "Was sollte ein Testament enthalten?",
+      "content": [
+        "Ein Testament sollte diese Punkte klären:",
+        "1. ERBEN: Wer soll wie viel erben? Nenne Namen und Anteile oder prozentuale Aufteilung klar an. 'Die Hälfte meinem Sohn Hans, die Hälfte meiner Tochter Petra' ist besser als 'meine Kinder erben'.",
+        "2. EINZELNE VERMÄCHTNISSE: Sollen bestimmte Gegenstände an bestimmte Personen gehen? 'Meine Uhr geht an meinen Freund Peter' ist ein Vermächtnis — nicht Erbschaft, aber bindend.",
+        "3. TESTAMENTSVOLLSTRECKER: Wer soll deinen Nachlass abwickeln? Diese Person prüft das Testament, bezahlt Schulden, regelt Erbschaftssteuer und verteilt das Vermögen. Das kann ein Familienmitglied oder ein Anwalt sein.",
+        "4. ENTERBUNG: Wenn du jemanden explizit ausschließen möchtest (z.B. weil Konflikt da ist), schreib das auf — aber pass auf Pflichtteilsansprüche auf.",
+        "5. SONDERWÜNSCHE: Beerdigung (wenn wichtig), Stiftungen, Spenden an gemeinnützige Organisationen.",
+        "6. BERLIN TESTAMENT SPEZIAL: Wenn verheiratet — willst du, dass dein Partner alles erbt und die Kinder später? Dann benennst du das klar."
+      ]
+    },
+    {
+      "id": "pflichtanteil",
+      "title": "Der Pflichtanteil — Du kannst nicht alles weggeben",
+      "content": [
+        "Wichtig: Auch wenn du ein Testament hast, kannst du bestimmte nahestehende Verwandte nicht vollständig enterben. Sie haben 'Pflichtteilsanspruch'.",
+        "Berechtigte zum Pflichtanteil (BGB § 2303):",
+        "- Dein Ehepartner (50 % ihres gesetzlichen Erbteils)",
+        "- Deine Kinder (50 % ihres gesetzlichen Erbteils)",
+        "- Wenn keine Kinder: Deine Eltern (50 % ihres gesetzlichen Erbteils)",
+        "Beispiel: Du hast zwei Kinder. Dein Vermögen ist 100.000 €. Ohne Testament würde jedes Kind 50.000 € erben. Mit Testament kannst du einem Kind 90.000 € und dem anderen 10.000 € geben — aber das benachteiligte Kind kann den 'Pflichtanteil' (25.000 €) einklagen.",
+        "Enterbung ist möglich, wenn du einen 'wichtigen Grund' hast (z.B. das Kind hat dir Schaden zugefügt), aber das wird vor Gericht streng überprüft."
+      ]
+    },
+    {
+      "id": "haeufige-fehler",
+      "title": "Häufige Fehler beim Testament — und wie du sie vermeidest",
+      "content": [
+        "1. GETIPPTES TESTAMENT: Ein Testament, das du am Computer getippt und ausgedruckt hast, ist NICHT GÜLTIG. Es muss eigenhändig geschrieben sein. Keine Ausnahmen. Viele Menschen merken das zu spät.",
+        "2. UNKLARE FORMULIERUNGEN: 'Meine Güter gehen an die Familie' ist zu vage — Gericht weiß nicht, was gemeint ist. Besser: 'Mein Bankguthaben auf der Sparkasse und meine Immobilie Hauptstraße 5, 10115 Berlin erben zu gleichen Teilen meine Kinder Max und Petra Müller.'",
+        "3. WIDERSPRÜCHE: Du schreibst 'Alles geht an meinen Sohn' und später 'Meine Tochter erbt 30 %' — das erzeugt Verwirrung und Rechtsstreit.",
+        "4. KEINE UNTERSCHRIFT ODER DATUM: Ohne diese ist das Testament ungültig.",
+        "5. FEHLENDE TESTAMENTSVOLLSTRECKER: Wenn das Testament komplex ist (Unternehmen, mehrere Immobilien, Schulden), solltest du einen Testamentsvollstrecker benennen — sonst regelt es ein Gericht.",
+        "6. NICHT AUFFINDBAR: Dein Testament liegt in der Schublade und keiner findet es. Registriere es im Zentralen Testamentsregister oder hinterlege es beim Gericht.",
+        "7. ENVERERBTER GEGENSTAND NICHT MEHR VORHANDEN: Du vererbst 'mein Auto' — aber das Auto ist 10 Jahre später verkauft. Das Vermächtnis wird dann mit Geld abgegolten (Problem: Keine Garage-Diskussionen)."
+      ]
+    },
+    {
+      "id": "aufbewahrung-registrierung",
+      "title": "Aufbewahrung und Registrierung — Damit dein Testament gefunden wird",
+      "content": [
+        "Ein gültiges Testament nützt nichts, wenn keiner es findet.",
+        "OPTIONEN FÜR DIE AUFBEWAHRUNG:",
+        "1. AMTSGERICHT (NACHLASSGERICHT): Du kannst dein Testament beim Amtsgericht kostenlos hinterlegen. Es wird in einem Tresor bewahrt, und wenn du stirbst, suchen die Erben dort nach und finden es garantiert.",
+        "2. NOTARIELLE VERWAHRUNG: Wenn du einen Notar hast, verwaltet der dein Testament automatisch — auch sicherer.",
+        "3. ZENTRALES TESTAMENTSREGISTER: Das ist eine Datenbank (ZTR), in die alle Testamente eingetragen werden. Wenn du stirbst, sucht das Gericht dort nach. WICHTIG: Der Eintrag kostet 75 €, aber der Aufbau erfolgt automatisch, wenn du zum Notar gehst.",
+        "4. ZU HAUSE IM TRESOR: Riskant — kann verloren gehen, beschädigt werden, oder Angehörige wissen nicht, wo es ist.",
+        "EMPFEHLUNG: Lasse dein Testament beim Amtsgericht hinterlegen oder beim Notar verwalten. Kosten sind niedrig, Sicherheit ist hoch.",
+        "WICHTIG: Informiere Vertrauenspersonen, dass es ein Testament gibt und wo es zu finden ist (auch wenn nicht den genauen Inhalt)."
+      ]
+    },
+    {
+      "id": "aenderung-widerruf",
+      "title": "Wann du dein Testament ändern solltest — und wie",
+      "content": [
+        "Dein Leben ändert sich — Heirat, Scheidung, Kinder, neue Freundschaften. Manchmal muss auch dein Testament ändern.",
+        "LEBENSVERÄNDERUNGEN, DIE EINE ÄNDERUNG RECHTFERTIGEN:",
+        "- Heirat: Mit Ehe ändert sich die gesetzliche Erbfolge und oft auch deine Wünsche.",
+        "- Scheidung: Geschiedene Ehepartner erben oft nicht mehr (Anrechnung des Scheidungsrechts).",
+        "- Neue Kinder oder Stiefkinder: Du möchtest sie vielleicht berücksichtigen.",
+        "- Tod eines Erben: Der Mensch, für den du geplant hast, lebt nicht mehr.",
+        "- Großes Vermögen hinzugekommen: Durch Erbe oder erfolgreicher Geschäft.",
+        "- Konflikte mit Angehörigen: Enterbung, Neubewertung von Beziehungen.",
+        "WIE DU DEIN TESTAMENT ÄNDERST:",
+        "1. KLEINER ÄNDERUNG (ERGÄNZUNG): Du kannst eine Nachtrag schreiben (Kodizill) — ebenfalls eigenhändig, mit Datum und Unterschrift. 'Meine frühere Verfügung bleibt gültig, aber zusätzlich: Meine neue Ehefrau Claudia erbt das Haus.'",
+        "2. KOMPLETT NEUER WILLE: Du schreibst ein neues Testament. Das frühere wird automatisch überschrieben.",
+        "3. WIDERRUF: Du erklärst, dass das alte Testament null und nichtig ist — und es greift wieder die gesetzliche Erbfolge.",
+        "WICHTIG: Alte Testamente sollten zerstört werden, um Verwirrung zu vermeiden. Wenn mehrere Testamente existieren, versucht Gericht zu klären, welches das neueste ist.",
+        "EMPFEHLUNG: Alle 5–10 Jahre prüfen, ob Testament noch aktuell ist. Bei großen Lebensveränderungen sofort handeln."
+      ]
+    },
+    {
+      "id": "kosten-gebuehren",
+      "title": "Kosten für Testament — Handschriftlich vs. Notar",
+      "content": [
+        "HANDSCHRIFTLICHES TESTAMENT:",
+        "- Kosten: 0 € (kostenlos)",
+        "- Hinterlegung beim Amtsgericht: 0 € (kostenlos)",
+        "- Eintrag ins Zentrales Testamentsregister: 75 € (einmalig)",
+        "- Gesamtbudget: 0–75 €",
+        "",
+        "NOTARIELLES TESTAMENT:",
+        "Gebühren richten sich nach dem Gerichtskostengesetz (GNotKG). Größenordnung für Vermögen:",
+        "- 0–50.000 €: ca. 100–150 €",
+        "- 50.000–500.000 €: ca. 150–400 €",
+        "- 500.000–1.000.000 €: ca. 400–800 €",
+        "- Über 1.000.000 €: Gebühren werden höher (bis ca. 2.000–5.000 €)",
+        "- Automatische Hinterlegung beim Gericht: Gebühr bereits oben enthalten",
+        "- Beratung, Formulierung, Anpassung: Sollte im Preis enthalten sein",
+        "- Gesamtbudget: 100–500 € für normale Situationen",
+        "",
+        "ZUSATZKOSTEN (OPTIONAL):",
+        "- Erbschaftssteuerberatung: 200–500 €",
+        "- Finanzielle Planung: 300–1.000 €",
+        "- Testamentsvollstrecker (nach Tod): ca. 3–5 % des Nachlasswerts",
+        "",
+        "WANN LOHNT SICH DER NOTAR?",
+        "- Vermögen über 500.000 €",
+        "- Mehrere Immobilien",
+        "- Unternehmen oder Betriebsvermögen",
+        "- Komplexe Familiensituationen (Patchwork-Familien, etc.)",
+        "- Du willst Sicherheit und Rechtsschutz",
+        "- Großes Testament mit vielen Bestimmungen"
+      ]
+    },
+    {
+      "id": "kontakte-links",
+      "title": "Links und Kontakte — Wer hilft dir weiter?",
+      "content": [
+        "Wenn du Fragen hast, wende dich an:",
+        "- Bundesnotarkammer (https://www.bnotk.de): Notar-Verzeichnis, Rechtsinfo",
+        "- Verbraucherzentrale (https://www.verbraucherzentrale.de): Kostenlose Beratung zu Erbrecht",
+        "- Deutscher Fachanwalt für Erbrecht (https://www.erbrecht.de): Spezialisierte Rechtshilfe",
+        "- Zentrales Testamentsregister ZTR (https://www.testamentsregister.de): Testament eintragen",
+        "- Nachlassgericht (Amtsgericht vor Ort): Testament hinterlegen, Erbscheineintrag",
+        "- Dein Notar vor Ort: Persönliche Beratung und Testament-Verfassung",
+        "",
+        "BESONDERHEITEN NACH BUNDESLAND:",
+        "- Baden-Württemberg, Bayern, Berlin, Bundesweit: Erbrecht ist bundesweit gleich, aber lokale Friedhofsgebühren und Notargebühren unterscheiden sich",
+        "- Schleswig-Holstein, Bremen, Hessen, Rheinland-Pfalz: Urne kann zu Hause aufbewahrt werden (relevant für Nachlass-Planung)"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-1",
+      "frage": "Kann ich mein Testament selbst schreiben — oder muss ich zu einem Notar?",
+      "antwort": "Du darfst dein Testament selbst schreiben — es muss aber eigenhändig, mit Datum und Unterschrift sein. Ein Notar ist nicht zwingend erforderlich, aber empfohlen bei großem Vermögen oder komplexen Familienkonstellationen. Ein handschriftliches Testament ist kostenlos, ein notarielles Testament kostet ca. 100–500 €."
+    },
+    {
+      "id": "faq-2",
+      "frage": "Was kostet ein notarielles Testament?",
+      "antwort": "Die Gebühren richten sich nach dem Vermögen (GNotKG). Typisch: 100–150 € bei 50.000 € Vermögen, 150–400 € bei 500.000 €, bis zu 2.000–5.000 € bei über 1 Million €. Die Hinterlegung ist im Preis enthalten. Für kleine Vermögen ist ein handschriftliches Testament günstiger."
+    },
+    {
+      "id": "faq-3",
+      "frage": "Kann ich mein Testament jederzeit ändern oder widerrufen?",
+      "antwort": "Ja. Du kannst jederzeit ein neues Testament schreiben (das alte wird damit ungültig), ein Kodizill (Nachtrag) verfassen oder das Testament ausdrücklich widerrufen. Wichtig: Alte Testamente sollten zerstört werden, um Verwirrung zu vermeiden. Aber Achtung: Ein Berliner Testament hat Bindungswirkung — der Partner kann es nicht einfach widerrufen."
+    },
+    {
+      "id": "faq-4",
+      "frage": "Was passiert, wenn ich ohne Testament sterbe?",
+      "antwort": "Es greift die gesetzliche Erbfolge (BGB § 1924 ff.). Der Ehepartner erbt mit Kindern, oder die Eltern erben, oder Geschwister, je nach Familie. Entfernte Verwandte oder gute Freunde gehen leer aus. Ein Testament stellt sicher, dass deine Wünsche erfüllt werden."
+    },
+    {
+      "id": "faq-5",
+      "frage": "Was ist ein Berliner Testament?",
+      "antwort": "Ein Berliner Testament ist ein gemeinsames Testament für Ehepaare oder Lebenspartner. Beide setzen sich gegenseitig als Alleinerbe ein, und nach dem Tod beider erben die Kinder (oder andere Schlusserben). Vorteil: Der Überlebende ist versorgt, die Familie bleibt zusammen. Nachteil: Bindungswirkung — ein Partner kann es später nicht einfach ändern."
+    },
+    {
+      "id": "faq-6",
+      "frage": "Wo wird das Testament nach meinem Tod eröffnet?",
+      "antwort": "Das Nachlassgericht (ein Amtsgericht) eröffnet das Testament. Wenn es beim Amtsgericht hinterlegt ist, findet das Gericht es automatisch. Wenn es privat ist, müssen Angehörige danach suchen. Deshalb: Testamentsregister nutzen oder Testament beim Gericht hinterlegen. Die Eröffnung kostet nichts."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Bürgerliches Gesetzbuch (BGB)",
+      "url": "https://www.gesetze-im-internet.de/bgb/",
+      "hinweis": "§ 2247–2269 (Erbrecht, Testament), § 1924 ff. (Erbfolge)"
+    },
+    {
+      "title": "Bundesnotarkammer",
+      "url": "https://www.bnotk.de",
+      "hinweis": "Infos zu notariellen Testamenten, Notar-Verzeichnis"
+    },
+    {
+      "title": "Deutsches Zentrales Testamentsregister (ZTR)",
+      "url": "https://www.testamentsregister.de",
+      "hinweis": "Testament registrieren, Eintrag abrufen"
+    },
+    {
+      "title": "Verbraucherzentrale — Erbrecht",
+      "url": "https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/testament",
+      "hinweis": "Kostenlose Beratung und Infos zu Testament, Erbfolge, Pflichtteilen"
+    },
+    {
+      "title": "Gerichtskostengesetz (GNotKG)",
+      "url": "https://www.gesetze-im-internet.de/gnotkg/",
+      "hinweis": "Gebühren für notarielle Testamente"
+    },
+    {
+      "title": "Verein Aeternitas e.V.",
+      "url": "https://www.aeternitas.de",
+      "hinweis": "Verbraucherberatung und -schutz zum Thema Erbrecht"
+    }
+  ],
+  "trust": {
+    "disclaimer": "Diese Seite bietet allgemeine Informationen und Erklärungen, keine Rechtsberatung.",
+    "advice": "Für individuelle rechtliche Regelungen, Steuerfragen oder komplexe Situationen wende dich an einen Notar oder einen Fachanwalt für Erbrecht.",
+    "riskClass": "Risk Class A — Nur Informationen, keine Rechtsberatung. Testament ist ein Rechtsdokument — falsches Vorgehen kann zu Ungültigkeit oder Streit führen.",
+    "methodology": "https://machsruhig.de/methodik"
+  }
+}

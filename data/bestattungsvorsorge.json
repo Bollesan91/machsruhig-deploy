@@ -1,0 +1,94 @@
+{
+  "page": "bestattungsvorsorge",
+  "title": "Bestattungsvorsorge — Bestattung zu Lebzeiten regeln",
+  "description": "Bestattungsvorsorge: Bestattungsvorsorgevertrag, Kosten, Ablauf. Wie Sie Ihre Bestattung zu Lebzeiten planen und Angehörige entlasten.",
+  "canonical": "https://machsruhig.de/vorsorge/bestattungsvorsorge",
+  "cluster": "vorsorge",
+  "monetization": true,
+  "lastmod": "2026-04-12",
+  "keyfacts": [
+    "Bestattungsvorsorge = verbindlicher Vertrag mit Bestattungsunternehmen",
+    "Kosten: 3.000–12.000 € je nach Umfang und Bestattungsart",
+    "Gilt als Schonvermögen bei Bürgergeld/Sozialhilfe (§ 90 SGB XII)",
+    "Kann jederzeit geändert oder widerrufen werden",
+    "Treuhandkonto sichert das Geld vor Insolvenz des Bestatters",
+    "Alternative: Sterbegeldversicherung für flexible Auszahlung"
+  ],
+  "kosten": {
+    "feuerbestattung_einfach": {"min": 2500, "max": 4500, "label": "Einfache Feuerbestattung"},
+    "erdbestattung_standard": {"min": 4000, "max": 8000, "label": "Erdbestattung Standard"},
+    "erdbestattung_premium": {"min": 8000, "max": 15000, "label": "Erdbestattung Premium"},
+    "seebestattung": {"min": 3000, "max": 6000, "label": "Seebestattung"},
+    "baumbestattung": {"min": 2500, "max": 5500, "label": "Baumbestattung"}
+  },
+  "vergleich": {
+    "vorsorgevertrag": {
+      "was": "Vertrag mit Bestatter",
+      "flexibilitaet": "Detailregelungen möglich",
+      "kosten": "Einmalzahlung oder Raten",
+      "sicherheit": "Treuhandkonto",
+      "schonvermoegen": true,
+      "wartezeit": "Keine"
+    },
+    "sterbegeldversicherung": {
+      "was": "Versicherungspolice",
+      "flexibilitaet": "Auszahlung flexibel verwendbar",
+      "kosten": "Monatliche Beiträge",
+      "sicherheit": "Versicherungsaufsicht BaFin",
+      "schonvermoegen": true,
+      "wartezeit": "Oft 12-24 Monate"
+    }
+  },
+  "schritte": [
+    "Bestattungswünsche definieren (Art, Ort, Ablauf)",
+    "Bestattungsunternehmen in der Region vergleichen",
+    "Beratungsgespräch führen (kostenlos bei seriösen Bestattern)",
+    "Vertragsentwurf prüfen (Leistungen, Preisbindung, Treuhand)",
+    "Finanzierung klären (Einmalzahlung, Raten, Sterbegeldversicherung)",
+    "Treuhandkonto einrichten (Deutsche Bestattungsvorsorge Treuhand AG)",
+    "Angehörige informieren und Vertrag sicher hinterlegen"
+  ],
+  "faq": [
+    {
+      "frage": "Ist eine Bestattungsvorsorge sinnvoll?",
+      "antwort": "Ja, besonders für Menschen ab 50 Jahren. Sie entlastet Angehörige emotional und finanziell, legt Wünsche verbindlich fest und sichert das Geld als Schonvermögen."
+    },
+    {
+      "frage": "Was kostet eine Bestattungsvorsorge?",
+      "antwort": "Je nach Umfang zwischen 3.000 und 12.000 €. Eine einfache Feuerbestattung kostet ca. 2.500–4.500 €, eine Erdbestattung 4.000–8.000 €."
+    },
+    {
+      "frage": "Kann ich die Bestattungsvorsorge kündigen?",
+      "antwort": "Ja, jederzeit. Bei Treuhandverträgen erhalten Sie das eingezahlte Geld abzüglich Verwaltungskosten zurück."
+    },
+    {
+      "frage": "Ist die Bestattungsvorsorge Schonvermögen?",
+      "antwort": "Ja. Nach § 90 SGB XII ist ein Bestattungsvorsorgevertrag Schonvermögen und wird bei Bürgergeld oder Sozialhilfe nicht angerechnet."
+    },
+    {
+      "frage": "Was passiert, wenn der Bestatter pleitegeht?",
+      "antwort": "Bei Treuhandverträgen ist das Geld geschützt — es liegt auf einem Treuhandkonto und gehört nicht zur Insolvenzmasse. Ohne Treuhand kann das Geld verloren gehen."
+    },
+    {
+      "frage": "Kann ich den Bestatter wechseln?",
+      "antwort": "Grundsätzlich ja, aber es können Gebühren anfallen. Bei Treuhandverträgen ist der Wechsel einfacher. Prüfen Sie die Vertragsbedingungen."
+    },
+    {
+      "frage": "Ab welchem Alter ist Bestattungsvorsorge sinnvoll?",
+      "antwort": "Ab 50 Jahren empfehlenswert. Je früher, desto günstiger (bei Sterbegeldversicherung) bzw. mehr Zeit zum Ansparen (bei Vorsorgevertrag)."
+    },
+    {
+      "frage": "Unterschied Bestattungsvorsorge und Sterbegeldversicherung?",
+      "antwort": "Bestattungsvorsorge = Vertrag mit Bestatter (Wünsche + Kosten festgelegt). Sterbegeldversicherung = Versicherung (flexible Auszahlung an Angehörige). Beides ist Schonvermögen."
+    }
+  ],
+  "crosslinks": [
+    {"href": "/vorsorge/sterbegeldversicherung", "label": "Sterbegeldversicherung"},
+    {"href": "/bestattungsarten", "label": "Bestattungsarten"},
+    {"href": "/bestattungskosten", "label": "Bestattungskosten"},
+    {"href": "/tools/bestattungskosten-rechner", "label": "Kostenrechner"},
+    {"href": "/tools/vorsorge-check", "label": "Vorsorge-Check"},
+    {"href": "/vorsorge/testament", "label": "Testament"},
+    {"href": "/vorsorge/patientenverfuegung", "label": "Patientenverfügung"}
+  ]
+}

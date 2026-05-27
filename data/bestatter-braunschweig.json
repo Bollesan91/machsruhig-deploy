@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-braunschweig",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Braunschweig",
+    "bundesland": "Niedersachsen",
+    "einwohner": "250.000",
+    "slug": "braunschweig"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Braunschweig",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Braunschweig",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Braunschweig Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1200,
+      "max": 1600,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 300,
+      "max": 400,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 700,
+      "max": 1000,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Niedersachsen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Braunschweig bietet 5 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Niedersachsen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Braunschweig?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.200–1.600€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Braunschweig?",
+      "antwort": "Ja. Urnengräber kosten nur 300–400€ und Baumbestattungen 700–1.000€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Braunschweig?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Niedersachsen?",
+      "antwort": "Niedersachsen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Braunschweig",
+    "description": "Bestatter in Braunschweig: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Braunschweig finden"
+  }
+}

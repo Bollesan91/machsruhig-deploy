@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-oldenburg",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Oldenburg",
+    "bundesland": "Niedersachsen",
+    "einwohner": "170.000",
+    "slug": "oldenburg"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Oldenburg",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Oldenburg",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Oldenburg Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1000,
+      "max": 1400,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 250,
+      "max": 350,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 550,
+      "max": 800,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Niedersachsen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Oldenburg bietet 3 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Niedersachsen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Oldenburg?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.000–1.400€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Oldenburg?",
+      "antwort": "Ja. Urnengräber kosten nur 250–350€ und Baumbestattungen 550–800€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Oldenburg?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Niedersachsen?",
+      "antwort": "Niedersachsen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Oldenburg",
+    "description": "Bestatter in Oldenburg: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Oldenburg finden"
+  }
+}

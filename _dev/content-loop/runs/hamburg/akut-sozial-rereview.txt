@@ -1,0 +1,57 @@
+Ich fetche jetzt die Hamburg-Seite vom Pipeline-Branch.
+
+Ich fetche jetzt die Hamburg-Seite vom Pipeline-Branch.
+
+Fetching site
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/content-loop-pipeline/bestatter/hamburg/index.html
+
+Jetzt prüfe ich die Adressen der Hamburger Standesämter, da diese in der Akutbox als Fakten aufgeführt sind.
+
+Web durchsucht
+Web durchsucht
+
+Caffamacherreihe 1-3 in 20355 ist bestätigt. Jetzt prüfe ich die Eimsbüttel- und Hamburg-Nord-Adresse sowie § 10/11 HmbBestattG.
+
+Searching the web
+Web durchsucht
+
+Adressen Eimsbüttel (Grindelberg 62-66, 20144) und Hamburg-Nord (Kümmellstraße 5-7, 20249) bestätigt. Jetzt prüfe ich kritisch das HmbBestattG — speziell § 10 und § 11, weil das der zentrale Faktencheck-Punkt ist.
+
+Web durchsucht
+Web durchsucht
+
+Hervorragend — der entscheidende Befund:
+
+§ 10 HmbBestattG = Bestattungspflicht ✓ und § 11 HmbBestattG = Angehörige (Rangfolge) ✓ — beide Paragraphen sind in der Drucksache 21/18145 (Gesetz mit Inkrafttreten 01.03.2020) sowie in der Fachanweisung der Sozialbehörde explizit bestätigt. Die Reihenfolge "Ehegatten/Lebenspartner, Kinder, Eltern, Geschwister, Enkel" wird durch den WEKA-Artikel zur Reform 2020 wörtlich bestätigt.
+
+Jetzt noch eine letzte Verifikation: das BSG-Urteil B 8 SO 20/10 R vom 25.08.2011.
+
+Web durchsucht
+Web durchsucht
+
+BSG-Urteil B 8 SO 20/10 R vom 25.08.2011 ist mehrfach unabhängig bestätigt — Aktenzeichen, Datum und Inhalt (zweistufige Erforderlichkeitsprüfung) stimmen exakt. Ich habe genug Daten.
+
+Jetzt noch die strukturelle HTML-Kontrolle — ich habe in der gefetchten Datei ein konkretes Problem im Bereich "Bestatter in anderen Städten" gesehen. Schaue ich mir das genauer an:
+
+Strukturproblem entdeckt: Im Block <section class="mr-section" id="other-cities"> (Bestatter in anderen Städten) öffnet ein <div style="display:grid...">-Container die 4 Stadt-Karten — dieser wird geschlossen, dann folgt aber im selben <section> noch ein freistehendes <p>-Element mit Friedhofs-Gebühren-Text, der inhaltlich überhaupt nicht in das "andere Städte"-Section gehört. Das ist ein Layout-/Logikbruch. Außerdem fehlt eine schließende </div> innerhalb des Section-Tags zwischen Cities-Grid und dem Friedhofs-<p>. Mehrere Befunde — ich formuliere den Verdict.
+
+VERDICT: FAIL
+
+MUST-FIX:
+
+1. Schwerer Strukturbruch im Block "Bestatter in anderen Städten": Innerhalb von <section class="mr-section"> schließt der City-Grid-<div> korrekt, danach steht aber ein themenfremder <p>-Absatz über Friedhofs-Gebühren und drei-Kostenvoranschläge inkl. Link auf /bestattungskosten. Dieser Absatz gehört NICHT in die "andere Städte"-Section — er ist offenbar aus einem Vorgängermodul (Kosten/Bestatter-Wahl) verwaist und muss entweder in eine eigene <div class="mr-section"> ausgegliedert oder vor die Cities-Section verschoben werden.
+
+2. Schwere thematische Doublette Seebestattung: Es existieren ZWEI separate Seebestattungs-<h2>-Sektionen:
+
+"Seebestattung von Hamburg aus — deutsche Hauptstadt einer leisen Tradition" (kurz, redaktionell)
+"Seebestattungen in Hamburg — Eine Tradition der Hafenstadt" (lang, mit Preistabelle)
+
+Inhaltlich überlappend, teilweise widersprüchlich (erste nennt 1.200–3.500 €, zweite 1.049–1.895 €/2.900–5.000 €). Eine Sektion zusammenführen.
+
+3. Schwere thematische Doublette Bestattungsrecht: Ebenfalls zwei <h2>-Sektionen: "Bestattungsrecht in Hamburg — die Kurzfassung" und "Bestattungsrecht in Hamburg — Fristen & Regelungen nach HmbBestattG". Beide enthalten Fristen — konsolidieren.
+
+4. Inkonsistente Gesetzes-Kurzform: Mischung „HmbBestG" (Kernfakten + erste Recht-Sektion) vs. „HmbBestattG" (Akutbox, Sozialbestattung, Quellen). Korrekt ist HmbBestattG. Vereinheitlichen.
+
+5. Tippfehler: „Urnenbisetzung" (2× in FAQ und Recht-Sektion) → „Urnenbeisetzung".
+
+Akutbox + Sozialbestattung selbst: § 28 PStG ✓, § 6 HmbBestattG (36h) ✓, § 10/§ 11 HmbBestattG ✓ (nicht mit § 19 verwechselt), 7 Bezirke ✓, alle 4 geprüften Adressen ✓, BSG B 8 SO 20/10 R vom 25.08.2011 ✓, § 74 SGB XII ✓. (247 Wörter)

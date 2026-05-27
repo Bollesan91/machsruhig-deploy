@@ -1,0 +1,44 @@
+Ich fetch erst die Live-Version und verifiziere die Sozialamt-Daten.
+
+Ich fetch erst die Live-Version und verifiziere die Sozialamt-Daten.
+
+Fetching: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/heidelberg/index.html
+Fetched: https://raw.githubusercontent.com/Bollesan91/machsruhig-deploy/main/bestatter/heidelberg/index.html
+
+Jetzt verifiziere ich Sozialamt Heidelberg Kontaktdaten.
+
+Web durchsucht
+Web durchsucht
+
+Daten verifiziert: Amt für Soziales und Senioren der Stadt Heidelberg, Eppelheimer Straße 13, 69115 Heidelberg, Tel. 06221 58-37000, E-Mail sozialamt@heidelberg.de. Heidelberg ist Stadtkreis → eigenes Sozialamt zuständig (nicht RNK-Landratsamt).
+
+=== MODUL: SOZIALBESTATTUNG ===
+
+ANCHOR (direkt VOR diesem Block einfügen):
+
+<section class="mr-section">
+  <h2>Bestatter in Heidelberg — worauf zu achten ist</h2>
+
+INSERT-CODE:
+
+html
+<section class="mr-section">
+  <h2>Sozialbestattung in Heidelberg — wenn die Kosten nicht zu tragen sind</h2>
+  <p>Wenn die Bestattungskosten die finanziellen Möglichkeiten der Bestattungspflichtigen übersteigen, gibt es einen Rechtsanspruch auf Kostenübernahme nach § 74 SGB XII („Bestattungskosten"). Voraussetzung ist, dass die Übernahme der erforderlichen Kosten der verpflichteten Person nicht zugemutet werden kann — gemessen an Einkommen, Vermögen und einem etwaigen Nachlass des Verstorbenen. Wer bestattungspflichtig ist, ergibt sich in Baden-Württemberg aus <strong>§ 31 BestattG BW</strong> in der Reihenfolge: Ehegatte oder eingetragener Lebenspartner, volljährige Kinder, Eltern, volljährige Geschwister, Großeltern, volljährige Enkelkinder.</p>
+
+  <h3>Zuständige Stelle in Heidelberg</h3>
+  <p>Da Heidelberg ein Stadtkreis ist, ist <strong>nicht</strong> das Sozialamt des Rhein-Neckar-Kreises zuständig, sondern die Stadt selbst:</p>
+  <p><strong>Amt für Soziales und Senioren der Stadt Heidelberg</strong><br>
+  Eppelheimer Straße 13, 69115 Heidelberg<br>
+  Telefon: 06221 58-37000<br>
+  E-Mail: sozialamt@heidelberg.de<br>
+  Sprechzeiten: Dienstag, Donnerstag, Freitag 8–12 Uhr (Termine nach Vereinbarung möglich). Die Sachbearbeitung ist nach Anfangsbuchstaben des Nachnamens des Verstorbenen aufgeteilt.</p>
+  <p>Die örtliche Zuständigkeit folgt einer einfachen Regel: Hat der Verstorbene Sozialhilfe bezogen, ist das Sozialamt zuständig, das die Leistung bis zum Tod erbracht hat. War das nicht der Fall, ist das Sozialamt des Sterbeortes zuständig.</p>
+
+  <h3>Was übernommen wird — und was nicht</h3>
+  <p>Übernommen werden die <strong>erforderlichen</strong> Kosten einer ortsüblichen, einfachen, aber würdigen Bestattung. Dazu zählen in der Regel: einfacher Sarg oder Urne, Überführung, Versorgung, Friedhofsgebühren für ein einfaches Reihengrab, Bestatterleistungen im Grundumfang, Sterbeurkunden, Kremationsgebühr bei Feuerbestattung sowie eine schlichte Trauerfeier. <strong>Nicht übernommen</strong> werden Wahlgräber mit erhöhter Liegezeit, aufwendige Sarg- oder Urnenausstattungen, Trauerredner, Blumenschmuck über das Notwendige hinaus, Steinmetzarbeiten, Traueranzeigen und Trauerkaffee. Die Praxis vieler Sozialämter orientiert sich an Pauschalen zwischen rund 1.500 € und 3.000 € zuzüglich Friedhofsgebühren — die genaue Obergrenze legt das Heidelberger Amt im Einzelfall fest.</p>
+  <p>Ein wichtiger höchstrichterlicher Grundsatz: Nach dem Urteil des Bundessozialgerichts vom 25. August 2011 (Az. <strong>B 8 SO 20/10 R</strong>) sind die Kosten nicht „zumutbar" allein deshalb, weil ein Nachlass formal vorhanden ist — entscheidend ist die tatsächliche wirtschaftliche Leistungsfähigkeit der bestattungspflichtigen Person. Auch eine Erbausschlagung schließt den Anspruch auf § 74 SGB XII nicht automatisch aus, solange die Bestattungspflicht nach § 31 BestattG BW fortbesteht.</p>
+
+  <h3>Antragszeitpunkt</h3>
+  <p>Der Antrag kann <strong>vor oder nach</strong> der Bestattung gestellt werden — eine vorherige Beratung beim Sozialamt ist allerdings dringend zu empfehlen, weil die Erforderlichkeit der einzelnen Kostenpositionen so im Vorfeld geklärt werden kann. Wer eine teure Bestattung beauftragt und erst danach Antrag stellt, riskiert, auf der Differenz zwischen tatsächlichen und „erforderlichen" Kosten sitzen zu bleiben.</p>
+</section>

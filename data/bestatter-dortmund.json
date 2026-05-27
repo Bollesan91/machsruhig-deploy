@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "id": "bestatter-dortmund",
+    "version": "1.0",
+    "stand": "2026-04"
+  },
+  "stadt": {
+    "name": "Dortmund",
+    "bundesland": "Nordrhein-Westfalen",
+    "einwohner": "590.000",
+    "slug": "dortmund"
+  },
+  "friedhoefe": [
+    {
+      "name": "Hauptfriedhof Dortmund",
+      "bezirk": "Zentral",
+      "groesse": "~40 ha",
+      "besonderheit": "Größter Friedhof mit moderner Infrastruktur"
+    },
+    {
+      "name": "Waldfriedhof Dortmund",
+      "bezirk": "Grünbereich",
+      "groesse": "~30 ha",
+      "besonderheit": "Naturnahe Waldbestattungen"
+    },
+    {
+      "name": "Friedhof Dortmund Osten",
+      "bezirk": "Oststadt",
+      "groesse": "~25 ha",
+      "besonderheit": "Traditioneller Friedhof mit Krematorium"
+    }
+  ],
+  "gebuehren": {
+    "erdbestattungWahlgrab": {
+      "min": 1500,
+      "max": 1900,
+      "laufzeit": "20-25 Jahre"
+    },
+    "urnengrab": {
+      "min": 350,
+      "max": 450,
+      "laufzeit": "20 Jahre"
+    },
+    "baumbestattung": {
+      "min": 800,
+      "max": 1100,
+      "laufzeit": "20 Jahre"
+    }
+  },
+  "bestattungsrecht": {
+    "gesetz": "Nordrhein-Westfalen Bestattungsgesetz",
+    "ueberuehrungsfrist": "36 Stunden",
+    "bestattungsfristErd": "96 Stunden",
+    "bestattungsfristFeuer": "3 Monate nach Einäscherung",
+    "besonderheiten": [
+      "Überführungsfrist: 36 Stunden",
+      "Waldbestattungen möglich",
+      "Anonyme Gräber erfordern keine Grabpflege"
+    ]
+  },
+  "lokaleBesonderheiten": [
+    "Dortmund bietet 6 Friedhöfe mit verschiedenen Bestattungsformen.",
+    "Die Stadt liegt in Nordrhein-Westfalen."
+  ],
+  "faq": [
+    {
+      "frage": "Was kostet eine Erdbestattung in Dortmund?",
+      "antwort": "Die Friedhofsgebühren liegen zwischen 1.500–1.900€. Hinzu kommen Bestatterleistungen (ca. 1.500–2.500€)."
+    },
+    {
+      "frage": "Gibt es günstigere Alternativen in Dortmund?",
+      "antwort": "Ja. Urnengräber kosten nur 350–450€ und Baumbestattungen 800–1.100€ ohne Grabpflicht."
+    },
+    {
+      "frage": "Welche Fristen gelten in Dortmund?",
+      "antwort": "Überführungsfrist: 36 Stunden, Erdbestattungsfrist: 96 Stunden."
+    },
+    {
+      "frage": "Welches Bestattungsrecht gilt in Nordrhein-Westfalen?",
+      "antwort": "Nordrhein-Westfalen erlaubt Waldbestattungen und anonyme Gräber."
+    }
+  ],
+  "seo": {
+    "title": "Bestatter in Dortmund",
+    "description": "Bestatter in Dortmund: Friedhöfe, Gebühren, Bestattungsrecht",
+    "h1": "Bestatter in Dortmund finden"
+  }
+}
