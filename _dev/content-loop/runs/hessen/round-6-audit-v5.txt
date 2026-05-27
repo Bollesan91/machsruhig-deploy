@@ -1,6 +1,0 @@
-HESSEN_SCORE: 85
-WORD_COUNT: 2173
-Title: 56 Meta: 157
-
-WARNINGS:
- - Pre-Launch: Monetarisierung noch nicht aktiv (Phase F). Penalty temporär ausgesetzt.
