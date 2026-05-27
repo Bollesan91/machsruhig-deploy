@@ -82,3 +82,107 @@
 /ratgeber/sterbeurkunde*          /tools/checkliste-todesfall/          301
 /ratgeber/friedwald-ruheforst*    /bestattungsarten                     301
 /ratgeber/*                       /                                     301
+
+# =====================================================================
+# Ahrefs-Audit Iter-6 (2026-05-27 Nachmittag): 404-Cleanup
+# Health-Score 48 → erwartet 75+
+# =====================================================================
+
+# Stadt-Alias-Redirects (Lang-Form → Kurz-Form)
+/bestatter/frankfurt-am-main/       /bestatter/frankfurt/             301
+/bestatter/freiburg-im-breisgau/    /bestatter/freiburg/              301
+/bestatter/muelheim-an-der-ruhr/    /bestatter/muelheim/              301
+
+# Generische Pages → vorhandene Hubs
+# /kontakt now is a real page (kontakt.html)
+/kontakt/                           /kontakt                          301
+/quellen                            /                                 301
+/quellen/                           /                                 301
+/redaktion                          /                                 301
+/redaktion/                         /                                 301
+/ueber                              /                                 301
+/ueber/                             /                                 301
+/wissen                             /                                 301
+/wissen/                            /                                 301
+/kosten                             /bestattungskosten                301
+/kosten/                            /bestattungskosten                301
+/trauerfeier                        /beerdigung-planen                301
+/trauerfeier/                       /beerdigung-planen                301
+/checklisten                        /tools/checkliste-todesfall/      301
+/checklisten/                       /tools/checkliste-todesfall/      301
+/checklisten/erste-72-stunden/      /tools/checkliste-todesfall/      301
+
+# Bestattungsarten-Sub-Slugs (nicht existent) → Hub
+/bestattungsarten/baumbestattung    /bestattungsarten                 301
+/bestattungsarten/baumbestattung/   /bestattungsarten                 301
+/bestattungsarten/feuerbestattung   /bestattungsarten                 301
+/bestattungsarten/feuerbestattung/  /bestattungsarten                 301
+/bestattungsarten/seebestattung     /bestattungsarten                 301
+/bestattungsarten/seebestattung/    /bestattungsarten                 301
+
+# Vorsorge-Sub-Slugs (nicht existent) → Hub
+/vorsorge/bestattungsverfuegung     /vorsorge/                        301
+/vorsorge/bestattungsverfuegung/    /vorsorge/                        301
+/vorsorge/bestattungsvorsorgevertrag /vorsorge/bestattungsvorsorge/   301
+/vorsorge/bestattungsvorsorgevertrag/ /vorsorge/bestattungsvorsorge/  301
+/vorsorge/friedwald-baumbestattung  /vorsorge/                        301
+/vorsorge/friedwald-baumbestattung/ /vorsorge/                        301
+
+# Bundesland-Pages fehlen → temporär Hub-Redirect
+/bestattung-in/baden-wuerttemberg   /bestattung-in/                   301
+/bestattung-in/baden-wuerttemberg/  /bestattung-in/                   301
+/bestattung-in/thueringen           /bestattung-in/                   301
+/bestattung-in/thueringen/          /bestattung-in/                   301
+
+# Anomale URLs (ohne trailing /)
+/bestatter-in-nordrhein-westfalen   /bestattung-in/nordrhein-westfalen 301
+/bestatter-in-bayern                /bestattung-in/bayern             301
+/bestatter-in/saarbruecken/         /bestatter/saarbruecken/          301
+
+# Tool-Shortcut
+/kostenrechner                      /tools/kostenrechner/             301
+
+# 404-Stadt-Pages → /bestatter/ Hub (31 Cities die nicht existieren)
+/bestatter/gera/                    /bestatter/                       301
+/bestatter/esslingen/               /bestatter/                       301
+/bestatter/weimar/                  /bestatter/                       301
+/bestatter/heilbronn/               /bestatter/                       301
+/bestatter/ulm/                     /bestatter/                       301
+/bestatter/wilhelmshaven/           /bestatter/                       301
+/bestatter/reutlingen/              /bestatter/                       301
+/bestatter/tuebingen/               /bestatter/                       301
+/bestatter/offenbach/               /bestatter/                       301
+/bestatter/offenbach-am-main/       /bestatter/                       301
+/bestatter/wuerzburg/               /bestatter/                       301
+/bestatter/recklinghausen/          /bestatter/                       301
+/bestatter/witten/                  /bestatter/                       301
+/bestatter/goettingen/              /bestatter/                       301
+/bestatter/brandenburg-an-der-havel/ /bestatter/                      301
+/bestatter/schwerin/                /bestatter/                       301
+/bestatter/stralsund/               /bestatter/                       301
+/bestatter/bremerhaven/             /bestatter/                       301
+/bestatter/pforzheim/               /bestatter/                       301
+/bestatter/solingen/                /bestatter/                       301
+/bestatter/hildesheim/              /bestatter/                       301
+/bestatter/ludwigsburg/             /bestatter/                       301
+/bestatter/herne/                   /bestatter/                       301
+/bestatter/iserlohn/                /bestatter/                       301
+/bestatter/schwerte/                /bestatter/                       301
+/bestatter/remscheid/               /bestatter/                       301
+/bestatter/hattingen/               /bestatter/                       301
+/bestatter/jena/                    /bestatter/                       301
+
+# Stadt-Distrikte (München-Subpages, nicht existent) → /bestatter/muenchen/
+/bestatter/muenchen/perlacher-forst/  /bestatter/muenchen/            301
+/bestatter/muenchen/bogenhausen/      /bestatter/muenchen/            301
+/bestatter/muenchen/waldfriedhof-solln/ /bestatter/muenchen/          301
+
+# Cloudflare email-protection (Site läuft auf Netlify, CF nicht aktiv) — Hub-Fallback
+/cdn-cgi/l/email-protection*        /                                 301
+
+# Tool-URL ohne Trailing Slash (Page existiert mit Trailing)
+/tools/brief-an-meine-liebsten      /tools/brief-an-die-liebsten/     301
+/tools/brief-an-meine-liebsten/     /tools/brief-an-die-liebsten/     301
+
+# Sozialbestattung Trailing-Slash-Fix
+/sozialbestattung/                  /sozialbestattung                 301
