@@ -1,6 +1,117 @@
 # Session-Notizen
 
 ## Letzte Session
+**Datum:** 28. Mai 2026 (Externes Grinch-Audit + Iter-13 + Helper-V3 Tool-Score-Audit)
+
+## Was wurde gemacht
+
+### Externes Audit (Bolle hat extern auditieren lassen — "Grinch mode")
+Audit hat ehrlich gespiegelt was wir die letzten 2 Tage übersehen haben:
+- ❌ E-E-A-T-Substanz fehlt komplett (kein namentlicher Autor mit Background)
+- ❌ Stadt-Strategie unwahrscheinlich gewinnbar bei head-terms ("Bestatter [Stadt]")
+- ❌ "Wir sind ein kleines Team" widerspricht Einzelperson-Impressum (jeder Quality-Rater sieht das)
+- ❌ Sprachfehler: "Judäisten", "Zeckenpest" in bestattungsarten.html
+- ❌ RLP-Urne-zu-Hause Behauptung ohne juristische Quelle
+- ❌ GSC nicht verifiziert, Sitemap nicht eingereicht
+- ✓ Methodik-Page transparenter als bei den meisten Konkurrenten (rare praise)
+- ✓ Stadt-Modifier-Queries (Long-Tail) realistisch gewinnbar mit guten Pages
+
+Bolle's strategische Einsicht: Site noch zu unreif für Reviewer-Outreach. Foto+Vita aktuell nicht gewünscht. Stadt-Strategie weitermachen mit angepasstem Verständnis (Modifier-Queries, nicht Head-Terms).
+
+### Iter-13: Audit-Sofortfixes (Commit `da8a86e`)
+- "Judäisten" → "orthodoxe Juden"
+- "Zeckenpest" → "Borkenkäfer / Eichenprozessionsspinner / Eschentriebsterben"
+- RLP-Urne weicher: "in einzelnen Bundesländern unter Auflagen — Bundesland-spezifisch prüfen"
+- methodik.html: "Wir sind ein kleines Team" → "Hinter machsruhig.de steht Marie-Therese Bollweg aus Hamburg" (konsistent mit Impressum)
+- ueber-uns.html: "Die Redaktion machsruhig.de" → "Marie-Therese Bollweg — Initiative & Redaktion" mit Kontakt + Postanschrift
+- Reviewer-Fachpool: "wird aufgebaut" → "ist geplant" (ehrlicher)
+
+### Helper-V3 Tool-Score-Audit (kritischer Tag-Befund)
+Trigger: Bolle hatte beim Trauerrede-Generator "Schweißausbrüche". Helper-V3 Chrome-Tabs gestartet.
+
+**Trauerrede-Generator: SCORE 46/100 — ÜBERARBEITEN**
+- A Output 42: 3 Felder werden NIE verwendet (`formData.length`, `hobbies`, `quote`); `anrede` ignoriert; Längen-Timer täuscht aktiv
+- B Edge-Cases 22: Säugling + "humorvoll" = Scherz-Templates. Null Guards.
+- C Akut-UX 68: durchklickbar aber sinnlose Felder
+- D Transparenz 38: Kein Hinweis dass Template (kein KI). Component intern "TrauerrdeGenerator" (Tippfehler!)
+- E Datenschutz 82: kein localStorage/fetch
+- F Disclaimer 35: kein Profi-Trauerredner-Hinweis
+- **2 Tippfehler im Template fest verdrahtet:** "nahestund" → "nahestand", "tiefspüre" → "tief spüre"
+
+**Abschiedsbrief-Generator: SCORE 64/100 — ÜBERARBEITEN**
+- A Output 68: geführtes Schreib-Gerüst (gut), aber Closing fix "In Liebe", kein Name+Datum
+- **B Edge-Cases 35 KRITISCH:** "Abschiedsbrief" ist suizid-konnotiert. Kein Telefonseelsorge-Hinweis. Kein Krisen-Auffangnetz.
+- C Akut-UX 80: gut
+- D Transparenz 82: sauber
+- E Datenschutz 78: localStorage lokal, aber "Nichts gesendet" + 3 Tracker = Widerspruch
+- F Disclaimer 40: kein Profi-Hilfe-Hinweis
+
+### Ungelöste Tool-Fixes (für nächste Session)
+**Sofort-MUST-FIX (5 Min Arbeit für massiven Score-Sprung):**
+1. **Abschiedsbrief:** Telefonseelsorge-Banner (0800 111 0 111 oder 0800 111 0 222, 24/7 kostenlos anonym) — bei suizid-konnotiertem Tool quasi rechtlich Pflicht
+2. **Trauerrede:** "nahestund" → "nahestand"
+3. **Trauerrede:** "tiefspüre" → "tief spüre"
+4. **Trauerrede:** Component "TrauerrdeGenerator" → "TrauerredeGenerator"
+5. **Beide:** Profi-Hinweis (Trauerredner ca. 400-800 EUR / Trauerbegleitung über bv-trauerbegleitung.de)
+
+**Tiefer Rebuild (1-2h Arbeit, separat):**
+- Trauerrede: Längen-Feature implementieren ODER Feld raus
+- Trauerrede: hobbies/quote/anrede verdrahten ODER Felder raus
+- Trauerrede: Edge-Case-Guards (Säugling + humorvoll sperren, junge Tote: persoenlich erzwingen)
+- Abschiedsbrief: Name + Datum unter "In Liebe"
+- Abschiedsbrief: Closing wählbar (Select-Dropdown statt fix "In Liebe")
+- Abschiedsbrief: Datenschutz-Aussage präzisieren ("Briefinhalte bleiben lokal" statt "Nichts gesendet")
+
+### Andere Tools — noch nicht Helper-V3-auditiert (NEU als Open)
+- tools/beerdigungsplaner
+- tools/danksagung
+- tools/notfallkarte
+- tools/fristen-radar
+- tools/checkliste-todesfall
+
+Sollten in nächster Session via Helper-V3 Score-Audit durchlaufen (analog zu Trauerrede + Abschiedsbrief). Risiko-Reihenfolge: Notfallkarte > Fristen-Radar > Beerdigungsplaner > Danksagung > Checkliste.
+
+### Remote-Control nicht gestartet
+Bolle wollte `/remote-control` triggern für Cloud-Agent-Rebuild. UI-Befehl funktioniert in claude.ai Browser nicht (nur Claude Code CLI). Alternative: Anthropic RemoteTrigger API kann von hier aus genutzt werden. Trigger nicht angelegt — Bolle hat stattdessen "ende deploy" gewählt.
+
+Für nächste Session: Cloud-Agent für autonomen Tool-Rebuild ist eine valide Option (RemoteTrigger.create mit detailliertem Prompt).
+
+## Nächste Schritte (priorisiert)
+
+**Phase A — Tool-Sofort-Fixes (Sofort-MUST-FIX, 15 Min):**
+1. Trauerrede: 2 Tippfehler + Component-Name (5 Min)
+2. Abschiedsbrief: Telefonseelsorge-Banner (5 Min) — DRINGEND wegen Suizid-Kontext
+3. Beide: Profi-Hinweis (5 Min)
+4. Re-Score nach Sofort-Fixes (erwartet: Trauerrede ~62, Abschiedsbrief ~80)
+
+**Phase B — Tool-Rebuild (1-2h, oder via Cloud-Agent):**
+5. Trauerrede: Längen-Feature implementieren ODER 3 Felder raus
+6. Trauerrede: hobbies/quote/anrede verdrahten ODER raus
+7. Trauerrede: Edge-Case-Guards (junge Tote, Säugling)
+8. Abschiedsbrief: Name+Datum + Closing wählbar
+9. Re-Score nach Rebuild (erwartet: ≥75 für beide)
+
+**Phase C — Restliche 5 Tools auditieren:**
+10. Helper-V3 Score-Audit für Notfallkarte, Fristen-Radar, Beerdigungsplaner, Danksagung, Checkliste
+
+**Phase D — Strategische Entscheidung (Audit-Antwort):**
+11. Long-Tail-Pillar-Pivot ODER Stadt-Cluster-Strategie weiter? → Datenbasiert sobald GSC läuft (nicht aus dem Bauch)
+
+**Phase E — Bolle-Tasks (kein Code-Aufwand):**
+12. GSC verifizieren + sitemap.xml einreichen — größter Indexierungs-Hebel
+13. Foto+Vita ggf. später wenn Site reifer (aktuell nicht)
+14. Reviewer-Akquise in 3-6 Monaten wenn Site reif
+
+## Offene Fragen
+- **Strategische Richtung:** Stadt vs Long-Tail-Pillar — Entscheidung nach erster GSC-Datenwoche
+- **Trauerrede-Tool:** Rebuild oder einfach offline nehmen + auf später verschieben?
+- **5 ungeprüfte Tools:** offline lassen während Audit-Pipeline läuft?
+
+---
+
+# ───────── ARCHIV: frühere Sessions ─────────
+
+## Session
 **Datum:** 27. Mai 2026 (Spät-Nachmittag — Iter-9 bis Iter-12 Hidden-Bug-Hunt)
 
 ## Was wurde gemacht (Spät-Nachmittag-Erweiterung)
