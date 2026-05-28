@@ -1,6 +1,78 @@
 # Session-Notizen
 
 ## Letzte Session
+**Datum:** 27. Mai 2026 (Spät-Nachmittag — Iter-9 bis Iter-12 Hidden-Bug-Hunt)
+
+## Was wurde gemacht (Spät-Nachmittag-Erweiterung)
+
+Nach dem "ende deploy" gegen 15:00 fanden wir noch 5 weitere Iter-Wellen, getrieben durch User-Befund "darmstadt sieht broken aus" und dem darauf folgenden Pattern-Check.
+
+### Iter-9: Frankfurt Zweit-Layer-Duplikat
+- Welle B hatte Hessen-Block aufgepfropft, dupliziert mit Frankfurt-Original
+- Block 2 (Bestattungsrecht in Hessen Fristen) komplett raus — stand schon in Block 1
+- Block 3 (Lokale Besonderheiten) von 6 H3 auf 4 schlanke H3 kondensiert
+- Werbe-Sprache raus ("Vorreiter", "attraktiver Ort")
+- -1516 bytes
+- Commit `3a79c8a`
+
+### Iter-10: Broken-CSS-Pattern auf 8 Stadt-Pages (kritischer Visuell-Bug)
+**Root-Cause:** Helper-V3-Writer haben verschiedene CSS-Strategien verwendet:
+- `/assets/css/main.css` (404, file doesn't exist)
+- `/assets/fonts/dmsans.css` (404)
+- `/assets/fonts/dm-sans.woff2` (404)
+- `/assets/fonts/fonts.css` (404)
+
+Site-Standard ist: **inline `<style>` + Fonts unter `/fonts/`** (not `/assets/fonts/`)
+
+8 Pages betroffen:
+- Aachen + Darmstadt: komplett unstyled (kein inline-style) → Berlin's `<style>` Block übernommen
+- Chemnitz + Gelsenkirchen: hatten inline style aber broken font-link-Refs
+- Braunschweig, Erfurt, Heidelberg, Oberhausen: broken /assets/fonts/fonts.css Refs
+- Commit `6acfd8b`
+
+### Iter-11: Site-Health-Scanner Bulk-Fix (14 Finding-Types → 5)
+Comprehensive Scan über 116 Pages, dann Bulk-Fix:
+- JSON-LD Parse-Error in tools/bestattungskosten-rechner (fehlende ]} für @graph)
+- tools/abschiedsbrief: missing H1 → automatisch generiert
+- tools/fristen-radar: 2. H1 → H2 demoted
+- kontakt.html: robots-meta hinzugefügt
+- bestattung-in/hessen + bestatter/hamburg: leftover UNSURE-Kommentare entfernt
+- **40 Files: og:image bulk-add** (`/assets/og-image.png` default)
+- 5 Files: kompletter OG-Block (danke/datenschutz/impressum/luebeck/moenchengladbach)
+- Commits `f91f07c` + `1dba5f9`
+
+### Iter-12: Deep-Scan-Fixes (21 Files)
+Tiefere Pattern-Scans + Fixes:
+- **12 broken internal links** (font-paths + /vorsorgevollmacht + /reerdigung)
+- **Canonical-Bug:** Braunschweig hatte `www.machsruhig.de` (WWW-Variante) — entfernt
+- **Sitemap-Update:** Lübeck + Mönchengladbach percent-encoded Umlaut-URLs ergänzt
+- **Mixed-Content:** 8 Pages http:// → https:// upgrade (Primärquellen)
+- **Meta-desc-too-long:** 2 Pages gekürzt (224→152, 221→151 chars)
+- **Wiesbaden Spezialfix:** broken @font-face-Deklarationen für nicht-existente DMSans/Fraunces-Files ersetzt
+- Commit `ec2253e`
+
+### Site-Health Endstand (post Iter-12)
+Deep-Scan zeigt 5 verbleibende Finding-Types, **alle False-Positives**:
+- `tel_link_mismatch` (44): Regex-False-Positive (+49 vs 0 — sind dieselbe Nummer)
+- `sitemap_orphans` (4): Scanner kann percent-encoded URLs nicht mappen
+- `canonical_path_mismatch` (4): Self-Canonical Umlaut↔percent-encoded (1:1 dasselbe)
+- `heading_hierarchy_skip` (84): systematisches Design-Pattern (H2 → H4 in Footer)
+- `unsitemapped_indexable` (4): gleicher Scanner-Mapping-Bug wie sitemap_orphans
+
+**Echte verbleibende Bugs: 0** ✓
+
+### Heutiges Commit-Total (Spät-Nachmittag)
+- `3a79c8a` iter-9 Frankfurt-Dedup
+- `6acfd8b` iter-10 broken-CSS-Pattern (8 Pages)
+- `f91f07c` iter-11 Bulk-Fix (47 OG-Tag-Fixes + JSON-LD + H1)
+- `1dba5f9` iter-11 Teil 2 (og:image bulk)
+- `ec2253e` iter-12 deep-scan-fixes (21 Files)
+
+---
+
+# ───────── ARCHIV: frühere Sessions ─────────
+
+## Session
 **Datum:** 27. Mai 2026 (Nachmittag — Ahrefs-SEO-Welle + Analytics-Coverage 100%)
 
 ## Was wurde gemacht (Nachmittag, nach Chrome-Audit-Pipeline vom Mittag)
