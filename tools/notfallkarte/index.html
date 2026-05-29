@@ -135,7 +135,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <div class="nk-field">
       <label for="f-name">Name</label>
-      <input type="text" id="f-name" name="name" placeholder="Vor- und Nachname" required>
+      <input type="text" id="f-name" name="name" maxlength="60" placeholder="Vor- und Nachname" required>
     </div>
 
     <div class="nk-field">
@@ -202,20 +202,20 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px">Notfallkontakt 1</h3>
     <div class="nk-field-row">
-      <div class="nk-field"><label for="f-kontakt1Name">Name</label><input type="text" id="f-kontakt1Name" name="kontakt1Name" placeholder="Name des Kontakts" required></div>
-      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" placeholder="z. B. 0171 1234567" required></div>
+      <div class="nk-field"><label for="f-kontakt1Name">Name</label><input type="text" id="f-kontakt1Name" name="kontakt1Name" maxlength="50" placeholder="Name des Kontakts" required></div>
+      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 0171 1234567" required></div>
     </div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Notfallkontakt 2<span class="nk-field-optional">(optional)</span></h3>
     <div class="nk-field-row">
-      <div class="nk-field"><label for="f-kontakt2Name">Name</label><input type="text" id="f-kontakt2Name" name="kontakt2Name" placeholder="Name des Kontakts"></div>
-      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" placeholder="z. B. 0171 9876543"></div>
+      <div class="nk-field"><label for="f-kontakt2Name">Name</label><input type="text" id="f-kontakt2Name" name="kontakt2Name" maxlength="50" placeholder="Name des Kontakts"></div>
+      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 0171 9876543"></div>
     </div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Hausarzt<span class="nk-field-optional">(optional)</span></h3>
     <div class="nk-field-row">
-      <div class="nk-field"><label for="f-hausarztName">Name</label><input type="text" id="f-hausarztName" name="hausarztName" placeholder="Name der Praxis / des Arztes"></div>
-      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" placeholder="z. B. 089 1234567"></div>
+      <div class="nk-field"><label for="f-hausarztName">Name</label><input type="text" id="f-hausarztName" name="hausarztName" maxlength="60" placeholder="Name der Praxis / des Arztes"></div>
+      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 089 1234567"></div>
     </div>
 
     <div style="border-top:1px solid var(--mr-border);margin-top:28px;padding-top:24px"></div>
@@ -369,7 +369,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Medikam.:', d.medikamente, {emphasize: true});
     html += cardRow('Vorerkr.:', d.vorerkrankungen);
     html += cardRow('Organsp.:', d.organspende || '—');
-    html += '<div class="nk-card-branding">machsruhig.de</div>';
+    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + '</div>';
     html += '</div></div>';
     return html;
   }
@@ -387,7 +387,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Dokumente:', d.dokumenteOrt);
     html += cardRow('Pat.verf.:', d.patientenverfuegung || '—');
     html += cardRow('Vollmacht:', d.vorsorgevollmacht || '—');
-    html += '<div class="nk-card-branding">machsruhig.de</div>';
+    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + '</div>';
     html += '</div></div>';
     return html;
   }

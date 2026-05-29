@@ -262,7 +262,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // Steuererklärungs-Frist: 31.07. des Folgejahres (regulär, ohne Steuerberater)
   function taxReturnDeadline(deathDate){ var year = deathDate.getFullYear() + 1; var r = new Date(year, 6, 31); return shiftToWorkday(r); }
   // Custom-Deadline-Resolver: nutzt id-basierte Sonderlogik wenn vorhanden, sonst addDays
-  function resolveDeadline(deathDate, item){
+  function resolveDeadline(deathDate, item, cfg){
+    cfg = cfg || state.config || {};
+    // Auslandsbezug § 1944 III BGB: 6 Monate statt 6 Wochen — ZENTRAL hier, nicht im filter()
+    if (cfg.isForeign && (item.id === 'erbausschlagung' || item.id === 'minderjaehrige_erbe')) {
+      return shiftToWorkday(addDays(deathDate, 180));
+    }
     if (item.id === 'steuererklaerung') return taxReturnDeadline(deathDate);
     if (item.id === 'standesamt') return shiftToWorkday(addWorkdays(deathDate, item.days));
     return shiftToWorkday(addDays(deathDate, item.days));
@@ -355,9 +360,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     // Filter
     var filtered = DEADLINES.filter(function(d){
-      // Auslandsbezug: Erbausschlagung 180 Tage statt 42
-      if (d.id === 'erbausschlagung' && cfg.isForeign) { d = Object.assign({}, d, {days: 180}); }
-      if (d.id === 'minderjaehrige_erbe' && cfg.isForeign) { d = Object.assign({}, d, {days: 180}); }
+      // Auslandsbezug: jetzt zentral in resolveDeadline() behandelt (Object.assign in filter griff nicht)
       if (d.showIf === 'spouse' && !cfg.isSpouse) return false;
       if (d.showIf === 'rental' && !cfg.hasRental) return false;
       if (d.showIf === 'minors' && !cfg.hasMinors) return false;
@@ -384,7 +387,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var totalCount = sorted.length;
     var urgentCount = sorted.filter(function(d){
       if (state.doneMap[d.id]) return false;
-      var rem = daysBetween(today, resolveDeadline(cfg.deathDate, d));
+      var rem = daysBetween(today, resolveDeadline(cfg.deathDate, d, cfg));
       return rem <= 3 && rem >= 0;
     }).length;
 
@@ -522,7 +525,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
     var lines = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//machsruhig.de//Fristen-Radar//DE','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
     items.forEach(function(d){
-      var deadline = resolveDeadline(cfg.deathDate, d);
+      var deadline = resolveDeadline(cfg.deathDate, d, cfg);
       var dtStart = fmtICSDate(deadline);
       var nextDay = new Date(deadline); nextDay.setDate(nextDay.getDate()+1);
       var dtEnd = fmtICSDate(nextDay);
@@ -558,7 +561,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   function renderCard(d, deathDate, today){
-    var deadlineDate = resolveDeadline(deathDate, d);
+    var deadlineDate = resolveDeadline(deathDate, d, state.config);
     var rem = daysBetween(today, deadlineDate);
     var isPast = rem < 0;
     var urgency = isPast ? {level:'red', label:'VERPASST'} : getUrgency(rem);

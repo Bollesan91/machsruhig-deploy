@@ -387,9 +387,8 @@ const QUOTES = [
   {id:'epikur-1',text:'Der Tod geht uns nichts an. Solange wir da sind, ist der Tod nicht da.',author:'Epikur'},
   {id:'psalm-23',text:'Der Herr ist mein Hirte, mir wird nichts mangeln.',author:'Psalm 23'},
   {id:'joh-11-25',text:'Ich bin die Auferstehung und das Leben.',author:'Johannes 11,25'},
-  {id:'tagore-1',text:'Der Schmetterling zählt nicht Monate, sondern Augenblicke — und hat genug Zeit.',author:'Rabindranath Tagore'},
-  {id:'konfuzius-1',text:'Wir haben zwei Leben. Das zweite beginnt, wenn wir erkennen, dass wir nur eins haben.',author:'Konfuzius'},
-  {id:'seneca-1',text:'Es ist nicht wenig Zeit, die wir haben, sondern viel, die wir nicht nutzen.',author:'Seneca'},
+  {id:'volksweisheit-1',text:'Wir haben zwei Leben. Das zweite beginnt, wenn wir erkennen, dass wir nur eins haben.',author:'Volksweisheit (oft Konfuzius zugeschrieben, Zuschreibung unsicher)'},
+  {id:'seneca-1',text:'Es ist nicht wenig Zeit, die wir haben, sondern viel, die wir nicht nutzen.',author:'Seneca, De brevitate vitae'},
   {id:'koran-3-185',text:'Jede Seele wird den Tod kosten.',author:'Koran (Sure 3:185)'}
 ];
 
@@ -487,21 +486,28 @@ function getClosings(tone, name, religion) {
 
   // Add religious variants
   if(religion === 'christlich') {
-    variants.persoenlich.push(`${name}, möge Gott dich führen. Und möge er uns geben, was wir brauchen, um diesen Abschied zu tragen.`);
+    variants.persoenlich.unshift(`${name}, möge Gott dich führen. Und möge er uns geben, was wir brauchen, um diesen Abschied zu tragen.`);
+    variants.wuerdevoll.unshift(`${name}, die Gnade Gottes sei mit dir. Wir vertrauen auf die Verheißung des ewigen Lebens und befehlen dich seiner Hand an.`);
+    variants.lebensbejahend.unshift(`${name}, wir danken Gott für jedes Jahr deines Lebens und für alle Spuren der Liebe, die du uns hinterlassen hast.`);
     variants.wuerdevoll.push(`Wir vertrauen diese Person in Gottes Hände. Möge sie Frieden finden — bei Gott.`);
     variants.lebensbejahend.push(`Wir glauben: Das Leben ist nicht zu Ende mit dem Tod. ${name} lebt weiter — in Gott, in uns, in all dem Guten, das diese Person getan hat.`);
   }
   if(religion === 'muslimisch') {
-    variants.persoenlich.push(`${name}, die Barmherzigkeit Allahs sei mit dir. Du wirst in unseren Herzen weiterleben.`);
+    variants.persoenlich.unshift(`${name}, die Barmherzigkeit Allahs sei mit dir. Du wirst in unseren Herzen weiterleben.`);
+    variants.wuerdevoll.unshift(`Innā lillāhi wa innā ilayhi rāji'ūn — Von Allah sind wir gekommen, zu Ihm kehren wir zurück. ${name}, möge Allah dir Barmherzigkeit schenken.`);
+    variants.lebensbejahend.unshift(`${name}, alḥamdulillāh für jeden Tag, den du mit uns gegangen bist. Möge Allah dich mit den Rechtschaffenen vereinen.`);
     variants.wuerdevoll.push(`Inna lillahi wa inna ilayhi raji'un — Wir gehören zu Allah, und zu ihm kehren wir zurück.`);
   }
   if(religion === 'juedisch') {
-    variants.persoenlich.push(`${name}, dein Andenken möge ein Segen sein. Baruch Dayan Ha'Emet — Gepriesen sei der wahre Richter.`);
+    variants.persoenlich.unshift(`${name}, dein Andenken möge ein Segen sein. Baruch Dayan Ha'Emet — Gepriesen sei der wahre Richter.`);
+    variants.wuerdevoll.unshift(`Zikhrono livrakha — möge das Gedenken an ${name} ein Segen sein. Wir gedenken in Trauer und mit Dank für das gemeinsame Leben.`);
+    variants.lebensbejahend.unshift(`${name}, l'chaim — auf das Leben, das du geführt hast und das in uns weiterlebt. Dein Andenken ist Segen.`);
     variants.wuerdevoll.push(`Yizkor — wir werden uns erinnern. Wir werden ${name} nicht vergessen.`);
   }
   if(religion === 'buddhistisch') {
-    variants.persoenlich.push(`${name}, mögest du Frieden finden auf deinem Weg. Dein Leben war ein Geschenk — danke dafür.`);
-    variants.lebensbejahend.push(`Das Leben ist ein Kreislauf. ${name} hat ihren Platz erfüllt — mit Liebe, mit Achtsamkeit, mit Güte.`);
+    variants.persoenlich.unshift(`${name}, mögest du Frieden finden auf deinem Weg. Dein Leben war ein Geschenk — danke dafür.`);
+    variants.lebensbejahend.unshift(`Das Leben ist ein Kreislauf. ${name} hat seinen Platz erfüllt — mit Liebe, mit Achtsamkeit, mit Güte.`);
+    variants.wuerdevoll.unshift(`${name}, in Mitgefühl und Achtsamkeit nehmen wir Abschied. Möge dein Weg in Frieden sein, und möge dein Gehen unser Tun heller machen.`);
   }
 
   return variants[tone] || variants.persoenlich;
@@ -540,6 +546,7 @@ function TrauerredeGenerator() {
     hobbies: '',
     memory: '',
     meaning: '',
+    quoteFavorite: '',
     reflection: '',
     closing: '',
     quotes: ''
@@ -630,8 +637,9 @@ function TrauerredeGenerator() {
       meaning: formData.message ? (len === 'lang'
         ? `Was ${formData.name} uns bedeutet hat — das fassen wir in Worte und merken: Worte reichen nicht ganz. Aber wir versuchen es. ${formData.message}`
         : `Was ${formData.name} uns bedeutet hat: ${formData.message}`)
-        : `${formData.name} war für uns...`,
+        : '',
       reflection: reflectionText,
+      quoteFavorite: formData.quote ? `Wer ${formData.name} kannte, kennt diesen Satz: „${formData.quote.trim()}". Den nehmen wir mit.` : '',
       closing: closings[0],
       quotes: formData.selectedQuote ? QUOTES.find(q=>q.id===formData.selectedQuote)?.text : (formData.customQuote || '')
     });
@@ -648,6 +656,7 @@ function TrauerredeGenerator() {
       speechData.hobbies,
       speechData.memory,
       speechData.meaning,
+      speechData.quoteFavorite,
       speechData.reflection,
       speechData.quotes && `„${speechData.quotes}"`,
       speechData.closing

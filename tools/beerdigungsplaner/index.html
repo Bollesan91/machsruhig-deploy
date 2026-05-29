@@ -365,18 +365,34 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     h += '</div>';
 
     // Kosten-Gesamtrahmen + Budget-Konflikt-Warnung
+    // Parse Kosten aus o.kosten ODER o.desc (z.B. "Ab ca. 300–800 €" oder "15–30 € pro Person")
     var costMin = 0, costMax = 0;
+    function parseRange(str, multiplier){
+      multiplier = multiplier || 1;
+      if (!str) return null;
+      var rangeMatch = str.match(/(\d[\d.]*)\s*[–-]\s*(\d[\d.]*)/);
+      if (rangeMatch) {
+        return {min: parseInt(rangeMatch[1].replace(/\./g,''),10) * multiplier, max: parseInt(rangeMatch[2].replace(/\./g,''),10) * multiplier};
+      }
+      var singleMatch = str.match(/(\d[\d.]*)\s*€/);
+      if (singleMatch) {
+        var v = parseInt(singleMatch[1].replace(/\./g,''),10) * multiplier;
+        return {min: v, max: v};
+      }
+      return null;
+    }
+    // Schätze Gästezahl für Per-Person-Posten (Trauerkaffee)
+    var guestSize = {klein: 12, mittel: 30, gross: 70, unklar: 25}[state.answers.teilnehmer] || 25;
     STEPS.forEach(function(s){
       if (!state.answers[s.id]) return;
       var o = getOption(s.id, state.answers[s.id]);
-      if (o && o.kosten) {
-        var m = o.kosten.match(/(\d[\d.]*)[^\d]+(\d[\d.]*)/);
-        if (m) { costMin += parseInt(m[1].replace(/\./g,''),10); costMax += parseInt(m[2].replace(/\./g,''),10); }
-        else {
-          var single = o.kosten.match(/(\d[\d.]*)/);
-          if (single) { var v = parseInt(single[1].replace(/\./g,''),10); costMin += v; costMax += v; }
-        }
-      }
+      if (!o) return;
+      var range = null;
+      // Trauerkaffee: "/Person" oder "pro Person" → mit guestSize multiplizieren
+      var isPerPerson = (o.desc || '').match(/pro\s*Person|\/\s*Person|p\.?\s*P\.?/i);
+      if (o.kosten) range = parseRange(o.kosten);
+      else if (o.desc) range = parseRange(o.desc, isPerPerson ? guestSize : 1);
+      if (range) { costMin += range.min; costMax += range.max; }
     });
     if (costMax > 0) {
       var budgetVal = state.answers.budget;
@@ -384,9 +400,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       var br = budgetRanges[budgetVal];
       var conflict = br && (costMin > br[1] + 500); // Mindest-Range übersteigt Budget-Max + Toleranz
       h += '<div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">';
-      h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzter Gesamtrahmen:</strong> ';
+      h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzter Gesamtrahmen (inkl. Zusatzposten):</strong> ';
       h += '<span style="font-weight:600">~' + costMin.toLocaleString('de-DE') + '–' + costMax.toLocaleString('de-DE') + ' €</span>';
-      h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:6px">Diese Summe ist eine grobe Orientierung aus den Praeferenz-Optionen. Reale Kosten variieren regional und je nach konkretem Bestatter — der Bestatter erstellt vor Beauftragung einen verbindlichen Kostenvoranschlag.</div>';
+      h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:6px">Die Summe aggregiert Bestattungsart + Blumen + Musik + Redner + Trauerkaffee (bei "pro Person" mit Schätzung ' + guestSize + ' Gäste multipliziert). Sie ist eine grobe Orientierung. Reale Kosten variieren regional und je nach Bestatter — der Bestatter erstellt vor Beauftragung einen verbindlichen Kostenvoranschlag.</div>';
       if (conflict) {
         h += '<div role="alert" style="background:#FEF4E8;border:1px solid #F0D5A8;border-left:4px solid #C8862E;border-radius:6px;padding:12px 14px;margin-top:12px;color:#5a4a2e">';
         h += '<strong style="color:#8b5a14">Achtung — Konflikt mit Budget-Vorgabe:</strong> Deine Praeferenzen ergeben mind. ~' + costMin.toLocaleString('de-DE') + ' €, dein gewaehltes Budget liegt aber bis ' + br[1].toLocaleString('de-DE') + ' €. Tipp: Bestattungsart oder Blumen/Musik/Kaffee anpassen, oder Budget-Vorstellung neu setzen.';
