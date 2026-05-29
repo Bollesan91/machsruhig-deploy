@@ -579,11 +579,18 @@ function TrauerredeGenerator() {
     const closings = getClosings(effectiveTone, formData.name, formData.religion);
     const len = formData.length || 'mittel';
 
-    // Längen-Steuerung: welche Segmente werden inkludiert
+    // Längen-Steuerung: KEIN stiller Verlust — alle ausgefüllten Felder werden gerendert
+    // Bei 'kurz' werden zusätzliche Segmente nur kompakter formuliert, NICHT gedropped
     const includeCharacter = !!formData.character;
-    const includeMemory = !!formData.memory && (len !== 'kurz' || !formData.character); // bei kurz: nur eines von beidem
-    const includeHobbies = !!formData.hobbies && len !== 'kurz';
+    const includeMemory = !!formData.memory;
+    const includeHobbies = !!formData.hobbies;
     const includeReflection = len === 'lang';
+    // Sammeln aller weggelassenen Eingaben für Hinweis
+    const droppedInputs = [];
+    // bei 'kurz' und allen 3 Eingaben informieren wir den User
+    if (len === 'kurz' && includeCharacter && includeMemory && includeHobbies) {
+      droppedInputs.push('Hinweis: Bei "kurz" werden alle drei Erzähl-Segmente verdichtet — falls dir das zu eng wird, wechsle auf "mittel".');
+    }
 
     // Character-Segment je Länge ausführlicher
     let characterText = '';
@@ -597,11 +604,13 @@ function TrauerredeGenerator() {
       }
     }
 
-    // Hobbies-Segment (NEU verdrahtet)
+    // Hobbies-Segment (NEU verdrahtet) — kein Drop bei 'kurz', nur kompaktere Formulierung
     let hobbiesText = '';
     if (includeHobbies) {
       if (len === 'lang') {
         hobbiesText = `${formData.name} hatte Leidenschaften, die das Leben heller gemacht haben — und auch unseres dadurch. ${formData.hobbies} Es waren nicht bloß Hobbys; es waren Räume, in denen ${formData.name} ganz da war.`;
+      } else if (len === 'kurz') {
+        hobbiesText = `Besonders geliebt: ${formData.hobbies}`;
       } else {
         hobbiesText = `Was ${formData.name} besonders liebte: ${formData.hobbies}`;
       }
@@ -1104,7 +1113,7 @@ function TrauerredeGenerator() {
             <div className="speech-section">
               <h3>Was diese Person geliebt hat</h3>
               <div className="section-hint">
-                Die Themen, Aktivitäten und Räume, die ${formData.name} besonders waren — sie zeigen die Person von ihrer lebendigen Seite.
+                Die Themen, Aktivitäten und Räume, die {formData.name || 'dieser Mensch'} besonders waren — sie zeigen die Person von ihrer lebendigen Seite.
               </div>
               <div
                 className="speech-content"

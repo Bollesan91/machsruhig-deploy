@@ -60,7 +60,8 @@
 
 /* Karten-Layout — medium-unabhängig, damit auch html2canvas/PDF korrekt rendert */
 .nk-print-page{padding:10mm}
-.nk-card-wrapper{margin:0 auto 12mm;width:85.6mm;height:53.98mm;border:1px dashed #999;border-radius:3mm;overflow:hidden;position:relative;page-break-inside:avoid;background:#fff}
+.nk-card-wrapper{margin:0 auto 12mm;width:85.6mm;min-height:53.98mm;border:1px dashed #999;border-radius:3mm;overflow:visible;position:relative;page-break-inside:avoid;background:#fff}
+@media print{.nk-card-wrapper{box-shadow:none}}
 .nk-card-inner{width:100%;height:100%;padding:3.5mm 4mm;font-size:7pt;line-height:1.35;color:#000;font-family:'DM Sans',Arial,Helvetica,sans-serif}
 .nk-card-inner h3{font-family:'Fraunces',Georgia,serif;font-size:9pt;font-weight:700;margin:0 0 1.5mm;color:#000;border-bottom:0.5pt solid #ccc;padding-bottom:1mm}
 .nk-card-inner .nk-card-row{display:flex;margin-bottom:0.8mm}
@@ -349,9 +350,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     return '<div class="nk-preview-row' + (bold?' bold':'') + '"><span class="lbl">' + esc(label) + '</span><span class="val">' + esc(value) + '</span></div>';
   }
 
-  function cardRow(label, value){
+  function cardRow(label, value, opts){
     if (!value) return '';
-    return '<div class="nk-card-row"><span class="nk-card-label">' + esc(label) + '</span><span class="nk-card-value">' + esc(value) + '</span></div>';
+    var emphasize = opts && opts.emphasize;
+    var valStyle = emphasize ? ' style="font-weight:700;color:#a00"' : '';
+    var labelStyle = emphasize ? ' style="font-weight:700;color:#a00"' : '';
+    return '<div class="nk-card-row"><span class="nk-card-label"' + labelStyle + '>' + esc(label) + '</span><span class="nk-card-value"' + valStyle + '>' + esc(value) + '</span></div>';
   }
 
   function buildCardFront(d){
@@ -360,8 +364,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Name:', d.name);
     html += cardRow('Geb.:', formatDate(d.geburtsdatum));
     html += cardRow('Blutgruppe:', d.blutgruppe);
-    html += cardRow('Allergien:', d.allergien);
-    html += cardRow('Medikam.:', d.medikamente);
+    html += cardRow('Allergien:', d.allergien, {emphasize: true});
+    html += cardRow('Medikam.:', d.medikamente, {emphasize: true});
     html += cardRow('Vorerkr.:', d.vorerkrankungen);
     html += cardRow('Organsp.:', d.organspende || '—');
     html += '<div class="nk-card-branding">machsruhig.de</div>';

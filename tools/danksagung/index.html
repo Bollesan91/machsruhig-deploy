@@ -627,6 +627,11 @@ function DanksagungGenerator() {
                     <option key={rel.value} value={rel.value}>{rel.label}</option>
                   ))}
                 </select>
+                {formData.relationship === 'kind' && (
+                  <div role="region" aria-label="Hinweis zu Kindstod-Sensibilität" style={{background:'#FFF8EF',border:'1px solid #E8E0D6',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
+                    <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Wenn dein Kind verstorben ist — bitte spüre hinein, ob ein vorgefertigter Text das richtige für deine Danksagung ist. Manche Eltern schreiben lieber wenige, ganz eigene Worte. Falls dir die Worte gerade fehlen, gibt es Begleitung: <a href="https://www.veid.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>VEID — Bundesverband Verwaiste Eltern und trauernde Geschwister</a>.
+                  </div>
+                )}
               </div>
 
               <div className="form-group">

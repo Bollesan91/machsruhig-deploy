@@ -275,7 +275,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var skip = $('#bp-skip');
     if (skip) skip.addEventListener('click', function(){
       // Skip = noch keine Antwort, einfach zum nächsten Step weiter
-      track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: s.id, value: 'skipped'});
+      track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: s.id, action: 'skipped'});
       if (state.step < STEPS.length - 1) {
         state.step++;
         saveState();
@@ -303,7 +303,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function select(val){
     var sid = STEPS[state.step].id;
     state.answers[sid] = val;
-    track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: sid, value: val});
+    track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: sid});
     if (state.step < STEPS.length - 1) {
       state.step++;
       saveState();

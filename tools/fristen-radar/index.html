@@ -218,7 +218,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {id:'lebensversicherung',name:'Lebensversicherung melden',days:3,category:'versicherung',consequence:'Verzögerung der Auszahlung',link:'/vertraege-kuendigen',hint:'Vertragsnummer und Sterbeurkunde bereithalten'},
     {id:'sterbegeld',name:'Sterbegeldversicherung melden',days:3,category:'versicherung',consequence:'Verzögerung der Auszahlung',link:'/vorsorge/sterbegeldversicherung',hint:'Policennummer suchen, Sterbeurkunde beifügen'},
     {id:'krankenkasse',name:'Krankenkasse informieren',days:14,category:'behoerde',consequence:'Beiträge laufen weiter',link:'/vertraege-kuendigen',hint:'Familienversicherung für Angehörige prüfen'},
-    {id:'sterbevierteljahr',name:'Sterbevierteljahr beantragen',days:30,category:'finanzen',consequence:'Vorschuss auf 3 Monate volle Rente geht verloren',link:'#',hint:'Beim Renten-Service der Deutschen Post beantragen — gilt nur für Ehepartner',showIf:'spouse'},
+    {id:'sterbevierteljahr',name:'Sterbevierteljahr beantragen',days:30,category:'finanzen',consequence:'Vorschuss-Auszahlung verzögert sich — der Anspruch (3 Monate volle Rente an überlebende Ehepartner) bleibt aber bestehen',link:'#',hint:'Vorschuss-Antrag beim Renten-Service der Deutschen Post (oder DRV). Der Auszahlungsanspruch des Sterbevierteljahres selbst (§ 67 SGB VI) ist nicht an die 30-Tage-Frist gebunden — diese Frist betrifft nur die schnelle Vorschuss-Variante. Gilt nur für Ehepartner.',showIf:'spouse'},
     {id:'mietvertrag',name:'Mietvertrag — Sonderkündigung',days:30,category:'wohnung',consequence:'Normaler Kündigungsschutz greift (ggf. 3+ Monate extra Miete)',link:'/vertraege-kuendigen',hint:'§ 580 BGB: Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod, dann 3 Monate Frist. Datum unten ist Richtwert (Frist beginnt rechtlich ab Kenntnis, nicht Todestag)',showIf:'rental',abKenntnis:true},
     {id:'erbausschlagung',name:'Erbausschlagung',days:42,category:'recht',consequence:'Erbe gilt als ANGENOMMEN — auch Schulden! Nicht mehr rückgängig zu machen',link:'/vorsorge/testament',hint:'KRITISCH: Die 6-Wochen-Frist (§ 1944 BGB) beginnt erst AB KENNTNIS vom Erbfall und der eigenen Erbenstellung — nicht ab Todestag. Bei testamentarischer Erbfolge: ab Bekanntgabe durch Nachlassgericht. Auslandsbezug (Erbe oder Erblasser im Ausland): 6 MONATE statt 6 Wochen (§ 1944 Abs. 3 BGB). Das angezeigte Datum ist der frühestmögliche Fristablauf, falls Du am Todestag Kenntnis hattest. Bei späterer Kenntnis: ab dem Kenntnis-Tag dazurechnen.',abKenntnis:true},
     {id:'minderjaehrige_erbe',name:'Erbausschlagung für minderjährige Kinder',days:42,category:'recht',consequence:'Kinder können Erbe inkl. Schulden erben — Ausschlagung benötigt Genehmigung des Familiengerichts',link:'/vorsorge/testament',hint:'Bei minderjährigen Kindern: Eltern müssen Erbausschlagung beim Familiengericht beantragen (§ 1643 BGB i.V.m. § 1851 Nr. 1 BGB — seit Vormundschaftsrechts-Reform 01.01.2023). Genehmigungsverfahren dauert mehrere Wochen — frühzeitig beginnen! Frist läuft ab Kenntnis der Erbenstellung des Kindes.',abKenntnis:true,showIf:'minors'},
@@ -255,6 +255,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
   function formatDate(d){ return d.toLocaleDateString('de-DE', {day:'2-digit', month:'2-digit', year:'numeric'}); }
   function addDays(date, days){ var r = new Date(date); r.setDate(r.getDate()+days); return r; }
+  // § 193 BGB: Fristende auf Werktag verschieben (Sa/So → Mo)
+  function shiftToWorkday(date){ var r = new Date(date); var day = r.getDay(); if (day === 6) r.setDate(r.getDate() + 2); else if (day === 0) r.setDate(r.getDate() + 1); return r; }
+  // Werktage-Frist (zählt nur Mo-Fr) — für Standesamt § 28 PStG
+  function addWorkdays(date, count){ var r = new Date(date); var added = 0; while (added < count){ r.setDate(r.getDate()+1); var d=r.getDay(); if (d !== 0 && d !== 6) added++; } return r; }
+  // Steuererklärungs-Frist: 31.07. des Folgejahres (regulär, ohne Steuerberater)
+  function taxReturnDeadline(deathDate){ var year = deathDate.getFullYear() + 1; var r = new Date(year, 6, 31); return shiftToWorkday(r); }
+  // Custom-Deadline-Resolver: nutzt id-basierte Sonderlogik wenn vorhanden, sonst addDays
+  function resolveDeadline(deathDate, item){
+    if (item.id === 'steuererklaerung') return taxReturnDeadline(deathDate);
+    if (item.id === 'standesamt') return shiftToWorkday(addWorkdays(deathDate, item.days));
+    return shiftToWorkday(addDays(deathDate, item.days));
+  }
   function daysBetween(a,b){
     // DST-safe: use UTC date-only differences (ignores hour drift from setDate across DST boundaries)
     var ms = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()) - Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
@@ -372,7 +384,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var totalCount = sorted.length;
     var urgentCount = sorted.filter(function(d){
       if (state.doneMap[d.id]) return false;
-      var rem = daysBetween(today, addDays(cfg.deathDate, d.days));
+      var rem = daysBetween(today, resolveDeadline(cfg.deathDate, d));
       return rem <= 3 && rem >= 0;
     }).length;
 
@@ -487,7 +499,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   function renderCard(d, deathDate, today){
-    var deadlineDate = addDays(deathDate, d.days);
+    var deadlineDate = resolveDeadline(deathDate, d);
     var rem = daysBetween(today, deadlineDate);
     var isPast = rem < 0;
     var urgency = isPast ? {level:'red', label:'VERPASST'} : getUrgency(rem);
