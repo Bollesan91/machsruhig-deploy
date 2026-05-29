@@ -569,10 +569,10 @@ function TrauerredeGenerator() {
     // Edge-Case-Guard: humorvoll bei Säugling/Kleinkind (Altersangabe in Form '0-3 Jahre' o.ä.) auf wuerdevoll umlenken
     let effectiveTone = formData.tone;
     const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-    if (formData.tone === 'humorvoll' && ageNum < 18) {
-      effectiveTone = 'persoenlich';
-      // einmaliges Tracking
-      if(window.mrTrack) window.mrTrack('toolStep', {tool: 'trauerrede', step: 'tone_guard_applied', reason: 'minor_humorvoll'});
+    const isChild = formData.relationship === 'kind' || ageNum < 18;
+    if (formData.tone === 'humorvoll' && isChild) {
+      effectiveTone = 'wuerdevoll';
+      if(window.mrTrack) window.mrTrack('toolStep', {tool: 'trauerrede', step: 'tone_guard_applied', reason: 'child_humorvoll'});
     }
 
     const openings = getOpenings(effectiveTone, formData.name, formData.relationship);
@@ -873,7 +873,8 @@ function TrauerredeGenerator() {
                 </div>
                 {(() => {
                   const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-                  if (formData.tone === 'humorvoll' && ageNum < 18) {
+                  const isChild = formData.relationship === 'kind' || ageNum < 18;
+                  if (formData.tone === 'humorvoll' && isChild) {
                     return (
                       <div role="alert" aria-live="polite" style={{background:'#FEF4E8',border:'1px solid #F0D5A8',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
                         <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Bei einer Trauerrede für ein verstorbenes Kind oder einen Jugendlichen wird der humorvolle Ton häufig als unpassend empfunden. Wir wandeln den Output sicherheitshalber auf „Persönlich & warm" um — du kannst die Variante natürlich nachträglich anpassen, aber überlege gut, ob heitere Anekdoten der Trauergemeinde guttun werden.

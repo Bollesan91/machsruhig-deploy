@@ -629,7 +629,12 @@ function DanksagungGenerator() {
                 </select>
                 {formData.relationship === 'kind' && (
                   <div role="region" aria-label="Hinweis zu Kindstod-Sensibilität" style={{background:'#FFF8EF',border:'1px solid #E8E0D6',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
-                    <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Wenn dein Kind verstorben ist — bitte spüre hinein, ob ein vorgefertigter Text das richtige für deine Danksagung ist. Manche Eltern schreiben lieber wenige, ganz eigene Worte. Falls dir die Worte gerade fehlen, gibt es Begleitung: <a href="https://www.veid.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>VEID — Bundesverband Verwaiste Eltern und trauernde Geschwister</a>.
+                    <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Wenn dein Kind verstorben ist — bitte spüre hinein, ob ein vorgefertigter Text das Richtige für deine Danksagung ist. Manche Eltern schreiben lieber wenige, ganz eigene Worte. Falls dir die Worte gerade fehlen, gibt es Begleitung: <a href="https://www.veid.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>VEID — Bundesverband Verwaiste Eltern und trauernde Geschwister</a>.
+                  </div>
+                )}
+                {(formData.relationship === 'partner' || formData.relationship === 'geschwister' || formData.relationship === 'freund') && (
+                  <div style={{background:'#FAFAFA',border:'1px solid #E8E0D6',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:13,lineHeight:1.5,color:'#5a4f43'}}>
+                    <strong>Hinweis bei plötzlichem oder belastendem Verlust:</strong> Wenn die Todesumstände schwer zu fassen sind (plötzlicher Tod, Suizid, Krankheit mit kurzer Vorlaufzeit), kann ein Schreibassistent sich vorgreifend anfühlen. Lass dir Zeit. Begleitung durch <a href="https://www.aeternitas.de/inhalt/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Aeternitas-Trauerbegleitung</a> oder <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111) kann helfen, wenn du nicht weißt, womit du anfangen sollst.
                   </div>
                 )}
               </div>

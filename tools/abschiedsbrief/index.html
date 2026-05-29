@@ -528,7 +528,7 @@ function WritingSection({texts, onTextChange}) {
   );
 }
 
-function PreviewSection({recipient, recipientName, senderName, closing, customClosing, texts, onSenderChange, onClosingChange, onCustomClosingChange, onCopy, onPrint, onSave, onDeleteDraft}) {
+function PreviewSection({recipient, recipientName, senderName, closing, customClosing, createdAt, texts, onSenderChange, onClosingChange, onCustomClosingChange, onCopy, onPrint, onSave, onDeleteDraft}) {
   const hasContent = Object.values(texts).some(t => t && t.trim());
   const recipientLabel = RECIPIENTS.find(r => r.id === recipient)?.label || '';
 
@@ -539,7 +539,8 @@ function PreviewSection({recipient, recipientName, senderName, closing, customCl
 
   function formattedDate() {
     try {
-      return new Date().toLocaleDateString('de-DE', {day:'2-digit', month:'long', year:'numeric'});
+      const base = createdAt ? new Date(createdAt) : new Date();
+      return base.toLocaleDateString('de-DE', {day:'2-digit', month:'long', year:'numeric'});
     } catch (e) { return ''; }
   }
 
@@ -754,6 +755,7 @@ function App() {
   const [senderName, setSenderName] = useState('');
   const [closing, setClosing] = useState('liebe');
   const [customClosing, setCustomClosing] = useState('');
+  const [createdAt, setCreatedAt] = useState(() => new Date().toISOString());
   const [texts, setTexts] = useState({sagen: '', wichtig: '', praktisches: '', wuensche: ''});
   const [toast, setToast] = useState({message: '', visible: false});
   const [draftLoaded, setDraftLoaded] = useState(false);
@@ -770,6 +772,7 @@ function App() {
         if (data.senderName) setSenderName(data.senderName);
         if (data.closing) setClosing(data.closing);
         if (data.customClosing) setCustomClosing(data.customClosing);
+        if (data.createdAt) setCreatedAt(data.createdAt);
         if (data.texts) setTexts(prev => ({...prev, ...data.texts}));
         const hasAnyContent = data.recipientName || data.recipient ||
           (data.texts && Object.values(data.texts).some(t => t && t.trim()));
@@ -786,7 +789,7 @@ function App() {
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
     saveTimerRef.current = setTimeout(() => {
       try {
-        const data = {recipient, recipientName, senderName, closing, customClosing, texts, savedAt: new Date().toISOString()};
+        const data = {recipient, recipientName, senderName, closing, customClosing, createdAt, texts, savedAt: new Date().toISOString()};
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       } catch (e) {}
     }, 1000);
@@ -820,7 +823,7 @@ function App() {
 
   function handleSave() {
     try {
-      const data = {recipient, recipientName, senderName, closing, customClosing, texts, savedAt: new Date().toISOString()};
+      const data = {recipient, recipientName, senderName, closing, customClosing, createdAt, texts, savedAt: new Date().toISOString()};
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       showToast('Entwurf im Browser gespeichert');
       if (window.plausible) window.plausible('Abschiedsbrief: Gespeichert');
@@ -884,6 +887,7 @@ function App() {
       onClosingChange: setClosing,
       onCustomClosingChange: setCustomClosing,
       onCopy: handleCopy,
+      createdAt,
       onPrint: handlePrint,
       onSave: handleSave,
       onDeleteDraft: handleDeleteDraft
