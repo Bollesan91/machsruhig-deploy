@@ -342,7 +342,11 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
 <!-- Main Content -->
 <div class="mr-content" id="main">
-  <div id="app"></div>
+  
+<div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:24px auto;font-size:14px;line-height:1.6;max-width:720px;font-family:'DM Sans',system-ui,sans-serif">
+  <strong>Was dieses Tool ist — und was nicht:</strong> Dies ist ein strukturierter Vorlagen-Assistent, keine KI. Es hilft beim Schreib-Einstieg und sortiert deine Erinnerungen — den emotionalen Kern der Rede schreibst du selbst. Wenn du dich überfordert fühlst oder die Trauerfeier groß wird, lohnt sich oft ein professioneller Trauerredner (Honorar typisch 400-800 €). Suchhilfen: <a href="https://www.bestatter.de" rel="noopener" target="_blank" style="color:#7A6B5D">BDB-Bestatterverband</a> oder lokale Trauerbegleitung.
+</div>
+<div id="app"></div>
 </div>
 
 <!-- Footer -->
@@ -434,7 +438,7 @@ function getOpenings(tone, name, relationship) {
   const variants = {
     persoenlich: [
       `Liebe Familie, liebe Freunde, liebe Trauergemeinde. Wir nehmen heute Abschied von ${name} — ${RELATIONSHIPS.find(r=>r.value===relationship)?.label.toLowerCase()}, einem Menschen, der unserem Leben Wärme gegeben hat.`,
-      `Liebe Trauergemeinde. Ich möchte ein paar Worte über ${name} sprechen, über einen Menschen, der mir sehr nahestund und dessen Abwesenheit ich tiefspüre.`,
+      `Liebe Trauergemeinde. Ich möchte ein paar Worte über ${name} sprechen, über einen Menschen, der mir sehr nahestand und dessen Abwesenheit ich tief spüre.`,
       `Ihr kennt ${name}. Ihr wisst, wie diese Person war. Ich möchte euch heute erzählen, was ${name} für mich bedeutet hat.`
     ],
     wuerdevoll: [
@@ -511,7 +515,7 @@ function calculateTiming(text) {
 }
 
 // Main App Component
-function TrauerrdeGenerator() {
+function TrauerredeGenerator() {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
@@ -1184,7 +1188,7 @@ function TrauerrdeGenerator() {
 }
 
 // Render the app
-ReactDOM.createRoot(document.getElementById('app')).render(<TrauerrdeGenerator />);
+ReactDOM.createRoot(document.getElementById('app')).render(<TrauerredeGenerator />);
 </script>
 
 
