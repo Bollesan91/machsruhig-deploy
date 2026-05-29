@@ -63,7 +63,7 @@
           "name": "Werden meine Worte gespeichert?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dein Entwurf wird nur in deinem Browser gespeichert (localStorage). Nichts wird an einen Server gesendet oder anderweitig übertragen. Deine Worte bleiben auf deinem Gerät."
+            "text": "Dein Entwurf wird ausschließlich in deinem Browser gespeichert (localStorage) und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deinen Brieftext."
           }
         },
         {
@@ -302,7 +302,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   <main id="main">
 <h1 style="font-family:Fraunces,serif;font-size:clamp(28px,5vw,40px);font-weight:800;line-height:1.2;margin-bottom:16px">Brief an meine Liebsten</h1>
     
-<div style="background:#fff4f4;border:1px solid #f5c0c0;border-left:4px solid #d33;border-radius:8px;padding:16px 20px;margin:24px auto;font-size:14px;line-height:1.6;max-width:720px;font-family:'DM Sans',system-ui,sans-serif">
+<div role="region" aria-label="Krisen-Hilfe Telefonseelsorge" style="background:#fff4f4;border:1px solid #f5c0c0;border-left:4px solid #d33;border-radius:8px;padding:16px 20px;margin:24px auto;font-size:14px;line-height:1.6;max-width:720px;font-family:'DM Sans',system-ui,sans-serif">
   <strong>Bitte lies, falls du gerade in einer Krise bist:</strong> Wenn du Gedanken an Suizid hast oder dich verzweifelt fühlst, rufe bitte sofort die <strong>Telefonseelsorge</strong> an: <a href="tel:08001110111" style="color:#d33;font-weight:600">0800 111 0 111</a> oder <a href="tel:08001110222" style="color:#d33;font-weight:600">0800 111 0 222</a>. Kostenlos, anonym, 24/7. Die Menschen dort hören dir zu und können helfen — auch dann, wenn du noch unsicher bist.
 </div>
 
@@ -354,12 +354,21 @@ const {useState, useEffect, useRef, useCallback} = React;
 const STORAGE_KEY = 'machsruhig-abschiedsbrief';
 
 const RECIPIENTS = [
-  {id: 'partner', label: 'Partner/in'},
+  {id: 'partner', label: 'Partner:in'},
   {id: 'kinder', label: 'Kinder'},
   {id: 'eltern', label: 'Eltern'},
   {id: 'geschwister', label: 'Geschwister'},
   {id: 'freunde', label: 'Freunde'},
   {id: 'alle', label: 'Alle Angehörigen'}
+];
+
+const CLOSINGS = [
+  {id: 'liebe', label: 'In Liebe'},
+  {id: 'dankbarkeit', label: 'In Dankbarkeit'},
+  {id: 'fuerimmer', label: 'Für immer in meinem Herzen'},
+  {id: 'wiedersehen', label: 'Bis wir uns wiedersehen'},
+  {id: 'allem', label: 'Mit allem, was ich habe'},
+  {id: 'custom', label: 'Eigene Worte'}
 ];
 
 const WRITING_BLOCKS = [
@@ -412,7 +421,7 @@ const FAQ = [
   },
   {
     frage: 'Werden meine Worte gespeichert?',
-    antwort: 'Dein Entwurf wird nur in deinem Browser gespeichert (localStorage). Nichts wird an einen Server gesendet oder anderweitig übertragen. Deine Worte bleiben auf deinem Gerät.'
+    antwort: 'Dein Entwurf wird ausschließlich in deinem Browser gespeichert (localStorage) und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deinen Brieftext.'
   },
   {
     frage: 'Wo bewahre ich den Brief auf?',
@@ -448,7 +457,7 @@ function Toast({message, visible}) {
 function PrivacyNotice() {
   return React.createElement('div', {className: 'privacy-notice'},
     React.createElement('strong', null, 'Deine Worte bleiben auf deinem Gerät.'),
-    React.createElement('p', null, 'Nichts wird gespeichert oder gesendet. Alles läuft in deinem Browser — deine Gedanken gehören nur dir.')
+    React.createElement('p', null, 'Dein Brief-Entwurf wird ausschließlich in deinem Browser gespeichert (localStorage) und nicht an einen Server übertragen. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen — nicht deinen Brieftext.')
   );
 }
 
@@ -519,13 +528,29 @@ function WritingSection({texts, onTextChange}) {
   );
 }
 
-function PreviewSection({recipient, recipientName, texts, onCopy, onPrint, onSave}) {
+function PreviewSection({recipient, recipientName, senderName, closing, customClosing, createdAt, texts, onSenderChange, onClosingChange, onCustomClosingChange, onCopy, onPrint, onSave, onDeleteDraft}) {
   const hasContent = Object.values(texts).some(t => t && t.trim());
   const recipientLabel = RECIPIENTS.find(r => r.id === recipient)?.label || '';
 
+  function resolvedClosing() {
+    if (closing === 'custom') return (customClosing || '').trim() || 'In Liebe';
+    return CLOSINGS.find(c => c.id === closing)?.label || 'In Liebe';
+  }
+
+  function formattedDate() {
+    try {
+      const base = createdAt ? new Date(createdAt) : new Date();
+      return base.toLocaleDateString('de-DE', {day:'2-digit', month:'long', year:'numeric'});
+    } catch (e) { return ''; }
+  }
+
   function getGreeting() {
     if (recipientName && recipientName.trim()) {
-      return 'Liebe/r ' + recipientName.trim() + ',';
+      const namesRaw = recipientName.trim();
+      // Plural-Erkennung: Komma oder " und " oder " & " => Mehrere Empfänger → neutralerer Plural
+      const isPlural = /,|\sund\s|\s&\s/i.test(namesRaw);
+      if (isPlural) return 'Ihr Lieben — ' + namesRaw + ',';
+      return 'Liebe:r ' + namesRaw + ',';
     }
     if (recipient === 'partner') return 'Mein Liebster, meine Liebste,';
     if (recipient === 'kinder') return 'Meine lieben Kinder,';
@@ -545,12 +570,18 @@ function PreviewSection({recipient, recipientName, texts, onCopy, onPrint, onSav
       letter += texts.wichtig.trim() + '\n\n';
     }
     if (texts.praktisches && texts.praktisches.trim()) {
-      letter += texts.praktisches.trim() + '\n\n';
+      letter += 'Praktisches\n' + texts.praktisches.trim() + '\n\n';
     }
     if (texts.wuensche && texts.wuensche.trim()) {
       letter += texts.wuensche.trim() + '\n\n';
     }
-    letter += 'In Liebe';
+    letter += resolvedClosing();
+    if (senderName && senderName.trim()) {
+      letter += '\n' + senderName.trim();
+    }
+    if (formattedDate()) {
+      letter += '\n\n' + formattedDate();
+    }
     return letter;
   }
 
@@ -565,6 +596,45 @@ function PreviewSection({recipient, recipientName, texts, onCopy, onPrint, onSav
           React.createElement('p', {style: {marginTop: 8, fontSize: 13}}, 'Lass dir Zeit. Es gibt kein Richtig oder Falsch.')
         )
       : React.createElement(React.Fragment, null,
+          React.createElement('div', {className: 'no-print', style: {background: 'var(--mr-bg)', border: '1px solid var(--mr-border)', borderRadius: 10, padding: '16px 20px', marginBottom: 20}},
+            React.createElement('div', {style: {display: 'block', marginBottom: 16}},
+              React.createElement('label', {
+                htmlFor: 'sender-name',
+                style: {display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 6, color: 'var(--mr-text)'}
+              }, 'Dein Name (für die Unterschrift, optional)'),
+              React.createElement('input', {
+                id: 'sender-name',
+                type: 'text',
+                className: 'name-input',
+                placeholder: 'z. B. Mama, Anna, Papa',
+                value: senderName || '',
+                onChange: e => onSenderChange(e.target.value)
+              })
+            ),
+            React.createElement('label', {
+              style: {display: 'block', fontSize: 14, fontWeight: 600, marginBottom: 8, color: 'var(--mr-text)'}
+            }, 'Wie möchtest du den Brief schließen?'),
+            React.createElement('div', {className: 'recipient-options'},
+              CLOSINGS.map(c =>
+                React.createElement('button', {
+                  key: c.id,
+                  type: 'button',
+                  className: 'recipient-chip' + (closing === c.id ? ' selected' : ''),
+                  onClick: () => onClosingChange(c.id),
+                  'aria-pressed': closing === c.id
+                }, c.label)
+              )
+            ),
+            closing === 'custom' && React.createElement('input', {
+              type: 'text',
+              className: 'name-input',
+              style: {marginTop: 12},
+              placeholder: 'z. B. „Mit allem, was war" oder „Ich vermisse euch schon jetzt"',
+              value: customClosing || '',
+              onChange: e => onCustomClosingChange(e.target.value),
+              maxLength: 80
+            })
+          ),
           React.createElement('div', {className: 'preview-letter', id: 'letter-preview'},
             React.createElement('div', {className: 'preview-greeting'}, getGreeting()),
             texts.sagen && texts.sagen.trim() &&
@@ -584,7 +654,11 @@ function PreviewSection({recipient, recipientName, texts, onCopy, onPrint, onSav
               React.createElement('div', {className: 'preview-section'},
                 React.createElement('p', null, texts.wuensche.trim())
               ),
-            React.createElement('div', {className: 'preview-closing'}, 'In Liebe')
+            React.createElement('div', {className: 'preview-closing'},
+              resolvedClosing(),
+              senderName && senderName.trim() && React.createElement('div', {style: {marginTop: 4, fontStyle: 'normal', color: 'var(--mr-text)', fontWeight: 500}}, senderName.trim()),
+              React.createElement('div', {style: {marginTop: 16, fontStyle: 'normal', color: 'var(--mr-text-muted)', fontSize: 13}}, formattedDate())
+            )
           ),
           React.createElement('div', {className: 'export-buttons'},
             React.createElement('button', {
@@ -621,6 +695,20 @@ function PreviewSection({recipient, recipientName, texts, onCopy, onPrint, onSav
                 React.createElement('polyline', {points:'7 3 7 8 15 8'})
               ),
               'Im Browser speichern'
+            ),
+            React.createElement('button', {
+              className: 'btn btn-secondary',
+              onClick: onDeleteDraft,
+              type: 'button',
+              style: {borderColor:'#d3a5a5', color:'#9c5e5e'},
+              title: 'Entwurf aus localStorage entfernen — sinnvoll auf geteilten Geräten'
+            },
+              React.createElement('svg', {width:16,height:16,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},
+                React.createElement('polyline', {points:'3 6 5 6 21 6'}),
+                React.createElement('path', {d:'M19 6l-2 14a2 2 0 01-2 2H9a2 2 0 01-2-2L5 6'}),
+                React.createElement('path', {d:'M10 11v6M14 11v6'})
+              ),
+              'Entwurf löschen'
             )
           ),
           React.createElement('div', {className: 'storage-hint'},
@@ -664,6 +752,10 @@ function CrossLinks() {
 function App() {
   const [recipient, setRecipient] = useState('');
   const [recipientName, setRecipientName] = useState('');
+  const [senderName, setSenderName] = useState('');
+  const [closing, setClosing] = useState('liebe');
+  const [customClosing, setCustomClosing] = useState('');
+  const [createdAt, setCreatedAt] = useState(() => new Date().toISOString());
   const [texts, setTexts] = useState({sagen: '', wichtig: '', praktisches: '', wuensche: ''});
   const [toast, setToast] = useState({message: '', visible: false});
   const [draftLoaded, setDraftLoaded] = useState(false);
@@ -677,6 +769,10 @@ function App() {
         const data = JSON.parse(saved);
         if (data.recipient) setRecipient(data.recipient);
         if (data.recipientName) setRecipientName(data.recipientName);
+        if (data.senderName) setSenderName(data.senderName);
+        if (data.closing) setClosing(data.closing);
+        if (data.customClosing) setCustomClosing(data.customClosing);
+        if (data.createdAt) setCreatedAt(data.createdAt);
         if (data.texts) setTexts(prev => ({...prev, ...data.texts}));
         const hasAnyContent = data.recipientName || data.recipient ||
           (data.texts && Object.values(data.texts).some(t => t && t.trim()));
@@ -693,14 +789,14 @@ function App() {
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
     saveTimerRef.current = setTimeout(() => {
       try {
-        const data = {recipient, recipientName, texts, savedAt: new Date().toISOString()};
+        const data = {recipient, recipientName, senderName, closing, customClosing, createdAt, texts, savedAt: new Date().toISOString()};
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       } catch (e) {}
     }, 1000);
     return () => {
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
     };
-  }, [recipient, recipientName, texts]);
+  }, [recipient, recipientName, senderName, closing, customClosing, texts]);
 
   function showToast(message) {
     setToast({message, visible: true});
@@ -727,12 +823,29 @@ function App() {
 
   function handleSave() {
     try {
-      const data = {recipient, recipientName, texts, savedAt: new Date().toISOString()};
+      const data = {recipient, recipientName, senderName, closing, customClosing, createdAt, texts, savedAt: new Date().toISOString()};
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       showToast('Entwurf im Browser gespeichert');
       if (window.plausible) window.plausible('Abschiedsbrief: Gespeichert');
     } catch (e) {
       showToast('Speichern nicht möglich');
+    }
+  }
+
+  function handleDeleteDraft() {
+    if (!confirm('Möchtest du deinen gespeicherten Entwurf wirklich aus diesem Browser löschen? Diese Aktion kann nicht rückgängig gemacht werden.')) return;
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      setRecipient('');
+      setRecipientName('');
+      setSenderName('');
+      setClosing('liebe');
+      setCustomClosing('');
+      setTexts({sagen: '', wichtig: '', praktisches: '', wuensche: ''});
+      showToast('Entwurf gelöscht — der Browser-Speicher ist jetzt leer');
+      if (window.plausible) window.plausible('Abschiedsbrief: Entwurf geloescht');
+    } catch (e) {
+      showToast('Löschen nicht möglich');
     }
   }
 
@@ -766,10 +879,18 @@ function App() {
     React.createElement(PreviewSection, {
       recipient,
       recipientName,
+      senderName,
+      closing,
+      customClosing,
       texts,
+      onSenderChange: setSenderName,
+      onClosingChange: setClosing,
+      onCustomClosingChange: setCustomClosing,
       onCopy: handleCopy,
+      createdAt,
       onPrint: handlePrint,
-      onSave: handleSave
+      onSave: handleSave,
+      onDeleteDraft: handleDeleteDraft
     }),
 
     // FAQ

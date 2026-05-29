@@ -112,7 +112,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     </header>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
-      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
 
     <div style="margin-bottom:24px">
@@ -146,6 +146,13 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         <button type="button" class="szen-btn" data-value="pflegeheim"><strong>Im Pflegeheim</strong><span class="desc">Das Pflegeheim hat dich informiert</span></button>
         <button type="button" class="szen-btn" data-value="unbekannt"><strong>Woanders / Unklar</strong><span class="desc">Unfall, unterwegs oder unklar</span></button>
       </div>
+    </div>
+
+    <div style="margin-bottom:24px;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px">
+      <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px;line-height:1.5">
+        <input type="checkbox" id="cl-foreign" style="width:18px;height:18px;accent-color:var(--mr-primary);cursor:pointer;margin-top:3px">
+        <span>Hatte die verstorbene Person ihren letzten Aufenthalt im Ausland, oder lebst du als Erbe im Ausland?<br><span style="font-size:13px;color:var(--mr-text-muted)">Wenn ja: Erbausschlagungsfrist verlängert sich auf <strong>6 Monate</strong> statt 6 Wochen (§ 1944 Abs. 3 BGB) — und der Auslands-Sonderfall wird in der Checkliste hervorgehoben.</span></span>
+      </label>
     </div>
 
     <div id="cl-summary" style="display:none">
@@ -218,8 +225,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   var SONDERFAELLE = [
     {id:"polizei",titel:"Unnatürlicher Tod / Verdacht auf Fremdeinwirkung",text:"Sofort Polizei rufen (110). Nichts verändern, nichts aufräumen. Die Bestattung kann sich verzögern, bis die Untersuchung abgeschlossen ist."},
-    {id:"ausland",titel:"Todesfall im Ausland",text:"Deutsche Botschaft/Konsulat kontaktieren. Sie hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe, ob eine Reiseversicherung mit Rückholklausel besteht."},
-    {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt Kostenübernahme beantragen (§74 SGB XII). Der Antrag sollte vor der Bestattung gestellt werden. Einfache Bestattungen werden in der Regel übernommen."}
+    {id:"ausland",titel:"Todesfall im Ausland — oder Erbe/Erblasser im Ausland",text:"Wenn der Tod im Ausland eingetreten ist: Deutsche Botschaft/Konsulat kontaktieren — hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe Reiseversicherung mit Rückholklausel. Auch wichtig: Wenn Erbe oder Erblasser im Ausland leben, verlängert sich die Erbausschlagungsfrist von 6 Wochen auf 6 Monate (§ 1944 Abs. 3 BGB) — und ein Erbschein nach internationalem Recht kann nötig sein. Bei Auslandsbezug rechtzeitig Notar/Fachanwalt für internationales Erbrecht hinzuziehen."},
+    {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt deines Wohnbezirks Kostenübernahme beantragen (§ 74 SGB XII). Der Antrag sollte VOR der Bestattung gestellt werden — sonst können nur die ortsüblichen Mindestkosten erstattet werden. Einfache Bestattungen werden in der Regel vollständig übernommen. Falls dir das Antragsverfahren überfordert: Caritas, Diakonie oder Sozialdienst der Kommune helfen kostenlos."},
+    {id:"selbststaendig",titel:"Verstorbener war Selbstständig / Unternehmer",text:"Zusätzliche Pflichten: Krankenkasse + DRV + Berufsgenossenschaft informieren (nicht nur als Privatperson). Handelsregister-Eintrag prüfen (GmbH/UG bei Gesellschafter-Tod). Steuerberater einbinden — Bilanzstichtag verschoben, Erbschaftsteuer-Schonregeln bei Betriebsvermögen prüfbar. Aufträge/Kunden informieren oder durch Erben fortführen lassen."},
+    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Wichtige Entscheidungen (Wohnungsauflösung, Bestattungsart) müssen einstimmig getroffen werden. Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."}
   ];
 
   var PHASEN = [
@@ -246,10 +255,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       {id:"vertraege",titel:"Laufende Verträge prüfen und kündigen",desc:"Strom, Gas, Telefon, Internet, Abos, Streaming. Die meisten können mit Sterbeurkunde sofort gekündigt werden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"],hinweis:"Mietvertrag nicht sofort kündigen — erst die Wohnung räumen."}
     ]},
     {id:"ersterMonat",label:"Monat 1",zeitraum:"Erbe, Wohnung, Steuern",color:"#5a8a5a",aufgaben:[
+      {id:"erbausschlagung",titel:"Erbe annehmen oder ausschlagen — Frist § 1944 BGB",desc:"WICHTIG: 6 Wochen ab Kenntnis vom Erbfall (nicht ab Todestag!). Bei Auslandsbezug (Erbe oder Erblasser im Ausland) gilt 6 Monate. Erklärung beim Nachlassgericht — notariell oder zur Niederschrift. Wer die Frist verstreichen lässt, hat das Erbe angenommen — inklusive aller Schulden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Personalausweis","Sterbeurkunde"],hinweis:"Bei Verdacht auf Überschuldung oder unklarer Vermögenslage: dringend Notar/Anwalt für Erbrecht konsultieren, bevor die Frist läuft. Eine versehentliche Annahme ist nur unter engen Voraussetzungen anfechtbar."},
       {id:"testament",titel:"Testament eröffnen / Erbschein beantragen",desc:"Testament beim Nachlassgericht abgeben. Ohne Testament gilt gesetzliche Erbfolge. Erbschein kostet 75–1.000 €+ und dauert 4–8 Wochen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Testament (Original)","Sterbeurkunde"]},
       {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod (§ 580 BGB), dann 3-monatige Kündigungsfrist (§ 580a Abs. 4 BGB). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
       {id:"vermieter",titel:"Vermieter informieren",desc:"Bei gemeinsamer Wohnung geht der Mietvertrag auf den überlebenden Mieter über.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
-      {id:"finanzamt",titel:"Finanzamt informieren",desc:"Letzte Einkommensteuererklärung für das Todesjahr. Erbschaftsteuererklärung innerhalb von 3 Monaten nach Kenntnis.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Steuer-ID"]},
+      {id:"finanzamt",titel:"Finanzamt informieren",desc:"Letzte Einkommensteuererklärung für das Todesjahr: regulär 31. Juli des Folgejahres (§ 149 AO), mit Steuerberater bis Ende Februar des übernächsten Jahres. Erbschaftsteuererklärung: 3 Monate nach Kenntnis vom Erbfall beim Finanzamt anzeigen (§ 30 ErbStG) — danach wird ggf. eine Erklärung angefordert.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Steuer-ID"],hinweis:"Bei Betriebsvermögen oder Beteiligungen sehr aufpassen — § 13a/b ErbStG bieten Verschonungsregeln, die fristgebunden sind. Steuerberater einbinden."},
       {id:"digital",titel:"Digitalen Nachlass regeln",desc:"E-Mail, Social Media, Online-Banking, Cloud, Abos. Viele Plattformen bieten Verfahren für den Todesfall.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Zugangsdaten"]},
       {id:"grabpflege",titel:"Grabpflege organisieren",desc:"Wer kümmert sich langfristig? Alternative: Dauergrabpflege-Vertrag (2.000–8.000 €). Entfällt bei Baum-/Seebestattung.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]}
     ]}
@@ -257,10 +267,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   var FAQ = [
     {q:"Was muss ich als erstes tun, wenn jemand stirbt?",a:"Zuerst muss ein Arzt den Tod feststellen und einen Totenschein ausstellen. Zu Hause rufst du den Hausarzt oder den ärztlichen Bereitschaftsdienst (116 117). Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."},
-    {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden, spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die genauen Fristen für dein Bundesland."},
+    {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden (Standardwert; einige Bundesländer und Einzelfälle lassen kürzere Fristen auf Antrag zu), spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die für dein Bundesland modellierten Werte — verbindlich sind die jeweiligen Landesbestattungsgesetze."},
     {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
     {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
-    {q:"Werden meine Eingaben gespeichert?",a:"Nein. Die Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an unsere Server übermittelt."},
+    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben."},
     {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
   ];
 
@@ -269,7 +279,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
   function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
-  var state = {bundesland:'', szenario:'', checkedTasks:{}};
+  var state = {bundesland:'', szenario:'', isForeign:false, checkedTasks:{}};
+
+  var foreignChk = $('#cl-foreign');
+  if (foreignChk) foreignChk.addEventListener('change', function(e){ state.isForeign = e.target.checked; });
 
   // ===== Setup view =====
   $('#cl-bl').addEventListener('change', function(e){
@@ -294,8 +307,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var html = '<strong>' + esc(bl.name) + ': </strong>';
     html += 'Überführung innerhalb von ' + bl.ueberfuehrung + 'h · ';
     html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine gesetzl. Höchstfrist') + ' · ';
-    html += 'Frühestens nach 48h';
+    html += 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)';
     if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)">Quellen: Landesbestattungsgesetze (Stand Mai 2026). In besonderen Fällen können die zuständigen Behörden kürzere oder längere Fristen zulassen. Im Zweifel: Rücksprache mit Bestatter oder Standesamt.</div>';
     $('#cl-summary-box').innerHTML = html;
     $('#cl-summary').style.display = 'block';
   }
@@ -401,11 +415,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       h += '</section>';
     });
 
-    // Sonderfälle
+    // Sonderfälle — mit Hervorhebung für Auslandsbezug bei isForeign
     h += '<div style="margin:32px 0">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--mr-border)">Sonderfälle</h2>';
     SONDERFAELLE.forEach(function(sf){
-      h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px">';
+      var isAusland = sf.id === 'ausland';
+      var emphasize = state.isForeign && isAusland;
+      var bg = emphasize ? '#FFF8EF' : 'var(--mr-safety)';
+      var borderLeft = emphasize ? '4px solid #C8862E' : '1px solid var(--mr-border)';
+      h += '<div style="background:' + bg + ';border:1px solid var(--mr-border);border-left:' + borderLeft + ';border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px"';
+      if (emphasize) h += ' role="region" aria-label="Hervorgehoben wegen Auslandsbezug"';
+      h += '>';
+      if (emphasize) h += '<div style="font-size:12px;font-weight:700;color:#8b5a14;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px">Relevant für deinen Fall</div>';
       h += '<strong style="font-size:15px">' + esc(sf.titel) + '</strong>';
       h += '<p style="font-size:13px;color:var(--mr-text-muted);margin-top:4px;line-height:1.6">' + esc(sf.text) + '</p>';
       h += '</div>';

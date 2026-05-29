@@ -394,11 +394,14 @@ const {useState, useCallback} = React;
 const RELATIONSHIPS = [
   {value:'mutter',label:'Mutter',possessive:'meiner Mutter',family:'Die Familie'},
   {value:'vater',label:'Vater',possessive:'meinem Vater',family:'Die Familie'},
-  {value:'partner',label:'Partner/in',possessive:'meinem Partner/meiner Partnerin',family:'In stiller Trauer'},
-  {value:'grosseltern',label:'Grosseltern',possessive:'meiner Grossmutter/meinem Grossvater',family:'Die Familie'},
-  {value:'kind',label:'Kind',possessive:'unserem Kind',family:'Die Familie'},
-  {value:'geschwister',label:'Geschwister',possessive:'meiner Schwester/meinem Bruder',family:'Die Familie'},
-  {value:'freund',label:'Freund/in',possessive:'meinem Freund/meiner Freundin',family:'In Dankbarkeit'},
+  {value:'grossmutter',label:'Großmutter / Oma',possessive:'meiner Großmutter',family:'Die Familie'},
+  {value:'grossvater',label:'Großvater / Opa',possessive:'meinem Großvater',family:'Die Familie'},
+  {value:'partner',label:'Partner:in',possessive:'meinem geliebten Menschen',family:'In Liebe'},
+  {value:'kind',label:'Kind',possessive:'unserem geliebten Kind',family:'In tiefer Trauer — die Eltern'},
+  {value:'schwester',label:'Schwester',possessive:'meiner Schwester',family:'In Verbundenheit — die Geschwister'},
+  {value:'bruder',label:'Bruder',possessive:'meinem Bruder',family:'In Verbundenheit — die Geschwister'},
+  {value:'freund',label:'Freund:in',possessive:'einem besonderen Menschen',family:'In Dankbarkeit'},
+  {value:'angehoerige',label:'Andere:r Angehörige:r',possessive:'unserem geliebten Menschen',family:'In Dankbarkeit'},
 ];
 
 // Format types
@@ -425,7 +428,7 @@ function generateTexts(data) {
   if (ceremony) {
     formal += `\n\n${ceremony}`;
   }
-  formal += `\n\nIn stiller Trauer\n${family}`;
+  formal += `\n\n${family}`;
 
   // Personal variant
   let personal = `Liebe Freunde, liebe Familie,\n\n`;
@@ -577,7 +580,7 @@ function DanksagungGenerator() {
               </div>
 
               <div className="tip">
-                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format hilft uns, die Texte auf die passende Länge und den richtigen Ton abzustimmen.
+                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format dient nur deiner Orientierung; alle drei Varianten sind editierbar, du kannst die für dein gewähltes Medium passende auswählen.
               </div>
             </div>
           )}
@@ -627,6 +630,16 @@ function DanksagungGenerator() {
                     <option key={rel.value} value={rel.value}>{rel.label}</option>
                   ))}
                 </select>
+                {formData.relationship === 'kind' && (
+                  <div role="region" aria-label="Hinweis zu Kindstod-Sensibilität" style={{background:'#FFF8EF',border:'1px solid #E8E0D6',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
+                    <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Wenn dein Kind verstorben ist — bitte spüre hinein, ob ein vorgefertigter Text das Richtige für deine Danksagung ist. Manche Eltern schreiben lieber wenige, ganz eigene Worte. Falls dir die Worte gerade fehlen, gibt es Begleitung: <a href="https://www.veid.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>VEID — Bundesverband Verwaiste Eltern und trauernde Geschwister</a>.
+                  </div>
+                )}
+                {(formData.relationship === 'partner' || formData.relationship === 'schwester' || formData.relationship === 'bruder' || formData.relationship === 'freund') && (
+                  <div style={{background:'#FAFAFA',border:'1px solid #E8E0D6',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:13,lineHeight:1.5,color:'#5a4f43'}}>
+                    <strong>Hinweis bei plötzlichem oder belastendem Verlust:</strong> Wenn die Todesumstände schwer zu fassen sind (plötzlicher Tod, Suizid, Krankheit mit kurzer Vorlaufzeit), kann ein Schreibassistent sich vorgreifend anfühlen. Lass dir Zeit. Begleitung durch <a href="https://www.aeternitas.de/inhalt/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Aeternitas-Trauerbegleitung</a> oder <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111) kann helfen, wenn du nicht weißt, womit du anfangen sollst.
+                  </div>
+                )}
               </div>
 
               <div className="form-group">
@@ -674,7 +687,7 @@ function DanksagungGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben bleiben in deinem Browser. Nichts wird gespeichert oder an einen Server übertragen.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Beziehung, Trauerfeier-Text) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.<br><br><strong style="color:var(--mr-text)">Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
           </div>
 
           {/* Formal variant */}

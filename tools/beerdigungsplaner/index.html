@@ -37,7 +37,12 @@
 .opt-btn strong{font-size:15px}
 .opt-btn .kosten{font-size:13px;color:var(--mr-warm);font-weight:600}
 .opt-btn .desc{font-size:13px;color:var(--mr-text-muted);display:block;margin-top:2px}
-@media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt;color:#000!important}.mr-content{max-width:100%;padding:0}h1{font-size:18pt!important}h2{font-size:14pt!important}.plan-item{break-inside:avoid;page-break-inside:avoid}}
+@media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;font-size:11pt;color:#000!important}.mr-content{max-width:100%;padding:0}h1{font-size:18pt!important}h2{font-size:14pt!important}.plan-item{break-inside:avoid;page-break-inside:avoid}
+  .bp-print-header{display:block!important;border-bottom:1pt solid #999;padding-bottom:8pt;margin-bottom:12pt}
+  .bp-print-footer{display:block!important;border-top:1pt solid #999;padding-top:8pt;margin-top:18pt;font-size:9pt;color:#444}
+  .bp-watermark{display:block!important;font-size:9pt;color:#888;margin-top:4pt;font-style:italic}
+}
+.bp-print-header,.bp-print-footer,.bp-watermark{display:none}
 a[data-next-step]:hover{border-color:var(--mr-accent);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-shadow:0 0 0 2px var(--mr-accent),0 2px 8px rgba(0,0,0,0.08)}
 </style>
@@ -66,11 +71,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         <a href="/beerdigung-planen" style="color:var(--mr-warm);text-decoration:none">Beerdigung planen</a> › Planer
       </div>
       <h1 style="font-family:'Fraunces',serif;font-size:clamp(26px,4.5vw,36px);font-weight:800;line-height:1.25;margin-bottom:12px">Beerdigungsplaner</h1>
-      <p style="font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px">Dieser Planer führt dich durch die wichtigsten Entscheidungen. Am Ende hast du einen persönlichen Plan, den du ausdrucken und mit dem Bestatter besprechen kannst.</p>
+      <p style="font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px">Dieser Konfigurator führt dich durch die wichtigsten <strong>Bestattungs-Entscheidungen</strong> (Bestattungsart, Ort, Trauerfeier-Wünsche, Budget-Rahmen). Am Ende hast du einen druckbaren Wunsch-Plan, den du mit dem Bestatter besprechen kannst — er ersetzt nicht den Beauftragungs- und Organisationsprozess durch ein Bestattungsunternehmen, sondern ist deine Vorbereitung dafür.</p>
     </header>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px">
-      <strong>Deine Planung bleibt privat.</strong> Alles läuft in deinem Browser. Keine Daten werden gesendet. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong>Deine Planung bleibt bei dir.</strong> Deine Eingaben (Präferenzen, Notizen, Druck-Plan) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch und einzelne Schritt-Übergänge, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    </div>
+
+    <div class="no-print" style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6;color:var(--mr-text-muted)">
+      <strong style="color:var(--mr-text)">Was dieser Planer leistet — und was nicht:</strong> Der Wunsch-Plan deckt Bestattungs-<strong>Präferenzen</strong> ab (Art, Ort, Feier-Wünsche, Budget-Rahmen). Pflicht-Schritte nach einem Todesfall — Sterbeurkunde-Beantragung, Mietvertrags-Kündigung, Versicherungs-Meldungen, Erbausschlagungs-Frist — sind <a href="/tools/checkliste-todesfall" style="color:var(--mr-primary)">in der Checkliste Todesfall</a> abgebildet. Die rechtssichere Beauftragung und Organisation übernimmt der beauftragte Bestatter — dieser Plan ist deine Vorbereitung für das Gespräch.
     </div>
 
     <div style="font-size:14px;color:var(--mr-text-muted);margin-bottom:24px">8 Entscheidungen · ca. 10–15 Minuten · Druckbarer Plan am Ende</div>
@@ -199,7 +208,31 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function $$(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
   function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
+  var STORAGE_KEY = 'machsruhig-beerdigungsplaner';
   var state = {step:0, answers:{}};
+
+  // localStorage: Lade letzten Stand
+  try {
+    var saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      var data = JSON.parse(saved);
+      if (data && typeof data === 'object') {
+        if (typeof data.step === 'number' && data.step >= 0 && data.step < STEPS.length) state.step = data.step;
+        if (data.answers && typeof data.answers === 'object') state.answers = data.answers;
+      }
+    }
+  } catch(_){}
+
+  var saveTimer = null;
+  function saveState(){
+    if (saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({step: state.step, answers: state.answers, savedAt: new Date().toISOString()})); } catch(_){}
+    }, 500);
+  }
+  function clearSavedState(){
+    try { localStorage.removeItem(STORAGE_KEY); } catch(_){}
+  }
 
   function renderStep(){
     var s = STEPS[state.step];
@@ -220,9 +253,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       h += '</button>';
     });
     h += '</div>';
+    h += '<div class="no-print" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px;font-size:13px">';
     if (state.step > 0) {
-      h += '<button type="button" id="bp-back" class="no-print" style="margin-top:16px;font-size:13px;color:var(--mr-text-muted);background:none;border:none;cursor:pointer;padding:8px 0;font-family:inherit">← Zurück</button>';
+      h += '<button type="button" id="bp-back" style="color:var(--mr-text-muted);background:none;border:none;cursor:pointer;padding:8px 0;font-family:inherit">← Zurück</button>';
     }
+    h += '<button type="button" id="bp-skip" style="color:var(--mr-text-muted);background:none;border:1px dashed var(--mr-border);cursor:pointer;padding:8px 14px;border-radius:99px;font-family:inherit">Überspringen — später entscheiden</button>';
+    if (Object.keys(state.answers).length > 0) {
+      h += '<button type="button" id="bp-reset" style="color:#9c5e5e;background:none;border:none;cursor:pointer;padding:8px 0;font-family:inherit;margin-left:auto">Plan zurücksetzen</button>';
+    }
+    h += '</div>';
     h += '<div style="height:6px;background:var(--mr-border);border-radius:3px;margin:24px 0 0;overflow:hidden"><div style="height:100%;width:' + pct + '%;background:var(--mr-accent);border-radius:3px;transition:width 0.3s"></div></div>';
 
     $('#bp-step-content').innerHTML = h;
@@ -231,19 +270,47 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
     var back = $('#bp-back');
     if (back) back.addEventListener('click', function(){
-      if (state.step > 0) { state.step--; renderStep(); window.scrollTo({top:0, behavior:'smooth'}); }
+      if (state.step > 0) { state.step--; saveState(); renderStep(); window.scrollTo({top:0, behavior:'smooth'}); }
+    });
+    var skip = $('#bp-skip');
+    if (skip) skip.addEventListener('click', function(){
+      // Skip = noch keine Antwort, einfach zum nächsten Step weiter
+      track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: s.id, action: 'skipped'});
+      if (state.step < STEPS.length - 1) {
+        state.step++;
+        saveState();
+        renderStep();
+        window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+        renderResult();
+        $('#bp-view-step').classList.remove('active');
+        $('#bp-view-result').classList.add('active');
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
+    });
+    var resetBtn = $('#bp-reset');
+    if (resetBtn) resetBtn.addEventListener('click', function(){
+      if (confirm('Möchtest du den Plan wirklich zurücksetzen? Alle bisherigen Antworten gehen verloren.')) {
+        state.step = 0;
+        state.answers = {};
+        clearSavedState();
+        renderStep();
+        window.scrollTo({top:0, behavior:'smooth'});
+      }
     });
   }
 
   function select(val){
     var sid = STEPS[state.step].id;
     state.answers[sid] = val;
-    track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: sid, value: val});
+    track('toolStep', {tool:'beerdigungsplaner', step: state.step + 1, id: sid});
     if (state.step < STEPS.length - 1) {
       state.step++;
+      saveState();
       renderStep();
       window.scrollTo({top:0, behavior:'smooth'});
     } else {
+      saveState();
       renderResult();
       $('#bp-view-step').classList.remove('active');
       $('#bp-view-result').classList.add('active');
@@ -271,10 +338,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   function renderResult(){
     var h = '';
+    h += '<div class="bp-print-header"><strong>machsruhig.de — Bestattungs-Wunsch-Plan</strong><div class="bp-watermark">Persönliche Planungsgrundlage — keine verbindliche Beauftragung. Erstellt am ' + new Date().toLocaleDateString('de-DE', {day:'2-digit', month:'long', year:'numeric'}) + '.</div></div>';
     h += '<header style="padding:32px 0 16px">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:clamp(22px,4vw,30px);font-weight:800">Dein Beerdigungsplan</h2>';
     h += '</header>';
     h += '<div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px">Dies ist eine Planungsgrundlage. Besprich diesen Plan mit dem Bestatter — er berät dich zu den konkreten Möglichkeiten in deiner Region.</div>';
+    var skipped = STEPS.filter(function(s){ return !state.answers[s.id]; });
+    if (skipped.length > 0) {
+      h += '<div class="no-print" role="status" aria-live="polite" style="background:#FFF8EF;border:1px solid #E8E0D6;border-left:4px solid #C8862E;border-radius:8px;padding:14px 18px;margin-bottom:24px;font-size:14px;line-height:1.5">';
+      h += '<strong>Offene Punkte:</strong> ' + skipped.length + ' von ' + STEPS.length + ' Fragen sind noch nicht beantwortet (' + skipped.map(function(s){ return esc(s.title); }).join(', ') + ').<br>Du kannst sie jetzt überspringen, später aber dorthin zurückkehren — der Plan bleibt gespeichert.';
+      h += '</div>';
+    }
 
     h += '<div style="margin-bottom:32px">';
     STEPS.forEach(function(s, i){
@@ -289,6 +363,53 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       h += '</div></div>';
     });
     h += '</div>';
+
+    // Kosten-Gesamtrahmen + Budget-Konflikt-Warnung
+    // Parse Kosten aus o.kosten ODER o.desc (z.B. "Ab ca. 300–800 €" oder "15–30 € pro Person")
+    var costMin = 0, costMax = 0;
+    function parseRange(str, multiplier){
+      multiplier = multiplier || 1;
+      if (!str) return null;
+      var rangeMatch = str.match(/(\d[\d.]*)\s*[–-]\s*(\d[\d.]*)/);
+      if (rangeMatch) {
+        return {min: parseInt(rangeMatch[1].replace(/\./g,''),10) * multiplier, max: parseInt(rangeMatch[2].replace(/\./g,''),10) * multiplier};
+      }
+      var singleMatch = str.match(/(\d[\d.]*)\s*€/);
+      if (singleMatch) {
+        var v = parseInt(singleMatch[1].replace(/\./g,''),10) * multiplier;
+        return {min: v, max: v};
+      }
+      return null;
+    }
+    // Schätze Gästezahl für Per-Person-Posten (Trauerkaffee)
+    var guestSize = {klein: 12, mittel: 30, gross: 70, unklar: 25}[state.answers.teilnehmer] || 25;
+    STEPS.forEach(function(s){
+      if (!state.answers[s.id]) return;
+      var o = getOption(s.id, state.answers[s.id]);
+      if (!o) return;
+      var range = null;
+      // Trauerkaffee: "/Person" oder "pro Person" → mit guestSize multiplizieren
+      var isPerPerson = (o.desc || '').match(/pro\s*Person|\/\s*Person|p\.?\s*P\.?/i);
+      if (o.kosten) range = parseRange(o.kosten);
+      else if (o.desc) range = parseRange(o.desc, isPerPerson ? guestSize : 1);
+      if (range) { costMin += range.min; costMax += range.max; }
+    });
+    if (costMax > 0) {
+      var budgetVal = state.answers.budget;
+      var budgetRanges = {sparsam: [0, 3000], mittel: [3000, 7000], gehoben: [7000, 15000]};
+      var br = budgetRanges[budgetVal];
+      var conflict = br && (costMin > br[1] + 500); // Mindest-Range übersteigt Budget-Max + Toleranz
+      h += '<div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">';
+      h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzter Gesamtrahmen (inkl. Zusatzposten):</strong> ';
+      h += '<span style="font-weight:600">~' + costMin.toLocaleString('de-DE') + '–' + costMax.toLocaleString('de-DE') + ' €</span>';
+      h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:6px">Die Summe aggregiert Bestattungsart + Blumen + Musik + Redner + Trauerkaffee (bei "pro Person" mit Schätzung ' + guestSize + ' Gäste multipliziert). Sie ist eine grobe Orientierung. Reale Kosten variieren regional und je nach Bestatter — der Bestatter erstellt vor Beauftragung einen verbindlichen Kostenvoranschlag.</div>';
+      if (conflict) {
+        h += '<div role="alert" style="background:#FEF4E8;border:1px solid #F0D5A8;border-left:4px solid #C8862E;border-radius:6px;padding:12px 14px;margin-top:12px;color:#5a4a2e">';
+        h += '<strong style="color:#8b5a14">Achtung — Konflikt mit Budget-Vorgabe:</strong> Deine Praeferenzen ergeben mind. ~' + costMin.toLocaleString('de-DE') + ' €, dein gewaehltes Budget liegt aber bis ' + br[1].toLocaleString('de-DE') + ' €. Tipp: Bestattungsart oder Blumen/Musik/Kaffee anpassen, oder Budget-Vorstellung neu setzen.';
+        h += '</div>';
+      }
+      h += '</div>';
+    }
 
     if (state.answers.redner === 'selbst') {
       h += '<div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:20px;font-size:14px">';
@@ -362,8 +483,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       track('toolExport', {tool:'beerdigungsplaner', type:'copy'});
     });
     $('#bp-restart').addEventListener('click', function(){
+      if (!confirm('Möchtest du eine neue Planung beginnen? Der gespeicherte Plan wird gelöscht.')) return;
       state.step = 0;
       state.answers = {};
+      clearSavedState();
       $('#bp-view-result').classList.remove('active');
       $('#bp-view-step').classList.add('active');
       renderStep();
@@ -371,7 +494,30 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
   }
 
-  // Initial render
+  // Initial render: bei gespeichertem Stand direkt im richtigen Schritt einsteigen
+  if (state.step > 0 || Object.keys(state.answers).length > 0) {
+    // Banner: Wiederaufnahme-Hinweis
+    var resumeBanner = document.createElement('div');
+    resumeBanner.className = 'no-print';
+    resumeBanner.setAttribute('role', 'status');
+    resumeBanner.setAttribute('aria-live', 'polite');
+    resumeBanner.style.cssText = 'background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:12px 16px;margin:24px 0 0;font-size:14px;line-height:1.5';
+    resumeBanner.innerHTML = 'Wir setzen an deinem letzten Stand fort (Schritt ' + (state.step + 1) + ' von ' + STEPS.length + ', ' + Object.keys(state.answers).length + ' Antworten gespeichert). <button type="button" id="bp-resume-clear" style="background:none;border:none;color:#9c5e5e;cursor:pointer;font-family:inherit;text-decoration:underline;padding:0 4px">Neu beginnen</button>';
+    var contentSlot = $('#bp-step-content');
+    if (contentSlot) contentSlot.parentNode.insertBefore(resumeBanner, contentSlot);
+    setTimeout(function(){
+      var clr = $('#bp-resume-clear');
+      if (clr) clr.addEventListener('click', function(){
+        if (confirm('Möchtest du wirklich neu beginnen?')) {
+          state.step = 0;
+          state.answers = {};
+          clearSavedState();
+          resumeBanner.remove();
+          renderStep();
+        }
+      });
+    }, 0);
+  }
   renderStep();
 })();
 </script>
