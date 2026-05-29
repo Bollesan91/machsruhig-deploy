@@ -394,11 +394,11 @@ const {useState, useCallback} = React;
 const RELATIONSHIPS = [
   {value:'mutter',label:'Mutter',possessive:'meiner Mutter',family:'Die Familie'},
   {value:'vater',label:'Vater',possessive:'meinem Vater',family:'Die Familie'},
-  {value:'partner',label:'Partner/in',possessive:'meinem Partner/meiner Partnerin',family:'In stiller Trauer'},
-  {value:'grosseltern',label:'Grosseltern',possessive:'meiner Grossmutter/meinem Grossvater',family:'Die Familie'},
+  {value:'partner',label:'Partner:in',possessive:'meinem geliebten Menschen',family:'In Liebe'},
+  {value:'grosseltern',label:'Großeltern',possessive:'meinen Großeltern',family:'Die Familie'},
   {value:'kind',label:'Kind',possessive:'unserem Kind',family:'Die Familie'},
-  {value:'geschwister',label:'Geschwister',possessive:'meiner Schwester/meinem Bruder',family:'Die Familie'},
-  {value:'freund',label:'Freund/in',possessive:'meinem Freund/meiner Freundin',family:'In Dankbarkeit'},
+  {value:'geschwister',label:'Geschwister',possessive:'meinem Geschwister',family:'Die Familie'},
+  {value:'freund',label:'Freund:in',possessive:'meinem geliebten Menschen',family:'In Dankbarkeit'},
 ];
 
 // Format types
@@ -425,7 +425,7 @@ function generateTexts(data) {
   if (ceremony) {
     formal += `\n\n${ceremony}`;
   }
-  formal += `\n\nIn stiller Trauer\n${family}`;
+  formal += `\n\n${family}`;
 
   // Personal variant
   let personal = `Liebe Freunde, liebe Familie,\n\n`;
@@ -577,7 +577,7 @@ function DanksagungGenerator() {
               </div>
 
               <div className="tip">
-                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format hilft uns, die Texte auf die passende Länge und den richtigen Ton abzustimmen.
+                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format dient nur deiner Orientierung; alle drei Varianten sind editierbar, du kannst die für dein gewähltes Medium passende auswählen.
               </div>
             </div>
           )}
@@ -674,7 +674,7 @@ function DanksagungGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben bleiben in deinem Browser. Nichts wird gespeichert oder an einen Server übertragen.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Beziehung, Trauerfeier-Text) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.<br><br><strong style="color:var(--mr-text)">Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
           </div>
 
           {/* Formal variant */}

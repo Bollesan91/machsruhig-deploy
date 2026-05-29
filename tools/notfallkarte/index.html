@@ -68,6 +68,11 @@
 .nk-card-inner .nk-card-value{color:#000;word-break:break-word}
 .nk-card-inner .nk-card-branding{position:absolute;bottom:1.5mm;right:3mm;font-size:5.5pt;color:#999}
 .nk-cut-line{text-align:center;font-size:8pt;color:#999;margin:2mm 0;letter-spacing:1px}
+.nk-counter{font-variant-numeric:tabular-nums;color:var(--mr-text-muted);font-size:12px}
+.nk-counter.warn{color:#C8862E;font-weight:600}
+.nk-counter.full{color:#d33;font-weight:700}
+.nk-overflow-warn{background:#FEF4E8;border:1px solid #F0D5A8;border-left:4px solid #C8862E;border-radius:8px;padding:14px 18px;margin:16px 0;font-size:14px;line-height:1.5;color:#5a4a2e}
+.nk-overflow-warn strong{color:#8b5a14}
 
 @media print{
   .no-print,.mr-nav,.mr-footer{display:none!important}
@@ -106,7 +111,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   <div id="intro-privacy" class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:32px 0;font-size:14px;line-height:1.6">
     <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir</strong>
-    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Alle Eingaben bleiben ausschließlich in deinem Browser. Wir speichern nichts, senden nichts an einen Server und nutzen deine Daten nicht. Deine Privatsphäre ist uns wichtig.</p>
+    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Deine medizinischen Eingaben (Name, Allergien, Medikamente, Kontakte) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Sobald du die Seite schließt, sind die Eingaben weg. Hinweis: Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs) — diese sehen nur, dass du die Seite besucht hast, nicht deine Eingaben.</p>
+  </div>
+
+  <div class="no-print" role="region" aria-label="Notfallhilfe und offizielle Dokumente" style="background:#FFF8EF;border:1px solid #E8E0D6;border-left:4px solid #C8862E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">
+    <strong style="color:var(--mr-text)">Im Notfall: immer 112 wählen.</strong>
+    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Diese Karte ist eine ergänzende Orientierung für Ersthelfer und Rettungsdienst — sie ersetzt <strong>keine</strong> offiziellen Dokumente. Der gesetzliche Akut-Datenträger in Deutschland ist der <strong>Notfalldatensatz auf der elektronischen Gesundheitskarte (eGK/NFDM)</strong>, den dein Hausarzt einrichten kann. Patientenverfügung, Vorsorgevollmacht und Organspendeausweis sind eigenständige Dokumente und nicht durch diese Karte ersetzt — die Karte zeigt nur, ob sie existieren und wo sie liegen.</p>
   </div>
 
   <!-- Step 1: Persönliche Angaben (initial active, indexable) -->
@@ -149,20 +159,20 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <div class="nk-field">
       <label for="f-allergien">Allergien / Unverträglichkeiten<span class="nk-field-optional">(optional)</span></label>
-      <textarea id="f-allergien" name="allergien" rows="2" placeholder="Allergien und Unverträglichkeiten eintragen"></textarea>
-      <div class="nk-hint">z. B. Penicillin, Nüsse, Latex</div>
+      <textarea id="f-allergien" name="allergien" rows="2" maxlength="120" data-nk-counter="1" placeholder="Allergien und Unverträglichkeiten eintragen"></textarea>
+      <div class="nk-hint">z. B. Penicillin, Nüsse, Latex · <span class="nk-counter" data-for="f-allergien">0/120</span></div>
     </div>
 
     <div class="nk-field">
       <label for="f-medikamente">Regelmäßige Medikamente<span class="nk-field-optional">(optional)</span></label>
-      <textarea id="f-medikamente" name="medikamente" rows="2" placeholder="Medikamente und Dosierung eintragen"></textarea>
-      <div class="nk-hint">z. B. Metoprolol 50 mg, Aspirin 100 mg</div>
+      <textarea id="f-medikamente" name="medikamente" rows="2" maxlength="140" data-nk-counter="1" placeholder="Medikamente und Dosierung eintragen"></textarea>
+      <div class="nk-hint">z. B. Metoprolol 50 mg, Aspirin 100 mg · <span class="nk-counter" data-for="f-medikamente">0/140</span></div>
     </div>
 
     <div class="nk-field">
       <label for="f-vorerkrankungen">Vorerkrankungen<span class="nk-field-optional">(optional)</span></label>
-      <textarea id="f-vorerkrankungen" name="vorerkrankungen" rows="2" placeholder="Relevante Vorerkrankungen eintragen"></textarea>
-      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, Herzschrittmacher</div>
+      <textarea id="f-vorerkrankungen" name="vorerkrankungen" rows="2" maxlength="100" data-nk-counter="1" placeholder="Relevante Vorerkrankungen eintragen"></textarea>
+      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, Herzschrittmacher · <span class="nk-counter" data-for="f-vorerkrankungen">0/100</span></div>
     </div>
 
     <div class="nk-field">
@@ -210,8 +220,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <div class="nk-field">
       <label for="f-dokumenteOrt">Wo sind meine Dokumente?<span class="nk-field-optional">(optional)</span></label>
-      <input type="text" id="f-dokumenteOrt" name="dokumenteOrt" placeholder="Aufbewahrungsort deiner wichtigen Dokumente">
-      <div class="nk-hint">z. B. „Ordner im Schlafzimmerschrank" oder „Bei Notar Dr. Müller"</div>
+      <input type="text" id="f-dokumenteOrt" name="dokumenteOrt" maxlength="110" data-nk-counter="1" placeholder="Aufbewahrungsort deiner wichtigen Dokumente">
+      <div class="nk-hint">z. B. „Ordner im Schlafzimmerschrank" oder „Bei Notar Dr. Müller" · <span class="nk-counter" data-for="f-dokumenteOrt">0/110</span></div>
     </div>
 
     <div class="nk-field">
@@ -289,6 +299,22 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // Initial check (Browser-Autofill kann Felder vor JS-Load füllen)
   check1();
   check2();
+
+  // ===== Char-Counter Wiring (Overflow-Prevention) =====
+  function updateCounter(el){
+    var counter = $('.nk-counter[data-for="' + el.id + '"]');
+    if (!counter) return;
+    var max = parseInt(el.getAttribute('maxlength'), 10) || 100;
+    var cur = el.value.length;
+    counter.textContent = cur + '/' + max;
+    counter.classList.remove('warn','full');
+    if (cur >= max) counter.classList.add('full');
+    else if (cur >= max * 0.8) counter.classList.add('warn');
+  }
+  $$('[data-nk-counter]').forEach(function(el){
+    updateCounter(el);
+    el.addEventListener('input', function(){ updateCounter(el); });
+  });
 
   function setStep(n){
     $$('.nk-step').forEach(function(el){
@@ -404,9 +430,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     h += '<div class="no-print" style="margin:32px 0">';
     h += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin-bottom:16px">Vorschau</h3>';
+    h += '<div id="nk-overflow-warn-slot"></div>';
     h += '<div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">';
-    h += buildPreviewFront(d);
-    h += buildPreviewBack(d);
+    h += '<div class="nk-side-wrap" data-side="front">' + buildPreviewFront(d) + '</div>';
+    h += '<div class="nk-side-wrap" data-side="back">' + buildPreviewBack(d) + '</div>';
     h += '</div></div>';
 
     h += '<div class="no-print" style="display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 16px;justify-content:center">';
@@ -425,7 +452,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     h += '<div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">';
     h += '<strong style="color:var(--mr-text)">Deine Daten bleiben in deinem Browser</strong>';
-    h += '<p style="margin:8px 0 0;color:var(--mr-text-muted)">Alle eingegebenen Daten werden ausschließlich in deinem Browser verarbeitet. Nichts wird gespeichert oder an einen Server gesendet. Sobald du die Seite schließt, sind die Daten weg.</p>';
+    h += '<p style="margin:8px 0 0;color:var(--mr-text-muted)">Deine medizinischen Eingaben werden ausschließlich in deinem Browser verarbeitet. Eingaben werden nicht gespeichert und nicht an einen Server gesendet. Sobald du die Seite schließt, sind sie weg. (Anonyme Seiten-Statistiken sind separat — sie sehen nur den Besuch, nicht die Eingaben.)</p>';
     h += '</div>';
 
     h += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
@@ -442,7 +469,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var FAQ = [
       {q:'Warum brauche ich eine Notfallkarte?', a:'Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist.'},
       {q:'Was gehört auf eine Notfallkarte?', a:'Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht.'},
-      {q:'Werden meine Daten gespeichert?', a:'Nein, alle Eingaben bleiben ausschließlich in deinem Browser. Es werden keine Daten an einen Server gesendet oder gespeichert. Die Karte wird direkt in deinem Browser generiert und gedruckt.'},
+      {q:'Werden meine Daten gespeichert?', a:'Deine medizinischen Eingaben werden nicht gespeichert und nicht an einen Server gesendet — die Karte wird ausschließlich in deinem Browser generiert und gedruckt. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.'},
       {q:'Wie groß ist die Karte?', a:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Pro A4-Seite werden je eine Originalkarte und eine Reservekarte mit Vorder- und Rückseite gedruckt — Vorder- und Rückseite werden zusammengeklebt oder laminiert.'}
     ];
     h += '<div class="no-print" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0">';
@@ -492,6 +519,32 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     pp += '<div class="nk-cut-line">- - - - - - - ✂ Hier ausschneiden - - - - - - -</div>';
     pp += buildCardBack(d);
     $('#print-page').innerHTML = pp;
+
+    // Overflow-Detection: char-budget pro Seite (empirisch bei 7pt + flex-layout)
+    // Front: name+geb+bg+allergien+medikamente+vorerkrankungen+organsp ≈ 360 chars Budget
+    // Back: kontakte+hausarzt+dokumenteOrt ≈ 320 chars Budget
+    var frontChars = (d.name||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.vorerkrankungen||'').length;
+    var backChars = (d.kontakt1Name||'').length + (d.kontakt1Tel||'').length + (d.kontakt2Name||'').length + (d.kontakt2Tel||'').length + (d.hausarztName||'').length + (d.hausarztTel||'').length + (d.dokumenteOrt||'').length;
+    var overflowFields = [];
+    if (frontChars > 320) {
+      var contributors = [];
+      if ((d.allergien||'').length > 90) contributors.push('Allergien');
+      if ((d.medikamente||'').length > 100) contributors.push('Medikamente');
+      if ((d.vorerkrankungen||'').length > 80) contributors.push('Vorerkrankungen');
+      overflowFields.push('Vorderseite (' + (contributors.length ? contributors.join(', ') : 'gesamt') + ')');
+    }
+    if (backChars > 280 && (d.dokumenteOrt||'').length > 80) {
+      overflowFields.push('Rückseite (Aufbewahrungsort)');
+    }
+    if (overflowFields.length) {
+      $('#nk-overflow-warn-slot').innerHTML =
+        '<div class="nk-overflow-warn" role="alert" aria-live="polite">' +
+        '<strong>Achtung: Inhalt könnte abgeschnitten werden.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
+        overflowFields.join(' · ') +
+        '. Wenn beim Druck Zeilen fehlen, kürze die längsten Einträge — z. B. mit Abkürzungen (Diab. statt Diabetes, ASS statt Acetylsalicylsäure) oder lasse nicht-akute Medikamente weg.' +
+        '</div>';
+      track('toolStep', {tool:'notfallkarte', step:'overflow_warn', fields:overflowFields.join('|')});
+    }
 
     // Bind action buttons
     $('#btn-print').addEventListener('click', function(){

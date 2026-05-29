@@ -400,7 +400,7 @@ const RELATIONSHIPS = [
   {value:'grossmutter',label:'Großmutter'},
   {value:'grossvater',label:'Großvater'},
   {value:'ehepartner',label:'Ehepartner/in'},
-  {value:'partner',label:'Partner/in'},
+  {value:'partner',label:'Partner:in'},
   {value:'schwester',label:'Schwester'},
   {value:'bruder',label:'Bruder'},
   {value:'freund',label:'Freund'},
@@ -537,8 +537,10 @@ function TrauerredeGenerator() {
   const [speechData, setSpeechData] = useState({
     opening: '',
     character: '',
+    hobbies: '',
     memory: '',
     meaning: '',
+    reflection: '',
     closing: '',
     quotes: ''
   });
@@ -564,14 +566,63 @@ function TrauerredeGenerator() {
   };
 
   const generateSpeech = () => {
-    const openings = getOpenings(formData.tone, formData.name, formData.relationship);
-    const closings = getClosings(formData.tone, formData.name, formData.religion);
+    // Edge-Case-Guard: humorvoll bei Säugling/Kleinkind (Altersangabe in Form '0-3 Jahre' o.ä.) auf wuerdevoll umlenken
+    let effectiveTone = formData.tone;
+    const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+    if (formData.tone === 'humorvoll' && ageNum < 18) {
+      effectiveTone = 'persoenlich';
+      // einmaliges Tracking
+      if(window.mrTrack) window.mrTrack('toolStep', {tool: 'trauerrede', step: 'tone_guard_applied', reason: 'minor_humorvoll'});
+    }
+
+    const openings = getOpenings(effectiveTone, formData.name, formData.relationship);
+    const closings = getClosings(effectiveTone, formData.name, formData.religion);
+    const len = formData.length || 'mittel';
+
+    // Längen-Steuerung: welche Segmente werden inkludiert
+    const includeCharacter = !!formData.character;
+    const includeMemory = !!formData.memory && (len !== 'kurz' || !formData.character); // bei kurz: nur eines von beidem
+    const includeHobbies = !!formData.hobbies && len !== 'kurz';
+    const includeReflection = len === 'lang';
+
+    // Character-Segment je Länge ausführlicher
+    let characterText = '';
+    if (includeCharacter) {
+      if (len === 'lang') {
+        characterText = `Wer war ${formData.name}? Das, was diese Person ausgemacht hat, waren nicht die großen Worte, sondern die kleinen Gesten und die großen Momente, die zusammen ein Leben ergeben haben. ${formData.character} Und so sehen wir ${formData.name} vor uns — präsent, lebendig, unverwechselbar.`;
+      } else if (len === 'kurz') {
+        characterText = `${formData.character}`;
+      } else {
+        characterText = `Das, was ${formData.name} ausgemacht hat, waren die kleinen Dinge und die großen Momente. ${formData.character}`;
+      }
+    }
+
+    // Hobbies-Segment (NEU verdrahtet)
+    let hobbiesText = '';
+    if (includeHobbies) {
+      if (len === 'lang') {
+        hobbiesText = `${formData.name} hatte Leidenschaften, die das Leben heller gemacht haben — und auch unseres dadurch. ${formData.hobbies} Es waren nicht bloß Hobbys; es waren Räume, in denen ${formData.name} ganz da war.`;
+      } else {
+        hobbiesText = `Was ${formData.name} besonders liebte: ${formData.hobbies}`;
+      }
+    }
+
+    // Reflection-Segment (nur bei 'lang')
+    let reflectionText = '';
+    if (includeReflection) {
+      reflectionText = `Wenn wir heute zurückblicken, dann nicht nur auf Daten und Jahre, sondern auf das, was bleibt: Gesten, Sätze, Blicke, die uns geprägt haben. Trauer ist ein langer Weg, und wir gehen ihn nicht im Sprint. Aber wir gehen ihn — gemeinsam, mit der Erinnerung an ${formData.name} als Wegweiser.`;
+    }
 
     setSpeechData({
       opening: openings[0],
-      character: formData.character ? `Das, was ${formData.name} ausgemacht hat, waren die kleinen Dinge und die großen Momente. ${formData.character}` : '',
-      memory: formData.memory ? `Eine Erinnerung, die ich nicht vergesse: ${formData.memory}` : '',
-      meaning: formData.message ? `Was ${formData.name} uns bedeutet hat: ${formData.message}` : `${formData.name} war für uns...`,
+      character: characterText,
+      hobbies: hobbiesText,
+      memory: includeMemory && formData.memory ? `Eine Erinnerung, die ich nicht vergesse: ${formData.memory}` : '',
+      meaning: formData.message ? (len === 'lang'
+        ? `Was ${formData.name} uns bedeutet hat — das fassen wir in Worte und merken: Worte reichen nicht ganz. Aber wir versuchen es. ${formData.message}`
+        : `Was ${formData.name} uns bedeutet hat: ${formData.message}`)
+        : `${formData.name} war für uns...`,
+      reflection: reflectionText,
       closing: closings[0],
       quotes: formData.selectedQuote ? QUOTES.find(q=>q.id===formData.selectedQuote)?.text : (formData.customQuote || '')
     });
@@ -585,8 +636,10 @@ function TrauerredeGenerator() {
     const fullText = [
       speechData.opening,
       speechData.character,
+      speechData.hobbies,
       speechData.memory,
       speechData.meaning,
+      speechData.reflection,
       speechData.quotes && `„${speechData.quotes}"`,
       speechData.closing
     ].filter(Boolean).join('\n\n');
@@ -623,8 +676,10 @@ function TrauerredeGenerator() {
     setSpeechData({
       opening: '',
       character: '',
+      hobbies: '',
       memory: '',
       meaning: '',
+      reflection: '',
       closing: '',
       quotes: ''
     });
@@ -807,6 +862,17 @@ function TrauerredeGenerator() {
                     </label>
                   ))}
                 </div>
+                {(() => {
+                  const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+                  if (formData.tone === 'humorvoll' && ageNum < 18) {
+                    return (
+                      <div role="alert" aria-live="polite" style={{background:'#FEF4E8',border:'1px solid #F0D5A8',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
+                        <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Bei einer Trauerrede für ein verstorbenes Kind oder einen Jugendlichen wird der humorvolle Ton häufig als unpassend empfunden. Wir wandeln den Output sicherheitshalber auf „Persönlich & warm" um — du kannst die Variante natürlich nachträglich anpassen, aber überlege gut, ob heitere Anekdoten der Trauergemeinde guttun werden.
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
               </div>
 
               <div className="form-group">
@@ -970,7 +1036,7 @@ function TrauerredeGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Alles läuft in deinem Browser. Deine Rede wird nicht gespeichert oder übertragen.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.
           </div>
 
           {/* Opening */}
@@ -1033,6 +1099,25 @@ function TrauerredeGenerator() {
             </div>
           )}
 
+          {/* Hobbies / Leidenschaften */}
+          {speechData.hobbies && (
+            <div className="speech-section">
+              <h3>Was diese Person geliebt hat</h3>
+              <div className="section-hint">
+                Die Themen, Aktivitäten und Räume, die ${formData.name} besonders waren — sie zeigen die Person von ihrer lebendigen Seite.
+              </div>
+              <div
+                className="speech-content"
+                contentEditable
+                onBlur={e => setSpeechData(prev => ({...prev, hobbies: e.currentTarget.textContent}))}
+                suppressContentEditableWarning
+              >
+                {speechData.hobbies}
+              </div>
+              <div className="char-count">{speechData.hobbies.length} Zeichen</div>
+            </div>
+          )}
+
           {/* Memory */}
           {speechData.memory && (
             <div className="speech-section">
@@ -1072,6 +1157,25 @@ function TrauerredeGenerator() {
                 {speechData.meaning}
               </div>
               <div className="char-count">{speechData.meaning.length} Zeichen</div>
+            </div>
+          )}
+
+          {/* Reflection (nur bei Länge=lang) */}
+          {speechData.reflection && (
+            <div className="speech-section">
+              <h3>Reflexion / Rückblick</h3>
+              <div className="section-hint">
+                Eine ruhige Passage, die hilft, das Gesagte zu vertiefen. Bei der langen Variante (8–12 Min) wirkt sie als Brücke zum Schluss.
+              </div>
+              <div
+                className="speech-content"
+                contentEditable
+                onBlur={e => setSpeechData(prev => ({...prev, reflection: e.currentTarget.textContent}))}
+                suppressContentEditableWarning
+              >
+                {speechData.reflection}
+              </div>
+              <div className="char-count">{speechData.reflection.length} Zeichen</div>
             </div>
           )}
 
@@ -1141,8 +1245,10 @@ function TrauerredeGenerator() {
             const fullText = [
               speechData.opening,
               speechData.character,
+              speechData.hobbies,
               speechData.memory,
               speechData.meaning,
+              speechData.reflection,
               speechData.quotes,
               speechData.closing
             ].filter(Boolean).join(' ');

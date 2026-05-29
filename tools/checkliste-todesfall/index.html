@@ -112,7 +112,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     </header>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
-      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
 
     <div style="margin-bottom:24px">
@@ -246,6 +246,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       {id:"vertraege",titel:"Laufende Verträge prüfen und kündigen",desc:"Strom, Gas, Telefon, Internet, Abos, Streaming. Die meisten können mit Sterbeurkunde sofort gekündigt werden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"],hinweis:"Mietvertrag nicht sofort kündigen — erst die Wohnung räumen."}
     ]},
     {id:"ersterMonat",label:"Monat 1",zeitraum:"Erbe, Wohnung, Steuern",color:"#5a8a5a",aufgaben:[
+      {id:"erbausschlagung",titel:"Erbe annehmen oder ausschlagen — Frist § 1944 BGB",desc:"WICHTIG: 6 Wochen ab Kenntnis vom Erbfall (nicht ab Todestag!). Bei Auslandsbezug (Erbe oder Erblasser im Ausland) gilt 6 Monate. Erklärung beim Nachlassgericht — notariell oder zur Niederschrift. Wer die Frist verstreichen lässt, hat das Erbe angenommen — inklusive aller Schulden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Personalausweis","Sterbeurkunde"],hinweis:"Bei Verdacht auf Überschuldung oder unklarer Vermögenslage: dringend Notar/Anwalt für Erbrecht konsultieren, bevor die Frist läuft. Eine versehentliche Annahme ist nur unter engen Voraussetzungen anfechtbar."},
       {id:"testament",titel:"Testament eröffnen / Erbschein beantragen",desc:"Testament beim Nachlassgericht abgeben. Ohne Testament gilt gesetzliche Erbfolge. Erbschein kostet 75–1.000 €+ und dauert 4–8 Wochen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Testament (Original)","Sterbeurkunde"]},
       {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod (§ 580 BGB), dann 3-monatige Kündigungsfrist (§ 580a Abs. 4 BGB). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
       {id:"vermieter",titel:"Vermieter informieren",desc:"Bei gemeinsamer Wohnung geht der Mietvertrag auf den überlebenden Mieter über.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
@@ -260,7 +261,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden, spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die genauen Fristen für dein Bundesland."},
     {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
     {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
-    {q:"Werden meine Eingaben gespeichert?",a:"Nein. Die Checkliste läuft vollständig in deinem Browser. Es werden keine Daten an unsere Server übermittelt."},
+    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben."},
     {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
   ];
 

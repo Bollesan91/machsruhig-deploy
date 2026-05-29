@@ -28,7 +28,7 @@
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"Was passiert, wenn ich eine Frist verpasse?","acceptedAnswer":{"@type":"Answer","text":"Das kommt auf die Frist an. Bei der Erbausschlagung ist es besonders kritisch: Nach 6 Wochen gilt das Erbe als angenommen — auch mit Schulden. Bei Versicherungsmeldungen kann der Anspruch verfallen. Bei Behördenfristen drohen Ordnungswidrigkeiten."}},
       {"@type":"Question","name":"Gelten die Fristen ab dem Todestag?","acceptedAnswer":{"@type":"Answer","text":"In den meisten Fällen ja. Bei der Erbausschlagung beginnt die 6-Wochen-Frist allerdings erst ab dem Zeitpunkt, zu dem der Erbe vom Todesfall und seiner Erbenstellung Kenntnis erlangt hat."}},
-      {"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert."}},
+      {"@type":"Question","name":"Werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Der Fristen-Radar läuft vollständig in deinem Browser. Deine Eingaben (Sterbedatum, Auswahl-Checkboxen) werden nicht an einen Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert (localStorage). Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben."}},
       {"@type":"Question","name":"Kann der Bestatter Fristen für mich einhalten?","acceptedAnswer":{"@type":"Answer","text":"Einige ja — zum Beispiel die Anzeige beim Standesamt oder die Organisation der Bestattung innerhalb der gesetzlichen Fristen. Aber wichtige Fristen wie Erbausschlagung, Versicherungsmeldungen oder Rentenanträge musst du selbst einhalten."}},
       {"@type":"Question","name":"Was ist die wichtigste Frist nach einem Todesfall?","acceptedAnswer":{"@type":"Answer","text":"Die 6-Wochen-Frist zur Erbausschlagung ist die kritischste. Wird sie versäumt, gilt das Erbe als angenommen — inklusive aller Schulden. Das ist nicht mehr rückgängig zu machen."}}
     ]}
@@ -120,10 +120,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   <!-- Input view (initial active, indexable) -->
   <div class="fr-view active" id="view-input">
     <h1 style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--mr-text);margin-bottom:8px;line-height:1.3">Fristen-Radar Todesfall</h1>
-    <p style="font-size:16px;color:var(--mr-text-muted);margin-bottom:32px;line-height:1.6">Gib das Sterbedatum ein und erfahre alle wichtigen Fristen — damit du nichts verpasst, was Geld oder Rechte kosten kann.</p>
+    <p style="font-size:16px;color:var(--mr-text-muted);margin-bottom:32px;line-height:1.6">Gib das Sterbedatum ein und erfahre die wichtigsten Geld- und Rechtsfristen — damit du nichts verpasst, was Geld oder Rechte kosten kann. <span style="font-size:13px;display:inline-block;margin-top:6px;color:var(--mr-text-muted)">Die Bestattungsfrist selbst regelt das Landesrecht und wird i. d. R. vom Bestatter übernommen — sie ist hier nicht abgebildet.</span></p>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
-      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Dieser Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Dieser Fristen-Radar läuft vollständig in deinem Browser. Deine Eingaben (Sterbedatum, Checkboxen) werden nicht an einen Server gesendet — erledigte Fristen werden nur lokal (localStorage) gespeichert. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
 
     <form id="fr-form" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px">
@@ -145,6 +145,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
           <input type="checkbox" id="fr-rental" style="width:18px;height:18px;accent-color:var(--mr-primary);cursor:pointer">
           <span>Gibt es einen Mietvertrag des Verstorbenen?</span>
         </label>
+        <label style="display:flex;align-items:flex-start;gap:10px;font-size:15px;cursor:pointer;color:var(--mr-text)">
+          <input type="checkbox" id="fr-foreign" style="width:18px;height:18px;accent-color:var(--mr-primary);cursor:pointer;margin-top:3px">
+          <span>Hatte die verstorbene Person ihren letzten Aufenthalt im Ausland — oder leben Sie als Erbe im Ausland?<br><span style="font-size:13px;color:var(--mr-text-muted)">Wichtig für die Erbausschlagungsfrist (§ 1944 Abs. 3 BGB): dann 6 Monate statt 6 Wochen.</span></span>
+        </label>
       </div>
 
       <button type="submit" style="background:var(--mr-primary);color:#fff;border:none;border-radius:8px;padding:12px 32px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s">Fristen berechnen</button>
@@ -163,6 +167,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   <div style="text-align:center;padding:24px 0;margin-bottom:16px;border-top:1px solid var(--mr-border);margin-top:32px">
     <p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6">
       Alle Angaben ohne Gewähr. Gesetzliche Fristen können sich ändern. Diese Übersicht ersetzt keine Rechtsberatung.<br>
+      <strong>Versicherungs- und Bankfristen variieren je nach Vertrag</strong> — prüfe immer deine konkreten Police- bzw. AGB-Bedingungen, die angezeigten Fristen sind branchenüblich, aber nicht verbindlich.<br>
+      <strong>Bei komplexen Fällen</strong> (Erbe oder Erblasser im Ausland, Überschuldung, mehrere Erben, Erbengemeinschaft, Unternehmensbeteiligungen): rechtzeitig Notar oder Fachanwalt für Erbrecht hinzuziehen.<br>
       machsruhig.de ist ein unabhängiges Informationsportal. <a href="/methodik" style="color:var(--mr-primary);text-decoration:none">Mehr zu unserer Methodik</a>.
     </p>
   </div>
@@ -214,7 +220,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {id:'krankenkasse',name:'Krankenkasse informieren',days:14,category:'behoerde',consequence:'Beiträge laufen weiter',link:'/vertraege-kuendigen',hint:'Familienversicherung für Angehörige prüfen'},
     {id:'sterbevierteljahr',name:'Sterbevierteljahr beantragen',days:30,category:'finanzen',consequence:'Vorschuss auf 3 Monate volle Rente geht verloren',link:'#',hint:'Beim Renten-Service der Deutschen Post beantragen — gilt nur für Ehepartner',showIf:'spouse'},
     {id:'mietvertrag',name:'Mietvertrag — Sonderkündigung',days:30,category:'wohnung',consequence:'Normaler Kündigungsschutz greift (ggf. 3+ Monate extra Miete)',link:'/vertraege-kuendigen',hint:'§ 580 BGB: Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod, dann 3 Monate Frist. Datum unten ist Richtwert (Frist beginnt rechtlich ab Kenntnis, nicht Todestag)',showIf:'rental',abKenntnis:true},
-    {id:'erbausschlagung',name:'Erbausschlagung',days:42,category:'recht',consequence:'Erbe gilt als ANGENOMMEN — auch Schulden! Nicht mehr rückgängig zu machen',link:'/vorsorge/testament',hint:'KRITISCH: Die 6-Wochen-Frist (§ 1944 BGB) beginnt erst AB KENNTNIS vom Erbfall und der eigenen Erbenstellung — nicht ab Todestag. Bei testamentarischer Erbfolge: ab Bekanntgabe durch Nachlassgericht. Das angezeigte Datum ist der frühestmögliche Fristablauf, falls Du am Todestag Kenntnis hattest. Bei späterer Kenntnis: 6 Wochen ab dem Tag dazurechnen.',abKenntnis:true},
+    {id:'erbausschlagung',name:'Erbausschlagung',days:42,category:'recht',consequence:'Erbe gilt als ANGENOMMEN — auch Schulden! Nicht mehr rückgängig zu machen',link:'/vorsorge/testament',hint:'KRITISCH: Die 6-Wochen-Frist (§ 1944 BGB) beginnt erst AB KENNTNIS vom Erbfall und der eigenen Erbenstellung — nicht ab Todestag. Bei testamentarischer Erbfolge: ab Bekanntgabe durch Nachlassgericht. Auslandsbezug (Erbe oder Erblasser im Ausland): 6 MONATE statt 6 Wochen (§ 1944 Abs. 3 BGB). Das angezeigte Datum ist der frühestmögliche Fristablauf, falls Du am Todestag Kenntnis hattest. Bei späterer Kenntnis: ab dem Kenntnis-Tag dazurechnen.',abKenntnis:true},
     {id:'minderjaehrige_erbe',name:'Erbausschlagung für minderjährige Kinder',days:42,category:'recht',consequence:'Kinder können Erbe inkl. Schulden erben — Ausschlagung benötigt Genehmigung des Familiengerichts',link:'/vorsorge/testament',hint:'Bei minderjährigen Kindern: Eltern müssen Erbausschlagung beim Familiengericht beantragen (§ 1643 BGB i.V.m. § 1851 Nr. 1 BGB — seit Vormundschaftsrechts-Reform 01.01.2023). Genehmigungsverfahren dauert mehrere Wochen — frühzeitig beginnen! Frist läuft ab Kenntnis der Erbenstellung des Kindes.',abKenntnis:true,showIf:'minors'},
     {id:'erbschaftsteuer',name:'Erbschaftsteuer — Anzeige beim Finanzamt',days:90,category:'finanzen',consequence:'Ordnungswidrigkeit, Steuerzuschläge möglich',link:'#',hint:'Pflicht unabhängig von der Höhe. Freibeträge: 500.000 € (Ehepartner), 400.000 € (Kinder) — Stand 2026 (§ 16 ErbStG)'},
     {id:'witwenrente',name:'Witwenrente beantragen',days:365,category:'finanzen',consequence:'Rückwirkende Zahlung nur innerhalb 12 Monaten möglich',link:'#',hint:'Große Witwenrente: 55% der Rente. Kleine Witwenrente: 25% (max. 2 Jahre) — Stand 2026 (§ 46 SGB VI)',showIf:'spouse'},
@@ -224,7 +230,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   var FAQ = [
     {q:'Was passiert, wenn ich eine Frist verpasse?', a:'Das kommt auf die Frist an. Bei der Erbausschlagung ist es besonders kritisch: Nach 6 Wochen gilt das Erbe als angenommen — auch mit Schulden. Bei Versicherungsmeldungen kann der Anspruch verfallen. Bei Behördenfristen drohen Ordnungswidrigkeiten.'},
     {q:'Gelten die Fristen ab dem Todestag?', a:'In den meisten Fällen ja. Bei der Erbausschlagung beginnt die 6-Wochen-Frist allerdings erst ab dem Zeitpunkt, zu dem der Erbe vom Todesfall und seiner Erbenstellung Kenntnis erlangt hat.'},
-    {q:'Werden meine Daten gespeichert?', a:'Nein. Der Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert.'},
+    {q:'Werden meine Daten gespeichert?', a:'Der Fristen-Radar läuft vollständig in deinem Browser. Deine Eingaben (Sterbedatum, Auswahl-Checkboxen) werden nicht an einen Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert (localStorage). Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.'},
     {q:'Kann der Bestatter Fristen für mich einhalten?', a:'Einige ja — zum Beispiel die Anzeige beim Standesamt oder die Organisation der Bestattung innerhalb der gesetzlichen Fristen. Aber wichtige Fristen wie Erbausschlagung, Versicherungsmeldungen oder Rentenanträge musst du selbst einhalten.'},
     {q:'Was ist die wichtigste Frist nach einem Todesfall?', a:'Die 6-Wochen-Frist zur Erbausschlagung ist die kritischste. Wird sie versäumt, gilt das Erbe als angenommen — inklusive aller Schulden. Das ist nicht mehr rückgängig zu machen.'}
   ];
@@ -284,7 +290,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       deathDate: new Date(d + 'T00:00:00'),
       isSpouse: $('#fr-spouse').checked,
       hasMinors: $('#fr-minors').checked,
-      hasRental: $('#fr-rental').checked
+      hasRental: $('#fr-rental').checked,
+      isForeign: $('#fr-foreign').checked
     };
     track('Fristen-Radar: Berechnung');
     track('toolStep', {tool:'fristen-radar', step:'berechnet'});
@@ -336,6 +343,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     // Filter
     var filtered = DEADLINES.filter(function(d){
+      // Auslandsbezug: Erbausschlagung 180 Tage statt 42
+      if (d.id === 'erbausschlagung' && cfg.isForeign) { d = Object.assign({}, d, {days: 180}); }
+      if (d.id === 'minderjaehrige_erbe' && cfg.isForeign) { d = Object.assign({}, d, {days: 180}); }
       if (d.showIf === 'spouse' && !cfg.isSpouse) return false;
       if (d.showIf === 'rental' && !cfg.hasRental) return false;
       if (d.showIf === 'minors' && !cfg.hasMinors) return false;
@@ -420,7 +430,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '</div>';
 
     // Privacy notice
-    html += '<div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6"><strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Dieser Fristen-Radar läuft vollständig in deinem Browser. Es werden keine Daten an Server übermittelt. Erledigte Fristen werden nur lokal in deinem Browser gespeichert.</div>';
+    html += '<div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6"><strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Dieser Fristen-Radar läuft vollständig in deinem Browser. Deine Eingaben werden nicht an einen Server gesendet — erledigte Fristen werden nur lokal (localStorage) gespeichert. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch, nicht deine Eingaben.</div>';
 
     // Tool-Kette: Nächster sinnvoller Schritt
     html += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
