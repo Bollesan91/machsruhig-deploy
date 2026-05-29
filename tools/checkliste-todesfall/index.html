@@ -267,7 +267,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   var FAQ = [
     {q:"Was muss ich als erstes tun, wenn jemand stirbt?",a:"Zuerst muss ein Arzt den Tod feststellen und einen Totenschein ausstellen. Zu Hause rufst du den Hausarzt oder den ärztlichen Bereitschaftsdienst (116 117). Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."},
-    {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden, spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die genauen Fristen für dein Bundesland."},
+    {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden (Standardwert; einige Bundesländer und Einzelfälle lassen kürzere Fristen auf Antrag zu), spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die für dein Bundesland modellierten Werte — verbindlich sind die jeweiligen Landesbestattungsgesetze."},
     {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
     {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
     {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben."},
@@ -307,8 +307,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var html = '<strong>' + esc(bl.name) + ': </strong>';
     html += 'Überführung innerhalb von ' + bl.ueberfuehrung + 'h · ';
     html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine gesetzl. Höchstfrist') + ' · ';
-    html += 'Frühestens nach 48h';
+    html += 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)';
     if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)">Quellen: Landesbestattungsgesetze (Stand Mai 2026). In besonderen Fällen können die zuständigen Behörden kürzere oder längere Fristen zulassen. Im Zweifel: Rücksprache mit Bestatter oder Standesamt.</div>';
     $('#cl-summary-box').innerHTML = html;
     $('#cl-summary').style.display = 'block';
   }

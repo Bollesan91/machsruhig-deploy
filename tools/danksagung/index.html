@@ -394,11 +394,14 @@ const {useState, useCallback} = React;
 const RELATIONSHIPS = [
   {value:'mutter',label:'Mutter',possessive:'meiner Mutter',family:'Die Familie'},
   {value:'vater',label:'Vater',possessive:'meinem Vater',family:'Die Familie'},
+  {value:'grossmutter',label:'Großmutter / Oma',possessive:'meiner Großmutter',family:'Die Familie'},
+  {value:'grossvater',label:'Großvater / Opa',possessive:'meinem Großvater',family:'Die Familie'},
   {value:'partner',label:'Partner:in',possessive:'meinem geliebten Menschen',family:'In Liebe'},
-  {value:'grosseltern',label:'Großeltern',possessive:'meinen Großeltern',family:'Die Familie'},
-  {value:'kind',label:'Kind',possessive:'unserem Kind',family:'Die Familie'},
-  {value:'geschwister',label:'Geschwister',possessive:'meinem Geschwister',family:'Die Familie'},
-  {value:'freund',label:'Freund:in',possessive:'meinem geliebten Menschen',family:'In Dankbarkeit'},
+  {value:'kind',label:'Kind',possessive:'unserem geliebten Kind',family:'In tiefer Trauer — die Eltern'},
+  {value:'schwester',label:'Schwester',possessive:'meiner Schwester',family:'In Verbundenheit — die Geschwister'},
+  {value:'bruder',label:'Bruder',possessive:'meinem Bruder',family:'In Verbundenheit — die Geschwister'},
+  {value:'freund',label:'Freund:in',possessive:'einem besonderen Menschen',family:'In Dankbarkeit'},
+  {value:'angehoerige',label:'Andere:r Angehörige:r',possessive:'unserem geliebten Menschen',family:'In Dankbarkeit'},
 ];
 
 // Format types
@@ -632,7 +635,7 @@ function DanksagungGenerator() {
                     <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Wenn dein Kind verstorben ist — bitte spüre hinein, ob ein vorgefertigter Text das Richtige für deine Danksagung ist. Manche Eltern schreiben lieber wenige, ganz eigene Worte. Falls dir die Worte gerade fehlen, gibt es Begleitung: <a href="https://www.veid.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>VEID — Bundesverband Verwaiste Eltern und trauernde Geschwister</a>.
                   </div>
                 )}
-                {(formData.relationship === 'partner' || formData.relationship === 'geschwister' || formData.relationship === 'freund') && (
+                {(formData.relationship === 'partner' || formData.relationship === 'schwester' || formData.relationship === 'bruder' || formData.relationship === 'freund') && (
                   <div style={{background:'#FAFAFA',border:'1px solid #E8E0D6',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:13,lineHeight:1.5,color:'#5a4f43'}}>
                     <strong>Hinweis bei plötzlichem oder belastendem Verlust:</strong> Wenn die Todesumstände schwer zu fassen sind (plötzlicher Tod, Suizid, Krankheit mit kurzer Vorlaufzeit), kann ein Schreibassistent sich vorgreifend anfühlen. Lass dir Zeit. Begleitung durch <a href="https://www.aeternitas.de/inhalt/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Aeternitas-Trauerbegleitung</a> oder <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111) kann helfen, wenn du nicht weißt, womit du anfangen sollst.
                   </div>

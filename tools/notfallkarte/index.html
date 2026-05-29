@@ -538,8 +538,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if ((d.vorerkrankungen||'').length > 80) contributors.push('Vorerkrankungen');
       overflowFields.push('Vorderseite (' + (contributors.length ? contributors.join(', ') : 'gesamt') + ')');
     }
-    if (backChars > 280 && (d.dokumenteOrt||'').length > 80) {
-      overflowFields.push('Rückseite (Aufbewahrungsort)');
+    if (backChars > 280) {
+      var backContributors = [];
+      var kontakte = (d.kontakt1Name||'').length + (d.kontakt1Tel||'').length + (d.kontakt2Name||'').length + (d.kontakt2Tel||'').length + (d.hausarztName||'').length + (d.hausarztTel||'').length;
+      if (kontakte > 200) backContributors.push('Kontakte/Hausarzt');
+      if ((d.dokumenteOrt||'').length > 80) backContributors.push('Aufbewahrungsort');
+      overflowFields.push('Rückseite (' + (backContributors.length ? backContributors.join(', ') : 'gesamt') + ')');
     }
     if (overflowFields.length) {
       $('#nk-overflow-warn-slot').innerHTML =
