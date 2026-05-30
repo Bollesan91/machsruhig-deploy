@@ -369,7 +369,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Medikam.:', d.medikamente, {emphasize: true});
     html += cardRow('Vorerkr.:', d.vorerkrankungen);
     html += cardRow('Organsp.:', d.organspende || '—');
-    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + '</div>';
+    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + ' · Selbstangaben · im Notfall 112</div>';
     html += '</div></div>';
     return html;
   }
@@ -387,7 +387,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Dokumente:', d.dokumenteOrt);
     html += cardRow('Pat.verf.:', d.patientenverfuegung || '—');
     html += cardRow('Vollmacht:', d.vorsorgevollmacht || '—');
-    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + '</div>';
+    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + ' · Selbstangaben · im Notfall 112</div>';
     html += '</div></div>';
     return html;
   }

@@ -397,10 +397,10 @@ const WRITING_BLOCKS = [
     label: 'Praktisches — Wo ihr alles findet',
     prompts: [
       'Wo sind wichtige Dokumente? (Testament, Versicherungen, Ordner)',
-      'Welche Passwörter/Zugänge sind wichtig?',
+      'Wo finden meine Liebsten Zugänge? (Passwort-Manager + Master-Hinweis, versiegelter Umschlag im Tresor, Nachlasskontakt — bitte hier KEINE Klartext-Passwörter notieren)',
       'Gibt es offene Angelegenheiten?'
     ],
-    placeholder: 'Wo sind wichtige Dokumente? Welche Passwörter/Zugänge sind wichtig? Gibt es offene Angelegenheiten?'
+    placeholder: 'Wo sind wichtige Dokumente? Wo findet jemand Zugang zum Passwort-Manager oder zu versiegelten Hinweisen? Gibt es offene Angelegenheiten? (Hinweis: Speichere hier KEINE Passwörter im Klartext — das Tool nutzt deinen Browser-Speicher.)'
   },
   {
     id: 'wuensche',
@@ -791,7 +791,10 @@ function App() {
       try {
         const data = {recipient, recipientName, senderName, closing, customClosing, createdAt, texts, savedAt: new Date().toISOString()};
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      } catch (e) {}
+      } catch (e) {
+        // Quota erschöpft / Private-Mode → sichtbar machen statt schlucken
+        showToast('Auto-Speichern fehlgeschlagen (Speicher voll oder Private-Mode). Bitte Text manuell kopieren.');
+      }
     }, 1000);
     return () => {
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);

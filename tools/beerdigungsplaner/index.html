@@ -75,7 +75,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     </header>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin-bottom:24px;font-size:14px">
-      <strong>Deine Planung bleibt bei dir.</strong> Deine Eingaben (Präferenzen, Notizen, Druck-Plan) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch und einzelne Schritt-Übergänge, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong>Deine Planung bleibt bei dir.</strong> Deine Eingaben werden ausschließlich lokal in deinem Browser gespeichert (localStorage), damit du jederzeit weitermachen kannst — sie werden nicht an einen Server gesendet. Über „Neu beginnen" oder „Plan zurücksetzen" löscht du den lokalen Stand jederzeit. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch und einzelne Schritt-Übergänge, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
 
     <div class="no-print" style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6;color:var(--mr-text-muted)">
@@ -398,11 +398,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       var budgetVal = state.answers.budget;
       var budgetRanges = {sparsam: [0, 3000], mittel: [3000, 7000], gehoben: [7000, 15000]};
       var br = budgetRanges[budgetVal];
-      var conflict = br && (costMin > br[1] + 500); // Mindest-Range übersteigt Budget-Max + Toleranz
+      // Konflikt: Mindest-Range > Budget+500 ODER costMax > Budget*1.3 (Decke deutlich höher als Budget)
+      var conflict = br && (costMin > br[1] + 500 || costMax > br[1] * 1.3);
       h += '<div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">';
       h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzter Gesamtrahmen (inkl. Zusatzposten):</strong> ';
       h += '<span style="font-weight:600">~' + costMin.toLocaleString('de-DE') + '–' + costMax.toLocaleString('de-DE') + ' €</span>';
-      h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:6px">Die Summe aggregiert Bestattungsart + Blumen + Musik + Redner + Trauerkaffee (bei "pro Person" mit Schätzung ' + guestSize + ' Gäste multipliziert). Sie ist eine grobe Orientierung. Reale Kosten variieren regional und je nach Bestatter — der Bestatter erstellt vor Beauftragung einen verbindlichen Kostenvoranschlag.</div>';
+      h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:6px">Die Summe aggregiert Bestattungsart + Blumen + Musik + Redner + Trauerkaffee (bei "pro Person" mit Schätzung ' + guestSize + ' Gäste multipliziert). <strong>Hinweis zur Decke:</strong> Premium-Bestattungspakete enthalten am oberen Ende häufig schon Feier-Elemente — die obere Summe kann dadurch leicht überhöht sein. Reale Kosten variieren regional und je nach Bestatter — der Bestatter erstellt vor Beauftragung einen verbindlichen Kostenvoranschlag.</div>';
       if (conflict) {
         h += '<div role="alert" style="background:#FEF4E8;border:1px solid #F0D5A8;border-left:4px solid #C8862E;border-radius:6px;padding:12px 14px;margin-top:12px;color:#5a4a2e">';
         h += '<strong style="color:#8b5a14">Achtung — Konflikt mit Budget-Vorgabe:</strong> Deine Praeferenzen ergeben mind. ~' + costMin.toLocaleString('de-DE') + ' €, dein gewaehltes Budget liegt aber bis ' + br[1].toLocaleString('de-DE') + ' €. Tipp: Bestattungsart oder Blumen/Musik/Kaffee anpassen, oder Budget-Vorstellung neu setzen.';

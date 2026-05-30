@@ -380,10 +380,10 @@ const {useState, useEffect} = React;
 
 // Quote Library - Public Domain
 const QUOTES = [
-  {id:'goethe-1',text:'Was man tief in seinem Herzen besitzt, kann man nicht durch den Tod verlieren.',author:'Johann Wolfgang von Goethe'},
+  {id:'goethe-1',text:'Was man tief in seinem Herzen besitzt, kann man nicht durch den Tod verlieren.',author:'Volksweisheit (häufig Goethe zugeschrieben, in seinem Werk nicht belegt)'},
   {id:'rilke-1',text:'Wer spricht von Siegen? Überstehn ist alles.',author:'Rainer Maria Rilke'},
   {id:'bonhoeffer-1',text:'Je schöner und voller die Erinnerung, desto schwerer die Trennung.',author:'Dietrich Bonhoeffer'},
-  {id:'augustinus-1',text:'Die Toten sind nicht abwesend, sondern nur unsichtbar.',author:'Augustinus'},
+  {id:'augustinus-1',text:'Die Toten sind nicht abwesend, sondern nur unsichtbar.',author:'oft Augustinus zugeschrieben (Henri Lacordaire, frz. Theologe 19. Jh., gilt als wahrscheinlicher Urheber)'},
   {id:'epikur-1',text:'Der Tod geht uns nichts an. Solange wir da sind, ist der Tod nicht da.',author:'Epikur'},
   {id:'psalm-23',text:'Der Herr ist mein Hirte, mir wird nichts mangeln.',author:'Psalm 23'},
   {id:'joh-11-25',text:'Ich bin die Auferstehung und das Leben.',author:'Johannes 11,25'},
@@ -1064,17 +1064,22 @@ function TrauerredeGenerator() {
             <div className="section-hint">
               Der erste Eindruck zählt. Wähle eine Variante oder schreib deine eigene Ansprache.
             </div>
+            {(() => {
+              const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+              const isChildLocal = formData.relationship === 'kind' || ageNumLocal < 18;
+              const safeTone = (formData.tone === 'humorvoll' && isChildLocal) ? 'wuerdevoll' : formData.tone;
+              return (
             <div className="variants-group">
               <h4>Varianten:</h4>
               <div className="variant-buttons">
-                {getOpenings(formData.tone, formData.name, formData.relationship).map((_, idx) => (
+                {getOpenings(safeTone, formData.name, formData.relationship).map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
                       setOpeningVariant(idx);
                       setSpeechData(prev => ({
                         ...prev,
-                        opening: getOpenings(formData.tone, formData.name, formData.relationship)[idx]
+                        opening: getOpenings(safeTone, formData.name, formData.relationship)[idx]
                       }));
                     }}
                     className={openingVariant === idx ? 'selected' : ''}
@@ -1084,6 +1089,8 @@ function TrauerredeGenerator() {
                 ))}
               </div>
             </div>
+              );
+            })()}
             <div
               className="speech-content"
               contentEditable
@@ -1224,17 +1231,22 @@ function TrauerredeGenerator() {
             <div className="section-hint">
               Die letzten Worte sind oft die stärksten. Wähle eine Variante oder schreib deinen eigenen Abschied.
             </div>
+            {(() => {
+              const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+              const isChildLocal = formData.relationship === 'kind' || ageNumLocal < 18;
+              const safeTone = (formData.tone === 'humorvoll' && isChildLocal) ? 'wuerdevoll' : formData.tone;
+              return (
             <div className="variants-group">
               <h4>Varianten:</h4>
               <div className="variant-buttons">
-                {getClosings(formData.tone, formData.name, formData.religion).map((_, idx) => (
+                {getClosings(safeTone, formData.name, formData.religion).map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
                       setClosingVariant(idx);
                       setSpeechData(prev => ({
                         ...prev,
-                        closing: getClosings(formData.tone, formData.name, formData.religion)[idx]
+                        closing: getClosings(safeTone, formData.name, formData.religion)[idx]
                       }));
                     }}
                     className={closingVariant === idx ? 'selected' : ''}
@@ -1244,6 +1256,8 @@ function TrauerredeGenerator() {
                 ))}
               </div>
             </div>
+              );
+            })()}
             <div
               className="speech-content"
               contentEditable

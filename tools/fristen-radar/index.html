@@ -564,13 +564,20 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var deadlineDate = resolveDeadline(deathDate, d, state.config);
     var rem = daysBetween(today, deadlineDate);
     var isPast = rem < 0;
-    var urgency = isPast ? {level:'red', label:'VERPASST'} : getUrgency(rem);
+    // ab-Kenntnis-Fristen: NIE als 'VERPASST' rendern — Frist läuft ab Kenntnis, nicht Todestag
+    var isAbKenntnis = !!d.abKenntnis;
+    var urgency = (isPast && !isAbKenntnis) ? {level:'red', label:'VERPASST'} : (isPast && isAbKenntnis ? {level:'orange', label:'AB KENNTNIS'} : getUrgency(rem));
     var isDone = !!state.doneMap[d.id];
     var color = 'var(--fr-' + urgency.level + ')';
 
-    var daysLabel = isPast
-      ? 'vor ' + Math.abs(rem) + (Math.abs(rem) === 1 ? ' Tag' : ' Tagen') + ' abgelaufen'
-      : (rem === 0 ? 'HEUTE' : (rem === 1 ? 'noch 1 Tag' : 'noch ' + rem + ' Tage'));
+    var daysLabel;
+    if (isPast && isAbKenntnis) {
+      daysLabel = 'Frist läuft ab Kenntnis — jetzt prüfen';
+    } else if (isPast) {
+      daysLabel = 'vor ' + Math.abs(rem) + (Math.abs(rem) === 1 ? ' Tag' : ' Tagen') + ' abgelaufen';
+    } else {
+      daysLabel = rem === 0 ? 'HEUTE' : (rem === 1 ? 'noch 1 Tag' : 'noch ' + rem + ' Tage');
+    }
 
     var html = '<div class="fr-card' + (isDone ? ' done' : '') + '" style="background:' + (isDone ? '#f5f3f0' : 'var(--mr-bg-card)') + ';border:1px solid ' + (!isDone && urgency.level === 'red' ? 'var(--fr-red)' : 'var(--mr-border)') + ';border-left:4px solid ' + (isDone ? '#bbb' : color) + ';border-radius:var(--mr-radius);padding:20px 20px 16px;transition:opacity 0.3s,border-color 0.3s">';
 
