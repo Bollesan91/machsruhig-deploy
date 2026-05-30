@@ -228,7 +228,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {id:"ausland",titel:"Todesfall im Ausland — oder Erbe/Erblasser im Ausland",text:"Wenn der Tod im Ausland eingetreten ist: Deutsche Botschaft/Konsulat kontaktieren — hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe Reiseversicherung mit Rückholklausel. Auch wichtig: Wenn Erbe oder Erblasser im Ausland leben, verlängert sich die Erbausschlagungsfrist von 6 Wochen auf 6 Monate (§ 1944 Abs. 3 BGB) — und ein Erbschein nach internationalem Recht kann nötig sein. Bei Auslandsbezug rechtzeitig Notar/Fachanwalt für internationales Erbrecht hinzuziehen."},
     {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt deines Wohnbezirks Kostenübernahme beantragen (§ 74 SGB XII). Der Antrag sollte VOR der Bestattung gestellt werden — sonst können nur die ortsüblichen Mindestkosten erstattet werden. Einfache Bestattungen werden in der Regel vollständig übernommen. Falls dir das Antragsverfahren überfordert: Caritas, Diakonie oder Sozialdienst der Kommune helfen kostenlos."},
     {id:"selbststaendig",titel:"Verstorbener war Selbstständig / Unternehmer",text:"Zusätzliche Pflichten: Krankenkasse + DRV + Berufsgenossenschaft informieren (nicht nur als Privatperson). Handelsregister-Eintrag prüfen (GmbH/UG bei Gesellschafter-Tod). Steuerberater einbinden — Bilanzstichtag verschoben, Erbschaftsteuer-Schonregeln bei Betriebsvermögen prüfbar. Aufträge/Kunden informieren oder durch Erben fortführen lassen."},
-    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Wichtige Entscheidungen (Wohnungsauflösung, Bestattungsart) müssen einstimmig getroffen werden. Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."}
+    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Wichtige Entscheidungen (Wohnungsauflösung, Bestattungsart) müssen einstimmig getroffen werden. Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."},
+    {id:"sternenkind",titel:"Sternenkind / Tot- oder Fehlgeburt",text:"Bei einer Tot- oder Fehlgeburt (sog. Sternenkind) gelten besondere Regeln: Ab 500g Körpergewicht ist die Bestattung Pflicht und ein Personenstandseintrag möglich; unter 500g gibt es ein Bestattungsrecht (Sammelbestattung in den Kliniken oder eigene Bestattung). Klinik-Sozialdienste begleiten den Prozess. Krisenbegleitung: Bundesverband Verwaiste Eltern (veid.de) und Sternenkinder-Initiativen vor Ort."},
+    {id:"unbekannte-angehoerige",titel:"Unbekannte oder zerstrittene Angehörige",text:"Wenn Angehörige nicht erreichbar sind oder die Familienkommunikation belastet ist: Das Standesamt klärt im Einzelfall, wer informationsberechtigt ist. Bei zerstrittenen Familien (z. B. nach Trennung) kann ein Vermittlungsverfahren über das Nachlassgericht helfen. Bestattungspflicht trifft im Zweifel die nächsten Angehörigen nach Bestattungsgesetz; ist niemand zu ermitteln, übernimmt die Gemeinde (Ordnungsbestattung)."}
   ];
 
   var PHASEN = [
@@ -395,6 +397,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         } else if (t.bundeslandFeld && bl[t.bundeslandFeld] === null) {
           blHint = 'In ' + bl.name + ' gibt es keine gesetzliche Höchstfrist — Rücksprache mit dem Friedhof empfohlen.';
         }
+        // R-A 15 Fix: BL-Hinweis-Farbe nur dann Urgent-Rot wenn quelle tagesaktuell gegengeprüft (vorher pauschal Rot für 12 ungeprüfte BL = überzogene Alarmierung)
+        var blHintVerified = !!bl.quelle;
+        var blHintColor = blHintVerified ? 'var(--mr-urgent)' : 'var(--mr-warm)';
+        // Werktage-Hinweis explizit in der Fristenzeile (vorher nur Klein-Disclaimer im Summary)
+        if (blHint && t.bundeslandFeld && t.bundeslandFeld.startsWith('max')) {
+          blHint += ' Hinweis: Tage als Kalendertage modelliert — bei Wochenend-/Feiertagslage kann der praktische Ablauf abweichen.';
+          if (!blHintVerified) blHint += ' (Modell, nicht tagesaktuell BestG-gegengeprüft.)';
+        }
         h += '<div class="task-item' + (checked?' checked':'') + '" data-id="' + esc(t.id) + '" style="background:var(--mr-bg-card);border:1px solid ' + (checked?'var(--mr-success)':'var(--mr-border)') + ';border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px;opacity:' + (checked?'0.7':'1') + ';transition:border-color 0.2s,opacity 0.2s">';
         h += '<label style="display:flex;gap:12px;align-items:flex-start;cursor:pointer">';
         h += '<input type="checkbox" class="task-cb" data-task="' + esc(t.id) + '"' + (checked?' checked':'') + ' aria-label="' + esc(t.titel) + (t.pflicht?' (Pflicht)':'') + '" style="width:20px;height:20px;margin-top:2px;accent-color:var(--mr-success);cursor:pointer;flex-shrink:0">';
@@ -404,7 +414,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         if (t.pflicht) h += '<span style="font-size:11px;background:var(--mr-urgent);color:#fff;padding:1px 8px;border-radius:99px;font-weight:600">Pflicht</span>';
         h += '</div>';
         h += '<p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-top:4px">' + esc(t.desc) + '</p>';
-        if (blHint) h += '<div style="font-size:12px;color:var(--mr-urgent);margin-top:6px;font-weight:500">' + esc(blHint) + '</div>';
+        if (blHint) h += '<div style="font-size:12px;color:' + blHintColor + ';margin-top:6px;font-weight:500">' + esc(blHint) + '</div>';
         if (t.eskalation) h += '<div style="font-size:12px;color:var(--mr-urgent);background:#fff5f2;border:1px solid #f0d0c4;border-radius:6px;padding:8px 12px;margin-top:8px">' + esc(t.eskalation) + '</div>';
         if (t.isBestatterCTA && !checked) h += '<a href="/bestatter" style="display:inline-block;font-size:13px;color:var(--mr-primary);margin-top:8px;text-decoration:underline" data-track="cta">Bestatter in deiner Nähe finden</a>';
         if (t.toolLink && !checked) h += '<a href="' + esc(t.toolLink.href) + '" style="display:inline-block;font-size:13px;color:var(--mr-primary);margin-top:8px;text-decoration:underline">' + esc(t.toolLink.text) + '</a>';

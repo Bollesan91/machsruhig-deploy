@@ -16,6 +16,7 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/beerdigungsplaner/">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Beerdigungsplaner","description":"Kostenloser Beerdigungsplaner — 8 Schritte, ein druckbarer Plan.","url":"https://machsruhig.de/tools/beerdigungsplaner/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Beerdigung planen","item":"https://machsruhig.de/beerdigung-planen"},{"@type":"ListItem","position":3,"name":"Planer","item":"https://machsruhig.de/tools/beerdigungsplaner"}]}]}</script>
+<!-- Analytics-Shims (echter Loader: /js/consent.js → Umami + Ahrefs nach Opt-In) -->
 <script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
 <script defer src="/js/consent.js"></script>
 
@@ -399,14 +400,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         else { zusatzMin += range.min; zusatzMax += range.max; }
       }
     });
-    // Anzeige getrennt — Bestattungsart-Paket umfasst oft schon Feier-Elemente
-    costMin = bestattungMin + zusatzMin;
-    costMax = bestattungMax + zusatzMax;
-    if (costMax > 0) {
+    // R-A 15 Fix: Konflikt-Check nur gegen Bestattungsart-Paket (nicht gegen die addierte Summe — der Disclaimer sagt explizit: Zusatzposten dürfen nicht einfach addiert werden, weil Premium-Pakete sie oft schon enthalten)
+    costMin = bestattungMin; // Anzeige nur für Konflikt-Bezugswert
+    costMax = bestattungMax;
+    if (bestattungMax > 0 || zusatzMax > 0) {
       var budgetVal = state.answers.budget;
       var budgetRanges = {sparsam: [0, 3000], mittel: [3000, 7000], gehoben: [7000, 15000]};
       var br = budgetRanges[budgetVal];
-      var conflict = br && (costMin > br[1] + 500 || costMax > br[1] * 1.3);
+      // Konflikt nur wenn das BESTATTUNGSPAKET allein das Budget reißt (Zusatzposten ignorieren wir hier wegen Doppelzählungsrisiko)
+      var conflict = br && bestattungMin > br[1] + 500;
       h += '<div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">';
       h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzte Kostenbestandteile:</strong>';
       h += '<div style="margin-top:10px;font-size:14px">';
@@ -420,7 +422,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       h += '<div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D6;font-size:13px;color:var(--mr-text-muted);line-height:1.5"><strong>Wichtig zur Aggregation:</strong> Bestattungsart-Pakete enthalten am oberen Ende oft schon Feier-Elemente (Sarg, Pflege, Trauerfeier-Basis). Die Zusatzposten oben darfst du <strong>nicht einfach addieren</strong> — sie können bei Premium-Paketen schon teilweise enthalten sein. Reale Kosten erfragst du beim Bestatter (Kostenvoranschlag pflicht vor Beauftragung). Trauerkaffee mit ' + guestSize + ' Gäste-Schätzung.</div>';
       if (conflict) {
         h += '<div role="alert" style="background:#FEF4E8;border:1px solid #F0D5A8;border-left:4px solid #C8862E;border-radius:6px;padding:12px 14px;margin-top:12px;color:#5a4a2e">';
-        h += '<strong style="color:#8b5a14">Achtung — Konflikt mit Budget-Vorgabe:</strong> Deine Praeferenzen ergeben mind. ~' + costMin.toLocaleString('de-DE') + ' €, dein gewaehltes Budget liegt aber bis ' + br[1].toLocaleString('de-DE') + ' €. Tipp: Bestattungsart oder Blumen/Musik/Kaffee anpassen, oder Budget-Vorstellung neu setzen.';
+        h += '<strong style="color:#8b5a14">Achtung — Konflikt mit Budget-Vorgabe:</strong> Allein die gewählte Bestattungsart liegt mit ~' + bestattungMin.toLocaleString('de-DE') + ' € bereits über deinem Budget bis ' + br[1].toLocaleString('de-DE') + ' €. Tipp: Bestattungsart anpassen oder Budget-Vorstellung neu setzen. (Zusatzposten Blumen/Musik/Kaffee sind separat — sie können in Premium-Paketen schon enthalten sein.)';
         h += '</div>';
       }
       h += '</div>';

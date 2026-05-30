@@ -216,19 +216,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px">Notfallkontakt 1</h3>
     <div class="nk-field-row">
       <div class="nk-field"><label for="f-kontakt1Name">Name</label><input type="text" id="f-kontakt1Name" name="kontakt1Name" maxlength="50" placeholder="Name des Kontakts" required></div>
-      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 0171 1234567" required></div>
+      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]{5,}" title="Bitte gültige Telefonnummer angeben (mindestens 5 Ziffern/Zeichen)" placeholder="z. B. 0171 1234567" required></div>
     </div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Notfallkontakt 2<span class="nk-field-optional">(optional)</span></h3>
     <div class="nk-field-row">
       <div class="nk-field"><label for="f-kontakt2Name">Name</label><input type="text" id="f-kontakt2Name" name="kontakt2Name" maxlength="50" placeholder="Name des Kontakts"></div>
-      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 0171 9876543"></div>
+      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]{5,}" title="Bitte gültige Telefonnummer angeben (mindestens 5 Ziffern/Zeichen)" placeholder="z. B. 0171 9876543"></div>
     </div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Hausarzt<span class="nk-field-optional">(optional)</span></h3>
     <div class="nk-field-row">
       <div class="nk-field"><label for="f-hausarztName">Name</label><input type="text" id="f-hausarztName" name="hausarztName" maxlength="60" placeholder="Name der Praxis / des Arztes"></div>
-      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 089 1234567"></div>
+      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]{5,}" title="Bitte gültige Telefonnummer angeben (mindestens 5 Ziffern/Zeichen)" placeholder="z. B. 089 1234567"></div>
     </div>
 
     <div style="border-top:1px solid var(--mr-border);margin-top:28px;padding-top:24px"></div>
@@ -565,28 +565,40 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if ((d.dokumenteOrt||'').length > 80) backContributors.push('Aufbewahrungsort');
       overflowFields.push('Rückseite (' + (backContributors.length ? backContributors.join(', ') : 'gesamt') + ')');
     }
-    // R-A 7 Fix: Overflow blockiert jetzt hart — Print/PDF nur nach expliziter Bestätigung, weil silent-abgeschnittene Allergie/Medikamenten-Zeile YMYL-Schadenspfad ist
+    // R-A 15 Fix: Overflow-Bedrohungsmodell entschärft — Karte wächst über 54mm (passt nicht ins Portemonnaie), Inhalt geht nicht verloren wegen overflow:visible. Plus: native Print (Strg/Cmd+P) wird zusätzlich abgefangen.
     window.__nkOverflowActive = overflowFields.length > 0;
     if (overflowFields.length) {
       $('#nk-overflow-warn-slot').innerHTML =
         '<div class="nk-overflow-warn" role="alert" aria-live="polite">' +
-        '<strong>Achtung: Inhalt würde abgeschnitten werden.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
+        '<strong>Achtung: Karte wird größer als das 85,6×54mm-Standardformat.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
         overflowFields.join(' · ') +
-        '. <strong>Drucken/PDF-Export ist gesperrt, bis du gekürzt hast</strong> — in einem medizinischen Notfall kann eine fehlende Allergie- oder Blutverdünner-Zeile lebenswichtig sein. ' +
+        '. Die gedruckte Karte würde dann <strong>nicht in dein Portemonnaie passen</strong> — Inhalt geht zwar nicht verloren, aber die Karte verliert ihren Akut-Vorteil als kompakte Brieftaschen-Karte. ' +
         'Kürze die längsten Einträge (z. B. Diab. statt Diabetes, ASS statt Acetylsalicylsäure) oder lasse nicht-akute Medikamente weg. ' +
-        '<button type="button" id="nk-overflow-override" style="margin-top:8px;background:transparent;border:1px solid #C8862E;color:#8b5a14;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer">Trotzdem drucken (auf eigenes Risiko)</button>' +
+        '<button type="button" id="nk-overflow-override" style="margin-top:8px;background:transparent;border:1px solid #C8862E;color:#8b5a14;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer">Trotzdem drucken (Karte wird größer)</button>' +
         '</div>';
       track('toolStep', {tool:'notfallkarte', step:'overflow_warn', fields:overflowFields.join('|')});
       setTimeout(function(){
         var ov = $('#nk-overflow-override');
         if (ov) ov.addEventListener('click', function(){
-          if (window.confirm('Wirklich drucken? In einem medizinischen Notfall können abgeschnittene Allergie- oder Medikamenten-Zeilen lebenswichtig sein.')) {
+          if (window.confirm('Wirklich drucken? Die Karte wird größer als 85,6×54mm und passt nicht ins Portemonnaie.')) {
             window.__nkOverflowActive = false;
             track('toolStep', {tool:'notfallkarte', step:'overflow_override'});
-            $('#nk-overflow-warn-slot').innerHTML = '<div class="nk-overflow-warn" role="status">Druck/PDF-Export freigegeben — auf eigenes Risiko.</div>';
+            $('#nk-overflow-warn-slot').innerHTML = '<div class="nk-overflow-warn" role="status">Druck freigegeben — Karte wird größer als Standardformat.</div>';
           }
         });
       }, 0);
+    }
+    // R-A 15 Fix: Native Browser-Print (Strg/Cmd+P) abfangen — vorher Defeat des Safety-Controls
+    if (!window.__nkPrintHookInstalled) {
+      window.__nkPrintHookInstalled = true;
+      window.addEventListener('beforeprint', function(ev){
+        if (window.__nkOverflowActive) {
+          window.alert('Drucken ist gesperrt: Karte würde größer als 85,6×54mm. Bitte kürze die markierten Felder oder bestätige unter "Trotzdem drucken" über der Warnung.');
+          // Kein direkter ev.preventDefault auf beforeprint möglich — wir locken stattdessen die Karte aus dem print-Layout
+          var p = document.getElementById('print-page');
+          if (p) { p.style.display = 'none'; setTimeout(function(){ p.style.display = ''; }, 100); }
+        }
+      });
     }
 
     // R-A 8 Fix: Mindestinhalt-Nudge — Karte ohne medizinische Akut-Infos (Allergien/Blutverdünner/Medikamente alle leer) wirkt "fertig", ist aber im Notfall nutzlos
