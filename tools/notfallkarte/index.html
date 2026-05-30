@@ -547,7 +547,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     // R-A 8 Fix: Overflow-Guard erweitert — Geb/Blutgruppe/Organspende dazugezählt + Box-Chrome pro Emphasis-Box +25 chars budget (Allergien/Medikamente/Antikoagulation/Implantate = 4 rote Boxen, je ~4mm vertikales Chrome)
     // Front-Budget gesenkt auf 280 (vorher 320), weil jedes ausgereizte maxlength-Feld + Box-Chrome real Karte über 54mm wachsen lässt
     var emphasisBoxCount = ((d.allergien||'').length>0?1:0) + ((d.medikamente||'').length>0?1:0) + ((d.antikoagulation||'').length>0?1:0) + ((d.implantate||'').length>0?1:0);
-    var frontChars = (d.name||'').length + (d.geb||'').length + (d.blutgruppe||'').length + (d.organspende||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.antikoagulation||'').length + (d.implantate||'').length + (d.vorerkrankungen||'').length + (emphasisBoxCount * 25);
+    var frontChars = (d.name||'').length + (d.geburtsdatum||'').length + (d.blutgruppe||'').length + (d.organspende||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.antikoagulation||'').length + (d.implantate||'').length + (d.vorerkrankungen||'').length + (emphasisBoxCount * 25);
     var backChars = (d.kontakt1Name||'').length + (d.kontakt1Tel||'').length + (d.kontakt2Name||'').length + (d.kontakt2Tel||'').length + (d.hausarztName||'').length + (d.hausarztTel||'').length + (d.dokumenteOrt||'').length;
     var overflowFields = [];
     if (frontChars > 280) {

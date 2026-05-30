@@ -415,7 +415,8 @@ const FORMATS = [
 
 // Generate the three text variants
 function generateTexts(data) {
-  const name = data.name || '[Name]';
+  // R-A 9 Fix: name trimmen + normalisieren (Doppelt-Spaces, führende/abschließende Whitespace) — Reviewer-Befund "von unserer Mutter  Anna" verhindern
+  const name = ((data.name || '').trim().replace(/\s+/g, ' ')) || '[Name]';
   const rel = RELATIONSHIPS.find(r => r.value === data.relationship);
   const possessive = rel ? rel.possessive : 'unserem/unserer Verstorbenen';
   const family = rel ? rel.family : 'Die Angehörigen';
@@ -612,7 +613,7 @@ function DanksagungGenerator() {
               </div>
 
               <div className="tip">
-                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format dient nur deiner Orientierung; alle drei Varianten sind editierbar, du kannst die für dein gewähltes Medium passende auswählen.
+                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format dient nur deiner Orientierung; alle drei Varianten sind editierbar, du kannst die für dein gewähltes Medium passende auswählen.<br><br><strong>Vorlagen-Charakter:</strong> Dies sind Textvorlagen, keine persönliche Danksagung. Lies sie laut vor und verändere, was sich nicht nach dir anhört — Empfänger spüren, ob ein Text aus dem Herzen kommt oder generisch ist. Die Vorlage ist nur der Startpunkt.
               </div>
             </div>
           )}
