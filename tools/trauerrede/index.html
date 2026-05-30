@@ -16,11 +16,11 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/trauerrede/">
 
-<!-- Plausible Analytics -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
+<!-- Analytics-Shims (echter Loader: /js/consent.js → Umami + Ahrefs nach Opt-In) -->
+<script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
+<script defer src="/js/consent.js"></script>
 
-<script defer src="/js/tracking.js"></script>
+
 
 <script type="application/ld+json">
 {
@@ -50,9 +50,10 @@
 }
 </script>
 
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- R-A 11 Fix: React + ReactDOM + Babel-Standalone self-hosted unter /vendor/ — keine Drittanbieter-IP-Übertragung vor Consent mehr (vorher 3x unpkg.com) -->
+<script src="/vendor/react.production.min.js"></script>
+<script src="/vendor/react-dom.production.min.js"></script>
+<script src="/vendor/babel.min.js"></script>
 
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -380,10 +381,10 @@ const {useState, useEffect} = React;
 
 // Quote Library - Public Domain
 const QUOTES = [
-  {id:'goethe-1',text:'Was man tief in seinem Herzen besitzt, kann man nicht durch den Tod verlieren.',author:'Johann Wolfgang von Goethe'},
+  {id:'goethe-1',text:'Was man tief in seinem Herzen besitzt, kann man nicht durch den Tod verlieren.',author:'Volksweisheit (häufig Goethe zugeschrieben, in seinem Werk nicht belegt)'},
   {id:'rilke-1',text:'Wer spricht von Siegen? Überstehn ist alles.',author:'Rainer Maria Rilke'},
   {id:'bonhoeffer-1',text:'Je schöner und voller die Erinnerung, desto schwerer die Trennung.',author:'Dietrich Bonhoeffer'},
-  {id:'augustinus-1',text:'Die Toten sind nicht abwesend, sondern nur unsichtbar.',author:'Augustinus'},
+  {id:'augustinus-1',text:'Die Toten sind nicht abwesend, sondern nur unsichtbar.',author:'oft Augustinus zugeschrieben (Henri Lacordaire, frz. Theologe 19. Jh., gilt als wahrscheinlicher Urheber)'},
   {id:'epikur-1',text:'Der Tod geht uns nichts an. Solange wir da sind, ist der Tod nicht da.',author:'Epikur'},
   {id:'psalm-23',text:'Der Herr ist mein Hirte, mir wird nichts mangeln.',author:'Psalm 23'},
   {id:'joh-11-25',text:'Ich bin die Auferstehung und das Leben.',author:'Johannes 11,25'},
@@ -400,6 +401,7 @@ const RELATIONSHIPS = [
   {value:'grossvater',label:'Großvater'},
   {value:'ehepartner',label:'Ehepartner/in'},
   {value:'partner',label:'Partner:in'},
+  {value:'kind',label:'Kind / Sohn / Tochter'},
   {value:'schwester',label:'Schwester'},
   {value:'bruder',label:'Bruder'},
   {value:'freund',label:'Freund'},
@@ -418,9 +420,10 @@ const TONES = [
 ];
 
 const LENGTHS = [
-  {id:'kurz',label:'Kurz (3–5 Min)',words:'400–600 Wörter',desc:'Konzentriert und prägnant'},
-  {id:'mittel',label:'Mittel (5–8 Min)',words:'600–1000 Wörter',desc:'Ausreichend Zeit für Details'},
-  {id:'lang',label:'Lang (8–12 Min)',words:'1000–1500 Wörter',desc:'Umfassend und ausführlich'}
+  // R-A 13 Fix: Längen-Versprechen ehrlich gemacht — finale Länge hängt überwiegend von User-Eingaben ab, nicht vom Selector
+  {id:'kurz',label:'Kurz (ca. 4–6 Min)',words:'~400–600 Wörter',desc:'Zielwert: prägnant — die finale Länge hängt von deinen Eingaben ab'},
+  {id:'mittel',label:'Mittel (ca. 6–10 Min)',words:'~600–1000 Wörter',desc:'Zielwert: ausgewogen — fülle Erinnerung/Charakter ausführlich, um die Länge zu erreichen'},
+  {id:'lang',label:'Lang (ca. 10–14 Min)',words:'~1000–1500 Wörter',desc:'Zielwert: umfassend — benötigt detaillierte Eingaben in mehreren Feldern'}
 ];
 
 const RELIGIONS = [
@@ -436,7 +439,7 @@ const RELIGIONS = [
 function getOpenings(tone, name, relationship) {
   const variants = {
     persoenlich: [
-      `Liebe Familie, liebe Freunde, liebe Trauergemeinde. Wir nehmen heute Abschied von ${name} — ${RELATIONSHIPS.find(r=>r.value===relationship)?.label.toLowerCase()}, einem Menschen, der unserem Leben Wärme gegeben hat.`,
+      `Liebe Familie, liebe Freunde, liebe Trauergemeinde. Wir nehmen heute Abschied von ${name} — ${RELATIONSHIPS.find(r=>r.value===relationship)?.label}, einem Menschen, der unserem Leben Wärme gegeben hat.`,
       `Liebe Trauergemeinde. Ich möchte ein paar Worte über ${name} sprechen, über einen Menschen, der mir sehr nahestand und dessen Abwesenheit ich tief spüre.`,
       `Ihr kennt ${name}. Ihr wisst, wie diese Person war. Ich möchte euch heute erzählen, was ${name} für mich bedeutet hat.`
     ],
@@ -464,7 +467,7 @@ function getClosings(tone, name, religion) {
   const variants = {
     persoenlich: [
       `${name}, du fehlst uns. Aber was du uns gegeben hast, das bleibt. Deine Liebe, deine Nähe, deine Art — das ist nicht weg. Das tragen wir mit uns.`,
-      `Liebe/r ${name}. Wir werden dich vermissen. Aber jeden Tag, wenn wir das tun, was du uns gelehrt hast, wenn wir so sind wie du — dann bist du bei uns.`,
+      `${name}. Wir werden dich vermissen. Aber jeden Tag, wenn wir das tun, was du uns gelehrt hast, wenn wir so sind wie du — dann bist du bei uns.`,
       `Danke, dass du da warst. Danke für alles. Wir werden dich nicht vergessen. Ruhe in Frieden.`
     ],
     wuerdevoll: [
@@ -516,7 +519,8 @@ function getClosings(tone, name, religion) {
 // Calculate word count and speaking time
 function calculateTiming(text) {
   const words = text.trim().split(/\s+/).length;
-  const minutes = Math.ceil(words / 130);
+  // Trauervorträge laufen real bei ~105 Wörtern/Minute (langsamer als Alltagsrede, mit Pausen)
+  const minutes = Math.ceil(words / 105);
   return {words, minutes};
 }
 
@@ -576,7 +580,7 @@ function TrauerredeGenerator() {
     // Edge-Case-Guard: humorvoll bei Säugling/Kleinkind (Altersangabe in Form '0-3 Jahre' o.ä.) auf wuerdevoll umlenken
     let effectiveTone = formData.tone;
     const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-    const isChild = formData.relationship === 'kind' || ageNum < 18;
+    const isChild = (formData.relationship === 'kind' && (ageNum < 18 || ageNum === 999)) || (formData.relationship !== 'kind' && ageNum < 18);
     if (formData.tone === 'humorvoll' && isChild) {
       effectiveTone = 'wuerdevoll';
       if(window.mrTrack) window.mrTrack('toolStep', {tool: 'trauerrede', step: 'tone_guard_applied', reason: 'child_humorvoll'});
@@ -639,7 +643,15 @@ function TrauerredeGenerator() {
         : `Was ${formData.name} uns bedeutet hat: ${formData.message}`)
         : '',
       reflection: reflectionText,
-      quoteFavorite: formData.quote ? `Wer ${formData.name} kannte, kennt diesen Satz: „${formData.quote.trim()}". Den nehmen wir mit.` : '',
+      quoteFavorite: (() => {
+        // R-A 6 Fix: robuster Quote-Block — trim, leading/trailing Anführungszeichen abschneiden, finalen Punkt entfernen (sonst Doppelpunkt-Konflikt)
+        const raw = (formData.quote || '').trim();
+        if (!raw) return '';
+        let cleaned = raw.replace(/^[„""'»‹]+|[""""'«›]+$/g, '').trim();
+        cleaned = cleaned.replace(/[.!?…]+$/, '').trim();
+        if (!cleaned) return '';
+        return `Wer ${formData.name} kannte, kennt diesen Satz: „${cleaned}". Den nehmen wir mit.`;
+      })(),
       closing: closings[0],
       quotes: formData.selectedQuote ? QUOTES.find(q=>q.id===formData.selectedQuote)?.text : (formData.customQuote || '')
     });
@@ -650,22 +662,29 @@ function TrauerredeGenerator() {
   };
 
   const copyToClipboard = () => {
-    const fullText = [
-      speechData.opening,
-      speechData.character,
-      speechData.hobbies,
-      speechData.memory,
-      speechData.meaning,
-      speechData.quoteFavorite,
-      speechData.reflection,
-      speechData.quotes && `„${speechData.quotes}"`,
-      speechData.closing
-    ].filter(Boolean).join('\n\n');
+    // R-A 13 Fix R4: vor Copy contentEditable-Blur erzwingen, damit der letzte Edit in speechData landet (vorher droppte der letzte ungespeicherte Edit)
+    if (document.activeElement && document.activeElement.blur) {
+      document.activeElement.blur();
+    }
+    // setTimeout um React-State-Update nach blur durchzulassen
+    setTimeout(() => {
+      const fullText = [
+        speechData.opening,
+        speechData.character,
+        speechData.hobbies,
+        speechData.memory,
+        speechData.meaning,
+        speechData.quoteFavorite,
+        speechData.reflection,
+        speechData.quotes && `„${speechData.quotes}"`,
+        speechData.closing
+      ].filter(Boolean).join('\n\n');
 
-    navigator.clipboard.writeText(fullText).then(() => {
-      alert('Trauerrede in Zwischenablage kopiert!');
-      if(window.mrTrack) window.mrTrack('toolExport', {tool: 'trauerrede', type: 'copy'});
-    });
+      navigator.clipboard.writeText(fullText).then(() => {
+        alert('Trauerrede in Zwischenablage kopiert!');
+        if(window.mrTrack) window.mrTrack('toolExport', {tool: 'trauerrede', type: 'copy'});
+      });
+    }, 50);
   };
 
   const handlePrint = () => {
@@ -763,26 +782,7 @@ function TrauerredeGenerator() {
                 />
               </div>
 
-              <div className="form-group">
-                <label>Anrede in der Rede</label>
-                <div className="radio-group">
-                  {['Du', 'Sie'].map(option => (
-                    <label key={option} className="radio-option">
-                      <input
-                        type="radio"
-                        name="anrede"
-                        value={option}
-                        checked={formData.anrede === option}
-                        onChange={e => updateFormData('anrede', e.target.value)}
-                      />
-                      <span className="radio-label">
-                        <strong>{option}</strong>
-                        <span>{option === 'Du' ? 'Persönlich, vertraut' : 'Formell, respektvoll'}</span>
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
+              {/* R-A 11 Fix: Anrede-Feld entfernt — wurde erhoben, aber im Reden-Output gar nicht verwendet (Reviewer-Befund: "toter Input in YMYL = Vertrauensschaden") */}
 
               <div className="tip">
                 <strong>Tipp:</strong> Diese Informationen helfen uns, die Rede persönlich auf die verstorbene Person zuzuschneiden.
@@ -882,11 +882,11 @@ function TrauerredeGenerator() {
                 </div>
                 {(() => {
                   const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-                  const isChild = formData.relationship === 'kind' || ageNum < 18;
+                  const isChild = (formData.relationship === 'kind' && (ageNum < 18 || ageNum === 999)) || (formData.relationship !== 'kind' && ageNum < 18);
                   if (formData.tone === 'humorvoll' && isChild) {
                     return (
                       <div role="alert" aria-live="polite" style={{background:'#FEF4E8',border:'1px solid #F0D5A8',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
-                        <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Bei einer Trauerrede für ein verstorbenes Kind oder einen Jugendlichen wird der humorvolle Ton häufig als unpassend empfunden. Wir wandeln den Output sicherheitshalber auf „Persönlich & warm" um — du kannst die Variante natürlich nachträglich anpassen, aber überlege gut, ob heitere Anekdoten der Trauergemeinde guttun werden.
+                        <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Bei einer Trauerrede für ein verstorbenes Kind oder einen Jugendlichen wird der humorvolle Ton häufig als unpassend empfunden. Wir wandeln den Output sicherheitshalber auf „Würdevoll & klassisch" um — du kannst die Variante natürlich nachträglich anpassen, aber überlege gut, ob heitere Anekdoten der Trauergemeinde guttun werden.
                       </div>
                     );
                   }
@@ -1013,7 +1013,6 @@ function TrauerredeGenerator() {
                 <p><strong>Name:</strong> {formData.name}</p>
                 <p><strong>Beziehung:</strong> {RELATIONSHIPS.find(r=>r.value===formData.relationship)?.label}</p>
                 {formData.age && <p><strong>Alter:</strong> {formData.age} Jahre</p>}
-                <p><strong>Anrede:</strong> {formData.anrede}</p>
                 <p><strong>Ton:</strong> {TONES.find(t=>t.id===formData.tone)?.label}</p>
                 <p><strong>Länge:</strong> {LENGTHS.find(l=>l.id===formData.length)?.label}</p>
               </div>
@@ -1055,7 +1054,12 @@ function TrauerredeGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.
+          </div>
+
+          {/* R-A 13 Fix R2: Akut-Krisen-Pointer im Speech-Editor — sichtbar für jemanden der wenige Tage nach Verlust schreibt */}
+          <div role="region" aria-label="Hinweis zu akuter Trauerhilfe" style={{background:'#FFF8EF',border:'1px solid #E8E0D6',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'14px 18px',marginBottom:24,fontSize:13,lineHeight:1.6,color:'#5a4a2e'}}>
+            <strong style={{color:'#8b5a14'}}>Wenn dich die Trauer überfordert:</strong> Du musst diese Rede nicht jetzt schreiben. <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111, kostenlos, 24/7) oder <a href="https://www.bdbev.de/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>BDB-Trauerbegleitung</a> sind erreichbar — Reden vorbereiten kann warten, das Gespräch nicht.
           </div>
 
           {/* Opening */}
@@ -1064,17 +1068,22 @@ function TrauerredeGenerator() {
             <div className="section-hint">
               Der erste Eindruck zählt. Wähle eine Variante oder schreib deine eigene Ansprache.
             </div>
+            {(() => {
+              const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+              const isChildLocal = (formData.relationship === 'kind' && (ageNumLocal < 18 || ageNumLocal === 999)) || (formData.relationship !== 'kind' && ageNumLocal < 18);
+              const safeTone = (formData.tone === 'humorvoll' && isChildLocal) ? 'wuerdevoll' : formData.tone;
+              return (
             <div className="variants-group">
               <h4>Varianten:</h4>
               <div className="variant-buttons">
-                {getOpenings(formData.tone, formData.name, formData.relationship).map((_, idx) => (
+                {getOpenings(safeTone, formData.name, formData.relationship).map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
                       setOpeningVariant(idx);
                       setSpeechData(prev => ({
                         ...prev,
-                        opening: getOpenings(formData.tone, formData.name, formData.relationship)[idx]
+                        opening: getOpenings(safeTone, formData.name, formData.relationship)[idx]
                       }));
                     }}
                     className={openingVariant === idx ? 'selected' : ''}
@@ -1084,6 +1093,8 @@ function TrauerredeGenerator() {
                 ))}
               </div>
             </div>
+              );
+            })()}
             <div
               className="speech-content"
               contentEditable
@@ -1179,12 +1190,31 @@ function TrauerredeGenerator() {
             </div>
           )}
 
+          {/* R-A 12 Fix: Lieblingssatz/quoteFavorite jetzt im Screen-Preview sichtbar (vorher nur im Export — Reviewer R1 MUST-FIX "unsichtbarer Lieblingssatz im Export-Vortrag") */}
+          {speechData.quoteFavorite && (
+            <div className="speech-section">
+              <h3>Lieblingssatz der Person</h3>
+              <div className="section-hint">
+                Dein eingegebener Lieblingssatz wird hier als eigener Block in die Rede eingebettet — review und passe ihn an, falls nötig.
+              </div>
+              <div
+                className="speech-content"
+                contentEditable
+                onBlur={e => setSpeechData(prev => ({...prev, quoteFavorite: e.currentTarget.textContent}))}
+                suppressContentEditableWarning
+              >
+                {speechData.quoteFavorite}
+              </div>
+              <div className="char-count">{speechData.quoteFavorite.length} Zeichen</div>
+            </div>
+          )}
+
           {/* Reflection (nur bei Länge=lang) */}
           {speechData.reflection && (
             <div className="speech-section">
               <h3>Reflexion / Rückblick</h3>
               <div className="section-hint">
-                Eine ruhige Passage, die hilft, das Gesagte zu vertiefen. Bei der langen Variante (8–12 Min) wirkt sie als Brücke zum Schluss.
+                Eine ruhige Passage, die hilft, das Gesagte zu vertiefen. Bei der langen Variante (10–14 Min) wirkt sie als Brücke zum Schluss.
               </div>
               <div
                 className="speech-content"
@@ -1224,17 +1254,22 @@ function TrauerredeGenerator() {
             <div className="section-hint">
               Die letzten Worte sind oft die stärksten. Wähle eine Variante oder schreib deinen eigenen Abschied.
             </div>
+            {(() => {
+              const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+              const isChildLocal = (formData.relationship === 'kind' && (ageNumLocal < 18 || ageNumLocal === 999)) || (formData.relationship !== 'kind' && ageNumLocal < 18);
+              const safeTone = (formData.tone === 'humorvoll' && isChildLocal) ? 'wuerdevoll' : formData.tone;
+              return (
             <div className="variants-group">
               <h4>Varianten:</h4>
               <div className="variant-buttons">
-                {getClosings(formData.tone, formData.name, formData.religion).map((_, idx) => (
+                {getClosings(safeTone, formData.name, formData.religion).map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
                       setClosingVariant(idx);
                       setSpeechData(prev => ({
                         ...prev,
-                        closing: getClosings(formData.tone, formData.name, formData.religion)[idx]
+                        closing: getClosings(safeTone, formData.name, formData.religion)[idx]
                       }));
                     }}
                     className={closingVariant === idx ? 'selected' : ''}
@@ -1244,6 +1279,8 @@ function TrauerredeGenerator() {
                 ))}
               </div>
             </div>
+              );
+            })()}
             <div
               className="speech-content"
               contentEditable
@@ -1259,7 +1296,7 @@ function TrauerredeGenerator() {
             <strong>Sprechratschlag:</strong> Der Abschluss sollte ruhig und bedacht wirken. Nimm dir Zeit. Die letzte Satz darf in Stille hängenbleiben.
           </div>
 
-          {/* Word Count & Timing */}
+          {/* Word Count & Timing — R-A 12 Fix: quoteFavorite jetzt im Timing berücksichtigt (war divergent zum Export) */}
           {(() => {
             const fullText = [
               speechData.opening,
@@ -1267,6 +1304,7 @@ function TrauerredeGenerator() {
               speechData.hobbies,
               speechData.memory,
               speechData.meaning,
+              speechData.quoteFavorite,
               speechData.reflection,
               speechData.quotes,
               speechData.closing
@@ -1318,7 +1356,7 @@ ReactDOM.createRoot(document.getElementById('app')).render(<TrauerredeGenerator 
 
 
 <!-- PDF-Export via html2pdf.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<script src="/vendor/html2pdf.bundle.min.js" defer></script>
 <style>
   .pdf-export-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#FFFDF9;color:#7A6B5D;border:2px solid #7A6B5D;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;margin-left:8px;transition:background 0.2s}
   .pdf-export-btn:hover{background:#7A6B5D;color:#fff}
