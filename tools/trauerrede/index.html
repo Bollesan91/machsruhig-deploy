@@ -439,7 +439,7 @@ const RELIGIONS = [
 function getOpenings(tone, name, relationship) {
   const variants = {
     persoenlich: [
-      `Liebe Familie, liebe Freunde, liebe Trauergemeinde. Wir nehmen heute Abschied von ${name} — ${RELATIONSHIPS.find(r=>r.value===relationship)?.label.toLowerCase()}, einem Menschen, der unserem Leben Wärme gegeben hat.`,
+      `Liebe Familie, liebe Freunde, liebe Trauergemeinde. Wir nehmen heute Abschied von ${name} — ${RELATIONSHIPS.find(r=>r.value===relationship)?.label}, einem Menschen, der unserem Leben Wärme gegeben hat.`,
       `Liebe Trauergemeinde. Ich möchte ein paar Worte über ${name} sprechen, über einen Menschen, der mir sehr nahestand und dessen Abwesenheit ich tief spüre.`,
       `Ihr kennt ${name}. Ihr wisst, wie diese Person war. Ich möchte euch heute erzählen, was ${name} für mich bedeutet hat.`
     ],
@@ -467,7 +467,7 @@ function getClosings(tone, name, religion) {
   const variants = {
     persoenlich: [
       `${name}, du fehlst uns. Aber was du uns gegeben hast, das bleibt. Deine Liebe, deine Nähe, deine Art — das ist nicht weg. Das tragen wir mit uns.`,
-      `Liebe/r ${name}. Wir werden dich vermissen. Aber jeden Tag, wenn wir das tun, was du uns gelehrt hast, wenn wir so sind wie du — dann bist du bei uns.`,
+      `${name}. Wir werden dich vermissen. Aber jeden Tag, wenn wir das tun, was du uns gelehrt hast, wenn wir so sind wie du — dann bist du bei uns.`,
       `Danke, dass du da warst. Danke für alles. Wir werden dich nicht vergessen. Ruhe in Frieden.`
     ],
     wuerdevoll: [
@@ -580,7 +580,7 @@ function TrauerredeGenerator() {
     // Edge-Case-Guard: humorvoll bei Säugling/Kleinkind (Altersangabe in Form '0-3 Jahre' o.ä.) auf wuerdevoll umlenken
     let effectiveTone = formData.tone;
     const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-    const isChild = formData.relationship === 'kind' || ageNum < 18;
+    const isChild = (formData.relationship === 'kind' && (ageNum < 18 || ageNum === 999)) || (formData.relationship !== 'kind' && ageNum < 18);
     if (formData.tone === 'humorvoll' && isChild) {
       effectiveTone = 'wuerdevoll';
       if(window.mrTrack) window.mrTrack('toolStep', {tool: 'trauerrede', step: 'tone_guard_applied', reason: 'child_humorvoll'});
@@ -875,7 +875,7 @@ function TrauerredeGenerator() {
                 </div>
                 {(() => {
                   const ageNum = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-                  const isChild = formData.relationship === 'kind' || ageNum < 18;
+                  const isChild = (formData.relationship === 'kind' && (ageNum < 18 || ageNum === 999)) || (formData.relationship !== 'kind' && ageNum < 18);
                   if (formData.tone === 'humorvoll' && isChild) {
                     return (
                       <div role="alert" aria-live="polite" style={{background:'#FEF4E8',border:'1px solid #F0D5A8',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
@@ -1058,7 +1058,7 @@ function TrauerredeGenerator() {
             </div>
             {(() => {
               const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-              const isChildLocal = formData.relationship === 'kind' || ageNumLocal < 18;
+              const isChildLocal = (formData.relationship === 'kind' && (ageNumLocal < 18 || ageNumLocal === 999)) || (formData.relationship !== 'kind' && ageNumLocal < 18);
               const safeTone = (formData.tone === 'humorvoll' && isChildLocal) ? 'wuerdevoll' : formData.tone;
               return (
             <div className="variants-group">
@@ -1178,12 +1178,31 @@ function TrauerredeGenerator() {
             </div>
           )}
 
+          {/* R-A 12 Fix: Lieblingssatz/quoteFavorite jetzt im Screen-Preview sichtbar (vorher nur im Export — Reviewer R1 MUST-FIX "unsichtbarer Lieblingssatz im Export-Vortrag") */}
+          {speechData.quoteFavorite && (
+            <div className="speech-section">
+              <h3>Lieblingssatz der Person</h3>
+              <div className="section-hint">
+                Dein eingegebener Lieblingssatz wird hier als eigener Block in die Rede eingebettet — review und passe ihn an, falls nötig.
+              </div>
+              <div
+                className="speech-content"
+                contentEditable
+                onBlur={e => setSpeechData(prev => ({...prev, quoteFavorite: e.currentTarget.textContent}))}
+                suppressContentEditableWarning
+              >
+                {speechData.quoteFavorite}
+              </div>
+              <div className="char-count">{speechData.quoteFavorite.length} Zeichen</div>
+            </div>
+          )}
+
           {/* Reflection (nur bei Länge=lang) */}
           {speechData.reflection && (
             <div className="speech-section">
               <h3>Reflexion / Rückblick</h3>
               <div className="section-hint">
-                Eine ruhige Passage, die hilft, das Gesagte zu vertiefen. Bei der langen Variante (8–12 Min) wirkt sie als Brücke zum Schluss.
+                Eine ruhige Passage, die hilft, das Gesagte zu vertiefen. Bei der langen Variante (10–14 Min) wirkt sie als Brücke zum Schluss.
               </div>
               <div
                 className="speech-content"
@@ -1225,7 +1244,7 @@ function TrauerredeGenerator() {
             </div>
             {(() => {
               const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
-              const isChildLocal = formData.relationship === 'kind' || ageNumLocal < 18;
+              const isChildLocal = (formData.relationship === 'kind' && (ageNumLocal < 18 || ageNumLocal === 999)) || (formData.relationship !== 'kind' && ageNumLocal < 18);
               const safeTone = (formData.tone === 'humorvoll' && isChildLocal) ? 'wuerdevoll' : formData.tone;
               return (
             <div className="variants-group">
@@ -1265,7 +1284,7 @@ function TrauerredeGenerator() {
             <strong>Sprechratschlag:</strong> Der Abschluss sollte ruhig und bedacht wirken. Nimm dir Zeit. Die letzte Satz darf in Stille hängenbleiben.
           </div>
 
-          {/* Word Count & Timing */}
+          {/* Word Count & Timing — R-A 12 Fix: quoteFavorite jetzt im Timing berücksichtigt (war divergent zum Export) */}
           {(() => {
             const fullText = [
               speechData.opening,
@@ -1273,6 +1292,7 @@ function TrauerredeGenerator() {
               speechData.hobbies,
               speechData.memory,
               speechData.meaning,
+              speechData.quoteFavorite,
               speechData.reflection,
               speechData.quotes,
               speechData.closing
