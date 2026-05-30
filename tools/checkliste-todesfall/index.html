@@ -30,10 +30,10 @@
 }
 </script>
 
-<script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
+<script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
+<script defer src="/js/consent.js"></script>
 
-<script defer src="/js/tracking.js"></script>
+
 
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -112,7 +112,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     </header>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
-      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) werden nur geladen, wenn du im Cookie-Banner unten zustimmst — und erfassen dann nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
 
     <div style="margin-bottom:24px">
@@ -204,15 +204,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   var BUNDESLAENDER = [
     {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:6},
-    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:null,besonderheit:"Keine gesetzliche Höchstfrist für die Einäscherung."},
-    {id:"be",name:"Berlin",ueberfuehrung:36,mindest:48,maxErd:null,maxEinaescherung:null,besonderheit:"Berlin hat KEINE gesetzliche Höchstfrist für die Bestattung. Friedhofssatzungen können Soll-Regelungen vorsehen — Rücksprache mit dem zuständigen Friedhof empfohlen."},
+    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:null,maxEinaescherung:null,besonderheit:"BestV Bayern: keine starre Höchstfrist nach BestV festgelegt — typisch werden Erd-Bestattungen innerhalb 4–10 Tagen durchgeführt, im Einzelfall mit der zuständigen Behörde / Friedhofsverwaltung abgestimmt. Keine starre Höchstfrist für die Einäscherung.",quelle:"Bayerisches Bestattungsgesetz/BestV (nicht tagesaktuell gegen die aktuelle Fassung gegengeprüft — bei akutem Fristdruck Standesamt fragen)"},
+    {id:"be",name:"Berlin",ueberfuehrung:36,mindest:null,maxErd:null,maxEinaescherung:null,besonderheit:"Berlin: Die 48-Stunden-Wartefrist wurde mit Novelle des BestattG Berlin (2022) abgeschafft — keine starre Mindestfrist mehr; Bestattung kann auf Antrag früher erfolgen. Es gibt auch KEINE starre gesetzliche Höchstfrist; Friedhofssatzungen sehen Soll-Regelungen vor — Rücksprache mit Friedhof empfohlen.",quelle:"BestattG Berlin i.d.F. der Novelle 2022 (vgl. § 16 BestattG Berlin)"},
     {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
     {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7,besonderheit:"Asche darf unter Bedingungen an Angehörige herausgegeben werden."},
     {id:"hh",name:"Hamburg",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7},
     {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
     {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
     {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Fristverlängerung beim Ordnungsamt möglich."},
+    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:24,maxErd:10,maxEinaescherung:10,besonderheit:"BestG NRW: frühestens 24 h, spätestens 10 Tage. Fristverlängerung beim Ordnungsamt möglich.",quelle:"§§ 13, 16 BestG NRW i.V.m. § 1 BestG NRW (Stand 2026)"},
     {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10},
     {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
     {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
@@ -228,14 +228,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {id:"ausland",titel:"Todesfall im Ausland — oder Erbe/Erblasser im Ausland",text:"Wenn der Tod im Ausland eingetreten ist: Deutsche Botschaft/Konsulat kontaktieren — hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe Reiseversicherung mit Rückholklausel. Auch wichtig: Wenn Erbe oder Erblasser im Ausland leben, verlängert sich die Erbausschlagungsfrist von 6 Wochen auf 6 Monate (§ 1944 Abs. 3 BGB) — und ein Erbschein nach internationalem Recht kann nötig sein. Bei Auslandsbezug rechtzeitig Notar/Fachanwalt für internationales Erbrecht hinzuziehen."},
     {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt deines Wohnbezirks Kostenübernahme beantragen (§ 74 SGB XII). Der Antrag sollte VOR der Bestattung gestellt werden — sonst können nur die ortsüblichen Mindestkosten erstattet werden. Einfache Bestattungen werden in der Regel vollständig übernommen. Falls dir das Antragsverfahren überfordert: Caritas, Diakonie oder Sozialdienst der Kommune helfen kostenlos."},
     {id:"selbststaendig",titel:"Verstorbener war Selbstständig / Unternehmer",text:"Zusätzliche Pflichten: Krankenkasse + DRV + Berufsgenossenschaft informieren (nicht nur als Privatperson). Handelsregister-Eintrag prüfen (GmbH/UG bei Gesellschafter-Tod). Steuerberater einbinden — Bilanzstichtag verschoben, Erbschaftsteuer-Schonregeln bei Betriebsvermögen prüfbar. Aufträge/Kunden informieren oder durch Erben fortführen lassen."},
-    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Wichtige Entscheidungen (Wohnungsauflösung, Bestattungsart) müssen einstimmig getroffen werden. Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."}
+    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Wichtige Entscheidungen (Wohnungsauflösung, Bestattungsart) müssen einstimmig getroffen werden. Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."},
+    {id:"sternenkind",titel:"Sternenkind / Tot- oder Fehlgeburt",text:"Bei einer Tot- oder Fehlgeburt (sog. Sternenkind) gelten besondere Regeln: Ab 500g Körpergewicht ist die Bestattung Pflicht und ein Personenstandseintrag möglich; unter 500g gibt es ein Bestattungsrecht (Sammelbestattung in den Kliniken oder eigene Bestattung). Klinik-Sozialdienste begleiten den Prozess. Krisenbegleitung: Bundesverband Verwaiste Eltern (veid.de) und Sternenkinder-Initiativen vor Ort."},
+    {id:"unbekannte-angehoerige",titel:"Unbekannte oder zerstrittene Angehörige",text:"Wenn Angehörige nicht erreichbar sind oder die Familienkommunikation belastet ist: Das Standesamt klärt im Einzelfall, wer informationsberechtigt ist. Bei zerstrittenen Familien (z. B. nach Trennung) kann ein Vermittlungsverfahren über das Nachlassgericht helfen. Bestattungspflicht trifft im Zweifel die nächsten Angehörigen nach Bestattungsgesetz; ist niemand zu ermitteln, übernimmt die Gemeinde (Ordnungsbestattung)."}
   ];
 
   var PHASEN = [
     {id:"sofort",label:"Sofort",zeitraum:"Erste Stunden",color:"#c45e3a",aufgaben:[
-      {id:"arzt",titel:"Arzt rufen — Totenschein ausstellen lassen",desc:"Ein Arzt muss den Tod feststellen. Zu Hause: Hausarzt oder 116 117 (Bereitschaftsdienst). Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Personalausweis des Verstorbenen"],eskalation:"Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern."},
+      {id:"arzt",titel:"Arzt rufen — Totenschein ausstellen lassen",desc:"Erst prüfen: Ist der Tod sicher eingetreten? Wenn UNKLAR ob Atmung/Puls vorhanden, oder gerade erst zusammengebrochen → SOFORT 112 (Rettungsdienst) — Reanimation hat Vorrang. Erst wenn der Tod sicher festgestellt ist: Hausarzt oder 116 117 (Bereitschaftsdienst) für Totenschein. Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Personalausweis des Verstorbenen"],eskalation:"Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern. Bei Reanimations-Möglichkeit (Atmung/Puls unklar): 112, nicht 116 117."},
       {id:"angehoerige",titel:"Engste Angehörige informieren",desc:"Informiere die engste Familie. Das muss nicht alles auf einmal passieren. Du musst das nicht allein machen — bitte jemanden, dir zu helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]},
       {id:"bestatter",titel:"Bestatter beauftragen (Überführung)",desc:"Ein Bestatter übernimmt die Überführung und kümmert sich um erste Formalitäten.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Totenschein"],bundeslandFeld:"ueberfuehrung",bundeslandText:"In {bl} muss die Überführung innerhalb von {frist} Stunden erfolgen.",isBestatterCTA:true},
+      {id:"bestatterInst",titel:"Bestatter für Trauerfeier und Bestattung beauftragen",desc:"Auch wenn Krankenhaus oder Pflegeheim die ersten Schritte übernehmen: Du musst selbst einen Bestatter beauftragen, der Trauerfeier, Bestattung und viele Behördengänge koordiniert. Empfehlungen einholen, 2-3 Angebote vergleichen, dann zügig entscheiden — Wartezeiten beim Kühlraum verzögern die Trauerfeier.",szenarien:["krankenhaus","pflegeheim"],pflicht:true,docs:["Totenschein","später Sterbeurkunde"],isBestatterCTA:true},
       {id:"dokumente",titel:"Wichtige Dokumente zusammensuchen",desc:"Personalausweis, Geburtsurkunde, Heiratsurkunde, Bestattungsverfügung, Versicherungsunterlagen, Testament — nicht alles muss sofort da sein.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Personalausweis/Reisepass","Geburtsurkunde","Heiratsurkunde","Versicherungsunterlagen"]},
       {id:"wohnung",titel:"Wohnung sichern (Heizung, Tiere, Post)",desc:"Wenn der Verstorbene allein gelebt hat: Heizung, Haustiere, Postkasten. Schlüssel sichern.",szenarien:["zuhause","krankenhaus","pflegeheim"],pflicht:false,docs:[]}
     ]},
@@ -257,7 +260,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {id:"ersterMonat",label:"Monat 1",zeitraum:"Erbe, Wohnung, Steuern",color:"#5a8a5a",aufgaben:[
       {id:"erbausschlagung",titel:"Erbe annehmen oder ausschlagen — Frist § 1944 BGB",desc:"WICHTIG: 6 Wochen ab Kenntnis vom Erbfall (nicht ab Todestag!). Bei Auslandsbezug (Erbe oder Erblasser im Ausland) gilt 6 Monate. Erklärung beim Nachlassgericht — notariell oder zur Niederschrift. Wer die Frist verstreichen lässt, hat das Erbe angenommen — inklusive aller Schulden.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Personalausweis","Sterbeurkunde"],hinweis:"Bei Verdacht auf Überschuldung oder unklarer Vermögenslage: dringend Notar/Anwalt für Erbrecht konsultieren, bevor die Frist läuft. Eine versehentliche Annahme ist nur unter engen Voraussetzungen anfechtbar."},
       {id:"testament",titel:"Testament eröffnen / Erbschein beantragen",desc:"Testament beim Nachlassgericht abgeben. Ohne Testament gilt gesetzliche Erbfolge. Erbschein kostet 75–1.000 €+ und dauert 4–8 Wochen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Testament (Original)","Sterbeurkunde"]},
-      {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod (§ 580 BGB), dann 3-monatige Kündigungsfrist (§ 580a Abs. 4 BGB). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
+      {id:"wohnungM",titel:"Mietvertrag kündigen / Wohnung auflösen",desc:"Sonderkündigungsrecht innerhalb 1 Monat ab Kenntnis vom Tod (§ 580 BGB), gesetzliche Kündigungsfrist 3 Monate (§ 573d Abs. 2 i.V.m. § 573c Abs. 1 BGB für Wohnraummiete). Frühzeitig mit Räumen beginnen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Mietvertrag"]},
       {id:"vermieter",titel:"Vermieter informieren",desc:"Bei gemeinsamer Wohnung geht der Mietvertrag auf den überlebenden Mieter über.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde"]},
       {id:"finanzamt",titel:"Finanzamt informieren",desc:"Letzte Einkommensteuererklärung für das Todesjahr: regulär 31. Juli des Folgejahres (§ 149 AO), mit Steuerberater bis Ende Februar des übernächsten Jahres. Erbschaftsteuererklärung: 3 Monate nach Kenntnis vom Erbfall beim Finanzamt anzeigen (§ 30 ErbStG) — danach wird ggf. eine Erklärung angefordert.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:true,docs:["Sterbeurkunde","Steuer-ID"],hinweis:"Bei Betriebsvermögen oder Beteiligungen sehr aufpassen — § 13a/b ErbStG bieten Verschonungsregeln, die fristgebunden sind. Steuerberater einbinden."},
       {id:"digital",titel:"Digitalen Nachlass regeln",desc:"E-Mail, Social Media, Online-Banking, Cloud, Abos. Viele Plattformen bieten Verfahren für den Todesfall.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Sterbeurkunde","Zugangsdaten"]},
@@ -266,11 +269,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   ];
 
   var FAQ = [
-    {q:"Was muss ich als erstes tun, wenn jemand stirbt?",a:"Zuerst muss ein Arzt den Tod feststellen und einen Totenschein ausstellen. Zu Hause rufst du den Hausarzt oder den ärztlichen Bereitschaftsdienst (116 117). Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."},
+    {q:"Was muss ich als erstes tun, wenn jemand stirbt?",a:"Zuerst Tod sicher feststellen: Wenn UNKLAR ob Atmung/Puls vorhanden, oder gerade zusammengebrochen → SOFORT 112 (Rettungsdienst), weil Reanimation lebensrettend sein kann. Erst wenn der Tod sicher festgestellt ist, ruft ein Arzt den Totenschein aus. Zu Hause: Hausarzt oder ärztlicher Bereitschaftsdienst 116 117. Im Krankenhaus oder Pflegeheim übernimmt das die Einrichtung."},
     {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden (Standardwert; einige Bundesländer und Einzelfälle lassen kürzere Fristen auf Antrag zu), spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die für dein Bundesland modellierten Werte — verbindlich sind die jeweiligen Landesbestattungsgesetze."},
     {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
     {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
-    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben."},
+    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben."},
     {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
   ];
 
@@ -306,10 +309,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if (!bl) return;
     var html = '<strong>' + esc(bl.name) + ': </strong>';
     html += 'Überführung innerhalb von ' + bl.ueberfuehrung + 'h · ';
-    html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine gesetzl. Höchstfrist') + ' · ';
-    html += 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)';
+    html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine starre gesetzl. Höchstfrist (Friedhofssatzung beachten)') + ' · ';
+    html += (bl.mindest != null ? 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)' : 'Keine starre Mindestfrist (siehe Hinweis)');
     if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
-    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)">Quellen: Landesbestattungsgesetze (Stand Mai 2026). In besonderen Fällen können die zuständigen Behörden kürzere oder längere Fristen zulassen. Im Zweifel: Rücksprache mit Bestatter oder Standesamt.</div>';
+    if (bl.quelle) html += '<div style="margin-top:4px;font-size:11.5px;color:var(--mr-text-muted)"><strong>Quelle:</strong> ' + esc(bl.quelle) + '</div>';
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)"><strong>Wichtig:</strong> Die hier dargestellten Werte sind unser Modell der jeweiligen Landesbestattungsgesetze (Stand Mai 2026, nicht alle 16 Bundesländer wurden tagesaktuell gegen ihre BestG-Fassung gegengeprüft) — verbindlich ist immer das Gesetz selbst. Auch in Bundesländern mit gesetzlicher Höchstfrist kann die Friedhofssatzung der Gemeinde abweichende (oft kürzere) Regelungen vorsehen. Die Tage-Angaben sind Kalendertage (Werktage-Bemessung gilt vereinzelt für einzelne Mindestfristen — bei Wochenend-/Feiertags-Lage kann sich der praktische Fristablauf verschieben). Im Zweifel: Rücksprache mit Bestatter oder Standesamt — dort wird die Anwendung im Einzelfall geklärt.</div>';
     $('#cl-summary-box').innerHTML = html;
     $('#cl-summary').style.display = 'block';
   }
@@ -393,6 +397,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         } else if (t.bundeslandFeld && bl[t.bundeslandFeld] === null) {
           blHint = 'In ' + bl.name + ' gibt es keine gesetzliche Höchstfrist — Rücksprache mit dem Friedhof empfohlen.';
         }
+        // R-A 15 Fix: BL-Hinweis-Farbe nur dann Urgent-Rot wenn quelle tagesaktuell gegengeprüft (vorher pauschal Rot für 12 ungeprüfte BL = überzogene Alarmierung)
+        var blHintVerified = !!bl.quelle;
+        var blHintColor = blHintVerified ? 'var(--mr-urgent)' : 'var(--mr-warm)';
+        // Werktage-Hinweis explizit in der Fristenzeile (vorher nur Klein-Disclaimer im Summary)
+        if (blHint && t.bundeslandFeld && t.bundeslandFeld.startsWith('max')) {
+          blHint += ' Hinweis: Tage als Kalendertage modelliert — bei Wochenend-/Feiertagslage kann der praktische Ablauf abweichen.';
+          if (!blHintVerified) blHint += ' (Modell, nicht tagesaktuell BestG-gegengeprüft.)';
+        }
         h += '<div class="task-item' + (checked?' checked':'') + '" data-id="' + esc(t.id) + '" style="background:var(--mr-bg-card);border:1px solid ' + (checked?'var(--mr-success)':'var(--mr-border)') + ';border-radius:var(--mr-radius);padding:16px 20px;margin-bottom:10px;opacity:' + (checked?'0.7':'1') + ';transition:border-color 0.2s,opacity 0.2s">';
         h += '<label style="display:flex;gap:12px;align-items:flex-start;cursor:pointer">';
         h += '<input type="checkbox" class="task-cb" data-task="' + esc(t.id) + '"' + (checked?' checked':'') + ' aria-label="' + esc(t.titel) + (t.pflicht?' (Pflicht)':'') + '" style="width:20px;height:20px;margin-top:2px;accent-color:var(--mr-success);cursor:pointer;flex-shrink:0">';
@@ -402,7 +414,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         if (t.pflicht) h += '<span style="font-size:11px;background:var(--mr-urgent);color:#fff;padding:1px 8px;border-radius:99px;font-weight:600">Pflicht</span>';
         h += '</div>';
         h += '<p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-top:4px">' + esc(t.desc) + '</p>';
-        if (blHint) h += '<div style="font-size:12px;color:var(--mr-urgent);margin-top:6px;font-weight:500">' + esc(blHint) + '</div>';
+        if (blHint) h += '<div style="font-size:12px;color:' + blHintColor + ';margin-top:6px;font-weight:500">' + esc(blHint) + '</div>';
         if (t.eskalation) h += '<div style="font-size:12px;color:var(--mr-urgent);background:#fff5f2;border:1px solid #f0d0c4;border-radius:6px;padding:8px 12px;margin-top:8px">' + esc(t.eskalation) + '</div>';
         if (t.isBestatterCTA && !checked) h += '<a href="/bestatter" style="display:inline-block;font-size:13px;color:var(--mr-primary);margin-top:8px;text-decoration:underline" data-track="cta">Bestatter in deiner Nähe finden</a>';
         if (t.toolLink && !checked) h += '<a href="' + esc(t.toolLink.href) + '" style="display:inline-block;font-size:13px;color:var(--mr-primary);margin-top:8px;text-decoration:underline">' + esc(t.toolLink.text) + '</a>';
@@ -482,9 +494,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     h += '<div style="background:#f4f0eb;border-radius:var(--mr-radius);padding:24px 28px;margin:40px 0">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:16px;font-weight:700;margin-bottom:12px">Quellen</h2>';
     h += '<ul style="list-style:none">';
-    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: April 2026)',
+    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: Mai 2026)',
      'Personenstandsgesetz (PStG) §28 — Anzeigepflicht beim Standesamt',
-     'Bürgerliches Gesetzbuch (BGB) § 580 + § 580a Abs. 4 — Sonderkündigungsrecht bei Tod (3-Monats-Frist)',
+     'Bürgerliches Gesetzbuch (BGB) § 580 (Sonderkündigung) + § 573d Abs. 2 i.V.m. § 573c Abs. 1 (3-Monats-Frist bei Wohnraum)',
      'Sozialgesetzbuch XII §74 — Bestattungskosten bei Bedürftigkeit'].forEach(function(q){
       h += '<li style="font-size:13px;color:var(--mr-text-muted);padding:4px 0 4px 16px;position:relative"><span style="position:absolute;left:0;color:var(--mr-warm)">→</span>' + esc(q) + '</li>';
     });

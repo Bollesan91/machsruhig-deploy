@@ -16,11 +16,11 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/danksagung/">
 
-<!-- Plausible Analytics -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
+<!-- Analytics-Shims (echter Loader: /js/consent.js → Umami + Ahrefs nach Opt-In) -->
+<script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
+<script defer src="/js/consent.js"></script>
 
-<script defer src="/js/tracking.js"></script>
+
 
 <script type="application/ld+json">
 {
@@ -86,9 +86,10 @@
 }
 </script>
 
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- R-A 11 Fix: React + ReactDOM + Babel-Standalone self-hosted unter /vendor/ — keine Drittanbieter-IP-Übertragung vor Consent mehr (vorher 3x unpkg.com) -->
+<script src="/vendor/react.production.min.js"></script>
+<script src="/vendor/react-dom.production.min.js"></script>
+<script src="/vendor/babel.min.js"></script>
 
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -323,13 +324,17 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
 
 @media print{
-  .no-print,.mr-nav,.mr-footer,.wizard-buttons,.export-controls,.btn-group,.btn-secondary,.faq-section{display:none!important}
+  /* R-A 15 Fix: Print dumpt nicht mehr alle 3 Varianten + Privacy-Box. Nur die empfohlene Variante wird gedruckt. */
+  .no-print,.mr-nav,.mr-footer,.wizard-buttons,.export-controls,.btn-group,.btn-secondary,.faq-section,.privacy-notice,.info-box,.tip{display:none!important}
   body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.6}
   .mr-content{max-width:100%;padding:0}
   .wizard-container{border:none;background:#fff;padding:0}
-  .text-section{page-break-inside:avoid;margin-bottom:16px}
+  /* Nur die als "empfohlen" markierte Section wird gedruckt — Fallback: erste sichtbare Section */
+  .text-section{display:none}
+  .text-section[data-print-this="true"]{display:block;page-break-inside:avoid;margin-bottom:16px}
+  body.print-all .text-section{display:block;page-break-inside:avoid;margin-bottom:16px}
   .text-output{border:none;background:#fff;padding:0}
-  .tip{background:#f5f5f5;border:1px solid #ccc}
+  .section-hint{font-style:italic;color:#666}
 }
 </style>
 </head>
@@ -392,14 +397,15 @@ const {useState, useCallback} = React;
 
 // Relationship options
 const RELATIONSHIPS = [
-  {value:'mutter',label:'Mutter',possessive:'meiner Mutter',family:'Die Familie'},
-  {value:'vater',label:'Vater',possessive:'meinem Vater',family:'Die Familie'},
-  {value:'grossmutter',label:'Großmutter / Oma',possessive:'meiner Großmutter',family:'Die Familie'},
-  {value:'grossvater',label:'Großvater / Opa',possessive:'meinem Großvater',family:'Die Familie'},
-  {value:'partner',label:'Partner:in',possessive:'meinem geliebten Menschen',family:'In Liebe'},
-  {value:'kind',label:'Kind',possessive:'unserem geliebten Kind',family:'In tiefer Trauer — die Eltern'},
-  {value:'schwester',label:'Schwester',possessive:'meiner Schwester',family:'In Verbundenheit — die Geschwister'},
-  {value:'bruder',label:'Bruder',possessive:'meinem Bruder',family:'In Verbundenheit — die Geschwister'},
+  // R-A 7 Fix: Possessive auf PLURAL ("unserer/unserem") für Familien-Beziehungen — passt zu Plural-Signatur "Die Familie" + Plural-Anrede "Liebe Freunde, liebe Familie"
+  {value:'mutter',label:'Mutter',possessive:'unserer Mutter',family:'Die Familie'},
+  {value:'vater',label:'Vater',possessive:'unserem Vater',family:'Die Familie'},
+  {value:'grossmutter',label:'Großmutter / Oma',possessive:'unserer Großmutter',family:'Die Familie'},
+  {value:'grossvater',label:'Großvater / Opa',possessive:'unserem Großvater',family:'Die Familie'},
+  {value:'partner',label:'Partner:in',possessive:'unserem geliebten Menschen',family:'In Liebe'},
+  {value:'kind',label:'Kind',possessive:'unserem geliebten Kind',family:'In tiefer Trauer'},
+  {value:'schwester',label:'Schwester',possessive:'unserer Schwester',family:'In Verbundenheit — die Geschwister'},
+  {value:'bruder',label:'Bruder',possessive:'unserem Bruder',family:'In Verbundenheit — die Geschwister'},
   {value:'freund',label:'Freund:in',possessive:'einem besonderen Menschen',family:'In Dankbarkeit'},
   {value:'angehoerige',label:'Andere:r Angehörige:r',possessive:'unserem geliebten Menschen',family:'In Dankbarkeit'},
 ];
@@ -414,7 +420,8 @@ const FORMATS = [
 
 // Generate the three text variants
 function generateTexts(data) {
-  const name = data.name || '[Name]';
+  // R-A 9 Fix: name trimmen + normalisieren (Doppelt-Spaces, führende/abschließende Whitespace) — Reviewer-Befund "von unserer Mutter  Anna" verhindern
+  const name = ((data.name || '').trim().replace(/\s+/g, ' ')) || '[Name]';
   const rel = RELATIONSHIPS.find(r => r.value === data.relationship);
   const possessive = rel ? rel.possessive : 'unserem/unserer Verstorbenen';
   const family = rel ? rel.family : 'Die Angehörigen';
@@ -493,16 +500,59 @@ function DanksagungGenerator() {
   const copyText = useCallback((variant) => {
     const text = texts[variant];
     if (!text) return;
-    navigator.clipboard.writeText(text).then(() => {
+    const onSuccess = () => {
       setCopyFeedback(prev => ({...prev, [variant]: true}));
       setTimeout(() => setCopyFeedback(prev => ({...prev, [variant]: false})), 2000);
       if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'copy', variant});
-    });
+    };
+    // Fallback für In-App-Webviews (WhatsApp/Instagram) wo navigator.clipboard fehlt oder blockiert
+    const fallback = () => {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (ok) onSuccess();
+        else window.prompt('Zum Kopieren markieren und Strg+C drücken:', text);
+      } catch(_) {
+        window.prompt('Zum Kopieren markieren und Strg+C drücken:', text);
+      }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onSuccess).catch(fallback);
+    } else {
+      fallback();
+    }
   }, [texts]);
 
-  const handlePrint = () => {
-    if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'print'});
+  // Format → empfohlene Variante (R-A 7 Korrektur: trauerkarte ist "an den Bekanntenkreis" → eher formal als personal)
+  const FORMAT_RECOMMENDS = {
+    'trauerkarte': 'formal',
+    'zeitungsanzeige': 'formal',
+    'brief': 'personal',
+    'digital': 'short',
+  };
+  const recommendedVariant = FORMAT_RECOMMENDS[formData.format] || null;
+
+  const handlePrint = (variant) => {
+    // R-A 15 Fix: Print druckt nur die gewählte Einzel-Variante (vorher dumpt es alle 3 + Privacy-Box)
+    if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'print', variant: variant || 'all'});
+    // Setze data-print-this auf die gewählte Section, oder body.print-all wenn nichts spezifiziert
+    document.querySelectorAll('.text-section').forEach(s => s.removeAttribute('data-print-this'));
+    if (variant) {
+      const target = document.querySelector(`.text-section[data-variant="${variant}"]`);
+      if (target) target.setAttribute('data-print-this', 'true');
+      document.body.classList.remove('print-all');
+    } else {
+      document.body.classList.add('print-all');
+    }
     window.print();
+    // Reset nach Print-Dialog
+    setTimeout(() => { document.body.classList.remove('print-all'); document.querySelectorAll('.text-section').forEach(s => s.removeAttribute('data-print-this')); }, 1000);
   };
 
   const reset = () => {
@@ -580,7 +630,7 @@ function DanksagungGenerator() {
               </div>
 
               <div className="tip">
-                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format dient nur deiner Orientierung; alle drei Varianten sind editierbar, du kannst die für dein gewähltes Medium passende auswählen.
+                <strong>Tipp:</strong> Du bekommst in jedem Fall drei Textvarianten — formal, persönlich und kurz. Das gewählte Format dient nur deiner Orientierung; alle drei Varianten sind editierbar, du kannst die für dein gewähltes Medium passende auswählen.<br><br><strong>Vorlagen-Charakter:</strong> Dies sind Textvorlagen, keine persönliche Danksagung. Lies sie laut vor und verändere, was sich nicht nach dir anhört — Empfänger spüren, ob ein Text aus dem Herzen kommt oder generisch ist. Die Vorlage ist nur der Startpunkt.
               </div>
             </div>
           )}
@@ -606,17 +656,7 @@ function DanksagungGenerator() {
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="date">Datum der Beerdigung oder des Todes (optional)</label>
-                <input
-                  id="date"
-                  type="text"
-                  value={formData.date}
-                  onChange={e => updateFormData('date', e.target.value)}
-                  placeholder="z.B. 15. März 2026"
-                />
-                <div className="hint">Wird nicht in den Text eingefügt, hilft aber bei der Einordnung.</div>
-              </div>
+              {/* R-A 8 Fix: Datumsfeld entfernt — wurde abgefragt, aber nirgends verwendet (sinnlose Friktion) */}
 
               <div className="form-group">
                 <label htmlFor="relationship">Deine Beziehung zur verstorbenen Person</label>
@@ -635,9 +675,10 @@ function DanksagungGenerator() {
                     <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Wenn dein Kind verstorben ist — bitte spüre hinein, ob ein vorgefertigter Text das Richtige für deine Danksagung ist. Manche Eltern schreiben lieber wenige, ganz eigene Worte. Falls dir die Worte gerade fehlen, gibt es Begleitung: <a href="https://www.veid.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>VEID — Bundesverband Verwaiste Eltern und trauernde Geschwister</a>.
                   </div>
                 )}
-                {(formData.relationship === 'partner' || formData.relationship === 'schwester' || formData.relationship === 'bruder' || formData.relationship === 'freund') && (
+                {formData.relationship && formData.relationship !== 'kind' && (
+                  // R-A 7 Fix: Krisen-Hinweis bei ALLEN Beziehungen (vorher nur partner/schwester/bruder/freund — Eltern/Großeltern blieben ungeschützt bei Suizid/plötzlichem Tod)
                   <div style={{background:'#FAFAFA',border:'1px solid #E8E0D6',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:13,lineHeight:1.5,color:'#5a4f43'}}>
-                    <strong>Hinweis bei plötzlichem oder belastendem Verlust:</strong> Wenn die Todesumstände schwer zu fassen sind (plötzlicher Tod, Suizid, Krankheit mit kurzer Vorlaufzeit), kann ein Schreibassistent sich vorgreifend anfühlen. Lass dir Zeit. Begleitung durch <a href="https://www.aeternitas.de/inhalt/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Aeternitas-Trauerbegleitung</a> oder <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111) kann helfen, wenn du nicht weißt, womit du anfangen sollst.
+                    <strong>Hinweis bei plötzlichem oder belastendem Verlust:</strong> Wenn die Todesumstände schwer zu fassen sind (plötzlicher Tod, Suizid, Krankheit mit kurzer Vorlaufzeit), kann ein Schreibassistent sich vorgreifend anfühlen. Lass dir Zeit. Begleitung durch <a href="https://www.aeternitas.de/inhalt/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Aeternitas-Trauerbegleitung</a> oder <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (<a href="tel:08001110111" style={{color:'#7A6B5D',fontWeight:600}}>0800 111 0 111</a>, antippen zum Anrufen) kann helfen, wenn du nicht weißt, womit du anfangen sollst.
                   </div>
                 )}
               </div>
@@ -687,12 +728,12 @@ function DanksagungGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Beziehung, Trauerfeier-Text) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.<br><br><strong style="color:var(--mr-text)">Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Beziehung, Trauerfeier-Text) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.<br><br><strong style="color:var(--mr-text)">Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
           </div>
 
           {/* Formal variant */}
-          <div className="text-section">
-            <h3>Formelle Variante</h3>
+          <div className="text-section" data-variant="formal" style={recommendedVariant === 'formal' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
+            <h3>Formelle Variante {recommendedVariant === 'formal' && <span style={{fontSize:13,fontWeight:600,color:'var(--mr-primary)',marginLeft:8}}>★ empfohlen für dein Format</span>}</h3>
             <div className="section-hint">
               Passend für Zeitungsanzeigen, gedruckte Karten oder offizielle Danksagungen.
             </div>
@@ -711,8 +752,8 @@ function DanksagungGenerator() {
           </div>
 
           {/* Personal variant */}
-          <div className="text-section">
-            <h3>Persönliche Variante</h3>
+          <div className="text-section" data-variant="personal" style={recommendedVariant === 'personal' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
+            <h3>Persönliche Variante {recommendedVariant === 'personal' && <span style={{fontSize:13,fontWeight:600,color:'var(--mr-primary)',marginLeft:8}}>★ empfohlen für dein Format</span>}</h3>
             <div className="section-hint">
               Für Briefe, Karten an enge Freunde oder persönliche Nachrichten.
             </div>
@@ -731,8 +772,8 @@ function DanksagungGenerator() {
           </div>
 
           {/* Short variant */}
-          <div className="text-section">
-            <h3>Kurze Variante</h3>
+          <div className="text-section" data-variant="short" style={recommendedVariant === 'short' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
+            <h3>Kurze Variante {recommendedVariant === 'short' && <span style={{fontSize:13,fontWeight:600,color:'var(--mr-primary)',marginLeft:8}}>★ empfohlen für dein Format</span>}</h3>
             <div className="section-hint">
               Für WhatsApp, E-Mail oder eine kurze Nachricht an den engeren Kreis.
             </div>
@@ -750,14 +791,17 @@ function DanksagungGenerator() {
             </div>
           </div>
 
-          {/* Export Controls */}
+          {/* Export Controls — R-A 15 Fix: Print pro Variant, nicht alle drei zusammen */}
           <div className="export-controls">
-            <button className="btn btn-primary" onClick={handlePrint}>
-              Drucken / Als PDF speichern
-            </button>
-            <button className="btn btn-secondary" onClick={reset}>
-              Noch einmal anfangen
-            </button>
+            <div style={{display:'flex',gap:8,flexWrap:'wrap',marginBottom:8}}>
+              <button className="btn btn-primary" onClick={() => handlePrint('formal')}>Formelle drucken</button>
+              <button className="btn btn-primary" onClick={() => handlePrint('personal')}>Persönliche drucken</button>
+              <button className="btn btn-primary" onClick={() => handlePrint('short')}>Kurze drucken</button>
+            </div>
+            <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+              <button className="btn btn-secondary" onClick={() => handlePrint(null)} style={{fontSize:13}}>Alle 3 zusammen drucken</button>
+              <button className="btn btn-secondary" onClick={reset}>Noch einmal anfangen</button>
+            </div>
           </div>
 
           <div className="info-box">

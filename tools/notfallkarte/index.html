@@ -16,10 +16,10 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/notfallkarte/">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Notfallkarte erstellen","description":"Kostenlose Notfallkarte zum Ausdrucken: Notfallkontakte, Vorerkrankungen, Medikamente, Dokument-Standorte. In 2 Minuten erstellt, im Portemonnaie immer dabei.","url":"https://machsruhig.de/tools/notfallkarte/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Vorsorge","item":"https://machsruhig.de/vorsorge"},{"@type":"ListItem","position":3,"name":"Notfallkarte","item":"https://machsruhig.de/tools/notfallkarte"}]}]}</script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
+<script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
+<script defer src="/js/consent.js"></script>
 
-<script defer src="/js/tracking.js"></script>
+
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -117,7 +117,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   <div class="no-print" role="region" aria-label="Notfallhilfe und offizielle Dokumente" style="background:#FFF8EF;border:1px solid #E8E0D6;border-left:4px solid #C8862E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">
     <strong style="color:var(--mr-text)">Im Notfall: immer 112 wählen.</strong>
-    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Diese Karte ist eine ergänzende Orientierung für Ersthelfer und Rettungsdienst — sie ersetzt <strong>keine</strong> offiziellen Dokumente. Der gesetzliche Akut-Datenträger in Deutschland ist der <strong>Notfalldatensatz auf der elektronischen Gesundheitskarte (eGK/NFDM)</strong> — den kann dir dein Hausarzt einrichten (mehr Infos: <a href="https://www.gematik.de/anwendungen/nfdm" rel="noopener" target="_blank" style="color:var(--mr-primary)">gematik.de/nfdm</a>). Patientenverfügung, Vorsorgevollmacht und Organspendeausweis sind eigenständige Dokumente und nicht durch diese Karte ersetzt — die Karte zeigt nur, ob sie existieren und wo sie liegen.</p>
+    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Diese Karte ist eine ergänzende Orientierung für Ersthelfer und Rettungsdienst — sie ersetzt <strong>keine</strong> offiziellen Dokumente. Eine offizielle, ärztlich gepflegte Notfall-Datenquelle in Deutschland ist der <strong>Notfalldatensatz auf der elektronischen Gesundheitskarte (NFDM/eGK)</strong> — eine freiwillige Servicefunktion, die dein Hausarzt anlegen und aktualisieren kann (mehr Infos: <a href="https://www.gematik.de/anwendungen/notfalldaten" rel="noopener" target="_blank" style="color:var(--mr-primary)">gematik.de/notfalldaten</a>). Ab voraussichtlich Ende 2026 zieht der Notfalldatensatz in die elektronische Patientenakte (ePA) als „Patientenkurzakte" um. Patientenverfügung, Vorsorgevollmacht und Organspendeausweis sind eigenständige Dokumente und nicht durch diese Karte ersetzt — die Karte zeigt nur, ob sie existieren und wo sie liegen.</p>
     <p style="margin:8px 0 0;color:var(--mr-text-muted);font-size:13px"><strong>Hinweis zur Blutgruppe:</strong> Im Akutfall transfundieren Ärzt:innen nicht auf Basis selbst angegebener Blutgruppen — sie führen einen Schnelltest durch. Eine korrekte Eintragung hier kann aber Diagnostik und Triage beschleunigen.</p>
   </div>
 
@@ -140,7 +140,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <div class="nk-field">
       <label for="f-geburtsdatum">Geburtsdatum</label>
-      <input type="date" id="f-geburtsdatum" name="geburtsdatum">
+      <input type="date" id="f-geburtsdatum" name="geburtsdatum" max="2026-12-31">
+      <script>document.getElementById('f-geburtsdatum').max = new Date().toISOString().slice(0,10);</script>
     </div>
 
     <div class="nk-field">
@@ -174,7 +175,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <div class="nk-field">
       <label for="f-vorerkrankungen">Vorerkrankungen<span class="nk-field-optional">(optional)</span></label>
       <textarea id="f-vorerkrankungen" name="vorerkrankungen" rows="2" maxlength="100" data-nk-counter="1" placeholder="Relevante Vorerkrankungen eintragen"></textarea>
-      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, Herzschrittmacher · <span class="nk-counter" data-for="f-vorerkrankungen">0/100</span></div>
+      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, COPD · <span class="nk-counter" data-for="f-vorerkrankungen">0/100</span></div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-antikoagulation">Blutverdünner / Antikoagulation<span class="nk-field-optional">(optional, aber im Akutfall sehr wichtig)</span></label>
+      <input type="text" id="f-antikoagulation" name="antikoagulation" maxlength="80" data-nk-counter="1" placeholder="z. B. Marcumar, Eliquis, Xarelto, Pradaxa">
+      <div class="nk-hint">Diese Info hilft Rettungsdiensten kritische Entscheidungen bei Blutungen oder Operationen zu treffen · <span class="nk-counter" data-for="f-antikoagulation">0/80</span></div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-implantate">Implantate / medizinische Geräte<span class="nk-field-optional">(optional)</span></label>
+      <input type="text" id="f-implantate" name="implantate" maxlength="80" data-nk-counter="1" placeholder="z. B. Herzschrittmacher, ICD, Insulinpumpe, Hüft-TEP">
+      <div class="nk-hint">Wichtig für MRT-Sicherheit, Defibrillation, Reanimationsentscheidung · <span class="nk-counter" data-for="f-implantate">0/80</span></div>
     </div>
 
     <div class="nk-field">
@@ -203,19 +216,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px">Notfallkontakt 1</h3>
     <div class="nk-field-row">
       <div class="nk-field"><label for="f-kontakt1Name">Name</label><input type="text" id="f-kontakt1Name" name="kontakt1Name" maxlength="50" placeholder="Name des Kontakts" required></div>
-      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 0171 1234567" required></div>
+      <div class="nk-field"><label for="f-kontakt1Tel">Telefon</label><input type="tel" id="f-kontakt1Tel" name="kontakt1Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]{5,}" title="Bitte gültige Telefonnummer angeben (mindestens 5 Ziffern/Zeichen)" placeholder="z. B. 0171 1234567" required></div>
     </div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Notfallkontakt 2<span class="nk-field-optional">(optional)</span></h3>
     <div class="nk-field-row">
       <div class="nk-field"><label for="f-kontakt2Name">Name</label><input type="text" id="f-kontakt2Name" name="kontakt2Name" maxlength="50" placeholder="Name des Kontakts"></div>
-      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 0171 9876543"></div>
+      <div class="nk-field"><label for="f-kontakt2Tel">Telefon</label><input type="tel" id="f-kontakt2Tel" name="kontakt2Tel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]{5,}" title="Bitte gültige Telefonnummer angeben (mindestens 5 Ziffern/Zeichen)" placeholder="z. B. 0171 9876543"></div>
     </div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:24px 0 12px">Hausarzt<span class="nk-field-optional">(optional)</span></h3>
     <div class="nk-field-row">
       <div class="nk-field"><label for="f-hausarztName">Name</label><input type="text" id="f-hausarztName" name="hausarztName" maxlength="60" placeholder="Name der Praxis / des Arztes"></div>
-      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]*" placeholder="z. B. 089 1234567"></div>
+      <div class="nk-field"><label for="f-hausarztTel">Telefon</label><input type="tel" id="f-hausarztTel" name="hausarztTel" maxlength="25" inputmode="tel" pattern="[\d\s+\-/()]{5,}" title="Bitte gültige Telefonnummer angeben (mindestens 5 Ziffern/Zeichen)" placeholder="z. B. 089 1234567"></div>
     </div>
 
     <div style="border-top:1px solid var(--mr-border);margin-top:28px;padding-top:24px"></div>
@@ -270,7 +283,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   function collectData(){
-    var ids = ['name','geburtsdatum','blutgruppe','allergien','medikamente','vorerkrankungen','organspende',
+    var ids = ['name','geburtsdatum','blutgruppe','allergien','medikamente','vorerkrankungen','antikoagulation','implantate','organspende',
                'kontakt1Name','kontakt1Tel','kontakt2Name','kontakt2Tel','hausarztName','hausarztTel',
                'dokumenteOrt','patientenverfuegung','vorsorgevollmacht'];
     var d = {};
@@ -354,9 +367,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function cardRow(label, value, opts){
     if (!value) return '';
     var emphasize = opts && opts.emphasize;
-    var valStyle = emphasize ? ' style="font-weight:700;color:#a00"' : '';
-    var labelStyle = emphasize ? ' style="font-weight:700;color:#a00"' : '';
-    return '<div class="nk-card-row"><span class="nk-card-label"' + labelStyle + '>' + esc(label) + '</span><span class="nk-card-value"' + valStyle + '>' + esc(value) + '</span></div>';
+    // Box-Style + Fett für kritische Felder — funktioniert auch bei Farbsehschwäche
+    if (emphasize) {
+      return '<div class="nk-card-row" style="background:#fff8f0;border:0.5pt solid #a00;border-radius:1mm;padding:0.4mm 1.2mm;margin-bottom:0.6mm"><span class="nk-card-label" style="font-weight:700;color:#a00">' + esc(label) + '</span><span class="nk-card-value" style="font-weight:700;color:#000">' + esc(value) + '</span></div>';
+    }
+    return '<div class="nk-card-row"><span class="nk-card-label">' + esc(label) + '</span><span class="nk-card-value">' + esc(value) + '</span></div>';
   }
 
   function buildCardFront(d){
@@ -367,9 +382,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Blutgruppe:', d.blutgruppe);
     html += cardRow('Allergien:', d.allergien, {emphasize: true});
     html += cardRow('Medikam.:', d.medikamente, {emphasize: true});
+    html += cardRow('Blutverdünner:', d.antikoagulation, {emphasize: true});
+    html += cardRow('Implantate:', d.implantate, {emphasize: true});
     html += cardRow('Vorerkr.:', d.vorerkrankungen);
     html += cardRow('Organsp.:', d.organspende || '—');
-    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + '</div>';
+    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + ' · Selbstangaben · im Notfall 112</div>';
     html += '</div></div>';
     return html;
   }
@@ -387,7 +404,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Dokumente:', d.dokumenteOrt);
     html += cardRow('Pat.verf.:', d.patientenverfuegung || '—');
     html += cardRow('Vollmacht:', d.vorsorgevollmacht || '—');
-    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + '</div>';
+    html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + ' · Selbstangaben · im Notfall 112</div>';
     html += '</div></div>';
     return html;
   }
@@ -400,6 +417,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += previewRow('Blutgruppe:', d.blutgruppe);
     html += previewRow('Allergien:', d.allergien);
     html += previewRow('Medikam.:', d.medikamente);
+    html += previewRow('Blutverdünner:', d.antikoagulation);
+    html += previewRow('Implantate:', d.implantate);
     html += previewRow('Vorerkr.:', d.vorerkrankungen);
     html += previewRow('Organsp.:', d.organspende || '—');
     html += '<div class="brand">machsruhig.de</div>';
@@ -474,7 +493,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var FAQ = [
       {q:'Warum brauche ich eine Notfallkarte?', a:'Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist.'},
       {q:'Was gehört auf eine Notfallkarte?', a:'Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht.'},
-      {q:'Werden meine Daten gespeichert?', a:'Deine medizinischen Eingaben werden nicht gespeichert und nicht an einen Server gesendet — die Karte wird ausschließlich in deinem Browser generiert und gedruckt. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.'},
+      {q:'Werden meine Daten gespeichert?', a:'Deine medizinischen Eingaben werden nicht gespeichert und nicht an einen Server gesendet — die Karte wird ausschließlich in deinem Browser generiert und gedruckt. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.'},
       {q:'Wie groß ist die Karte?', a:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Pro A4-Seite werden je eine Originalkarte und eine Reservekarte mit Vorder- und Rückseite gedruckt — Vorder- und Rückseite werden zusammengeklebt oder laminiert.'}
     ];
     h += '<div class="no-print" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0">';
@@ -525,17 +544,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     pp += buildCardBack(d);
     $('#print-page').innerHTML = pp;
 
-    // Overflow-Detection: char-budget pro Seite (empirisch bei 7pt + flex-layout)
-    // Front: name+geb+bg+allergien+medikamente+vorerkrankungen+organsp ≈ 360 chars Budget
-    // Back: kontakte+hausarzt+dokumenteOrt ≈ 320 chars Budget
-    var frontChars = (d.name||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.vorerkrankungen||'').length;
+    // R-A 8 Fix: Overflow-Guard erweitert — Geb/Blutgruppe/Organspende dazugezählt + Box-Chrome pro Emphasis-Box +25 chars budget (Allergien/Medikamente/Antikoagulation/Implantate = 4 rote Boxen, je ~4mm vertikales Chrome)
+    // Front-Budget gesenkt auf 280 (vorher 320), weil jedes ausgereizte maxlength-Feld + Box-Chrome real Karte über 54mm wachsen lässt
+    var emphasisBoxCount = ((d.allergien||'').length>0?1:0) + ((d.medikamente||'').length>0?1:0) + ((d.antikoagulation||'').length>0?1:0) + ((d.implantate||'').length>0?1:0);
+    var frontChars = (d.name||'').length + (d.geburtsdatum||'').length + (d.blutgruppe||'').length + (d.organspende||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.antikoagulation||'').length + (d.implantate||'').length + (d.vorerkrankungen||'').length + (emphasisBoxCount * 25);
     var backChars = (d.kontakt1Name||'').length + (d.kontakt1Tel||'').length + (d.kontakt2Name||'').length + (d.kontakt2Tel||'').length + (d.hausarztName||'').length + (d.hausarztTel||'').length + (d.dokumenteOrt||'').length;
     var overflowFields = [];
-    if (frontChars > 320) {
+    if (frontChars > 280) {
       var contributors = [];
-      if ((d.allergien||'').length > 90) contributors.push('Allergien');
-      if ((d.medikamente||'').length > 100) contributors.push('Medikamente');
-      if ((d.vorerkrankungen||'').length > 80) contributors.push('Vorerkrankungen');
+      if ((d.allergien||'').length > 70) contributors.push('Allergien');
+      if ((d.medikamente||'').length > 80) contributors.push('Medikamente');
+      if ((d.vorerkrankungen||'').length > 70) contributors.push('Vorerkrankungen');
+      if (emphasisBoxCount >= 4) contributors.push('alle Akut-Boxen gefüllt');
       overflowFields.push('Vorderseite (' + (contributors.length ? contributors.join(', ') : 'gesamt') + ')');
     }
     if (backChars > 280) {
@@ -545,19 +565,66 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if ((d.dokumenteOrt||'').length > 80) backContributors.push('Aufbewahrungsort');
       overflowFields.push('Rückseite (' + (backContributors.length ? backContributors.join(', ') : 'gesamt') + ')');
     }
+    // R-A 15 Fix: Overflow-Bedrohungsmodell entschärft — Karte wächst über 54mm (passt nicht ins Portemonnaie), Inhalt geht nicht verloren wegen overflow:visible. Plus: native Print (Strg/Cmd+P) wird zusätzlich abgefangen.
+    window.__nkOverflowActive = overflowFields.length > 0;
     if (overflowFields.length) {
       $('#nk-overflow-warn-slot').innerHTML =
         '<div class="nk-overflow-warn" role="alert" aria-live="polite">' +
-        '<strong>Achtung: Inhalt könnte abgeschnitten werden.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
+        '<strong>Achtung: Karte wird größer als das 85,6×54mm-Standardformat.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
         overflowFields.join(' · ') +
-        '. Wenn beim Druck Zeilen fehlen, kürze die längsten Einträge — z. B. mit Abkürzungen (Diab. statt Diabetes, ASS statt Acetylsalicylsäure) oder lasse nicht-akute Medikamente weg.' +
+        '. Die gedruckte Karte würde dann <strong>nicht in dein Portemonnaie passen</strong> — Inhalt geht zwar nicht verloren, aber die Karte verliert ihren Akut-Vorteil als kompakte Brieftaschen-Karte. ' +
+        'Kürze die längsten Einträge (z. B. Diab. statt Diabetes, ASS statt Acetylsalicylsäure) oder lasse nicht-akute Medikamente weg. ' +
+        '<button type="button" id="nk-overflow-override" style="margin-top:8px;background:transparent;border:1px solid #C8862E;color:#8b5a14;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer">Trotzdem drucken (Karte wird größer)</button>' +
         '</div>';
       track('toolStep', {tool:'notfallkarte', step:'overflow_warn', fields:overflowFields.join('|')});
+      setTimeout(function(){
+        var ov = $('#nk-overflow-override');
+        if (ov) ov.addEventListener('click', function(){
+          if (window.confirm('Wirklich drucken? Die Karte wird größer als 85,6×54mm und passt nicht ins Portemonnaie.')) {
+            window.__nkOverflowActive = false;
+            track('toolStep', {tool:'notfallkarte', step:'overflow_override'});
+            $('#nk-overflow-warn-slot').innerHTML = '<div class="nk-overflow-warn" role="status">Druck freigegeben — Karte wird größer als Standardformat.</div>';
+          }
+        });
+      }, 0);
+    }
+    // R-A 15 Fix: Native Browser-Print (Strg/Cmd+P) abfangen — vorher Defeat des Safety-Controls
+    if (!window.__nkPrintHookInstalled) {
+      window.__nkPrintHookInstalled = true;
+      window.addEventListener('beforeprint', function(ev){
+        if (window.__nkOverflowActive) {
+          window.alert('Drucken ist gesperrt: Karte würde größer als 85,6×54mm. Bitte kürze die markierten Felder oder bestätige unter "Trotzdem drucken" über der Warnung.');
+          // Kein direkter ev.preventDefault auf beforeprint möglich — wir locken stattdessen die Karte aus dem print-Layout
+          var p = document.getElementById('print-page');
+          if (p) { p.style.display = 'none'; setTimeout(function(){ p.style.display = ''; }, 100); }
+        }
+      });
     }
 
-    // Bind action buttons
+    // R-A 8 Fix: Mindestinhalt-Nudge — Karte ohne medizinische Akut-Infos (Allergien/Blutverdünner/Medikamente alle leer) wirkt "fertig", ist aber im Notfall nutzlos
+    var medFieldsEmpty = !(d.allergien||'').trim() && !(d.antikoagulation||'').trim() && !(d.medikamente||'').trim();
+    if (medFieldsEmpty) {
+      var nudge = document.createElement('div');
+      nudge.className = 'nk-overflow-warn';
+      nudge.setAttribute('role', 'status');
+      nudge.style.borderLeftColor = '#7A6B5D';
+      nudge.innerHTML = '<strong>Hinweis:</strong> Allergien, Blutverdünner und Medikamente sind leer. Im medizinischen Notfall sind das die wichtigsten Akut-Infos auf der Karte — prüfe, ob du sie wirklich weglassen möchtest.';
+      $('#nk-overflow-warn-slot').appendChild(nudge);
+    }
+
+    // Bind action buttons — R-A 7 Fix: Print blockt bei Overflow-Status
     $('#btn-print').addEventListener('click', function(){
+      if (window.__nkOverflowActive) {
+        alert('Drucken ist gesperrt: Die Karte würde Inhalt abschneiden. Bitte kürze die markierten Felder oder bestätige unter "Trotzdem drucken (auf eigenes Risiko)" über der Warnung.');
+        track('toolExport', {tool:'notfallkarte', type:'print_blocked'});
+        return;
+      }
+      // R-A 8 Fix: Druck-Hinweis Skalierung 100%
       track('toolExport', {tool:'notfallkarte', type:'print'});
+      if (!window.__nkPrintHintShown) {
+        window.__nkPrintHintShown = true;
+        alert('Druckhinweis: Im Druckdialog "Originalgröße" / Skalierung 100% wählen — NICHT "An Seite anpassen", sonst stimmt das 85,6×54mm-Format nicht (Karte passt dann nicht ins Portemonnaie).');
+      }
       window.print();
     });
     $('#btn-restart').addEventListener('click', function(){
@@ -570,7 +637,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 </script>
 
 <!-- PDF-Export via html2pdf.js (kept) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<script src="/vendor/html2pdf.bundle.min.js" defer></script>
 <script>
 (function(){
   var EXPORT_SELECTOR = '#print-page';
@@ -582,6 +649,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var target = document.querySelector(EXPORT_SELECTOR);
     if (!target || !target.innerHTML.trim()) {
       alert('Bitte erst Tool ausfüllen, dann PDF exportieren.');
+      return;
+    }
+    // R-A 7 Fix: PDF-Export blockt bei Overflow-Status (YMYL-Schadenspfad)
+    if (window.__nkOverflowActive) {
+      alert('PDF-Export ist gesperrt: Die Karte würde Inhalt abschneiden. Bitte kürze die markierten Felder oder bestätige unter "Trotzdem drucken (auf eigenes Risiko)" über der Warnung.');
+      if (window.plausible) window.plausible('tool_export', { props: { type: 'pdf_blocked', tool: TOOL_LABEL } });
       return;
     }
     if (window.plausible) window.plausible('tool_export', { props: { type: 'pdf', tool: TOOL_LABEL } });
