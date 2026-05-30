@@ -96,9 +96,10 @@
 }
 </script>
 
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- R-A 11 Fix: React + ReactDOM + Babel-Standalone self-hosted unter /vendor/ — keine Drittanbieter-IP-Übertragung vor Consent mehr (vorher 3x unpkg.com) -->
+<script src="/vendor/react.production.min.js"></script>
+<script src="/vendor/react-dom.production.min.js"></script>
+<script src="/vendor/babel.min.js"></script>
 
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -911,8 +912,8 @@ ReactDOM.createRoot(document.getElementById('app')).render(React.createElement(A
 </script>
 
 
-<!-- PDF-Export via html2pdf.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<!-- PDF-Export via html2pdf.js — R-A 11 Fix: self-hosted, kein cdnjs-Drittanbieter-Request mehr -->
+<script src="/vendor/html2pdf.bundle.min.js" defer></script>
 <style>
   .pdf-export-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#FFFDF9;color:#7A6B5D;border:2px solid #7A6B5D;border-radius:99px;font-weight:600;font-size:14px;cursor:pointer;margin-left:8px;transition:background 0.2s}
   .pdf-export-btn:hover{background:#7A6B5D;color:#fff}

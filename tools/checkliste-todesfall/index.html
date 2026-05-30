@@ -212,7 +212,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
     {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
     {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10,besonderheit:"Fristverlängerung beim Ordnungsamt möglich."},
+    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:24,maxErd:10,maxEinaescherung:10,besonderheit:"BestG NRW: frühestens 24 h, spätestens 10 Tage. Fristverlängerung beim Ordnungsamt möglich.",quelle:"§§ 13, 16 BestG NRW i.V.m. § 1 BestG NRW (Stand 2026)"},
     {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10},
     {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
     {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
@@ -307,10 +307,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if (!bl) return;
     var html = '<strong>' + esc(bl.name) + ': </strong>';
     html += 'Überführung innerhalb von ' + bl.ueberfuehrung + 'h · ';
-    html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine gesetzl. Höchstfrist') + ' · ';
+    html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine starre gesetzl. Höchstfrist (Friedhofssatzung beachten)') + ' · ';
     html += 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)';
     if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
-    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)"><strong>Wichtig:</strong> Die hier dargestellten Werte sind unser Modell der jeweiligen Landesbestattungsgesetze (Stand Mai 2026) — verbindlich ist immer das Gesetz selbst. In besonderen Fällen können die zuständigen Behörden kürzere oder längere Fristen zulassen, und die angezeigten Tage sind Kalendertage (nicht Werktage). Bei Wochenend-/Feiertags-Lage kann sich der praktische Fristablauf verschieben. Im Zweifel: Rücksprache mit Bestatter oder Standesamt — dort wird die Anwendung im Einzelfall geklärt.</div>';
+    if (bl.quelle) html += '<div style="margin-top:4px;font-size:11.5px;color:var(--mr-text-muted)"><strong>Quelle:</strong> ' + esc(bl.quelle) + '</div>';
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)"><strong>Wichtig:</strong> Die hier dargestellten Werte sind unser Modell der jeweiligen Landesbestattungsgesetze (Stand Mai 2026, nicht alle 16 Bundesländer wurden tagesaktuell gegen ihre BestG-Fassung gegengeprüft) — verbindlich ist immer das Gesetz selbst. Auch in Bundesländern mit gesetzlicher Höchstfrist kann die Friedhofssatzung der Gemeinde abweichende (oft kürzere) Regelungen vorsehen. Die Tage-Angaben sind Kalendertage (Werktage-Bemessung gilt vereinzelt für einzelne Mindestfristen — bei Wochenend-/Feiertags-Lage kann sich der praktische Fristablauf verschieben). Im Zweifel: Rücksprache mit Bestatter oder Standesamt — dort wird die Anwendung im Einzelfall geklärt.</div>';
     $('#cl-summary-box').innerHTML = html;
     $('#cl-summary').style.display = 'block';
   }
