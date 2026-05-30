@@ -383,27 +383,41 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     }
     // Schätze Gästezahl für Per-Person-Posten (Trauerkaffee)
     var guestSize = {klein: 12, mittel: 30, gross: 70, unklar: 25}[state.answers.teilnehmer] || 25;
+    // SEPARATE Buckets für Bestattungsart-Paket vs. Zusatzposten — keine Doppelzählung
+    var bestattungMin = 0, bestattungMax = 0; // Bestattungsart (Paket-Range)
+    var zusatzMin = 0, zusatzMax = 0; // Blumen + Musik + Redner + Kaffee (Einzelposten)
     STEPS.forEach(function(s){
       if (!state.answers[s.id]) return;
       var o = getOption(s.id, state.answers[s.id]);
       if (!o) return;
       var range = null;
-      // Trauerkaffee: "/Person" oder "pro Person" → mit guestSize multiplizieren
       var isPerPerson = (o.desc || '').match(/pro\s*Person|\/\s*Person|p\.?\s*P\.?/i);
       if (o.kosten) range = parseRange(o.kosten);
       else if (o.desc) range = parseRange(o.desc, isPerPerson ? guestSize : 1);
-      if (range) { costMin += range.min; costMax += range.max; }
+      if (range) {
+        if (s.id === 'bestattungsart') { bestattungMin += range.min; bestattungMax += range.max; }
+        else { zusatzMin += range.min; zusatzMax += range.max; }
+      }
     });
+    // Anzeige getrennt — Bestattungsart-Paket umfasst oft schon Feier-Elemente
+    costMin = bestattungMin + zusatzMin;
+    costMax = bestattungMax + zusatzMax;
     if (costMax > 0) {
       var budgetVal = state.answers.budget;
       var budgetRanges = {sparsam: [0, 3000], mittel: [3000, 7000], gehoben: [7000, 15000]};
       var br = budgetRanges[budgetVal];
-      // Konflikt: Mindest-Range > Budget+500 ODER costMax > Budget*1.3 (Decke deutlich höher als Budget)
       var conflict = br && (costMin > br[1] + 500 || costMax > br[1] * 1.3);
       h += '<div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">';
-      h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzter Gesamtrahmen (inkl. Zusatzposten):</strong> ';
-      h += '<span style="font-weight:600">~' + costMin.toLocaleString('de-DE') + '–' + costMax.toLocaleString('de-DE') + ' €</span>';
-      h += '<div style="font-size:13px;color:var(--mr-text-muted);margin-top:6px">Die Summe aggregiert Bestattungsart + Blumen + Musik + Redner + Trauerkaffee (bei "pro Person" mit Schätzung ' + guestSize + ' Gäste multipliziert). <strong>Hinweis zur Decke:</strong> Premium-Bestattungspakete enthalten am oberen Ende häufig schon Feier-Elemente — die obere Summe kann dadurch leicht überhöht sein. Reale Kosten variieren regional und je nach Bestatter — der Bestatter erstellt vor Beauftragung einen verbindlichen Kostenvoranschlag.</div>';
+      h += '<strong style="color:var(--mr-text);font-size:16px">Geschätzte Kostenbestandteile:</strong>';
+      h += '<div style="margin-top:10px;font-size:14px">';
+      if (bestattungMax > 0) {
+        h += '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Bestattungsart-Paket</span><span style="font-weight:600">~' + bestattungMin.toLocaleString('de-DE') + '–' + bestattungMax.toLocaleString('de-DE') + ' €</span></div>';
+      }
+      if (zusatzMax > 0) {
+        h += '<div style="display:flex;justify-content:space-between;padding:4px 0"><span>Zusatzposten (Blumen, Musik, Redner, Kaffee)</span><span style="font-weight:600">~' + zusatzMin.toLocaleString('de-DE') + '–' + zusatzMax.toLocaleString('de-DE') + ' €</span></div>';
+      }
+      h += '</div>';
+      h += '<div style="margin-top:10px;padding-top:10px;border-top:1px solid #E8E0D6;font-size:13px;color:var(--mr-text-muted);line-height:1.5"><strong>Wichtig zur Aggregation:</strong> Bestattungsart-Pakete enthalten am oberen Ende oft schon Feier-Elemente (Sarg, Pflege, Trauerfeier-Basis). Die Zusatzposten oben darfst du <strong>nicht einfach addieren</strong> — sie können bei Premium-Paketen schon teilweise enthalten sein. Reale Kosten erfragst du beim Bestatter (Kostenvoranschlag pflicht vor Beauftragung). Trauerkaffee mit ' + guestSize + ' Gäste-Schätzung.</div>';
       if (conflict) {
         h += '<div role="alert" style="background:#FEF4E8;border:1px solid #F0D5A8;border-left:4px solid #C8862E;border-radius:6px;padding:12px 14px;margin-top:12px;color:#5a4a2e">';
         h += '<strong style="color:#8b5a14">Achtung — Konflikt mit Budget-Vorgabe:</strong> Deine Praeferenzen ergeben mind. ~' + costMin.toLocaleString('de-DE') + ' €, dein gewaehltes Budget liegt aber bis ' + br[1].toLocaleString('de-DE') + ' €. Tipp: Bestattungsart oder Blumen/Musik/Kaffee anpassen, oder Budget-Vorstellung neu setzen.';

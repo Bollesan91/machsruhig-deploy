@@ -112,7 +112,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     </header>
 
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
-      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) erfassen nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+      <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami, Ahrefs) werden nur geladen, wenn du im Cookie-Banner unten zustimmst — und erfassen dann nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
 
     <div style="margin-bottom:24px">
@@ -236,6 +236,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       {id:"arzt",titel:"Arzt rufen — Totenschein ausstellen lassen",desc:"Ein Arzt muss den Tod feststellen. Zu Hause: Hausarzt oder 116 117 (Bereitschaftsdienst). Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Personalausweis des Verstorbenen"],eskalation:"Bei unklarer Todesursache oder Verdacht auf Fremdeinwirkung: Polizei (110) rufen, nichts verändern."},
       {id:"angehoerige",titel:"Engste Angehörige informieren",desc:"Informiere die engste Familie. Das muss nicht alles auf einmal passieren. Du musst das nicht allein machen — bitte jemanden, dir zu helfen.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:[]},
       {id:"bestatter",titel:"Bestatter beauftragen (Überführung)",desc:"Ein Bestatter übernimmt die Überführung und kümmert sich um erste Formalitäten.",szenarien:["zuhause","unbekannt"],pflicht:true,docs:["Totenschein"],bundeslandFeld:"ueberfuehrung",bundeslandText:"In {bl} muss die Überführung innerhalb von {frist} Stunden erfolgen.",isBestatterCTA:true},
+      {id:"bestatterInst",titel:"Bestatter für Trauerfeier und Bestattung beauftragen",desc:"Auch wenn Krankenhaus oder Pflegeheim die ersten Schritte übernehmen: Du musst selbst einen Bestatter beauftragen, der Trauerfeier, Bestattung und viele Behördengänge koordiniert. Empfehlungen einholen, 2-3 Angebote vergleichen, dann zügig entscheiden — Wartezeiten beim Kühlraum verzögern die Trauerfeier.",szenarien:["krankenhaus","pflegeheim"],pflicht:true,docs:["Totenschein","später Sterbeurkunde"],isBestatterCTA:true},
       {id:"dokumente",titel:"Wichtige Dokumente zusammensuchen",desc:"Personalausweis, Geburtsurkunde, Heiratsurkunde, Bestattungsverfügung, Versicherungsunterlagen, Testament — nicht alles muss sofort da sein.",szenarien:["zuhause","krankenhaus","pflegeheim","unbekannt"],pflicht:false,docs:["Personalausweis/Reisepass","Geburtsurkunde","Heiratsurkunde","Versicherungsunterlagen"]},
       {id:"wohnung",titel:"Wohnung sichern (Heizung, Tiere, Post)",desc:"Wenn der Verstorbene allein gelebt hat: Heizung, Haustiere, Postkasten. Schlüssel sichern.",szenarien:["zuhause","krankenhaus","pflegeheim"],pflicht:false,docs:[]}
     ]},
@@ -270,7 +271,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden (Standardwert; einige Bundesländer und Einzelfälle lassen kürzere Fristen auf Antrag zu), spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die für dein Bundesland modellierten Werte — verbindlich sind die jeweiligen Landesbestattungsgesetze."},
     {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
     {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
-    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben."},
+    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben."},
     {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
   ];
 
@@ -309,7 +310,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += 'Erdbestattung ' + (bl.maxErd != null ? 'innerhalb von ' + bl.maxErd + ' Tagen' : 'keine gesetzl. Höchstfrist') + ' · ';
     html += 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)';
     if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
-    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)">Quellen: Landesbestattungsgesetze (Stand Mai 2026). In besonderen Fällen können die zuständigen Behörden kürzere oder längere Fristen zulassen. Im Zweifel: Rücksprache mit Bestatter oder Standesamt.</div>';
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)"><strong>Wichtig:</strong> Die hier dargestellten Werte sind unser Modell der jeweiligen Landesbestattungsgesetze (Stand Mai 2026) — verbindlich ist immer das Gesetz selbst. In besonderen Fällen können die zuständigen Behörden kürzere oder längere Fristen zulassen, und die angezeigten Tage sind Kalendertage (nicht Werktage). Bei Wochenend-/Feiertags-Lage kann sich der praktische Fristablauf verschieben. Im Zweifel: Rücksprache mit Bestatter oder Standesamt — dort wird die Anwendung im Einzelfall geklärt.</div>';
     $('#cl-summary-box').innerHTML = html;
     $('#cl-summary').style.display = 'block';
   }

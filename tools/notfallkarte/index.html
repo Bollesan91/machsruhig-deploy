@@ -117,7 +117,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   <div class="no-print" role="region" aria-label="Notfallhilfe und offizielle Dokumente" style="background:#FFF8EF;border:1px solid #E8E0D6;border-left:4px solid #C8862E;border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">
     <strong style="color:var(--mr-text)">Im Notfall: immer 112 wählen.</strong>
-    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Diese Karte ist eine ergänzende Orientierung für Ersthelfer und Rettungsdienst — sie ersetzt <strong>keine</strong> offiziellen Dokumente. Der gesetzliche Akut-Datenträger in Deutschland ist der <strong>Notfalldatensatz auf der elektronischen Gesundheitskarte (eGK/NFDM)</strong> — den kann dir dein Hausarzt einrichten (mehr Infos: <a href="https://www.gematik.de/anwendungen/nfdm" rel="noopener" target="_blank" style="color:var(--mr-primary)">gematik.de/nfdm</a>). Patientenverfügung, Vorsorgevollmacht und Organspendeausweis sind eigenständige Dokumente und nicht durch diese Karte ersetzt — die Karte zeigt nur, ob sie existieren und wo sie liegen.</p>
+    <p style="margin:8px 0 0;color:var(--mr-text-muted)">Diese Karte ist eine ergänzende Orientierung für Ersthelfer und Rettungsdienst — sie ersetzt <strong>keine</strong> offiziellen Dokumente. Eine offizielle, ärztlich gepflegte Notfall-Datenquelle in Deutschland ist der <strong>Notfalldatensatz auf der elektronischen Gesundheitskarte (NFDM/eGK)</strong> — eine freiwillige Servicefunktion, die dein Hausarzt anlegen und aktualisieren kann (mehr Infos: <a href="https://www.gematik.de/anwendungen/notfalldaten" rel="noopener" target="_blank" style="color:var(--mr-primary)">gematik.de/notfalldaten</a>). Ab voraussichtlich Ende 2026 zieht der Notfalldatensatz in die elektronische Patientenakte (ePA) als „Patientenkurzakte" um. Patientenverfügung, Vorsorgevollmacht und Organspendeausweis sind eigenständige Dokumente und nicht durch diese Karte ersetzt — die Karte zeigt nur, ob sie existieren und wo sie liegen.</p>
     <p style="margin:8px 0 0;color:var(--mr-text-muted);font-size:13px"><strong>Hinweis zur Blutgruppe:</strong> Im Akutfall transfundieren Ärzt:innen nicht auf Basis selbst angegebener Blutgruppen — sie führen einen Schnelltest durch. Eine korrekte Eintragung hier kann aber Diagnostik und Triage beschleunigen.</p>
   </div>
 
@@ -366,9 +366,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function cardRow(label, value, opts){
     if (!value) return '';
     var emphasize = opts && opts.emphasize;
-    var valStyle = emphasize ? ' style="font-weight:700;color:#a00"' : '';
-    var labelStyle = emphasize ? ' style="font-weight:700;color:#a00"' : '';
-    return '<div class="nk-card-row"><span class="nk-card-label"' + labelStyle + '>' + esc(label) + '</span><span class="nk-card-value"' + valStyle + '>' + esc(value) + '</span></div>';
+    // Box-Style + Fett für kritische Felder — funktioniert auch bei Farbsehschwäche
+    if (emphasize) {
+      return '<div class="nk-card-row" style="background:#fff8f0;border:0.5pt solid #a00;border-radius:1mm;padding:0.4mm 1.2mm;margin-bottom:0.6mm"><span class="nk-card-label" style="font-weight:700;color:#a00">' + esc(label) + '</span><span class="nk-card-value" style="font-weight:700;color:#000">' + esc(value) + '</span></div>';
+    }
+    return '<div class="nk-card-row"><span class="nk-card-label">' + esc(label) + '</span><span class="nk-card-value">' + esc(value) + '</span></div>';
   }
 
   function buildCardFront(d){
@@ -490,7 +492,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var FAQ = [
       {q:'Warum brauche ich eine Notfallkarte?', a:'Im Notfall brauchen Ersthelfer und Ärzte schnell Zugang zu wichtigen Informationen wie Allergien, Medikamenten und Notfallkontakten. Eine Notfallkarte im Portemonnaie stellt sicher, dass diese Daten sofort verfügbar sind — auch wenn du selbst nicht mehr ansprechbar bist.'},
       {q:'Was gehört auf eine Notfallkarte?', a:'Auf eine Notfallkarte gehören: Notfallkontakte (Familie, Hausarzt), Blutgruppe, Allergien und Unverträglichkeiten, regelmäßige Medikamente, Vorerkrankungen, Organspende-Status sowie der Aufbewahrungsort wichtiger Dokumente wie Patientenverfügung und Vorsorgevollmacht.'},
-      {q:'Werden meine Daten gespeichert?', a:'Deine medizinischen Eingaben werden nicht gespeichert und nicht an einen Server gesendet — die Karte wird ausschließlich in deinem Browser generiert und gedruckt. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.'},
+      {q:'Werden meine Daten gespeichert?', a:'Deine medizinischen Eingaben werden nicht gespeichert und nicht an einen Server gesendet — die Karte wird ausschließlich in deinem Browser generiert und gedruckt. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.'},
       {q:'Wie groß ist die Karte?', a:'Die Notfallkarte hat Kreditkartenformat (85,6 × 54 mm) und passt in jedes Portemonnaie. Pro A4-Seite werden je eine Originalkarte und eine Reservekarte mit Vorder- und Rückseite gedruckt — Vorder- und Rückseite werden zusammengeklebt oder laminiert.'}
     ];
     h += '<div class="no-print" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0">';

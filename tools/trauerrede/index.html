@@ -516,7 +516,8 @@ function getClosings(tone, name, religion) {
 // Calculate word count and speaking time
 function calculateTiming(text) {
   const words = text.trim().split(/\s+/).length;
-  const minutes = Math.ceil(words / 130);
+  // Trauervorträge laufen real bei ~105 Wörtern/Minute (langsamer als Alltagsrede, mit Pausen)
+  const minutes = Math.ceil(words / 105);
   return {words, minutes};
 }
 
@@ -886,7 +887,7 @@ function TrauerredeGenerator() {
                   if (formData.tone === 'humorvoll' && isChild) {
                     return (
                       <div role="alert" aria-live="polite" style={{background:'#FEF4E8',border:'1px solid #F0D5A8',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'12px 16px',marginTop:12,fontSize:14,lineHeight:1.5,color:'#5a4a2e'}}>
-                        <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Bei einer Trauerrede für ein verstorbenes Kind oder einen Jugendlichen wird der humorvolle Ton häufig als unpassend empfunden. Wir wandeln den Output sicherheitshalber auf „Persönlich & warm" um — du kannst die Variante natürlich nachträglich anpassen, aber überlege gut, ob heitere Anekdoten der Trauergemeinde guttun werden.
+                        <strong style={{color:'#8b5a14'}}>Hinweis:</strong> Bei einer Trauerrede für ein verstorbenes Kind oder einen Jugendlichen wird der humorvolle Ton häufig als unpassend empfunden. Wir wandeln den Output sicherheitshalber auf „Würdevoll & klassisch" um — du kannst die Variante natürlich nachträglich anpassen, aber überlege gut, ob heitere Anekdoten der Trauergemeinde guttun werden.
                       </div>
                     );
                   }
@@ -1055,7 +1056,7 @@ function TrauerredeGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur den Seitenbesuch erfassen, nicht deine Eingaben.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.
           </div>
 
           {/* Opening */}
