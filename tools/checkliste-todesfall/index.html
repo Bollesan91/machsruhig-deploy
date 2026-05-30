@@ -204,7 +204,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   var BUNDESLAENDER = [
     {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:6},
-    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:null,besonderheit:"Keine gesetzliche Höchstfrist für die Einäscherung."},
+    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:null,maxEinaescherung:null,besonderheit:"BestV Bayern: keine starre Höchstfrist nach BestV festgelegt — typisch werden Erd-Bestattungen innerhalb 4–10 Tagen durchgeführt, im Einzelfall mit der zuständigen Behörde / Friedhofsverwaltung abgestimmt. Keine starre Höchstfrist für die Einäscherung.",quelle:"Bayerisches Bestattungsgesetz/BestV (nicht tagesaktuell gegen die aktuelle Fassung gegengeprüft — bei akutem Fristdruck Standesamt fragen)"},
     {id:"be",name:"Berlin",ueberfuehrung:36,mindest:null,maxErd:null,maxEinaescherung:null,besonderheit:"Berlin: Die 48-Stunden-Wartefrist wurde mit Novelle des BestattG Berlin (2022) abgeschafft — keine starre Mindestfrist mehr; Bestattung kann auf Antrag früher erfolgen. Es gibt auch KEINE starre gesetzliche Höchstfrist; Friedhofssatzungen sehen Soll-Regelungen vor — Rücksprache mit Friedhof empfohlen.",quelle:"BestattG Berlin i.d.F. der Novelle 2022 (vgl. § 16 BestattG Berlin)"},
     {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
     {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7,besonderheit:"Asche darf unter Bedingungen an Angehörige herausgegeben werden."},
@@ -484,7 +484,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     h += '<div style="background:#f4f0eb;border-radius:var(--mr-radius);padding:24px 28px;margin:40px 0">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:16px;font-weight:700;margin-bottom:12px">Quellen</h2>';
     h += '<ul style="list-style:none">';
-    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: April 2026)',
+    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: Mai 2026)',
      'Personenstandsgesetz (PStG) §28 — Anzeigepflicht beim Standesamt',
      'Bürgerliches Gesetzbuch (BGB) § 580 (Sonderkündigung) + § 573d Abs. 2 i.V.m. § 573c Abs. 1 (3-Monats-Frist bei Wohnraum)',
      'Sozialgesetzbuch XII §74 — Bestattungskosten bei Bedürftigkeit'].forEach(function(q){

@@ -420,10 +420,10 @@ const TONES = [
 ];
 
 const LENGTHS = [
-  // R-A 11 Fix: Min-Werte konsistent mit 105 wpm — Trauervortrag-Pacing inkl. Pausen
-  {id:'kurz',label:'Kurz (4–6 Min)',words:'400–600 Wörter',desc:'Konzentriert und prägnant'},
-  {id:'mittel',label:'Mittel (6–10 Min)',words:'600–1000 Wörter',desc:'Ausreichend Zeit für Details'},
-  {id:'lang',label:'Lang (10–14 Min)',words:'1000–1500 Wörter',desc:'Umfassend und ausführlich'}
+  // R-A 13 Fix: Längen-Versprechen ehrlich gemacht — finale Länge hängt überwiegend von User-Eingaben ab, nicht vom Selector
+  {id:'kurz',label:'Kurz (ca. 4–6 Min)',words:'~400–600 Wörter',desc:'Zielwert: prägnant — die finale Länge hängt von deinen Eingaben ab'},
+  {id:'mittel',label:'Mittel (ca. 6–10 Min)',words:'~600–1000 Wörter',desc:'Zielwert: ausgewogen — fülle Erinnerung/Charakter ausführlich, um die Länge zu erreichen'},
+  {id:'lang',label:'Lang (ca. 10–14 Min)',words:'~1000–1500 Wörter',desc:'Zielwert: umfassend — benötigt detaillierte Eingaben in mehreren Feldern'}
 ];
 
 const RELIGIONS = [
@@ -662,22 +662,29 @@ function TrauerredeGenerator() {
   };
 
   const copyToClipboard = () => {
-    const fullText = [
-      speechData.opening,
-      speechData.character,
-      speechData.hobbies,
-      speechData.memory,
-      speechData.meaning,
-      speechData.quoteFavorite,
-      speechData.reflection,
-      speechData.quotes && `„${speechData.quotes}"`,
-      speechData.closing
-    ].filter(Boolean).join('\n\n');
+    // R-A 13 Fix R4: vor Copy contentEditable-Blur erzwingen, damit der letzte Edit in speechData landet (vorher droppte der letzte ungespeicherte Edit)
+    if (document.activeElement && document.activeElement.blur) {
+      document.activeElement.blur();
+    }
+    // setTimeout um React-State-Update nach blur durchzulassen
+    setTimeout(() => {
+      const fullText = [
+        speechData.opening,
+        speechData.character,
+        speechData.hobbies,
+        speechData.memory,
+        speechData.meaning,
+        speechData.quoteFavorite,
+        speechData.reflection,
+        speechData.quotes && `„${speechData.quotes}"`,
+        speechData.closing
+      ].filter(Boolean).join('\n\n');
 
-    navigator.clipboard.writeText(fullText).then(() => {
-      alert('Trauerrede in Zwischenablage kopiert!');
-      if(window.mrTrack) window.mrTrack('toolExport', {tool: 'trauerrede', type: 'copy'});
-    });
+      navigator.clipboard.writeText(fullText).then(() => {
+        alert('Trauerrede in Zwischenablage kopiert!');
+        if(window.mrTrack) window.mrTrack('toolExport', {tool: 'trauerrede', type: 'copy'});
+      });
+    }, 50);
   };
 
   const handlePrint = () => {
@@ -1048,6 +1055,11 @@ function TrauerredeGenerator() {
 
           <div className="privacy-notice">
             <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.
+          </div>
+
+          {/* R-A 13 Fix R2: Akut-Krisen-Pointer im Speech-Editor — sichtbar für jemanden der wenige Tage nach Verlust schreibt */}
+          <div role="region" aria-label="Hinweis zu akuter Trauerhilfe" style={{background:'#FFF8EF',border:'1px solid #E8E0D6',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'14px 18px',marginBottom:24,fontSize:13,lineHeight:1.6,color:'#5a4a2e'}}>
+            <strong style={{color:'#8b5a14'}}>Wenn dich die Trauer überfordert:</strong> Du musst diese Rede nicht jetzt schreiben. <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111, kostenlos, 24/7) oder <a href="https://www.bdbev.de/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>BDB-Trauerbegleitung</a> sind erreichbar — Reden vorbereiten kann warten, das Gespräch nicht.
           </div>
 
           {/* Opening */}
