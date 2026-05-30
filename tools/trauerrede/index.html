@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/trauerrede/">
 
-<!-- Plausible Analytics -->
+<!-- Analytics-Shims (echter Loader: /js/consent.js → Umami + Ahrefs nach Opt-In) -->
 <script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
 <script defer src="/js/consent.js"></script>
 
@@ -640,7 +640,15 @@ function TrauerredeGenerator() {
         : `Was ${formData.name} uns bedeutet hat: ${formData.message}`)
         : '',
       reflection: reflectionText,
-      quoteFavorite: formData.quote ? `Wer ${formData.name} kannte, kennt diesen Satz: „${formData.quote.trim()}". Den nehmen wir mit.` : '',
+      quoteFavorite: (() => {
+        // R-A 6 Fix: robuster Quote-Block — trim, leading/trailing Anführungszeichen abschneiden, finalen Punkt entfernen (sonst Doppelpunkt-Konflikt)
+        const raw = (formData.quote || '').trim();
+        if (!raw) return '';
+        let cleaned = raw.replace(/^[„""'»‹]+|[""""'«›]+$/g, '').trim();
+        cleaned = cleaned.replace(/[.!?…]+$/, '').trim();
+        if (!cleaned) return '';
+        return `Wer ${formData.name} kannte, kennt diesen Satz: „${cleaned}". Den nehmen wir mit.`;
+      })(),
       closing: closings[0],
       quotes: formData.selectedQuote ? QUOTES.find(q=>q.id===formData.selectedQuote)?.text : (formData.customQuote || '')
     });

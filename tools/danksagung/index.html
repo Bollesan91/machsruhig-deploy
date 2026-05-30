@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/danksagung/">
 
-<!-- Plausible Analytics -->
+<!-- Analytics-Shims (echter Loader: /js/consent.js → Umami + Ahrefs nach Opt-In) -->
 <script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
 <script defer src="/js/consent.js"></script>
 
@@ -493,12 +493,43 @@ function DanksagungGenerator() {
   const copyText = useCallback((variant) => {
     const text = texts[variant];
     if (!text) return;
-    navigator.clipboard.writeText(text).then(() => {
+    const onSuccess = () => {
       setCopyFeedback(prev => ({...prev, [variant]: true}));
       setTimeout(() => setCopyFeedback(prev => ({...prev, [variant]: false})), 2000);
       if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'copy', variant});
-    });
+    };
+    // Fallback für In-App-Webviews (WhatsApp/Instagram) wo navigator.clipboard fehlt oder blockiert
+    const fallback = () => {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (ok) onSuccess();
+        else window.prompt('Zum Kopieren markieren und Strg+C drücken:', text);
+      } catch(_) {
+        window.prompt('Zum Kopieren markieren und Strg+C drücken:', text);
+      }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(onSuccess).catch(fallback);
+    } else {
+      fallback();
+    }
   }, [texts]);
+
+  // Format → empfohlene Variante (Reviewer-Befund R-A 6: Format-Pflichtfeld muss sichtbare Wirkung haben)
+  const FORMAT_RECOMMENDS = {
+    'trauerkarte': 'personal',
+    'zeitungsanzeige': 'formal',
+    'brief': 'personal',
+    'digital': 'short',
+  };
+  const recommendedVariant = FORMAT_RECOMMENDS[formData.format] || null;
 
   const handlePrint = () => {
     if (window.mrTrack) window.mrTrack('toolExport', {tool: 'danksagung', type: 'print'});
@@ -691,8 +722,8 @@ function DanksagungGenerator() {
           </div>
 
           {/* Formal variant */}
-          <div className="text-section">
-            <h3>Formelle Variante</h3>
+          <div className="text-section" style={recommendedVariant === 'formal' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
+            <h3>Formelle Variante {recommendedVariant === 'formal' && <span style={{fontSize:13,fontWeight:600,color:'var(--mr-primary)',marginLeft:8}}>★ empfohlen für dein Format</span>}</h3>
             <div className="section-hint">
               Passend für Zeitungsanzeigen, gedruckte Karten oder offizielle Danksagungen.
             </div>
@@ -711,8 +742,8 @@ function DanksagungGenerator() {
           </div>
 
           {/* Personal variant */}
-          <div className="text-section">
-            <h3>Persönliche Variante</h3>
+          <div className="text-section" style={recommendedVariant === 'personal' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
+            <h3>Persönliche Variante {recommendedVariant === 'personal' && <span style={{fontSize:13,fontWeight:600,color:'var(--mr-primary)',marginLeft:8}}>★ empfohlen für dein Format</span>}</h3>
             <div className="section-hint">
               Für Briefe, Karten an enge Freunde oder persönliche Nachrichten.
             </div>
@@ -731,8 +762,8 @@ function DanksagungGenerator() {
           </div>
 
           {/* Short variant */}
-          <div className="text-section">
-            <h3>Kurze Variante</h3>
+          <div className="text-section" style={recommendedVariant === 'short' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
+            <h3>Kurze Variante {recommendedVariant === 'short' && <span style={{fontSize:13,fontWeight:600,color:'var(--mr-primary)',marginLeft:8}}>★ empfohlen für dein Format</span>}</h3>
             <div className="section-hint">
               Für WhatsApp, E-Mail oder eine kurze Nachricht an den engeren Kreis.
             </div>
