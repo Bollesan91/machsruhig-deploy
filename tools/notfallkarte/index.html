@@ -16,10 +16,10 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/notfallkarte/">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Notfallkarte erstellen","description":"Kostenlose Notfallkarte zum Ausdrucken: Notfallkontakte, Vorerkrankungen, Medikamente, Dokument-Standorte. In 2 Minuten erstellt, im Portemonnaie immer dabei.","url":"https://machsruhig.de/tools/notfallkarte/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Vorsorge","item":"https://machsruhig.de/vorsorge"},{"@type":"ListItem","position":3,"name":"Notfallkarte","item":"https://machsruhig.de/tools/notfallkarte"}]}]}</script>
-<script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
+<script>window.plausible=window.plausible||function(){};window.mrTrack=window.mrTrack||function(){};</script>
+<script defer src="/js/consent.js"></script>
 
-<script defer src="/js/tracking.js"></script>
+
 <style>
 @font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
@@ -174,7 +174,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <div class="nk-field">
       <label for="f-vorerkrankungen">Vorerkrankungen<span class="nk-field-optional">(optional)</span></label>
       <textarea id="f-vorerkrankungen" name="vorerkrankungen" rows="2" maxlength="100" data-nk-counter="1" placeholder="Relevante Vorerkrankungen eintragen"></textarea>
-      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, Herzschrittmacher · <span class="nk-counter" data-for="f-vorerkrankungen">0/100</span></div>
+      <div class="nk-hint">z. B. Diabetes Typ 2, Asthma, COPD · <span class="nk-counter" data-for="f-vorerkrankungen">0/100</span></div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-antikoagulation">Blutverdünner / Antikoagulation<span class="nk-field-optional">(optional, aber im Akutfall sehr wichtig)</span></label>
+      <input type="text" id="f-antikoagulation" name="antikoagulation" maxlength="80" data-nk-counter="1" placeholder="z. B. Marcumar, Eliquis, Xarelto, Pradaxa">
+      <div class="nk-hint">Diese Info hilft Rettungsdiensten kritische Entscheidungen bei Blutungen oder Operationen zu treffen · <span class="nk-counter" data-for="f-antikoagulation">0/80</span></div>
+    </div>
+
+    <div class="nk-field">
+      <label for="f-implantate">Implantate / medizinische Geräte<span class="nk-field-optional">(optional)</span></label>
+      <input type="text" id="f-implantate" name="implantate" maxlength="80" data-nk-counter="1" placeholder="z. B. Herzschrittmacher, ICD, Insulinpumpe, Hüft-TEP">
+      <div class="nk-hint">Wichtig für MRT-Sicherheit, Defibrillation, Reanimationsentscheidung · <span class="nk-counter" data-for="f-implantate">0/80</span></div>
     </div>
 
     <div class="nk-field">
@@ -270,7 +282,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   }
 
   function collectData(){
-    var ids = ['name','geburtsdatum','blutgruppe','allergien','medikamente','vorerkrankungen','organspende',
+    var ids = ['name','geburtsdatum','blutgruppe','allergien','medikamente','vorerkrankungen','antikoagulation','implantate','organspende',
                'kontakt1Name','kontakt1Tel','kontakt2Name','kontakt2Tel','hausarztName','hausarztTel',
                'dokumenteOrt','patientenverfuegung','vorsorgevollmacht'];
     var d = {};
@@ -367,6 +379,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += cardRow('Blutgruppe:', d.blutgruppe);
     html += cardRow('Allergien:', d.allergien, {emphasize: true});
     html += cardRow('Medikam.:', d.medikamente, {emphasize: true});
+    html += cardRow('Blutverdünner:', d.antikoagulation, {emphasize: true});
+    html += cardRow('Implantate:', d.implantate, {emphasize: true});
     html += cardRow('Vorerkr.:', d.vorerkrankungen);
     html += cardRow('Organsp.:', d.organspende || '—');
     html += '<div class="nk-card-branding">machsruhig.de · Stand ' + new Date().toLocaleDateString('de-DE',{month:'2-digit',year:'2-digit'}) + ' · Selbstangaben · im Notfall 112</div>';
@@ -400,6 +414,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += previewRow('Blutgruppe:', d.blutgruppe);
     html += previewRow('Allergien:', d.allergien);
     html += previewRow('Medikam.:', d.medikamente);
+    html += previewRow('Blutverdünner:', d.antikoagulation);
+    html += previewRow('Implantate:', d.implantate);
     html += previewRow('Vorerkr.:', d.vorerkrankungen);
     html += previewRow('Organsp.:', d.organspende || '—');
     html += '<div class="brand">machsruhig.de</div>';
@@ -528,7 +544,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     // Overflow-Detection: char-budget pro Seite (empirisch bei 7pt + flex-layout)
     // Front: name+geb+bg+allergien+medikamente+vorerkrankungen+organsp ≈ 360 chars Budget
     // Back: kontakte+hausarzt+dokumenteOrt ≈ 320 chars Budget
-    var frontChars = (d.name||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.vorerkrankungen||'').length;
+    var frontChars = (d.name||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.antikoagulation||'').length + (d.implantate||'').length + (d.vorerkrankungen||'').length;
     var backChars = (d.kontakt1Name||'').length + (d.kontakt1Tel||'').length + (d.kontakt2Name||'').length + (d.kontakt2Tel||'').length + (d.hausarztName||'').length + (d.hausarztTel||'').length + (d.dokumenteOrt||'').length;
     var overflowFields = [];
     if (frontChars > 320) {
