@@ -5,42 +5,49 @@
 
 ## Was wurde gemacht
 
-**29 Iterationen + 15 Re-Audit-Cycles** für die 7 Hauptwerkzeuge (notfallkarte, fristen-radar, beerdigungsplaner, danksagung, checkliste-todesfall, trauerrede, abschiedsbrief).
+**30 Iterationen + 15 Re-Audit-Cycles** für die 7 Hauptwerkzeuge (notfallkarte, fristen-radar, beerdigungsplaner, danksagung, checkliste-todesfall, trauerrede, abschiedsbrief).
 
-### Strukturelle Iterationen (Auswahl)
-- **Iter-21**: Consent-Layer site-wide (Umami + Ahrefs + tracking.js gated für 11 Tools)
-- **Iter-23**: Fristen-Radar Feiertags-Engine (Gauss-Algorithmus + bundeseinheitliche Feiertage 2026–2028) + § 30 ErbStG Anker
-- **Iter-24**: Notfallkarte harter Overflow-Block (Print + PDF gesperrt bei Layout-Overflow, Override via confirm-Dialog) — YMYL-Schadenspfad geschlossen
-- **Iter-25**: Danksagung Partner-Plural + Krisen-Gate umstandsbasiert (alle Beziehungen statt nur partner/schwester/bruder/freund) + clipboard-Fallback für In-App-Webviews
-- **Iter-26**: Notfallkarte Overflow-Guard d.geb → d.geburtsdatum (echter Code-Bug fix)
-- **Iter-27 Strukturwelle**: React + ReactDOM + Babel-Standalone + html2pdf self-hosted unter /vendor/ (vorher 4× Drittanbieter-Request vor Consent — DSGVO-Risiko). CL NRW Faktenfehler (mindest 48→24h, maxErd 8→10 Tage). CL Quelle-Spalte + Friedhofssatzungs-Disclaimer für alle BL.
-- **Iter-28**: CL Berlin Novelle 2022 (Wartefrist abgeschafft) + 112-Weiche bei Reanimations-Möglichkeit. TR Export-Sync (quoteFavorite jetzt im Screen-Preview + Timing). TR Grammatik-Fix (.toLowerCase() entfernt, "Mutter" statt "mutter"). TR 'kind' als Relationship-Option (Kind-Guard greift jetzt korrekt).
-- **Iter-29**: TR Längen-Versprechen ehrlich gemacht. TR Akut-Krisen-Pointer im Speech-Editor (Telefonseelsorge + BDB). TR Edit-Sync vor Copy (document.activeElement.blur). CL Bayern maxErd Fehlinformation entschärft.
+### Strukturelle Iterationen (Highlights)
+- **Iter-21**: Consent-Layer site-wide (Umami + Ahrefs + tracking.js gated für 11 Tools, /js/consent.js)
+- **Iter-23**: Fristen-Radar Feiertags-Engine (Gauss-Algorithmus + bundeseinheitliche Feiertage) + § 30 ErbStG Anker
+- **Iter-24**: Notfallkarte harter Overflow-Block (Print + PDF gesperrt bei Layout-Overflow)
+- **Iter-25**: Danksagung Partner-Plural + Krisen-Gate umstandsbasiert + clipboard-Fallback für In-App-Webviews
+- **Iter-26**: Notfallkarte d.geb → d.geburtsdatum Code-Bug
+- **Iter-27 Strukturwelle**: React + ReactDOM + Babel-Standalone + html2pdf self-hosted unter `/vendor/` (~4.1MB), kein Drittanbieter-Request vor Consent mehr. CL NRW Faktenfehler (mindest 48→24h, maxErd 8→10 Tage). CL Quelle-Spalte.
+- **Iter-28**: CL Berlin Novelle 2022 (Wartefrist abgeschafft) + 112-Weiche bei Reanimations-Möglichkeit. TR Export-Sync (quoteFavorite jetzt im Screen-Preview + Timing). TR Grammatik-Fix.
+- **Iter-29**: TR Längen-Honest + Akut-Krisen-Pointer im Editor + Edit-Sync vor Copy. CL Bayern maxErd Fehlinformation entschärft.
+- **Iter-30**: NK Native-Print-Hook + Bedrohungsmodell ehrlich + Telefon-Pattern. DG Print pro Variant + tel:-Telefonseelsorge. BP Plausible-Comment + Encoding-Fix + Konflikt-Logik (gegen Bestattungspaket, nicht addierte Summe). CL BL-Hinweis-Farbe verifizierungsabhängig + Werktage-Hinweis in Fristenzeile + 2 neue SONDERFAELLE (Sternenkind, unbekannte Angehörige).
 
-### Finale Score-Verteilung (R-A 15, Komplett-Sweep)
-- ✅ **Abschiedsbrief: 88** — stabil hoch (Median über alle Cycles ~85)
-- ✅ **Trauerrede: 86** — Durchbruch durch Iter-29 Krisen-Pointer + Längen-Honest + Edit-Sync
-- ✅ **Fristen-Radar: ~86** — historisch konstant (R-A 15 retry-rate-limited, R-A 7-12 alle 86-87)
-- Notfallkarte: 84 (Median ~84, oszilliert um 85)
-- Danksagung: 82 (Median ~82-83)
-- Beerdigungsplaner: 79 (Median ~82)
-- Checkliste-Todesfall: 78 (Median ~78, volatil 69-85)
+### Finale Live-Review aller 7 Tools (gegen Production)
+- ✅ **Abschiedsbrief**: vendor/, alle Iter-25 fixes, Score 88 (R-A 15)
+- ✅ **Fristen-Radar**: Feiertags-Engine **verifiziert produktiv** (28.04.2026 → Standesamt-Frist 04.05.2026, Skip 01.05. Tag der Arbeit ✓), § 30 ErbStG, Auslandsfall 6 Monate ✓
+- ✅ **Trauerrede**: LENGTHS-Honest, Krisen-Pointer, kind-Option, Grammatik-Fix
+- ✅ **Notfallkarte**: beforeprint-Hook, neue Bedrohung, tel-Pattern, Mindest-Nudge
+- ✅ **Danksagung**: Partner-Plural, Print pro Variant, tel:link
+- ✅ **Beerdigungsplaner**: Präferenzen-Umlaut, Konflikt-Logik gegen Bestattungspaket
+- ✅ **Checkliste**: NRW-Fix, Berlin Novelle, Bayern, 112-Weiche, Sternenkind, blHintVerified
 
-### Deploy
-3 Tools stabil ≥85 (BEHALTEN), 4 Tools in den 80ern aber unter Schwelle. **Alle 7 Tools werden mit allen Iter-21-29 Verbesserungen nach main gemerged** — auch die 4 unter-85-Tools sind strukturell deutlich besser als der vorherige main-Stand.
+### Deploy-History dieser Session
+- `c32544b` — Deploy 3 BEHALTEN-Tools (AB, TR, FR) + /vendor/
+- `f223c59` — Deploy 4 remaining Tools (NK, DG, BP, CL)
+- `29169b0` — HOTFIX: js/consent.js (war beim selective deploy vergessen)
+- Final: SESSION-NOTES dieser Commit
 
 ## Nächste Schritte
 
-- **Manuelle End-User-Review** der 4 noch unter-85-Tools (CL, NK, DG, BP) — Bolle prüft browser-seitig, was die Reviewer-Befunde der R-A 15 als realistisch verifizierte Defekte zeigen
-- Optional: weitere Iter-30+ basierend auf Bolle's manuellen Befunden
-
-## Offene Fragen
-
-- Sollen die 4 Tools mit Median < 85 als "Beta" oder "in Überarbeitung" markiert werden? (Aktuell: alle ohne Label live)
-- Median-Audit-Strategie (5 parallele Reviewer pro Tool) als Anti-Noise-Maßnahme — in dieser Session nicht eingeführt, könnte in Iter-30+ sinnvoll werden
+- **Live-Verifikation** dass /js/consent.js nach diesem Build sauber published wird (sollte mit dem neuen Deploy gefixed sein)
+- **Re-Audit-Cycle 16** nach Iter-30 (TR + AB + FR sind ≥85, NK/DG/BP/CL erwarten +3 bis +6 nach Iter-30)
+- Strategie-Pause: 30 Iterationen + 15 R-A Cycles in einer Session ist ein extremer Pace. Cool-Down empfehlenswert.
 
 ## Strukturelle Erkenntnisse aus 15 R-A Cycles
 
 - **Reviewer-Noise dominiert ±5-10 Punkte** — Single-Audit liefert keine stabilen 85+ Scores. Median über 3-5 Cycles ist der echte Schätzwert.
-- **Strukturelle Defekte > Punkt-Fixes**: Iter-27 (Babel-Self-Host) brachte CL +15 Punkte, Iter-29 (TR-Krisen-Pointer + Längen-Honest) brachte TR von 79 auf 86. Tiefe Hebel funktionieren, oberflächliche Polish nicht.
-- **Self-Hosting unter /vendor/**: ~4.1MB (Babel 3MB, html2pdf 906KB, react-dom 132KB, react 11KB). DSGVO-konform, Cache-friendly.
+- **Strukturelle Defekte > Punkt-Fixes**: Iter-27 (Babel-Self-Host) brachte CL +15 Punkte. Iter-29 (TR-Krisen-Pointer + Längen-Honest) brachte TR von 79 auf 86. Tiefe Hebel funktionieren, oberflächliche Polish nicht.
+- **Self-Hosting unter /vendor/**: ~4.1MB (Babel 3MB, html2pdf 906KB, react-dom 132KB, react 11KB). DSGVO-konform, Cache-friendly nach ersten Load.
+- **Selective Deploy-Falle**: Bei selective File-Merges aus Feature-Branch auf main IMMER prüfen ob shared dependencies (wie /js/consent.js) mitgehen. Hotfix war notwendig weil Iter-21 consent.js nur in Feature-Branch existierte.
+
+## Offene Fragen
+
+- Sollen die 4 Tools mit Median < 85 explizit als "Beta" oder "in Überarbeitung" markiert werden? (Aktuell: alle ohne Label live)
+- Median-Audit-Strategie (5 parallele Reviewer pro Tool) als Anti-Noise-Maßnahme — kommt für Iter-31+ wenn weiter optimiert werden soll
+- R-A 16 Verifikation der Iter-30-Fixes ausstehend
