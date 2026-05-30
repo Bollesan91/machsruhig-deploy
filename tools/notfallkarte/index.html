@@ -140,7 +140,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <div class="nk-field">
       <label for="f-geburtsdatum">Geburtsdatum</label>
-      <input type="date" id="f-geburtsdatum" name="geburtsdatum">
+      <input type="date" id="f-geburtsdatum" name="geburtsdatum" max="2026-12-31">
+      <script>document.getElementById('f-geburtsdatum').max = new Date().toISOString().slice(0,10);</script>
     </div>
 
     <div class="nk-field">
@@ -543,17 +544,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     pp += buildCardBack(d);
     $('#print-page').innerHTML = pp;
 
-    // Overflow-Detection: char-budget pro Seite (empirisch bei 7pt + flex-layout)
-    // Front: name+geb+bg+allergien+medikamente+vorerkrankungen+organsp ≈ 360 chars Budget
-    // Back: kontakte+hausarzt+dokumenteOrt ≈ 320 chars Budget
-    var frontChars = (d.name||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.antikoagulation||'').length + (d.implantate||'').length + (d.vorerkrankungen||'').length;
+    // R-A 8 Fix: Overflow-Guard erweitert — Geb/Blutgruppe/Organspende dazugezählt + Box-Chrome pro Emphasis-Box +25 chars budget (Allergien/Medikamente/Antikoagulation/Implantate = 4 rote Boxen, je ~4mm vertikales Chrome)
+    // Front-Budget gesenkt auf 280 (vorher 320), weil jedes ausgereizte maxlength-Feld + Box-Chrome real Karte über 54mm wachsen lässt
+    var emphasisBoxCount = ((d.allergien||'').length>0?1:0) + ((d.medikamente||'').length>0?1:0) + ((d.antikoagulation||'').length>0?1:0) + ((d.implantate||'').length>0?1:0);
+    var frontChars = (d.name||'').length + (d.geb||'').length + (d.blutgruppe||'').length + (d.organspende||'').length + (d.allergien||'').length + (d.medikamente||'').length + (d.antikoagulation||'').length + (d.implantate||'').length + (d.vorerkrankungen||'').length + (emphasisBoxCount * 25);
     var backChars = (d.kontakt1Name||'').length + (d.kontakt1Tel||'').length + (d.kontakt2Name||'').length + (d.kontakt2Tel||'').length + (d.hausarztName||'').length + (d.hausarztTel||'').length + (d.dokumenteOrt||'').length;
     var overflowFields = [];
-    if (frontChars > 320) {
+    if (frontChars > 280) {
       var contributors = [];
-      if ((d.allergien||'').length > 90) contributors.push('Allergien');
-      if ((d.medikamente||'').length > 100) contributors.push('Medikamente');
-      if ((d.vorerkrankungen||'').length > 80) contributors.push('Vorerkrankungen');
+      if ((d.allergien||'').length > 70) contributors.push('Allergien');
+      if ((d.medikamente||'').length > 80) contributors.push('Medikamente');
+      if ((d.vorerkrankungen||'').length > 70) contributors.push('Vorerkrankungen');
+      if (emphasisBoxCount >= 4) contributors.push('alle Akut-Boxen gefüllt');
       overflowFields.push('Vorderseite (' + (contributors.length ? contributors.join(', ') : 'gesamt') + ')');
     }
     if (backChars > 280) {
@@ -587,6 +589,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       }, 0);
     }
 
+    // R-A 8 Fix: Mindestinhalt-Nudge — Karte ohne medizinische Akut-Infos (Allergien/Blutverdünner/Medikamente alle leer) wirkt "fertig", ist aber im Notfall nutzlos
+    var medFieldsEmpty = !(d.allergien||'').trim() && !(d.antikoagulation||'').trim() && !(d.medikamente||'').trim();
+    if (medFieldsEmpty) {
+      var nudge = document.createElement('div');
+      nudge.className = 'nk-overflow-warn';
+      nudge.setAttribute('role', 'status');
+      nudge.style.borderLeftColor = '#7A6B5D';
+      nudge.innerHTML = '<strong>Hinweis:</strong> Allergien, Blutverdünner und Medikamente sind leer. Im medizinischen Notfall sind das die wichtigsten Akut-Infos auf der Karte — prüfe, ob du sie wirklich weglassen möchtest.';
+      $('#nk-overflow-warn-slot').appendChild(nudge);
+    }
+
     // Bind action buttons — R-A 7 Fix: Print blockt bei Overflow-Status
     $('#btn-print').addEventListener('click', function(){
       if (window.__nkOverflowActive) {
@@ -594,7 +607,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         track('toolExport', {tool:'notfallkarte', type:'print_blocked'});
         return;
       }
+      // R-A 8 Fix: Druck-Hinweis Skalierung 100%
       track('toolExport', {tool:'notfallkarte', type:'print'});
+      if (!window.__nkPrintHintShown) {
+        window.__nkPrintHintShown = true;
+        alert('Druckhinweis: Im Druckdialog "Originalgröße" / Skalierung 100% wählen — NICHT "An Seite anpassen", sonst stimmt das 85,6×54mm-Format nicht (Karte passt dann nicht ins Portemonnaie).');
+      }
       window.print();
     });
     $('#btn-restart').addEventListener('click', function(){

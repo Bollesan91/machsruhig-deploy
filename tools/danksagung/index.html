@@ -397,8 +397,8 @@ const RELATIONSHIPS = [
   {value:'vater',label:'Vater',possessive:'unserem Vater',family:'Die Familie'},
   {value:'grossmutter',label:'Großmutter / Oma',possessive:'unserer Großmutter',family:'Die Familie'},
   {value:'grossvater',label:'Großvater / Opa',possessive:'unserem Großvater',family:'Die Familie'},
-  {value:'partner',label:'Partner:in',possessive:'meinem geliebten Menschen',family:'In Liebe'},
-  {value:'kind',label:'Kind',possessive:'unserem geliebten Kind',family:'In tiefer Trauer — die Eltern'},
+  {value:'partner',label:'Partner:in',possessive:'unserem geliebten Menschen',family:'In Liebe'},
+  {value:'kind',label:'Kind',possessive:'unserem geliebten Kind',family:'In tiefer Trauer'},
   {value:'schwester',label:'Schwester',possessive:'unserer Schwester',family:'In Verbundenheit — die Geschwister'},
   {value:'bruder',label:'Bruder',possessive:'unserem Bruder',family:'In Verbundenheit — die Geschwister'},
   {value:'freund',label:'Freund:in',possessive:'einem besonderen Menschen',family:'In Dankbarkeit'},
@@ -638,17 +638,7 @@ function DanksagungGenerator() {
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="date">Datum der Beerdigung oder des Todes (optional)</label>
-                <input
-                  id="date"
-                  type="text"
-                  value={formData.date}
-                  onChange={e => updateFormData('date', e.target.value)}
-                  placeholder="z.B. 15. März 2026"
-                />
-                <div className="hint">Wird nicht in den Text eingefügt, hilft aber bei der Einordnung.</div>
-              </div>
+              {/* R-A 8 Fix: Datumsfeld entfernt — wurde abgefragt, aber nirgends verwendet (sinnlose Friktion) */}
 
               <div className="form-group">
                 <label htmlFor="relationship">Deine Beziehung zur verstorbenen Person</label>
