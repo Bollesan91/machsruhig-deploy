@@ -563,18 +563,37 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if ((d.dokumenteOrt||'').length > 80) backContributors.push('Aufbewahrungsort');
       overflowFields.push('Rückseite (' + (backContributors.length ? backContributors.join(', ') : 'gesamt') + ')');
     }
+    // R-A 7 Fix: Overflow blockiert jetzt hart — Print/PDF nur nach expliziter Bestätigung, weil silent-abgeschnittene Allergie/Medikamenten-Zeile YMYL-Schadenspfad ist
+    window.__nkOverflowActive = overflowFields.length > 0;
     if (overflowFields.length) {
       $('#nk-overflow-warn-slot').innerHTML =
         '<div class="nk-overflow-warn" role="alert" aria-live="polite">' +
-        '<strong>Achtung: Inhalt könnte abgeschnitten werden.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
+        '<strong>Achtung: Inhalt würde abgeschnitten werden.</strong> Bei den folgenden Bereichen ist die Karte voll: ' +
         overflowFields.join(' · ') +
-        '. Wenn beim Druck Zeilen fehlen, kürze die längsten Einträge — z. B. mit Abkürzungen (Diab. statt Diabetes, ASS statt Acetylsalicylsäure) oder lasse nicht-akute Medikamente weg.' +
+        '. <strong>Drucken/PDF-Export ist gesperrt, bis du gekürzt hast</strong> — in einem medizinischen Notfall kann eine fehlende Allergie- oder Blutverdünner-Zeile lebenswichtig sein. ' +
+        'Kürze die längsten Einträge (z. B. Diab. statt Diabetes, ASS statt Acetylsalicylsäure) oder lasse nicht-akute Medikamente weg. ' +
+        '<button type="button" id="nk-overflow-override" style="margin-top:8px;background:transparent;border:1px solid #C8862E;color:#8b5a14;border-radius:6px;padding:6px 12px;font-size:13px;cursor:pointer">Trotzdem drucken (auf eigenes Risiko)</button>' +
         '</div>';
       track('toolStep', {tool:'notfallkarte', step:'overflow_warn', fields:overflowFields.join('|')});
+      setTimeout(function(){
+        var ov = $('#nk-overflow-override');
+        if (ov) ov.addEventListener('click', function(){
+          if (window.confirm('Wirklich drucken? In einem medizinischen Notfall können abgeschnittene Allergie- oder Medikamenten-Zeilen lebenswichtig sein.')) {
+            window.__nkOverflowActive = false;
+            track('toolStep', {tool:'notfallkarte', step:'overflow_override'});
+            $('#nk-overflow-warn-slot').innerHTML = '<div class="nk-overflow-warn" role="status">Druck/PDF-Export freigegeben — auf eigenes Risiko.</div>';
+          }
+        });
+      }, 0);
     }
 
-    // Bind action buttons
+    // Bind action buttons — R-A 7 Fix: Print blockt bei Overflow-Status
     $('#btn-print').addEventListener('click', function(){
+      if (window.__nkOverflowActive) {
+        alert('Drucken ist gesperrt: Die Karte würde Inhalt abschneiden. Bitte kürze die markierten Felder oder bestätige unter "Trotzdem drucken (auf eigenes Risiko)" über der Warnung.');
+        track('toolExport', {tool:'notfallkarte', type:'print_blocked'});
+        return;
+      }
       track('toolExport', {tool:'notfallkarte', type:'print'});
       window.print();
     });
@@ -600,6 +619,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var target = document.querySelector(EXPORT_SELECTOR);
     if (!target || !target.innerHTML.trim()) {
       alert('Bitte erst Tool ausfüllen, dann PDF exportieren.');
+      return;
+    }
+    // R-A 7 Fix: PDF-Export blockt bei Overflow-Status (YMYL-Schadenspfad)
+    if (window.__nkOverflowActive) {
+      alert('PDF-Export ist gesperrt: Die Karte würde Inhalt abschneiden. Bitte kürze die markierten Felder oder bestätige unter "Trotzdem drucken (auf eigenes Risiko)" über der Warnung.');
+      if (window.plausible) window.plausible('tool_export', { props: { type: 'pdf_blocked', tool: TOOL_LABEL } });
       return;
     }
     if (window.plausible) window.plausible('tool_export', { props: { type: 'pdf', tool: TOOL_LABEL } });
