@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Notfallkarte erstellen — medizinische Notfallkarte fürs Portemonnaie | mach's ruhig</title>
+<meta name="description" content="Notfallkarte erstellen — Schritt für Schritt: Welche Felder gehören drauf, wie sie das NFDM der eGK ergänzt, Beispiel-Layouts für chronisch Kranke, Senioren & Reisende. Plus kostenloser Generator, ohne Anmeldung.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://machsruhig.de/notfallkarte">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notfallkarte erstellen — medizinische Notfallkarte fürs Portemonnaie">
+<meta property="og:description" content="Welche Felder gehören auf eine Notfallkarte, wie sie das NFDM der eGK ergänzt und drei fertige Beispiel-Layouts — plus kostenloser Generator.">
+<meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
+<meta property="og:url" content="https://machsruhig.de/notfallkarte">
+
+<!-- Analytics: Plausible (Shim-Variante) — no-op Event-Queue, fängt Events auch vor dem Laden des Scripts ab -->
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)};</script>
+<script defer data-domain="machsruhig.de" src="https://plausible.io/js/script.tagged-events.js"></script>
+
+<style>
+:root{
+  --ink:#1f2a2e; --muted:#5b6b70; --line:#e3e8e7; --bg:#fbfaf7;
+  --card:#ffffff; --accent:#3a6b5e; --accent-soft:#eef4f1; --accent-ink:#274b41;
+  --warn:#8a6d3b; --warn-soft:#fbf4e6; --radius:14px; --maxw:760px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.65;font-size:18px}
+a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{position:static;display:inline-block;padding:8px;background:#fff}
+
+/* Nav */
+.nav{border-bottom:1px solid var(--line);background:#fff}
+.nav .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;padding-top:14px;padding-bottom:14px}
+.nav .brand{font-weight:700;font-size:20px;text-decoration:none;color:var(--accent-ink);margin-right:8px}
+.nav a:not(.brand){font-size:15px;text-decoration:none;color:var(--muted)}
+.nav a:not(.brand):hover{color:var(--accent-ink)}
+
+/* Breadcrumb */
+.breadcrumb{font-size:14px;color:var(--muted);padding-top:18px}
+.breadcrumb a{color:var(--muted)}
+
+/* Hero */
+.hero{padding-top:8px}
+.hero h1{font-size:34px;line-height:1.2;margin:14px 0 16px}
+.hero .lead{font-size:19px;color:#33474b}
+.meta-line{font-size:14px;color:var(--muted);margin-top:18px;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:12px 0}
+.meta-line strong{color:var(--ink)}
+
+/* Sections */
+.section{padding:30px 0;border-bottom:1px solid var(--line)}
+.section h2{font-size:25px;line-height:1.25;margin:0 0 14px}
+.section h3{font-size:19px;margin:22px 0 8px}
+.section h4{font-size:17px;margin:18px 0 6px}
+.section p{margin:0 0 14px}
+.section ul{margin:0 0 14px;padding-left:22px}
+.section li{margin-bottom:7px}
+
+/* Key facts */
+.key-facts{background:var(--accent-soft);border:1px solid #d7e6df;border-radius:var(--radius);
+  padding:22px 24px;margin:24px 0}
+.key-facts h2{font-size:21px;margin:0 0 12px}
+.key-facts ul{margin:0;padding-left:20px}
+.key-facts li{margin-bottom:8px}
+
+/* CTA */
+.cta-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;margin:26px 0;text-align:center;box-shadow:0 2px 10px rgba(40,60,55,.04)}
+.cta-box h2,.cta-box h3{margin:0 0 8px}
+.cta-box p{color:var(--muted);margin:0 0 16px}
+.cta-primary{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  font-weight:600;padding:13px 26px;border-radius:10px}
+.cta-primary:hover{background:#315a4f}
+.cta-sub{display:block;font-size:13px;color:var(--muted);margin-top:10px}
+
+/* Cards */
+.card-grid{display:grid;gap:18px;margin:18px 0}
+@media(min-width:640px){.card-grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card h3{margin:0 0 4px;font-size:18px}
+.card .role{font-size:13px;color:var(--accent-ink);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.card dl{margin:12px 0 0;font-size:15.5px}
+.card dt{font-weight:600;color:var(--muted);margin-top:9px;font-size:13px;text-transform:uppercase;letter-spacing:.02em}
+.card dd{margin:1px 0 0}
+
+/* Tip / warning */
+.tip{background:var(--warn-soft);border-left:4px solid #d8b878;border-radius:8px;padding:14px 18px;margin:18px 0;font-size:16px}
+.tip strong{color:var(--warn)}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--line);padding:16px 0}
+.faq-item h3{margin:0 0 6px;font-size:18px}
+.faq-item p{margin:0;color:#39484c}
+
+/* Crosslinks / sources / trust */
+.crosslinks{font-size:15px;color:var(--muted);margin-top:10px}
+.crosslinks a{margin-right:6px}
+.sources ul{padding-left:20px}
+.sources li{margin-bottom:9px;font-size:15.5px}
+.trust{font-size:14px;color:var(--muted);background:#f4f3ef;border-radius:var(--radius);padding:18px 20px;margin:26px 0}
+
+/* Footer */
+.site-footer{background:#274b41;color:#dfe9e4;margin-top:10px;padding:34px 0}
+.site-footer h4{color:#fff;font-size:15px;margin:0 0 10px}
+.site-footer a{color:#cfe0d9;display:block;text-decoration:none;font-size:14px;margin-bottom:5px}
+.site-footer a:hover{color:#fff}
+.foot-grid{display:grid;gap:24px}
+@media(min-width:640px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-fine{font-size:12px;color:#a8c0b6;margin-top:22px;border-top:1px solid #335a4e;padding-top:16px}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "headline":"Notfallkarte erstellen — die medizinische Akut-Karte für dein Portemonnaie",
+      "description":"Welche Felder auf eine Notfallkarte gehören, wie sie das NFDM der elektronischen Gesundheitskarte ergänzt und drei fertige Beispiel-Layouts für chronisch Kranke, Senioren und Reisende.",
+      "image":"https://machsruhig.de/assets/og-image.png",
+      "datePublished":"2026-04-15",
+      "dateModified":"2026-04-15",
+      "inLanguage":"de-DE",
+      "mainEntityOfPage":{"@type":"WebPage","@id":"https://machsruhig.de/notfallkarte"},
+      "author":{"@type":"Organization","name":"Redaktion machsruhig.de","url":"https://machsruhig.de/methodik"},
+      "publisher":{
+        "@type":"Organization",
+        "name":"mach's ruhig",
+        "url":"https://machsruhig.de",
+        "logo":{"@type":"ImageObject","url":"https://machsruhig.de/assets/logo.png","width":512,"height":512}
+      }
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},
+        {"@type":"ListItem","position":2,"name":"Notfallkarte erstellen","item":"https://machsruhig.de/notfallkarte"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Was ist der Unterschied zwischen Notfallkarte und Notfallausweis?","acceptedAnswer":{"@type":"Answer","text":"Die Begriffe werden meist synonym verwendet. Ein Notfallausweis ist häufig ein vorgedrucktes Faltdokument einer Krankenkasse oder eines Verbands, eine Notfallkarte ist die kompakte Scheckkarten-Version fürs Portemonnaie. Inhaltlich verfolgen beide dasselbe Ziel: notfallrelevante Informationen sofort lesbar zu machen."}},
+        {"@type":"Question","name":"Ersetzt die Notfallkarte den Notfalldatensatz (NFD) auf der eGK?","acceptedAnswer":{"@type":"Answer","text":"Nein. Der NFD auf der elektronischen Gesundheitskarte ist nur abrufbar, wenn die Karte vorliegt und ein TI-fähiges Kartenlesegerät vorhanden ist. Am Unfallort, bei Erster Hilfe durch Laien oder im Ausland ist das oft nicht der Fall. Die Papierkarte überbrückt genau diese Lücke und ist sofort lesbar."}},
+        {"@type":"Question","name":"Welche Größe sollte eine Notfallkarte haben?","acceptedAnswer":{"@type":"Answer","text":"Bewährt hat sich das Scheckkartenformat von 85 × 54 Millimetern, weil es ins Portemonnaie direkt neben Personalausweis und Gesundheitskarte passt — dort suchen Rettungskräfte zuerst. Wer mehr unterbringen muss, nutzt eine faltbare Variante in derselben Grundgröße."}},
+        {"@type":"Question","name":"Muss ich meine Blutgruppe auf die Notfallkarte schreiben?","acceptedAnswer":{"@type":"Answer","text":"Sie ist optional. Vor einer Transfusion wird die Blutgruppe in der Klinik ohnehin neu bestimmt und gekreuzt. Die Angabe kann ein hilfreicher Hinweis sein, ersetzt aber keine Labordiagnostik. Wichtiger sind Allergien, Dauermedikation, Blutverdünner und chronische Diagnosen."}},
+        {"@type":"Question","name":"Wie oft sollte ich die Notfallkarte aktualisieren?","acceptedAnswer":{"@type":"Answer","text":"Anlassbezogen bei jeder Änderung von Medikation, Diagnosen, Allergien oder Notfallkontakt — und zusätzlich einmal jährlich als Routine-Check. Drucke ein Stand-Datum auf die Karte und vernichte alte Versionen, damit keine veralteten Angaben kursieren."}},
+        {"@type":"Question","name":"Ist eine Notfallkarte auch für gesunde Menschen sinnvoll?","acceptedAnswer":{"@type":"Answer","text":"Ja. Selbst ohne chronische Erkrankung helfen ein Notfallkontakt, Allergien und ein Hinweis auf eine vorhandene Patientenverfügung. Gerade bei Sport, Reisen oder im Straßenverkehr beschleunigt das die Versorgung und entlastet Angehörige."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="https://machsruhig.de/">mach's ruhig</a>
+    <a href="https://machsruhig.de/tools/checkliste-todesfall">Checkliste Todesfall</a>
+    <a href="https://machsruhig.de/tools/vorsorge-check">Vorsorge-Check</a>
+    <a href="https://machsruhig.de/notfallkarte">Notfallkarte</a>
+    <a href="https://machsruhig.de/beerdigung-planen">Beerdigung planen</a>
+    <a href="https://machsruhig.de/bestatter/muenchen/">Bestatter finden</a>
+  </div>
+</nav>
+
+<main id="main" class="wrap">
+
+  <p class="breadcrumb"><a href="https://machsruhig.de/">Start</a> › Notfallkarte erstellen</p>
+
+  <header class="hero">
+    <h1>Notfallkarte erstellen — die medizinische Akut-Karte für dein Portemonnaie</h1>
+    <p class="lead">Im Ernstfall zählt jede Minute. Eine gut gemachte Notfallkarte sagt Rettungskräften in Sekunden, was sie über dich wissen müssen — auch dann, wenn du selbst nicht antworten kannst. Hier liest du, wie du eine Notfallkarte erstellst, welche Felder wirklich darauf gehören und wie sie das digitale Notfall-Datenmanagement deiner Gesundheitskarte sinnvoll ergänzt.</p>
+    <p class="meta-line"><strong>Redaktion machsruhig.de</strong> · Stand: April 2026 · <a href="https://machsruhig.de/methodik">Wie entstehen unsere Inhalte?</a> · Lesezeit: ca. 9 Minuten</p>
+  </header>
+
+  <section class="key-facts" aria-label="Das Wichtigste auf einen Blick">
+    <h2>Das Wichtigste auf einen Blick</h2>
+    <ul>
+      <li>Eine Notfallkarte gehört ins Portemonnaie — direkt neben Personalausweis und Gesundheitskarte, denn dort schauen Rettungskräfte zuerst.</li>
+      <li>Auf den Pflichtteil gehören: Dauermedikation, Allergien, chronische Diagnosen und ein Notfallkontakt mit Telefonnummer.</li>
+      <li>Der Notfalldatensatz (NFD) auf der eGK ist nur mit Kartenleser und Telematik-Anschluss abrufbar — am Unfallort oder im Ausland meist nicht.</li>
+      <li>Die Papierkarte überbrückt genau diese Lücke und ist ohne Technik sofort lesbar.</li>
+      <li>Bewährtes Format: Scheckkarte 85 × 54 mm, große Schrift, das Wichtigste oben.</li>
+      <li>Hinweis auf Blutverdünner, Herzschrittmacher oder eine Patientenverfügung kann im Notfall entscheidend sein.</li>
+      <li>Aktualisiere die Karte bei jeder Medikamentenänderung und einmal jährlich zur Routine.</li>
+      <li>Auch für gesunde Menschen sinnvoll — ein Notfallkontakt allein hilft Helfern und Angehörigen enorm.</li>
+    </ul>
+  </section>
+
+  <div class="cta-box">
+    <h2>Notfallkarte erstellen — mit Unterstützung</h2>
+    <p>Unser kostenloser Generator führt dich Feld für Feld zu einer fertigen, druckbaren Notfallkarte im Scheckkartenformat. Komplett in deinem Browser, ohne Anmeldung.</p>
+    <a class="cta-primary" href="https://machsruhig.de/tools/notfallkarte/" data-analytics-event="cta_tool_hero">Zum Notfallkarten-Generator</a>
+    <span class="cta-sub">Dauer: ca. 10 Minuten · Deine Eingaben bleiben in deinem Browser</span>
+  </div>
+
+  <section class="section">
+    <h2>1. Was gehört auf eine Notfallkarte? (Pflicht- und Kann-Felder)</h2>
+    <p>Eine Notfallkarte ist kein medizinisches Datenblatt, sondern eine Sofort-Orientierung. Helfer haben wenige Sekunden, um sich ein Bild zu machen — deshalb gilt: das Wichtigste nach oben, klar lesbar, ohne Abkürzungen, die nur du verstehst. Wer eine medizinische Notfallkarte erstellt, trennt am besten bewusst zwischen einem Pflichtteil, der immer drauf muss, und Kann-Feldern, die je nach Lebenssituation sinnvoll sind.</p>
+
+    <h3>Pflichtteil — das Minimum jeder Notfallkarte</h3>
+    <ul>
+      <li><strong>Name und Geburtsdatum</strong> — zur eindeutigen Zuordnung.</li>
+      <li><strong>Chronische Erkrankungen</strong> — etwa Diabetes, Epilepsie, koronare Herzkrankheit oder Asthma.</li>
+      <li><strong>Dauermedikation</strong> — Wirkstoff, Dosis und Einnahmerhythmus, nicht nur der Handelsname.</li>
+      <li><strong>Allergien und Unverträglichkeiten</strong> — besonders Arzneimittelallergien mit schwerer Reaktion.</li>
+      <li><strong>Notfallkontakt</strong> — Name, Beziehung und eine erreichbare Telefonnummer.</li>
+    </ul>
+
+    <h3>Kann-Felder — je nach Situation</h3>
+    <ul>
+      <li><strong>Blutverdünner / Antikoagulation</strong> — bei Blutungen extrem relevant, daher prominent platzieren.</li>
+      <li><strong>Implantate</strong> — Herzschrittmacher, Defibrillator (ICD) oder künstliche Herzklappe.</li>
+      <li><strong>Hinweis auf eine Patientenverfügung oder Vorsorgevollmacht</strong> samt Aufbewahrungsort.</li>
+      <li><strong>Hausarzt</strong> und ggf. behandelnde Fachärzte mit Telefonnummer.</li>
+      <li><strong>Krankenkasse und Versichertennummer</strong>, Organspende-Hinweis, bevorzugte Sprache.</li>
+      <li><strong>Blutgruppe</strong> — als Hinweis, nicht als Ersatz für die Bestimmung in der Klinik.</li>
+    </ul>
+    <p>Der Notfallausweis vieler Krankenkassen deckt diese Felder bereits ab. Wer sie selbst zusammenstellt, sollte darauf achten, dass die Karte nicht zur unleserlichen Datensammlung wird. Drei klar geordnete Blöcke schlagen zwanzig kleingedruckte Zeilen.</p>
+  </section>
+
+  <section class="section">
+    <h2>2. Wie ergänzt die Notfallkarte das Notfall-Datenmanagement (NFDM) der eGK?</h2>
+    <p>Auf der elektronischen Gesundheitskarte (eGK) gibt es seit einigen Jahren das <strong>Notfall-Datenmanagement (NFDM)</strong> — eine freiwillige und kostenlose Funktion der Telematikinfrastruktur. Es besteht aus zwei Datensätzen: dem <strong>Notfalldatensatz (NFD)</strong> mit Diagnosen, Medikation, Allergien und Kontaktdaten sowie dem <strong>Datensatz Persönliche Erklärungen (DPE)</strong>, der lediglich Hinweise auf den Aufbewahrungsort von Organspendeausweis, Patientenverfügung und Vorsorgevollmacht speichert — die Dokumente selbst liegen nicht auf der Karte. Angelegt wird der NFD in der Regel von deiner Hausärztin oder deinem Hausarzt.</p>
+    <p>Im Notfall dürfen Ärzte und Rettungskräfte mit elektronischem Heilberufsausweis den Notfalldatensatz auch ohne deine ausdrückliche Zustimmung auslesen. Das klingt zunächst, als bräuchte man gar keine Papierkarte mehr. Der Haken steckt in den Voraussetzungen: Der NFD ist nur abrufbar, wenn die eGK körperlich vorliegt <em>und</em> ein an die Telematikinfrastruktur angeschlossenes Kartenlesegerät zur Verfügung steht — also typischerweise in der Notaufnahme oder beim ärztlichen Bereitschaftsdienst.</p>
+    <div class="tip"><strong>Die entscheidende Lücke:</strong> Am Unfallort, in den ersten Minuten der Ersten Hilfe durch Laien, beim Sturz auf der Straße oder im Ausland ist kein TI-Kartenleser greifbar. Genau dort, wo es auf Sekunden ankommt, schweigt der digitale Datensatz — und die Papierkarte im Portemonnaie spricht sofort.</div>
+    <p>Die Notfallkarte ersetzt das NFDM also nicht, sie überbrückt es. Beides zusammen ergibt die robusteste Lösung: der gepflegte NFD für die strukturierte Versorgung in der Klinik, die Brieftaschen-Notfallkarte für den Offline-Moment davor.</p>
+  </section>
+
+  <section class="section">
+    <h2>3. Wo bewahre ich die Notfallkarte am besten auf?</h2>
+    <p>Die beste Notfallkarte nützt nichts, wenn niemand sie findet. Rettungskräfte arbeiten nach einem festen Muster — sie suchen zuerst dort, wo Menschen ihre Ausweise tragen.</p>
+    <h3>Portemonnaie</h3>
+    <p>Der wichtigste Aufbewahrungsort. Lege die Karte direkt neben Personalausweis und Gesundheitskarte. Eine farbige Karte oder ein rotes Kreuz-Symbol macht sie zusätzlich auffindbar.</p>
+    <h3>Handy-Backup</h3>
+    <p>Moderne Smartphones haben einen digitalen Notfallpass, der sich vom gesperrten Bildschirm aufrufen lässt — bei iPhones der „Notfallpass", bei Android die „Notfallinformationen". Pflege dort dieselben Angaben wie auf der Papierkarte. Beide Versionen sollten immer auf demselben Stand sein.</p>
+    <h3>Auto und Zuhause</h3>
+    <p>Ein Exemplar im Handschuhfach hilft bei Verkehrsunfällen. Wer allein lebt, kann eine Kopie sichtbar an den Kühlschrank heften — Rettungsdienste kennen diesen Ort. Wichtig ist nur, dass nirgends eine veraltete Version übrig bleibt.</p>
+  </section>
+
+  <section class="section">
+    <h2>4. Wie häufig muss ich die Karte aktualisieren?</h2>
+    <p>Eine Notfallkarte ist nur so gut wie ihr aktuellster Eintrag. Eine falsch angegebene Medikation kann im Ernstfall mehr schaden als nützen. Halte dich deshalb an zwei einfache Regeln.</p>
+    <h3>Anlassbezogen — sofort bei jeder Änderung</h3>
+    <p>Neue Diagnose, anderes Medikament, neue Allergie, geänderter Notfallkontakt: Solche Änderungen gehören umgehend auf die Karte. Gerade nach einem Krankenhausaufenthalt oder einer Medikamentenumstellung lohnt der kurze Check.</p>
+    <h3>Routine — einmal im Jahr</h3>
+    <p>Lege dir einen festen Termin: am eigenen Geburtstag, zum Jahreswechsel oder beim jährlichen Hausarztbesuch. Drucke ein <strong>Stand-Datum</strong> auf die Karte, damit Helfer und du selbst sofort sehen, wie aktuell die Angaben sind.</p>
+    <div class="tip"><strong>Tipp:</strong> Vernichte alte Versionen vollständig, sobald eine neue gedruckt ist. Zwei widersprüchliche Karten im Umlauf sind gefährlicher als gar keine.</div>
+  </section>
+
+  <section class="section">
+    <h2>5. Wann brauche ich keine separate Notfallkarte?</h2>
+    <p>Es gibt Konstellationen, in denen eine zusätzliche Papierkarte weniger zwingend ist — ganz verzichtbar wird sie aber selten.</p>
+    <ul>
+      <li><strong>Gepflegter NFD plus eMedikationsplan:</strong> Wer einen aktuellen Notfalldatensatz und den elektronischen Medikationsplan auf der eGK hat und überwiegend im Inland in versorgten Situationen unterwegs ist, ist in Klinik und Bereitschaftsdienst gut abgesichert. Die präklinische Lücke am Unfallort bleibt jedoch bestehen.</li>
+      <li><strong>Digitaler Notfallpass am Handy:</strong> Ein vollständig gepflegter Notfallpass auf dem Smartphone deckt viele Alltagssituationen ab — vorausgesetzt, das Gerät ist auffindbar, geladen und der Sperrbildschirm-Zugriff aktiviert.</li>
+      <li><strong>Künftige Patientenkurzakte in der ePA:</strong> Der Notfalldatensatz soll sich zur „Patientenkurzakte" weiterentwickeln und voraussichtlich ab Ende 2026 zusätzlich in der elektronischen Patientenakte hinterlegt werden; die Speicherung auf der eGK ist längstens bis Ende 2029 vorgesehen. Den genauen Fahrplan legt das Bundesgesundheitsministerium per Verordnung fest.</li>
+    </ul>
+    <p>Unterm Strich: Für chronisch Kranke, Menschen mit Mehrfachmedikation, Senioren und Reisende bleibt die Papierkarte das robusteste Offline-Backup. Niemand mit relevanten gesundheitlichen Risiken sollte sich allein auf digitale Lösungen verlassen — eine Scheckkarte funktioniert ohne Akku, ohne Netz und ohne Kartenleser.</p>
+  </section>
+
+  <section class="section">
+    <h2>Beispiele: So kann eine Notfallkarte aussehen</h2>
+    <p>Drei typische Lebenssituationen, drei unterschiedliche Schwerpunkte. Die Felder sind Beispiele — deine eigene Karte stellst du am besten gemeinsam mit deiner Ärztin oder deinem Arzt zusammen.</p>
+    <div class="card-grid">
+
+      <article class="card">
+        <span class="role">Chronisch krank</span>
+        <h3>Diabetes Typ 1 &amp; Blutverdünner</h3>
+        <dl>
+          <dt>Diagnosen</dt><dd>Diabetes mellitus Typ 1, Vorhofflimmern</dd>
+          <dt>Medikation</dt><dd>Insulin (Basal/Bolus), Apixaban 5 mg 2×/Tag</dd>
+          <dt>Allergien</dt><dd>Penicillin (Hautausschlag)</dd>
+          <dt>Achtung</dt><dd>Antikoaguliert — erhöhtes Blutungsrisiko</dd>
+          <dt>Notfallkontakt</dt><dd>Partner · 0151 …</dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <span class="role">Senior:in</span>
+        <h3>Mehrfachmedikation &amp; Herzschrittmacher</h3>
+        <dl>
+          <dt>Diagnosen</dt><dd>Koronare Herzkrankheit, Bluthochdruck</dd>
+          <dt>Implantat</dt><dd>Herzschrittmacher (seit 2023)</dd>
+          <dt>Medikation</dt><dd>Ramipril, Bisoprolol, ASS 100, Statin</dd>
+          <dt>Wichtig</dt><dd>Patientenverfügung vorhanden — Ordner Flur</dd>
+          <dt>Notfallkontakt</dt><dd>Tochter · 0170 …</dd>
+        </dl>
+      </article>
+
+      <article class="card">
+        <span class="role">Reise-Variante</span>
+        <h3>Mehrsprachig &amp; versicherungsfertig</h3>
+        <dl>
+          <dt>Allergien / Allergies</dt><dd>Erdnüsse / peanuts — Anaphylaxie</dd>
+          <dt>Medikation / Medication</dt><dd>Adrenalin-Pen in Tasche / EpiPen in bag</dd>
+          <dt>Diagnosen</dt><dd>Asthma bronchiale</dd>
+          <dt>Versicherung</dt><dd>Auslandskrankenvers. · Police-Nr. …</dd>
+          <dt>Notfallkontakt</dt><dd>DE: 0049 … · vor Ort: Hotel-Rezeption</dd>
+        </dl>
+      </article>
+
+    </div>
+    <p>Die Reise-Variante zeigt einen wichtigen Kniff: Im Ausland verstehen Helfer deutsche Fachbegriffe oft nicht. Eine zweisprachige Karte (Deutsch/Englisch) mit den kritischen Stichworten kann entscheidend sein.</p>
+  </section>
+
+  <div class="cta-box">
+    <h3>Bereit, deine Notfallkarte zu erstellen?</h3>
+    <p>Felder ausfüllen, Vorschau prüfen, drucken — fertig im Scheckkartenformat. Kostenlos, ohne Anmeldung, komplett in deinem Browser.</p>
+    <a class="cta-primary" href="https://machsruhig.de/tools/notfallkarte/" data-analytics-event="cta_tool_final">Notfallkarte jetzt erstellen</a>
+    <span class="cta-sub">Kein Account nötig · Deine Eingaben werden nicht gespeichert</span>
+  </div>
+
+  <section class="section">
+    <h2>Häufige Fragen zur Notfallkarte</h2>
+
+    <div class="faq-item">
+      <h3>Was ist der Unterschied zwischen Notfallkarte und Notfallausweis?</h3>
+      <p>Die Begriffe werden meist synonym verwendet. Ein Notfallausweis ist häufig ein vorgedrucktes Faltdokument einer Krankenkasse oder eines Verbands, eine Notfallkarte ist die kompakte Scheckkarten-Version fürs Portemonnaie. Inhaltlich verfolgen beide dasselbe Ziel: notfallrelevante Informationen sofort lesbar zu machen.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Ersetzt die Notfallkarte den Notfalldatensatz (NFD) auf der eGK?</h3>
+      <p>Nein. Der NFD auf der elektronischen Gesundheitskarte ist nur abrufbar, wenn die Karte vorliegt und ein TI-fähiges Kartenlesegerät vorhanden ist. Am Unfallort, bei Erster Hilfe durch Laien oder im Ausland ist das oft nicht der Fall. Die Papierkarte überbrückt genau diese Lücke und ist sofort lesbar.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Welche Größe sollte eine Notfallkarte haben?</h3>
+      <p>Bewährt hat sich das Scheckkartenformat von 85 × 54 Millimetern, weil es ins Portemonnaie direkt neben Personalausweis und Gesundheitskarte passt — dort suchen Rettungskräfte zuerst. Wer mehr unterbringen muss, nutzt eine faltbare Variante in derselben Grundgröße.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Muss ich meine Blutgruppe auf die Notfallkarte schreiben?</h3>
+      <p>Sie ist optional. Vor einer Transfusion wird die Blutgruppe in der Klinik ohnehin neu bestimmt und gekreuzt. Die Angabe kann ein hilfreicher Hinweis sein, ersetzt aber keine Labordiagnostik. Wichtiger sind Allergien, Dauermedikation, Blutverdünner und chronische Diagnosen.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Wie oft sollte ich die Notfallkarte aktualisieren?</h3>
+      <p>Anlassbezogen bei jeder Änderung von Medikation, Diagnosen, Allergien oder Notfallkontakt — und zusätzlich einmal jährlich als Routine-Check. Drucke ein Stand-Datum auf die Karte und vernichte alte Versionen, damit keine veralteten Angaben kursieren.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Ist eine Notfallkarte auch für gesunde Menschen sinnvoll?</h3>
+      <p>Ja. Selbst ohne chronische Erkrankung helfen ein Notfallkontakt, Allergien und ein Hinweis auf eine vorhandene Patientenverfügung. Gerade bei Sport, Reisen oder im Straßenverkehr beschleunigt das die Versorgung und entlastet Angehörige.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <p><strong>Weiterführende Themen</strong></p>
+    <p class="crosslinks">
+      <a href="https://machsruhig.de/tools/notfallkarte/">Notfallkarten-Generator</a> ·
+      <a href="https://machsruhig.de/tools/vorsorge-check">Vorsorge-Check</a> ·
+      <a href="https://machsruhig.de/vorsorge/">Vorsorge &amp; Patientenverfügung</a> ·
+      <a href="https://machsruhig.de/tools/checkliste-todesfall">Checkliste Todesfall</a> ·
+      <a href="https://machsruhig.de/vorsorge/bestattungsvorsorge">Bestattungsvorsorge</a>
+    </p>
+  </section>
+
+  <section class="section sources">
+    <h2>Quellen &amp; weiterführende Informationen</h2>
+    <ul>
+      <li>gematik — Nationale Agentur für Digitale Medizin: <a href="https://www.gematik.de/anwendungen/notfalldaten" rel="nofollow noopener">Notfalldaten-Management (NFD &amp; DPE)</a></li>
+      <li>gesund.bund.de — Nationales Gesundheitsportal (hrsg. vom Bundesgesundheitsministerium): <a href="https://gesund.bund.de/notfalldatensatz-nfd" rel="nofollow noopener">Notfalldatensatz (NFD)</a></li>
+      <li>Bundesgesundheitsministerium (BMG): <a href="https://www.bundesgesundheitsministerium.de/themen/digitalisierung/elektronische-patientenakte" rel="nofollow noopener">Elektronische Patientenakte &amp; Digitalisierung</a></li>
+      <li>Stiftung Patientenschutz: <a href="https://www.stiftung-patientenschutz.de/" rel="nofollow noopener">Information &amp; Beratung für Patientinnen und Patienten</a></li>
+    </ul>
+  </section>
+
+  <p class="trust">
+    Alle Angaben ohne Gewähr und nach bestem Wissen mit Stand April 2026 zusammengestellt. Dieser Ratgeber ersetzt keine ärztliche Beratung — stelle deine persönliche Notfallkarte am besten gemeinsam mit deiner Ärztin oder deinem Arzt zusammen. machsruhig.de ist ein unabhängiges Informationsportal, keine Behörde, Krankenkasse oder Beratungsstelle. <a href="https://machsruhig.de/methodik">Mehr zu unserer Methodik</a>.
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <h4>Über mach's ruhig</h4>
+      <p style="margin:0;color:#cfe0d9;font-size:14px">Wir helfen dir, Vorsorge, Notfall und Trauer Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p>
+    </div>
+    <div>
+      <h4>Themen</h4>
+      <a href="https://machsruhig.de/notfallkarte">Notfallkarte erstellen</a>
+      <a href="https://machsruhig.de/tools/vorsorge-check">Vorsorge-Check</a>
+      <a href="https://machsruhig.de/vorsorge/">Vorsorge</a>
+      <a href="https://machsruhig.de/tools/checkliste-todesfall">Checkliste Todesfall</a>
+      <a href="https://machsruhig.de/beerdigung-planen">Beerdigung planen</a>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <a href="https://machsruhig.de/impressum">Impressum</a>
+      <a href="https://machsruhig.de/datenschutz">Datenschutz</a>
+      <a href="https://machsruhig.de/methodik">Methodik</a>
+    </div>
+  </div>
+  <div class="wrap foot-fine">
+    Alle Inhalte mit Sorgfalt erstellt, aber keine Rechts- oder Medizinberatung. · machsruhig.de — Ein Projekt der mach's-Familie
+  </div>
+</footer>
+
+</body>
+</html>
