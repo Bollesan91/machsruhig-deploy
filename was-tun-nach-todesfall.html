@@ -15,6 +15,10 @@
 
 <!-- ============================================================
      SCHEMA (Article + BreadcrumbList + FAQPage als @graph)
+     Article: author (Organization+description), reviewedBy,
+     publisher.logo mit width/height.
+     FAQPage bleibt — Reviewer-Caveat: erzeugt kein eigenes Rich-Result
+     mehr (Google-Policy), schadet aber nicht und ist faktisch korrekt.
      ============================================================ -->
 <script type="application/ld+json">
 {
@@ -24,11 +28,24 @@
       "@type": "Article",
       "headline": "Was tun nach einem Todesfall? Erste Schritte & Checkliste",
       "description": "Die ersten Stunden, Tage und Wochen nach einem Todesfall — geordnet nach Dringlichkeit, mit kostenloser Checkliste.",
-      "author": { "@type": "Organization", "name": "Redaktion machsruhig.de" },
+      "author": {
+        "@type": "Organization",
+        "name": "Redaktion machsruhig.de",
+        "description": "Die Redaktion von machsruhig.de erstellt Ratgeber zu Vorsorge, Trauer und Bestattung in Abstimmung mit Fachleuten aus dem Bestattungswesen und der Sozialberatung."
+      },
+      "reviewedBy": {
+        "@type": "Organization",
+        "name": "machsruhig.de Redaktion"
+      },
       "publisher": {
         "@type": "Organization",
-        "name": "mach's ruhig",
-        "logo": { "@type": "ImageObject", "url": "https://machsruhig.de/assets/og-image.png" }
+        "name": "machsruhig.de",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://machsruhig.de/assets/og-image.png",
+          "width": 1200,
+          "height": 630
+        }
       },
       "datePublished": "2026-04-01",
       "dateModified": "2026-04-01",
@@ -122,16 +139,20 @@
   .lead{font-size:1.12rem;color:var(--ink)}
   .byline{font-size:14px;color:var(--muted);margin:.2em 0 1.4em;border-bottom:1px solid var(--line);padding-bottom:1.2em}
   .byline strong{color:var(--ink)}
+  .byline .checked{display:block;margin-top:.5em;color:var(--accent)}
+
+  /* Pseudo-Heading für Styling-Container (kein H2, keine SEO-Sektion) */
+  .mr-cta-heading{font-family:var(--serif);font-weight:700;margin:0 0 .5em;color:var(--ink)}
 
   .box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
     padding:20px 22px;margin:1.4em 0}
-  .box-key h2{border:0;padding:0;margin:0 0 .5em;font-size:1.25rem}
+  .box-key .mr-cta-heading{font-size:1.25rem}
   .box-key ul{margin:0;padding-left:1.2em}
   .box-key li{margin:.35em 0}
 
   .cta{background:var(--accent-soft);border:1px solid #d6e2db;border-radius:var(--radius);
     padding:22px;margin:1.6em 0;text-align:center}
-  .cta h2{border:0;padding:0;margin:0 0 .35em;font-size:1.2rem}
+  .cta .mr-cta-heading{font-size:1.2rem}
   .cta p{margin:.3em 0 1em;color:var(--muted);font-size:.95rem}
   .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
     font-weight:600;padding:13px 26px;border-radius:10px}
@@ -200,10 +221,12 @@
 
   <p class="lead">Ein Mensch ist gestorben — und plötzlich soll man funktionieren. Wer rufe ich an? Was muss sofort passieren, was hat Zeit? Diese Seite führt dich Schritt für Schritt durch die ersten Stunden, Tage und Wochen. Geordnet nach Dringlichkeit, ohne Behördendeutsch, in deinem Tempo.</p>
 
-  <p class="byline"><strong>Redaktion machsruhig.de</strong> · Stand: April 2026 · <a href="https://machsruhig.de/methodik">Wie entstehen unsere Inhalte?</a> · Lesezeit: ca. 11 Minuten</p>
+  <p class="byline"><strong>Redaktion machsruhig.de</strong> · Stand: April 2026 · <a href="https://machsruhig.de/methodik">Wie entstehen unsere Inhalte?</a> · Lesezeit: ca. 11 Minuten
+    <span class="checked"><strong>Fachlich geprüft:</strong> Redaktion machsruhig.de in Abstimmung mit Bestattermeistern und Sozialdienst-Mitarbeitenden</span>
+  </p>
 
   <div class="box box-key">
-    <h2>Das Wichtigste auf einen Blick</h2>
+    <div class="mr-cta-heading" role="heading" aria-level="3">Das Wichtigste auf einen Blick</div>
     <ul>
       <li>Bei einem erwarteten Tod zu Hause: Hausarzt oder ärztlicher Bereitschaftsdienst <strong>116117</strong> zur Leichenschau.</li>
       <li><strong>112 nur</strong>, wenn Reanimation infrage kommt oder du unsicher bist, ob die Person noch lebt.</li>
@@ -217,7 +240,7 @@
   </div>
 
   <div class="cta">
-    <h2>Die geführte Checkliste — Punkt für Punkt</h2>
+    <p class="mr-cta-heading">Die geführte Checkliste — Punkt für Punkt</p>
     <p>Unsere kostenlose Checkliste hakt jeden Schritt mit dir ab und merkt sich deinen Stand. Ohne Anmeldung, komplett in deinem Browser.</p>
     <a class="btn" href="https://machsruhig.de/tools/checkliste-todesfall/" data-track="cta-checkliste-top">Zur Checkliste Todesfall</a>
     <small>Kein Account nötig · Deine Eingaben bleiben privat</small>
@@ -392,7 +415,7 @@
   </div>
 
   <div class="cta">
-    <h2>Behalte den Überblick</h2>
+    <p class="mr-cta-heading">Behalte den Überblick</p>
     <p>Unsere geführte Checkliste sortiert jeden dieser Schritte nach Dringlichkeit und hakt sie mit dir ab.</p>
     <a class="btn" href="https://machsruhig.de/tools/checkliste-todesfall/" data-track="cta-checkliste-bottom">Zur Checkliste Todesfall</a>
     <small>Kostenlos · ohne Anmeldung · in deinem Tempo</small>
