@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/danksagung-nach-beerdigung">
 
-<!-- Plausible Analytics -->
+<!-- Analytics-Shims (echter Loader: consent.js -> Umami + Ahrefs nach Opt-In) -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
 
@@ -30,8 +30,9 @@
       "@type": "Article",
       "headline": "Danksagung nach Beerdigung — Vorlagen, Aufbau & Zeitpunkt",
       "description": "Danksagung nach Beerdigung schreiben: Was gehört hinein, wann verschickt man sie, wer bekommt eine? Aufbau, Formate und ein kostenloser Generator für einen persönlichen Text.",
+      "image": "https://machsruhig.de/assets/og-image.png",
       "author": {"@type": "Organization", "name": "machsruhig.de"},
-      "publisher": {"@type": "Organization", "name": "machsruhig.de"},
+      "publisher": {"@type": "Organization", "name": "machsruhig.de", "logo": {"@type": "ImageObject", "url": "https://machsruhig.de/assets/og-image.png"}},
       "datePublished": "2026-04-01",
       "dateModified": "2026-04-01"
     },
@@ -184,7 +185,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .mr-relation-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 24px}
 @media(max-width:520px){.mr-relation-grid{grid-template-columns:1fr}}
 .mr-relation-card{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:16px 20px}
-.mr-relation-card h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.mr-relation-card h3{font-family:'Fraunces',serif;font-size:15px;font-weight:700;margin:0 0 6px}
 .mr-relation-card p{font-size:13px;line-height:1.6;color:var(--mr-text-muted);margin:0}
 /* Tipps-Karten */
 .mr-tips{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0 24px}
@@ -322,19 +323,19 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
     <div class="mr-relation-grid">
       <div class="mr-relation-card">
-        <h4>Engerer Kreis</h4>
+        <h3>Engerer Kreis</h3>
         <p>Familie, Freunde und Nachbarn, die nahegestanden und Anteil genommen haben. Hier ist die persönliche Karte die übliche Form.</p>
       </div>
       <div class="mr-relation-card">
-        <h4>Helfer und Begleiter</h4>
+        <h3>Helfer und Begleiter</h3>
         <p>Menschen, die organisatorisch mit angepackt haben — beim Empfang, bei der Vorbereitung oder mit praktischer Unterstützung im Alltag.</p>
       </div>
       <div class="mr-relation-card">
-        <h4>Beauftragte Dienstleister</h4>
+        <h3>Beauftragte Dienstleister</h3>
         <p>Das Bestattungsinstitut, der Pfarrer oder Trauerredner und gegebenenfalls die Trauerfloristik. Ein kurzer Dank an sie ist verbreitet, aber kein Muss.</p>
       </div>
       <div class="mr-relation-card">
-        <h4>Pflege und Medizin</h4>
+        <h3>Pflege und Medizin</h3>
         <p>Pflegekräfte, Hospizbegleiter oder Ärzte, die den Verstorbenen in seiner letzten Zeit betreut haben, sind häufig dankbare Empfänger.</p>
       </div>
     </div>
@@ -352,19 +353,19 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
     <div class="mr-relation-grid">
       <div class="mr-relation-card">
-        <h4>Danksagungskarte</h4>
+        <h3>Danksagungskarte</h3>
         <p>Die persönlichste und gebräuchlichste Form. Sie bleibt greifbar und lässt sich mit einem Foto oder einem Lieblingszitat des Verstorbenen gestalten. Ideal für den engeren Kreis.</p>
       </div>
       <div class="mr-relation-card">
-        <h4>Zeitungs- oder Danksagungsanzeige</h4>
+        <h3>Zeitungs- oder Danksagungsanzeige</h3>
         <p>Der Weg zu vielen Menschen auf einmal — vor allem, wenn Adressen fehlen oder die Trauergesellschaft groß war. Die Kosten richten sich nach Größe und Wortzahl.</p>
       </div>
       <div class="mr-relation-card">
-        <h4>Persönlicher Brief</h4>
+        <h3>Persönlicher Brief</h3>
         <p>Für Menschen, die sich besonders engagiert haben. Hier hast du Raum für individuelle Worte, die über eine Kartenformel deutlich hinausgehen.</p>
       </div>
       <div class="mr-relation-card">
-        <h4>Digitale Wege</h4>
+        <h3>Digitale Wege</h3>
         <p>E-Mail oder eine Online-Gedenkseite sind ebenfalls denkbar — etwa für Empfänger, die weiter entfernt leben oder moderne Wege bevorzugen.</p>
       </div>
     </div>
@@ -400,6 +401,28 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
         <p>Es gibt keine falsche Danksagung. Wenn sie aufrichtig gemeint ist, kommt sie an — auch wenn der Text einfach bleibt.</p>
       </div>
     </div>
+  </section>
+
+  <!-- BLOCK 7b: Beispieltexte -->
+  <section class="mr-section">
+    <h2>3 Beispieltexte für eine Danksagung</h2>
+
+    <p>Die drei Vorlagen decken die häufigsten Situationen ab — von der knappen Karte bis zur katholischen Form mit Hinweis auf das Seelenamt. Die Angaben in eckigen Klammern ersetzt du durch deine eigenen. Sieh die Texte als Ausgangspunkt, nicht als Schablone: Schon ein eigener Satz macht aus jeder Vorlage deinen Text.</p>
+
+    <h3>1. Kurzform für die Trauerkarte</h3>
+    <blockquote class="mr-hint">
+      Für die herzliche Anteilnahme beim Abschied von [Vorname Nachname] danken wir von ganzem Herzen. Die vielen tröstenden Worte, Blumen und stillen Gesten haben uns in den vergangenen Wochen getragen. Es hat uns gutgetan zu spüren, wie viele Menschen [Vorname] verbunden waren. Auch für jede praktische Hilfe in dieser schweren Zeit sind wir dankbar. Stellvertretend für alle, die uns begleitet haben, sprechen wir diesen Dank aus.<br><br>In stiller Verbundenheit<br>Familie [Nachname]
+    </blockquote>
+
+    <h3>2. Mittellange, persönliche Variante</h3>
+    <blockquote class="mr-hint">
+      Wir möchten allen danken, die uns auf dem letzten Weg von [Vorname Nachname] begleitet haben. Eure Anwesenheit bei der Trauerfeier, die liebevollen Karten und die vielen persönlichen Worte haben uns gezeigt, dass wir mit unserer Trauer nicht allein sind. Besonders danken wir [Name / Personenkreis] für die tatkräftige Unterstützung in den Tagen rund um den Abschied. Unser Dank gilt ebenso [dem Pfarrer / der Trauerrednerin] für die einfühlsamen Worte sowie allen, die mit einer Spende statt Blumen an [Vorname] gedacht haben. Jede Umarmung, jeder Anruf und jede Geste der Verbundenheit war ein Trost, den wir nicht vergessen werden. [Vorname] wird in unseren Erinnerungen weiterleben — und in den Geschichten, die wir uns erzählen. Dass so viele Menschen diese Erinnerungen mit uns teilen, gibt uns Halt.<br><br>Im Namen aller Angehörigen<br>Familie [Nachname]
+    </blockquote>
+
+    <h3>3. Katholische Variante mit Hinweis auf das Seelenamt</h3>
+    <blockquote class="mr-hint">
+      Für die liebevolle Anteilnahme und die tröstende Begleitung beim Abschied von [Vorname Nachname] danken wir allen Verwandten, Freunden und Nachbarn von Herzen. Die vielen Zeichen der Verbundenheit, die Gebete und die Worte des Trostes haben uns in dieser schweren Zeit gestärkt. Unser Dank gilt auch [dem Pfarrer / der Pfarrgemeinde] für die würdevolle Gestaltung der Trauerfeier sowie allen, die für [Vorname] gebetet haben. Das Sechswochenamt (Seelenamt) für [ihn / sie] findet am [Datum] um [Uhrzeit] in der [Name der Kirche] statt — zu diesem Gedenkgottesdienst laden wir herzlich ein. Im Gebet bleiben wir mit [Vorname] und miteinander verbunden.<br><br>In Dankbarkeit<br>Familie [Nachname]
+    </blockquote>
   </section>
 
   <!-- BLOCK 8: CTA -->
@@ -471,9 +494,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   <div class="mr-sources">
     <h2>Quellen &amp; weiterführende Informationen</h2>
     <ul>
-      <li>Bundesverband Deutscher Bestatter (BDB): Hinweise zu Danksagung und Trauerfeier</li>
-      <li>Verbraucherzentrale: Bestattung — Rechte und Pflichten der Angehörigen</li>
-      <li>Knigge / Deutsche-Knigge-Gesellschaft: Umgangsformen im Trauerfall</li>
+      <li>Bundesverband Deutscher Bestatter (BDB): <a href="https://www.bestatter.de/wissen/trauerhilfe-und-trauerbewaeltigung/danksagung/" rel="nofollow noopener" target="_blank">Danksagung im Trauerfall (bestatter.de)</a></li>
+      <li>Verbraucherzentrale: <a href="https://www.verbraucherzentrale.de/buecher-und-ebooks/wennjemandstirbt" rel="nofollow noopener" target="_blank">Was tun, wenn jemand stirbt? — Handbuch für den Trauerfall</a></li>
+      <li>Deutsche-Knigge-Gesellschaft: <a href="https://www.knigge.de/" rel="nofollow noopener" target="_blank">Moderne Umgangsformen im Trauerfall (knigge.de)</a></li>
       <li>Regionale Tradition: Sechswochenamt (Seelenamt) in katholisch geprägten Gebieten</li>
     </ul>
   </div>
