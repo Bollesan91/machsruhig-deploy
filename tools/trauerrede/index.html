@@ -767,6 +767,16 @@ function TrauerredeGenerator() {
       setStep(step + 1);
     } else {
       generateSpeech();
+      // Auto-Trigger KI-Generation direkt nach Wizard-Abschluss (Iter-33 Phase 3 UX-Fix):
+      // - Wenn Consent schon da: KI-Call läuft automatisch, User sieht keinen Template-Müll
+      // - Wenn kein Consent: Consent-Modal sofort zeigen statt erst Template-Vorlage präsentieren
+      setTimeout(() => {
+        if (window.mrAI && window.mrAI.hasConsent()) {
+          runAi();
+        } else {
+          setShowConsent(true);
+        }
+      }, 100); // Kurzer Delay damit setStep(5) durchläuft
     }
     if(window.mrTrack) window.mrTrack('toolStep', {tool: 'trauerrede', step: step + 1});
   };
@@ -1363,12 +1373,28 @@ function TrauerredeGenerator() {
           {/* Lesemodus: zusammenhängender Fließtext (KI-Output bevorzugt, sonst Template-Composed) */}
           {viewMode === 'lesen' && (
             <article className="reading-mode" aria-label="Rede im Lesemodus">
-              {aiResult && <span className="ai-badge">✨ Mit KI generiert</span>}
-              {(aiResult || composedSpeech).split(/\n\n+/).filter(Boolean).map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-              {!aiResult && !composedSpeech && (
-                <p style={{fontStyle:'italic',color:'var(--mr-text-muted)'}}>Noch kein Rede-Text vorhanden — wechsle in den Bearbeiten-Modus oder klicke „Mit KI verfeinern" oben.</p>
+              {/* Loading-State: während KI generiert, zeigen wir Spinner statt Template-Vorlage */}
+              {aiLoading && !aiResult ? (
+                <div style={{textAlign:'center',padding:'40px 20px'}}>
+                  <span className="ai-spinner" style={{borderColor:'var(--mr-warm)',borderTopColor:'transparent',width:24,height:24,borderWidth:3,display:'inline-block',marginBottom:16}}></span>
+                  <p style={{fontFamily:"'Fraunces',serif",fontSize:17,color:'var(--mr-text)',margin:0}}>✨ Die KI schreibt deine Rede …</p>
+                  <p style={{fontSize:13,color:'var(--mr-text-muted)',marginTop:8}}>Dauert ca. 3–5 Sekunden. Llama 3.3 verarbeitet deine Eingaben.</p>
+                </div>
+              ) : (
+                <>
+                  {aiResult && <span className="ai-badge">✨ Mit KI generiert</span>}
+                  {(aiResult || composedSpeech).split(/\n\n+/).filter(Boolean).map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                  {!aiResult && composedSpeech && !window.mrAI?.hasConsent?.() && (
+                    <p style={{fontSize:13,color:'var(--mr-text-muted)',fontStyle:'italic',marginTop:24,paddingTop:16,borderTop:'1px dashed var(--mr-border)'}}>
+                      Das ist die Vorlage-Variante. Für eine zusammenhängende Rede mit Tippfehler-Korrektur klicke „✨ Mit KI verfeinern" oben.
+                    </p>
+                  )}
+                  {!aiResult && !composedSpeech && (
+                    <p style={{fontStyle:'italic',color:'var(--mr-text-muted)'}}>Noch kein Rede-Text vorhanden — wechsle in den Bearbeiten-Modus oder klicke „Mit KI verfeinern" oben.</p>
+                  )}
+                </>
               )}
             </article>
           )}
