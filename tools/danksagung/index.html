@@ -323,9 +323,38 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
 
+/* === KI-Helfer (Iter-33 Phase 2 — Master-Pattern reused von Trauerrede) === */
+.mr-ai-section{background:linear-gradient(135deg,#FFFDF9 0%,#F4F0EB 100%);border:1px solid var(--mr-border);border-radius:12px;padding:20px 24px;margin:0 0 24px}
+.mr-ai-section h3{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--mr-text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.mr-ai-section p{font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-bottom:12px}
+.ai-variant-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.ai-variant-actions button{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid var(--mr-border);background:#fff;color:var(--mr-warm);font-size:13px;font-weight:600;border-radius:6px;cursor:pointer;transition:all .15s}
+.ai-variant-actions button:hover:not(:disabled){background:var(--mr-safety);border-color:var(--mr-accent);color:var(--mr-text)}
+.ai-variant-actions button:disabled{opacity:.5;cursor:wait}
+.ai-error{margin-top:10px;font-size:13px;color:#b54;padding:8px 12px;background:#fef5f0;border-left:3px solid #b54;border-radius:4px}
+.ai-spinner-mini{display:inline-block;width:11px;height:11px;border:2px solid var(--mr-warm);border-top-color:transparent;border-radius:50%;animation:ai-spin .8s linear infinite;vertical-align:middle}
+.ai-spinner{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:ai-spin .8s linear infinite}
+@keyframes ai-spin{to{transform:rotate(360deg)}}
+.ai-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--mr-warm);padding:3px 8px;background:rgba(122,107,93,.08);border-radius:99px;margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase}
+
+/* Consent-Modal */
+.mr-ai-consent-modal{position:fixed;inset:0;background:rgba(45,35,25,.6);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.mr-ai-consent-modal .modal-box{background:#fff;border-radius:14px;padding:28px;max-width:540px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.mr-ai-consent-modal h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:12px;color:var(--mr-text)}
+.mr-ai-consent-modal p{font-size:14px;line-height:1.7;color:var(--mr-text);margin-bottom:14px}
+.mr-ai-consent-modal .consent-buttons{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.mr-ai-consent-modal .consent-buttons button{flex:1;min-width:140px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent}
+.mr-ai-consent-modal .btn-grant{background:var(--mr-primary);color:#fff;border-color:var(--mr-primary)}
+.mr-ai-consent-modal .btn-grant:hover{background:var(--mr-primary-hover)}
+.mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted);border-color:var(--mr-border)}
+.mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}
+
+</style>
+<script defer src="/assets/js/mr-ai.js"></script>
+<style>
 @media print{
   /* R-A 15 Fix: Print dumpt nicht mehr alle 3 Varianten + Privacy-Box. Nur die empfohlene Variante wird gedruckt. */
-  .no-print,.mr-nav,.mr-footer,.wizard-buttons,.export-controls,.btn-group,.btn-secondary,.faq-section,.privacy-notice,.info-box,.tip{display:none!important}
+  .no-print,.mr-nav,.mr-footer,.wizard-buttons,.export-controls,.btn-group,.btn-secondary,.faq-section,.privacy-notice,.info-box,.tip,.mr-ai-section,.mr-ai-consent-modal,.ai-variant-actions{display:none!important}
   body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.6}
   .mr-content{max-width:100%;padding:0}
   .wizard-container{border:none;background:#fff;padding:0}
@@ -487,6 +516,52 @@ function DanksagungGenerator() {
 
   const [copyFeedback, setCopyFeedback] = useState({formal: false, personal: false, short: false});
 
+  // KI-Helfer State (Iter-33 Phase 2)
+  const [aiLoading, setAiLoading] = useState(''); // welche variant gerade läuft ('formal'/'personal'/'short' oder '')
+  const [aiResults, setAiResults] = useState({formal: false, personal: false, short: false}); // welche Variante schon KI-generiert
+  const [aiError, setAiError] = useState('');
+  const [showConsent, setShowConsent] = useState(false);
+  const [pendingVariant, setPendingVariant] = useState(''); // welche Variante nach Consent generiert wird
+
+  // KI-Variante generieren via Groq + Llama 3.3
+  const generateAiVariant = async (variant) => {
+    if (!window.mrAI) { setAiError('KI-Modul nicht geladen.'); return; }
+    if (!window.mrAI.hasConsent()) {
+      setPendingVariant(variant);
+      setShowConsent(true);
+      return;
+    }
+    setAiError('');
+    setAiLoading(variant);
+    // Mapping: Tab-Variant → Backend-Tone-Wert
+    const toneMap = {formal: 'formal', personal: 'persönlich', short: 'kurz'};
+    try {
+      const result = await window.mrAI.generate({
+        type: 'danksagung',
+        data: {
+          name: formData.name,
+          relationship: formData.relationship,
+          ceremony: formData.ceremony,
+          tone: toneMap[variant] || 'persönlich',
+        },
+      });
+      setTexts(prev => ({...prev, [variant]: result.trim()}));
+      setAiResults(prev => ({...prev, [variant]: true}));
+      if (window.mrTrack) window.mrTrack('toolStep', {tool: 'danksagung', step: 'ai_generated', variant});
+    } catch (err) {
+      if (err.message === 'CONSENT_REQUIRED') {
+        setPendingVariant(variant);
+        setShowConsent(true);
+      } else if (err.message === 'RATE_LIMIT') {
+        setAiError(`Zu viele Anfragen. In ${Math.ceil((err.retryAfter || 60) / 60)} Min erneut versuchen.`);
+      } else {
+        setAiError('Verbindung zur KI fehlgeschlagen. Vorlage-Variante bleibt sichtbar.');
+      }
+    } finally {
+      setAiLoading('');
+    }
+  };
+
   const updateFormData = (field, value) => {
     setFormData(prev => ({...prev, [field]: value}));
   };
@@ -500,6 +575,13 @@ function DanksagungGenerator() {
       // Generate texts when moving to step 3
       const generated = generateTexts(formData);
       setTexts(generated);
+      // Auto-KI für die EMPFOHLENE Variante (wenn Consent schon vorhanden)
+      setTimeout(() => {
+        const recommended = FORMAT_RECOMMENDS[formData.format];
+        if (recommended && window.mrAI && window.mrAI.hasConsent()) {
+          generateAiVariant(recommended);
+        }
+      }, 100);
     }
   };
 
@@ -575,6 +657,8 @@ function DanksagungGenerator() {
       ceremony: '',
     });
     setTexts({formal: '', personal: '', short: ''});
+    setAiResults({formal: false, personal: false, short: false});
+    setAiError('');
   };
 
   // Validation
@@ -738,8 +822,41 @@ function DanksagungGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Beziehung, Trauerfeier-Text) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.<br><br><strong style="color:var(--mr-text)">Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben bleiben standardmäßig in deinem Browser. Nur wenn du „✨ Mit KI verfeinern" klickst und im Modal einwilligst, werden sie einmalig an Groq Inc. (USA) zur KI-Generierung übermittelt — Groq speichert sie laut Privacy-Policy nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs) nur nach Cookie-Opt-In.<br/><br/><strong>Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
           </div>
+
+          {/* KI-Helfer Info-Box (Iter-33 Phase 2) */}
+          <div className="mr-ai-section no-print">
+            <h3>✨ Echte KI-Generation statt Vorlage</h3>
+            <p>
+              Die <strong>empfohlene Variante</strong> für dein Format wird automatisch von der KI generiert (Llama 3.3 via Groq). Die anderen zwei bleiben als Vorlage — klick „✨ Mit KI verfeinern" daneben, wenn du sie auch von der KI schreiben lassen willst. Tippfehler in deinen Eingaben werden korrigiert.
+            </p>
+            {aiError && <div className="ai-error" role="alert">{aiError}</div>}
+          </div>
+
+          {/* Consent-Modal */}
+          {showConsent && (
+            <div className="mr-ai-consent-modal" role="dialog" aria-labelledby="dg-consent-title" onClick={(e) => { if (e.target === e.currentTarget) { setShowConsent(false); setPendingVariant(''); } }}>
+              <div className="modal-box">
+                <h3 id="dg-consent-title">Einwilligung: KI-Verarbeitung deiner Eingaben</h3>
+                <p>Für die KI-Generierung werden deine Eingaben (Name, Beziehung, Trauerfeier-Text) <strong>einmalig an Groq Inc. (USA)</strong> übermittelt, dort von einem Sprachmodell (Llama 3.3) verarbeitet und als Danksagung zurückgegeben.</p>
+                <p>Groq speichert die Eingaben laut Privacy-Policy <strong>nicht für KI-Training</strong>. Übermittlung verschlüsselt (HTTPS). Server in den USA.</p>
+                <p style={{fontSize:13,color:'var(--mr-text-muted)'}}>Wenn du nicht zustimmst, nutze die Vorlage-Variante. Widerruf jederzeit durch Leeren des Browser-Speichers dieser Seite.</p>
+                <div className="consent-buttons">
+                  <button className="btn-cancel" onClick={() => { setShowConsent(false); setPendingVariant(''); }}>Abbrechen</button>
+                  <button className="btn-grant" onClick={() => {
+                    window.mrAI.grantConsent();
+                    setShowConsent(false);
+                    if (pendingVariant) {
+                      const v = pendingVariant;
+                      setPendingVariant('');
+                      generateAiVariant(v);
+                    }
+                  }}>Einwilligen & generieren</button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Formal variant */}
           <div className="text-section" data-variant="formal" style={recommendedVariant === 'formal' ? {borderLeft:'4px solid var(--mr-primary)',paddingLeft:16,marginLeft:-20} : {}}>
@@ -747,6 +864,7 @@ function DanksagungGenerator() {
             <div className="section-hint">
               Passend für Zeitungsanzeigen, gedruckte Karten oder offizielle Danksagungen.
             </div>
+            {aiResults.formal && <span className="ai-badge no-print">✨ Mit KI generiert</span>}
             <textarea
               className="text-output"
               value={texts.formal}
@@ -758,6 +876,11 @@ function DanksagungGenerator() {
                 Kopieren
               </button>
               <span className={`copy-feedback ${copyFeedback.formal ? 'visible' : ''}`}>Kopiert!</span>
+              <div className="ai-variant-actions no-print" style={{marginLeft:'auto'}}>
+                <button onClick={() => generateAiVariant('formal')} disabled={aiLoading === 'formal' || aiLoading !== ''}>
+                  {aiLoading === 'formal' ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : (aiResults.formal ? '✨ KI neu generieren' : '✨ Mit KI verfeinern')}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -767,6 +890,7 @@ function DanksagungGenerator() {
             <div className="section-hint">
               Für Briefe, Karten an enge Freunde oder persönliche Nachrichten.
             </div>
+            {aiResults.personal && <span className="ai-badge no-print">✨ Mit KI generiert</span>}
             <textarea
               className="text-output"
               value={texts.personal}
@@ -778,6 +902,11 @@ function DanksagungGenerator() {
                 Kopieren
               </button>
               <span className={`copy-feedback ${copyFeedback.personal ? 'visible' : ''}`}>Kopiert!</span>
+              <div className="ai-variant-actions no-print" style={{marginLeft:'auto'}}>
+                <button onClick={() => generateAiVariant('personal')} disabled={aiLoading === 'personal' || aiLoading !== ''}>
+                  {aiLoading === 'personal' ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : (aiResults.personal ? '✨ KI neu generieren' : '✨ Mit KI verfeinern')}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -787,6 +916,7 @@ function DanksagungGenerator() {
             <div className="section-hint">
               Für WhatsApp, E-Mail oder eine kurze Nachricht an den engeren Kreis.
             </div>
+            {aiResults.short && <span className="ai-badge no-print">✨ Mit KI generiert</span>}
             <textarea
               className="text-output"
               value={texts.short}
@@ -798,6 +928,11 @@ function DanksagungGenerator() {
                 Kopieren
               </button>
               <span className={`copy-feedback ${copyFeedback.short ? 'visible' : ''}`}>Kopiert!</span>
+              <div className="ai-variant-actions no-print" style={{marginLeft:'auto'}}>
+                <button onClick={() => generateAiVariant('short')} disabled={aiLoading === 'short' || aiLoading !== ''}>
+                  {aiLoading === 'short' ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : (aiResults.short ? '✨ KI neu generieren' : '✨ Mit KI verfeinern')}
+                </button>
+              </div>
             </div>
           </div>
 
