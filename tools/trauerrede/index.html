@@ -315,8 +315,46 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   .speech-section{page-break-inside:avoid;margin-bottom:16px}
   .speech-content{border:none;background:#fff;padding:0}
   .tip{background:#f5f5f5;border:1px solid #ccc}
+  .mr-ai-section,.view-toggle,.mr-ai-consent-modal{display:none!important}
+  .reading-mode{padding:0!important;background:none!important;border:none!important}
 }
+
+/* === KI-Helfer + Lesemodus === */
+.view-toggle{display:flex;gap:8px;margin:24px 0 16px;background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:10px;padding:6px;width:fit-content}
+.view-toggle button{padding:8px 16px;border:none;background:transparent;color:var(--mr-text-muted);font-size:14px;font-weight:600;cursor:pointer;border-radius:6px;transition:background .2s,color .2s}
+.view-toggle button.active{background:var(--mr-primary);color:#fff}
+.view-toggle button:not(.active):hover{color:var(--mr-text)}
+
+.mr-ai-section{background:linear-gradient(135deg,#FFFDF9 0%,#F4F0EB 100%);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin:0 0 24px}
+.mr-ai-section h3{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--mr-text);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.mr-ai-section p{font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-bottom:12px}
+.mr-ai-section .ai-btn{display:inline-flex;align-items:center;gap:8px;background:var(--mr-primary);color:#fff;padding:10px 20px;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.mr-ai-section .ai-btn:hover:not(:disabled){background:var(--mr-primary-hover)}
+.mr-ai-section .ai-btn:disabled{opacity:.6;cursor:wait}
+.mr-ai-section .ai-error{margin-top:10px;font-size:13px;color:#b54;padding:8px 12px;background:#fef5f0;border-left:3px solid #b54;border-radius:4px}
+
+.reading-mode{background:#FFFDF9;border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:40px 48px;margin-bottom:24px}
+@media(max-width:520px){.reading-mode{padding:28px 24px}}
+.reading-mode p{font-family:'Fraunces',Georgia,serif;font-size:17px;line-height:1.85;color:var(--mr-text);margin-bottom:18px}
+.reading-mode p:first-child{font-size:18px;font-weight:500}
+.reading-mode .ai-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;color:var(--mr-warm);padding:3px 8px;background:rgba(122,107,93,.08);border-radius:99px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase}
+
+/* Consent-Modal */
+.mr-ai-consent-modal{position:fixed;inset:0;background:rgba(45,35,25,.6);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.mr-ai-consent-modal .modal-box{background:#fff;border-radius:14px;padding:28px;max-width:540px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.mr-ai-consent-modal h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin-bottom:12px;color:var(--mr-text)}
+.mr-ai-consent-modal p{font-size:14px;line-height:1.7;color:var(--mr-text);margin-bottom:14px}
+.mr-ai-consent-modal .consent-buttons{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.mr-ai-consent-modal .consent-buttons button{flex:1;min-width:140px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent}
+.mr-ai-consent-modal .btn-grant{background:var(--mr-primary);color:#fff;border-color:var(--mr-primary)}
+.mr-ai-consent-modal .btn-grant:hover{background:var(--mr-primary-hover)}
+.mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted);border-color:var(--mr-border)}
+.mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}
+
+.ai-spinner{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:ai-spin .8s linear infinite}
+@keyframes ai-spin{to{transform:rotate(360deg)}}
 </style>
+<script defer src="/assets/js/mr-ai.js"></script>
 </head>
 <body>
 <a href="#main" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--mr-primary);color:#fff;padding:8px 16px;z-index:100;transition:top 0.3s;border-radius:4px;" onFocus="this.style.top='0'" onBlur="this.style.top='-40px'">Zum Inhalt springen</a>
@@ -569,6 +607,75 @@ function TrauerredeGenerator() {
   const [openingVariant, setOpeningVariant] = useState(0);
   const [closingVariant, setClosingVariant] = useState(0);
 
+  // KI-Helfer State
+  const [viewMode, setViewMode] = useState('lesen'); // 'lesen' | 'bearbeiten'
+  const [aiResult, setAiResult] = useState('');
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState('');
+  const [showConsent, setShowConsent] = useState(false);
+
+  // Zusammenhängender Fließtext aus den Segmenten (für Lesemodus ohne KI)
+  const composedSpeech = (() => {
+    return [
+      speechData.opening,
+      speechData.character,
+      speechData.hobbies,
+      speechData.memory,
+      speechData.meaning,
+      speechData.quoteFavorite,
+      speechData.reflection,
+      speechData.quotes ? `„${speechData.quotes}"` : '',
+      speechData.closing,
+    ].filter(Boolean).join('\n\n');
+  })();
+
+  // KI-Generierung (Groq via Netlify Function)
+  const runAi = async () => {
+    if (!window.mrAI) {
+      setAiError('KI-Helfer-Modul nicht geladen — Seite neu laden.');
+      return;
+    }
+    if (!window.mrAI.hasConsent()) {
+      setShowConsent(true);
+      return;
+    }
+    setAiError('');
+    setAiLoading(true);
+    try {
+      const result = await window.mrAI.generate({
+        type: 'trauerrede',
+        data: {
+          name: formData.name,
+          age: formData.age,
+          relationship: formData.relationship,
+          religion: formData.religion,
+          tone: formData.tone,
+          length: formData.length,
+          character: formData.character,
+          hobbies: formData.hobbies,
+          memory: formData.memory,
+          message: formData.message,
+          quote: formData.quote,
+          selectedQuote: formData.selectedQuote,
+          customQuote: formData.customQuote,
+        },
+      });
+      setAiResult(result);
+      setViewMode('lesen');
+      if (window.mrTrack) window.mrTrack('toolStep', { tool: 'trauerrede', step: 'ai_generated' });
+    } catch (err) {
+      if (err.message === 'CONSENT_REQUIRED') {
+        setShowConsent(true);
+      } else if (err.message === 'RATE_LIMIT') {
+        setAiError(`Zu viele Anfragen. Bitte in ${Math.ceil((err.retryAfter || 60) / 60)} Min erneut versuchen.`);
+      } else {
+        setAiError('Verbindung zur KI fehlgeschlagen. Bitte später erneut versuchen oder die Vorlage-Variante nutzen.');
+      }
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
   const updateFormData = (field, value) => {
     setFormData(prev => ({...prev, [field]: value}));
   };
@@ -678,7 +785,8 @@ function TrauerredeGenerator() {
     }
     // setTimeout um React-State-Update nach blur durchzulassen
     setTimeout(() => {
-      const fullText = [
+      // KI-Result hat Priorität wenn vorhanden — sonst Template-zusammengesetzt
+      const fullText = aiResult || [
         speechData.opening,
         speechData.character,
         speechData.hobbies,
@@ -730,6 +838,9 @@ function TrauerredeGenerator() {
       closing: '',
       quotes: ''
     });
+    setAiResult('');
+    setAiError('');
+    setViewMode('lesen');
   };
 
   return (
@@ -1059,9 +1170,71 @@ function TrauerredeGenerator() {
           <h1 style={{fontFamily:"'Fraunces',serif",fontSize:28,fontWeight:700,marginBottom:8,color:'var(--mr-text)'}}>
             Deine Trauerrede für {formData.name}
           </h1>
-          <p style={{fontSize:15,color:'var(--mr-text-muted)',marginBottom:24}}>
-            Hier kannst du die Rede direkt bearbeiten. Klicke in jeden Abschnitt und schreib deine persönlichen Worte. Du kannst auch Varianten auswählen.
+          <p style={{fontSize:15,color:'var(--mr-text-muted)',marginBottom:8}}>
+            {viewMode === 'lesen'
+              ? 'Lies die Rede zusammenhängend — wechsle in den Bearbeiten-Modus, wenn du einzelne Abschnitte anpassen willst.'
+              : 'Hier kannst du die Rede direkt bearbeiten. Klicke in jeden Abschnitt und schreib deine persönlichen Worte.'}
           </p>
+
+          {/* View-Toggle: Lesemodus vs. Bearbeiten */}
+          <div className="view-toggle no-print" role="tablist" aria-label="Ansichtsmodus">
+            <button
+              role="tab"
+              aria-selected={viewMode === 'lesen'}
+              className={viewMode === 'lesen' ? 'active' : ''}
+              onClick={() => setViewMode('lesen')}
+            >📖 Lesemodus</button>
+            <button
+              role="tab"
+              aria-selected={viewMode === 'bearbeiten'}
+              className={viewMode === 'bearbeiten' ? 'active' : ''}
+              onClick={() => setViewMode('bearbeiten')}
+            >✏️ Bearbeiten</button>
+          </div>
+
+          {/* KI-Helfer Sektion */}
+          <div className="mr-ai-section no-print">
+            <h3>✨ Mit KI eine echte Rede generieren</h3>
+            <p>
+              Die KI macht aus deinen Eingaben eine zusammenhängende Rede — korrigiert Tippfehler, baut Übergänge und glättet den Stil.
+              Deine Eingaben (Name, Charakter, Erinnerungen) werden einmalig an <strong>Groq Inc. (USA)</strong> gesendet und nicht für KI-Training gespeichert.
+              Keine KI? Nutze den Lesemodus — die Vorlage funktioniert auch ohne.
+            </p>
+            <button
+              className="ai-btn"
+              onClick={runAi}
+              disabled={aiLoading}
+            >
+              {aiLoading ? <><span className="ai-spinner"></span> KI schreibt …</> : (aiResult ? '✨ Neu generieren' : '✨ Mit KI verfeinern')}
+            </button>
+            {aiError && <div className="ai-error" role="alert">{aiError}</div>}
+          </div>
+
+          {/* Consent-Modal */}
+          {showConsent && (
+            <div className="mr-ai-consent-modal" role="dialog" aria-labelledby="consent-title" onClick={(e) => { if (e.target === e.currentTarget) setShowConsent(false); }}>
+              <div className="modal-box">
+                <h3 id="consent-title">Einwilligung: KI-Verarbeitung deiner Eingaben</h3>
+                <p>
+                  Für die KI-Generierung werden deine Eingaben (Name der verstorbenen Person, Charakter-Beschreibung, Erinnerungen, eigene Texte) <strong>einmalig an Groq Inc. (USA)</strong> übermittelt, dort von einem Sprachmodell (Llama&nbsp;3.3) verarbeitet und als zusammenhängende Trauerrede zurückgegeben.
+                </p>
+                <p>
+                  Groq speichert die Eingaben gemäß eigener Privacy-Policy <strong>nicht für KI-Training</strong>. Die Übermittlung erfolgt verschlüsselt (HTTPS). Daten werden auf Servern in den USA verarbeitet.
+                </p>
+                <p style={{fontSize:13,color:'var(--mr-text-muted)'}}>
+                  Wenn du dem nicht zustimmst, nutze die Vorlage-Variante (Lesemodus / Bearbeiten). Du kannst die Einwilligung später widerrufen, indem du den Browser-Speicher dieser Seite leerst.
+                </p>
+                <div className="consent-buttons">
+                  <button className="btn-cancel" onClick={() => setShowConsent(false)}>Abbrechen</button>
+                  <button className="btn-grant" onClick={() => {
+                    window.mrAI.grantConsent();
+                    setShowConsent(false);
+                    runAi();
+                  }}>Einwilligen & generieren</button>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="privacy-notice">
             <strong>Deine Privatsphäre:</strong> Deine Eingaben (Name, Erinnerungen, Charakter-Beschreibung) bleiben ausschließlich in deinem Browser — sie werden nicht gespeichert und nicht an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben.
@@ -1071,6 +1244,22 @@ function TrauerredeGenerator() {
           <div role="region" aria-label="Hinweis zu akuter Trauerhilfe" style={{background:'#FFF8EF',border:'1px solid #E8E0D6',borderLeft:'4px solid #C8862E',borderRadius:8,padding:'14px 18px',marginBottom:24,fontSize:13,lineHeight:1.6,color:'#5a4a2e'}}>
             <strong style={{color:'#8b5a14'}}>Wenn dich die Trauer überfordert:</strong> Du musst diese Rede nicht jetzt schreiben. <a href="https://www.telefonseelsorge.de" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>Telefonseelsorge</a> (0800 111 0 111, kostenlos, 24/7) oder <a href="https://www.bdbev.de/trauerbegleitung" rel="noopener" target="_blank" style={{color:'#7A6B5D'}}>BDB-Trauerbegleitung</a> sind erreichbar — Reden vorbereiten kann warten, das Gespräch nicht.
           </div>
+
+          {/* Lesemodus: zusammenhängender Fließtext (KI-Output bevorzugt, sonst Template-Composed) */}
+          {viewMode === 'lesen' && (
+            <article className="reading-mode" aria-label="Rede im Lesemodus">
+              {aiResult && <span className="ai-badge">✨ Mit KI generiert</span>}
+              {(aiResult || composedSpeech).split(/\n\n+/).filter(Boolean).map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+              {!aiResult && !composedSpeech && (
+                <p style={{fontStyle:'italic',color:'var(--mr-text-muted)'}}>Noch kein Rede-Text vorhanden — wechsle in den Bearbeiten-Modus oder klicke „Mit KI verfeinern" oben.</p>
+              )}
+            </article>
+          )}
+
+          {/* Bearbeiten-Modus: Section-by-Section Editor (Original-View) */}
+          {viewMode === 'bearbeiten' && (<>
 
           {/* Opening */}
           <div className="speech-section">
@@ -1305,6 +1494,8 @@ function TrauerredeGenerator() {
           <div className="tip">
             <strong>Sprechratschlag:</strong> Der Abschluss sollte ruhig und bedacht wirken. Nimm dir Zeit. Die letzte Satz darf in Stille hängenbleiben.
           </div>
+
+          </>)}{/* Ende Bearbeiten-Modus Wrapper */}
 
           {/* Word Count & Timing — R-A 12 Fix: quoteFavorite jetzt im Timing berücksichtigt (war divergent zum Export) */}
           {(() => {
