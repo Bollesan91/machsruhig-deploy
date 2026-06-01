@@ -5,53 +5,58 @@
 
 ## Was wurde gemacht
 
-**Iter-32**: SEO-Welle Phase B (Internal-Linking) + Phase C (4 Pillar-Audits, 5 Iterationen). **Alle 4 Pillars ≥85 BEHALTEN.**
+### Iter-32: SEO-Welle (siehe Vorgänger-Notes — alle 4 Pillars ≥85 BEHALTEN)
 
-### Phase B — Internal-Linking-Sweep
-- **Nav site-wide** auf 14 Items erweitert (5 neue Pillars eingebaut): 104 Files
-- **Footer-Themen-Block** site-wide um 5 neue Pillars erweitert: 20 Files
-- **Tool→Pillar Cross-Link-Boxes** in 6 Tools (DG/AB/NK/FR/CL/TR)
-- **"Verwandte Themen" Sections** in 9 bestehenden Pillars
-- **HOTFIX abschiedsbrief-schreiben.html**: war live komplett unstyled (404 `/assets/styles.css`) — inline CSS + mr-nav rebuilt
-- 12 Stadt-Pages mit eigenen Hub-Navs intentional übersprungen
+### Iter-33: KI-Helper Master-Architektur (Phase 1: Trauerrede)
 
-### Phase C — 4 Pillar-Audits via Helper-V3 Pipeline (5 Iter-Cycles)
-| Pillar | Initial | Final | Δ | Status |
-|--------|------:|------:|---:|--------|
-| **bestattungsarten** | 71 | **86** | +15 | ✅ BEHALTEN |
-| **sozialbestattung** | 81 | **87,5** | +6,5 | ✅ BEHALTEN |
-| **vertraege-kuendigen** | 78 | **87** | +9 | ✅ BEHALTEN |
-| **kindern-tod-erklaeren** | 81 | **86** | +5 | ✅ BEHALTEN |
+**Problem-Diagnose**: Trauerrede-Generator war Template-Slot-Filler, übernahm User-Tippfehler 1:1. Helper-V3-Audit (SEO/YMYL) hatte Tool-Validity nicht geprüft → 85+ Score trotz unbrauchbarer Output.
 
-Reviewer-Verdikt zu allen 4: _"Keine inhaltlichen oder rechtlichen Defekte offen. Go-live freigegeben."_
+**Lösung**: Groq + Llama 3.3 70B via Netlify Function. Free-API (14.400 req/Tag), 2-5s Latenz, deutsche Qualität sehr gut.
 
-### Cross-Pillar-Hebel (Iter-1 bis Iter-5)
-- **YMYL-Faktenfehler gefixt** (BA): SH+Hessen Heim-Urne-Falschaussage → korrekt Bremen (Asche-Verstreuen seit 2015) + RLP (Urnen-Verwahrung seit Oktober 2025 unter strengen Voraussetzungen)
-- **Schema-Härtung** alle 4: publisher.logo als ImageObject (600×60), Article.image, mainEntityOfPage
-- **FAQ-Schema 1:1 mit sichtbarem HTML** synchronisiert (BA, KT, VK)
-- **In-Text-Cross-Links** in VK (0 → 3+, gesetze-im-internet.de für §§ 580/1944 BGB)
-- **Quellen verlinkt** (KT: BVT, NgK, Telefonseelsorge | VK: gesetze-im-internet.de, Aeternitas | SB: BSG-Urteile, Aeternitas)
-- **Reviewer-Byline** "fachlich geprüft (Fachpool) · Stand: Juni 2026" auf allen 4
-- **dateModified** auf 2026-06-01 (war eingefroren auf Publish-Date)
+**Master-Stack (wiederverwendbar für Danksagung + Abschiedsbrief):**
+- `netlify/functions/ai-rede.js`: Backend-Proxy, type-basiert (`trauerrede`/`danksagung`/`abschiedsbrief`)
+  - Rate-Limit per IP (10/min, 100/day)
+  - Input-Size-Guard (8000 chars max)
+  - Type-spezifische System-Prompts (Tonalität, Länge, Stil-Regeln)
+- `assets/js/mr-ai.js`: Frontend-Helper
+  - Consent-Mgmt via localStorage (`mr-ai-consent-v1`)
+  - `window.mrAI.generate({type, data})` → Promise<text>
+  - Loading/Success/Error Events
 
-### Strukturelle Erkenntnisse
-- **Reviewer-Cache** ist ein reales Problem: raw.githubusercontent.com CDN-Cache kann Reviewer auf alte Version zeigen → bei Score-Regression Live-File mit curl verifizieren
-- **Writer rückgängig**: Helper-V3-Writer machen manchmal vorherige Iter-Edits rückgängig (SB Doppel-Block wieder eingefügt) — Konsistenz-Verifikation Pflicht
-- **YMYL-Faktenfehler**: BA hatte SH+Hessen als "Heim-Urne erlaubt" — komplett falsch. Helper-V3 fängt sowas zuverlässig
-- **Cache-Bust-Branch** (Branchwechsel `iter-32-final-push` → `iter-32-final-audit`) ist effektiv um Reviewer auf frische HTML-Version zu zwingen
-- **Tab-Send-Failures**: 1. Send-Click klappt häufig nicht beim ersten Mal — Retry-Pattern etablieren
+**Trauerrede-Tool (Master für Phase 2/3):**
+- Lesemodus (Default): zusammenhängender `<article>` Fließtext (Fraunces 17px, line-height 1.85)
+- Bearbeiten-Modus: original Section-by-Section Editor
+- "✨ Mit KI verfeinern" Button → Consent-Modal → Groq-Call → KI-Result
+- Copy/Print priorisiert KI-Result
+- Reset löscht KI-Result + zurück zum Lesemodus
 
-### Deploy
-- Final-SHA auf main: `6644fcc` (Merge iter-32-final-audit)
-- **Netlify-Deploy ausgelöst** mit diesem Commit (kein [skip netlify])
+**Privacy-Modell**: Opt-in Pflicht (Modal mit Groq-Inc.-Hinweis "USA, kein KI-Training"), localStorage `mr-ai-consent-v1`. Fallback: KI-Fehler → User sieht Vorlage-Variante.
+
+**ENV-Setup (in Netlify-Site-Settings):**
+- `GROQ_API_KEY` als Secret-Variable, alle Scopes
+
+**Strukturelle Erkenntnis Iter-33:**
+- Helper-V3-YMYL-Audit misst SEO-Hülle, NICHT Tool-Output-Qualität
+- Tools brauchen separaten "Validity-Audit" (Eingabe→Output mit Tippfehler-Test)
+- LLM-API > Template-Slot-Filler bei jedem Content-Generation-Tool
 
 ## Nächste Schritte
-- Live-Verifikation nach Netlify-Build (~3 Min)
-- Optional Phase D: Schema-Konsistenz für die anderen ~5 Pillars (vorhandene + frühere — alle haben jetzt dateModified/Stand-Inkonsistenz)
-- Cool-Down empfohlen — 5 Iter-Cycles + 4 Pillar-Audits + Live-Bug-Fix abschiedsbrief in dieser Session
+- Phase 2: Danksagung-Tool (Score 86) mit gleichem Stack — ~1h Aufwand
+- Phase 3 optional: Abschiedsbrief "✨ Mit KI polieren"-Button (Rechtschreibung/Stil)
+- Post-Deploy-Live-Test Trauerrede-KI-Flow
 
-## Strukturelle Erkenntnisse Iter-1–32 dieser Sessions-Reihe
+## Tool-Klassifikation (aus Iter-33-Analyse)
+
+| Tool | Typ | KI-Bedarf |
+|------|-----|-----------|
+| trauerrede | Generator | ✅ Phase 1 (DEPLOYED Iter-33) |
+| danksagung | Generator | ✅ Phase 2 (Master-Pattern wiederverwendbar) |
+| abschiedsbrief | Editor (User schreibt) | optional (Polish-Button) |
+| beerdigungsplaner, bestattungskosten-rechner, kostenrechner, fristen-radar, notfallkarte, checkliste-todesfall, angebotspruefer, vorsorge-check | Rechner/Quiz/Formular | nein |
+
+## Strukturelle Erkenntnisse Iter-1–33 dieser Sessions-Reihe
 - Reviewer-Noise ±5-10 Punkte → Median über 3-5 Cycles ist echter Schätzwert
 - Strukturelle Defekte (Babel-Self-Host, YMYL-Faktenfehler, Footer-Missing, unstyled-CSS) bringen +5-15 Punkte
 - Helper-V3 Multi-Tab-Pipeline mit Branch-Trick ist robuster als Single-Audit-Loop
 - raw.githubusercontent.com Edge-Cache verfälscht Audits — Live-File-Verification + Cache-Bust-Branches als Standard
+- **NEU Iter-33**: Helper-V3-Audit misst SEO, nicht Tool-Output-Qualität. Tool-Validity braucht separaten Test.
