@@ -43,6 +43,7 @@ WICHTIGE REGELN:
 - Tonalität strikt einhalten:
   - WÜRDEVOLL (wuerdevoll): ruhig, getragen, klassisch, formell — z.B. "Heute sind wir hier zusammengekommen, um Abschied zu nehmen…"
   - PERSÖNLICH (persoenlich): warm, direkt, Du-Ansprache an den Verstorbenen erlaubt — z.B. "Mama, du warst der ruhige Mittelpunkt unserer Familie…"
+  - LEBENSBEJAHEND (lebensbejahend): dankbar, lebensfeiernd, betont die Schönheit des gelebten Lebens — kein Klagen, sondern Würdigung. Z.B. "Wir feiern heute ein Leben, das volle Spuren hinterlassen hat — und sind dankbar für jede dieser Spuren."
   - HUMORVOLL (humorvoll): dezente Heiterkeit erlaubt, schmunzelnde Anekdoten, nie respektlos. Bei Kindern/Jugendlichen IMMER würdevoll umlenken.
   - MELANCHOLISCH (melancholisch): tief, traurig-schön, ehrlich melancholisch, ohne falsche Tröstung. Langsame ruhige Sätze, viel Raum für Stille. Z.B. "Es gibt Tage, an denen die Welt leiser wird — heute ist so ein Tag."
   - HOFFNUNGSVOLL (hoffnungsvoll): tröstlich, zukunftsorientiert, betont was bleibt. Nicht überzogen positiv, kein "in einem besseren Ort". Z.B. "Was XY uns gegeben hat, lebt in unseren Gesten weiter."
@@ -154,13 +155,39 @@ function buildUserMessage(type, data, section) {
   return JSON.stringify(data);
 }
 
+// CORS-Allowlist: nur eigene Origins, kein Wildcard (Hotfix Iter-33 Phase 2)
+const ALLOWED_ORIGINS = new Set([
+  'https://machsruhig.de',
+  'https://www.machsruhig.de',
+  'http://localhost:8888', // Netlify Dev
+  'http://localhost:3000',
+]);
+// Branch-Previews: *.netlify.app match via regex
+const NETLIFY_PREVIEW_RE = /^https:\/\/[a-z0-9-]+--[a-z0-9-]+\.netlify\.app$/;
+
+function resolveCors(origin) {
+  if (!origin) return null;
+  if (ALLOWED_ORIGINS.has(origin)) return origin;
+  if (NETLIFY_PREVIEW_RE.test(origin)) return origin;
+  return null;
+}
+
 exports.handler = async function (event) {
-  // CORS-Headers für Browser-Requests
+  const origin = event.headers?.origin || event.headers?.Origin || '';
+  const allowedOrigin = resolveCors(origin);
+
+  // CORS-Headers für Browser-Requests — nur erlaubte Origins durchlassen
   const cors = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': allowedOrigin || 'https://machsruhig.de',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Vary': 'Origin',
   };
+
+  // Wenn Origin gesetzt aber nicht in Allowlist → 403 (verhindert Cross-Origin-Abuse)
+  if (origin && !allowedOrigin) {
+    return { statusCode: 403, headers: cors, body: JSON.stringify({ error: 'origin_not_allowed' }) };
+  }
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 204, headers: cors };
