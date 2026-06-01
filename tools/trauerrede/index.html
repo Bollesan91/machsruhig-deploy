@@ -352,7 +352,23 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 .mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}
 
 .ai-spinner{display:inline-block;width:14px;height:14px;border:2px solid #fff;border-top-color:transparent;border-radius:50%;animation:ai-spin .8s linear infinite}
+.ai-spinner-mini{display:inline-block;width:11px;height:11px;border:2px solid var(--mr-warm);border-top-color:transparent;border-radius:50%;animation:ai-spin .8s linear infinite;vertical-align:middle}
 @keyframes ai-spin{to{transform:rotate(360deg)}}
+
+/* Section-Regenerate-Button */
+.ai-section-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.ai-section-actions button{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--mr-border);background:#fff;color:var(--mr-warm);font-size:12px;font-weight:600;border-radius:6px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.ai-section-actions button:hover:not(:disabled){background:var(--mr-safety);border-color:var(--mr-accent);color:var(--mr-text)}
+.ai-section-actions button:disabled{opacity:.5;cursor:wait}
+
+/* Style-Picker für KI-Stil */
+.ai-style-picker{margin:14px 0;padding-top:12px;border-top:1px dashed var(--mr-border)}
+.ai-style-picker-label{font-size:12px;font-weight:600;color:var(--mr-text);margin-bottom:8px;display:block;letter-spacing:.3px}
+.ai-style-pills{display:flex;flex-wrap:wrap;gap:6px}
+.ai-style-pills button{padding:6px 12px;border:1px solid var(--mr-border);background:#fff;color:var(--mr-text-muted);font-size:12px;font-weight:500;border-radius:99px;cursor:pointer;transition:all .15s}
+.ai-style-pills button:hover:not(.active){border-color:var(--mr-accent);color:var(--mr-text)}
+.ai-style-pills button.active{background:var(--mr-primary);color:#fff;border-color:var(--mr-primary)}
+.ai-style-hint{font-size:11px;color:var(--mr-text-muted);margin-top:6px;font-style:italic}
 </style>
 <script defer src="/assets/js/mr-ai.js"></script>
 </head>
@@ -387,7 +403,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 <div class="mr-content" id="main">
   
 <div style="background:#FFFAF5;border:1px solid #E8E0D6;border-left:4px solid #866E45;border-radius:8px;padding:16px 20px;margin:24px auto;font-size:14px;line-height:1.6;max-width:720px;font-family:'DM Sans',system-ui,sans-serif">
-  <strong>Was dieses Tool ist — und was nicht:</strong> Dies ist ein strukturierter Vorlagen-Assistent, keine KI. Es hilft beim Schreib-Einstieg und sortiert deine Erinnerungen — den emotionalen Kern der Rede schreibst du selbst. Wenn du dich überfordert fühlst oder die Trauerfeier groß wird, lohnt sich oft ein professioneller Trauerredner (Honorar typisch 400-800 €). Suchhilfen: <a href="https://www.bestatter.de" rel="noopener" target="_blank" style="color:#7A6B5D">BDB-Bestatterverband</a> oder lokale Trauerbegleitung.
+  <strong>Wie das Tool funktioniert:</strong> Der Wizard sortiert deine Eingaben in einen strukturierten Rede-Entwurf — komplett lokal in deinem Browser. Optional generiert eine KI (Llama&nbsp;3.3 via Groq) daraus eine zusammenhängende Rede mit Stil-Variation. Du kannst zwischen sechs Tonarten wählen: würdevoll, persönlich, humorvoll, melancholisch, hoffnungsvoll und poetisch — komplett kostenlos. Für die KI-Variante werden deine Eingaben einmalig an Groq Inc. (USA) übermittelt; Opt-in ist Pflicht.<br><br>
+  <em>Bei großen Trauerfeiern oder wenn dich die Aufgabe überfordert: Ein professioneller Trauerredner (Honorar typisch 400–800 €) ist eine gute Alternative. Suchhilfen: <a href="https://www.bestatter.de" rel="noopener" target="_blank" style="color:#7A6B5D">BDB-Bestatterverband</a> oder lokale Trauerbegleitung.</em>
 </div>
 <div id="app"></div>
 </div>
@@ -464,7 +481,10 @@ const TONES = [
   {id:'persoenlich',label:'Persönlich & warm',desc:'Fokus auf Erinnerungen und persönliche Nähe'},
   {id:'wuerdevoll',label:'Würdevoll & klassisch',desc:'Formeller Ton, traditionelle Struktur'},
   {id:'lebensbejahend',label:'Lebensbejahend & dankbar',desc:'Feier des Lebens statt Trauer'},
-  {id:'humorvoll',label:'Humorvoll & liebevoll',desc:'Anekdoten und heitere Erinnerungen'}
+  {id:'humorvoll',label:'Humorvoll & liebevoll',desc:'Anekdoten und heitere Erinnerungen'},
+  {id:'melancholisch',label:'Melancholisch & ehrlich',desc:'Traurig-schön, ohne falsche Tröstung'},
+  {id:'hoffnungsvoll',label:'Hoffnungsvoll & tröstlich',desc:'Was bleibt, was weiterträgt'},
+  {id:'poetisch',label:'Poetisch & bildhaft',desc:'Lyrisch, mit Metaphern'}
 ];
 
 const LENGTHS = [
@@ -613,6 +633,9 @@ function TrauerredeGenerator() {
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState('');
   const [showConsent, setShowConsent] = useState(false);
+  const [aiSectionLoading, setAiSectionLoading] = useState(''); // welche section gerade regeneriert wird
+  const [pendingSection, setPendingSection] = useState(''); // section die nach Consent regeneriert werden soll
+  const [selectedAiTone, setSelectedAiTone] = useState(''); // aktiver Stil für KI-Output ('' = formData.tone)
 
   // Zusammenhängender Fließtext aus den Segmenten (für Lesemodus ohne KI)
   const composedSpeech = (() => {
@@ -649,7 +672,7 @@ function TrauerredeGenerator() {
           age: formData.age,
           relationship: formData.relationship,
           religion: formData.religion,
-          tone: formData.tone,
+          tone: selectedAiTone || formData.tone,
           length: formData.length,
           character: formData.character,
           hobbies: formData.hobbies,
@@ -673,6 +696,65 @@ function TrauerredeGenerator() {
       }
     } finally {
       setAiLoading(false);
+    }
+  };
+
+  // Einzel-Section regenerieren (opening/character/hobbies/memory/meaning/reflection/closing)
+  const regenerateSection = async (sectionKey) => {
+    if (!window.mrAI) {
+      setAiError('KI-Helfer-Modul nicht geladen.');
+      return;
+    }
+    if (!window.mrAI.hasConsent()) {
+      setPendingSection(sectionKey);
+      setShowConsent(true);
+      return;
+    }
+    setAiError('');
+    setAiSectionLoading(sectionKey);
+    try {
+      const result = await window.mrAI.generate({
+        type: 'trauerrede',
+        section: sectionKey,
+        data: {
+          name: formData.name,
+          age: formData.age,
+          relationship: formData.relationship,
+          religion: formData.religion,
+          tone: selectedAiTone || formData.tone,
+          length: formData.length,
+          character: formData.character,
+          hobbies: formData.hobbies,
+          memory: formData.memory,
+          message: formData.message,
+          quote: formData.quote,
+          selectedQuote: formData.selectedQuote,
+          customQuote: formData.customQuote,
+        },
+      });
+      // Spezial-Mapping: "meaning" speichert auf speechData.meaning, aber wenn Lieblingssatz da war
+      // dann ist quoteFavorite separat. Schluss-Section enthält ggf. quoteFavorite-Block.
+      const trimmed = result.trim();
+      if (sectionKey === 'closing') {
+        setSpeechData(prev => ({ ...prev, closing: trimmed }));
+      } else {
+        setSpeechData(prev => ({ ...prev, [sectionKey]: trimmed }));
+      }
+      // Wenn KI-Voll-Ergebnis existiert: bei Section-Regenerate auf das Section-basierte System zurückfallen
+      // (Lesemodus zeigt dann composedSpeech statt aiResult — bewusste Wahl: nach Edit nicht mehr KI-monolith)
+      if (aiResult) setAiResult('');
+      if (window.mrTrack) window.mrTrack('toolStep', { tool: 'trauerrede', step: 'ai_section_regen', section: sectionKey });
+    } catch (err) {
+      if (err.message === 'CONSENT_REQUIRED') {
+        setPendingSection(sectionKey);
+        setShowConsent(true);
+      } else if (err.message === 'RATE_LIMIT') {
+        setAiError(`Zu viele Anfragen. Bitte in ${Math.ceil((err.retryAfter || 60) / 60)} Min erneut versuchen.`);
+      } else {
+        setAiError('Verbindung zur KI fehlgeschlagen. Versuch es nochmal oder bearbeite den Abschnitt manuell.');
+      }
+    } finally {
+      setAiSectionLoading('');
     }
   };
 
@@ -1200,6 +1282,33 @@ function TrauerredeGenerator() {
               Deine Eingaben (Name, Charakter, Erinnerungen) werden einmalig an <strong>Groq Inc. (USA)</strong> gesendet und nicht für KI-Training gespeichert.
               Keine KI? Nutze den Lesemodus — die Vorlage funktioniert auch ohne.
             </p>
+
+            {/* Style-Picker: Stil-Variation */}
+            <div className="ai-style-picker">
+              <span className="ai-style-picker-label">Stil wählen</span>
+              <div className="ai-style-pills">
+                {TONES.map(t => {
+                  const active = (selectedAiTone || formData.tone) === t.id;
+                  // Sicherheits-Override: bei Kindern/Jugendlichen kein humorvoll
+                  const ageNumLocal = parseInt((formData.age || '').match(/\d+/)?.[0] || '999', 10);
+                  const isChildLocal = (formData.relationship === 'kind' && (ageNumLocal < 18 || ageNumLocal === 999)) || (formData.relationship !== 'kind' && ageNumLocal < 18);
+                  const disabled = t.id === 'humorvoll' && isChildLocal;
+                  return (
+                    <button
+                      key={t.id}
+                      className={active ? 'active' : ''}
+                      onClick={() => setSelectedAiTone(t.id)}
+                      disabled={disabled}
+                      title={disabled ? 'Humorvoll bei Trauerreden für Kinder/Jugendliche nicht empfohlen' : t.desc}
+                    >
+                      {t.label}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="ai-style-hint">Tipp: Klick einen Stil und dann „Mit KI verfeinern" — verschiedene Stile probieren, bis dein Ton getroffen ist.</div>
+            </div>
+
             <button
               className="ai-btn"
               onClick={runAi}
@@ -1225,11 +1334,17 @@ function TrauerredeGenerator() {
                   Wenn du dem nicht zustimmst, nutze die Vorlage-Variante (Lesemodus / Bearbeiten). Du kannst die Einwilligung später widerrufen, indem du den Browser-Speicher dieser Seite leerst.
                 </p>
                 <div className="consent-buttons">
-                  <button className="btn-cancel" onClick={() => setShowConsent(false)}>Abbrechen</button>
+                  <button className="btn-cancel" onClick={() => { setShowConsent(false); setPendingSection(''); }}>Abbrechen</button>
                   <button className="btn-grant" onClick={() => {
                     window.mrAI.grantConsent();
                     setShowConsent(false);
-                    runAi();
+                    if (pendingSection) {
+                      const s = pendingSection;
+                      setPendingSection('');
+                      regenerateSection(s);
+                    } else {
+                      runAi();
+                    }
                   }}>Einwilligen & generieren</button>
                 </div>
               </div>
@@ -1303,6 +1418,11 @@ function TrauerredeGenerator() {
               {speechData.opening}
             </div>
             <div className="char-count">{speechData.opening.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('opening')} disabled={aiSectionLoading === 'opening' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'opening' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
           </div>
 
           <div className="tip">
@@ -1325,6 +1445,11 @@ function TrauerredeGenerator() {
                 {speechData.character}
               </div>
               <div className="char-count">{speechData.character.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('character')} disabled={aiSectionLoading === 'character' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'character' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
             </div>
           )}
 
@@ -1344,6 +1469,11 @@ function TrauerredeGenerator() {
                 {speechData.hobbies}
               </div>
               <div className="char-count">{speechData.hobbies.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('hobbies')} disabled={aiSectionLoading === 'hobbies' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'hobbies' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
             </div>
           )}
 
@@ -1363,6 +1493,11 @@ function TrauerredeGenerator() {
                 {speechData.memory}
               </div>
               <div className="char-count">{speechData.memory.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('memory')} disabled={aiSectionLoading === 'memory' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'memory' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
             </div>
           )}
 
@@ -1386,6 +1521,11 @@ function TrauerredeGenerator() {
                 {speechData.meaning}
               </div>
               <div className="char-count">{speechData.meaning.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('meaning')} disabled={aiSectionLoading === 'meaning' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'meaning' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
             </div>
           )}
 
@@ -1424,6 +1564,11 @@ function TrauerredeGenerator() {
                 {speechData.reflection}
               </div>
               <div className="char-count">{speechData.reflection.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('reflection')} disabled={aiSectionLoading === 'reflection' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'reflection' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
             </div>
           )}
 
@@ -1489,6 +1634,11 @@ function TrauerredeGenerator() {
               {speechData.closing}
             </div>
             <div className="char-count">{speechData.closing.length} Zeichen</div>
+              <div className="ai-section-actions no-print">
+                <button onClick={() => regenerateSection('closing')} disabled={aiSectionLoading === 'closing' || aiLoading} aria-label="Diesen Abschnitt mit KI neu generieren">
+                  {aiSectionLoading === 'closing' ? <><span className="ai-spinner-mini"></span> Neu...</> : '🔄 Diesen Abschnitt mit KI neu'}
+                </button>
+              </div>
           </div>
 
           <div className="tip">
