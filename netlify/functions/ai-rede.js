@@ -32,18 +32,34 @@ function checkRateLimit(ip) {
 const SYSTEM_PROMPTS = {
   trauerrede: `Du bist erfahrener Trauerredner und Schreibhelfer für deutsche Bestattungen. Du erstellst aus den Eingaben einer trauernden Person eine zusammenhängende, würdevolle, persönliche Trauerrede.
 
+QUALITÄTS-ANSPRUCH:
+Eine Trauerrede ist KEINE Aufzählung von Fakten — sie ist ein Versuch, das Wesen eines Menschen in Sprache zu halten. Beispiele aus dem Input werden szenisch ausgemalt, nicht aufgelistet. Übergänge zwischen Absätzen sind weich, nicht abrupt.
+
 WICHTIGE REGELN:
 - Korrigiere stillschweigend Rechtschreib- und Grammatikfehler in den Eingaben.
-- Übernimm Fakten, Anekdoten und Charakter-Beschreibungen aus den Eingaben — niemals erfinden.
-- Schreibe in zusammenhängenden Absätzen, nicht als Liste oder mit Zwischenüberschriften.
-- Bei Eingaben wie "er war guter Mann der tomatten geliebt hat" → mache daraus: "Er war ein guter Mensch, der seine Tomaten geliebt hat — wer ihn kannte, weiß, wie er stolz durch seinen Garten ging."
-- Tonalität strikt einhalten (würdevoll / persönlich / humorvoll). Bei Trauerreden für Kinder/Jugendliche IMMER würdevoll, niemals humorvoll.
-- Länge: kurz ≈ 250 Wörter, mittel ≈ 500 Wörter, lang ≈ 800 Wörter.
-- Beginne direkt mit der Eröffnung (z.B. "Liebe Trauergemeinde…"), keine Meta-Kommentare ("Hier ist die Rede:" o.ä.).
-- Schreibe in der Sprache, die zur Beziehung passt: bei Kind/Enkel das "Du" zum Verstorbenen, bei distanzierterer Beziehung die respektvolle Form.
+- Übernimm Fakten, Anekdoten und Charakter-Beschreibungen aus den Eingaben — niemals erfinden, niemals romantisieren.
+- Schreibe in zusammenhängenden Absätzen, NIE als Liste, NIE mit Zwischenüberschriften wie "Eröffnung:" oder "Erinnerung:".
+- Bei Eingaben wie "er war guter Mann der tomatten geliebt hat" → mache daraus: "Er war ein guter Mensch, dessen Tomaten im Sommer überall in der Familie verteilt wurden — wer ihn kannte, kennt diesen Stolz, mit dem er durch seinen Garten ging."
+- Tonalität strikt einhalten:
+  - WÜRDEVOLL: ruhig, getragen, klassisch — z.B. "Heute sind wir hier zusammengekommen, um Abschied zu nehmen…"
+  - PERSÖNLICH: warm, direkt, Du-Ansprache an den Verstorbenen erlaubt — z.B. "Mama, du warst der ruhige Mittelpunkt unserer Familie…"
+  - HUMORVOLL: dezente Heiterkeit erlaubt, nie respektlos. Bei Kindern/Jugendlichen IMMER würdevoll umlenken.
+- Länge: kurz ≈ 300 Wörter, mittel ≈ 550 Wörter, lang ≈ 850 Wörter — Wortzahl anpeilen, nicht überschreiten.
+- Beginne direkt mit der Eröffnung (z.B. "Liebe Trauergemeinde…"), keine Meta-Kommentare ("Hier ist die Rede:", "Gerne, hier eine…").
+- Schreibe in der Sprache, die zur Beziehung passt: bei Kind/Enkel/Partner das "Du" zum Verstorbenen, bei distanzierterer Beziehung die respektvolle dritte Person.
 - Wenn ein Lieblingssatz/Zitat angegeben ist: arbeite ihn organisch ein, nicht als alleinstehenden Block.
-- Ende mit Abschiedsformel passend zur Religion/Weltanschauung.
-- Keine Floskeln wie "in der schweren Stunde des Abschieds". Konkret bleiben.`,
+- Ende mit Abschiedsformel passend zur Religion/Weltanschauung — christlich, jüdisch, muslimisch, weltlich.
+- Vermeide Floskeln: "in der schweren Stunde des Abschieds", "die lange Reise", "zu früh von uns gegangen", "im Herzen weiterleben". Konkret bleiben.
+- Beziehe dich auf konkrete Details aus den Eingaben — wenn der Garten erwähnt wird, dann der Garten konkret, nicht "ihr habt etwas geliebt".`,
+
+  // Section-spezifische Prompts (bei Einzel-Regeneration)
+  trauerrede_section_opening: `Schreibe nur die Eröffnung einer Trauerrede (2-3 Sätze, ≈40 Wörter). Begrüßung der Trauergemeinde + Anlass nennen + Übergang andeuten. Keine Meta-Kommentare, direkter Beginn. Tonalität strikt einhalten.`,
+  trauerrede_section_character: `Schreibe nur den Charakter-Abschnitt einer Trauerrede (4-6 Sätze, ≈80-120 Wörter). Beschreibe das Wesen der Person — nicht aufzählend, sondern bildhaft. Konkretisiere die Eingabe, korrigiere Tippfehler, mal das Bild der Person aus. Kein Meta-Kommentar, kein "Wer war XY?" als Frage. Direkt einsteigen.`,
+  trauerrede_section_hobbies: `Schreibe nur den Leidenschaften-Abschnitt einer Trauerrede (3-4 Sätze, ≈60-90 Wörter). Was die Person liebte — szenisch ausgemalt, nicht aufgelistet. Wenn "Garten" steht: zeig den Garten. Wenn "Musik" steht: nenn die Art von Musik die zur Person passt. Kein Meta-Kommentar.`,
+  trauerrede_section_memory: `Schreibe nur eine persönliche Erinnerungs-Anekdote für eine Trauerrede (4-6 Sätze, ≈80-130 Wörter). Erzähle die Geschichte aus den Eingaben szenisch — wer war beteiligt, wo passierte es, was war besonders. Korrigiere Tippfehler, glätte den Stil, aber erfinde keine Details. Kein Meta-Kommentar.`,
+  trauerrede_section_meaning: `Schreibe nur den Bedeutungs-Abschnitt einer Trauerrede (3-5 Sätze, ≈60-100 Wörter). Was die Person für die Anwesenden bedeutet hat — konkret, nicht abstrakt. Wenn der Input vage ist, mach es greifbar (statt "sie hat uns viel gegeben" → konkrete Ableitung wie "ihr Lachen hat uns durch viele Sonntage getragen"). Kein Meta-Kommentar.`,
+  trauerrede_section_reflection: `Schreibe nur einen Reflexions-Abschnitt für eine Trauerrede (3-4 Sätze, ≈70-100 Wörter). Was bleibt, wie geht es weiter, Trauer-Wegweiser. Würdevoll, nicht tröstend-überheblich. Kein Meta-Kommentar.`,
+  trauerrede_section_closing: `Schreibe nur den Schluss einer Trauerrede (2-3 Sätze, ≈40-70 Wörter). Abschiedsformel passend zur Religion/Weltanschauung. Kein Meta-Kommentar. Schließe mit einem ruhigen letzten Satz.`,
 
   danksagung: `Du bist Schreibhelfer für Danksagungen nach einer Beerdigung in Deutschland. Du erstellst eine kurze, würdevolle Danksagung.
 
@@ -67,7 +83,7 @@ REGELN:
 - Antworte nur mit dem polierten Brief, keine Meta-Kommentare.`,
 };
 
-function buildUserMessage(type, data) {
+function buildUserMessage(type, data, section) {
   if (type === 'trauerrede') {
     const parts = [];
     parts.push(`Verstorbene Person: ${data.name || '(nicht angegeben)'}`);
@@ -75,7 +91,30 @@ function buildUserMessage(type, data) {
     parts.push(`Beziehung zum Verstorbenen: ${data.relationship || 'nicht angegeben'}`);
     parts.push(`Religion/Weltanschauung: ${data.religion || 'weltlich'}`);
     parts.push(`Gewünschte Tonalität: ${data.tone || 'wuerdevoll'}`);
-    parts.push(`Gewünschte Länge: ${data.length || 'mittel'} (kurz=250W, mittel=500W, lang=800W)`);
+
+    // Bei section-Mode: nur die für die Section relevanten Inputs hervorheben
+    if (section) {
+      if (section === 'character' && data.character) parts.push(`Charakter-Eingabe: ${data.character}`);
+      else if (section === 'hobbies' && data.hobbies) parts.push(`Hobbys/Leidenschaften-Eingabe: ${data.hobbies}`);
+      else if (section === 'memory' && data.memory) parts.push(`Erinnerung-Eingabe: ${data.memory}`);
+      else if (section === 'meaning' && data.message) parts.push(`Bedeutung-Eingabe: ${data.message}`);
+      else if (section === 'closing') {
+        if (data.quote) parts.push(`Lieblingssatz: ${data.quote}`);
+        if (data.selectedQuote || data.customQuote) parts.push(`Schluss-Zitat: ${data.selectedQuote || data.customQuote}`);
+      }
+      // Context: andere Felder zur Orientierung
+      const context = [];
+      if (data.character) context.push(`Charakter: ${data.character}`);
+      if (data.hobbies) context.push(`Hobbys: ${data.hobbies}`);
+      if (data.memory) context.push(`Erinnerung: ${data.memory}`);
+      if (data.message) context.push(`Bedeutung: ${data.message}`);
+      if (context.length) {
+        parts.push(`\n--- Kontext aus anderen Eingaben (NUR zur Orientierung, nicht in diesen Abschnitt einbauen): ---\n${context.join('\n')}`);
+      }
+      return parts.join('\n');
+    }
+
+    parts.push(`Gewünschte Länge: ${data.length || 'mittel'} (kurz≈300W, mittel≈550W, lang≈850W)`);
     if (data.character) parts.push(`Charakter & Persönlichkeit: ${data.character}`);
     if (data.hobbies) parts.push(`Was die Person liebte / Hobbys: ${data.hobbies}`);
     if (data.memory) parts.push(`Eine persönliche Erinnerung: ${data.memory}`);
@@ -145,7 +184,7 @@ exports.handler = async function (event) {
     return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'invalid_json' }) };
   }
 
-  const { type, data } = payload;
+  const { type, data, section } = payload;
   if (!type || !SYSTEM_PROMPTS[type]) {
     return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'invalid_type' }) };
   }
@@ -153,8 +192,21 @@ exports.handler = async function (event) {
     return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'invalid_data' }) };
   }
 
+  // Section-Modus: spezifischen Prompt + reduzierte max_tokens
+  let activePrompt = SYSTEM_PROMPTS[type];
+  let maxTokens = 2000;
+  if (section) {
+    const sectionPromptKey = `${type}_section_${section}`;
+    if (!SYSTEM_PROMPTS[sectionPromptKey]) {
+      return { statusCode: 400, headers: cors, body: JSON.stringify({ error: 'invalid_section', allowed: Object.keys(SYSTEM_PROMPTS).filter(k => k.startsWith(type + '_section_')).map(k => k.replace(type + '_section_', '')) }) };
+    }
+    // Section-Prompt kombiniert mit Basis-Tonalitätsregeln
+    activePrompt = SYSTEM_PROMPTS[type] + '\n\n--- SECTION-MODUS ---\n' + SYSTEM_PROMPTS[sectionPromptKey];
+    maxTokens = 500;
+  }
+
   // Input-Größen-Limit (Schutz gegen Abuse)
-  const userMessage = buildUserMessage(type, data);
+  const userMessage = buildUserMessage(type, data, section);
   if (userMessage.length > 8000) {
     return { statusCode: 413, headers: cors, body: JSON.stringify({ error: 'input_too_large' }) };
   }
@@ -178,11 +230,11 @@ exports.handler = async function (event) {
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
         messages: [
-          { role: 'system', content: SYSTEM_PROMPTS[type] },
+          { role: 'system', content: activePrompt },
           { role: 'user', content: userMessage },
         ],
-        temperature: 0.7,
-        max_tokens: 2000,
+        temperature: 0.75,
+        max_tokens: maxTokens,
       }),
     });
 

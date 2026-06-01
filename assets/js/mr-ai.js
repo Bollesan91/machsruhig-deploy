@@ -42,7 +42,7 @@
       } catch (e) {}
     },
 
-    async generate({ type, data }) {
+    async generate({ type, data, section }) {
       if (!type || !data) {
         throw new Error('type und data sind Pflicht');
       }
@@ -50,13 +50,13 @@
         throw new Error('CONSENT_REQUIRED');
       }
 
-      window.dispatchEvent(new CustomEvent('mr-ai:loading', { detail: { type } }));
+      window.dispatchEvent(new CustomEvent('mr-ai:loading', { detail: { type, section } }));
 
       try {
         const resp = await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ type, data }),
+          body: JSON.stringify(section ? { type, data, section } : { type, data }),
         });
 
         if (resp.status === 429) {
