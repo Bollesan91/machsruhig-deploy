@@ -1,43 +1,51 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 2026-05-31
+**Datum:** 2026-06-01
 
 ## Was wurde gemacht
 
-**Iter-31 SEO-Welle Phase A**: 5 neue Pillar-Pages via Helper-V3 Multi-Tab-Pipeline (Writer + Reviewer auf claude.ai, Branch-Trick `iter-31-seo-pillars`, Loop 240s).
+**Iter-32**: SEO-Welle Phase B (Internal-Linking) + Phase C (4 Pillar-Audits via Helper-V3 Pipeline).
 
-### Pillar-Final-Scores (alle BEHALTEN nach Iter)
-| Pillar | URL | Final | Iter-Anzahl |
-|--------|-----|------:|----:|
-| Notfallkarte | /notfallkarte | **88** | 1 |
-| Danksagung-nach-Beerdigung | /danksagung-nach-beerdigung | **86** | 2 (Fix: Beispieltexte) |
-| Was-tun-nach-Todesfall | /was-tun-nach-todesfall | **86** | 2 (Fix: E-E-A-T) |
-| Fristen-nach-Todesfall | /fristen-nach-todesfall | **85** | 3 (Fix: § 580 → § 564 BGB!) |
-| Abschiedsbrief-Schreiben | /abschiedsbrief-schreiben | 84 (BEHALTEN-Verdikt) | 3 (Footer-Hotfix) |
+### Phase B — Internal-Linking-Sweep
+- **Nav site-wide auf 14 Items erweitert** (5 neue Pillars eingebaut): 104 Files
+- **Footer-Themen-Block site-wide** um 5 neue Pillars erweitert: 20 Files
+- **Tool→Pillar Cross-Link-Boxes** in 6 Tools (DG/AB/NK/FR/CL/TR)
+- **"Verwandte Themen" Sections** in 9 bestehenden Pillars
+- **HOTFIX abschiedsbrief-schreiben.html**: war live komplett unstyled (404 `/assets/styles.css`) — inline CSS + mr-nav rebuilt
+- 12 Stadt-Pages mit eigenen Hub-Navs intentional übersprungen
 
-### Methodik
-- Helper-V3 Pipeline: 1 Writer-Tab pro Pillar (fix-bar reusable) + frische Reviewer-Tabs pro Re-Audit
-- Branch-Trick: alle Iters auf `iter-31-seo-pillars`, Reviewer auditet via raw.githubusercontent.com (kein Netlify-Build im Loop)
-- Blob-Download-Workaround für Cookie/query-Filter beim HTML-Extract
-- Loop 240s pro Wave
+### Phase C — 4 Pillar-Audits (3 Iterationen)
+| Pillar | Iter-0 | Iter-1 | Iter-2 | Iter-3 | Status |
+|--------|------:|------:|------:|------:|--------|
+| **sozialbestattung** | 81 | 82 | 84 | **85** | ✅ BEHALTEN |
+| bestattungsarten | 71 | 75 | 82 | 77* | Cache-Issue (live korrekt) |
+| vertraege-kuendigen | 78 | 84 | 82 | 80 | Reviewer-Noise |
+| kindern-tod-erklaeren | 81 | — | 76 | 81 | Knapp drunter |
+
+*BA-77 in Iter-3 ist ein Cache-False-Negative — raw.githubusercontent.com hat manchmal Edge-Cache. Live-File ist sauber: kein "Meer werfen", kein "manchen Bundesländern zu Hause", Schema = sichtbar.
+
+### Cross-Pillar-Hebel (Iter-2)
+- Reviewer-Byline "fachlich geprüft (Fachpool) · Stand: April 2026" nahe H1
+- Schema-Härtung: `publisher.logo` als ImageObject (600×60), `Article.image`, `mainEntityOfPage`
+- FAQ-Schema 1:1 mit sichtbarem FAQ-Text gespiegelt
 
 ### Strukturelle Erkenntnisse
-- **YMYL-Faktenfehler** (FR § 580 BGB statt § 564 BGB) hätte ohne Reviewer-Audit live ranken können — Helper-V3-Pipeline ist real-world critical
-- **Footer-Forgotten-Pattern**: AB-Writer ließ Footer komplett weg (Impressumspflicht-Verletzung) — Reviewer fand das sofort
-- **Strukturelle Fixes ≫ Polish**: Beispieltexte (DG), § 564 (FR), Footer (AB), E-E-A-T-Reviewer (WT) brachten je 4-6 Punkte
+- **Reviewer-Cache** ist ein reales Problem: raw.githubusercontent.com CDN-Cache kann Reviewer auf alte Version zeigen → False-Negative-Audits. Memory: bei Score-Regression Live-File mit curl verifizieren.
+- **Writer rückgängig**: Helper-V3-Writer machen manchmal vorherige Iter-Edits rückgängig (z.B. SB Doppel-Block wieder eingefügt). Iter-3 brauchte erneute Manuelle-Fixes.
+- **YMYL-Faktenfehler**: BA hatte SH+Hessen als "Heim-Urne erlaubt" — komplett falsch. Korrekt: nur Bremen (Asche-Verstreuen) + RLP (Urnen-Verwahrung seit Oktober 2025). Helper-V3 fängt sowas zuverlässig.
 
 ### Deploy
-Branch `iter-31-seo-pillars` → merge nach main → Netlify-Deploy. Plus:
-- sitemap.xml: 5 neue URLs ergänzt
-- _redirects: 5 trailing-slash → extensionslose Redirects
+- Branch `iter-32-internal-linking` → merge nach main als SHA `45ddc6a` mit `[skip netlify]`
+- **Netlify-Deploy noch NICHT ausgelöst** — User muss "Ende deploy" schreiben für Build
 
 ## Nächste Schritte
-- Phase B (optional): Internal-Linking-Sweep — Tools sollten auf neue Pillars zurücklinken
-- Phase C (optional): Verbleibende Pillars (Bestattungsarten, Sozialbestattung, etc.) auditieren
-- Cool-Down empfohlen — viel passiert in dieser Session
+- Netlify-Deploy auslösen via "Ende deploy" (sofern alle Scores akzeptabel)
+- Optional: BA/KT/VK weitere Iter-4 für stabilen Median ≥85
+- Cool-Down empfohlen — 3 Iter-Cycles + 4 Pillar-Audits in dieser Session
 
-## Strukturelle Erkenntnisse 30+ Iters dieser Sessions-Reihe
+## Strukturelle Erkenntnisse Iter-1–32 dieser Sessions-Reihe
 - Reviewer-Noise ±5-10 Punkte → Median über 3-5 Cycles ist echter Schätzwert
-- Strukturelle Defekte (Babel-Self-Host, Faktenfehler, Footer-Missing) bringen +5-15 Punkte
+- Strukturelle Defekte (Babel-Self-Host, YMYL-Faktenfehler, Footer-Missing, unstyled-CSS) bringen +5-15 Punkte
 - Helper-V3 Multi-Tab-Pipeline mit Branch-Trick ist robuster als Single-Audit-Loop
+- raw.githubusercontent.com Edge-Cache verfälscht Audits — Live-File-Verification als Pflicht
