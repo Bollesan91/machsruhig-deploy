@@ -1214,28 +1214,75 @@ function TrauerredeGenerator() {
             </div>
           )}
 
-          {/* Step 5: Review */}
+          {/* Step 5: Review — vollständige Eingabe-Übersicht vor KI-Generierung */}
           {step === 4 && (
             <div>
-              <h2 style={{fontFamily:"'Fraunces',serif",fontSize:24,fontWeight:700,marginBottom:24,color:'var(--mr-text)'}}>
-                Überblick & Bestätigung
+              <h2 style={{fontFamily:"'Fraunces',serif",fontSize:24,fontWeight:700,marginBottom:8,color:'var(--mr-text)'}}>
+                Deine Eingaben — bereit für die KI?
               </h2>
+              <p style={{fontSize:15,color:'var(--mr-text-muted)',marginBottom:24}}>
+                Prüfe noch einmal: passt alles? Tippfehler in den freien Texten kannst du jetzt korrigieren — oder die KI im nächsten Schritt machen lassen.
+              </p>
 
-              <div style={{background:'var(--mr-bg)',border:'1px solid var(--mr-border)',borderRadius:8,padding:20,marginBottom:24}}>
-                <h3 style={{fontWeight:700,marginBottom:12,color:'var(--mr-text)'}}>Deine Angaben:</h3>
-                <p><strong>Name:</strong> {formData.name}</p>
-                <p><strong>Beziehung:</strong> {RELATIONSHIPS.find(r=>r.value===formData.relationship)?.label}</p>
-                {formData.age && <p><strong>Alter:</strong> {formData.age} Jahre</p>}
-                <p><strong>Ton:</strong> {TONES.find(t=>t.id===formData.tone)?.label}</p>
-                <p><strong>Länge:</strong> {LENGTHS.find(l=>l.id===formData.length)?.label}</p>
+              {/* Pflichtangaben */}
+              <div style={{background:'var(--mr-bg)',border:'1px solid var(--mr-border)',borderRadius:10,padding:'18px 20px',marginBottom:16}}>
+                <h3 style={{fontWeight:700,marginBottom:10,color:'var(--mr-text)',fontSize:14,textTransform:'uppercase',letterSpacing:'.5px'}}>Eckdaten</h3>
+                <p style={{margin:'4px 0'}}><strong>Verstorbene Person:</strong> {formData.name || <em style={{color:'#b54'}}>nicht ausgefüllt</em>}</p>
+                <p style={{margin:'4px 0'}}><strong>Beziehung:</strong> {RELATIONSHIPS.find(r=>r.value===formData.relationship)?.label || <em style={{color:'#b54'}}>nicht ausgefüllt</em>}</p>
+                {formData.age && <p style={{margin:'4px 0'}}><strong>Alter:</strong> {formData.age} Jahre</p>}
+                <p style={{margin:'4px 0'}}><strong>Religion/Weltanschauung:</strong> {formData.religion === 'nein' ? 'weltlich' : formData.religion}</p>
+                <p style={{margin:'4px 0'}}><strong>Tonalität:</strong> {TONES.find(t=>t.id===formData.tone)?.label}</p>
+                <p style={{margin:'4px 0'}}><strong>Länge:</strong> {LENGTHS.find(l=>l.id===formData.length)?.label}</p>
               </div>
+
+              {/* Freitext-Eingaben — hier sieht User seine Tippfehler */}
+              {(formData.character || formData.hobbies || formData.memory || formData.message || formData.quote) && (
+                <div style={{background:'var(--mr-bg-card)',border:'1px solid var(--mr-border)',borderRadius:10,padding:'18px 20px',marginBottom:16}}>
+                  <h3 style={{fontWeight:700,marginBottom:12,color:'var(--mr-text)',fontSize:14,textTransform:'uppercase',letterSpacing:'.5px'}}>Deine Texte</h3>
+                  {formData.character && (
+                    <div style={{marginBottom:14}}>
+                      <strong style={{color:'var(--mr-warm)',fontSize:13}}>Charakter & Persönlichkeit:</strong>
+                      <p style={{margin:'4px 0 0',fontStyle:'italic',color:'var(--mr-text)',lineHeight:1.6}}>„{formData.character}"</p>
+                    </div>
+                  )}
+                  {formData.hobbies && (
+                    <div style={{marginBottom:14}}>
+                      <strong style={{color:'var(--mr-warm)',fontSize:13}}>Was die Person liebte:</strong>
+                      <p style={{margin:'4px 0 0',fontStyle:'italic',color:'var(--mr-text)',lineHeight:1.6}}>„{formData.hobbies}"</p>
+                    </div>
+                  )}
+                  {formData.memory && (
+                    <div style={{marginBottom:14}}>
+                      <strong style={{color:'var(--mr-warm)',fontSize:13}}>Erinnerung:</strong>
+                      <p style={{margin:'4px 0 0',fontStyle:'italic',color:'var(--mr-text)',lineHeight:1.6}}>„{formData.memory}"</p>
+                    </div>
+                  )}
+                  {formData.message && (
+                    <div style={{marginBottom:14}}>
+                      <strong style={{color:'var(--mr-warm)',fontSize:13}}>Was die Person uns bedeutet hat:</strong>
+                      <p style={{margin:'4px 0 0',fontStyle:'italic',color:'var(--mr-text)',lineHeight:1.6}}>„{formData.message}"</p>
+                    </div>
+                  )}
+                  {formData.quote && (
+                    <div style={{marginBottom:14}}>
+                      <strong style={{color:'var(--mr-warm)',fontSize:13}}>Lieblingssatz der Person:</strong>
+                      <p style={{margin:'4px 0 0',fontStyle:'italic',color:'var(--mr-text)',lineHeight:1.6}}>„{formData.quote}"</p>
+                    </div>
+                  )}
+                  {(formData.selectedQuote || formData.customQuote) && (
+                    <div>
+                      <strong style={{color:'var(--mr-warm)',fontSize:13}}>Optionales Schluss-Zitat:</strong>
+                      <p style={{margin:'4px 0 0',fontStyle:'italic',color:'var(--mr-text)',lineHeight:1.6}}>„{formData.customQuote || QUOTES.find(q=>q.id===formData.selectedQuote)?.text}"</p>
+                    </div>
+                  )}
+                  <p style={{fontSize:12,color:'var(--mr-text-muted)',marginTop:14,paddingTop:12,borderTop:'1px dashed var(--mr-border)'}}>
+                    💡 Tippfehler? Geh mit „← Zurück" zur Eingabe — oder lass die KI im nächsten Schritt korrigieren.
+                  </p>
+                </div>
+              )}
 
               <div className="tip">
-                <strong>Hinweis:</strong> Im nächsten Schritt kannst du die Rede direkt im Browser bearbeiten, die Entwürfe anpassen und alles nach deinen Vorstellungen gestalten.
-              </div>
-
-              <div className="info-box">
-                <strong>Datenschutz:</strong> Deine Eingaben bleiben in deinem Browser. Nichts wird gespeichert oder übertragen. Du kannst die Rede jederzeit selbst löschen oder neu schreiben.
+                <strong>Was passiert beim Klick?</strong> Deine Eingaben werden an die KI gesendet (Llama 3.3 via Groq, USA). Beim ersten Mal fragt dich ein Modal um Einwilligung — danach läuft die KI direkt. Tippfehler werden korrigiert, Übergänge gebaut, eine zusammenhängende Rede entsteht.
               </div>
             </div>
           )}
@@ -1252,7 +1299,7 @@ function TrauerredeGenerator() {
               onClick={handleNext}
               disabled={!formData.name || !formData.relationship}
             >
-              {step === 4 ? 'Rede erstellen' : 'Weiter'}
+              {step === 4 ? '✨ Rede mit KI erstellen' : 'Weiter'}
             </button>
           </div>
         </div>
