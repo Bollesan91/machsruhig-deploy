@@ -396,6 +396,11 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
 <!-- Main Content -->
 <div class="mr-content" id="main">
+  <div style="max-width:720px;margin:24px auto 12px;padding:24px 28px;background:linear-gradient(135deg,#FFFAF5 0%,#F4EDE3 100%);border:1px solid #E8E0D6;border-radius:14px;font-family:'DM Sans',system-ui,sans-serif">
+    <p style="font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:700;margin:0 0 10px;color:#2D2319;line-height:1.25">Danksagungs-Generator <span style="font-weight:500;color:#7A6B5D">— mit KI</span></p>
+    <p style="font-size:16px;color:#3D3025;margin:0 0 14px;line-height:1.55">Beantworte ein paar Fragen — die KI schreibt drei Textvarianten (formal, persönlich, kurz). Alle drei sind frei editierbar, du wählst die, die zu dir passt. Kostenlos.</p>
+    <p style="font-size:12px;color:#73655A;margin:0;line-height:1.5">KI-Modell Llama&nbsp;3.3 via Groq (USA) · Opt-in vor jeder Generierung · Eingaben werden nicht für KI-Training gespeichert.</p>
+  </div>
   <div id="app"></div>
 </div>
 
@@ -517,7 +522,7 @@ function DanksagungGenerator() {
   const [copyFeedback, setCopyFeedback] = useState({formal: false, personal: false, short: false});
 
   // KI-Helfer State (Iter-33 Phase 2)
-  const [aiLoading, setAiLoading] = useState(''); // welche variant gerade läuft ('formal'/'personal'/'short' oder '')
+  const [aiLoading, setAiLoading] = useState({formal: false, personal: false, short: false}); // welche Varianten gerade laufen
   const [aiResults, setAiResults] = useState({formal: false, personal: false, short: false}); // welche Variante schon KI-generiert
   const [aiError, setAiError] = useState('');
   const [showConsent, setShowConsent] = useState(false);
@@ -532,7 +537,7 @@ function DanksagungGenerator() {
       return;
     }
     setAiError('');
-    setAiLoading(variant);
+    setAiLoading(prev => ({...prev, [variant]: true}));
     // Mapping: Tab-Variant → Backend-Tone-Wert
     const toneMap = {formal: 'formal', personal: 'persönlich', short: 'kurz'};
     try {
@@ -558,8 +563,46 @@ function DanksagungGenerator() {
         setAiError('Verbindung zur KI fehlgeschlagen. Vorlage-Variante bleibt sichtbar.');
       }
     } finally {
-      setAiLoading('');
+      setAiLoading(prev => ({...prev, [variant]: false}));
     }
+  };
+
+  // Alle 3 KI-Varianten parallel generieren (Auto nach Wizard)
+  const generateAllAiVariants = async () => {
+    if (!window.mrAI) { setAiError('KI-Modul nicht geladen.'); return; }
+    if (!window.mrAI.hasConsent()) {
+      setPendingVariant('all');
+      setShowConsent(true);
+      return;
+    }
+    setAiError('');
+    setAiLoading({formal: true, personal: true, short: true});
+    const toneMap = {formal: 'formal', personal: 'persönlich', short: 'kurz'};
+    const variants = ['formal', 'personal', 'short'];
+    await Promise.all(variants.map(async (v) => {
+      try {
+        const result = await window.mrAI.generate({
+          type: 'danksagung',
+          data: {
+            name: formData.name,
+            relationship: formData.relationship,
+            ceremony: formData.ceremony,
+            tone: toneMap[v],
+          },
+        });
+        setTexts(prev => ({...prev, [v]: result.trim()}));
+        setAiResults(prev => ({...prev, [v]: true}));
+        if (window.mrTrack) window.mrTrack('toolStep', {tool: 'danksagung', step: 'ai_generated', variant: v});
+      } catch (err) {
+        if (err.message === 'RATE_LIMIT') {
+          setAiError(prev => prev || `Zu viele KI-Anfragen. In ${Math.ceil((err.retryAfter || 60) / 60)} Min erneut versuchen.`);
+        } else if (err.message !== 'CONSENT_REQUIRED') {
+          setAiError(prev => prev || 'Verbindung zur KI fehlgeschlagen. Vorlage-Varianten bleiben sichtbar — du kannst sie einzeln per Klick neu generieren.');
+        }
+      } finally {
+        setAiLoading(prev => ({...prev, [v]: false}));
+      }
+    }));
   };
 
   const updateFormData = (field, value) => {
@@ -575,11 +618,10 @@ function DanksagungGenerator() {
       // Generate texts when moving to step 3
       const generated = generateTexts(formData);
       setTexts(generated);
-      // Auto-KI für die EMPFOHLENE Variante (wenn Consent schon vorhanden)
+      // Auto-KI: ALLE drei Varianten direkt generieren (parallel)
       setTimeout(() => {
-        const recommended = FORMAT_RECOMMENDS[formData.format];
-        if (recommended && window.mrAI && window.mrAI.hasConsent()) {
-          generateAiVariant(recommended);
+        if (window.mrAI) {
+          generateAllAiVariants();
         }
       }, 100);
     }
@@ -822,14 +864,14 @@ function DanksagungGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben bleiben standardmäßig in deinem Browser. Nur wenn du „✨ Mit KI verfeinern" klickst und im Modal einwilligst, werden sie einmalig an Groq Inc. (USA) zur KI-Generierung übermittelt — Groq speichert sie laut Privacy-Policy nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs) nur nach Cookie-Opt-In.<br/><br/><strong>Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben werden nach dem Wizard einmalig an Groq Inc. (USA) übermittelt, damit die KI alle drei Textvarianten schreibt. Beim ersten Mal fragt dich ein Modal um Einwilligung — danach läuft die KI automatisch (Opt-out jederzeit über den Datenschutz-Hinweis unten). Groq speichert die Eingaben laut Privacy-Policy nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami, Ahrefs) nur nach Cookie-Opt-In.<br/><br/><strong>Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
           </div>
 
           {/* KI-Helfer Info-Box (Iter-33 Phase 2) */}
           <div className="mr-ai-section no-print">
             <h3>✨ Echte KI-Generation statt Vorlage</h3>
             <p>
-              Die <strong>empfohlene Variante</strong> für dein Format wird automatisch von der KI generiert (Llama 3.3 via Groq). Die anderen zwei bleiben als Vorlage — klick „✨ Mit KI verfeinern" daneben, wenn du sie auch von der KI schreiben lassen willst. Tippfehler in deinen Eingaben werden korrigiert.
+              <strong>Alle drei Varianten</strong> wurden automatisch von der KI generiert (Llama 3.3 via Groq) — formal, persönlich und kurz, basierend auf deinen Eingaben. Tippfehler werden dabei korrigiert. Falls dir eine Variante nicht passt, klick „✨ Neu generieren" daneben für einen neuen Versuch. Die mit ★ markierte Variante ist für dein gewähltes Format empfohlen.
             </p>
             {aiError && <div className="ai-error" role="alert">{aiError}</div>}
           </div>
@@ -847,7 +889,10 @@ function DanksagungGenerator() {
                   <button className="btn-grant" onClick={() => {
                     window.mrAI.grantConsent();
                     setShowConsent(false);
-                    if (pendingVariant) {
+                    if (pendingVariant === 'all') {
+                      setPendingVariant('');
+                      generateAllAiVariants();
+                    } else if (pendingVariant) {
                       const v = pendingVariant;
                       setPendingVariant('');
                       generateAiVariant(v);
@@ -877,8 +922,8 @@ function DanksagungGenerator() {
               </button>
               <span className={`copy-feedback ${copyFeedback.formal ? 'visible' : ''}`}>Kopiert!</span>
               <div className="ai-variant-actions no-print" style={{marginLeft:'auto'}}>
-                <button onClick={() => generateAiVariant('formal')} disabled={aiLoading === 'formal' || aiLoading !== ''}>
-                  {aiLoading === 'formal' ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : (aiResults.formal ? '✨ KI neu generieren' : '✨ Mit KI verfeinern')}
+                <button onClick={() => generateAiVariant('formal')} disabled={aiLoading.formal}>
+                  {aiLoading.formal ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : '✨ Neu generieren'}
                 </button>
               </div>
             </div>
@@ -903,8 +948,8 @@ function DanksagungGenerator() {
               </button>
               <span className={`copy-feedback ${copyFeedback.personal ? 'visible' : ''}`}>Kopiert!</span>
               <div className="ai-variant-actions no-print" style={{marginLeft:'auto'}}>
-                <button onClick={() => generateAiVariant('personal')} disabled={aiLoading === 'personal' || aiLoading !== ''}>
-                  {aiLoading === 'personal' ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : (aiResults.personal ? '✨ KI neu generieren' : '✨ Mit KI verfeinern')}
+                <button onClick={() => generateAiVariant('personal')} disabled={aiLoading.personal}>
+                  {aiLoading.personal ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : '✨ Neu generieren'}
                 </button>
               </div>
             </div>
@@ -929,8 +974,8 @@ function DanksagungGenerator() {
               </button>
               <span className={`copy-feedback ${copyFeedback.short ? 'visible' : ''}`}>Kopiert!</span>
               <div className="ai-variant-actions no-print" style={{marginLeft:'auto'}}>
-                <button onClick={() => generateAiVariant('short')} disabled={aiLoading === 'short' || aiLoading !== ''}>
-                  {aiLoading === 'short' ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : (aiResults.short ? '✨ KI neu generieren' : '✨ Mit KI verfeinern')}
+                <button onClick={() => generateAiVariant('short')} disabled={aiLoading.short}>
+                  {aiLoading.short ? <><span className="ai-spinner-mini"></span> KI schreibt …</> : '✨ Neu generieren'}
                 </button>
               </div>
             </div>
