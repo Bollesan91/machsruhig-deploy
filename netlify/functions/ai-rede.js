@@ -48,7 +48,7 @@ WICHTIGE REGELN:
   - MELANCHOLISCH (melancholisch): tief, traurig-schön, ehrlich melancholisch, ohne falsche Tröstung. Langsame ruhige Sätze, viel Raum für Stille. Z.B. "Es gibt Tage, an denen die Welt leiser wird — heute ist so ein Tag."
   - HOFFNUNGSVOLL (hoffnungsvoll): tröstlich, zukunftsorientiert, betont was bleibt. Nicht überzogen positiv, kein "in einem besseren Ort". Z.B. "Was XY uns gegeben hat, lebt in unseren Gesten weiter."
   - POETISCH (poetisch): bildhaft, lyrisch, Metaphern willkommen. Klang-Bewusstsein in der Satzkonstruktion. Längere Sätze mit rhythmischem Aufbau erlaubt. Nie kitschig.
-- Länge: kurz ≈ 300 Wörter, mittel ≈ 550 Wörter, lang ≈ 850 Wörter — Wortzahl anpeilen, nicht überschreiten.
+- Länge: kurz ≈ 500 Wörter, mittel ≈ 800 Wörter, lang ≈ 1250 Wörter — Wortzahl anpeilen, nicht deutlich unterschreiten (die Längenwahl ist ein Versprechen an den Nutzer).
 - Beginne direkt mit der Eröffnung (z.B. "Liebe Trauergemeinde…"), keine Meta-Kommentare ("Hier ist die Rede:", "Gerne, hier eine…").
 - Schreibe in der Sprache, die zur Beziehung passt: bei Kind/Enkel/Partner das "Du" zum Verstorbenen, bei distanzierterer Beziehung die respektvolle dritte Person.
 - Wenn ein Lieblingssatz/Zitat angegeben ist: arbeite ihn organisch ein, nicht als alleinstehenden Block.
@@ -150,7 +150,7 @@ function buildUserMessage(type, data, section) {
       return parts.join('\n');
     }
 
-    parts.push(`Gewünschte Länge: ${data.length || 'mittel'} (kurz≈300W, mittel≈550W, lang≈850W)`);
+    parts.push(`Gewünschte Länge: ${data.length || 'mittel'} (kurz≈500W, mittel≈800W, lang≈1250W)`);
     if (data.character) parts.push(`Charakter & Persönlichkeit: ${data.character}`);
     if (data.hobbies) parts.push(`Was die Person liebte / Hobbys: ${data.hobbies}`);
     if (data.memory) parts.push(`Eine persönliche Erinnerung: ${data.memory}`);
@@ -256,7 +256,8 @@ exports.handler = async function (event) {
 
   // Section-Modus: spezifischen Prompt + reduzierte max_tokens
   let activePrompt = SYSTEM_PROMPTS[type];
-  let maxTokens = 2000;
+  // 4000 Tokens decken auch lange Trauerreden (~1250 Wörter ≈ 2500 dt. Tokens) ohne Abschnitt ab
+  let maxTokens = 4000;
   if (section) {
     const sectionPromptKey = `${type}_section_${section}`;
     if (!SYSTEM_PROMPTS[sectionPromptKey]) {
