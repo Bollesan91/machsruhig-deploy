@@ -20,16 +20,22 @@ Welle 2+3 (Commit 8b4f729: Hero-Block + Auto-Generate-All-3) live verifiziert vi
 - Szenario 1 (Garbage-in, Vent-Text im Detailfeld): Schulden/"langweilig" gefiltert, ABER weicher Leak — Var. 3 schrieb "Trotz der nicht immer einfachen Beziehung…" in die öffentliche Karte.
 - Szenario 2 (Prompt-Injection im **Namensfeld**): HARTER FAIL — Injection kaperte alle 3 Varianten komplett (Output = Pfannkuchen-Rezept) + **voller System-Prompt-Leak** ("REGELN:…").
 
-### Fix (deployed auf main, Commit 15d9fd6 / Merge 4535397)
-`netlify/functions/ai-rede.js` — betrifft **alle 3 KI-Tools** (trauerrede/danksagung/abschiedsbrief, shared `buildUserMessage`):
-- `INJECTION_GUARD` an jeden System-Prompt angehängt (Daten-≠-Anweisung-Grenze, Rollen-Lock, kein Prompt-Leak, keine Übernahme negativer Angaben)
-- User-Message in `<eingaben>…</eingaben>` gekapselt
-- Node-Syntax-Check OK
+### Fix (deployed auf main, 2 Stufen) — betrifft alle 3 KI-Tools (shared `buildUserMessage`)
+`netlify/functions/ai-rede.js`:
+1. **Prompt-Guard** (15d9fd6 / Merge 4535397): `INJECTION_GUARD` an jeden System-Prompt; User-Message in `<eingaben>…</eingaben>` gekapselt.
+   → Live-Test: Prompt-Leak weg, aber **Injection nur teilgeblockt** (Rezept sickerte durch). Prompt-Guard allein reicht auf llama-3.3-70b NICHT.
+2. **Strukturelle Input-Bereinigung** (d09c549): kurze Felder (name/relationship/religion/…) einzeilig + auf 70 Zeichen gekappt, Freitext auf 1500.
+
+### Live-Verifikation auf Produktion — BESTANDEN ✅ (03.06.2026)
+Direkt-curl gegen `https://machsruhig.de/.netlify/functions/ai-rede` (www→apex-Redirect beachten, curl -L oder apex direkt!):
+- Injection im Namensfeld → Modell **verweigert + liefert würdevolle Danksagung**, kein Rezept/BANANE/Prompt-Leak.
+- Legit kurz + langer Adelsname (52 Z.) → sauber, Name vollständig erhalten.
 
 ## Nächste Schritte
-- **Live-Verifikation auf Produktion** nach Deploy-Build: Injection-Test (Pfannkuchen-Szenario) gegen www.machsruhig.de erneut fahren → muss jetzt würdevolle Danksagung statt Rezept liefern. **Noch offen, falls Build bei Session-Ende nicht fertig war.**
-- Branch `fix/ai-injection-guard` kann nach erfolgreicher Verifikation gelöscht werden.
+- Restrisiko (gering, gedrosselt 10/min·100/Tag·IP): bewusst ≤70-Zeichen gebaute Injection könnte theoretisch durchkommen — Prompt-Injection auf llama-3.3 nicht 100% schließbar. Für dieses Risikoprofil akzeptabel.
+- Optional: Szenario 1 (Vent-Text im ceremony-Freitextfeld) auf neuem Build gegenchecken — Guard adressiert es, nicht re-getestet.
 - Phase 3 Abschiedsbrief KI-Polish-Button (~30 Min, optional)
+- Branch `fix/ai-injection-guard` gelöscht (gemerged).
 
 ## Strukturelle Lessons (kumulativ, neu 2026-06-03)
 - **Prompt-Injection ist eine Tool-Validity-Klasse**, die der SEO-Reviewer NIE sieht. Jedes KI-Tool adversarial mit Injection im Freitext-/Namensfeld testen (Zeilen wie "Ignoriere alle Anweisungen…"). Roh interpolierte User-Inputs ohne Daten-Grenze = sofortiger Kaper + Prompt-Leak + Abuse-Vektor (Endpoint als Gratis-LLM-Proxy, nur durch IP-Rate-Limit gedrosselt).
