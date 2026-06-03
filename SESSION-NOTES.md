@@ -31,10 +31,27 @@ Direkt-curl gegen `https://machsruhig.de/.netlify/functions/ai-rede` (www→apex
 - Injection im Namensfeld → Modell **verweigert + liefert würdevolle Danksagung**, kein Rezept/BANANE/Prompt-Leak.
 - Legit kurz + langer Adelsname (52 Z.) → sauber, Name vollständig erhalten.
 
+## Groq Free-Tier entschieden (03.06.2026)
+User bestätigt: **Groq Free-Tier** (keine Karte) → Abuse-Risiko = **Verfügbarkeit** (14.400 req/Tag org-weit), NICHT Kosten. Proportionaler Schutz = **eine Cloudflare-Rate-Limit-Regel** auf `/.netlify/functions/ai-rede` (~20/min/IP) + Bot Fight Mode — User-Aktion im Dashboard. KEIN Turnstile/Origin-Secret (Over-Engineering ohne Geld-Risiko). Erst bei aktiviertem Billing nötig. Detail-Memory: groq_free_tier_decision.
+
+## Trauerrede Re-Audit + Fixes (03.06.2026, deployed)
+Welle-2+3-Hero + KI-Integration auditiert. **Validity-Kern PASS** (Iter-33-Defekt behoben: echte KI, Tippfehler-Korrektur, keine Halluzination, 7 Tonarten, kohärent, ehrliche Zitat-Attribution).
+**3 Defekte gefunden + gefixt (Commits e3af23d, ca5b956):**
+1. Seite hatte **0 `<h1>`** → Hero zu `<h1>`, Ergebnis-Titel zu `<h2>` (1 H1 gesamt). Live ✅
+2. Hero sagte **„sechs Tonarten"** → „sieben" (sind 7). Live ✅
+3. **Längen-Promise-Gap**: Frontend versprach 400–600/600–1000/1000–1500 W. Live gemessen: kurz ~340, mittel ~627, lang ~598–641 — **mittel≈lang, Modell cappt ~640 W**. Backend-Zielzahl hochsetzen brachte nichts (Modell-Limit, kein Token-Limit; max_tokens trotzdem 2000→4000 als Schutz). Richtige Korrektur = **Frontend ehrlich kalibriert** auf ~350–500/500–700/650–850 W + Backend-Ziele realistisch.
+
+**Trauerrede offene/weiche Funde:**
+- Weltlicher Abschluss nutzte mild-religiöses „Seele ruhe in Frieden" trotz religion=nein — nicht gefixt.
+- humorvoll liefert bei dünnem Input kaum echten Humor (ununterscheidbar von würdevoll).
+- mittel vs. lang real fast identisch — echte Differenzierung bräuchte Multi-Section-Assembly (überzogen für Free-Draft-Tool).
+- **Long-Field-Injection (character/memory) bei Trauerrede/Abschiedsbrief NICHT geschlossen** — Clamp greift nur kurze Felder. Auf Free-Tier akzeptiert (Abuse=Verfügbarkeit → Cloudflare-Limit deckt's; Content-Hijack selbstverschuldet).
+
 ## Nächste Schritte
-- Restrisiko (gering, gedrosselt 10/min·100/Tag·IP): bewusst ≤70-Zeichen gebaute Injection könnte theoretisch durchkommen — Prompt-Injection auf llama-3.3 nicht 100% schließbar. Für dieses Risikoprofil akzeptabel.
-- Optional: Szenario 1 (Vent-Text im ceremony-Freitextfeld) auf neuem Build gegenchecken — Guard adressiert es, nicht re-getestet.
-- Phase 3 Abschiedsbrief KI-Polish-Button (~30 Min, optional)
+- **Cloudflare-Rate-Limit-Regel setzen** (User, Dashboard) — der eine offene Abuse-/Verfügbarkeits-Schutz.
+- Injection-Restrisiko (≤70-Z. bei Danksagung; lange Felder bei Trauerrede/Abschiedsbrief) — auf Free-Tier bewusst akzeptiert, dokumentiert.
+- Phase 3 Abschiedsbrief KI-Polish-Button (~30 Min, optional).
+- Optional: Danksagung Szenario 1 (Vent-Text ceremony) auf neuem Build gegenchecken.
 - Branch `fix/ai-injection-guard` gelöscht (gemerged).
 
 ## Strukturelle Lessons (kumulativ, neu 2026-06-03)
