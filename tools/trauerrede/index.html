@@ -490,10 +490,12 @@ const TONES = [
 ];
 
 const LENGTHS = [
-  // R-A 13 Fix: Längen-Versprechen ehrlich gemacht — finale Länge hängt überwiegend von User-Eingaben ab, nicht vom Selector
-  {id:'kurz',label:'Kurz (ca. 4–6 Min)',words:'~400–600 Wörter',desc:'Zielwert: prägnant — die finale Länge hängt von deinen Eingaben ab'},
-  {id:'mittel',label:'Mittel (ca. 6–10 Min)',words:'~600–1000 Wörter',desc:'Zielwert: ausgewogen — fülle Erinnerung/Charakter ausführlich, um die Länge zu erreichen'},
-  {id:'lang',label:'Lang (ca. 10–14 Min)',words:'~1000–1500 Wörter',desc:'Zielwert: umfassend — benötigt detaillierte Eingaben in mehreren Feldern'}
+  // R-A 14 Fix: Längen-Bereiche an gemessene Live-Realität kalibriert (Audit 2026-06-03).
+  // Llama-3.3 cappt eine Trauerrede bei ~640 Wörtern; mittel/lang unterscheiden sich real kaum.
+  // Frontend verspricht daher nur, was das Modell auch liefert — finale Länge hängt v.a. von den Eingaben ab.
+  {id:'kurz',label:'Kurz (ca. 3–5 Min)',words:'~350–500 Wörter',desc:'Prägnant — die finale Länge hängt vor allem von deinen Eingaben ab'},
+  {id:'mittel',label:'Mittel (ca. 5–7 Min)',words:'~500–700 Wörter',desc:'Ausgewogen — fülle Charakter & Erinnerung aus, um die Länge zu erreichen'},
+  {id:'lang',label:'Ausführlich (ca. 6–8 Min)',words:'~650–850 Wörter',desc:'Umfassend — braucht detaillierte Eingaben in mehreren Feldern'}
 ];
 
 const RELIGIONS = [
