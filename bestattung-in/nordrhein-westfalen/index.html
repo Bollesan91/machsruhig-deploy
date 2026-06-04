@@ -64,6 +64,15 @@
 /* iter-17 nav-align (2026-06-04): nav-inner Box-Model = .mr-content -> linke Kante bündig */
 .mr-nav{padding-left:0;padding-right:0}
 .mr-nav-inner{padding-left:20px;padding-right:20px}
+
+/* iter-18 mobile-nav (2026-06-04): Hamburger statt gestapelter Liste */
+@media(max-width:760px){
+  .mr-nav-inner{flex-wrap:wrap;gap:0;padding-top:8px;padding-bottom:8px}
+  .mr-nav-toggle{display:inline-flex !important;align-items:center;margin-left:auto}
+  .mr-nav-links{display:none;flex-basis:100%;flex-direction:column;gap:0;padding:6px 0 4px}
+  .mr-nav.open .mr-nav-links{display:flex}
+  .mr-nav-links a{padding:11px 6px;font-size:15px;border-radius:6px}
+}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
@@ -291,5 +300,6 @@
   </div>
 </footer>
 
+<script>/*iter-18-navjs*/(function(){var b=document.querySelector(".mr-nav-toggle"),n=document.querySelector(".mr-nav");if(b&&n){b.setAttribute("aria-expanded","false");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})}})();</script>
 </body>
 </html>

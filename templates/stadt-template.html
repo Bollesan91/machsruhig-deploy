@@ -174,6 +174,15 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 /* iter-17 nav-align (2026-06-04): nav-inner Box-Model = .mr-content -> linke Kante bündig */
 .mr-nav{padding-left:0;padding-right:0}
 .mr-nav-inner{padding-left:20px;padding-right:20px}
+
+/* iter-18 mobile-nav (2026-06-04): Hamburger statt gestapelter Liste */
+@media(max-width:760px){
+  .mr-nav-inner{flex-wrap:wrap;gap:0;padding-top:8px;padding-bottom:8px}
+  .mr-nav-toggle{display:inline-flex !important;align-items:center;margin-left:auto}
+  .mr-nav-links{display:none;flex-basis:100%;flex-direction:column;gap:0;padding:6px 0 4px}
+  .mr-nav.open .mr-nav-links{display:flex}
+  .mr-nav-links a{padding:11px 6px;font-size:15px;border-radius:6px}
+}
 </style>
 </head>
 <body>
@@ -399,5 +408,6 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   </div>
 </footer>
 
+<script>/*iter-18-navjs*/(function(){var b=document.querySelector(".mr-nav-toggle"),n=document.querySelector(".mr-nav");if(b&&n){b.setAttribute("aria-expanded","false");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})}})();</script>
 </body>
 </html>
