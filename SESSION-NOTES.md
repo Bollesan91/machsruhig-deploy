@@ -16,8 +16,9 @@
 
 - **iter-15** (Commit 93a7f89): Nav **auf 7 Kern-Links verschlankt + ausgerichtet** (site-weit, 121 Seiten). User: Nav überladen/„schwebt"/bricht um. Fix: 12→7 Links (Was tun?/Beerdigung/Kosten/Vorsorge/Bestatter/Trauerrede/Notfallkarte — Kosten+Bestatter neu, waren 0.9-Pillars ohne Nav-Link; `/ratgeber/` verworfen weil 301→Startseite; 5 Text-Tools jetzt via Pillars/Footer). `.mr-nav-inner` `max-width:720px` = Inhaltsbreite → einzeilig (57px) + linke Kante bündig mit Text+Breadcrumb (vorher 120px Versatz, jetzt ~20px). Script `_dev/nav-slim-iter15.py`, balancierter Matcher, lokal vor Deploy verifiziert (Stadt+Pillar).
 
+- **iter-16** (Commit fd7567b): `was-tun-nach-todesfall` (alt-Template-Pillar, Nav-Ziel) auf Standard-7-Link-Nav gegraftet. Body war schon konsistent (Fraunces etc.), nur Nav alt → alte `<header class="site">`-Nav durch `mr-nav` ersetzt + Nav-CSS mit Fallback-Farben (Seite hat keine `--mr-`-Vars). Lokal+live verifiziert. Damit ist die **Nav site-weit einheitlich**. — `notfallkarte.html` bleibt unangetastet (VERWAIST: `/notfallkarte → /tools/notfallkarte/`, nicht ausgeliefert); `danke-bestatter-anfrage.html` ok (minimale mr-* Danke-Seite ohne Nav by design).
+
 **Noch offen (nächste Session):**
-- **3 alt-Template-Pillars OHNE `mr-nav`**: `was-tun-nach-todesfall.html`, `notfallkarte.html`, `danke-bestatter-anfrage.html` — eigenes altes CSS-System (`<nav class="nav">`/`<header class="site">`), bekamen iter-12/15 NICHT (Matcher findet kein `mr-nav`). Sie haben jetzt eine ANDERE Nav als der Rest = Inkonsistenz. **Wichtig:** `was-tun` + `notfallkarte` sind selbst Nav-Ziele! Redesign/Normalisierung dieser 3 auf das Standard-Template = sinnvoller nächster Schritt.
 - Mini-Versatz Nav↔Inhalt 20px (Box-Model nav-inner vs .mr-content-Padding) — kosmetisch, optional pixelgenau machen.
 - Tote `.mr-nav-brand{}`/`.mr-nav-links{}`-CSS-Reste auf ein paar Städten (harmlos, optional putzen).
 
