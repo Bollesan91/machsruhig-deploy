@@ -20,6 +20,8 @@
 
 - **iter-17** (Commit 525c5ef): Nav linke Kante **bündig zum Inhalt** gemacht (Polsterung von `.mr-nav` → `.mr-nav-inner`, identisches Box-Model wie `.mr-content`/`.mr-breadcrumb`). 122 Seiten + was-tun (`max-width:var(--maxw)`=760). Logo/H1/Breadcrumb alle bündig (lokal verifiziert).
 
+- **iter-18** (Commit 9be7401): Mobile-Nav = **Hamburger**. Bug: auf Mobile alle 7 Links vertikal gestapelt (kein Einklappen; `.mr-nav-toggle` da, aber Mobile-CSS/JS fehlte — Template-Altlast). Fix 122 Seiten: `@media(max-width:760px)` Links aus + Hamburger an + `.mr-nav.open` Spalte; Toggle-JS vor `</body>`. JS-Toggle lokal verifiziert; Mobile-Render lokal nicht prüfbar (Umgebung fix 1920px).
+
 **Noch offen (nächste Session):**
 - Tote `.mr-nav-brand{}`/`.mr-nav-links{}`-CSS-Reste auf ein paar Städten (harmlos, optional putzen).
 
