@@ -14,10 +14,12 @@
 
 **Lessons:** (1) Bei "Pattern?"-Fragen IMMER vollständig klassifizieren statt einen Marker raten — Markup ist heterogener als gedacht (nav vs header, BEM, nested). (2) **Pre-Deploy lokal rendern** (`python3 -m http.server` + Chrome auf `http://127.0.0.1:PORT/...`) statt blind auf N Live-Seiten deployen — hat hier 2 Bugs gefangen. (3) Claude-in-Chrome `navigate` erzwingt `https://` → `file://` geht nicht, `http://127.0.0.1` schon.
 
+- **iter-15** (Commit 93a7f89): Nav **auf 7 Kern-Links verschlankt + ausgerichtet** (site-weit, 121 Seiten). User: Nav überladen/„schwebt"/bricht um. Fix: 12→7 Links (Was tun?/Beerdigung/Kosten/Vorsorge/Bestatter/Trauerrede/Notfallkarte — Kosten+Bestatter neu, waren 0.9-Pillars ohne Nav-Link; `/ratgeber/` verworfen weil 301→Startseite; 5 Text-Tools jetzt via Pillars/Footer). `.mr-nav-inner` `max-width:720px` = Inhaltsbreite → einzeilig (57px) + linke Kante bündig mit Text+Breadcrumb (vorher 120px Versatz, jetzt ~20px). Script `_dev/nav-slim-iter15.py`, balancierter Matcher, lokal vor Deploy verifiziert (Stadt+Pillar).
+
 **Noch offen (nächste Session):**
-- **Nav „2 Zeilen"**: 13-Link-Mega-Nav bricht auf schmalem Fenster weiterhin um (linksbündig ist gefixt, einzeilig nicht). Echtes einzeilig = weniger Top-Links ODER horizontaler Scroll → User-Entscheidung.
-- **2 alt-Template-Pillars** `was-tun-nach-todesfall.html` + `notfallkarte.html`: eigenes altes CSS-System (kein `mr-*`, `<nav class="nav">`/`<header class="site">`), rendern aber (nicht kaputt) — Design-Inkonsistenz, Redesign-Task.
-- Tote `.mr-nav-brand{}`-CSS-Regeln auf ein paar Städten (harmlos, optional putzen).
+- **3 alt-Template-Pillars OHNE `mr-nav`**: `was-tun-nach-todesfall.html`, `notfallkarte.html`, `danke-bestatter-anfrage.html` — eigenes altes CSS-System (`<nav class="nav">`/`<header class="site">`), bekamen iter-12/15 NICHT (Matcher findet kein `mr-nav`). Sie haben jetzt eine ANDERE Nav als der Rest = Inkonsistenz. **Wichtig:** `was-tun` + `notfallkarte` sind selbst Nav-Ziele! Redesign/Normalisierung dieser 3 auf das Standard-Template = sinnvoller nächster Schritt.
+- Mini-Versatz Nav↔Inhalt 20px (Box-Model nav-inner vs .mr-content-Padding) — kosmetisch, optional pixelgenau machen.
+- Tote `.mr-nav-brand{}`/`.mr-nav-links{}`-CSS-Reste auf ein paar Städten (harmlos, optional putzen).
 
 ---
 
