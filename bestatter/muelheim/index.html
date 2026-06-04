@@ -220,6 +220,20 @@ a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;co
 .mr-breadcrumb ol li{display:inline-flex;align-items:center}
 .mr-breadcrumb ol li+li::before{content:'\203A';margin:0 8px;color:var(--mr-text-muted,#73655A)}
 @media(max-width:640px){.mr-nav-inner>ul a{font-size:12px;padding:5px 8px}}
+
+/* iter-12 nav-normalize (2026-06-04): kanonisches Nav-/Breadcrumb-CSS, garantiert auf jeder Stadt-Seite */
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border,#E8E0D6);padding:0 20px}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:56px;flex-wrap:wrap}
+.mr-nav-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
+.mr-nav-logo span{color:var(--mr-primary,#7A6B5D)}
+.mr-nav-links{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted,#73655A);text-decoration:none;padding:6px 10px;border-radius:8px;transition:color .2s,background .2s}
+.mr-nav-links a:hover{color:var(--mr-text,#2D2319);background:rgba(122,107,93,.08)}
+.mr-nav-divider{width:1px;height:16px;background:var(--mr-border,#E8E0D6);margin:0 4px}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--mr-text,#2D2319);padding:8px}
+.mr-breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0}
+.mr-breadcrumb ol li{display:inline-flex;align-items:center}
+.mr-breadcrumb ol li+li::before{content:'\203A';margin:0 8px;color:var(--mr-text-muted,#73655A)}
 </style>
 
 <script type="application/ld+json">{
@@ -429,15 +443,26 @@ a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;co
 
 <a class="mr-skip" href="#mr-main">Zum Hauptinhalt springen</a>
 
-<nav class="mr-nav" aria-label="Hauptnavigation">
+<nav class="mr-nav no-print">
   <div class="mr-nav-inner">
-    <a class="mr-logo" href="/">machs<span>ruhig</span></a>
-    <ul>
-      <li><a href="/bestattung-in/">Bundesländer</a></li>
-      <li><a href="/bestatter/">Städte</a></li>
-      <li><a href="/ratgeber/">Ratgeber</a></li>
-      <li><a href="/vorsorge/">Vorsorge</a></li>
-    </ul>
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" aria-label="Menü öffnen" type="button"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    <div class="mr-nav-links">
+      <a href="/was-tun-nach-todesfall">Was tun?</a>
+      <a href="/tools/checkliste-todesfall">Checkliste</a>
+      <a href="/beerdigung-planen">Beerdigung</a>
+      <a href="/fristen-nach-todesfall">Fristen</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/abschiedsbrief-schreiben">Abschiedsbrief</a>
+      <a href="/kondolenzschreiben">Kondolenz</a>
+      <a href="/danksagung-nach-beerdigung">Danksagung</a>
+      <a href="/trauersprueche">Trauersprüche</a>
+      <div class="mr-nav-divider"></div>
+      <a href="/notfallkarte">Notfallkarte</a>
+      <a href="/tools/vorsorge-check">Vorsorge</a>
+      <a href="/bestattungsarten">Bestattungsarten</a>
+    </div>
   </div>
 </nav>
 
