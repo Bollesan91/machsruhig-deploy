@@ -18,8 +18,9 @@
 
 - **iter-16** (Commit fd7567b): `was-tun-nach-todesfall` (alt-Template-Pillar, Nav-Ziel) auf Standard-7-Link-Nav gegraftet. Body war schon konsistent (Fraunces etc.), nur Nav alt → alte `<header class="site">`-Nav durch `mr-nav` ersetzt + Nav-CSS mit Fallback-Farben (Seite hat keine `--mr-`-Vars). Lokal+live verifiziert. Damit ist die **Nav site-weit einheitlich**. — `notfallkarte.html` bleibt unangetastet (VERWAIST: `/notfallkarte → /tools/notfallkarte/`, nicht ausgeliefert); `danke-bestatter-anfrage.html` ok (minimale mr-* Danke-Seite ohne Nav by design).
 
+- **iter-17** (Commit 525c5ef): Nav linke Kante **bündig zum Inhalt** gemacht (Polsterung von `.mr-nav` → `.mr-nav-inner`, identisches Box-Model wie `.mr-content`/`.mr-breadcrumb`). 122 Seiten + was-tun (`max-width:var(--maxw)`=760). Logo/H1/Breadcrumb alle bündig (lokal verifiziert).
+
 **Noch offen (nächste Session):**
-- Mini-Versatz Nav↔Inhalt 20px (Box-Model nav-inner vs .mr-content-Padding) — kosmetisch, optional pixelgenau machen.
 - Tote `.mr-nav-brand{}`/`.mr-nav-links{}`-CSS-Reste auf ein paar Städten (harmlos, optional putzen).
 
 ---
