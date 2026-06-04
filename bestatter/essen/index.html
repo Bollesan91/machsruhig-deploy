@@ -105,6 +105,18 @@ tbody tr:hover{background:#fafaf5}
 
 .mr-footer{border-top:1px solid var(--mr-line);background:#fff;padding:1.6rem 1.2rem;text-align:center;color:var(--mr-muted);font-size:.88rem;margin-top:3rem}
 .mr-footer a{color:var(--mr-muted)}
+
+/* iter-11 nav-compat (2026-06-04): Nav/Breadcrumb-Markup nutzt <ul>/<ol>+.mr-logo statt .mr-nav-links — Styling robust nachgezogen */
+.mr-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none}
+.mr-nav-inner>ul{display:flex;flex-wrap:wrap;gap:4px;align-items:center;list-style:none;margin:0;padding:0}
+.mr-nav-inner>ul>li{list-style:none}
+.mr-nav-inner>ul a{font-size:13px;font-weight:500;color:var(--mr-text-muted,#73655A);text-decoration:none;padding:6px 12px;border-radius:8px;transition:color .2s,background .2s}
+.mr-nav-inner>ul a:hover{color:var(--mr-text,#2D2319);background:rgba(122,107,93,.08)}
+.mr-breadcrumb ol{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0}
+.mr-breadcrumb ol li{display:inline-flex;align-items:center}
+.mr-breadcrumb ol li+li::before{content:'\203A';margin:0 8px;color:var(--mr-text-muted,#73655A)}
+@media(max-width:640px){.mr-nav-inner>ul a{font-size:12px;padding:5px 8px}}
 </style>
 
 <script type="application/ld+json">{
