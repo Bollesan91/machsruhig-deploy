@@ -188,6 +188,11 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 
 /* Print */
 @media print{.no-print,.mr-nav,.mr-footer,.mr-cta-block{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}.mr-content{max-width:100%}}
+
+/* iter-15 nav-slim (2026-06-04): 7-Link-Nav, an Inhaltsbreite (720px) ausgerichtet */
+.mr-nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
+.mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
+.mr-breadcrumb{max-width:720px;margin:0 auto;padding:16px 20px 0}
 </style>
 </head>
 <body>
@@ -196,15 +201,15 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
 <nav class="mr-nav no-print">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" aria-label="Menü öffnen" type="button"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
     <div class="mr-nav-links">
-      <a href="/checkliste-todesfall">Checkliste Todesfall</a>
-      <a href="/beerdigung-planen">Beerdigung planen</a>
-      <a href="/bestattungskosten">Bestattungskosten</a>
-      <div class="mr-nav-divider"></div>
+      <a href="/was-tun-nach-todesfall">Was tun?</a>
+      <a href="/beerdigung-planen">Beerdigung</a>
+      <a href="/bestattungskosten">Kosten</a>
+      <a href="/vorsorge/">Vorsorge</a>
+      <a href="/bestatter/">Bestatter</a>
       <a href="/trauerrede-schreiben">Trauerrede</a>
-      <a href="/bestattungsarten" class="active">Bestattungsarten</a>
-      <div class="mr-nav-divider"></div>
-      <a href="/bestatter">Bestatter finden</a>
+      <a href="/notfallkarte">Notfallkarte</a>
     </div>
   </div>
 </nav>

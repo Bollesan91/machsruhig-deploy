@@ -51,6 +51,11 @@
 .mr-article-meta{margin-top:16px;font-size:13px;color:var(--mr-warm);line-height:1.6}.mr-article-meta>div{display:block}.mr-article-meta>div+div{margin-top:4px}.mr-article-meta strong{color:var(--mr-text);font-weight:600}.mr-article-meta a{color:var(--mr-warm);text-decoration:underline}.mr-article-meta a:hover{color:var(--mr-primary)}.mr-article-meta .mr-meta-sep{opacity:0.6}
 .mr-trust{text-align:center;padding:24px 0;margin-bottom:16px}.mr-trust p{font-size:13px;color:var(--mr-text-muted);line-height:1.6}.mr-trust a{color:var(--mr-primary);text-decoration:none}.mr-trust a:hover{text-decoration:underline}
 @media print{.no-print,.mr-nav,.mr-footer{display:none!important}body{background:#fff!important;color:#000!important;font-size:12pt}.mr-content{max-width:100%}}
+
+/* iter-15 nav-slim (2026-06-04): 7-Link-Nav, an Inhaltsbreite (720px) ausgerichtet */
+.mr-nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
+.mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
+.mr-breadcrumb{max-width:720px;margin:0 auto;padding:16px 20px 0}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="+yMn44XwsPZPjCJxqwMDBg" async></script>
@@ -61,25 +66,16 @@
 <nav class="mr-nav no-print">
   <div class="mr-nav-inner">
     <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
-    <details class="mr-nav-mobile">
-      <summary aria-label="Menü">☰</summary>
-      <div class="mr-nav-links">
-        <a href="/was-tun-nach-todesfall">Was tun?</a>
-        <a href="/tools/checkliste-todesfall">Checkliste</a>
-        <a href="/beerdigung-planen">Beerdigung</a>
-        <a href="/fristen-nach-todesfall">Fristen</a>
-        <div class="mr-nav-divider"></div>
-        <a href="/trauerrede-schreiben">Trauerrede</a>
-        <a href="/abschiedsbrief-schreiben">Abschiedsbrief</a>
-        <a href="/kondolenzschreiben">Kondolenz</a>
-        <a href="/danksagung-nach-beerdigung">Danksagung</a>
-        <a href="/trauersprueche">Trauersprüche</a>
-        <div class="mr-nav-divider"></div>
-        <a href="/notfallkarte">Notfallkarte</a>
-        <a href="/tools/vorsorge-check">Vorsorge</a>
-        <a href="/bestattungsarten">Bestattungsarten</a>
-      </div>
-    </details>
+    <button class="mr-nav-toggle" aria-label="Menü öffnen" type="button"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    <div class="mr-nav-links">
+      <a href="/was-tun-nach-todesfall">Was tun?</a>
+      <a href="/beerdigung-planen">Beerdigung</a>
+      <a href="/bestattungskosten">Kosten</a>
+      <a href="/vorsorge/">Vorsorge</a>
+      <a href="/bestatter/">Bestatter</a>
+      <a href="/trauerrede-schreiben">Trauerrede</a>
+      <a href="/notfallkarte">Notfallkarte</a>
+    </div>
   </div>
 </nav>
 
