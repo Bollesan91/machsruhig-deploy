@@ -197,28 +197,34 @@
   footer.site a{display:inline-block;margin:0 14px 6px 0;font-size:14px;color:var(--muted);text-decoration:none}
   footer.site a:hover{color:var(--accent)}
   .fineprint{font-size:.8rem;color:var(--muted);margin-top:1.4em}
+/* iter-16 nav-graft (2026-06-04): Standard-7-Link-Nav auf alt-Template-Pillar */
+.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #E8E0D6;padding:0 20px}
+.mr-nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
+.mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:#2D2319;text-decoration:none;white-space:nowrap}
+.mr-nav-logo span{color:#7A6B5D}
+.mr-nav-links{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.mr-nav-links a{font-size:13px;font-weight:500;color:#73655A;text-decoration:none;padding:6px 10px;border-radius:8px;transition:color .2s,background .2s}
+.mr-nav-links a:hover{color:#2D2319;background:rgba(122,107,93,.08)}
+.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;color:#2D2319;padding:8px}
 </style>
 </head>
 <body>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="https://machsruhig.de/">mach's ruhig</a>
-    <nav>
+<nav class="mr-nav no-print">
+  <div class="mr-nav-inner">
+    <a href="/" class="mr-nav-logo">mach's <span>ruhig</span></a>
+    <button class="mr-nav-toggle" aria-label="Menü öffnen" type="button"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    <div class="mr-nav-links">
       <a href="/was-tun-nach-todesfall">Was tun?</a>
-      <a href="/tools/checkliste-todesfall">Checkliste</a>
       <a href="/beerdigung-planen">Beerdigung</a>
-      <a href="/fristen-nach-todesfall">Fristen</a>
+      <a href="/bestattungskosten">Kosten</a>
+      <a href="/vorsorge/">Vorsorge</a>
+      <a href="/bestatter/">Bestatter</a>
       <a href="/trauerrede-schreiben">Trauerrede</a>
-      <a href="/abschiedsbrief-schreiben">Abschiedsbrief</a>
-      <a href="/kondolenzschreiben">Kondolenz</a>
-      <a href="/danksagung-nach-beerdigung">Danksagung</a>
       <a href="/notfallkarte">Notfallkarte</a>
-      <a href="/tools/vorsorge-check">Vorsorge</a>
-      <a href="/bestattungsarten">Bestattungsarten</a>
-    </nav>
+    </div>
   </div>
-</header>
+</nav>
 
 <main id="main" class="wrap">
 
