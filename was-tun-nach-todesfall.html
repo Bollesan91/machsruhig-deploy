@@ -199,13 +199,17 @@
   .fineprint{font-size:.8rem;color:var(--muted);margin-top:1.4em}
 /* iter-16 nav-graft (2026-06-04): Standard-7-Link-Nav auf alt-Template-Pillar */
 .mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #E8E0D6;padding:0 20px}
-.mr-nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
+.mr-nav-inner{max-width:var(--maxw,720px);margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
 .mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:#2D2319;text-decoration:none;white-space:nowrap}
 .mr-nav-logo span{color:#7A6B5D}
 .mr-nav-links{display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
 .mr-nav-links a{font-size:13px;font-weight:500;color:#73655A;text-decoration:none;padding:6px 10px;border-radius:8px;transition:color .2s,background .2s}
 .mr-nav-links a:hover{color:#2D2319;background:rgba(122,107,93,.08)}
 .mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;color:#2D2319;padding:8px}
+
+/* iter-17 nav-align (2026-06-04): nav-inner Box-Model = .mr-content -> linke Kante bündig */
+.mr-nav{padding-left:0;padding-right:0}
+.mr-nav-inner{padding-left:20px;padding-right:20px}
 </style>
 </head>
 <body>
