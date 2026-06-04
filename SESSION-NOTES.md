@@ -1,9 +1,26 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 2026-06-03
+**Datum:** 2026-06-04
 
-## Was wurde gemacht (Iter-34: Tool-Validity-Audit Danksagung + Injection-Fix)
+## Iter-11/12/13: Stadt-Nav-Fragmentierung (User-Befund "darmstadt broken")
+
+**Befund:** Die 52 `bestatter/<stadt>/`-Seiten hatten **~7 verschiedene Nav-Templates** (Template-Drift über Zeit), nur 25 kanonisch. Visuell kaputt: unstyled Nav (Bullets, gestackt).
+
+- **iter-11** (Commit f9bcc08): erster Fix, Compat-CSS für die `mr-logo`+`<ul>`-Variante → 16 Städte. **War zu eng** — Scan via `class="mr-logo"` verpasste andere Varianten (BEM `mr-nav__brand`/`mr-nav__menu`, `header.mr-nav`-Wrapper, `mr-nav-brand`).
+- **iter-12** (Commit 8e2dbeb): **alle 52 normalisiert** — Haupt-Nav-Wrapper (nav ODER header mit `class="mr-nav"`, balanciert über Verschachtelung) durch kanonisches Berlin-Nav ersetzt + garantiertes Nav-/Breadcrumb-CSS injiziert. Script `_dev/normalize-city-nav-iter12.py`. **Lokal vor Deploy verifiziert** (lokaler http.server + Chrome) — fing 2 Script-Bugs (nested-nav, header-Wrapper). Live bestätigt: je 1 Logo, 0 Orphans.
+- **iter-13** (Commit b9d7250): Nav **linksbündig** site-weit (121 Seiten), `.mr-nav-inner` `space-between`→`flex-start`. Script `_dev/nav-leftalign-iter13.py`. Live bestätigt.
+
+**Lessons:** (1) Bei "Pattern?"-Fragen IMMER vollständig klassifizieren statt einen Marker raten — Markup ist heterogener als gedacht (nav vs header, BEM, nested). (2) **Pre-Deploy lokal rendern** (`python3 -m http.server` + Chrome auf `http://127.0.0.1:PORT/...`) statt blind auf N Live-Seiten deployen — hat hier 2 Bugs gefangen. (3) Claude-in-Chrome `navigate` erzwingt `https://` → `file://` geht nicht, `http://127.0.0.1` schon.
+
+**Noch offen (nächste Session):**
+- **Nav „2 Zeilen"**: 13-Link-Mega-Nav bricht auf schmalem Fenster weiterhin um (linksbündig ist gefixt, einzeilig nicht). Echtes einzeilig = weniger Top-Links ODER horizontaler Scroll → User-Entscheidung.
+- **2 alt-Template-Pillars** `was-tun-nach-todesfall.html` + `notfallkarte.html`: eigenes altes CSS-System (kein `mr-*`, `<nav class="nav">`/`<header class="site">`), rendern aber (nicht kaputt) — Design-Inkonsistenz, Redesign-Task.
+- Tote `.mr-nav-brand{}`-CSS-Regeln auf ein paar Städten (harmlos, optional putzen).
+
+---
+
+## Iter-34 (2026-06-03): Tool-Validity-Audit Danksagung + Injection-Fix
 
 ### Doppel-Pflicht-Audit Danksagung nach Welle-2+3-Deploy
 Welle 2+3 (Commit 8b4f729: Hero-Block + Auto-Generate-All-3) live verifiziert via Chrome-MCP (Bolle-Device).
