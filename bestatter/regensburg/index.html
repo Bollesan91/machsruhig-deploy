@@ -44,7 +44,7 @@ a:hover{color:#3d4d3d}
 .skip-link{position:absolute;left:-9999px;top:0;background:#000;color:#fff;padding:.8rem 1.2rem;z-index:999}
 .skip-link:focus{left:1rem;top:1rem}
 .mr-nav{background:#fff;border-bottom:1px solid var(--mr-line);padding:1rem 0;position:sticky;top:0;z-index:50}
-.mr-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.mr-nav-inner{max-width:1100px;margin:0 auto;padding:0 1.2rem;display:flex;align-items:center;justify-content:flex-start;gap:1rem;flex-wrap:wrap}
 .mr-logo{font-family:"Fraunces",serif;font-size:1.4rem;font-weight:500;color:var(--mr-text);text-decoration:none}
 .mr-nav-links{display:flex;gap:1.4rem;flex-wrap:wrap}
 .mr-nav-links a{color:var(--mr-muted);text-decoration:none;font-size:.95rem}
@@ -84,7 +84,7 @@ a:hover{color:#3d4d3d}
 .mr-note{background:#fff7e6;border-left:3px solid #c08400;padding:.9rem 1.2rem;margin:1.2rem 0;font-size:.95rem;border-radius:0 4px 4px 0}
 
 /* iter-11 nav-compat (2026-06-04): Nav/Breadcrumb-Markup nutzt <ul>/<ol>+.mr-logo statt .mr-nav-links — Styling robust nachgezogen */
-.mr-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mr-nav-inner{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:wrap}
 a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none}
 .mr-nav-inner>ul{display:flex;flex-wrap:wrap;gap:4px;align-items:center;list-style:none;margin:0;padding:0}
 .mr-nav-inner>ul>li{list-style:none}
@@ -97,7 +97,7 @@ a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;co
 
 /* iter-12 nav-normalize (2026-06-04): kanonisches Nav-/Breadcrumb-CSS, garantiert auf jeder Stadt-Seite */
 .mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border,#E8E0D6);padding:0 20px}
-.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:56px;flex-wrap:wrap}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:8px;min-height:56px;flex-wrap:wrap}
 .mr-nav-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
 .mr-nav-logo span{color:var(--mr-primary,#7A6B5D)}
 .mr-nav-links{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center}

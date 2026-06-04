@@ -43,7 +43,7 @@
   h2{font-size:clamp(1.5rem,3vw,2.1rem);border-bottom:1px solid var(--mr-line);padding-bottom:.4rem}
   h3{font-size:1.3rem;color:var(--mr-accent)}
   .mr-nav{background:#fff;border-bottom:1px solid var(--mr-line);padding:1rem 0;position:sticky;top:0;z-index:10}
-  .mr-nav-inner{max-width:1080px;margin:0 auto;padding:0 1.2rem;display:flex;justify-content:space-between;align-items:center}
+  .mr-nav-inner{max-width:1080px;margin:0 auto;padding:0 1.2rem;display:flex;justify-content:flex-start;align-items:center}
   .mr-logo{font-family:var(--mr-serif);font-size:1.4rem;font-weight:500;text-decoration:none;color:var(--mr-ink)}
   .mr-nav-links a{margin-left:1.4rem;font-size:.95rem;text-decoration:none;color:var(--mr-muted)}
   .mr-breadcrumb{max-width:1080px;margin:1rem auto;padding:0 1.2rem;font-size:.9rem;color:var(--mr-muted)}
@@ -90,7 +90,7 @@
   }
 
 /* iter-11 nav-compat (2026-06-04): Nav/Breadcrumb-Markup nutzt <ul>/<ol>+.mr-logo statt .mr-nav-links — Styling robust nachgezogen */
-.mr-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mr-nav-inner{display:flex;align-items:center;justify-content:flex-start;gap:12px;flex-wrap:wrap}
 a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none}
 .mr-nav-inner>ul{display:flex;flex-wrap:wrap;gap:4px;align-items:center;list-style:none;margin:0;padding:0}
 .mr-nav-inner>ul>li{list-style:none}
@@ -103,7 +103,7 @@ a.mr-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;co
 
 /* iter-12 nav-normalize (2026-06-04): kanonisches Nav-/Breadcrumb-CSS, garantiert auf jeder Stadt-Seite */
 .mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border,#E8E0D6);padding:0 20px}
-.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:56px;flex-wrap:wrap}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:8px;min-height:56px;flex-wrap:wrap}
 .mr-nav-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
 .mr-nav-logo span{color:var(--mr-primary,#7A6B5D)}
 .mr-nav-links{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center}

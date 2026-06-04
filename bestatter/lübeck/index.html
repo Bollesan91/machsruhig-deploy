@@ -36,7 +36,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:100}
 .skip-link:focus{left:1rem;top:1rem}
 .mr-nav{padding:1rem 1.25rem;border-bottom:1px solid var(--line);background:#fff}
-.mr-nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:.95rem}
+.mr-nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:flex-start;font-size:.95rem}
 .mr-nav a{color:var(--ink);text-decoration:none}
 .mr-nav .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem}
 .mr-breadcrumb{max-width:var(--max);margin:0 auto;padding:.85rem 1.25rem;font-size:.85rem;color:var(--ink-soft)}
@@ -95,7 +95,7 @@ a.inline{color:var(--accent);text-decoration:underline;text-underline-offset:2px
 
 /* iter-12 nav-normalize (2026-06-04): kanonisches Nav-/Breadcrumb-CSS, garantiert auf jeder Stadt-Seite */
 .mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border,#E8E0D6);padding:0 20px}
-.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:56px;flex-wrap:wrap}
+.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:8px;min-height:56px;flex-wrap:wrap}
 .mr-nav-logo{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
 .mr-nav-logo span{color:var(--mr-primary,#7A6B5D)}
 .mr-nav-links{display:flex;flex-wrap:wrap;gap:2px 4px;align-items:center}
