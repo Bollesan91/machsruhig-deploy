@@ -266,7 +266,7 @@ Output-Format:
 ❌ **Source-Disclosure**: "Anderer Reviewer fand X, prüfe ob das wirklich ein Bug ist"
    → Reviewer wird zustimmen oder widersprechen je nach Phrasing-Hint, nicht je nach Befund.
 
-❌ **Plausible vs Umami Confusion**: Bei machsruhig ist Plausible korrekt (NICHT Umami — das ist machsleicht).
+❌ ~~**Plausible vs Umami Confusion**: Bei machsruhig ist Plausible korrekt~~ — **KORRIGIERT 05.06.2026:** machsruhig nutzt **Umami** (`cloud.umami.is`, cookielos) + **Ahrefs** (US). Plausible ist Geschichte; `window.plausible(...)` ist nur ein Shim, der zu Umami forwarded. Datenschutz §8 entsprechend aktualisiert.
 
 ### Writer-Prompt (Re-Generierung nach Reviewer-FAIL)
 
