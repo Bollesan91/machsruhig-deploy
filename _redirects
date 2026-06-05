@@ -191,3 +191,7 @@
 
 # Sozialbestattung Trailing-Slash-Fix
 /sozialbestattung/                  /sozialbestattung                 301
+
+# Umlaut-Dubletten -> kanonische Umlaut-URL (iter: Audit-Dedup 2026-06-05)
+/bestatter/luebeck/*   /bestatter/lübeck/   301
+/bestatter/moenchengladbach/*   /bestatter/mönchengladbach/   301
