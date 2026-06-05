@@ -350,6 +350,34 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319
   </div>
 </footer>
 
+<!-- KI-Helfer (Phase 3): Polish-Button über Groq/Llama 3.3 -->
+<script defer src="/assets/js/mr-ai.js"></script>
+<style>
+/* KI-Polish (Abschiedsbrief Phase 3) */
+.mr-ai-section{background:linear-gradient(135deg,#FFFDF9 0%,#F4F0EB 100%);border:1px solid var(--mr-border,#E8E0D6);border-radius:12px;padding:20px 24px;margin:24px 0}
+.mr-ai-section h3{font-family:'Fraunces',Georgia,serif;font-size:17px;font-weight:700;color:var(--mr-text,#2D2319);margin:0 0 6px}
+.mr-ai-section>p{font-size:13px;color:var(--mr-text-muted,#73655A);line-height:1.6;margin:0 0 12px}
+.mr-ai-btn{display:inline-flex;align-items:center;gap:8px;background:var(--mr-primary,#7A6B5D);color:#fff;padding:11px 22px;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.mr-ai-btn:hover{background:var(--mr-primary-hover,#5E5047)}
+.mr-ai-btn:disabled{opacity:.6;cursor:default}
+.mr-ai-btn-sec{background:#fff;color:var(--mr-warm,#7A6B5D);border:1px solid var(--mr-border,#E8E0D6);padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+.mr-ai-btn-sec:hover{background:rgba(122,107,93,.06)}
+.mr-ai-error{font-size:13px;color:#8a5a4a;margin:10px 0 0}
+.mr-ai-result{margin-top:16px;border-top:1px solid var(--mr-border,#E8E0D6);padding-top:16px}
+.mr-ai-result h4{font-family:'Fraunces',Georgia,serif;font-size:15px;font-weight:700;margin:0 0 8px;color:var(--mr-text,#2D2319)}
+.mr-ai-result-text{width:100%;font-family:inherit;font-size:15px;line-height:1.7;color:var(--mr-text,#2D2319);background:#fff;border:1px solid var(--mr-border,#E8E0D6);border-radius:8px;padding:14px 16px;resize:vertical;box-sizing:border-box}
+.mr-ai-result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.mr-ai-note{font-size:12px;color:var(--mr-text-muted,#73655A);margin:10px 0 0;font-style:italic}
+.mr-ai-consent-modal{position:fixed;inset:0;background:rgba(45,35,25,.6);display:flex;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.mr-ai-consent-modal .modal-box{background:#fff;border-radius:14px;padding:28px;max-width:540px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,.2)}
+.mr-ai-consent-modal h3{font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:700;margin:0 0 12px;color:var(--mr-text,#2D2319)}
+.mr-ai-consent-modal p{font-size:14px;line-height:1.7;color:var(--mr-text,#2D2319);margin:0 0 14px}
+.mr-ai-consent-modal .consent-buttons{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.mr-ai-consent-modal .consent-buttons button{flex:1;min-width:140px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent}
+.mr-ai-consent-modal .btn-grant{background:var(--mr-primary,#7A6B5D);color:#fff;border-color:var(--mr-primary,#7A6B5D)}
+.mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted,#73655A);border-color:var(--mr-border,#E8E0D6)}
+</style>
+
 <script type="text/babel">
 const {useState, useEffect, useRef, useCallback} = React;
 
@@ -763,6 +791,12 @@ function App() {
   const [draftLoaded, setDraftLoaded] = useState(false);
   const saveTimerRef = useRef(null);
 
+  // KI-Polish (Phase 3)
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResult, setAiResult] = useState('');
+  const [aiError, setAiError] = useState('');
+  const [showConsent, setShowConsent] = useState(false);
+
   // Load from localStorage on mount
   useEffect(() => {
     try {
@@ -854,6 +888,37 @@ function App() {
     }
   }
 
+  async function runPolish() {
+    setAiError(''); setAiResult(''); setAiLoading(true);
+    try {
+      const result = await window.mrAI.generate({
+        type: 'abschiedsbrief',
+        data: {
+          recipient, recipientName, senderName,
+          sagen: texts.sagen, wichtig: texts.wichtig,
+          praktisches: texts.praktisches, wuensche: texts.wuensche,
+          closing: closing === 'custom' ? customClosing : closing,
+        },
+      });
+      setAiResult((result || '').trim());
+      if (window.plausible) window.plausible('Abschiedsbrief: KI-poliert');
+    } catch (err) {
+      if (err.message === 'CONSENT_REQUIRED') { setShowConsent(true); }
+      else if (err.message === 'RATE_LIMIT') { setAiError('Zu viele Anfragen. Bitte in ein paar Minuten erneut versuchen.'); }
+      else { setAiError('Verbindung zur KI fehlgeschlagen. Dein Entwurf bleibt unverändert erhalten.'); }
+    } finally {
+      setAiLoading(false);
+    }
+  }
+
+  function handlePolish() {
+    if (!window.mrAI) { setAiError('KI-Modul nicht geladen — bitte Seite neu laden.'); return; }
+    const hasContent = Object.values(texts).some(t => (t || '').trim());
+    if (!hasContent) { setAiError('Bitte schreibe zuerst ein paar Zeilen in deinen Brief.'); return; }
+    if (!window.mrAI.hasConsent()) { setShowConsent(true); return; }
+    runPolish();
+  }
+
   return React.createElement(React.Fragment, null,
     // Intro
     React.createElement('div', {className: 'brief-intro'},
@@ -880,6 +945,24 @@ function App() {
       onTextChange: handleTextChange
     }),
 
+    // KI-Polish (Phase 3) — poliert nur Sprache/Fluss des Entwurfs
+    React.createElement('section', {className: 'mr-ai-section', 'aria-label': 'KI-Verfeinerung'},
+      React.createElement('h3', null, '✨ Mit KI verfeinern (optional)'),
+      React.createElement('p', null, 'Die KI poliert nur Sprache und Lesefluss deines Entwurfs — sie erfindet nichts dazu und ändert deine Aussagen nicht. Deine Texte gehen dafür an Groq (USA), werden aber nicht fürs KI-Training gespeichert. Ohne Opt-in passiert nichts.'),
+      React.createElement('button', {className: 'mr-ai-btn', type: 'button', onClick: handlePolish, disabled: aiLoading},
+        aiLoading ? 'Wird verfeinert…' : '✨ Entwurf verfeinern'),
+      aiError ? React.createElement('p', {className: 'mr-ai-error'}, aiError) : null,
+      aiResult ? React.createElement('div', {className: 'mr-ai-result'},
+        React.createElement('h4', null, 'Verfeinerte Fassung'),
+        React.createElement('textarea', {className: 'mr-ai-result-text', value: aiResult, readOnly: true, rows: 14}),
+        React.createElement('div', {className: 'mr-ai-result-actions'},
+          React.createElement('button', {className: 'mr-ai-btn-sec', type: 'button', onClick: () => handleCopy(aiResult)}, 'Verfeinerte Fassung kopieren'),
+          React.createElement('button', {className: 'mr-ai-btn-sec', type: 'button', onClick: handlePolish, disabled: aiLoading}, 'Nochmal verfeinern')
+        ),
+        React.createElement('p', {className: 'mr-ai-note'}, 'Vergleiche mit deinem Original und übernimm nur, was sich für dich richtig anfühlt.')
+      ) : null
+    ),
+
     // Section 3: Preview & Export
     React.createElement(PreviewSection, {
       recipient,
@@ -905,7 +988,20 @@ function App() {
     React.createElement(CrossLinks),
 
     // Toast
-    React.createElement(Toast, toast)
+    React.createElement(Toast, toast),
+
+    // KI-Consent-Modal
+    showConsent ? React.createElement('div', {className: 'mr-ai-consent-modal', role: 'dialog', 'aria-modal': 'true'},
+      React.createElement('div', {className: 'modal-box'},
+        React.createElement('h3', null, 'KI-Verfeinerung aktivieren?'),
+        React.createElement('p', null, 'Für die Verfeinerung werden die Texte deines Entwurfs an Groq Inc. (USA) gesendet und dort verarbeitet. Sie werden nicht für KI-Training gespeichert. Die KI poliert nur Sprache und Fluss — deine Aussagen bleiben unverändert.'),
+        React.createElement('p', null, 'Du kannst den Brief auch komplett ohne KI fertigstellen.'),
+        React.createElement('div', {className: 'consent-buttons'},
+          React.createElement('button', {className: 'btn-grant', type: 'button', onClick: () => { window.mrAI.grantConsent(); setShowConsent(false); runPolish(); }}, 'Einwilligen & verfeinern'),
+          React.createElement('button', {className: 'btn-cancel', type: 'button', onClick: () => setShowConsent(false)}, 'Abbrechen')
+        )
+      )
+    ) : null
   );
 }
 
