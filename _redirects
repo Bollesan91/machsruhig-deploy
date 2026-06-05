@@ -146,11 +146,17 @@
 /vorsorge/friedwald-baumbestattung  /vorsorge/                        301
 /vorsorge/friedwald-baumbestattung/ /vorsorge/                        301
 
-# Bundesland-Pages fehlen → temporär Hub-Redirect
-/bestattung-in/baden-wuerttemberg   /bestattung-in/baden-w%C3%BCrttemberg/  301
-/bestattung-in/baden-wuerttemberg/  /bestattung-in/baden-w%C3%BCrttemberg/  301
-/bestattung-in/thueringen           /bestattung-in/th%C3%BCringen/    301
-/bestattung-in/thueringen/          /bestattung-in/th%C3%BCringen/    301
+# Bundesland-Umlaut → ascii (Konvention wie bei Städten). Forced (301!) mit Floor
+# (Umlaut-Dir bleibt, canonical=ascii) -> matcht Netlify die encoded Source: 301; sonst 200+canonical. Nie 404.
+# Lower-Hex-Varianten gegen Crawler-Normalisierung. ALTE ascii->umlaut-Regeln entfernt (sonst Loop).
+/bestattung-in/baden-w%C3%BCrttemberg/  /bestattung-in/baden-wuerttemberg/  301!
+/bestattung-in/baden-w%C3%BCrttemberg   /bestattung-in/baden-wuerttemberg/  301!
+/bestattung-in/baden-w%c3%bcrttemberg/  /bestattung-in/baden-wuerttemberg/  301!
+/bestattung-in/baden-w%c3%bcrttemberg   /bestattung-in/baden-wuerttemberg/  301!
+/bestattung-in/th%C3%BCringen/          /bestattung-in/thueringen/          301!
+/bestattung-in/th%C3%BCringen           /bestattung-in/thueringen/          301!
+/bestattung-in/th%c3%bcringen/          /bestattung-in/thueringen/          301!
+/bestattung-in/th%c3%bcringen           /bestattung-in/thueringen/          301!
 
 # Anomale URLs (ohne trailing /)
 /bestatter-in-nordrhein-westfalen   /bestattung-in/nordrhein-westfalen 301
