@@ -1,12 +1,11 @@
 /* mach's ruhig — Consent-Layer für anonyme Reichweiten-Statistiken
-   Lädt Umami + Ahrefs + tracking.js NUR nach Opt-In (localStorage 'mr-consent'='accepted').
-   Vor Entscheidung: Banner unten. Nach Reject: keine Analytics, keine Drittland-Transfers.
-   Stand: 2026-05-30 — DSGVO/TTDSG-konform. */
+   Lädt Umami + tracking.js NUR nach Opt-In (localStorage 'mr-consent'='accepted').
+   Vor Entscheidung: Banner unten. Nach Reject: keine Analytics.
+   Stand: 2026-06-05 — nur Umami (cookielos, EU), Ahrefs entfernt. DSGVO/TTDSG-konform. */
 (function(){
   'use strict';
   var KEY = 'mr-consent';
   var UMAMI_WEBSITE_ID = '6b6629ff-27b8-427b-863c-76b549cb52ba';
-  var AHREFS_KEY = '+yMn44XwsPZPjCJxqwMDBg';
 
   // Safe no-op shims — ensure window.plausible / window.mrTrack never throw,
   // egal ob Consent gegeben oder nicht
@@ -22,12 +21,6 @@
     document.head.appendChild(u);
     // Plausible-Shim auf Umami umleiten (manche Tools rufen window.plausible)
     window.plausible = function(e, o){ if (window.umami) window.umami.track(e, (o && o.props) || {}); };
-    // Ahrefs Site Audit (Drittland: US)
-    var a = document.createElement('script');
-    a.async = true;
-    a.src = 'https://analytics.ahrefs.com/analytics.js';
-    a.setAttribute('data-key', AHREFS_KEY);
-    document.head.appendChild(a);
     // Site-internes Event-Routing
     var t = document.createElement('script');
     t.defer = true;
@@ -54,7 +47,7 @@
       '<div style="max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">' +
         '<div style="flex:1;min-width:260px;color:#5a4f43">' +
           '<strong style="color:#2D2319">Anonyme Reichweiten-Statistiken?</strong> ' +
-          'Wir nutzen Umami (cookielos, EU-gehostet) und Ahrefs (US), um zu verstehen, was hilft — ohne IP-Speicherung und ohne deine Eingaben. ' +
+          'Wir nutzen Umami (cookielos, EU-gehostet), um zu verstehen, was hilft — ohne IP-Speicherung und ohne deine Eingaben. ' +
           'Du kannst widersprechen. <a href="/datenschutz" style="color:#7A6B5D">Mehr Infos</a>.' +
         '</div>' +
         '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
