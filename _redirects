@@ -98,6 +98,12 @@
 /bestatter/freiburg-im-breisgau/    /bestatter/freiburg/              301
 /bestatter/muelheim-an-der-ruhr/    /bestatter/muelheim/              301
 
+# Umlaut-Städte → ascii (Konvention wie muenchen/muenster); alte indexierte Umlaut-URLs erhalten
+/bestatter/l%C3%BCbeck/             /bestatter/luebeck/               301
+/bestatter/l%C3%BCbeck              /bestatter/luebeck/               301
+/bestatter/m%C3%B6nchengladbach/    /bestatter/moenchengladbach/      301
+/bestatter/m%C3%B6nchengladbach     /bestatter/moenchengladbach/      301
+
 # Generische Pages → vorhandene Hubs
 # /kontakt now is a real page (kontakt.html)
 /kontakt/                           /kontakt                          301
