@@ -453,8 +453,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   <section style="max-width:680px;margin:48px auto 0;padding:0 20px">
     <div class="mr-cta-block" style="background:#FFFDF9;border:2px solid #E8E0D6;border-radius:12px;padding:28px 24px;text-align:left">
-      <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:8px;text-align:center">Wir senden Dir Dein Ergebnis &mdash; und 3 Bestatter-Angebote</h2>
-      <p style="font-size:15px;color:#73655A;margin-bottom:20px;text-align:center">Wir mailen Dir Dein Kostenrahmen-Ergebnis zur späteren Referenz und holen optional 3 unverbindliche Angebote von Bestattern in Deiner Region ein. Kein Newsletter, kein Spam.</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin-bottom:8px;text-align:center">Ergebnis speichern oder Angebote anfragen &mdash; optional</h2>
+      <p style="font-size:15px;color:#73655A;margin-bottom:20px;text-align:center">Dein Kostenrahmen steht bereits oben &mdash; kostenlos, ohne Anmeldung. Optional mailen wir Dir das Ergebnis zur späteren Referenz und leiten Deine Anfrage &mdash; sofern in Deiner Region ein passender Pilotpartner vorhanden ist &mdash; an einen Bestatter weiter. machsruhig baut dieses Netzwerk gerade auf; in vielen Regionen haben wir aktuell noch keinen Partner &mdash; dann melden wir uns trotzdem. Kein Newsletter, kein Spam.</p>
       <form name="tool-lead-bestattungskosten" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke-bestatter-anfrage?source=tool-lead-bestattungskosten" style="display:grid;gap:12px">
         <input type="hidden" name="form-name" value="tool-lead-bestattungskosten">
         <p hidden><label>Lass dieses Feld leer: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -485,7 +485,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         </div>
         <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#73655A">
           <input type="checkbox" name="datenschutz" required style="margin-top:3px">
-          <span>Ich bin einverstanden, dass meine Email-Adresse zur Bearbeitung meiner Anfrage gespeichert wird. <a href="/datenschutz" target="_blank">Datenschutz</a></span>
+          <span>Ich bin einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert und &ndash; sofern in meiner Region ein passender Pilotpartner vorhanden ist &ndash; an diesen weitergeleitet werden. <a href="/datenschutz" target="_blank">Datenschutz</a></span>
         </label>
         <button type="submit" class="cta-primary" style="margin-top:8px;padding:14px 32px;background:#7A6B5D;color:#fff;border:none;border-radius:99px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit">Anfrage senden &mdash; kostenlos &amp; unverbindlich</button>
         <p style="font-size:12px;color:#73655A;text-align:center;margin-top:4px">Spamfrei · DSGVO-konform · Du kannst jederzeit widersprechen</p>
@@ -1012,8 +1012,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     html += '<div class="cta-section no-print">';
     html += '<h2>Bestatter in deiner Nähe</h2>';
-    html += '<p>Erhalte jetzt konkrete Angebote von geprüften Bestattern vor Ort.</p>';
-    html += '<a href="/bestatter/muenchen/">Bestatter finden</a>';
+    html += '<p>Such einen passenden Bestatter in Deiner Region. Auf Wunsch leiten wir Deine Anfrage weiter, sofern wir dort bereits einen Pilotpartner haben.</p>';
+    html += '<a href="/bestatter/">Bestatter finden</a>';
     html += '</div>';
 
     html += '</div>';
