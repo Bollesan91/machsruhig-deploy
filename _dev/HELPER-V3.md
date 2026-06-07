@@ -461,6 +461,26 @@ Pflichten:
 
 ---
 
+## Lektion 07.06.2026 — Helper-V3 bei TRUST-/Versprechen-Texten (nicht nur Tools)
+
+Anlass: neue B2B-Seite `/fuer-bestatter` + ehrlicheres Anfrage-Formular (48 Stadtseiten), Pilot-Akquise. 2 Helper-V3-Runden (claude.ai-Tab, Opus, kein Score-Anchoring).
+
+**Kern-Erkenntnis: „ehrlich gemeint" ≠ „kein Overclaim".**
+- Mein eigener, bereits *bewusst ehrlich* umgeschriebener Formular-Text („wir leiten an passende Bestatter weiter / die wir vorab prüfen") war im **Präsens** formuliert — bei **0 echten Partnern** ist das ein Versprechen an Trauernde, das ins Leere läuft (**§5 UWG**, echter YMYL-Schaden). Self-Verify hatte es durchgewunken. **Helper-V3 Runde 1 = NO-GO** fing es.
+- **Test für Versprechen-Texte:** *Kann dieses Versprechen beim AKTUELLEN realen Stand (0 Partner / 0 Traffic / Pool im Aufbau) eingelöst werden?* Wenn nein → konditional formulieren („**wenn** … vorhanden ist") + Lücke offen benennen („in vielen Regionen haben wir aktuell keinen").
+
+**2 Runden waren nötig (bestätigt „2-3 Iterationen"-Faustregel auch für Text):**
+- Runde 1: Formular NO-GO (Präsens-Overclaim), Seite bedingtes GO (Vergütungs-Widerspruch, anonymes „Wir", belehrender Ton, „Eignungsprüfung" als realer Prozess behauptet).
+- Runde 2: GO — fing den **verschobenen** Fehler: Consent-Checkbox „an passende Bestatter weitergeleitet" (Plural/unbedingt) widersprach „kein Partner" → Fix konditional + Singular. Single-Round hätte das übersehen.
+
+**Adversarial-Prompt mit empirischer Verifikations-Aufgabe anreichern:** Der NIEDRIG-Prompt „verifiziere ‚keine Tracking-Cookies' site-weit" führte zum Fund, dass `notfallkarte.html` noch das **echte** `plausible.io`-Skript lud (widersprach Datenschutz „nur Umami"). Annahme „Konsolidierung fertig" war falsch. → Bei Claims immer „prüfe X empirisch" als Review-Punkt mitgeben. (grep-Fallstrick: `grep -rho … | grep -v _dev` filtert nicht — `grep -rl` für Datei-Liste.)
+
+**Operative Overclaims sind kein Code-Fix:** Das ehrliche Formular sagt „dann melden wir uns" → das ist selbst ein Versprechen, das ein **bemanntes Postfach** voraussetzt. Solche Punkte explizit als Bedingung an den User zurückspielen, nicht „lösen".
+
+**Modus:** Für ganze neue Seiten / Trust-Copy → Helper-V3-Tab (claude.ai), NICHT Subagent (Subagents nur mechanisch). Verdikt-Format „Go/No-Go für (a) Live (b) Akquise + Risiken nach Schwere + konkrete Textänderungen" war sehr brauchbar.
+
+---
+
 ## Hand-off für neue Sessions
 
 Wenn du neu in das Projekt einsteigst und Helper-V3 nutzen sollst:
