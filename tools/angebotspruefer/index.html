@@ -288,7 +288,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // Grabstein und Grabpflege sind NICHT in baseRange (kommen separat NACH der Bestattung).
   // Werte in EUR, vor Region-Multiplier.
   var SEPARAT_KOSTEN={
-    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','anonyme']},
+    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung']},
     krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
     trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400}
   };
@@ -540,9 +540,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       var sumRatioMax=sum/rangeMax;
       priceSignal='high';
       // V3 NEW: Sehr extreme Überschreitung (>+100%) → ROT, da auch ein Premium-Paket realistisch maximal +80-90% kostet
-      if(sumRatioMax>=1.75){
+      if(sumRatioMax>=1.5){
         status='red';
-        reasons.push('Die Summe liegt sehr deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'; +'+diffHigh+' %). Selbst ein Premium-Paket bewegt sich meist innerhalb des doppelten Rahmens. Bitte den Bestatter dringend, Posten für Posten aufzuschlüsseln — und hole ein zweites Vergleichsangebot ein.');
+        reasons.push('Die Summe liegt sehr deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'; +'+diffHigh+' %). Selbst ein Premium-Paket liegt meist deutlich unter diesem Wert. Bitte den Bestatter dringend, Posten für Posten aufzuschlüsseln — und hole ein zweites Vergleichsangebot ein.');
       } else if(diffHigh>=30){
         status='yellow';
         reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Das kann legitim sein (Premium-Sarg, aufwendige Trauerfeier, individueller Grabstein) — lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
