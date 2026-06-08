@@ -158,7 +158,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   <!-- Step 3: Gesamtsumme -->
   <div class="ap-step" id="ap-step-3">
     <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:32px 0 8px">Was ist die Gesamtsumme im Angebot?</h2>
-    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:20px">Trage die Gesamtsumme ein, die auf dem Angebot des Bestatters steht (inkl. Mehrwertsteuer). <strong>Wichtig:</strong> Rechnet die Stadt die Friedhofsgebühren separat ab oder ist ein Grabstein nicht enthalten, trag hier nur die Bestatter-Summe ein und hak die separaten Posten im nächsten Schritt an.</p>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">Trage die Gesamtsumme ein, die auf dem Angebot des Bestatters steht (inkl. Mehrwertsteuer).</p>
+    <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:14px;line-height:1.5"><strong>Wichtig:</strong> Rechnet die Stadt die <strong>Friedhofsgebühren</strong> separat ab oder ist ein <strong>Grabstein</strong> nicht enthalten, trag hier <strong>nur die Bestatter-Summe</strong> ein — und hak die separaten Posten im nächsten Schritt an.</div>
     <div style="position:relative">
       <input type="number" id="ap-gesamtsumme" class="ap-input" placeholder="z.B. 5800" min="500" max="50000" step="50" style="padding-right:48px" aria-label="Gesamtsumme im Angebot in Euro">
       <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--mr-text-muted);font-size:16px">€</span>
@@ -454,11 +455,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       cb.addEventListener('change',function(){state.info[cb.dataset.key]=cb.checked;});
     });
 
-    $('#ap-pauschal').addEventListener('change',function(e){state.pauschal=e.target.checked;});
-    $('#ap-next-4').addEventListener('click',function(){
-      analyzeAndRender();
-      setStep(5);
-    });
+    if(!renderStep4._staticBound){
+      renderStep4._staticBound=true;
+      $('#ap-pauschal').addEventListener('change',function(e){state.pauschal=e.target.checked;});
+      $('#ap-next-4').addEventListener('click',function(){
+        analyzeAndRender();
+        setStep(5);
+      });
+    }
   }
 
   // ===== Back buttons =====
@@ -483,16 +487,16 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if(sp.condBA && sp.condBA.indexOf(state.bestattungsart)===-1)return;
       if(sp.excludeBA && sp.excludeBA.indexOf(state.bestattungsart)>=0)return;
       if(state.separat[key]){
-        baseMin-=sp.min;
-        baseMax-=sp.max;
+        baseMin-=sp.max;
+        baseMax-=sp.min;
         separatList.push(sp);
       }
     });
     // Untergrenze sichern
     if(baseMin<0)baseMin=200;
     if(baseMax<baseMin)baseMax=baseMin+1000;
-    var rangeMin=Math.round(baseMin*mult);
-    var rangeMax=Math.round(baseMax*mult);
+    var rangeMin=Math.round(baseMin*mult/100)*100;
+    var rangeMax=Math.round(baseMax*mult/100)*100;
 
     // V2.2: Klärungs-Posten (NICHT "fehlt"). Sichtbare Posten ohne Haken UND nicht als "separat" deklariert.
     var visible=POSTEN.filter(function(p){
@@ -536,7 +540,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       var sumRatioMax=sum/rangeMax;
       priceSignal='high';
       // V3 NEW: Sehr extreme Überschreitung (>+100%) → ROT, da auch ein Premium-Paket realistisch maximal +80-90% kostet
-      if(sumRatioMax>=2.0){
+      if(sumRatioMax>=1.75){
         status='red';
         reasons.push('Die Summe liegt sehr deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'; +'+diffHigh+' %). Selbst ein Premium-Paket bewegt sich meist innerhalb des doppelten Rahmens. Bitte den Bestatter dringend, Posten für Posten aufzuschlüsseln — und hole ein zweites Vergleichsangebot ein.');
       } else if(diffHigh>=30){
