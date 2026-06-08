@@ -21,48 +21,9 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
 
 <script defer src="/js/tracking.js"></script>
+<link rel="stylesheet" href="/assets/css/site.css">
 <style>
-@font-face{font-family:'DM Sans';font-style:normal;font-display:swap;font-weight:300 700;src:url('/fonts/dm-sans-latin-wght-normal.woff2') format('woff2')}
-@font-face{font-family:'Fraunces';font-style:normal;font-display:swap;font-weight:400 800;src:url('/fonts/fraunces-latin-wght-normal.woff2') format('woff2')}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',system-ui,sans-serif;background:#faf8f5;color:#2D2319;min-height:100vh;font-size:16px;line-height:1.6}
-.mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #E8E0D6;padding:0 20px}
-.mr-nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;height:56px}
-.mr-nav-logo{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#2D2319;text-decoration:none}
-.mr-nav-logo span{color:#7A6B5D}
-.mr-nav-links{display:flex;gap:4px;align-items:center}
-.mr-nav-links a{font-size:13px;font-weight:500;color:#73655A;text-decoration:none;padding:6px 12px;border-radius:8px;transition:color 0.2s,background 0.2s}
-.mr-nav-links a:hover{color:#2D2319;background:rgba(122,107,93,0.08)}
-@media(max-width:640px){.mr-nav-links{display:none}}
 .wrap{max-width:660px;margin:0 auto;padding:48px 20px 80px}
-h1{font-family:'Fraunces',serif;font-size:28px;font-weight:700;margin-bottom:24px}
-h2{font-size:18px;font-weight:700;margin:24px 0 8px}
-a{color:#7A6B5D}
-
-.mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
-.mr-nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--mr-text)}
-@media(max-width:640px){.mr-nav-links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--mr-bg);border-bottom:1px solid var(--mr-border);flex-direction:column;padding:8px 16px 16px;gap:0}.mr-nav-links.open{display:flex}.mr-nav-links a{padding:12px 8px;font-size:15px}.mr-nav-divider{display:none}.mr-nav-toggle{display:block}}
-.mr-footer{background:#f4f0eb;border-top:1px solid #E8E0D6;margin-top:64px;padding:32px 20px 24px;text-align:center}
-.mr-footer p{font-size:12px;color:#73655A;line-height:1.6}
-.mr-footer a{font-size:12px;color:#7A6B5D;text-decoration:none}
-
-/* iter-15 nav-slim (2026-06-04): 7-Link-Nav, an Inhaltsbreite (720px) ausgerichtet */
-.mr-nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
-.mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
-.mr-breadcrumb{max-width:720px;margin:0 auto;padding:16px 20px 0}
-
-/* iter-17 nav-align (2026-06-04): nav-inner Box-Model = .mr-content -> linke Kante bündig */
-.mr-nav{padding-left:0;padding-right:0}
-.mr-nav-inner{padding-left:20px;padding-right:20px}
-
-/* iter-18 mobile-nav (2026-06-04): Hamburger statt gestapelter Liste */
-@media(max-width:760px){
-  .mr-nav-inner{flex-wrap:wrap;gap:0;padding-top:8px;padding-bottom:8px}
-  .mr-nav-toggle{display:inline-flex !important;align-items:center;margin-left:auto}
-  .mr-nav-links{display:none;flex-basis:100%;flex-direction:column;gap:0;padding:6px 0 4px}
-  .mr-nav.open .mr-nav-links{display:flex}
-  .mr-nav-links a{padding:11px 6px;font-size:15px;border-radius:6px}
-}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
