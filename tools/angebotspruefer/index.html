@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/angebotspruefer/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Bestatter-Angebot prüfen","description":"Kostenloser Angebots-Check für Bestatter-Angebote. Ampel-Bewertung, vermisste Posten und 10 Fragen für den Bestatter.","url":"https://machsruhig.de/tools/angebotspruefer/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Angebot prüfen","item":"https://machsruhig.de/tools/angebotspruefer"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Bestatter-Angebot prüfen","description":"Kostenloser Angebots-Check für Bestatter-Angebote. Ampel-Bewertung, vermisste Posten und konkrete Fragen für den Bestatter.","url":"https://machsruhig.de/tools/angebotspruefer/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Angebot prüfen","item":"https://machsruhig.de/tools/angebotspruefer"}]}]}</script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
 
 <script defer src="/js/tracking.js"></script>
@@ -145,8 +145,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   <!-- Step 2: Bundesland -->
   <div class="ap-step" id="ap-step-2">
     <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:32px 0 8px">In welchem Bundesland?</h2>
-    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:20px">Friedhofsgebühren und regionale Preise variieren erheblich (300–400 %).</p>
-    <select id="ap-bundesland" class="ap-select">
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:20px">Friedhofsgebühren und regionale Preise variieren je nach Region erheblich — vor allem die kommunalen Friedhofsgebühren.</p>
+    <select id="ap-bundesland" class="ap-select" aria-label="Bundesland">
       <option value="">— Bitte wählen —</option>
     </select>
     <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
@@ -158,9 +158,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   <!-- Step 3: Gesamtsumme -->
   <div class="ap-step" id="ap-step-3">
     <h2 style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;margin:32px 0 8px">Was ist die Gesamtsumme im Angebot?</h2>
-    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:20px">Trage die Gesamtsumme ein, die auf dem Angebot des Bestatters steht (inkl. Mehrwertsteuer).</p>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:20px">Trage die Gesamtsumme ein, die auf dem Angebot des Bestatters steht (inkl. Mehrwertsteuer). <strong>Wichtig:</strong> Rechnet die Stadt die Friedhofsgebühren separat ab oder ist ein Grabstein nicht enthalten, trag hier nur die Bestatter-Summe ein und hak die separaten Posten im nächsten Schritt an.</p>
     <div style="position:relative">
-      <input type="number" id="ap-gesamtsumme" class="ap-input" placeholder="z.B. 5800" min="500" max="50000" step="50" style="padding-right:48px">
+      <input type="number" id="ap-gesamtsumme" class="ap-input" placeholder="z.B. 5800" min="500" max="50000" step="50" style="padding-right:48px" aria-label="Gesamtsumme im Angebot in Euro">
       <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--mr-text-muted);font-size:16px">€</span>
     </div>
     <p style="font-size:13px;color:var(--mr-text-muted);margin-top:8px">Eine ungefähre Zahl reicht — wir vergleichen mit typischen Preisrahmen.</p>
@@ -339,7 +339,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     $$('.choice-card',$('#ap-bestattungsarten')).forEach(function(btn){
       btn.addEventListener('click',function(){
         state.bestattungsart=btn.dataset.ba;
-        track('toolStep',{tool:'angebotspruefer',step:'1-select',value:state.bestattungsart});
+        track('toolStep',{tool:'angebotspruefer',step:'1-select'});
         setStep(2);
       });
     });
@@ -542,7 +542,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       } else if(diffHigh>=30){
         status='yellow';
         reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Das kann legitim sein (Premium-Sarg, aufwendige Trauerfeier, individueller Grabstein) — lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
-      } else if(diffHigh>=10){
+      } else if(diffHigh>=15){
         status='yellow';
         reasons.push('Die Summe liegt leicht über dem üblichen Rahmen (+'+diffHigh+' %). Das kann an einer höheren Sarg-/Trauerfeier-/Floristik-Wahl liegen — frag den Bestatter, welche Posten den Preis treiben.');
       }
@@ -618,6 +618,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   // ===== Render Result =====
   function analyzeAndRender(){
+    if(!state.bestattungsart || !BESTATTUNGSARTEN[state.bestattungsart]){ setStep(1); return; }
     var result=analyze();
     var fragen=generateFragen(result);
 
@@ -726,7 +727,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       $('#ap-next-2').disabled=true;$('#ap-next-3').disabled=true;
       $$('#ap-posten-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
       $$('#ap-separat-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
-      $$('#ap-info-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});
+      $$('#ap-info-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});renderStep4();
       setStep(1);
     });
     // Tool-Kette tracking
@@ -736,7 +737,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       });
     });
 
-    track('toolResult',{tool:'angebotspruefer',status:result.status,bestattungsart:state.bestattungsart,bundesland:state.bundesland});
+    track('toolResult',{tool:'angebotspruefer',status:result.status});
   }
 
   // ===== Init =====
