@@ -744,13 +744,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   // Step 2: Calculate-Button
   $('#btn-calculate').addEventListener('click', function(){
+    if (!state.bestattungsart || !KOSTENMODELL[state.bestattungsart]) { setStep(1); return; }
     track('toolExport', {tool:'bestattungskosten-rechner', type:'result'});
     setStep(3);
   });
 
   // ===== Cost calculation =====
   function calculateCosts(){
-    var model = KOSTENMODELL[state.bestattungsart];
+    var model = KOSTENMODELL[state.bestattungsart] || {};
     var multiplier = REGIONAL_MULTIPLIERS[state.bundesland] || 1.0;
     var items = [];
     var minTotal = 0, maxTotal = 0;
