@@ -665,7 +665,6 @@ a.inline:hover{color:var(--color-ink)}
   border-radius:3px;margin:1.5rem 0;font-size:.95rem;
 }
 .mr-cross-ref a{font-weight:500}
-.mr-footer h3{color:#fff;font-size:1rem;margin:0 0 .75rem;font-family:'DM Sans',sans-serif;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
 .mr-gem strong{font-family:var(--mr-sans);font-style:normal;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;color:var(--mr-accent);display:block;margin-bottom:.4rem}
 .mr-friedhof .prominente{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--mr-line);font-size:.95rem}
 .mr-cta:hover{background:#3d4d3d;color:#fff}
