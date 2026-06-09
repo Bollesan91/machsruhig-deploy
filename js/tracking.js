@@ -35,7 +35,7 @@ window.plausible = window.plausible || function() { (window.plausible.q = window
   // === CTA Clicks ===
   // Trackt Klicks auf Elemente mit data-track="cta" oder class "cta-primary" / "cta-safety"
   document.addEventListener('click', function(e) {
-    var el = e.target.closest('[data-track="cta"], .cta-primary, .cta-safety, .mr-cta-block a, .mr-lead-cta a');
+    var el = e.target.closest('[data-track="cta"], .cta-primary, .cta-safety, .mr-cta-block a, .mr-lead-cta a, a.mr-card, .mr-quickhelp a');
     if (el) {
       track('cta_click', {
         text: (el.textContent || '').trim().substring(0, 60),
