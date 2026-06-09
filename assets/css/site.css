@@ -891,11 +891,11 @@ body{background:#fff!important;color:#000!important;font-size:12pt}
 
 /* === CANONICAL NAV (2026-06-08): ersetzt ALLE Legacy/duplizierten .mr-nav-Regeln === */
 .mr-nav{position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--mr-border)}
-.mr-nav-inner{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;height:56px;flex-wrap:nowrap;position:relative}
+.mr-nav-inner{max-width:720px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:flex-start;gap:6px 12px;height:56px;flex-wrap:nowrap;position:relative}
 .mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text);text-decoration:none;white-space:nowrap}
 .mr-nav-logo span{color:var(--mr-primary)}
 .mr-nav-links{display:flex;flex-wrap:nowrap;gap:4px;align-items:center}
-.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap;transition:color .15s ease,background .15s ease}
+.mr-nav-links a{font-size:13px;font-weight:500;color:var(--mr-text-muted);text-decoration:none;padding:6px 8px;border-radius:8px;white-space:nowrap;transition:color .15s ease,background .15s ease}
 .mr-nav-links a:hover{color:var(--mr-text);background:rgba(122,107,93,.08)}
 .mr-nav-links a.active{color:var(--mr-primary);font-weight:600}
 .mr-nav-divider{width:1px;height:16px;background:var(--mr-border);margin:0 4px}
