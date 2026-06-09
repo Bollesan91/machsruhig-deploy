@@ -193,11 +193,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   // ===== Data =====
   var BESTATTUNGSARTEN = {
-    erdbestattung:{name:'Erdbestattung',icon:'⚱',desc:'Sarg, Friedhof, Beisetzung mit Grabstelle',baseMin:4500,baseMax:9500},
+    erdbestattung:{name:'Erdbestattung',icon:'⚰',desc:'Sarg, Friedhof, Beisetzung mit Grabstelle',baseMin:4500,baseMax:9500},
     feuerbestattung:{name:'Feuerbestattung',icon:'🔥',desc:'Einäscherung + Urnenbeisetzung auf Friedhof',baseMin:3500,baseMax:7500},
     seebestattung:{name:'Seebestattung',icon:'🌊',desc:'Einäscherung + Beisetzung auf See',baseMin:3500,baseMax:6500},
     baumbestattung:{name:'Baumbestattung',icon:'🌳',desc:'Einäscherung + Beisetzung an einem Baum',baseMin:3000,baseMax:6000},
-    anonyme:{name:'Anonyme Bestattung',icon:'🕊',desc:'Einfache Bestattung ohne Grabstelle',baseMin:1500,baseMax:3500}
+    anonyme:{name:'Anonyme Bestattung',icon:'🕊',desc:'Einfache Bestattung ohne Grabstelle',baseMin:1500,baseMax:3500},
+    direktkremation:{name:'Direktkremation',icon:'⚱',desc:'Einäscherung ohne Trauerfeier — Urne wird beigesetzt oder übergeben',baseMin:1000,baseMax:2200}
   };
 
   // Multiplier 1:1 aus bestattungskosten-rechner (single source of truth, Mai 2026)
@@ -219,10 +220,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {key:'abholung',label:'Abholung & Überführung des Verstorbenen',pflicht:true,info:'Vom Sterbeort zum Bestatter / Krematorium'},
     {key:'versorgung',label:'Hygienische Versorgung / Einbettung',pflicht:true},
     {key:'sarg',label:'Sarg',pflicht:true,excludeBA:['seebestattung','anonyme'],info:'Bei Seebestattung Sondersarg im "Krematorium"-Posten enthalten'},
-    {key:'urne',label:'Urne',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme'],info:'Bei Feuerbestattung, See-, Baum-, anonymer Bestattung'},
+    {key:'urne',label:'Urne',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation'],info:'Bei Feuerbestattung, See-, Baum-, anonymer Bestattung und Direktkremation'},
     {key:'aufbahrung',label:'Aufbahrung (falls gewünscht)',pflicht:false,info:'Optional — falls Angehörige Abschied nehmen wollen'},
-    {key:'krematorium',label:'Krematorium / Einäscherung',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
-    {key:'zweite_lu',label:'Zweite Leichenschau (bei Feuerbestattung Pflicht)',pflicht:false,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme'],info:'Gesetzlich vorgeschrieben — meist im Krematoriumsposten enthalten, manchmal separat ausgewiesen'},
+    {key:'krematorium',label:'Krematorium / Einäscherung',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation']},
+    {key:'zweite_lu',label:'Zweite Leichenschau (bei Feuerbestattung Pflicht)',pflicht:false,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation'],info:'Gesetzlich vorgeschrieben — meist im Krematoriumsposten enthalten, manchmal separat ausgewiesen'},
     {key:'friedhof',label:'Friedhofsgebühren (Grabstelle, Beisetzung, Nutzungsrecht)',pflicht:true,excludeBA:['seebestattung'],info:'Kommunale Gebühren — bei Seebestattung entfällt'},
     {key:'beisetzung',label:'Beisetzungs-Service auf dem Friedhof',pflicht:true,excludeBA:['seebestattung','anonyme']},
     {key:'see_service',label:'Schiffs-/Boots-Service zur Seebestattung',pflicht:true,condBA:['seebestattung'],info:'See-Reederei-Kosten'},
@@ -267,8 +268,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // Grabstein und Grabpflege sind NICHT in baseRange (kommen separat NACH der Bestattung).
   // Werte in EUR, vor Region-Multiplier.
   var SEPARAT_KOSTEN={
-    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung']},
-    krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme']},
+    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','direktkremation']},
+    krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation']},
     trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400}
   };
   // Hinweis-Posten (NICHT in baseRange, kein Abzug — nur Info im Ergebnis)
@@ -460,20 +461,27 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     // V2.1: Adjusted Range — wenn User Posten als "separat" markiert, aus Vergleich rausrechnen
     var baseMin=ba.baseMin, baseMax=ba.baseMax;
+    var origMin=ba.baseMin;
     var separatList=[];
     Object.keys(SEPARAT_KOSTEN).forEach(function(key){
       var sp=SEPARAT_KOSTEN[key];
       if(sp.condBA && sp.condBA.indexOf(state.bestattungsart)===-1)return;
       if(sp.excludeBA && sp.excludeBA.indexOf(state.bestattungsart)>=0)return;
       if(state.separat[key]){
-        baseMin-=sp.max;
-        baseMax-=sp.min;
+        // V3.1 (Range-Collapse-Fix): typischen Mittelwert abziehen — Breite bleibt erhalten,
+        // statt asymmetrisch min/max gegeneinander auszuspielen (was die Range aufblähte).
+        var mid=(sp.min+sp.max)/2;
+        baseMin-=mid;
+        baseMax-=mid;
         separatList.push(sp);
       }
     });
-    // Untergrenze sichern
-    if(baseMin<0)baseMin=200;
-    if(baseMax<baseMin)baseMax=baseMin+1000;
+    // V3.1 Floor: Range darf nicht unter ~35% der Original-Untergrenze kollabieren und behält
+    // eine sinnvolle Mindestbreite — sonst hebelt der Nutzer mit "separat"-Haken unbemerkt den
+    // Unterpreis-Schutz aus (vorher kollabierte sie auf 200–… → immer grün).
+    var floorMin=Math.round(origMin*0.35);
+    if(baseMin<floorMin)baseMin=floorMin;
+    if(baseMax<baseMin*1.4)baseMax=Math.round(baseMin*1.4);
     var rangeMin=Math.round(baseMin*mult/100)*100;
     var rangeMax=Math.round(baseMax*mult/100)*100;
 
@@ -494,77 +502,86 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       return true;
     });
 
-    // V2.3: Ampel-Logik — Default GRÜN, ROT NUR bei kumuliertem RISIKO + keine User-Erklärung
-    var status='green';
-    var reasons=[];
+    // V3.2: GETRENNTE Ampeln — Preis-Plausibilität UND Vollständigkeit sind zwei Dimensionen,
+    // die nicht in eine Lampe gemischt werden dürfen (sonst irreführend).
+    var priceStatus='green', completenessStatus='green';
+    var priceReasons=[], completenessReasons=[];
 
-    // Hat User aktiv erklärt? (separat-Markierung ODER Pauschale)
-    var userHasExplained=state.pauschal===true || Object.keys(state.separat||{}).some(function(k){return state.separat[k];});
+    // V3.2 (Befund 5): Separat-Haken zählen nur als Erklärung, wenn sie den Unterpreis plausibel
+    // decken (Summe der typischen Separat-Beträge ≥ 80 % der Unterpreis-Lücke) — nicht schon bei
+    // einem beliebigen Einzelhaken.
+    var separatSum=separatList.reduce(function(a,sp){return a+(sp.min+sp.max)/2;},0);
+    var userHasExplained=state.pauschal===true;
 
-    // Preis-Signal: nie allein ROT, max GELB. ROT nur in Kombination mit Klärungsbedarf + keine Erklärung + extremer Unterpreis
+    // ---- PREIS-AMPEL ----
     var priceSignal=null; // null | 'low' | 'high'
     var sumRatio=rangeMin>0?sum/rangeMin:1;
     if(sum<rangeMin){
       var diffLow=Math.round((1-sum/rangeMin)*100);
       priceSignal='low';
+      if(separatSum>=(rangeMin-sum)*0.8) userHasExplained=true;
       if(diffLow>=50){
-        status='yellow';
-        reasons.push('Die Summe liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € für '+esc(ba.name)+' in '+esc(state.bundesland)+'; −'+diffLow+' %). Das kann legitim sein (z.B. Direktkremation, Discounter, oder weil Posten separat abgerechnet werden) — lass dir schriftlich bestätigen, was im Preis enthalten ist.');
-      } else if(diffLow>=25){
-        status='yellow';
-        reasons.push('Die Summe liegt unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Frage nach, ob alle für dich relevanten Posten enthalten sind.');
+        priceStatus='yellow';
+        priceReasons.push('Die Summe liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € für '+esc(ba.name)+' in '+esc(state.bundesland)+'; −'+diffLow+' %). Das kann legitim sein (z.B. Direktkremation als eigene Bestattungsart, Discounter, oder weil Posten separat abgerechnet werden) — lass dir schriftlich bestätigen, was im Preis enthalten ist.');
+      } else if(diffLow>=20){
+        priceStatus='yellow';
+        priceReasons.push('Die Summe liegt unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Frage nach, ob alle für dich relevanten Posten enthalten sind.');
       }
     } else if(sum>rangeMax){
       var diffHigh=Math.round((sum/rangeMax-1)*100);
       var sumRatioMax=sum/rangeMax;
       priceSignal='high';
-      // V3 NEW: Sehr extreme Überschreitung (>+100%) → ROT, da auch ein Premium-Paket realistisch maximal +80-90% kostet
       if(sumRatioMax>=1.5){
-        status='red';
-        reasons.push('Die Summe liegt sehr deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'; +'+diffHigh+' %). Selbst ein Premium-Paket liegt meist deutlich unter diesem Wert. Bitte den Bestatter dringend, Posten für Posten aufzuschlüsseln — und hole ein zweites Vergleichsangebot ein.');
+        priceStatus='red';
+        priceReasons.push('Die Summe liegt sehr deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'; +'+diffHigh+' %). Selbst ein Premium-Paket liegt meist deutlich unter diesem Wert. Bitte den Bestatter dringend, Posten für Posten aufzuschlüsseln — und hole ein zweites Vergleichsangebot ein.');
       } else if(diffHigh>=30){
-        status='yellow';
-        reasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Das kann legitim sein (Premium-Sarg, aufwendige Trauerfeier, individueller Grabstein) — lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
-      } else if(diffHigh>=15){
-        status='yellow';
-        reasons.push('Die Summe liegt leicht über dem üblichen Rahmen (+'+diffHigh+' %). Das kann an einer höheren Sarg-/Trauerfeier-/Floristik-Wahl liegen — frag den Bestatter, welche Posten den Preis treiben.');
+        priceStatus='yellow';
+        priceReasons.push('Die Summe liegt deutlich über dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Das kann legitim sein (Premium-Sarg, aufwendige Trauerfeier, individueller Grabstein) — lass dir aufschlüsseln, welche Premium-Posten den Preis treiben.');
+      } else if(diffHigh>=10){
+        // V3.2 (Befund 6): schließt die alte Totzone +0…+15 %.
+        priceStatus='yellow';
+        priceReasons.push('Die Summe liegt etwas über dem üblichen Rahmen (+'+diffHigh+' %). Das kann an einer höheren Sarg-/Trauerfeier-/Floristik-Wahl liegen — frag den Bestatter, welche Posten den Preis treiben.');
       }
     }
 
-    // Klärungsbedarf-Signal (v3: striktere Schwellen, Discounter-Toleranz)
+    // ---- VOLLSTÄNDIGKEITS-AMPEL ----
     // V2.4: nur Pflicht-Posten als Bezugsgröße (sonst verzerrt Ratio durch viele Optionale)
     var klärungsTotal=visible.filter(function(p){return p.pflicht;}).length;
     var klärungsRatio=klärungsTotal>0?klärung.length/klärungsTotal:0;
-
-    // Bei Pauschale: Posten-Liste skip
-    if(!state.pauschal){
-      // ROT NUR bei: extremer Unterpreis (>70%) UND viele unklare Posten UND User hat NICHTS erklärt
-      // Das ist das pathologische Szenario "ich weiß nichts, alles ist undeklariert, Preis macht keinen Sinn"
-      if(sumRatio<0.3 && klärungsRatio>=0.7 && !userHasExplained){
-        status='red';
-        reasons.push('Mehrere Klärungspunkte ('+klärung.length+' von '+klärungsTotal+') kombiniert mit einem auffällig niedrigen Preis. Das ist kein Urteil über den Bestatter — aber bitte gemeinsam mit ihm durchgehen, was im Angebot enthalten ist und was separat dazukommen kann.');
-      } else if(klärung.length>=3 && klärungsRatio>=0.5){
-        if(status==='green')status='yellow';
-        reasons.push('Mehrere Posten sind nicht eindeutig ausgewiesen ('+klärung.length+' von '+klärungsTotal+'). Bei Discount-Angeboten ist das normal — frage einfach beim Bestatter nach, was inkludiert ist und was nicht.');
-      } else if(klärung.length>=1){
-        if(status==='green')status='yellow';
-        reasons.push('Einzelne Posten sind nicht ausgewiesen ('+klärung.length+' Punkte zum Klären). Beim Bestatter-Gespräch kurz ansprechen.');
-      }
-    }
-
-    // V2.4: Pauschal-Flag = NUR Hinweis, KEIN automatischer Gelb-Downgrade.
-    // Eine Pauschale mit Preis-im-Rahmen ist legitim. Reasons werden zugefügt aber Status bleibt GRÜN
-    // wenn kein Preis-Signal oder Klärungsbedarf vorliegt.
     if(state.pauschal){
-      reasons.push('Du hast ein Komplettpaket / eine Pauschale. Falls du vergleichen willst: bitte den Bestatter um eine aufgeschlüsselte Variante — Pauschalen sind nicht automatisch schlecht.');
+      // Pauschale = vollständig per Definition; nur Hinweis, kein Downgrade.
+      completenessReasons.push('Du hast ein Komplettpaket / eine Pauschale. Falls du vergleichen willst: bitte den Bestatter um eine aufgeschlüsselte Variante — Pauschalen sind nicht automatisch schlecht.');
+    } else if(klärung.length>=3 && klärungsRatio>=0.5){
+      completenessStatus='yellow';
+      completenessReasons.push('Mehrere Posten sind nicht eindeutig ausgewiesen ('+klärung.length+' von '+klärungsTotal+'). Bei Discount-Angeboten ist das normal — frage einfach beim Bestatter nach, was inkludiert ist und was nicht.');
+    } else if(klärung.length>=1){
+      completenessStatus='yellow';
+      completenessReasons.push('Einzelne Posten sind nicht ausgewiesen ('+klärung.length+' Punkte zum Klären). Beim Bestatter-Gespräch kurz ansprechen.');
     }
+
+    // ---- Kombiniertes pathologisches Signal: auffällig niedriger Preis + viel unklar + nicht erklärt
+    // → das ist eine PREIS-Warnung (ROT), durch die Unvollständigkeit erhärtet.
+    if(sumRatio<0.4 && klärungsRatio>=0.7 && !userHasExplained){
+      priceStatus='red';
+      priceReasons.push('Der Preis ist auffällig niedrig und gleichzeitig sind mehrere Pflicht-Posten ('+klärung.length+' von '+klärungsTotal+') nicht ausgewiesen. Das ist kein Urteil über den Bestatter — aber geht vor der Entscheidung gemeinsam durch, was enthalten ist und was separat dazukommt.');
+    }
+
+    // Gesamt-Status (für Fragen-Logik + Tracking) = schlechtere der beiden Ampeln
+    var rank={green:0,yellow:1,red:2};
+    var status=rank[priceStatus]>=rank[completenessStatus]?priceStatus:completenessStatus;
+    var reasons=priceReasons.concat(completenessReasons);
 
     return {
       status:status,
+      priceStatus:priceStatus,
+      completenessStatus:completenessStatus,
+      priceReasons:priceReasons,
+      completenessReasons:completenessReasons,
       reasons:reasons,
       rangeMin:rangeMin,
       rangeMax:rangeMax,
       klärung:klärung,
+      klärungsTotal:klärungsTotal,
       separatList:separatList,
       priceSignal:priceSignal,
       sum:sum,
@@ -606,23 +623,28 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var fragen=generateFragen(result);
 
     // V2: Neutrale, klärungs-orientierte Texte. Kein "Lockangebot"-Wording mehr.
-    var statusMap={
-      green:{icon:'✓',title:'Wirkt plausibel',text:'Auf Basis deiner Eingaben wirkt das Angebot im üblichen Rahmen für '+result.ba.name+' in '+state.bundesland+'. Trotzdem sinnvoll: Vor der Entscheidung die Fragen unten mit dem Bestatter durchsprechen.'},
-      yellow:{icon:'?',title:'Ein paar Punkte klären',text:'Auf Basis deiner Eingaben gibt es Punkte, die du vor der Entscheidung mit dem Bestatter besprechen solltest. Das ist KEIN Vorwurf gegen den Bestatter und KEIN Hinweis auf Lockangebote — es heißt nur: das Angebot ist in dieser Form noch nicht vollständig vergleichbar.'},
-      red:{icon:'!',title:'Vor Entscheidung gründlich klären',text:'Auf Basis deiner Eingaben kommen mehrere Klärungspunkte mit einem Preis-Signal zusammen. Das ist nicht automatisch ein schlechtes Angebot — wir empfehlen aber dringend, die Fragen unten gemeinsam mit dem Bestatter durchzugehen, bevor du unterschreibst.'}
+    // V3.2: ZWEI getrennte Ampeln statt einer gemischten.
+    var priceMap={
+      green:{icon:'✓',title:'Preis wirkt plausibel',text:'Die Gesamtsumme liegt im üblichen Rahmen für '+esc(result.ba.name)+' in '+esc(state.bundesland)+'.'},
+      yellow:{icon:'?',title:'Preis: nachfragen',text:'Die Summe weicht vom üblichen Rahmen ab. Das kann legitim sein (Premium-Leistungen, Direktkremation, separat abgerechnete Posten) — klär die Gründe mit dem Bestatter.'},
+      red:{icon:'!',title:'Preis auffällig',text:'Die Summe weicht deutlich vom üblichen Rahmen ab. Lass dir das Angebot vor der Entscheidung Posten für Posten erklären und hol ein Vergleichsangebot ein.'}
     };
-    var s=statusMap[result.status];
+    var compMap={
+      green:{icon:'✓',title:'Angebot wirkt vollständig',text:state.pauschal?'Du hast ein Komplettpaket / eine Pauschale angegeben — als Paket gilt sie als vollständig.':'Die abgefragten Pflicht-Posten sind ausgewiesen.'},
+      yellow:{icon:'?',title:'Ein paar Posten klären',text:'Einzelne Pflicht-Posten waren auf dem Angebot nicht eindeutig ausgewiesen — siehe Liste unten. Das ist KEIN Vorwurf, oft sind sie nur anders gebündelt.'},
+      red:{icon:'!',title:'Mehrere Posten unklar',text:'Mehrere Pflicht-Posten sind nicht ausgewiesen — bitte vor der Entscheidung klären.'}
+    };
+    var ps=priceMap[result.priceStatus], cs=compMap[result.completenessStatus];
 
     var html='';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:24px;font-weight:700;margin:32px 0 8px">Dein Angebots-Check</h2>';
     var rangeNote=result.separatList.length>0?' · <em style="color:var(--mr-text-muted)">(Rahmen angepasst um '+result.separatList.length+' separat-abgerechnete Posten)</em>':'';
     html+='<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">'+esc(result.ba.name)+' in '+esc(state.bundesland)+' · Angebots-Gesamtsumme: <strong>'+fmt(result.sum)+' €</strong> · vergleichbarer Rahmen: <strong>'+fmt(result.rangeMin)+'–'+fmt(result.rangeMax)+' €</strong>'+rangeNote+'</p>';
 
-    // Ampel
-    html+='<div class="ampel-box '+result.status+'">';
-    html+='<div class="ampel-icon">'+s.icon+'</div>';
-    html+='<div class="ampel-title">'+s.title+'</div>';
-    html+='<p class="ampel-text">'+s.text+'</p>';
+    // Zwei Ampeln: Preis + Vollständigkeit (responsiv, stapeln auf schmal)
+    html+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0">';
+    html+='<div class="ampel-box '+result.priceStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Preis-Einschätzung</div><div class="ampel-icon">'+ps.icon+'</div><div class="ampel-title" style="font-size:19px">'+ps.title+'</div><p class="ampel-text">'+ps.text+'</p></div>';
+    html+='<div class="ampel-box '+result.completenessStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Vollständigkeit</div><div class="ampel-icon">'+cs.icon+'</div><div class="ampel-title" style="font-size:19px">'+cs.title+'</div><p class="ampel-text">'+cs.text+'</p></div>';
     html+='</div>';
 
     // Was du beim Bestatter klären solltest (Zusammenfassung)
