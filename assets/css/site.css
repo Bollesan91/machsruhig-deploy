@@ -120,14 +120,7 @@ ul.mr-list{list-style:disc}
 .mr-footer__nav a:hover{color:var(--mr-primary,#7A6B5D)}
 .mr-footer__note{font-size:12px;color:var(--mr-text-muted,#73655A);line-height:1.6;margin:0}
 .mr-breadcrumb{max-width:720px;margin:0 auto;padding:16px 20px 0}
-/* iter-18 mobile-nav (2026-06-04): Hamburger statt gestapelter Liste */
-@media(max-width:760px){
-  .mr-nav-inner{flex-wrap:wrap;gap:0;padding-top:8px;padding-bottom:8px}
-  .mr-nav-toggle{display:inline-flex !important;align-items:center;margin-left:auto}
-  .mr-nav-links{display:none;flex-basis:100%;flex-direction:column;gap:0;padding:6px 0 4px}
-  .mr-nav.open .mr-nav-links{display:flex}
-  .mr-nav-links a{padding:11px 6px;font-size:15px;border-radius:6px}
-}
+/* iter-18 mobile-nav ENTFERNT (2026-06-09): konfligierte mit kanonischem @media(820px) -> zweizeilige Nav bei ~760px/Zoom */
 /* Compat: alle gedrifteten Design-Tokens -> Brand-Palette */
 :root{
   /* Farben (Text/Ink) */ --ink:#2D2319;--ink-soft:#4A3F33;--color-ink:#2D2319;--color-text:#2D2319;--mr-ink:#2D2319;--mr-ink-soft:#4A3F33;--mr-fg:#2D2319;

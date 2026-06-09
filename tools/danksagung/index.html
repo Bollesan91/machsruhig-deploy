@@ -91,9 +91,8 @@
 <script src="/vendor/react-dom.production.min.js"></script>
 <script src="/vendor/babel.min.js"></script>
 
-<link rel="stylesheet" href="/assets/css/site.css?v=20260609">
-<style>
-/* Wizard Container */
+<link rel="stylesheet" href="/assets/css/site.css?v=20260610">
+<style>/* Wizard Container */
 .wizard-container{background:var(--mr-bg-card);border-radius:var(--mr-radius);padding:40px;margin:20px 0;border:1px solid var(--mr-border)}
 /* Progress Bar */
 .progress-bar{display:flex;gap:8px;margin-bottom:32px;align-items:center}
@@ -188,10 +187,8 @@
 .btn-secondary:hover{border-color:var(--mr-accent);color:var(--mr-text)}
 .btn-group{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
 .btn-group .btn{flex:1;min-width:140px}
-@media(max-width:520px){
-  .btn-group{flex-direction:column}
-  .btn-group .btn{flex:none;width:100%}
-}
+@media(max-width:520px){.btn-group{flex-direction:column}
+.btn-group .btn{flex:none;width:100%}}
 /* Tip Boxes */
 .tip{background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-primary);border-radius:8px;padding:16px 20px;margin:20px 0;font-size:14px;line-height:1.6}
 .tip strong{color:var(--mr-text)}
@@ -221,10 +218,8 @@
 /* Export Controls */
 .export-controls{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
 .export-controls .btn{flex:1;min-width:160px}
-@media(max-width:520px){
-  .export-controls{flex-direction:column}
-  .export-controls .btn{flex:none;width:100%}
-}
+@media(max-width:520px){.export-controls{flex-direction:column}
+.export-controls .btn{flex:none;width:100%}}
 /* Copy Feedback */
 .copy-feedback{
   display:inline-block;
@@ -277,11 +272,9 @@
 .mr-ai-consent-modal .btn-grant{background:var(--mr-primary);color:#fff;border-color:var(--mr-primary)}
 .mr-ai-consent-modal .btn-grant:hover{background:var(--mr-primary-hover)}
 .mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted);border-color:var(--mr-border)}
-.mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}
-</style>
+.mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}</style>
 <script defer src="/assets/js/mr-ai.js"></script>
-<style>
-@media print{
+<style>@media print{
   /* R-A 15 Fix: Print dumpt nicht mehr alle 3 Varianten + Privacy-Box. Nur die empfohlene Variante wird gedruckt. */
   .no-print,.mr-nav,.mr-footer,.wizard-buttons,.export-controls,.btn-group,.btn-secondary,.faq-section,.privacy-notice,.info-box,.tip,.mr-ai-section,.mr-ai-consent-modal,.ai-variant-actions{display:none!important}
   body{background:#fff!important;color:#000!important;font-size:11pt;line-height:1.6}
@@ -293,26 +286,7 @@
   body.print-all .text-section{display:block;page-break-inside:avoid;margin-bottom:16px}
   .text-output{border:none;background:#fff;padding:0}
   .section-hint{font-style:italic;color:#666}
-}
-
-/* iter-15 nav-slim (2026-06-04): 7-Link-Nav, an Inhaltsbreite (720px) ausgerichtet */
-.mr-nav-inner{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:flex-start;gap:6px 14px;flex-wrap:wrap;min-height:56px}
-.mr-nav-logo{margin-right:auto;font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:700;color:var(--mr-text,#2D2319);text-decoration:none;white-space:nowrap}
-.mr-breadcrumb{max-width:720px;margin:0 auto;padding:16px 20px 0}
-
-/* iter-17 nav-align (2026-06-04): nav-inner Box-Model = .mr-content -> linke Kante bündig */
-.mr-nav{padding-left:0;padding-right:0}
-.mr-nav-inner{padding-left:20px;padding-right:20px}
-
-/* iter-18 mobile-nav (2026-06-04): Hamburger statt gestapelter Liste */
-@media(max-width:760px){
-  .mr-nav-inner{flex-wrap:wrap;gap:0;padding-top:8px;padding-bottom:8px}
-  .mr-nav-toggle{display:inline-flex !important;align-items:center;margin-left:auto}
-  .mr-nav-links{display:none;flex-basis:100%;flex-direction:column;gap:0;padding:6px 0 4px}
-  .mr-nav.open .mr-nav-links{display:flex}
-  .mr-nav-links a{padding:11px 6px;font-size:15px;border-radius:6px}
-}
-</style>
+}</style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
