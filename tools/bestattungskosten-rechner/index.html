@@ -142,7 +142,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       </div>
 
       <h1 style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;margin:24px 0 8px">Bestattungskosten-Rechner</h1>
-      <p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Berechne in drei Schritten, was eine Bestattung in deiner Region typischerweise kostet — Bestattungsart, Bundesland und Extras. Ergebnis als Bandbreite mit Aufschlüsselung. Komplett im Browser, keine Daten verlassen dein Gerät.</p>
+      <p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Berechne in drei Schritten, was eine Bestattung in deiner Region typischerweise kostet — Bestattungsart, Bundesland und Extras. Ergebnis als Bandbreite mit Aufschlüsselung. Die Berechnung läuft komplett in deinem Browser — deine Eingaben werden dabei nicht übertragen oder gespeichert. (Nur wenn du am Ende das optionale Formular ausfüllst, übermittelst du die dort eingegebenen Kontaktdaten.)</p>
 
       <div role="note" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:14px 18px;margin:24px 0;font-size:13px;line-height:1.65;color:var(--mr-text-muted)" class="no-print"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Hinweis zum Ergebnis</strong>Das Tool liefert Schätzwerte basierend auf deutschen Durchschnittsdaten (BDB, Stiftung Warentest, Aeternitas e.V.) — kein verbindliches Angebot. Tatsächliche Preise verhandelst du mit Bestatter und Friedhofsverwaltung.</div>
 
@@ -896,6 +896,13 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<div style="display:flex;gap:12px;margin:24px 0">';
     html += '<button type="button" class="btn" id="btn-print">🖨️ Als PDF speichern</button>';
     html += '<button type="button" class="btn btn-secondary" data-goto-step="0">← Neuer Rechner</button>';
+    html += '</div>';
+
+    // Angebotsprüfer-Callout — high-intent Folge-Schritt (konkretes Angebot prüfen)
+    html += '<div class="no-print" style="background:var(--mr-safety);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:24px 28px;margin:32px 0;text-align:center">';
+    html += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:6px">Schon ein konkretes Bestatter-Angebot bekommen?</h2>';
+    html += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:16px;max-width:560px;margin-left:auto;margin-right:auto">Der Rechner zeigt den üblichen <em>Rahmen</em>. Wenn dir bereits ein konkretes Angebot oder eine Rechnung vorliegt: prüfe in 3 Minuten, ob Preis, Posten und Fremdleistungen plausibel sind — mit Ampel und einer Fragenliste für den Bestatter.</p>';
+    html += '<a href="/tools/angebotspruefer/" data-next-step="/tools/angebotspruefer/" style="display:inline-block;padding:14px 28px;background:var(--mr-primary);color:#fff;border-radius:99px;text-decoration:none;font-weight:600;font-size:15px">Angebot prüfen →</a>';
     html += '</div>';
 
     // Tool-Kette: Nächster sinnvoller Schritt
