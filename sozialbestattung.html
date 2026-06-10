@@ -23,7 +23,7 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org","@graph":[
-    {"@type":"Article","headline":"Sozialbestattung nach § 74 SGB XII — wann das Sozialamt zahlt","description":"Wann das Sozialamt die Bestattungskosten übernimmt, wer Anspruch hat und wie der Antrag läuft.","image":"https://machsruhig.de/assets/og-image.png","mainEntityOfPage":"https://machsruhig.de/sozialbestattung","author":{"@type":"Organization","name":"machsruhig.de"},"publisher":{"@type":"Organization","name":"machsruhig.de","logo":{"@type":"ImageObject","url":"https://machsruhig.de/assets/logo.png","width":600,"height":60}},"datePublished":"2026-05-26","dateModified":"2026-06-01"},
+    {"@type":"Article","headline":"Sozialbestattung nach § 74 SGB XII — wann das Sozialamt zahlt","description":"Wann das Sozialamt die Bestattungskosten übernimmt, wer Anspruch hat und wie der Antrag läuft.","image":"https://machsruhig.de/assets/og-image.png","mainEntityOfPage":"https://machsruhig.de/sozialbestattung","author":{"@type":"Organization","name":"machsruhig.de"},"publisher":{"@type":"Organization","name":"machsruhig.de","logo":{"@type":"ImageObject","url":"https://machsruhig.de/assets/logo.png","width":600,"height":60}},"datePublished":"2026-05-26","dateModified":"2026-06-10"},
     {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Sozialbestattung","item":"https://machsruhig.de/sozialbestattung"}]},
     {"@type":"FAQPage","mainEntity":[
       {"@type":"Question","name":"Was ist eine Sozialbestattung?","acceptedAnswer":{"@type":"Answer","text":"Als Sozialbestattung bezeichnet man eine Bestattung, deren erforderliche Kosten das Sozialamt nach § 74 SGB XII übernimmt — ganz oder teilweise. Voraussetzung ist, dass den Bestattungspflichtigen nicht zugemutet werden kann, die Kosten selbst zu tragen. Die Angehörigen beauftragen dabei selbst einen Bestatter und können die Bestattung mitgestalten. Es ist kein eigener Bestattungstyp, sondern eine Form der Kostenübernahme."}},
@@ -54,6 +54,11 @@
 .mr-related a:hover{border-color:var(--mr-accent);box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .mr-related strong{display:block;color:var(--mr-text);font-size:14px;margin-bottom:2px}
 .mr-related span{display:block;color:var(--mr-text-muted);font-size:13px}
+@media print{
+  body.print-checkliste *{visibility:hidden}
+  body.print-checkliste #unterlagen-checkliste, body.print-checkliste #unterlagen-checkliste *{visibility:visible}
+  body.print-checkliste #unterlagen-checkliste{position:absolute;top:0;left:0;width:100%;border:none}
+}
 </style>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -81,8 +86,7 @@
     <nav class="mr-breadcrumb" aria-label="Brotkrumen"><a href="/">Start</a> › <a href="/bestattungskosten">Bestattungskosten</a> › Sozialbestattung</nav>
     <h1>Sozialbestattung: Wenn das Sozialamt die Bestattung übernimmt</h1>
     <p class="lead">Wenn ein Mensch stirbt und die Angehörigen die Bestattungskosten nicht tragen können, muss niemand die Beisetzung aus eigener Not vorfinanzieren. § 74 SGB XII regelt, dass das Sozialamt die erforderlichen Kosten übernehmen kann. Diese Seite erklärt, wer Anspruch hat, was geprüft wird und wie der Antrag läuft — als Orientierung, nicht als Rechtsberatung.</p>
-    <p class="meta">Lesezeit ca. 9 Min · Stand Mai 2026</p>
-    <p class="meta byline">Erstellt von machsruhig.de Redaktion · Stand: Juni 2026</p>
+    <p class="meta">Redaktion machsruhig.de · Lesezeit ca. 9 Min · Stand: Juni 2026</p>
   </header>
 
   <div class="mr-keyfacts">
@@ -97,6 +101,25 @@
       <li>Die übernommenen Kosten liegen in der Praxis oft bei 1.500–3.500 €, variieren aber stark mit den kommunalen Friedhofsgebühren.</li>
     </ul>
   </div>
+
+  <section class="mr-section" id="schnellcheck" style="background:var(--mr-bg-card);border:2px solid var(--mr-accent);border-radius:var(--mr-radius);padding:24px 28px">
+    <h2 style="border-bottom:none;padding-bottom:0;margin-bottom:8px">Zahlt das Sozialamt in deinem Fall? Der Schnell-Check</h2>
+    <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:14px">Entscheidend ist die wirtschaftliche Lage der Person, die zahlen müsste — also deine, wenn du erbst oder bestattungspflichtig bist. Nicht die der verstorbenen Person.</p>
+    <div style="display:grid;gap:10px">
+      <div style="background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:10px;padding:14px 18px">
+        <strong>Du beziehst selbst Sozialhilfe oder Grundsicherung (SGB XII)?</strong>
+        <p style="font-size:14px;margin:4px 0 0">Dann wird die Unzumutbarkeit regelmäßig anerkannt — stelle den Antrag. Sammle die Unterlagen aus der Checkliste unten.</p>
+      </div>
+      <div style="background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:10px;padding:14px 18px">
+        <strong>Du beziehst Bürgergeld (SGB II) oder lebst von geringem Einkommen ohne verwertbares Vermögen?</strong>
+        <p style="font-size:14px;margin:4px 0 0">Starkes Indiz für die Übernahme, aber Einzelfallprüfung — Antrag stellen lohnt sich. Eine Sterbegeld- oder Lebensversicherung der verstorbenen Person wird vorrangig angerechnet.</p>
+      </div>
+      <div style="background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:10px;padding:14px 18px">
+        <strong>Du hast mittleres oder höheres Einkommen?</strong>
+        <p style="font-size:14px;margin:4px 0 0">Dann ist eine Übernahme unwahrscheinlich — bei besonderen Belastungen ist im Einzelfall eine teilweise Übernahme möglich. Den Kostenrahmen senken hilft trotzdem: <a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary)">Kostenrechner</a> und <a href="/tools/angebotspruefer/" style="color:var(--mr-primary)">Angebotsprüfer</a>.</p>
+      </div>
+    </div>
+  </section>
 
   <section class="mr-section">
     <h2>Was ist eine Sozialbestattung?</h2>
@@ -173,6 +196,22 @@
       <li>gegebenenfalls Mietvertrag, Kontoauszüge oder weitere Belege zur wirtschaftlichen Lage</li>
     </ul>
     <p>Die Bearbeitung kann mehrere Wochen dauern. Wer früh den Kontakt sucht und vollständige Unterlagen einreicht, beschleunigt das Verfahren in der Regel.</p>
+    <div id="unterlagen-checkliste" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin:16px 0">
+      <h3 style="margin-top:0">Unterlagen-Checkliste für den Antrag</h3>
+      <ul style="list-style:none;margin:12px 0;padding:0;font-size:14.5px;line-height:2">
+        <li>☐ Sterbeurkunde</li>
+        <li>☐ Kostenvoranschlag oder Rechnung des Bestatters</li>
+        <li>☐ Einkommensnachweise der antragstellenden Person (z.&nbsp;B. Lohnabrechnung, Renten- oder Leistungsbescheid)</li>
+        <li>☐ Vermögensnachweise / Kontoauszüge der letzten Monate</li>
+        <li>☐ Falls vorhanden: Bescheid über SGB-II- oder SGB-XII-Leistungen</li>
+        <li>☐ Falls erfolgt: Nachweis über die Erbausschlagung (Nachlassgericht)</li>
+        <li>☐ Falls verlangt: Mietvertrag, weitere Belege zur wirtschaftlichen Lage</li>
+        <li>☐ Falls vorhanden: Nachweise zu Sterbegeld- oder Lebensversicherung der verstorbenen Person (wird vorrangig angerechnet)</li>
+      </ul>
+      <p style="font-size:13.5px;color:var(--mr-text-muted);margin:10px 0">Zuständig: Sozialamt am Sterbeort — bezog die verstorbene Person zuletzt Sozialhilfe, der bisherige Leistungsträger. Notiere dir hier Amt, Aktenzeichen und Ansprechperson:</p>
+      <p style="font-size:14px;line-height:2.2;margin:0">Sozialamt: ______________________________ &nbsp; Telefon: ____________________<br>Aktenzeichen: ____________________ &nbsp; Ansprechperson: ____________________</p>
+      <button type="button" class="no-print" onclick="document.body.classList.add('print-checkliste');window.print();" style="margin-top:16px;background:var(--mr-primary);color:#fff;border:none;border-radius:99px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">🖨️ Checkliste drucken / als PDF speichern</button>
+    </div>
     <div class="mr-hint">
       <strong>Vorgehen bei Eilfall:</strong> Wenn die Bestattung nicht warten kann, ist eine mögliche Strategie, den strittigen Kostenanteil zunächst unter Vorbehalt zu zahlen oder die Beauftragung vorzunehmen und den Antrag parallel laufen zu lassen. So lässt sich Zeitdruck von der Kostenfrage entkoppeln. Ob das im Einzelfall ratsam ist, hängt von der konkreten Situation ab.
     </div>
@@ -209,8 +248,8 @@
     </ul>
     <p>Für die Details zu deinem Bundesland verlinken wir auf die jeweiligen Landesseiten — dort finden sich auch Hinweise zum örtlichen Verfahren:</p>
     <div class="mr-related-grid" style="margin-top:8px">
-      <a href="/bestatter-in-nordrhein-westfalen" style="display:block;background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:8px;padding:12px 16px;text-decoration:none"><strong style="display:block;color:var(--mr-text);font-size:14px">Bestattungsrecht NRW</strong><span style="display:block;color:var(--mr-text-muted);font-size:13px">Bestattungspflicht und Fristen in Nordrhein-Westfalen</span></a>
-      <a href="/bestatter-in-bayern" style="display:block;background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:8px;padding:12px 16px;text-decoration:none"><strong style="display:block;color:var(--mr-text);font-size:14px">Bestattungsrecht Bayern</strong><span style="display:block;color:var(--mr-text-muted);font-size:13px">Bestattungspflicht und Fristen in Bayern</span></a>
+      <a href="/bestattung-in/nordrhein-westfalen/" style="display:block;background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:8px;padding:12px 16px;text-decoration:none"><strong style="display:block;color:var(--mr-text);font-size:14px">Bestattungsrecht NRW</strong><span style="display:block;color:var(--mr-text-muted);font-size:13px">Bestattungspflicht und Fristen in Nordrhein-Westfalen</span></a>
+      <a href="/bestattung-in/bayern/" style="display:block;background:var(--mr-bg);border:1px solid var(--mr-border);border-radius:8px;padding:12px 16px;text-decoration:none"><strong style="display:block;color:var(--mr-text);font-size:14px">Bestattungsrecht Bayern</strong><span style="display:block;color:var(--mr-text-muted);font-size:13px">Bestattungspflicht und Fristen in Bayern</span></a>
     </div>
   </section>
 
@@ -269,7 +308,7 @@
 
   <div class="mr-sources">
     <h2>Quellen &amp; Stand</h2>
-    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:12px;line-height:1.6">Eigene Aufbereitung Stand Mai 2026 auf Basis der folgenden Quellen. Genannte Beträge und Spannen sind Erfahrungs- und Orientierungswerte aus Rechtsprechung und Verbraucherberatung, keine garantierten Zusagen. Bestattungsrecht ist Ländersache und die Bewertung im Einzelfall liegt beim zuständigen Sozialamt.</p>
+    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:12px;line-height:1.6">Eigene Aufbereitung Stand Juni 2026 auf Basis der folgenden Quellen. Genannte Beträge und Spannen sind Erfahrungs- und Orientierungswerte aus Rechtsprechung und Verbraucherberatung, keine garantierten Zusagen. Bestattungsrecht ist Ländersache und die Bewertung im Einzelfall liegt beim zuständigen Sozialamt.</p>
     <ul>
       <li><a href="https://www.gesetze-im-internet.de/sgb_12/__74.html" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary);text-decoration:none">§ 74 SGB XII</a> — Übernahme der erforderlichen Bestattungskosten (Primärtext)</li>
       <li><a href="https://www.gesetze-im-internet.de/bgb/__1968.html" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary);text-decoration:none">§ 1968 BGB</a> — Erbenhaftung für die Beerdigungskosten</li>
@@ -316,5 +355,6 @@
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall/">Checkliste Todesfall</a><a href="/tools/bestattungskosten-rechner/">Kostenrechner</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Mai 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates &amp; Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
 <script>/*iter-18-navjs*/(function(){var b=document.querySelector(".mr-nav-toggle"),n=document.querySelector(".mr-nav");if(b&&n){b.setAttribute("aria-expanded","false");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})}})();</script>
+<script>window.addEventListener('afterprint',function(){document.body.classList.remove('print-checkliste');});</script>
 </body>
 </html>
