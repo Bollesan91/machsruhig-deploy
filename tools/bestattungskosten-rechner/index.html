@@ -443,13 +443,18 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     anonyme:          {name: 'Anonyme Bestattung',     desc: 'Beisetzung ohne Namensgrab', icon: '🤐'}
   };
 
+  // Modell V2 (2026-06-10): Friedhofs-Faktor je Bundesland, verankert an den
+  // Friedhofsgebuehren der Landeshauptstadt (Aeternitas e.V., Stand 01/2025,
+  // 20 Jahre Nutzungszeit, Mittel ueber 6 Grabarten, spaltennormiert).
+  // Wirkt NUR auf ortsgebundene Posten (s. LOCAL_FEE_KEYS) — Herleitung:
+  // /methodik#kostenmodell + _dev/audit/bundesland-modell-v2.py
   var REGIONAL_MULTIPLIERS = {
-    'Baden-Württemberg': 1.20, 'Bayern': 1.22, 'Berlin': 1.15, 'Brandenburg': 0.80,
-    'Bremen': 1.05, 'Hamburg': 1.20, 'Hessen': 1.15, 'Mecklenburg-Vorpommern': 0.78,
-    'Niedersachsen': 1.02, 'Nordrhein-Westfalen': 1.05, 'Rheinland-Pfalz': 0.95,
-    'Saarland': 0.90, 'Sachsen': 0.82, 'Sachsen-Anhalt': 0.78, 'Schleswig-Holstein': 0.95,
-    'Thüringen': 0.80
+    'Baden-Württemberg': 1.13, 'Bayern': 1.76, 'Berlin': 0.48, 'Brandenburg': 0.68,
+    'Bremen': 0.94, 'Hamburg': 1.12, 'Hessen': 1.05, 'Mecklenburg-Vorpommern': 0.91,
+    'Niedersachsen': 1.13, 'Nordrhein-Westfalen': 1.36, 'Rheinland-Pfalz': 0.91, 'Saarland': 1.24,
+    'Sachsen': 0.60, 'Sachsen-Anhalt': 1.15, 'Schleswig-Holstein': 0.70, 'Thüringen': 0.99
   };
+  var LOCAL_FEE_KEYS = {friedhofsgebuehr:1, friedhofsgebuehr_urne:1, friedhofsgebuehr_anonym:1, beisetzung:1};
 
   var KOSTENMODELL = {
     erdbestattung: {
@@ -714,8 +719,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         qualityMult = GRAB_MULT[state.grabGrab] || 1.0;
       }
 
-      var min = Math.round(cost.min * multiplier * qualityMult);
-      var max = Math.round(cost.max * multiplier * qualityMult);
+      // V2: Regionalfaktor nur auf ortsgebundene Posten (Friedhof/Beisetzung)
+      var regMult = LOCAL_FEE_KEYS[key] ? multiplier : 1.0;
+      var min = Math.round(cost.min * regMult * qualityMult);
+      var max = Math.round(cost.max * regMult * qualityMult);
       items.push({
         name: COST_MAPPING[key].label,
         category: COST_MAPPING[key].category,
