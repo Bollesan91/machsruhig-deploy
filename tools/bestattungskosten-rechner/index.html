@@ -440,7 +440,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     feuerbestattung:  {name: 'Feuerbestattung',        desc: 'Einäscherung mit Urnenbeisetzung', icon: '🔥'},
     seebestattung:    {name: 'Seebestattung',          desc: 'Beisetzung der Asche in der Nordsee', icon: '🌊'},
     baumbestattung:   {name: 'Baum- / Waldbestattung', desc: 'Beisetzung in Friedwald', icon: '🌳'},
-    anonyme:          {name: 'Anonyme Bestattung',     desc: 'Beisetzung ohne Namensgrab', icon: '🤐'}
+    anonyme:          {name: 'Anonyme Bestattung',     desc: 'Beisetzung ohne Namensgrab', icon: '🕊'}
   };
 
   // Modell V2 (2026-06-10): Friedhofs-Faktor je Bundesland, verankert an den
@@ -812,6 +812,29 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
 
     var ba = BESTATTUNGSARTEN[state.bestattungsart];
+    // R4: Einordnung je Kostenblock — Badge (fix/vergleichbar/optional) + Sparhebel
+    var _ba = state.bestattungsart;
+    var _friedhofMeta;
+    if (_ba === 'seebestattung') {
+      _friedhofMeta = {badge:'Anbieterpreis', tipp:'Reederei-Leistungen sind vergleichbar — Preise und Leistungsumfang unterscheiden sich je Anbieter.'};
+    } else if (_ba === 'baumbestattung') {
+      _friedhofMeta = {badge:'Anbieterpreis', tipp:'Wald-Anbieter (z. B. FriedWald, RuheForst) haben eigene Preislisten — Baumart und Platz bestimmen den Preis.'};
+    } else if (_ba === 'erdbestattung') {
+      _friedhofMeta = {badge:'fix per Satzung', tipp:'Sparhebel: Grabart (z. B. Reihengrab statt Wahlgrab) und Friedhofswahl — die Gebühr selbst ist nicht verhandelbar.'};
+    } else {
+      _friedhofMeta = {badge:'fix per Satzung', tipp:'Sparhebel: Grabart (z. B. Urnenreihengrab) und Friedhofswahl — die Gebühr selbst ist nicht verhandelbar.'};
+    }
+    var CAT_META = {
+      'Bestatterleistungen': {badge:'vergleichbar', tipp:'Sparhebel: 2–3 Angebote vergleichen — hier unterscheiden sich Anbieter am stärksten.'},
+      'Sarg/Urne':           {badge:'wählbar',      tipp:'Sparhebel: einfache Modelle sind genauso würdevoll — Materialwahl macht hunderte Euro aus.'},
+      'Kremierung':          {badge:'Preis je Krematorium', tipp:'Kommunale Krematorien rechnen nach Gebührensatzung ab, private nach Preisliste — über die Wahl des Krematoriums teils beeinflussbar.'},
+      'Friedhof':            _friedhofMeta,
+      'Trauerfeier':         {badge:'optional',     tipp:'Sparhebel: Umfang frei gestaltbar — eine kleine Feier ist genauso würdig.'},
+      'Grabstein':           {badge:'optional, später', tipp:'Sparhebel: muss nicht sofort entschieden werden — in Ruhe vergleichen, oft erst nach Monaten nötig.'},
+      'Grabpflege':          {badge:'gestaltbar',   tipp:'Sparhebel: Eigenpflege statt Dauergrabpflege-Vertrag; pflegeleichte Grabarten wählen.'},
+      'Extras':              {badge:'optional',     tipp:'Sparhebel: Anzeigen, Blumen und Karten lassen sich klein halten oder selbst organisieren.'},
+      'Sonstiges':           {badge:'optional',     tipp:'Sparhebel: Posten einzeln hinterfragen — nicht alles ist nötig.'}
+    };
     var html = '<div class="results-container">';
     html += '<div class="result-header">';
     html += '<h2>Deine geschätzten Bestattungskosten</h2>';
@@ -825,6 +848,35 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<div><strong>' + fmt(costs.maxTotal) + ' €</strong></div>';
     html += '</div></div>';
 
+    // R4b: Einordnung mathematisch geschlossen — Vergleichssumme aus den Items
+    // OHNE Grabpflege und auf Faktor 1 zurückgerechnet, gegen exakte Komponentensummen.
+    // Schwellen (±15 % / +30 % um die Mitte) dokumentiert in /methodik#kostenmodell.
+    var BASIS = {
+      erdbestattung:   {min:3700, max:9300, label:'Erdbestattung'},
+      feuerbestattung: {min:3380, max:8200, label:'Feuerbestattung'},
+      seebestattung:   {min:2850, max:6200, label:'Seebestattung'},
+      baumbestattung:  {min:3050, max:7000, label:'Baumbestattung'},
+      anonyme:         {min:1800, max:3350, label:'anonyme Bestattung'}
+    };
+    var basis = BASIS[state.bestattungsart];
+    if (basis) {
+      var _mult = REGIONAL_MULTIPLIERS[state.bundesland] || 1.0;
+      var compMin = 0, compMax = 0;
+      costs.items.forEach(function(it){
+        if (it.key === 'grabpflege') return;
+        var f = LOCAL_FEE_KEYS[it.key] ? _mult : 1.0;
+        compMin += it.min / f; compMax += it.max / f;
+      });
+      var mid = (compMin + compMax) / 2;
+      var basisMid = (basis.min + basis.max) / 2;
+      var hasExtras = state.aufbahrung || state.trauerfeier || state.blumenschmuck || state.grabstein || state.traueranzeige || state.sargQualitaet === 'hochwertig' || state.grabGrab === 'Doppelgrab';
+      var lage;
+      if (mid < basisMid * 0.85) lage = 'bewusst reduziert — ohne Extras bzw. mit günstigen Optionen';
+      else if (mid > basisMid * 1.3) lage = hasExtras ? 'eher umfangreich — die gewählten Extras treiben die Summe' : 'am oberen Rand des Basis-Szenarios';
+      else lage = 'im typischen Bereich des Basis-Szenarios';
+      html += '<p class="no-print" style="font-size:13.5px;color:var(--mr-text-muted);margin:10px 0 0;line-height:1.6">Zur Einordnung: Ohne Grabpflege und vor Regionalfaktor gerechnet liegt deine Auswahl <strong style="color:var(--mr-text)">' + lage + '</strong> (Komponentensumme ' + esc(basis.label) + ': ca. ' + fmt(basis.min) + '–' + fmt(basis.max) + ' €). Wie dein Bundesland liegt, zeigt der <a href="/bestattungskosten-nach-bundesland" style="color:var(--mr-primary)">Bundesland-Vergleich</a>.</p>';
+    }
+
     html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:32px 0 16px">Kostenaufschlüsselung</h3>';
 
     // Welle A.3: 5-Ebenen-Kostenlogik-Erklärung (compact, expandable)
@@ -835,7 +887,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<ol style="padding-left:20px;margin:0">';
     html += '<li><strong style="color:var(--mr-text)">Bestatterleistung</strong> — Was der Bestatter selbst abrechnet (Beratung, Organisation, Sarg/Urne, Überführung, Aufbahrung).</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Fremdleistungen</strong> — Krematorium, Floristik, Anzeigen, Druckaufträge — der Bestatter rechnet sie durch, der Preis kommt vom Drittanbieter.</li>';
-    html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Friedhofsgebühren</strong> — Grab, Nutzung, Beisetzung, Verlängerung — kommunale Gebühren, regional sehr unterschiedlich (300–400 %).</li>';
+    html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Friedhofsgebühren</strong> — Grab, Nutzung, Beisetzung, Verlängerung — kommunale Gebühren, regional sehr unterschiedlich (zwischen Kommunen teils um ein Vielfaches).</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Zusatzkosten</strong> — Grabstein, Grabpflege über Jahre, Trauerfeier, Anzeigen — fallen oft <em>nach</em> der Bestattung an.</li>';
     html += '<li style="margin-top:4px"><strong style="color:var(--mr-text)">Gesamtkosten</strong> — Was die Familie am Ende wirklich zahlt. Das ist die Zahl oben.</li>';
     html += '</ol>';
@@ -847,12 +899,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       var catMax = categoryTotals[cat].max;
       html += '<div class="cost-category">';
       html += '<div class="cost-category-header" role="button" tabindex="0" aria-expanded="false" aria-label="Kategorie ' + esc(cat) + ' ein- oder ausklappen" data-toggle="1">';
-      html += '<strong>' + esc(cat) + '</strong>';
+      var meta = CAT_META[cat];
+      html += '<strong>' + esc(cat) + (meta ? ' <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:rgba(94,80,71,0.12);color:#5E5047;border-radius:99px;padding:2px 8px;vertical-align:middle;margin-left:6px">' + esc(meta.badge) + '</span>' : '') + '</strong>';
       html += '<div style="display:flex;gap:16px;align-items:center">';
       html += '<span class="cost-category-total">' + fmt(catMin) + ' – ' + fmt(catMax) + ' €</span>';
       html += '<div class="cost-category-toggle">▼</div>';
       html += '</div></div>';
       html += '<div class="cost-category-body">';
+      if (meta) html += '<div style="font-size:12.5px;color:var(--mr-text-muted);padding:8px 0 4px;line-height:1.5">' + esc(meta.tipp) + '</div>';
       categories[cat].forEach(function(item){
         html += '<div class="cost-item">';
         html += '<span class="cost-item-name">' + esc(item.name) + '</span>';
@@ -884,7 +938,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if (_baLow) {
       html += '<p><strong>Deine Wahl (' + esc(_baLabel) + ')</strong> liegt bewusst unter dem Durchschnitt — ohne kommunale Friedhofsgebühren und ohne klassisches Grab/Grabstein. Ein niedrigeres Ergebnis ist hier normal und kein Hinweis auf etwas „Lückenhaftes".</p>';
     } else {
-      html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Regionale Unterschiede können bis zu 300–400 % betragen (Großstädte vs. ländliche Gebiete).</p>';
+      html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Die Friedhofsgebühren unterscheiden sich zwischen Kommunen teils um ein Vielfaches (Großstädte vs. ländliche Gemeinden).</p>';
     }
     html += '<p style="font-size:12px;color:var(--mr-text-muted);margin-top:8px"><em>Stand 2026 · Quellen: Stiftung Warentest, Bundesverband Deutscher Bestatter (BDB), Aeternitas e.V.</em></p>';
     html += '</div>';
