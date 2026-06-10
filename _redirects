@@ -7,6 +7,7 @@
 
 # Root-Files: strip trailing slash (Files, keine Directories)
 /bestattungskosten/   /bestattungskosten   301
+/bestattungskosten-nach-bundesland/ /bestattungskosten-nach-bundesland 301
 /bestattungsarten/    /bestattungsarten    301
 /beerdigung-planen/   /beerdigung-planen   301
 /trauerrede-schreiben/ /trauerrede-schreiben 301
