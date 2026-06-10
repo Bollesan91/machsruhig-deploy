@@ -272,7 +272,7 @@
 .mr-ai-consent-modal .btn-grant{background:var(--mr-primary);color:#fff;border-color:var(--mr-primary)}
 .mr-ai-consent-modal .btn-grant:hover{background:var(--mr-primary-hover)}
 .mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted);border-color:var(--mr-border)}
-.mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}</style>
+.mr-ai-consent-modal .btn-cancel:hover{color:var(--mr-text)}.ai-revoke-btn{background:none;border:none;padding:0;color:var(--mr-primary,#7A6B5D);text-decoration:underline;cursor:pointer;font-size:inherit;font-family:inherit}.ai-revoke-btn:disabled{color:var(--mr-text-muted,#73655A);text-decoration:none;cursor:default}</style>
 <script defer src="/assets/js/mr-ai.js"></script>
 <style>@media print{
   /* R-A 15 Fix: Print dumpt nicht mehr alle 3 Varianten + Privacy-Box. Nur die empfohlene Variante wird gedruckt. */
@@ -315,7 +315,7 @@
   <div style="max-width:720px;margin:24px auto 12px;padding:24px 28px;background:linear-gradient(135deg,#FFFAF5 0%,#F4EDE3 100%);border:1px solid #E8E0D6;border-radius:14px;font-family:'DM Sans',system-ui,sans-serif">
     <p style="font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:700;margin:0 0 10px;color:#2D2319;line-height:1.25">Danksagungs-Generator <span style="font-weight:500;color:#7A6B5D">— mit KI</span></p>
     <p style="font-size:16px;color:#3D3025;margin:0 0 14px;line-height:1.55">Beantworte ein paar Fragen — die KI schreibt drei Textvarianten (formal, persönlich, kurz). Alle drei sind frei editierbar, du wählst die, die zu dir passt. Kostenlos.</p>
-    <p style="font-size:12px;color:#73655A;margin:0;line-height:1.5">KI-Modell Llama&nbsp;3.3 via Groq (USA) · Opt-in vor jeder Generierung · Eingaben werden nicht für KI-Training gespeichert.</p>
+    <p style="font-size:12px;color:#73655A;margin:0;line-height:1.5">KI-Modell Llama&nbsp;3.3 via Groq (USA) · Opt-in beim ersten Mal, danach direkt · Eingaben werden nicht für KI-Training gespeichert.</p>
   </div>
   <div id="app"></div>
 </div>
@@ -780,7 +780,8 @@ function DanksagungGenerator() {
           </p>
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben werden nach dem Wizard einmalig an Groq Inc. (USA) übermittelt, damit die KI alle drei Textvarianten schreibt. Beim ersten Mal fragt dich ein Modal um Einwilligung — danach läuft die KI automatisch (Opt-out jederzeit über den Datenschutz-Hinweis unten). Groq speichert die Eingaben laut Privacy-Policy nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami) nur nach Cookie-Opt-In.<br/><br/><strong>Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben werden bei jeder KI-Generierung an Groq Inc. (USA) übermittelt, damit die KI alle drei Textvarianten schreibt. Beim ersten Mal fragt dich ein Modal um Einwilligung — danach läuft die KI direkt. Groq verwendet die Eingaben nach eigenen Angaben nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami) nur nach Cookie-Opt-In.{' '}
+            <button type="button" className="ai-revoke-btn" onClick={(e) => { window.mrAI.revokeConsent(); e.target.textContent = 'Einwilligung widerrufen ✓ — vor der nächsten KI-Generierung fragen wir erneut.'; e.target.disabled = true; }}>KI-Einwilligung widerrufen</button><br/><br/><strong>Hinweis:</strong> Viele Bestattungsunternehmen bieten einen <em>Danksagungs-Service</em> an (Druck, Versand, Zeitungsanzeige). Wenn du das gesamte Drumherum abgeben möchtest, frag deinen Bestatter — dieses Tool gibt dir den Text dafür.
           </div>
 
           {/* KI-Helfer Info-Box (Iter-33 Phase 2) */}
@@ -797,9 +798,9 @@ function DanksagungGenerator() {
             <div className="mr-ai-consent-modal" role="dialog" aria-labelledby="dg-consent-title" onClick={(e) => { if (e.target === e.currentTarget) { setShowConsent(false); setPendingVariant(''); } }}>
               <div className="modal-box">
                 <h3 id="dg-consent-title">Einwilligung: KI-Verarbeitung deiner Eingaben</h3>
-                <p>Für die KI-Generierung werden deine Eingaben (Name, Beziehung, Trauerfeier-Text) <strong>einmalig an Groq Inc. (USA)</strong> übermittelt, dort von einem Sprachmodell (Llama 3.3) verarbeitet und als Danksagung zurückgegeben.</p>
-                <p>Groq speichert die Eingaben laut Privacy-Policy <strong>nicht für KI-Training</strong>. Übermittlung verschlüsselt (HTTPS). Server in den USA.</p>
-                <p style={{fontSize:13,color:'var(--mr-text-muted)'}}>Wenn du nicht zustimmst, nutze die Vorlage-Variante. Widerruf jederzeit durch Leeren des Browser-Speichers dieser Seite.</p>
+                <p>Für die KI-Generierung werden deine Eingaben (Name, Beziehung, Trauerfeier-Text) <strong>bei jeder Generierung an Groq Inc. (USA)</strong> übermittelt, dort von einem Sprachmodell (Llama 3.3) verarbeitet und als Danksagung zurückgegeben.</p>
+                <p>Groq verwendet die Eingaben nach eigenen Angaben <strong>nicht für KI-Training</strong>. Übermittlung verschlüsselt (HTTPS). Server in den USA.</p>
+                <p style={{fontSize:13,color:'var(--mr-text-muted)'}}>Wenn du nicht zustimmst, nutze die Vorlage-Variante. Widerruf jederzeit über „KI-Einwilligung widerrufen“ im Datenschutz-Hinweis unten auf der Seite.</p>
                 <div className="consent-buttons">
                   <button className="btn-cancel" onClick={() => { setShowConsent(false); setPendingVariant(''); }}>Abbrechen</button>
                   <button className="btn-grant" onClick={() => {

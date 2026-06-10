@@ -286,7 +286,7 @@
 .mr-ai-consent-modal .consent-buttons{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
 .mr-ai-consent-modal .consent-buttons button{flex:1;min-width:140px;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent}
 .mr-ai-consent-modal .btn-grant{background:var(--mr-primary,#7A6B5D);color:#fff;border-color:var(--mr-primary,#7A6B5D)}
-.mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted,#73655A);border-color:var(--mr-border,#E8E0D6)}</style>
+.mr-ai-consent-modal .btn-cancel{background:#fff;color:var(--mr-text-muted,#73655A);border-color:var(--mr-border,#E8E0D6)}.ai-revoke-btn{background:none;border:none;padding:0;color:var(--mr-primary,#7A6B5D);text-decoration:underline;cursor:pointer;font-size:inherit;font-family:inherit}.ai-revoke-btn:disabled{color:var(--mr-text-muted,#73655A);text-decoration:none;cursor:default}</style>
 
 <script type="text/babel">
 const {useState, useEffect, useRef, useCallback} = React;
@@ -397,7 +397,9 @@ function Toast({message, visible}) {
 function PrivacyNotice() {
   return React.createElement('div', {className: 'privacy-notice'},
     React.createElement('strong', null, 'Deine Worte bleiben auf deinem Gerät.'),
-    React.createElement('p', null, 'Dein Brief-Entwurf wird ausschließlich in deinem Browser gespeichert (localStorage) und nicht an einen Server übertragen. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur den Seitenbesuch erfassen — nicht deinen Brieftext.')
+    React.createElement('p', null, 'Dein Brief-Entwurf wird ausschließlich in deinem Browser gespeichert (localStorage) und nicht an einen Server übertragen. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur den Seitenbesuch erfassen — nicht deinen Brieftext.'),
+    React.createElement('p', null, 'Einzige Ausnahme: Wenn du die optionale KI-Verfeinerung nutzt, werden deine Texte bei jeder Verfeinerung an Groq Inc. (USA) übermittelt — nur nach deiner Einwilligung. ',
+      React.createElement('button', {type: 'button', className: 'ai-revoke-btn', onClick: (e) => { window.mrAI.revokeConsent(); e.target.textContent = 'Einwilligung widerrufen ✓ — vor der nächsten Verfeinerung fragen wir erneut.'; e.target.disabled = true; }}, 'KI-Einwilligung widerrufen'))
   );
 }
 
@@ -904,7 +906,7 @@ function App() {
     showConsent ? React.createElement('div', {className: 'mr-ai-consent-modal', role: 'dialog', 'aria-modal': 'true'},
       React.createElement('div', {className: 'modal-box'},
         React.createElement('h3', null, 'KI-Verfeinerung aktivieren?'),
-        React.createElement('p', null, 'Für die Verfeinerung werden die Texte deines Entwurfs an Groq Inc. (USA) gesendet und dort verarbeitet. Sie werden nicht für KI-Training gespeichert. Die KI poliert nur Sprache und Fluss — deine Aussagen bleiben unverändert.'),
+        React.createElement('p', null, 'Für die Verfeinerung werden die Texte deines Entwurfs bei jeder Verfeinerung an Groq Inc. (USA) gesendet und dort verarbeitet. Nach Groqs eigenen Angaben werden sie nicht für KI-Training verwendet. Die KI poliert nur Sprache und Fluss — deine Aussagen bleiben unverändert.'),
         React.createElement('p', null, 'Du kannst den Brief auch komplett ohne KI fertigstellen.'),
         React.createElement('div', {className: 'consent-buttons'},
           React.createElement('button', {className: 'btn-grant', type: 'button', onClick: () => { window.mrAI.grantConsent(); setShowConsent(false); runPolish(); }}, 'Einwilligen & verfeinern'),
