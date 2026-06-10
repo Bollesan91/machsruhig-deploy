@@ -144,3 +144,26 @@ Welle-2+3-Hero + KI-Integration auditiert. **Validity-Kern PASS** (Iter-33-Defek
 - Helper-V3-SEO-Audit misst Hülle, NICHT Tool-Substanz → Tools brauchen Doppel-Audit (SEO + Tool-Validity).
 - JSX-Tools mit in-Browser-Babel: `<br>`/`<hr>`/`<img>` IMMER self-closing. Live-Smoketest nach jedem Deploy Pflicht.
 - raw.githubusercontent.com Edge-Cache verfälscht Audits — Live-File-Verification Standard.
+
+## Verdichtung-2-Loop (10.06.2026, autonomer Roadmap-Loop)
+Mandat: Top-10 der `_dev/ROADMAP-verdichtung-2.md` autonom abarbeiten (Bolle: „Vertraue dir da"). Modus je Rang: Branch → Fix-Skript in `_dev/audit/` → unabhängiger Review (claude.ai-Tab, ohne Score-Anchoring) → GO → Merge auf main (Netlify-Build) → Live-Verify.
+
+**Stand: Ränge 1–5 live (main 4dac4a9), Rang 6 im Review.**
+
+| Rang | Seite | Kern-Maßnahmen | Review | Commit/Merge |
+|---|---|---|---|---|
+| 1 | Angebotsprüfer | Intro-Landing, Beispiel-Ampel (#ap-beispiel 3.600–9.000 NRW Feuer), Warnsignale, Ergebnis=Fragenliste, Nav „Angebot prüfen"; **renderStep4-Bug gefixt** (condBA-Posten nie sichtbar — Validity-Audit-Fund) | Doppel-Audit SEO+Validity | deployed |
+| 2 | Startseite | Hero-CTAs, Kartenreihenfolge (Prüfer/Rechner/Checkliste zuerst), Trust-Strip, „So funktioniert"-Steps, „alle Eingaben im Browser"-Claim korrigiert (KI-Ausnahme) | GO | deployed |
+| 3 | Bestattungskosten (Money) | Dreiteilung+Badges, 3-Stufen-Beispiel (1.000–2.200/3.400–8.200/5.300–14.300), §74-konforme Sozialbestattung, Direktkremation-Zeile, Quellenbox | 3 Runden bis GO 84 | deployed |
+| 4 | Kostenrechner | CAT_META-Badges+Sparhebel je Block, Basis-Einordnung; **R4b**: Einordnung mathematisch geschlossen (Komponentensumme ohne Grabpflege, de-regionalisiert, Schwellen ±15/+30 % in Methodik) | NO-GO 64 → R4b → GO | deployed |
+| 5 | Was-tun-nach-Todesfall | Schutz-Boxen „Bevor du einen Bestatter beauftragst" (+Rechner/Prüfer-CTAs, data-track) + „Was du heute nicht entscheiden musst", Sternenkind §31-PStV-präzise, Fristen-Radar-Link | GO 84 | 4dac4a9, live-verifiziert |
+| 6 | Hamburg-Stadtseite | R6: Quickhelp eigenständig, Gesamtkosten-Box, Historie nach unten; R6b nach NO-GO 54: Kostenkonsistenz (anonym 2.830–3.365 überall, Typisch ab 5.000, Einäscherung 300–550), Tourismus-Ton raus, Affiliate aus Sozialblock, Email-Pflicht, Service-Schema weg, Faktenfixes (30 J., Vor-1877-Gräber raus, Kisdorf SH), Telefonseelsorge | NO-GO 54 → GO 82 auflagenfrei | 49276aa |
+
+**Nebenfunde gefixt:** Rechner-Spartipps hatten letzten „Erben zu arm"-§74-Fehler site-weit + Pseudo-Betrag „1.500–2.500 €" → §74-konform (cccd800); Icon-Inkonsistenz Step-0 🤐→🕊.
+**Kostenrechner-Live-Validity: PASS.** Reviewer-Sandbox kam nicht an machsruhig.de (Egress-Whitelist) → Option 2: Szenarien mit sichtbarkeits-assertierten echten DOM-Klicks gefahren, Ergebnis-DOM-Dumps geliefert (Erd-Default NRW 6.204–17.396, Erd-Max Bayern 10.438–30.173, See 2.850–6.200). Pflicht-Nachtest See+Grabstein: Summe unverändert (kein Garbage-in), aber Zusammenfassung behauptete "Grabstein: mittel" → P2-Fixes (4efd6f1): Extras modellgetrieben je Art ausblenden + State-Reset, Blocklabel Seebestattung/Waldbestattung statt Friedhof, Spartipps szenariospezifisch. Smoke aller 5 Arten danach grün (Baum exakt 3.050–7.000 = Komponentensumme).
+**Offen beim User:** Pressetext-Versand, Groq-ZDR, AV-Verträge, Cloudflare-Rate-Limit, Presse-Telefonnummer, Fachanwalt §7.
+
+### Hamburg-Backlog aus GO-82-Review (nicht deploy-blockierend)
+1. Feuerbestattungs-Gesamtzeile in die Hamburg-Kostenbox (billigster Fix, größter Nutzerwert) — Zahlen erst sauber herleiten (Urnenwahlgrab 2.000–2.230 + Bestatter ab 1.580 + Einäscherung).
+2. Extern-Verifikationen nächster Fakten-Check: jüdisches Sonderfeld auf Ohlsdorf, SH-14-Tage-Frist, §-6-BestattG-Zitat (36 h), Jüdischer Friedhof Altona „geschlossen 1877".
+3. FAQ 5 „ggf." präzisieren; Standesamt-Adressen Altona/Bergedorf ergänzen; 2026er-Gebührenordnung der AöR prüfen; mainEntityOfPage Trailing-Slash; Footer-Claim „immer aktuell" (site-weit).
