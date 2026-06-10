@@ -366,6 +366,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     $$('.choice-card',$('#ap-bestattungsarten')).forEach(function(btn){
       btn.addEventListener('click',function(){
         state.bestattungsart=btn.dataset.ba;
+        // R1e-Fix: Schritt-4-Listen sind BA-abhaengig (condBA/excludeBA) — neu rendern,
+        // sonst bleiben sie auf dem Init-Stand (leere BA) und condBA-Posten fehlen komplett.
+        state.posten={};state.separat={};state.info={};
+        renderStep4();
         track('toolStep',{tool:'angebotspruefer',step:'1-select'});
         setStep(2);
       });
@@ -692,6 +696,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       red:{icon:'!',title:'Mehrere Posten unklar',text:'Mehrere Pflicht-Posten sind nicht ausgewiesen — bitte vor der Entscheidung klären.'}
     };
     var ps=priceMap[result.priceStatus], cs=compMap[result.completenessStatus];
+    // R1e: Toleranzband ehrlich benennen — nicht "im Rahmen" behaupten, wenn die Summe
+    // sichtbar unter der angezeigten Untergrenze liegt.
+    if(result.priceStatus==='green'&&result.sum<result.rangeMin){
+      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt knapp unter dem üblichen Rahmen für '+esc(result.ba.name)+' in '+esc(state.bundesland)+' — das ist unauffällig.'};
+    }
+    if(result.priceStatus==='green'&&result.sum>result.rangeMax){
+      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt knapp über dem üblichen Rahmen für '+esc(result.ba.name)+' in '+esc(state.bundesland)+' — das ist unauffällig.'};
+    }
 
     var html='';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:24px;font-weight:700;margin:32px 0 8px">Dein Angebots-Check</h2>';
