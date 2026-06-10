@@ -1,7 +1,37 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 2026-06-04
+**Datum:** 2026-06-10
+
+## Session 2026-06-10: Daten-PR-Seite presse-fest (Modell V2 + 6 Helper-V3-Runden bis GO 85)
+
+**Anlass:** Review der neuen /bestattungskosten-nach-bundesland (Daten-PR-Asset fuer Backlink-Phase).
+
+**Ablauf (7 Wellen auf Branch fix/bundesland-quickfixes, am Ende gemerged + deployed):**
+1. **Quickfixes:** Site-weiter FAQ-Doppelmarker-Fix (site.css hatte ::before UND ::after "+" — 87 Seiten betroffen), Quellen verlinkt, Lesezeit ehrlich, CTA-H3, CSS-Bust v20260612.
+2-3. **Helper-V3 R1/R2** (claude.ai-Tabs, Opus, kein Anchoring): Methodik-Herleitung fehlte, Spannen als Index-Ableitung reverse-engineert, Presse-Apparat fehlte → Kostenmodell-Sektion in /methodik, Komponententabelle, CSV (CC BY 4.0), Presse-Block, SVG-Chart, Dataset-Schema.
+4. **R3 fand den Kern-Defekt:** V1-Regionalfaktoren (redaktionell geschaetzt) widersprachen der selbst zitierten Aeternitas-Quelle (Berlin Index 115, real guenstigste Grossstadt; 56%-Hook durch Einheitsfaktor aufgeblaeht). **User-Entscheid: gruendliche Rekalibrierung.**
+5. **Modell V2** (_dev/audit/bundesland-modell-v2.py): Friedhofs-Faktor je BL aus den Aeternitas-Landeshauptstadt-Gebuehren (01/2025, 6 Grabarten, spaltennormiert; via check24-Aufbereitung), wirkt NUR auf ortsgebundene Posten (Friedhof/Beisetzung/Grabpflege). Index 75 (Berlin) bis 136 (Bayern), Spread 81%, Mittel 100,4. **Kostenrechner auf dasselbe Modell umgestellt** (LOCAL_FEE_KEYS) + end-to-end verifiziert. V1-Faktor-Claims auf 8 weiteren Seiten ersetzt. Faktor-Tabelle in /methodik veroeffentlicht → komplette Zahlenkette reproduzierbar.
+6-7. **R4-R6:** Hero-Attribution geschaerft (Muenchen 4.578 vs Berlin 964, beide 20J, exakt auf den verlinkten Datensatz gescoped), 100-EUR-Rundung, Datenstand sichtbar, Grabpflege-Annahme offengelegt. **R6: GO, Score 85, keine kritischen Befunde** — Reviewer hat alle 96 Werte + 16 Indizes + Faktoren selbst reproduziert.
+
+**Score-Verlauf:** Self-Verify 81 → 68 → 71 → 62 → 68 → 72 → GO 85. Sycophancy-Pattern erneut bestaetigt.
+
+**Strukturelle Lessons (auch in memory/multi_chat_pipeline_lessons.md):**
+- Reviewer-URLs IMMER mit Commit-SHA (Branch-raw-URLs cachen ~5 min — R3 prüfte veralteten Stand).
+- Reviewer-recherchierte Fakten selbst verifizieren + Claims exakt auf den verlinkten Datensatz scopen (Mainz-Falle R4→R5).
+- Daten-Assets: Reproduzierbarkeits-Auftrag in den Review-Prompt; GO erst, wenn ein Reviewer alles nachrechnen kann.
+
+**Nebenbefunde gefixt:** /methodik behauptete "Eingaben verlassen nie deinen Computer" (seit KI-Tools falsch) — korrigiert (Tools-Sektion + Grundsatz-Box).
+
+**OFFEN:**
+- **Datenschutz erwaehnt die KI-Verarbeitung (Groq/US) NICHT** — DSGVO-Luecke, Task-Chip gespawnt, braucht eigene Session.
+- Presse-Block: Telefonnummer? (R5: Redaktionen verifizieren telefonisch) — User-Entscheid.
+- Optional: chart-spezifisches og:image (PNG).
+- Pressetext fuer Lokalredaktionen (naechster Schritt der Backlink-Phase) — Seite ist jetzt GO dafuer.
+- Cloudflare-Rate-Limit-Regel fuer ai-rede (User, Dashboard) — weiterhin offen.
+
+---
+
 
 ## Iter-11/12/13: Stadt-Nav-Fragmentierung (User-Befund "darmstadt broken")
 
