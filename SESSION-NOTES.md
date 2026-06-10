@@ -23,6 +23,8 @@
 
 **Nebenbefunde gefixt:** /methodik behauptete "Eingaben verlassen nie deinen Computer" (seit KI-Tools falsch) — korrigiert (Tools-Sektion + Grundsatz-Box).
 
+**Nachtrag Welle 8/8b (gleiche Session, deployed f44adea):** Externes SEO-Review (8,1/10) triagiert — Schema/Presse-Block/GSC waren schon erledigt (Reviewer sah Cache). Umgesetzt: Hauptseite /bestattungskosten an Modell V2 harmonisiert (Muenchen-Gebuehren 1.500-2.500 -> 4.578 EUR, Berlin-als-teuer-Fehler raus, check24-Attribution), Steuer-FAQ-Faktenfehler korrigiert (pauschales "Nein" -> Par. 33 EStG, BMF-verifiziert), FAQ-LD der Hauptseite programmatisch aus DOM regeneriert (Paritaet), "kein echter Landesdurchschnitt" sichtbar, Embed-Code im Presse-Block, Rueckverlinkung 18 BL-Hubs (personalisierte Index-Box) + Rechner. Review: GO 84. Bewusst NICHT umgesetzt: CTA-Verschaerfung (Konflikt mit Presse-Neutralitaet), 16 Mini-Sektionen + Above-fold-BL-Auswahl (eigenes Paket, Kannibalisierungs-Risiko mit Hubs beachten), fachlicher Reviewer (User-Akquise).
+
 **OFFEN:**
 - **Datenschutz erwaehnt die KI-Verarbeitung (Groq/US) NICHT** — DSGVO-Luecke, Task-Chip gespawnt, braucht eigene Session.
 - Presse-Block: Telefonnummer? (R5: Redaktionen verifizieren telefonisch) — User-Entscheid.
