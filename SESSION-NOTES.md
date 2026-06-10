@@ -1,7 +1,32 @@
 # Session-Notizen
 
 ## Letzte Session
-**Datum:** 2026-06-10
+**Datum:** 2026-06-10 (Session B: Datenschutz-KI)
+
+## Session 2026-06-10 B: Datenschutz-KI-Luecke geschlossen (3 Helper-V3-Runden bis GO)
+
+**Anlass:** Task-Chip aus Session A — datenschutz.html erwaehnte die KI-Verarbeitung (Groq/USA) der drei Tools trauerrede/danksagung/abschiedsbrief nicht (0 grep-Treffer fuer groq|ai-rede|kuenstliche intelligenz).
+
+**Ergebnis: Branch `datenschutz-ki-abschnitt` (HEAD c15c0ff), Helper-V3 GO — NICHT auf main gemergt, wartet auf User-Freigabe.**
+
+**Was drin ist (3 Commits, alle [skip netlify]):**
+1. **datenschutz.html**: Neuer **§7 „KI-gestuetzte Textentwuerfe"** — Zweck, Empfaenger Groq Inc. (USA) via Netlify-Function ai-rede, Llama 3.3, Opt-in/Freiwilligkeit, keine Speicherung bei uns, IP nur In-Memory-Rate-Limit, **Art. 6 I a + Art. 49 I a DSGVO** mit USA-Risikohinweis, Groq-Retention vorsichtig („nach eigenen Angaben", Default bis 30 Tage Abuse-Logs, kein Training laut DPA). §2/§6 behaupteten faelschlich „Trauerrede-Generator laeuft vollstaendig im Browser" — korrigiert. Abschnitte umnummeriert (1–12), Stand Juni 2026.
+2. **Alle 3 Tool-Seiten** (Review-R1-Pflichtkorrekturen): „einmalig an Groq" → „bei jeder Generierung" (jede Regeneration = neuer Call!), **echter Widerrufs-Button** an `window.mrAI.revokeConsent()` in den Privacy-Notices (vorher Phantom-Opt-out — Art. 7 III!), „Opt-in vor jeder Generierung" → „beim ersten Mal, danach direkt", „laut Privacy-Policy" → „nach eigenen Angaben" (Quelle ist das DPA).
+3. **Abschiedsbrief-FAQ** (Review-R2): „Werden meine Worte gespeichert?" — sichtbare FAQ + JSON-LD wortgleich um KI-Ausnahme ergaenzt, JSON-LD validiert.
+
+**Fix-Skripte:** `_dev/audit/fix-ki-datenschutz-konsistenz.py` + `-r2.py` (exakte String-Matches, kein Multi-Line-Regex auf JSON-LD). Lokal gerendert + getestet: Babel fehlerfrei, Revoke-Button funktioniert end-to-end (Consent-Key ist `mr-ai-consent-v1`, NICHT `mr-ai-consent` wie der Kommentar in mr-ai.js behauptet).
+
+**Review-Kette** (claude.ai-Tab „Datenschutzerklaerung-Audit fuer KI-Tools", Opus 4.8, kein Anchoring, Reviewer verifizierte selbst gegen ai-rede.js + Groq-Doku): R1 NO-GO (5 Pflichtkorrekturen, wichtigster: „ausschliesslich zur Erstellung der Antwort" staerker als Groqs Default) → R2 NO-GO (uebersehene Abschiedsbrief-FAQ in 2 Stellen) → **R3 GO, keine neuen Widersprueche**.
+
+**methodik.html** war schon korrekt (Session A) — der dortige Verweis auf die Datenschutzerklaerung laeuft jetzt nicht mehr ins Leere.
+
+**OFFEN (User, nicht Code):**
+- **Merge `datenschutz-ki-abschnitt` → main** (= Deploy der DSGVO-Texte; solange nicht gemergt, fehlt §7 live!)
+- **Zero-Data-Retention in Groq-Console aktivieren** (Data Controls) — dann strenger als §7 verspricht
+- AV-Vertraege Groq + Netlify pruefen (Reviewer B-1)
+- Langfristig: Fachanwalt ueber §7 + Consent-Mechanik (YMYL)
+
+---
 
 ## Session 2026-06-10: Daten-PR-Seite presse-fest (Modell V2 + 6 Helper-V3-Runden bis GO 85)
 
@@ -24,7 +49,7 @@
 **Nebenbefunde gefixt:** /methodik behauptete "Eingaben verlassen nie deinen Computer" (seit KI-Tools falsch) — korrigiert (Tools-Sektion + Grundsatz-Box).
 
 **OFFEN:**
-- **Datenschutz erwaehnt die KI-Verarbeitung (Groq/US) NICHT** — DSGVO-Luecke, Task-Chip gespawnt, braucht eigene Session.
+- ~~**Datenschutz erwaehnt die KI-Verarbeitung (Groq/US) NICHT**~~ → **ERLEDIGT in Session 2026-06-10 B** (Branch `datenschutz-ki-abschnitt`, GO, wartet auf Merge).
 - Presse-Block: Telefonnummer? (R5: Redaktionen verifizieren telefonisch) — User-Entscheid.
 - Optional: chart-spezifisches og:image (PNG).
 - Pressetext fuer Lokalredaktionen (naechster Schritt der Backlink-Phase) — Seite ist jetzt GO dafuer.
