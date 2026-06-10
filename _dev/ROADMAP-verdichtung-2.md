@@ -18,6 +18,8 @@
 2. **CTA-Härte vs. Presse-Neutralität:** Für /bestattungskosten-nach-bundesland gilt weiterhin die Presse-Reviewer-Auflage (max. 1 CTA-Block, neutral). Die Seite ist NICHT Teil dieses CTA-Programms. Für alle anderen Seiten gilt der CTA-Kompass.
 3. **Score-Kalibrierung:** Erfahrungswert der Helper-V3-Pipeline: Erst-Scores liegen systematisch zu hoch; echte Zielerreichung immer per unabhängigem Review verifizieren (wie heute: 6 Runden bis echtes GO 85).
 
+**Neues PBI aus R2-Review (10.06.):** Consent-Modell site-weit inkonsistent — Datenschutz sagt Umami = berechtigtes Interesse (kein Banner), ~120 Seiten laden Umami im Head ohne Banner, aber 17 Seiten (inkl. Checkliste Todesfall = Hero-Akut-Ziel!) haben consent.js-Opt-in-Banner; Danksagung-Tool behauptet falsch „Umami nur nach Cookie-Opt-In". EIN Modell durchziehen. Eigener Arbeitsblock.
+
 **Quick Win sofort möglich:** #17 Vorsorge-Ordner Weg B (aus Nav/Hauptfunnel nehmen, solange kein echter Download existiert) — minimaler Aufwand, sofortiger Trust-Gewinn.
 
 ---
