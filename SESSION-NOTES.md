@@ -148,7 +148,7 @@ Welle-2+3-Hero + KI-Integration auditiert. **Validity-Kern PASS** (Iter-33-Defek
 ## Verdichtung-2-Loop (10.06.2026, autonomer Roadmap-Loop)
 Mandat: Top-10 der `_dev/ROADMAP-verdichtung-2.md` autonom abarbeiten (Bolle: „Vertraue dir da"). Modus je Rang: Branch → Fix-Skript in `_dev/audit/` → unabhängiger Review (claude.ai-Tab, ohne Score-Anchoring) → GO → Merge auf main (Netlify-Build) → Live-Verify.
 
-**Stand: Ränge 1–9 live, Rang 10 (Fristen nach Todesfall) als Nächstes.**
+**Stand: TOP-10 KOMPLETT — alle 10 Ränge reviewed + live.** Backlog: Hamburg-Extern-Verifikationen, Consent-Vereinheitlichung (eigener Block), Fristen-MITTEL 4-6 (§30-III-Testament-Satz, FAQ-Q6-Beweislast, Sicherungsmaßnahmen-Hinweis), tracking.js-Plausible-Header.
 
 | Rang | Seite | Kern-Maßnahmen | Review | Commit/Merge |
 |---|---|---|---|---|
@@ -164,6 +164,8 @@ Mandat: Top-10 der `_dev/ROADMAP-verdichtung-2.md` autonom abarbeiten (Bolle: �
 | 8 | Methodik + Datenschutz | Tool-Datenschutz-Matrix (byteweise identisch auf beiden Seiten), Cluster-Prüfdaten, Danksagung-Umami-Falschsatz; R8b nach NO-GO 64: **Checkliste-localStorage implementiert** (Matrix/FAQ versprachen Persistenz, Code hatte keine — Reviewer-Code-Audit-Fund; Klick→Reload→Restore lokal verifiziert), §6 auf Matrix gestützt, §9 Doppel-Regime ehrlich deklariert, §8 Tool-Formulare+Netlify-Speicherung, §2 zwei Ausnahmen, Matrix-Fußnote; R8c: „einzige Ausnahme"→zwei Ausnahmen (3 Stellen) | NO-GO 64 → GO 87 | Branch r8 |
 
 | 9 | Beerdigung planen | Entscheidungsnavigator (jetzt/warten/Kostentreiber), Angebotsprüfer prominent (war komplett unverlinkt!), Kosten auf kanonische Komponentensummen, 48h-"alle Bundesländer"-Fehler (Hamburg-Widerspruch); R9b: Berlin/Brandenburg aus Fristen-Beispielen (Berlin hat keine Höchstfrist), Feuer-Spanne kanonisch qualifiziert, JSON-LD Q1/Q3 angeglichen; R9c: Keyfact "meist", Kolumbarium-Qualifikator | NO-GO 72 → GO (Stichprobe, 1 Auflage erfüllt) | Branch r9 |
+
+| 10 | Fristen nach Todesfall | Übersichtstabelle Frist/ab-wann/was-tun/wer-hilft (aus belegten Sektionen); R10b: §573d-Kette korrigiert (Abs. 2 definiert Frist allein), staler Opt-In-Kommentar entfernt, Stand-Daten vereinheitlicht | GO 86 mit Auflagen (erfüllt) | Branch r10 |
 
 **Nebenfunde gefixt:** Rechner-Spartipps hatten letzten „Erben zu arm"-§74-Fehler site-weit + Pseudo-Betrag „1.500–2.500 €" → §74-konform (cccd800); Icon-Inkonsistenz Step-0 🤐→🕊.
 **Kostenrechner-Live-Validity: PASS.** Reviewer-Sandbox kam nicht an machsruhig.de (Egress-Whitelist) → Option 2: Szenarien mit sichtbarkeits-assertierten echten DOM-Klicks gefahren, Ergebnis-DOM-Dumps geliefert (Erd-Default NRW 6.204–17.396, Erd-Max Bayern 10.438–30.173, See 2.850–6.200). Pflicht-Nachtest See+Grabstein: Summe unverändert (kein Garbage-in), aber Zusammenfassung behauptete "Grabstein: mittel" → P2-Fixes (4efd6f1): Extras modellgetrieben je Art ausblenden + State-Reset, Blocklabel Seebestattung/Waldbestattung statt Friedhof, Spartipps szenariospezifisch. Smoke aller 5 Arten danach grün (Baum exakt 3.050–7.000 = Komponentensumme).
