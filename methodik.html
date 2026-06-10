@@ -171,6 +171,21 @@
     </div>
   </section>
 
+  <!-- Regionales Kostenmodell -->
+  <section class="mr-section" id="kostenmodell">
+    <h2>Das regionale Kostenmodell (Bundesland-Index)</h2>
+    <p>Unser Kostenrechner und die Vergleichsseite <a href="/bestattungskosten-nach-bundesland" style="color:var(--mr-primary)">Bestattungskosten nach Bundesland</a> beruhen auf einer eigenen Modellrechnung. Damit jeder nachvollziehen kann, was diese Zahlen sind — und was nicht —, legen wir die Herleitung hier offen.</p>
+    <h3>So entsteht das Modell</h3>
+    <p><strong>1. Bundesweites Komponentenmodell:</strong> Für jeden Kostenposten einer Bestattung (Bestatterleistungen, Sarg/Urne, Friedhofsgebühren, Beisetzung, Trauerfeier, Grabpflege u. a.) führen wir eine bundesweite Richtwert-Spanne (von–bis). Diese Spannen sind redaktionell abgeleitet aus den oben genannten Kostenquellen — Erhebungen der Stiftung Warentest, Daten des BDB, Friedhofsgebühren-Vergleichen der Aeternitas e. V., Richtwerten der Verbraucherzentralen und kommunalen Gebührensatzungen.</p>
+    <p><strong>2. Regionalfaktor je Bundesland:</strong> Jedes Bundesland erhält einen Faktor zwischen 0,78 (Mecklenburg-Vorpommern, Sachsen-Anhalt) und 1,22 (Bayern). Dieser Faktor ist unsere redaktionelle Einschätzung des regionalen Kostenniveaus — gestützt vor allem auf Friedhofsgebühren-Vergleiche und den Anteil teurer Ballungsräume. Der <strong>Index</strong> auf der Vergleichsseite ist dieser Faktor mal 100; 100 entspricht etwa dem ungewichteten Mittelwert der 16 Länder (nicht dem bevölkerungsgewichteten Bundesdurchschnitt).</p>
+    <p><strong>3. Spannen je Bundesland:</strong> Die Euro-Spannen der Vergleichsseite sind die Summe der Komponenten-Spannen eines definierten Standard-Szenarios, multipliziert mit dem Regionalfaktor und gerundet. Sie sind also <em>vollständig aus dem Index abgeleitet</em> — es sind keine 16 unabhängigen Erhebungen.</p>
+    <h3>Was das Modell bewusst vereinfacht</h3>
+    <p>Das Modell verwendet <strong>einen</strong> Faktor je Bundesland für alle Kostenposten. In der Realität streuen vor allem die kommunalen Friedhofsgebühren stark, während Bestatterleistungen und Sarg-Preise deutlich weniger regional gespreizt sind — der einheitliche Faktor ist eine Näherung für das Gesamtniveau. Innerhalb jedes Bundeslandes liegen Großstadt und ländliche Gemeinde zudem weit auseinander; der Landeswert ist ein Durchschnitt.</p>
+    <div class="mr-hint">
+      <strong>Einordnung:</strong> Index und Spannen sind eine Modellrechnung von machsruhig.de. Sie werden von BDB, Stiftung Warentest, Aeternitas oder den Verbraucherzentralen <strong>nicht bestätigt</strong> und sind keine erhobenen Marktpreise. Das Modell taugt für den Richtungsvergleich zwischen Regionen — nicht als Preisauskunft für den Einzelfall. Verbindlich sind nur die Gebührensatzung der jeweiligen Kommune und konkrete Bestatter-Angebote.
+    </div>
+  </section>
+
   <!-- Update-Zyklus -->
   <section class="mr-section">
     <h2>Wie und wann wir Inhalte aktualisieren</h2>
@@ -227,9 +242,8 @@
   <!-- Tools & Datenschutz -->
   <section class="mr-section">
     <h2>Wie unsere Tools funktionieren</h2>
-    <p>Alle interaktiven Tools auf machsruhig.de — der Kostenrechner, die Checkliste, der Trauerrede-Generator — laufen vollständig in deinem Browser (clientseitig). Das bedeutet konkret:</p>
-    <p>Deine Eingaben verlassen nie deinen Computer. Es wird nichts an unsere Server gesendet. Es werden keine Cookies für Tracking gesetzt. Die Tools funktionieren auch offline, sobald die Seite einmal geladen ist.</p>
-    <p>Wenn ein Tool in Zukunft eine serverseitige Komponente benötigen sollte (z. B. für eine AI-gestützte Funktion), werden wir das vorher klar kommunizieren und deine Einwilligung einholen.</p>
+    <p>Die meisten interaktiven Tools auf machsruhig.de — etwa der Kostenrechner und die Checkliste — laufen vollständig in deinem Browser (clientseitig): Deine Eingaben verlassen deinen Computer nicht, und es werden keine Cookies für Tracking gesetzt.</p>
+    <p><strong>Ausnahme sind die KI-gestützten Textentwürfe</strong> (Trauerrede, Danksagung, Abschiedsbrief): Wenn du dort auf „Generieren“ klickst, werden die von dir eingegebenen Angaben zur Texterstellung an unsere Server-Funktion und von dort an einen KI-Dienstleister übermittelt. Die Nutzung ist freiwillig — ohne Klick auf „Generieren“ wird nichts übertragen. Details regelt die <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>.</p>
   </section>
 
   <!-- Kontakt & Feedback -->
@@ -266,6 +280,10 @@
 
     <div style="border-left:3px solid var(--mr-border);padding:4px 0 4px 20px;margin-left:4px">
       <div style="margin-bottom:20px">
+        <div style="font-size:13px;color:var(--mr-primary);font-weight:600;margin-bottom:4px">10. Juni 2026</div>
+        <p style="font-size:14px;margin:0;line-height:1.6">Neuer Abschnitt „Das regionale Kostenmodell (Bundesland-Index)“: Herleitung von Index und Kostenspannen offengelegt (Komponentenmodell, Regionalfaktor, bewusste Vereinfachungen). Tool-Abschnitt aktualisiert: KI-Textentwürfe als serverseitige Ausnahme transparent gemacht.</p>
+      </div>
+      <div style="margin-bottom:20px">
         <div style="font-size:13px;color:var(--mr-primary);font-weight:600;margin-bottom:4px">23. April 2026</div>
         <p style="font-size:14px;margin:0;line-height:1.6">Methodik geschärft: Quellenhierarchie (Primär-/Sekundärquellen/Erfahrungswerte) eingeführt, konkrete Gesetzesquellen mit Verlinkung ergänzt (BGB, PStG, Landesbestattungsgesetze), Update-Rhythmen als Tabelle dargestellt, Interessenkonflikts-Regeln als eigener Unterabschnitt, FAQ-Sektion neu, Änderungslog neu.</p>
       </div>
@@ -276,7 +294,7 @@
     </div>
   </section>
 
-  <p style="font-size:13px;color:var(--mr-text-muted);border-top:1px solid var(--mr-border);padding-top:20px;margin-top:40px"><strong>Stand:</strong> 23. April 2026 &nbsp;·&nbsp; <strong>Nächste turnusmäßige Überprüfung:</strong> spätestens Oktober 2026</p>
+  <p style="font-size:13px;color:var(--mr-text-muted);border-top:1px solid var(--mr-border);padding-top:20px;margin-top:40px"><strong>Stand:</strong> 10. Juni 2026 &nbsp;·&nbsp; <strong>Nächste turnusmäßige Überprüfung:</strong> spätestens Oktober 2026</p>
 
 </main>
 
