@@ -255,6 +255,7 @@
       </div>
     </div>
 
+    <p style="font-size:14px;margin-bottom:8px"><strong>Letzte Prüfungen je Inhalts-Cluster:</strong> Landesbestattungsgesetze und Rechtstexte — Mai 2026 · Kostendaten und Bundesland-Index (Modell V2) — Juni 2026 · Tool-Logik — fortlaufend bei jeder Änderung.</p>
     <p style="font-size:14px;color:var(--mr-text-muted)">Größere Aktualisierungen dokumentieren wir am Ende der Seite im Änderungslog. So können Leser nachvollziehen, was sich gegenüber einer früheren Version substanziell geändert hat.</p>
   </section>
 
@@ -289,6 +290,24 @@
     <h2>Wie unsere Tools funktionieren</h2>
     <p>Die meisten interaktiven Tools auf machsruhig.de — etwa der Kostenrechner und die Checkliste — laufen vollständig in deinem Browser (clientseitig): Deine Eingaben verlassen deinen Computer nicht, und es werden keine Cookies für Tracking gesetzt.</p>
     <p><strong>Ausnahme sind die KI-gestützten Textentwürfe</strong> (Trauerrede, Danksagung, Abschiedsbrief): Wenn du dort auf „Generieren“ klickst, werden die von dir eingegebenen Angaben zur Texterstellung an unsere Server-Funktion und von dort an einen KI-Dienstleister übermittelt. Die Nutzung ist freiwillig — ohne Klick auf „Generieren“ wird nichts übertragen. Details regelt die <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>.</p>
+    <h3>Datenfluss pro Tool</h3>
+    <p>Dieselbe Übersicht steht wortgleich in der <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>:</p>
+    <div class="mr-table-wrap" style="margin:16px 0">
+      <table class="mr-table" style="font-size:13.5px">
+        <thead><tr><th>Tool</th><th>Eingaben bleiben im Browser?</th><th>Lokale Speicherung auf deinem Gerät?</th><th>Wird etwas übertragen?</th></tr></thead>
+        <tbody>
+          <tr><td>Checkliste Todesfall</td><td>ja</td><td>ja — dein Abhak-Stand (localStorage, jederzeit löschbar)</td><td>nein</td></tr>
+          <tr><td>Bestattungskosten-Rechner</td><td>ja</td><td>nein</td><td>nur, wenn du aktiv das optionale Anfrage-Formular absendest</td></tr>
+          <tr><td>Kostenrechner (Schnell-Version)</td><td>ja</td><td>nein</td><td>nein</td></tr>
+          <tr><td>Angebotsprüfer</td><td>ja</td><td>nein</td><td>nein</td></tr>
+          <tr><td>Fristen-Radar</td><td>ja</td><td>ja — dein Abhak-Stand (localStorage)</td><td>nein</td></tr>
+          <tr><td>Beerdigungsplaner</td><td>ja</td><td>ja — dein Planungsstand (localStorage)</td><td>nur, wenn du aktiv das optionale Formular absendest</td></tr>
+          <tr><td>Vorsorge-Check</td><td>ja</td><td>nein</td><td>nur, wenn du aktiv das optionale Formular absendest</td></tr>
+          <tr><td>Notfallkarte</td><td>ja</td><td>nein</td><td>nein — auch der Druck erfolgt lokal</td></tr>
+          <tr><td>Trauerrede / Danksagung / Abschiedsbrief</td><td>ja (Grundfunktion)</td><td>nur Abschiedsbrief: dein Entwurf (localStorage)</td><td>nur der optionale KI-Entwurf: nach ausdrücklicher Einwilligung und Klick auf „Generieren" an unsere Server-Funktion und Groq, Inc. (USA)</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- Kontakt & Feedback -->
