@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://machsruhig.de/assets/og-image.png">
 <meta property="og:url" content="https://machsruhig.de/tools/angebotspruefer/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Bestatter-Angebot prüfen","description":"Kostenloser Angebots-Check für Bestatter-Angebote. Ampel-Bewertung, vermisste Posten und konkrete Fragen für den Bestatter.","url":"https://machsruhig.de/tools/angebotspruefer/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Angebot prüfen","item":"https://machsruhig.de/tools/angebotspruefer"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Bestatter-Angebot prüfen","description":"Kostenloser Angebots-Check für Bestatter-Angebote. Ampel-Einschätzung, nicht ausgewiesene Posten und konkrete Fragen für den Bestatter.","url":"https://machsruhig.de/tools/angebotspruefer/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Bestattungskosten","item":"https://machsruhig.de/bestattungskosten"},{"@type":"ListItem","position":3,"name":"Angebot prüfen","item":"https://machsruhig.de/tools/angebotspruefer/"}]}]}</script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="6b6629ff-27b8-427b-863c-76b549cb52ba"></script><script>window.plausible=function(e,o){if(window.umami)window.umami.track(e,(o&&o.props)||{});};</script>
 
 <script defer src="/js/tracking.js?v=20260609"></script>
@@ -88,7 +88,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       <a href="/vorsorge/">Vorsorge</a>
       <a href="/bestatter/">Bestatter</a>
       <a href="/trauerrede-schreiben">Trauerrede</a>
-      <a href="/notfallkarte">Notfallkarte</a>
+      <a href="/tools/angebotspruefer/">Angebot prüfen</a>
     </div>
   </div>
 </nav>
@@ -97,18 +97,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 <nav class="mr-breadcrumb" aria-label="Brotkrumen"><a href="/">Start</a> › <a href="/bestattungskosten">Bestattungskosten</a> › Angebot prüfen</nav>
 
   <header style="padding:48px 0 16px">
-    <div style="font-size:13px;color:var(--mr-text-muted);margin-bottom:16px">
-      <a href="/" style="color:var(--mr-warm);text-decoration:none">Start</a> ›
-      <a href="/bestattungskosten" style="color:var(--mr-warm);text-decoration:none">Bestattungskosten</a> ›
-      Angebot prüfen
-    </div>
     <h1 style="font-family:'Fraunces',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--mr-text);margin-bottom:12px;line-height:1.2">Bestatter-Angebot prüfen</h1>
     <p style="font-size:18px;color:var(--mr-text-muted);line-height:1.5;max-width:600px">Ampel-Check in 3 Minuten: Ist dein Angebot vollständig und plausibel? Du bekommst eine neutrale Einschätzung und eine Liste der Fragen, die du vor der Entscheidung mit dem Bestatter klären solltest.</p>
     <p style="font-size:14px;color:var(--mr-text-muted);margin-top:16px"><strong>Keine Bewertung des Bestatters.</strong> Wir prüfen nur, ob Posten und Preis im Rahmen üblicher Erfahrungswerte liegen.</p>
   </header>
 
+  <div class="no-print" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:24px 0">
+    <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:14px 16px;font-size:14px;line-height:1.5"><strong style="display:block;margin-bottom:4px">1 · Angebot zur Hand</strong><span style="color:var(--mr-text-muted)">Kostenvoranschlag oder Rechnung des Bestatters reicht.</span></div>
+    <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:14px 16px;font-size:14px;line-height:1.5"><strong style="display:block;margin-bottom:4px">2 · Posten abhaken</strong><span style="color:var(--mr-text-muted)">Was steht drin, was kommt separat? 5 kurze Schritte.</span></div>
+    <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:14px 16px;font-size:14px;line-height:1.5"><strong style="display:block;margin-bottom:4px">3 · Ampel + Fragenliste</strong><span style="color:var(--mr-text-muted)">Neutrale Einschätzung und konkrete Fragen fürs Gespräch. <a href="#ap-beispiel" style="color:var(--mr-primary)">Beispiel ansehen ↓</a></span></div>
+  </div>
+
   <div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">
-    <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Der Angebots-Check läuft vollständig in deinem Browser. Deine Eingaben werden nicht gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami) erfassen nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Der Angebots-Check läuft vollständig in deinem Browser. Deine Eingaben werden nicht gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami) erfassen den Seitenbesuch und anonyme Nutzungsschritte (z. B. ob ein Check abgeschlossen wurde) — nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
   </div>
 
   <div class="ap-progress-label no-print"><span id="ap-step-label">Schritt 1 von 5</span><span id="ap-step-pct">20 %</span></div>
@@ -183,6 +184,47 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <div id="ap-result" role="region" aria-live="polite" aria-label="Ergebnis des Angebots-Checks"></div>
   </div>
 
+
+  <!-- R1b: Statische, crawlbare Erklaer-Sektionen (Landing-Ebene) -->
+  <section class="no-print" style="margin:56px 0 0;border-top:1px solid var(--mr-border);padding-top:40px">
+    <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;margin-bottom:8px">So liest du ein Bestatter-Angebot</h2>
+    <p style="font-size:15px;color:var(--mr-text-muted);line-height:1.6;max-width:640px;margin-bottom:20px">Jedes seriöse Angebot besteht aus drei Arten von Posten — und nur eine davon ist wirklich vergleichbar:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+      <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:18px 20px;font-size:14px;line-height:1.6">
+        <strong style="display:block;margin-bottom:6px">Bestatterleistungen</strong>
+        Beratung, Überführung, Versorgung, Organisation. <strong>Das ist die eigene Leistung des Bestatters</strong> — hier unterscheiden sich Anbieter am stärksten, hier lohnt der Vergleich.
+      </div>
+      <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:18px 20px;font-size:14px;line-height:1.6">
+        <strong style="display:block;margin-bottom:6px">Friedhofs- und Kommunalgebühren</strong>
+        Grabnutzung, Beisetzung, Trauerhalle der Kommune. <strong>Per Gebührensatzung festgelegt</strong> — beim Bestatter nicht verhandelbar, er reicht sie nur durch. Regional sehr unterschiedlich (<a href="/bestattungskosten-nach-bundesland" style="color:var(--mr-primary)">Bundesland-Vergleich</a>).
+      </div>
+      <div style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:18px 20px;font-size:14px;line-height:1.6">
+        <strong style="display:block;margin-bottom:6px">Fremdleistungen</strong>
+        Krematorium, Blumen, Traueranzeige, Steinmetz. Werden <strong>durchgereicht</strong> — eine saubere Trennung im Angebot ist ein gutes Zeichen für Transparenz.
+      </div>
+    </div>
+
+    <h2 id="ap-beispiel" style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;margin:40px 0 8px">So sieht ein Ergebnis aus</h2>
+    <p style="font-size:15px;color:var(--mr-text-muted);line-height:1.6;max-width:640px;margin-bottom:16px">Beispiel: Feuerbestattung in Nordrhein-Westfalen, Angebot über <strong>5.480 €</strong>, ein Posten nicht eindeutig ausgewiesen. Der vergleichbare Rahmen liegt bei ca. 3.600–9.000 €:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0">
+      <div class="ampel-box green" style="margin:0;padding:20px 18px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Preis-Einschätzung</div><div class="ampel-icon" style="font-size:28px">✓</div><div class="ampel-title" style="font-size:17px">Preis wirkt plausibel</div><p class="ampel-text" style="font-size:13px">Die Gesamtsumme liegt im üblichen Rahmen für eine Feuerbestattung in NRW.</p></div>
+      <div class="ampel-box yellow" style="margin:0;padding:20px 18px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Vollständigkeit</div><div class="ampel-icon" style="font-size:28px">?</div><div class="ampel-title" style="font-size:17px">Ein paar Posten klären</div><p class="ampel-text" style="font-size:13px">Einzelne Pflicht-Posten waren nicht eindeutig ausgewiesen — die Liste unterm Ergebnis zeigt, welche (im Beispiel: die Überführung) und was vor der Unterschrift zu klären ist.</p></div>
+    </div>
+    <p style="font-size:14px;color:var(--mr-text-muted);line-height:1.6;max-width:640px">Dazu bekommst du eine Liste konkreter Fragen für das Bestatter-Gespräch — zum Ausdrucken oder als PDF. <a href="#main" style="color:var(--mr-primary)">Eigenes Angebot prüfen ↑</a></p>
+
+    <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;margin:40px 0 8px">Pauschalen: legitim — wenn klar ist, was drin ist</h2>
+    <p style="font-size:15px;color:var(--mr-text-muted);line-height:1.7;max-width:640px">Ein Komplettpaket oder eine Pauschale ist nicht verdächtig — oft ist sie sogar fair kalkuliert. Entscheidend ist die <strong>Leistungsbeschreibung</strong>: Welche Posten sind enthalten, welche kommen separat dazu (typisch: Friedhofsgebühren, Traueranzeige, Grabstein)? Eine Pauschale ohne Leistungsbeschreibung ist der einzige Fall, in dem du vor der Unterschrift auf einer Aufschlüsselung bestehen solltest. Der Check oben behandelt Pauschalen deshalb als vollständig — und gibt dir die Klärungsfragen mit.</p>
+
+    <h2 style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;margin:40px 0 8px">Vier Signale, bei denen du nachfragen solltest</h2>
+    <ul style="list-style:none;padding:0;max-width:640px">
+      <li style="padding:10px 0 10px 26px;position:relative;font-size:15px;line-height:1.6;border-bottom:1px solid var(--mr-border)"><span style="position:absolute;left:0;color:var(--mr-accent)">→</span><strong>Nur eine Gesamtsumme</strong>, auch auf Nachfrage keine Posten-Aufschlüsselung.</li>
+      <li style="padding:10px 0 10px 26px;position:relative;font-size:15px;line-height:1.6;border-bottom:1px solid var(--mr-border)"><span style="position:absolute;left:0;color:var(--mr-accent)">→</span><strong>Fremdleistungen ohne Trennung:</strong> Krematorium, Friedhofsgebühren oder Anzeigen verschwinden „im Paket" — Durchlaufposten sollten erkennbar sein.</li>
+      <li style="padding:10px 0 10px 26px;position:relative;font-size:15px;line-height:1.6;border-bottom:1px solid var(--mr-border)"><span style="position:absolute;left:0;color:var(--mr-accent)">→</span><strong>Zeitdruck</strong> („gilt nur heute") — bei Bestattungen unüblich und unnötig. Du darfst in Ruhe entscheiden.</li>
+      <li style="padding:10px 0 10px 26px;position:relative;font-size:15px;line-height:1.6"><span style="position:absolute;left:0;color:var(--mr-accent)">→</span><strong>Mündliche Zusagen</strong>, die nicht im schriftlichen Angebot stehen — bitte schriftlich bestätigen lassen.</li>
+    </ul>
+    <p style="font-size:13px;color:var(--mr-text-muted);margin-top:12px;max-width:640px">Keines dieser Signale ist ein Beweis für ein schlechtes Angebot — es sind Anlässe für eine Nachfrage. Seriöse Bestatter beantworten sie ohne Zögern.</p>
+  </section>
+
 </main></div>
 
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall/">Checkliste Todesfall</a><a href="/tools/bestattungskosten-rechner/">Kostenrechner</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/muenchen/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Mai 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
@@ -193,23 +235,27 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   // ===== Data =====
   var BESTATTUNGSARTEN = {
-    erdbestattung:{name:'Erdbestattung',icon:'⚰',desc:'Sarg, Friedhof, Beisetzung mit Grabstelle',baseMin:4500,baseMax:9500},
-    feuerbestattung:{name:'Feuerbestattung',icon:'🔥',desc:'Einäscherung + Urnenbeisetzung auf Friedhof',baseMin:3500,baseMax:7500},
-    seebestattung:{name:'Seebestattung',icon:'🌊',desc:'Einäscherung + Beisetzung auf See',baseMin:3500,baseMax:6500},
-    baumbestattung:{name:'Baumbestattung',icon:'🌳',desc:'Einäscherung + Beisetzung an einem Baum',baseMin:3000,baseMax:6000},
-    anonyme:{name:'Anonyme Bestattung',icon:'🕊',desc:'Einfache Bestattung ohne Grabstelle',baseMin:1500,baseMax:3500},
-    direktkremation:{name:'Direktkremation',icon:'⚱',desc:'Einäscherung ohne Trauerfeier — Urne wird beigesetzt oder übergeben',baseMin:1000,baseMax:2200}
+    // V2 (Juni 2026): lokalMin/lokalMax = ortsgebundener Anteil (Friedhofsgebuehren+Beisetzung)
+    // innerhalb der Base-Range — nur dieser wird mit dem Regionalfaktor skaliert.
+    erdbestattung:{name:'Erdbestattung',icon:'⚰',desc:'Sarg, Friedhof, Beisetzung mit Grabstelle',baseMin:3700,baseMax:9300,lokalMin:900,lokalMax:3600},
+    feuerbestattung:{name:'Feuerbestattung',icon:'🔥',desc:'Einäscherung + Urnenbeisetzung auf Friedhof',baseMin:3380,baseMax:8200,lokalMin:550,lokalMax:2100},
+    seebestattung:{name:'Seebestattung',icon:'🌊',desc:'Einäscherung + Beisetzung auf See',baseMin:3500,baseMax:6500,lokalMin:0,lokalMax:0},
+    baumbestattung:{name:'Baumbestattung',icon:'🌳',desc:'Einäscherung + Beisetzung an einem Baum',baseMin:3000,baseMax:6000,lokalMin:0,lokalMax:0},
+    anonyme:{name:'Anonyme Bestattung',icon:'🕊',desc:'Einfache Bestattung ohne gekennzeichnete Grabstelle',baseMin:1500,baseMax:3500,lokalMin:250,lokalMax:700},
+    direktkremation:{name:'Direktkremation',icon:'⚱',desc:'Einäscherung ohne Trauerfeier — Urne wird beigesetzt oder übergeben',baseMin:1000,baseMax:2200,lokalMin:0,lokalMax:0}
   };
 
-  // Multiplier 1:1 aus bestattungskosten-rechner (single source of truth, Mai 2026)
+  // V2-Friedhofs-Faktoren, 1:1 aus bestattungskosten-rechner (single source of truth, Juni 2026):
+  // verankert an den Friedhofsgebuehren der Landeshauptstadt (Aeternitas 2025, 20 J. vereinheitlicht).
+  // Wirkt NUR auf den ortsgebundenen Anteil (lokalMin/lokalMax) — Herleitung: /methodik#kostenmodell
   var BUNDESLAENDER = [
-    {code:'BY',name:'Bayern',mult:1.22},{code:'BW',name:'Baden-Württemberg',mult:1.20},{code:'HE',name:'Hessen',mult:1.15},
-    {code:'BE',name:'Berlin',mult:1.15},{code:'HH',name:'Hamburg',mult:1.20},{code:'BR',name:'Bremen',mult:1.05},
-    {code:'NW',name:'Nordrhein-Westfalen',mult:1.05},{code:'NI',name:'Niedersachsen',mult:1.02},
-    {code:'SH',name:'Schleswig-Holstein',mult:0.95},{code:'RP',name:'Rheinland-Pfalz',mult:0.95},
-    {code:'SL',name:'Saarland',mult:0.90},{code:'BB',name:'Brandenburg',mult:0.80},
-    {code:'TH',name:'Thüringen',mult:0.80},{code:'SN',name:'Sachsen',mult:0.82},
-    {code:'ST',name:'Sachsen-Anhalt',mult:0.78},{code:'MV',name:'Mecklenburg-Vorpommern',mult:0.78}
+    {code:'BY',name:'Bayern',mult:1.76},{code:'BW',name:'Baden-Württemberg',mult:1.13},{code:'HE',name:'Hessen',mult:1.05},
+    {code:'BE',name:'Berlin',mult:0.48},{code:'HH',name:'Hamburg',mult:1.12},{code:'BR',name:'Bremen',mult:0.94},
+    {code:'NW',name:'Nordrhein-Westfalen',mult:1.36},{code:'NI',name:'Niedersachsen',mult:1.13},
+    {code:'SH',name:'Schleswig-Holstein',mult:0.70},{code:'RP',name:'Rheinland-Pfalz',mult:0.91},
+    {code:'SL',name:'Saarland',mult:1.24},{code:'BB',name:'Brandenburg',mult:0.68},
+    {code:'TH',name:'Thüringen',mult:0.99},{code:'SN',name:'Sachsen',mult:0.60},
+    {code:'ST',name:'Sachsen-Anhalt',mult:1.15},{code:'MV',name:'Mecklenburg-Vorpommern',mult:0.91}
   ];
 
   // Posten-Definition: pflicht-flag = muss im Standard-Angebot enthalten sein
@@ -219,7 +265,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {key:'bestatter',label:'Bestatterleistungen (Beratung, Organisation, Behörden)',pflicht:true,info:'Grundleistung des Bestatters — sollte immer separat ausgewiesen sein'},
     {key:'abholung',label:'Abholung & Überführung des Verstorbenen',pflicht:true,info:'Vom Sterbeort zum Bestatter / Krematorium'},
     {key:'versorgung',label:'Hygienische Versorgung / Einbettung',pflicht:true},
-    {key:'sarg',label:'Sarg',pflicht:true,excludeBA:['seebestattung','anonyme'],info:'Bei Seebestattung Sondersarg im "Krematorium"-Posten enthalten'},
+    {key:'sarg',label:'Sarg',pflicht:true,excludeBA:['seebestattung'],info:'Bei Seebestattung Sondersarg im "Krematorium"-Posten enthalten; bei anonymer Bestattung einfacher Kremationssarg'},
     {key:'urne',label:'Urne',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation'],info:'Bei Feuerbestattung, See-, Baum-, anonymer Bestattung und Direktkremation'},
     {key:'aufbahrung',label:'Aufbahrung (falls gewünscht)',pflicht:false,info:'Optional — falls Angehörige Abschied nehmen wollen'},
     {key:'krematorium',label:'Krematorium / Einäscherung',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation']},
@@ -268,7 +314,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   // Grabstein und Grabpflege sind NICHT in baseRange (kommen separat NACH der Bestattung).
   // Werte in EUR, vor Region-Multiplier.
   var SEPARAT_KOSTEN={
-    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','direktkremation']},
+    friedhof:{label:'Friedhofsgebühren (Stadt rechnet direkt mit mir ab)',min:1300,max:2800,condBA:['erdbestattung','feuerbestattung','baumbestattung','anonyme']},
     krematorium:{label:'Krematoriumskosten (separate Rechnung)',min:300,max:550,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation']},
     trauerhalle:{label:'Trauerhalle / Trauerfeier (organisiere ich selbst)',min:100,max:400}
   };
@@ -459,31 +505,42 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var mult=state.bundeslandMult;
     var sum=state.gesamtsumme;
 
-    // V2.1: Adjusted Range — wenn User Posten als "separat" markiert, aus Vergleich rausrechnen
-    var baseMin=ba.baseMin, baseMax=ba.baseMax;
-    var origMin=ba.baseMin;
+    // V4 (Modell V2, Juni 2026): Regionalfaktor wirkt nur auf den ortsgebundenen Anteil.
+    // Range = (konstanter Anteil) + (lokaler Anteil × Faktor). Konsistent mit
+    // Kostenrechner + /bestattungskosten-nach-bundesland (Herleitung: /methodik#kostenmodell).
+    var konstMin=ba.baseMin-ba.lokalMin, konstMax=ba.baseMax-ba.lokalMax;
+    var lokalMin=ba.lokalMin, lokalMax=ba.lokalMax;
+    var origRangeMin=Math.round(konstMin+lokalMin*mult);
     var separatList=[];
     Object.keys(SEPARAT_KOSTEN).forEach(function(key){
       var sp=SEPARAT_KOSTEN[key];
       if(sp.condBA && sp.condBA.indexOf(state.bestattungsart)===-1)return;
       if(sp.excludeBA && sp.excludeBA.indexOf(state.bestattungsart)>=0)return;
       if(state.separat[key]){
-        // V3.1 (Range-Collapse-Fix): typischen Mittelwert abziehen — Breite bleibt erhalten,
-        // statt asymmetrisch min/max gegeneinander auszuspielen (was die Range aufblähte).
+        // V3.1 (Range-Collapse-Fix): typischen Mittelwert abziehen — Breite bleibt erhalten.
+        // V4: Friedhofs-Posten ist ortsgebunden → wird aus dem lokalen Anteil abgezogen,
+        // überregionale Posten (Krematorium, Trauerhalle) aus dem konstanten Anteil.
         var mid=(sp.min+sp.max)/2;
-        baseMin-=mid;
-        baseMax-=mid;
+        if(key==='friedhof'){
+          // V4.1: Abzug = modell-eigener Friedhofs-Anteil der gewaehlten Bestattungsart
+          // (Erd 600-2800 -> 1700, Feuer 300-1500 -> 900, anonym 150-400 -> 275);
+          // Baum: Waldfriedhof-Gebuehren stecken im konstanten Anteil (-1200).
+          var fhMid={erdbestattung:1700,feuerbestattung:900,anonyme:275}[state.bestattungsart];
+          if(fhMid===undefined){ konstMin-=1200; konstMax-=1200; }
+          else { lokalMin=Math.max(0,lokalMin-fhMid); lokalMax=Math.max(0,lokalMax-fhMid); }
+        } else {
+          konstMin-=mid; konstMax-=mid;
+        }
         separatList.push(sp);
       }
     });
-    // V3.1 Floor: Range darf nicht unter ~35% der Original-Untergrenze kollabieren und behält
-    // eine sinnvolle Mindestbreite — sonst hebelt der Nutzer mit "separat"-Haken unbemerkt den
-    // Unterpreis-Schutz aus (vorher kollabierte sie auf 200–… → immer grün).
-    var floorMin=Math.round(origMin*0.35);
-    if(baseMin<floorMin)baseMin=floorMin;
-    if(baseMax<baseMin*1.4)baseMax=Math.round(baseMin*1.4);
-    var rangeMin=Math.round(baseMin*mult/100)*100;
-    var rangeMax=Math.round(baseMax*mult/100)*100;
+    var rangeMin=Math.round((konstMin+lokalMin*mult)/100)*100;
+    var rangeMax=Math.round((konstMax+lokalMax*mult)/100)*100;
+    // V3.1 Floor (auf regionalisierte Original-Untergrenze bezogen): Range darf nicht
+    // kollabieren — sonst hebeln "separat"-Haken den Unterpreis-Schutz aus.
+    var floorMin=Math.round(origRangeMin*0.35/100)*100;
+    if(rangeMin<floorMin)rangeMin=floorMin;
+    if(rangeMax<rangeMin*1.4)rangeMax=Math.round(rangeMin*1.4/100)*100;
 
     // V2.2: Klärungs-Posten (NICHT "fehlt"). Sichtbare Posten ohne Haken UND nicht als "separat" deklariert.
     var visible=POSTEN.filter(function(p){
@@ -522,7 +579,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if(separatSum>=(rangeMin-sum)*0.8) userHasExplained=true;
       if(diffLow>=50){
         priceStatus='yellow';
-        priceReasons.push('Die Summe liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € für '+esc(ba.name)+' in '+esc(state.bundesland)+'; −'+diffLow+' %). Das kann legitim sein (z.B. Direktkremation als eigene Bestattungsart, Discounter, oder weil Posten separat abgerechnet werden) — lass dir schriftlich bestätigen, was im Preis enthalten ist.');
+        priceReasons.push('Die Summe liegt deutlich unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € für '+esc(ba.name)+' in '+esc(state.bundesland)+'; −'+diffLow+' %). Das kann legitim sein ('+(state.bestattungsart==='direktkremation'?'z.B. Discounter-Anbieter, oder weil Posten separat abgerechnet werden':'z.B. Direktkremation als eigene Bestattungsart, Discounter, oder weil Posten separat abgerechnet werden')+') — lass dir schriftlich bestätigen, was im Preis enthalten ist.');
       } else if(diffLow>=20){
         priceStatus='yellow';
         priceReasons.push('Die Summe liegt unter dem üblichen Rahmen ('+fmt(sum)+' € vs. typisch '+fmt(rangeMin)+'–'+fmt(rangeMax)+' € in '+esc(state.bundesland)+'). Frage nach, ob alle für dich relevanten Posten enthalten sind.');
@@ -556,7 +613,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       completenessReasons.push('Mehrere Posten sind nicht eindeutig ausgewiesen ('+klärung.length+' von '+klärungsTotal+'). Bei Discount-Angeboten ist das normal — frage einfach beim Bestatter nach, was inkludiert ist und was nicht.');
     } else if(klärung.length>=1){
       completenessStatus='yellow';
-      completenessReasons.push('Einzelne Posten sind nicht ausgewiesen ('+klärung.length+' Punkte zum Klären). Beim Bestatter-Gespräch kurz ansprechen.');
+      completenessReasons.push(klärung.length===1?'Ein Posten ist nicht ausgewiesen (1 Punkt zum Klären). Beim Bestatter-Gespräch kurz ansprechen.':'Einzelne Posten sind nicht ausgewiesen ('+klärung.length+' Punkte zum Klären). Beim Bestatter-Gespräch kurz ansprechen.');
     }
 
     // ---- Kombiniertes pathologisches Signal: auffällig niedriger Preis + viel unklar + nicht erklärt
@@ -631,14 +688,14 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     };
     var compMap={
       green:{icon:'✓',title:'Angebot wirkt vollständig',text:state.pauschal?'Du hast ein Komplettpaket / eine Pauschale angegeben — als Paket gilt sie als vollständig.':'Die abgefragten Pflicht-Posten sind ausgewiesen.'},
-      yellow:{icon:'?',title:'Ein paar Posten klären',text:'Einzelne Pflicht-Posten waren auf dem Angebot nicht eindeutig ausgewiesen — siehe Liste unten. Das ist KEIN Vorwurf, oft sind sie nur anders gebündelt.'},
+      yellow:{icon:'?',title:'Ein paar Posten klären',text:'Einzelne Pflicht-Posten waren auf dem Angebot nicht eindeutig ausgewiesen — siehe Liste unten. Das ist <em>kein</em> Vorwurf — oft sind sie nur anders gebündelt.'},
       red:{icon:'!',title:'Mehrere Posten unklar',text:'Mehrere Pflicht-Posten sind nicht ausgewiesen — bitte vor der Entscheidung klären.'}
     };
     var ps=priceMap[result.priceStatus], cs=compMap[result.completenessStatus];
 
     var html='';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:24px;font-weight:700;margin:32px 0 8px">Dein Angebots-Check</h2>';
-    var rangeNote=result.separatList.length>0?' · <em style="color:var(--mr-text-muted)">(Rahmen angepasst um '+result.separatList.length+' separat-abgerechnete Posten)</em>':'';
+    var rangeNote=result.separatList.length>0?' · <em style="color:var(--mr-text-muted)">(Rahmen angepasst um '+result.separatList.length+(result.separatList.length===1?' separat abgerechneten Posten':' separat abgerechnete Posten')+')</em>':'';
     html+='<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">'+esc(result.ba.name)+' in '+esc(state.bundesland)+' · Angebots-Gesamtsumme: <strong>'+fmt(result.sum)+' €</strong> · vergleichbarer Rahmen: <strong>'+fmt(result.rangeMin)+'–'+fmt(result.rangeMax)+' €</strong>'+rangeNote+'</p>';
 
     // Zwei Ampeln: Preis + Vollständigkeit (responsiv, stapeln auf schmal)
@@ -646,6 +703,17 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html+='<div class="ampel-box '+result.priceStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Preis-Einschätzung</div><div class="ampel-icon">'+ps.icon+'</div><div class="ampel-title" style="font-size:19px">'+ps.title+'</div><p class="ampel-text">'+ps.text+'</p></div>';
     html+='<div class="ampel-box '+result.completenessStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Vollständigkeit</div><div class="ampel-icon">'+cs.icon+'</div><div class="ampel-title" style="font-size:19px">'+cs.title+'</div><p class="ampel-text">'+cs.text+'</p></div>';
     html+='</div>';
+
+    // R1b: Gesamt-Empfehlung aus beiden Ampeln
+    var empf;
+    if(result.priceStatus==='red'||result.completenessStatus==='red'){
+      empf='Erst klären, dann entscheiden: Nimm die Fragenliste unten mit ins Gespräch — und hol parallel ein Vergleichsangebot ein.';
+    } else if(result.priceStatus==='green'&&result.completenessStatus==='green'){
+      empf='Das Angebot wirkt plausibel und vollständig. Nimm die Fragenliste trotzdem mit — und entscheide in Ruhe.';
+    } else {
+      empf='Mit der Fragenliste unten nachfassen — die offenen Punkte sind schnell geklärt, oft harmlos.';
+    }
+    html+='<p style="font-size:15px;line-height:1.6;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px;margin-bottom:24px"><strong>Unterm Strich:</strong> '+empf+'</p>';
 
     // Was du beim Bestatter klären solltest (Zusammenfassung)
     if(result.reasons.length>0){
@@ -668,7 +736,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     // Klärungs-Posten (NICHT "fehlt", NICHT critical-Red)
     if(result.klärung.length>0 && !state.pauschal){
-      html+='<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:24px 0 12px">Bitte beim Bestatter klären</h3>';
+      html+='<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:24px 0 12px">Vor der Unterschrift klären</h3>';
       html+='<p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:12px">Diese Posten waren auf deinem Angebot nicht eindeutig aufgeführt. Sie könnten in einer Pauschale enthalten, separat abrechenbar oder schlicht nicht relevant sein — frag einfach nach:</p>';
       result.klärung.forEach(function(p){
         html+='<div class="missing-card"><strong>'+esc(p.label)+'</strong>';
@@ -688,6 +756,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html+='<div class="no-print" style="display:flex;flex-wrap:wrap;gap:10px;margin:32px 0 16px">';
     html+='<button type="button" class="btn" id="ap-print">🖨️ Drucken / PDF speichern</button>';
     html+='<button type="button" class="btn btn-secondary" id="ap-restart">↺ Neues Angebot prüfen</button>';
+    html+='<a class="btn btn-secondary" href="/bestatter/" data-next-step="/bestatter/" style="text-decoration:none">Zweites Angebot: Bestatter finden</a>';
     html+='</div>';
 
     // Trust hint
@@ -715,7 +784,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     // Quellen + Methodik
     html+='<div style="background:#f4f0eb;border-radius:var(--mr-radius);padding:20px 24px;margin:32px 0;font-size:13px;color:var(--mr-text-muted);line-height:1.7">';
     html+='<strong style="color:var(--mr-text);display:block;margin-bottom:6px">Methodik</strong>';
-    html+='Vergleich der Gesamtsumme mit typischen Preisrahmen nach Bestattungsart × Bundesland (Datenbasis: Stiftung Warentest, BDB, Aeternitas e.V., Verbraucherzentralen — Stand Mai 2026). Prüfung der enthaltenen Pflicht-Posten gegen das übliche Leistungsspektrum einer Bestattung. Keine Rechtsberatung. Die Ampel ist keine Bewertung des Bestatters, sondern eine Hilfe für deine Entscheidungsvorbereitung.';
+    html+='Vergleich der Gesamtsumme mit typischen Preisrahmen nach Bestattungsart × Bundesland. Der regionale Anteil (Friedhofsgebühren, Beisetzung) ist an den Gebühren der Landeshauptstädte verankert (Aeternitas 2025), überregionale Posten sind bundesweit konstant angesetzt (Richtwerte: Stiftung Warentest, BDB, Verbraucherzentralen — Stand Juni 2026, Herleitung in der <a href="/methodik#kostenmodell" style="color:var(--mr-primary)">Methodik</a>). Prüfung der enthaltenen Pflicht-Posten gegen das übliche Leistungsspektrum einer Bestattung. Keine Rechtsberatung. Die Ampel ist keine Bewertung des Bestatters, sondern eine Hilfe für deine Entscheidungsvorbereitung.';
     html+='</div>';
 
     $('#ap-result').innerHTML=html;
