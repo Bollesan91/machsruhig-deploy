@@ -148,7 +148,7 @@ Welle-2+3-Hero + KI-Integration auditiert. **Validity-Kern PASS** (Iter-33-Defek
 ## Verdichtung-2-Loop (10.06.2026, autonomer Roadmap-Loop)
 Mandat: Top-10 der `_dev/ROADMAP-verdichtung-2.md` autonom abarbeiten (Bolle: „Vertraue dir da"). Modus je Rang: Branch → Fix-Skript in `_dev/audit/` → unabhängiger Review (claude.ai-Tab, ohne Score-Anchoring) → GO → Merge auf main (Netlify-Build) → Live-Verify.
 
-**Stand: Ränge 1–7 live (main bis R7-Merge), Rang 8 als Nächstes.**
+**Stand: Ränge 1–8 live, Rang 9 (Beerdigung planen) als Nächstes.**
 
 | Rang | Seite | Kern-Maßnahmen | Review | Commit/Merge |
 |---|---|---|---|---|
@@ -160,6 +160,8 @@ Mandat: Top-10 der `_dev/ROADMAP-verdichtung-2.md` autonom abarbeiten (Bolle: �
 | 6 | Hamburg-Stadtseite | R6: Quickhelp eigenständig, Gesamtkosten-Box, Historie nach unten; R6b nach NO-GO 54: Kostenkonsistenz (anonym 2.830–3.365 überall, Typisch ab 5.000, Einäscherung 300–550), Tourismus-Ton raus, Affiliate aus Sozialblock, Email-Pflicht, Service-Schema weg, Faktenfixes (30 J., Vor-1877-Gräber raus, Kisdorf SH), Telefonseelsorge | NO-GO 54 → GO 82 auflagenfrei | 49276aa |
 
 | 7 | Sozialbestattung | Schnell-Check "Zahlt das Sozialamt?", druckbare Unterlagen-Checkliste (Print-CSS), Stand-Konsistenz; R7b nach NO-GO 79: Trauerredner BSG-konform (B 8 SO 20/22 R — auch Hamburg-§74-Block gefixt!), Bayern-Beispiel ersetzt (SH/Nds. Lebensgemeinschaft, Bayern Gegenbeispiel Art. 15 BestV), SGB II gleichrangig, Schonvermögen 7.000–10.500 (OVG NRW 12 A 2454/18 + VG Münster 6 K 4230/17, beide selbst verifiziert), Lead entschärft, formloser Antrag + Stundung/Direktabrechnung | NO-GO 79 → GO 90 (+R7c-Folge-Commit → ~95) | Branch r7 |
+
+| 8 | Methodik + Datenschutz | Tool-Datenschutz-Matrix (byteweise identisch auf beiden Seiten), Cluster-Prüfdaten, Danksagung-Umami-Falschsatz; R8b nach NO-GO 64: **Checkliste-localStorage implementiert** (Matrix/FAQ versprachen Persistenz, Code hatte keine — Reviewer-Code-Audit-Fund; Klick→Reload→Restore lokal verifiziert), §6 auf Matrix gestützt, §9 Doppel-Regime ehrlich deklariert, §8 Tool-Formulare+Netlify-Speicherung, §2 zwei Ausnahmen, Matrix-Fußnote; R8c: „einzige Ausnahme"→zwei Ausnahmen (3 Stellen) | NO-GO 64 → GO 87 | Branch r8 |
 
 **Nebenfunde gefixt:** Rechner-Spartipps hatten letzten „Erben zu arm"-§74-Fehler site-weit + Pseudo-Betrag „1.500–2.500 €" → §74-konform (cccd800); Icon-Inkonsistenz Step-0 🤐→🕊.
 **Kostenrechner-Live-Validity: PASS.** Reviewer-Sandbox kam nicht an machsruhig.de (Egress-Whitelist) → Option 2: Szenarien mit sichtbarkeits-assertierten echten DOM-Klicks gefahren, Ergebnis-DOM-Dumps geliefert (Erd-Default NRW 6.204–17.396, Erd-Max Bayern 10.438–30.173, See 2.850–6.200). Pflicht-Nachtest See+Grabstein: Summe unverändert (kein Garbage-in), aber Zusammenfassung behauptete "Grabstein: mittel" → P2-Fixes (4efd6f1): Extras modellgetrieben je Art ausblenden + State-Reset, Blocklabel Seebestattung/Waldbestattung statt Friedhof, Spartipps szenariospezifisch. Smoke aller 5 Arten danach grün (Baum exakt 3.050–7.000 = Komponentensumme).
