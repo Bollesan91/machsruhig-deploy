@@ -285,7 +285,7 @@
 .ai-style-pills button{padding:6px 12px;border:1px solid var(--mr-border);background:#fff;color:var(--mr-text-muted);font-size:12px;font-weight:500;border-radius:99px;cursor:pointer;transition:all .15s}
 .ai-style-pills button:hover:not(.active){border-color:var(--mr-accent);color:var(--mr-text)}
 .ai-style-pills button.active{background:var(--mr-primary);color:#fff;border-color:var(--mr-primary)}
-.ai-style-hint{font-size:11px;color:var(--mr-text-muted);margin-top:6px;font-style:italic}</style>
+.ai-style-hint{font-size:11px;color:var(--mr-text-muted);margin-top:6px;font-style:italic}.ai-revoke-btn{background:none;border:none;padding:0;color:var(--mr-primary,#7A6B5D);text-decoration:underline;cursor:pointer;font-size:inherit;font-family:inherit}.ai-revoke-btn:disabled{color:var(--mr-text-muted,#73655A);text-decoration:none;cursor:default}</style>
 <script defer src="/assets/js/mr-ai.js"></script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -316,7 +316,7 @@
 <div style="max-width:720px;margin:24px auto 12px;padding:24px 28px;background:linear-gradient(135deg,#FFFAF5 0%,#F4EDE3 100%);border:1px solid #E8E0D6;border-radius:14px;font-family:'DM Sans',system-ui,sans-serif">
   <h1 style="font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:700;margin:0 0 10px;color:#2D2319;line-height:1.25">Trauerrede-Generator <span style="font-weight:500;color:#7A6B5D">— mit KI</span></h1>
   <p style="font-size:16px;color:#3D3025;margin:0 0 14px;line-height:1.55">Beantworte ein paar Fragen zur verstorbenen Person. Die KI schreibt daraus eine zusammenhängende Rede in sieben möglichen Tonarten — einzelne Abschnitte kannst du jederzeit neu generieren. Kostenlos.</p>
-  <p style="font-size:12px;color:#73655A;margin:0;line-height:1.5">KI-Modell Llama&nbsp;3.3 via Groq (USA) · Opt-in vor jeder Generierung · Eingaben werden nicht für KI-Training gespeichert. Wer keine KI nutzen möchte, kann auch nur den lokalen Wizard-Entwurf kopieren.</p>
+  <p style="font-size:12px;color:#73655A;margin:0;line-height:1.5">KI-Modell Llama&nbsp;3.3 via Groq (USA) · Opt-in beim ersten Mal, danach direkt · Eingaben werden nicht für KI-Training gespeichert. Wer keine KI nutzen möchte, kann auch nur den lokalen Wizard-Entwurf kopieren.</p>
 </div>
 <p style="max-width:720px;margin:0 auto 24px;padding:0 28px;font-size:13px;color:#8B7B6B;font-style:italic;line-height:1.55">Bei großen Trauerfeiern oder wenn dich die Aufgabe überfordert: Ein professioneller Trauerredner (Honorar typisch 300–800&nbsp;€) ist eine gute Alternative — z.&nbsp;B. über den <a href="https://www.bestatter.de" rel="noopener" target="_blank" style="color:#7A6B5D">BDB-Bestatterverband</a> oder lokale Trauerbegleitung.</p>
 <div id="app"></div>
@@ -1251,7 +1251,7 @@ function TrauerredeGenerator() {
             <h3>✨ Mit KI eine echte Rede generieren</h3>
             <p>
               Die KI macht aus deinen Eingaben eine zusammenhängende Rede — korrigiert Tippfehler, baut Übergänge und glättet den Stil.
-              Deine Eingaben (Name, Charakter, Erinnerungen) werden einmalig an <strong>Groq Inc. (USA)</strong> gesendet und nicht für KI-Training gespeichert.
+              Deine Eingaben (Name, Charakter, Erinnerungen) werden bei jeder Generierung an <strong>Groq Inc. (USA)</strong> gesendet und nicht für KI-Training gespeichert.
               Keine KI? Nutze den Lesemodus — die Vorlage funktioniert auch ohne.
             </p>
 
@@ -1297,13 +1297,13 @@ function TrauerredeGenerator() {
               <div className="modal-box">
                 <h3 id="consent-title">Einwilligung: KI-Verarbeitung deiner Eingaben</h3>
                 <p>
-                  Für die KI-Generierung werden deine Eingaben (Name der verstorbenen Person, Charakter-Beschreibung, Erinnerungen, eigene Texte) <strong>einmalig an Groq Inc. (USA)</strong> übermittelt, dort von einem Sprachmodell (Llama&nbsp;3.3) verarbeitet und als zusammenhängende Trauerrede zurückgegeben.
+                  Für die KI-Generierung werden deine Eingaben (Name der verstorbenen Person, Charakter-Beschreibung, Erinnerungen, eigene Texte) <strong>bei jeder Generierung an Groq Inc. (USA)</strong> übermittelt, dort von einem Sprachmodell (Llama&nbsp;3.3) verarbeitet und als zusammenhängende Trauerrede zurückgegeben.
                 </p>
                 <p>
-                  Groq speichert die Eingaben gemäß eigener Privacy-Policy <strong>nicht für KI-Training</strong>. Die Übermittlung erfolgt verschlüsselt (HTTPS). Daten werden auf Servern in den USA verarbeitet.
+                  Groq verwendet die Eingaben nach eigenen Angaben <strong>nicht für KI-Training</strong>. Die Übermittlung erfolgt verschlüsselt (HTTPS). Daten werden auf Servern in den USA verarbeitet.
                 </p>
                 <p style={{fontSize:13,color:'var(--mr-text-muted)'}}>
-                  Wenn du dem nicht zustimmst, nutze die Vorlage-Variante (Lesemodus / Bearbeiten). Du kannst die Einwilligung später widerrufen, indem du den Browser-Speicher dieser Seite leerst.
+                  Wenn du dem nicht zustimmst, nutze die Vorlage-Variante (Lesemodus / Bearbeiten). Du kannst die Einwilligung jederzeit über „KI-Einwilligung widerrufen“ im Datenschutz-Hinweis unten auf der Seite widerrufen.
                 </p>
                 <div className="consent-buttons">
                   <button className="btn-cancel" onClick={() => { setShowConsent(false); setPendingSection(''); }}>Abbrechen</button>
@@ -1324,7 +1324,8 @@ function TrauerredeGenerator() {
           )}
 
           <div className="privacy-notice">
-            <strong>Deine Privatsphäre:</strong> Deine Eingaben werden nach dem Wizard einmalig an Groq Inc. (USA) übermittelt, damit die KI daraus eine zusammenhängende Rede schreibt. Beim ersten Mal fragt dich ein Modal um Einwilligung — danach läuft die KI automatisch (Opt-out jederzeit über den Datenschutz-Hinweis unten). Groq speichert die Eingaben laut Privacy-Policy nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami) nur nach Cookie-Opt-In.
+            <strong>Deine Privatsphäre:</strong> Deine Eingaben werden bei jeder KI-Generierung an Groq Inc. (USA) übermittelt, damit die KI daraus eine zusammenhängende Rede schreibt. Beim ersten Mal fragt dich ein Modal um Einwilligung — danach läuft die KI direkt. Groq verwendet die Eingaben nach eigenen Angaben nicht für KI-Training. Die Seite nutzt anonyme Reichweiten-Statistiken (Umami) nur nach Cookie-Opt-In.{' '}
+            <button type="button" className="ai-revoke-btn" onClick={(e) => { window.mrAI.revokeConsent(); e.target.textContent = 'Einwilligung widerrufen ✓ — vor der nächsten KI-Generierung fragen wir erneut.'; e.target.disabled = true; }}>KI-Einwilligung widerrufen</button>
           </div>
 
           {/* R-A 13 Fix R2: Akut-Krisen-Pointer im Speech-Editor — sichtbar für jemanden der wenige Tage nach Verlust schreibt */}
