@@ -6,11 +6,11 @@
 
 ---
 
-## Betreffzeilen (3 Varianten zur Wahl)
+## Betreffzeilen (3 Varianten — Empfehlung aus Review: 1 oder 3 als Primärbetreff, 2 nur als Reserve)
 
-1. `Daten für Ihre Region: Was eine Bestattung in {Bundesland} kostet — neuer Kostenindex aller 16 Länder`
-2. `Sargwahlgrab: München fast fünfmal so teuer wie Berlin — frei nutzbare Daten für Ihre Berichterstattung`
-3. `Friedhofsgebühren sind Kommunalpolitik: neuer Bundesland-Index mit offenen Rohdaten (CC BY 4.0)`
+1. **(Primär)** `Daten für Ihre Region: Was eine Bestattung in {Bundesland} kostet — neuer Kostenindex aller 16 Länder`
+2. (Reserve, lautester Ton) `Sargwahlgrab: München fast fünfmal so teuer wie Berlin — frei nutzbare Daten für Ihre Berichterstattung`
+3. **(Primär-Alternative)** `Friedhofsgebühren sind Kommunalpolitik: neuer Bundesland-Index mit offenen Rohdaten (CC BY 4.0)`
 
 ---
 
@@ -44,7 +44,7 @@ kontakt@machsruhig.de
 
 Hamburg, {Datum}. Wo Menschen einen Angehörigen bestatten, bestimmt erheblich mit, was sie dafür bezahlen. Das Informationsportal machsruhig.de hat dazu einen Kostenindex für alle 16 Bundesländer veröffentlicht — verankert an den realen Friedhofsgebühren der Landeshauptstädte (Datengrundlage: Aeternitas e. V., 2025, auf 20 Jahre Nutzungszeit vereinheitlicht).
 
-Das Gefälle ist deutlich: Für ein Sargwahlgrab verlangt die teuerste Landeshauptstadt München 4.578 Euro, die günstigste — Berlin — 964 Euro, fast ein Fünftel davon. Auf das gesamte Bestattungs-Szenario gerechnet liegt das teuerste Bundesland im Modell rund 81 Prozent über dem günstigsten (Bayern: Index 136, Berlin: Index 75).
+Das Gefälle ist deutlich: Für ein Sargwahlgrab verlangt die teuerste Landeshauptstadt München 4.578 Euro, die günstigste — Berlin — 964 Euro, gut ein Fünftel davon. Auf das gesamte Bestattungs-Szenario gerechnet liegt das teuerste Bundesland im Modell rund 81 Prozent über dem günstigsten (Bayern: Index 136, Berlin: Index 75).
 
 Bemerkenswert: Das Gefälle folgt keinem einfachen Ost-West- oder Stadt-Land-Muster. Berlin hat als größte Stadt des Landes die günstigsten Gebühren aller Landeshauptstädte bei Sarg- und Urnengräbern, während etwa Magdeburg über dem Bundesschnitt liegt. „Friedhofsgebühren sind kommunalpolitische Entscheidungen, keine Geografie", heißt es auf der Vergleichsseite. Laut Aeternitas e. V. unterscheiden sich die Gebühren zwischen Kommunen teils um mehrere hundert Prozent — für Leserinnen und Leser ist die Gebührensatzung der eigenen Kommune deshalb aussagekräftiger als jeder Landeswert.
 
@@ -69,13 +69,13 @@ https://machsruhig.de/bestattungskosten-nach-bundesland
 | Saarland | 111 | Überraschung im Index: Platz 3 — Saarbrücken liegt deutlich über dem Bundesschnitt. |
 | Sachsen-Anhalt | 107 | Gegen das Ost-billig-Klischee: Magdeburg liegt über dem Bundesschnitt. |
 | Baden-Württemberg | 106 | Über dem Schnitt — Stuttgart unter den teureren Landeshauptstädten. |
-| Niedersachsen | 106 | Über dem Schnitt — Hannover gehört beim Sargwahlgrab zu den teureren Hauptstädten. |
+| Niedersachsen | 106 | Über dem Bundesschnitt — Hannover beim Sargwahlgrab im oberen Drittel der Landeshauptstädte (3.398 €, Platz 5 laut Aeternitas/check24-Tabelle). |
 | Hamburg | 106 | Über dem Schnitt — aber deutlich günstiger als München. |
 | Hessen | 102 | Nahe am Bundesschnitt — Wiesbaden im Mittelfeld. |
 | Thüringen | 100 | Exakt am Referenzwert — Erfurt im Mittelfeld der Hauptstädte. |
 | Bremen | 97 | Leicht unter dem Schnitt. |
-| Mecklenburg-Vorpommern | 96 | Entgegen der Erwartung nicht am unteren Ende — Schwerin im Mittelfeld. |
-| Rheinland-Pfalz | 96 | Spannender Kontrast: Mainz ist beim Sargwahlgrab teuer, über alle Grabarten aber unter dem Schnitt. |
+| Mecklenburg-Vorpommern | 96 | Entgegen der Erwartung nicht am unteren Ende — Schwerin knapp unter dem Bundesschnitt. |
+| Rheinland-Pfalz | 96 | Spannender Kontrast: Mainz beim Sargwahlgrab zweitteuerste Landeshauptstadt (3.798 € laut Aeternitas/check24-Tabelle), über alle Grabarten aber unter dem Schnitt (Index 96). |
 | Schleswig-Holstein | 86 | Deutlich unter dem Schnitt — Kiel bei mehreren Grabarten günstig. |
 | Brandenburg | 85 | Deutlich unter dem Schnitt — Potsdam günstig. |
 | Sachsen | 81 | Zweitgünstigstes Land — Dresden mit niedrigen Gebühren. |
@@ -95,4 +95,11 @@ https://machsruhig.de/bestattungskosten-nach-bundesland
 - Pro Redaktion EINE personalisierte Mail (Bundesland-Hook), kein Massen-BCC.
 - Anhänge vermeiden — nur Links (Spam-Filter).
 - Follow-up frühestens nach 5–7 Tagen, einmalig.
-- Offene Flanke, falls gefragt: Telefonnummer für Rückfragen ist noch nicht entschieden (nur E-Mail).
+- Offene Flanke, falls gefragt: Telefonnummer für Rückfragen ist noch nicht entschieden (nur E-Mail). Review-Empfehlung: mindestens Rückruf-Option anbieten („gern rufe ich zurück — schicken Sie mir Nummer und Zeitfenster"), sonst sinkt die Antwortquote bei Redaktionsschluss.
+
+## Review-Protokoll (intern)
+
+- Helper-V3-Review (Posting-Linse) 10.06.2026: alle Zahlen nachgerechnet (4,75×, 81 %, 16/16 Hook-Indizes = CSV), Pietät „unkritisch — Trauer nirgends als Hook".
+- Eingearbeitet: „gut ein Fünftel" (statt „fast"), Hannover-/Mainz-Hooks mit belegten check24-Werten (3.398 € Platz 5 / 3.798 € Platz 2), MV „knapp unter dem Bundesschnitt", Betreff-Priorisierung.
+- Kritisch-Befund „/methodik#kostenmodell läuft ins Leere" war ein Stale-Fetch des Reviewers: live verifiziert 10.06. (Sektion + Faktor-Tabelle + Rundungskonvention vorhanden, Stand 10. Juni 2026; Cloudflare cached HTML nicht — Cf-Cache-Status DYNAMIC). Reviewer-Fazit: „Nach #1–#3 ist es ein sauberes GO" — #1 live erfüllt, #2/#3 eingearbeitet.
+- Aeternitas-Gebührendatenbank als öffentlich verifiziert (10.06., aeternitas.de „Kosten und Vorsorge → Friedhofsgebühren").
