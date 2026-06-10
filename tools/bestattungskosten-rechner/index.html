@@ -510,8 +510,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     friedhofsgebuehr_urne:      {label:'Friedhofsgebühren Urnengrab (10 Jahre)', category:'Friedhof'},
     friedhofsgebuehr_anonym:    {label:'Friedhofsgebühren anonym', category:'Friedhof'},
     beisetzung:                 {label:'Beisetzungsgebühr', category:'Friedhof'},
-    seebestattung_verwaltung:   {label:'Seebestattung (Organisation, Verwaltung)', category:'Friedhof'},
-    baum_bestattung:            {label:'Waldfriedhof-Gebühren', category:'Friedhof'},
+    seebestattung_verwaltung:   {label:'Seebestattung (Organisation, Verwaltung)', category:'Seebestattung'},
+    baum_bestattung:            {label:'Waldfriedhof-Gebühren', category:'Waldbestattung'},
     aufbahrung:                 {label:'Aufbahrung', category:'Sonstiges'},
     trauerfeier_saal:           {label:'Saalmiete Trauerfeier', category:'Trauerfeier'},
     trauerfeier_redner:         {label:'Trauerredner (weltlich/frei)', category:'Trauerfeier'},
@@ -583,6 +583,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       state.bestattungsart = card.dataset.value;
       $('#btn-step-0-next').disabled = false;
       updateGrabtypOptions();
+      updateExtrasOptions();
     });
   });
   $('#btn-step-0-next').addEventListener('click', function(){
@@ -613,6 +614,33 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     $$('option[data-feuer-only]', sel).forEach(function(opt){
       opt.hidden = ba !== 'feuerbestattung';
       if (opt.hidden && sel.value === opt.value) { sel.value = 'Einzelgrab'; state.grabGrab = 'Einzelgrab'; }
+    });
+  }
+
+  // Extras nur anbieten, wenn das Kostenmodell der Bestattungsart den Posten
+  // kennt — sonst Checkbox ausblenden und State zuruecksetzen (verhindert
+  // "Grabstein: mittel" in der Zusammenfassung, der nie in die Summe einfliesst).
+  var EXTRA_MODEL_KEYS = {
+    aufbahrung:    {check:'aufbahrung-check',    modelKey:'aufbahrung',           options:null},
+    trauerfeier:   {check:'trauerfeier-check',   modelKey:'trauerfeier_saal',     options:'trauerfeier-options'},
+    blumenschmuck: {check:'blumenschmuck-check', modelKey:'blumenschmuck_einfach',options:'blumenschmuck-options'},
+    grabstein:     {check:'grabstein-check',     modelKey:'grabstein_einfach',    options:'grabstein-options'},
+    traueranzeige: {check:'traueranzeige-check', modelKey:'traueranzeige',        options:null}
+  };
+  function updateExtrasOptions(){
+    var model = KOSTENMODELL[state.bestattungsart] || {};
+    Object.keys(EXTRA_MODEL_KEYS).forEach(function(key){
+      var def = EXTRA_MODEL_KEYS[key];
+      var cb = $('#' + def.check);
+      if (!cb) return;
+      var wrap = cb.closest('div');
+      var supported = def.modelKey in model;
+      if (wrap) wrap.style.display = supported ? '' : 'none';
+      if (!supported) {
+        cb.checked = false;
+        state[key] = false;
+        if (def.options) $('#' + def.options).style.display = 'none';
+      }
     });
   }
 
@@ -814,21 +842,16 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var ba = BESTATTUNGSARTEN[state.bestattungsart];
     // R4: Einordnung je Kostenblock — Badge (fix/vergleichbar/optional) + Sparhebel
     var _ba = state.bestattungsart;
-    var _friedhofMeta;
-    if (_ba === 'seebestattung') {
-      _friedhofMeta = {badge:'Anbieterpreis', tipp:'Reederei-Leistungen sind vergleichbar — Preise und Leistungsumfang unterscheiden sich je Anbieter.'};
-    } else if (_ba === 'baumbestattung') {
-      _friedhofMeta = {badge:'Anbieterpreis', tipp:'Wald-Anbieter (z. B. FriedWald, RuheForst) haben eigene Preislisten — Baumart und Platz bestimmen den Preis.'};
-    } else if (_ba === 'erdbestattung') {
-      _friedhofMeta = {badge:'fix per Satzung', tipp:'Sparhebel: Grabart (z. B. Reihengrab statt Wahlgrab) und Friedhofswahl — die Gebühr selbst ist nicht verhandelbar.'};
-    } else {
-      _friedhofMeta = {badge:'fix per Satzung', tipp:'Sparhebel: Grabart (z. B. Urnenreihengrab) und Friedhofswahl — die Gebühr selbst ist nicht verhandelbar.'};
-    }
+    var _friedhofMeta = _ba === 'erdbestattung'
+      ? {badge:'fix per Satzung', tipp:'Sparhebel: Grabart (z. B. Reihengrab statt Wahlgrab) und Friedhofswahl — die Gebühr selbst ist nicht verhandelbar.'}
+      : {badge:'fix per Satzung', tipp:'Sparhebel: Grabart (z. B. Urnenreihengrab) und Friedhofswahl — die Gebühr selbst ist nicht verhandelbar.'};
     var CAT_META = {
       'Bestatterleistungen': {badge:'vergleichbar', tipp:'Sparhebel: 2–3 Angebote vergleichen — hier unterscheiden sich Anbieter am stärksten.'},
       'Sarg/Urne':           {badge:'wählbar',      tipp:'Sparhebel: einfache Modelle sind genauso würdevoll — Materialwahl macht hunderte Euro aus.'},
       'Kremierung':          {badge:'Preis je Krematorium', tipp:'Kommunale Krematorien rechnen nach Gebührensatzung ab, private nach Preisliste — über die Wahl des Krematoriums teils beeinflussbar.'},
       'Friedhof':            _friedhofMeta,
+      'Seebestattung':       {badge:'Anbieterpreis', tipp:'Reederei-Leistungen sind vergleichbar — Preise und Leistungsumfang unterscheiden sich je Anbieter.'},
+      'Waldbestattung':      {badge:'Anbieterpreis', tipp:'Wald-Anbieter (z. B. FriedWald, RuheForst) haben eigene Preislisten — Baumart und Platz bestimmen den Preis.'},
       'Trauerfeier':         {badge:'optional',     tipp:'Sparhebel: Umfang frei gestaltbar — eine kleine Feier ist genauso würdig.'},
       'Grabstein':           {badge:'optional, später', tipp:'Sparhebel: muss nicht sofort entschieden werden — in Ruhe vergleichen, oft erst nach Monaten nötig.'},
       'Grabpflege':          {badge:'gestaltbar',   tipp:'Sparhebel: Eigenpflege statt Dauergrabpflege-Vertrag; pflegeleichte Grabarten wählen.'},
@@ -948,9 +971,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<div class="tips-grid">';
     html += '<div class="tip-card"><strong>Bestatter vergleichen</strong><p>Hole 3 schriftliche Angebote ein. Die Unterschiede sind oft 30–50 %.</p></div>';
     html += '<div class="tip-card"><strong>Einfache Materialien</strong><p>Ein Sarg aus Kiefer oder eine einfache Urne kosten ein Drittel weniger.</p></div>';
-    html += '<div class="tip-card"><strong>Friedhofsgemeinde nutzen</strong><p>Gemeindliche Friedhöfe sind günstiger als private Friedhöfe.</p></div>';
-    html += '<div class="tip-card"><strong>Grabpflege optimieren</strong><p>Wildbepflanzung oder anonyme Gräber sparen Pflegekosten über Jahre.</p></div>';
-    html += '<div class="tip-card"><strong>Trauerfeier schlicht halten</strong><p>Eine frei gestaltete Feier kostet weniger als Saalmiete + Redner.</p></div>';
+    var _model = KOSTENMODELL[state.bestattungsart] || {};
+    if ('friedhofsgebuehr' in _model || 'friedhofsgebuehr_urne' in _model || 'friedhofsgebuehr_anonym' in _model) html += '<div class="tip-card"><strong>Friedhofsgemeinde nutzen</strong><p>Gemeindliche Friedhöfe sind günstiger als private Friedhöfe.</p></div>';
+    if ('grabpflege_jahresgebuehr' in _model) html += '<div class="tip-card"><strong>Grabpflege optimieren</strong><p>Wildbepflanzung oder anonyme Gräber sparen Pflegekosten über Jahre.</p></div>';
+    if ('trauerfeier_saal' in _model) html += '<div class="tip-card"><strong>Trauerfeier schlicht halten</strong><p>Eine frei gestaltete Feier kostet weniger als Saalmiete + Redner.</p></div>';
     html += '<div class="tip-card"><strong>Sozialbestattung prüfen</strong><p>Reichen Nachlass und zumutbare eigene Mittel nicht, übernimmt das Sozialamt die erforderlichen Kosten einer würdigen, schlichten Bestattung (§ 74 SGB XII).</p></div>';
     html += '</div></div>';
 
