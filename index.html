@@ -75,7 +75,7 @@
         "https://machsruhig.de/trauersprueche",
         "https://machsruhig.de/vorsorge/",
         "https://machsruhig.de/methodik",
-        "https://machsruhig.de/bestatter/muenchen/"
+        "https://machsruhig.de/bestatter/"
       ]
     }
   ]
@@ -89,6 +89,20 @@
 .mr-main{max-width:720px;margin:0 auto;padding:48px 20px 0}
 .mr-eyebrow{font-size:13px;font-weight:600;color:var(--mr-primary);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px}
 .mr-h1{font-family:'Fraunces',serif;font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.2;color:var(--mr-text);margin-bottom:16px}
+.mr-hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 10px}
+.mr-btn{display:inline-block;padding:12px 22px;border-radius:8px;text-decoration:none;font-size:15px;font-weight:600;transition:background 0.2s,border-color 0.2s}
+.mr-btn-primary{background:var(--mr-primary);color:#fff}
+.mr-btn-primary:hover{background:var(--mr-primary-hover,#6d5a38)}
+.mr-btn-secondary{background:var(--mr-bg-card);color:var(--mr-text);border:2px solid var(--mr-border)}
+.mr-btn-secondary:hover{border-color:var(--mr-primary)}
+.mr-hero-akut{font-size:14px;color:var(--mr-text-muted)}
+.mr-hero-akut a{color:var(--mr-primary)}
+.mr-trust-strip{display:flex;flex-wrap:wrap;gap:8px 24px;margin:22px 4px 0;font-size:13.5px;color:var(--mr-text-muted)}
+.mr-trust-strip span::before{content:"✓ ";color:var(--mr-primary);font-weight:700}
+.mr-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mr-step{background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 22px;font-size:14.5px;line-height:1.6}
+.mr-step .num{display:inline-block;width:26px;height:26px;border-radius:50%;background:var(--mr-primary);color:#fff;text-align:center;line-height:26px;font-weight:700;font-size:14px;margin-bottom:8px}
+.mr-mini-ampel{display:inline-flex;align-items:center;gap:8px;background:#f0f6f0;border:1px solid #cce0cc;border-radius:8px;padding:6px 12px;font-size:13px;margin-top:10px}
 .mr-section-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--mr-text);margin:0 0 20px 4px}
 .mr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .mr-card{display:block;background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:24px 24px 20px;text-decoration:none;color:inherit;transition:border-color 0.2s,transform 0.2s;animation:fadeUp 0.5s ease-out both}
@@ -150,13 +164,34 @@
     <p class="mr-eyebrow">Vorsorge · Trauer · Bestattung</p>
     <h1 class="mr-h1">Wenn es soweit ist.<br>Mach's ruhig.</h1>
     <p class="mr-lead">
-      Unabhängiger Wegweiser, um <strong>Vorsorge</strong> in Ruhe zu regeln, einen <strong>Trauerfall</strong> Schritt für Schritt zu bewältigen und eine <strong>Bestattung</strong> ohne Verkaufsdruck zu planen. In deinem Tempo. Nur was du wirklich brauchst, wenn du es brauchst.
+      Unabhängiger Wegweiser für <strong>Trauerfall, Bestattung und Vorsorge</strong>: Versteh, was eine Bestattung kostet, prüfe das Angebot des Bestatters — und entscheide in Ruhe, <strong>bevor du etwas unterschreibst</strong>. Kostenlos, ohne Anmeldung, ohne Verkaufsdruck.
     </p>
+    <div class="mr-hero-ctas">
+      <a href="/tools/angebotspruefer/" class="mr-btn mr-btn-primary" data-track="cta">Bestatter-Angebot prüfen</a>
+      <a href="/tools/bestattungskosten-rechner/" class="mr-btn mr-btn-secondary" data-track="cta">Kosten berechnen</a>
+    </div>
+    <p class="mr-hero-akut">Akuter Todesfall? <a href="/tools/checkliste-todesfall/">Zur Checkliste — was jetzt zu tun ist →</a></p>
   </header>
 
   <section aria-labelledby="themen-heading">
     <h2 id="themen-heading" class="mr-section-title">Womit können wir dir helfen?</h2>
     <div class="mr-grid">
+
+      <a href="/tools/angebotspruefer/" class="mr-card">
+        <span class="mr-card-tag mr-card-tag-akut">Akutfall</span>
+        <h3>Bestatter-Angebot prüfen</h3>
+        <p class="sub">Ist dein Angebot fair?</p>
+        <p>Du hast ein konkretes Angebot oder eine Rechnung? Prüfe in 3 Minuten, ob Preis und Posten plausibel sind — mit Ampel und Fragenliste für den Bestatter.</p>
+        <p class="mr-card-cta">Angebot prüfen →</p>
+      </a>
+
+      <a href="/tools/bestattungskosten-rechner/" class="mr-card">
+        <span class="mr-card-tag mr-card-tag-akut">Akutfall</span>
+        <h3>Bestattungskosten-Rechner</h3>
+        <p class="sub">Was kostet eine Bestattung?</p>
+        <p>Interaktiver Rechner mit detaillierter Kostenaufstellung — nach Bestattungsart, Region und Leistungen.</p>
+        <p class="mr-card-cta">Kosten berechnen →</p>
+      </a>
 
       <a href="/tools/checkliste-todesfall/" class="mr-card">
         <span class="mr-card-tag mr-card-tag-akut">Akutfall</span>
@@ -174,19 +209,12 @@
         <p class="mr-card-cta">Zum Ratgeber →</p>
       </a>
 
-      <a href="/tools/bestattungskosten-rechner/" class="mr-card">
-        <span class="mr-card-tag mr-card-tag-akut">Akutfall</span>
-        <h3>Bestattungskosten-Rechner</h3>
-        <p class="sub">Was kostet eine Bestattung?</p>
-        <p>Interaktiver Rechner mit detaillierter Kostenaufstellung — nach Bestattungsart, Region und Leistungen.</p>
-        <p class="mr-card-cta">Kosten berechnen →</p>
-      </a>
-      <a href="/tools/angebotspruefer/" class="mr-card">
-        <span class="mr-card-tag mr-card-tag-akut">Akutfall</span>
-        <h3>Bestatter-Angebot prüfen</h3>
-        <p class="sub">Ist dein Angebot fair?</p>
-        <p>Du hast ein konkretes Angebot oder eine Rechnung? Prüfe in 3 Minuten, ob Preis und Posten plausibel sind — mit Ampel und Fragenliste für den Bestatter.</p>
-        <p class="mr-card-cta">Angebot prüfen →</p>
+      <a href="/bestattungsarten" class="mr-card">
+        <span class="mr-card-tag mr-card-tag-vorsorge">Orientierung</span>
+        <h3>Bestattungsarten</h3>
+        <p class="sub">Erd-, Feuer-, See- und Baumbestattung</p>
+        <p>Welche Bestattungsarten gibt es? Ablauf, Kosten, Voraussetzungen — verständlich erklärt.</p>
+        <p class="mr-card-cta">Im Überblick →</p>
       </a>
 
       <a href="/trauerrede-schreiben" class="mr-card">
@@ -203,14 +231,6 @@
         <p class="sub">Die richtigen Worte</p>
         <p>Beileid ausdrücken: Kondolenzschreiben, Trauersprüche und Zitate — einfühlsam und authentisch.</p>
         <p class="mr-card-cta">Worte finden →</p>
-      </a>
-
-      <a href="/bestattungsarten" class="mr-card">
-        <span class="mr-card-tag mr-card-tag-vorsorge">Orientierung</span>
-        <h3>Bestattungsarten</h3>
-        <p class="sub">Erd-, Feuer-, See- und Baumbestattung</p>
-        <p>Welche Bestattungsarten gibt es? Ablauf, Kosten, Voraussetzungen — verständlich erklärt.</p>
-        <p class="mr-card-cta">Im Überblick →</p>
       </a>
 
       <a href="/vorsorge/" class="mr-card">
@@ -230,10 +250,25 @@
       </a>
 
     </div>
+    <div class="mr-trust-strip">
+      <span>Kostenlos, ohne Anmeldung</span>
+      <span>Rechner &amp; Checks laufen in deinem Browser</span>
+      <span>Unabhängig — keine Weitergabe ohne deine Einwilligung</span>
+      <span><a href="/methodik" style="color:var(--mr-primary)">Offene Methodik &amp; Quellen</a></span>
+    </div>
+  </section>
+
+  <section aria-labelledby="sofunkt-heading" style="margin-top:56px">
+    <h2 id="sofunkt-heading" class="mr-section-title">So funktioniert machsruhig</h2>
+    <div class="mr-steps">
+      <div class="mr-step"><span class="num">1</span><br><strong>Verstehen.</strong> Was kostet eine Bestattung, welche Fristen gelten? Ratgeber und <a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary)">Kostenrechner</a> geben dir den Rahmen — bundesland-genau.</div>
+      <div class="mr-step"><span class="num">2</span><br><strong>Prüfen.</strong> Angebot vom Bestatter da? Der <a href="/tools/angebotspruefer/" style="color:var(--mr-primary)">Angebotsprüfer</a> vergleicht Preis und Posten mit der regionalen Spanne.<br><span class="mr-mini-ampel"><strong style="color:#5a8a5a">✓</strong> Preis wirkt plausibel</span><br><a href="/tools/angebotspruefer/#ap-beispiel" style="color:var(--mr-primary);font-size:13px">Beispiel-Ergebnis ansehen →</a></div>
+      <div class="mr-step"><span class="num">3</span><br><strong>In Ruhe entscheiden.</strong> Du bekommst eine konkrete Fragenliste fürs Bestatter-Gespräch. Nichts muss sofort unterschrieben werden — du darfst vergleichen.</div>
+    </div>
   </section>
 
   <section aria-labelledby="staedte-heading" style="margin-top:64px">
-    <h2 id="staedte-heading" class="mr-section-title">Bestattung in Deiner Stadt</h2>
+    <h2 id="staedte-heading" class="mr-section-title">Bestattung in deiner Stadt</h2>
     <p style="text-align:center;color:var(--mr-text-muted,#73655A);font-size:15px;margin-top:-12px;margin-bottom:24px">
       Friedhöfe, Gebühren, Sozialbestattung und Bestatter-Wahl — für jede größere Stadt eine eigene Seite mit verifizierten lokalen Daten.
     </p>
@@ -282,7 +317,7 @@
 
   <div class="mr-trust">
     <h2>Kostenlos. Keine Registrierung. In deinem Tempo.</h2>
-    <p>Alle Inhalte und Tools sind frei zugänglich. Wir speichern keine personenbezogenen Daten in unseren Tools — alle Eingaben bleiben in deinem Browser.</p>
+    <p>Rechner und Checklisten laufen vollständig in deinem Browser — diese Eingaben verlassen dein Gerät nicht. Bei den optionalen KI-Texthelfern werden deine Angaben nur nach ausdrücklicher Einwilligung an einen KI-Dienst übermittelt (<a href="/datenschutz">Details</a>).</p>
     <div class="mr-trust-links">
       <a href="/methodik">Wie wir arbeiten</a>
       <a href="/datenschutz">Datenschutz</a>
@@ -293,7 +328,7 @@
   <section class="mr-cluster-block" aria-labelledby="grenzen-heading">
     <h2 id="grenzen-heading">Wofür machsruhig nicht da ist</h2>
     <p>
-      Wir sind kein Bestattungsunternehmen, kein Versicherungsmakler und keine Anwaltskanzlei. Unsere Inhalte sind redaktionell unabhängig. Auf einigen Stadtseiten kannst du über ein unverbindliches Formular drei Bestatter aus deiner Region anfragen — wenn daraus eine Beauftragung entsteht, kann machsruhig eine Vermittlungsvergütung vom Bestatter erhalten. Für dich entstehen dadurch keine Mehrkosten, und die Auswahl der Bestatter ist provisionsunabhängig. Für eine konkrete Bestattung, einen Vorsorgevertrag oder rechtsverbindliche Beratung ist die richtige Adresse ein <a href="/bestatter/muenchen/">Bestatter</a>, eine Versicherung oder ein Notar.
+      Wir sind kein Bestattungsunternehmen, kein Versicherungsmakler und keine Anwaltskanzlei. Unsere Inhalte sind redaktionell unabhängig. Auf einigen Stadtseiten kannst du über ein unverbindliches Formular drei Bestatter aus deiner Region anfragen — wenn daraus eine Beauftragung entsteht, kann machsruhig eine Vermittlungsvergütung vom Bestatter erhalten. Für dich entstehen dadurch keine Mehrkosten, und die Auswahl der Bestatter ist provisionsunabhängig. Für eine konkrete Bestattung, einen Vorsorgevertrag oder rechtsverbindliche Beratung ist die richtige Adresse ein <a href="/bestatter/">Bestatter</a>, eine Versicherung oder ein Notar.
     </p>
     <p>
       Was machsruhig leistet: Wir helfen dir, dich zu orientieren, bevor du mit jemandem ins Gespräch gehst. Du sollst verstehen, welche Optionen es gibt, was sie typischerweise kosten und welche Fragen du stellen solltest — damit du nicht in einer Ausnahmesituation Entscheidungen triffst, die du später bereust.
@@ -320,7 +355,7 @@
         <a href="/vorsorge/bestattungsvorsorge/">Bestattungsvorsorge</a>
         <a href="/vorsorge/sterbegeldversicherung/">Sterbegeldversicherung</a>
         <a href="/bestattungsarten">Bestattungsarten</a>
-        <a href="/bestatter/muenchen/">Bestatter finden</a>
+        <a href="/bestatter/">Bestatter finden</a>
       </div>
       <div>
         <h4>Über uns</h4>
@@ -337,27 +372,6 @@
   </div>
 </footer>
 
-<script>
-// Mobile Nav Toggle (vanilla JS, kein React)
-(function(){
-  var btn = document.querySelector('.mr-nav-toggle');
-  var menu = document.getElementById('mr-nav-links');
-  if(!btn || !menu) return;
-  btn.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      if(window.innerWidth <= 760){
-        menu.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-})();
-</script>
 
 <script>/*iter-18-navjs*/(function(){var b=document.querySelector(".mr-nav-toggle"),n=document.querySelector(".mr-nav");if(b&&n){b.setAttribute("aria-expanded","false");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})}})();</script>
 </body>
