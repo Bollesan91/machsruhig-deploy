@@ -75,7 +75,7 @@
         "https://machsruhig.de/trauersprueche",
         "https://machsruhig.de/vorsorge/",
         "https://machsruhig.de/methodik",
-        "https://machsruhig.de/bestatter/muenchen/"
+        "https://machsruhig.de/bestatter/"
       ]
     }
   ]
@@ -268,7 +268,7 @@
   </section>
 
   <section aria-labelledby="staedte-heading" style="margin-top:64px">
-    <h2 id="staedte-heading" class="mr-section-title">Bestattung in Deiner Stadt</h2>
+    <h2 id="staedte-heading" class="mr-section-title">Bestattung in deiner Stadt</h2>
     <p style="text-align:center;color:var(--mr-text-muted,#73655A);font-size:15px;margin-top:-12px;margin-bottom:24px">
       Friedhöfe, Gebühren, Sozialbestattung und Bestatter-Wahl — für jede größere Stadt eine eigene Seite mit verifizierten lokalen Daten.
     </p>
@@ -317,7 +317,7 @@
 
   <div class="mr-trust">
     <h2>Kostenlos. Keine Registrierung. In deinem Tempo.</h2>
-    <p>Alle Inhalte und Tools sind frei zugänglich. Wir speichern keine personenbezogenen Daten in unseren Tools — alle Eingaben bleiben in deinem Browser.</p>
+    <p>Rechner und Checklisten laufen vollständig in deinem Browser — diese Eingaben verlassen dein Gerät nicht. Bei den optionalen KI-Texthelfern werden deine Angaben nur nach ausdrücklicher Einwilligung an einen KI-Dienst übermittelt (<a href="/datenschutz">Details</a>).</p>
     <div class="mr-trust-links">
       <a href="/methodik">Wie wir arbeiten</a>
       <a href="/datenschutz">Datenschutz</a>
@@ -328,7 +328,7 @@
   <section class="mr-cluster-block" aria-labelledby="grenzen-heading">
     <h2 id="grenzen-heading">Wofür machsruhig nicht da ist</h2>
     <p>
-      Wir sind kein Bestattungsunternehmen, kein Versicherungsmakler und keine Anwaltskanzlei. Unsere Inhalte sind redaktionell unabhängig. Auf einigen Stadtseiten kannst du über ein unverbindliches Formular drei Bestatter aus deiner Region anfragen — wenn daraus eine Beauftragung entsteht, kann machsruhig eine Vermittlungsvergütung vom Bestatter erhalten. Für dich entstehen dadurch keine Mehrkosten, und die Auswahl der Bestatter ist provisionsunabhängig. Für eine konkrete Bestattung, einen Vorsorgevertrag oder rechtsverbindliche Beratung ist die richtige Adresse ein <a href="/bestatter/muenchen/">Bestatter</a>, eine Versicherung oder ein Notar.
+      Wir sind kein Bestattungsunternehmen, kein Versicherungsmakler und keine Anwaltskanzlei. Unsere Inhalte sind redaktionell unabhängig. Auf einigen Stadtseiten kannst du über ein unverbindliches Formular drei Bestatter aus deiner Region anfragen — wenn daraus eine Beauftragung entsteht, kann machsruhig eine Vermittlungsvergütung vom Bestatter erhalten. Für dich entstehen dadurch keine Mehrkosten, und die Auswahl der Bestatter ist provisionsunabhängig. Für eine konkrete Bestattung, einen Vorsorgevertrag oder rechtsverbindliche Beratung ist die richtige Adresse ein <a href="/bestatter/">Bestatter</a>, eine Versicherung oder ein Notar.
     </p>
     <p>
       Was machsruhig leistet: Wir helfen dir, dich zu orientieren, bevor du mit jemandem ins Gespräch gehst. Du sollst verstehen, welche Optionen es gibt, was sie typischerweise kosten und welche Fragen du stellen solltest — damit du nicht in einer Ausnahmesituation Entscheidungen triffst, die du später bereust.
@@ -355,7 +355,7 @@
         <a href="/vorsorge/bestattungsvorsorge/">Bestattungsvorsorge</a>
         <a href="/vorsorge/sterbegeldversicherung/">Sterbegeldversicherung</a>
         <a href="/bestattungsarten">Bestattungsarten</a>
-        <a href="/bestatter/muenchen/">Bestatter finden</a>
+        <a href="/bestatter/">Bestatter finden</a>
       </div>
       <div>
         <h4>Über uns</h4>
@@ -372,27 +372,6 @@
   </div>
 </footer>
 
-<script>
-// Mobile Nav Toggle (vanilla JS, kein React)
-(function(){
-  var btn = document.querySelector('.mr-nav-toggle');
-  var menu = document.getElementById('mr-nav-links');
-  if(!btn || !menu) return;
-  btn.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      if(window.innerWidth <= 760){
-        menu.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-})();
-</script>
 
 <script>/*iter-18-navjs*/(function(){var b=document.querySelector(".mr-nav-toggle"),n=document.querySelector(".mr-nav");if(b&&n){b.setAttribute("aria-expanded","false");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})}})();</script>
 </body>
