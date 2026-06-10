@@ -1,0 +1,255 @@
+{
+ "factors": {
+  "Bayern": 1.76,
+  "Nordrhein-Westfalen": 1.36,
+  "Saarland": 1.24,
+  "Sachsen-Anhalt": 1.15,
+  "Baden-Württemberg": 1.13,
+  "Hamburg": 1.12,
+  "Niedersachsen": 1.13,
+  "Hessen": 1.05,
+  "Thüringen": 0.99,
+  "Bremen": 0.94,
+  "Mecklenburg-Vorpommern": 0.91,
+  "Rheinland-Pfalz": 0.91,
+  "Schleswig-Holstein": 0.7,
+  "Brandenburg": 0.68,
+  "Sachsen": 0.6,
+  "Berlin": 0.48
+ },
+ "rows": [
+  {
+   "bl": "Bayern",
+   "stadt": "München",
+   "faktor": 1.76,
+   "index": 136,
+   "feuer": [
+    4500,
+    12450
+   ],
+   "erd": [
+    7200,
+    20850
+   ]
+  },
+  {
+   "bl": "Nordrhein-Westfalen",
+   "stadt": "Düsseldorf",
+   "faktor": 1.36,
+   "index": 117,
+   "feuer": [
+    4100,
+    11000
+   ],
+   "erd": [
+    6200,
+    17400
+   ]
+  },
+  {
+   "bl": "Saarland",
+   "stadt": "Saarbrücken",
+   "faktor": 1.24,
+   "index": 111,
+   "feuer": [
+    4000,
+    10550
+   ],
+   "erd": [
+    5900,
+    16350
+   ]
+  },
+  {
+   "bl": "Sachsen-Anhalt",
+   "stadt": "Magdeburg",
+   "faktor": 1.15,
+   "index": 107,
+   "feuer": [
+    3900,
+    10250
+   ],
+   "erd": [
+    5700,
+    15600
+   ]
+  },
+  {
+   "bl": "Baden-Württemberg",
+   "stadt": "Stuttgart",
+   "faktor": 1.13,
+   "index": 106,
+   "feuer": [
+    3900,
+    10200
+   ],
+   "erd": [
+    5650,
+    15450
+   ]
+  },
+  {
+   "bl": "Hamburg",
+   "stadt": "Hamburg",
+   "faktor": 1.12,
+   "index": 106,
+   "feuer": [
+    3900,
+    10100
+   ],
+   "erd": [
+    5600,
+    15300
+   ]
+  },
+  {
+   "bl": "Niedersachsen",
+   "stadt": "Hannover",
+   "faktor": 1.13,
+   "index": 106,
+   "feuer": [
+    3900,
+    10150
+   ],
+   "erd": [
+    5600,
+    15400
+   ]
+  },
+  {
+   "bl": "Hessen",
+   "stadt": "Wiesbaden",
+   "faktor": 1.05,
+   "index": 102,
+   "feuer": [
+    3800,
+    9850
+   ],
+   "erd": [
+    5400,
+    14700
+   ]
+  },
+  {
+   "bl": "Thüringen",
+   "stadt": "Erfurt",
+   "faktor": 0.99,
+   "index": 99,
+   "feuer": [
+    3750,
+    9650
+   ],
+   "erd": [
+    5250,
+    14200
+   ]
+  },
+  {
+   "bl": "Bremen",
+   "stadt": "Bremen",
+   "faktor": 0.94,
+   "index": 97,
+   "feuer": [
+    3700,
+    9450
+   ],
+   "erd": [
+    5150,
+    13750
+   ]
+  },
+  {
+   "bl": "Mecklenburg-Vorpommern",
+   "stadt": "Schwerin",
+   "faktor": 0.91,
+   "index": 96,
+   "feuer": [
+    3700,
+    9350
+   ],
+   "erd": [
+    5050,
+    13500
+   ]
+  },
+  {
+   "bl": "Rheinland-Pfalz",
+   "stadt": "Mainz",
+   "faktor": 0.91,
+   "index": 96,
+   "feuer": [
+    3700,
+    9400
+   ],
+   "erd": [
+    5100,
+    13550
+   ]
+  },
+  {
+   "bl": "Schleswig-Holstein",
+   "stadt": "Kiel",
+   "faktor": 0.7,
+   "index": 86,
+   "feuer": [
+    3500,
+    8650
+   ],
+   "erd": [
+    4550,
+    11750
+   ]
+  },
+  {
+   "bl": "Brandenburg",
+   "stadt": "Potsdam",
+   "faktor": 0.68,
+   "index": 85,
+   "feuer": [
+    3500,
+    8550
+   ],
+   "erd": [
+    4500,
+    11550
+   ]
+  },
+  {
+   "bl": "Sachsen",
+   "stadt": "Dresden",
+   "faktor": 0.6,
+   "index": 81,
+   "feuer": [
+    3400,
+    8250
+   ],
+   "erd": [
+    4300,
+    10850
+   ]
+  },
+  {
+   "bl": "Berlin",
+   "stadt": "Berlin",
+   "faktor": 0.48,
+   "index": 76,
+   "feuer": [
+    3300,
+    7850
+   ],
+   "erd": [
+    4000,
+    9850
+   ]
+  }
+ ],
+ "spread_pct": 79,
+ "basis_feuer": [
+  3800,
+  9700
+ ],
+ "basis_erd": [
+  5300,
+  14300
+ ]
+}

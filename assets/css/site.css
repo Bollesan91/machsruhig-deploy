@@ -240,8 +240,6 @@ th, td{
   }
 .mr-friedhof-graeber{ font-size: .95rem; color: var(--color-muted); }
 .mr-friedhof-graeber strong{ color: var(--color-text); font-style: normal; }
-.mr-faq summary::before{ content: "+ "; color: var(--color-accent); font-weight: 700; }
-.mr-faq details[open] summary::before{ content: "− "; }
 .mr-faq details > div{ margin-top: .6rem; color: var(--color-muted); }
 .mr-meta{font-size:.85rem;color:var(--muted);margin-top:1rem}
 .mr-friedhof .mr-fakten{
