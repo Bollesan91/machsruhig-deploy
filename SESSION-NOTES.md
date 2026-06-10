@@ -144,3 +144,21 @@ Welle-2+3-Hero + KI-Integration auditiert. **Validity-Kern PASS** (Iter-33-Defek
 - Helper-V3-SEO-Audit misst Hülle, NICHT Tool-Substanz → Tools brauchen Doppel-Audit (SEO + Tool-Validity).
 - JSX-Tools mit in-Browser-Babel: `<br>`/`<hr>`/`<img>` IMMER self-closing. Live-Smoketest nach jedem Deploy Pflicht.
 - raw.githubusercontent.com Edge-Cache verfälscht Audits — Live-File-Verification Standard.
+
+## Verdichtung-2-Loop (10.06.2026, autonomer Roadmap-Loop)
+Mandat: Top-10 der `_dev/ROADMAP-verdichtung-2.md` autonom abarbeiten (Bolle: „Vertraue dir da"). Modus je Rang: Branch → Fix-Skript in `_dev/audit/` → unabhängiger Review (claude.ai-Tab, ohne Score-Anchoring) → GO → Merge auf main (Netlify-Build) → Live-Verify.
+
+**Stand: Ränge 1–5 live (main 4dac4a9), Rang 6 im Review.**
+
+| Rang | Seite | Kern-Maßnahmen | Review | Commit/Merge |
+|---|---|---|---|---|
+| 1 | Angebotsprüfer | Intro-Landing, Beispiel-Ampel (#ap-beispiel 3.600–9.000 NRW Feuer), Warnsignale, Ergebnis=Fragenliste, Nav „Angebot prüfen"; **renderStep4-Bug gefixt** (condBA-Posten nie sichtbar — Validity-Audit-Fund) | Doppel-Audit SEO+Validity | deployed |
+| 2 | Startseite | Hero-CTAs, Kartenreihenfolge (Prüfer/Rechner/Checkliste zuerst), Trust-Strip, „So funktioniert"-Steps, „alle Eingaben im Browser"-Claim korrigiert (KI-Ausnahme) | GO | deployed |
+| 3 | Bestattungskosten (Money) | Dreiteilung+Badges, 3-Stufen-Beispiel (1.000–2.200/3.400–8.200/5.300–14.300), §74-konforme Sozialbestattung, Direktkremation-Zeile, Quellenbox | 3 Runden bis GO 84 | deployed |
+| 4 | Kostenrechner | CAT_META-Badges+Sparhebel je Block, Basis-Einordnung; **R4b**: Einordnung mathematisch geschlossen (Komponentensumme ohne Grabpflege, de-regionalisiert, Schwellen ±15/+30 % in Methodik) | NO-GO 64 → R4b → GO | deployed |
+| 5 | Was-tun-nach-Todesfall | Schutz-Boxen „Bevor du einen Bestatter beauftragst" (+Rechner/Prüfer-CTAs, data-track) + „Was du heute nicht entscheiden musst", Sternenkind §31-PStV-präzise, Fristen-Radar-Link | GO 84 | 4dac4a9, live-verifiziert |
+| 6 | Hamburg-Stadtseite | Quickhelp aus Kontakt-aside gelöst (strukturell falsch verschachtelt), Gesamtkosten-Box reduziert/typisch/gehoben (nur belegte Seitenzahlen), Historie (Ohlsdorf/Friedhöfe/Kultur) hinter Anfrage-Formular | läuft | ef69d52 (Branch) |
+
+**Nebenfunde gefixt:** Rechner-Spartipps hatten letzten „Erben zu arm"-§74-Fehler site-weit + Pseudo-Betrag „1.500–2.500 €" → §74-konform (cccd800); Icon-Inkonsistenz Step-0 🤐→🕊.
+**Kostenrechner-Live-Validity:** Reviewer-Sandbox kommt nicht an machsruhig.de (Egress-Whitelist) → Option 2: drei Szenarien (Erd-Default NRW 6.204–17.396, Erd-Maximal Bayern 10.438–30.173, See-Default 2.850–6.200) mit sichtbarkeits-assertierten echten DOM-Klicks gefahren, vollständige Ergebnis-DOM-Dumps geliefert; Verdict ausstehend.
+**Offen beim User:** Pressetext-Versand, Groq-ZDR, AV-Verträge, Cloudflare-Rate-Limit, Presse-Telefonnummer, Fachanwalt §7.
