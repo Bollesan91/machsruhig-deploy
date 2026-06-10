@@ -261,6 +261,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function track(e,p){ try{ if(window.mrTrack) window.mrTrack(e,p); else if(window.plausible) window.plausible(e, p?{props:p}:undefined); }catch(_){} }
 
   var state = {bundesland:'', szenario:'', isForeign:false, checkedTasks:{}};
+  try { var _saved = JSON.parse(localStorage.getItem('cl-checked') || '{}'); if (_saved && typeof _saved === 'object') state.checkedTasks = _saved; } catch(e) {}
+  function persistChecked(){ try { localStorage.setItem('cl-checked', JSON.stringify(state.checkedTasks)); } catch(e) {} }
 
   var foreignChk = $('#cl-foreign');
   if (foreignChk) foreignChk.addEventListener('change', function(e){ state.isForeign = e.target.checked; });
@@ -310,6 +312,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if (state.checkedTasks[id]) {
       track('toolStep', {tool:'checkliste-todesfall', step:'task_checked', task:id});
     }
+    persistChecked();
     renderChecklist();
   }
 
@@ -502,6 +505,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
     $('#cl-restart-btn').addEventListener('click', function(){
       state.checkedTasks = {};
+      persistChecked();
       $('#view-checklist').classList.remove('active');
       $('#view-setup').classList.add('active');
       window.scrollTo({top:0, behavior:'smooth'});
