@@ -57,7 +57,7 @@
 
   <h2>2. Allgemeines zur Datenverarbeitung</h2>
   <p>Wir nehmen den Schutz deiner persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert dich über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten auf unserer Website machsruhig.de.</p>
-  <p>Unsere Website ist ein überwiegend clientseitiges Informationsportal. Die meisten interaktiven Tools (z.&nbsp;B. Kostenrechner, Vorsorge-Check, Beerdigungsplaner, Checkliste Todesfall) laufen vollständig in deinem Browser. Wir speichern keine Eingaben und keine Ergebnisse auf unseren Servern. Eine Ausnahme sind die optionalen KI-Textentwürfe — Details dazu in Abschnitt 7.</p>
+  <p>Unsere Website ist ein überwiegend clientseitiges Informationsportal. Die meisten interaktiven Tools (z.&nbsp;B. Kostenrechner, Vorsorge-Check, Beerdigungsplaner, Checkliste Todesfall) laufen vollständig in deinem Browser. Tool-Eingaben und Ergebnisse speichern wir nicht auf unseren Servern. Zwei Ausnahmen, beide nur auf deine aktive Aktion hin: die optionalen KI-Textentwürfe (Abschnitt 7) und das Absenden eines Kontaktformulars (Abschnitt 8).</p>
 
   <h2>3. Hosting</h2>
   <p>Unsere Website wird bei Netlify, Inc. (San Francisco, USA) gehostet. Beim Besuch unserer Seite werden automatisch Informationen in Server-Log-Dateien gespeichert, die dein Browser übermittelt:</p>
@@ -77,8 +77,26 @@
   <p>Unsere Website verwendet keine Cookies. Wir setzen kein Google Analytics, kein Facebook Pixel und keine Werbe- oder Tracking-Cookies ein.</p>
 
   <h2>6. Interaktive Tools</h2>
-  <p>Die meisten unserer Tools (z.&nbsp;B. Kostenrechner, Vorsorge-Check, Beerdigungsplaner, Checkliste Todesfall, Fristen-Radar) laufen vollständig in deinem Browser. Deine Eingaben werden dabei zu keinem Zeitpunkt an unsere Server oder an Dritte übermittelt. Es findet keine serverseitige Verarbeitung, Speicherung oder Auswertung deiner Eingaben statt. Beim Verlassen der Seite oder Schließen des Browsers werden alle Eingaben verworfen.</p>
-  <p>Eine Ausnahme gilt für die optionalen KI-Textentwürfe in den Tools Trauerrede, Danksagung und Abschiedsbrief — diese beschreibt der folgende Abschnitt.</p>
+  <p>Unsere Tools laufen vollständig in deinem Browser. Was mit deinen Eingaben im Einzelnen geschieht — ob sie lokal auf deinem Gerät gespeichert werden und in welchen Fällen (nur auf deine aktive Aktion hin) etwas übertragen wird — zeigt die folgende Tabelle verbindlich pro Tool:</p>
+  <p>Im Einzelnen, mit denselben Begriffen, die auch auf den Tool-Seiten stehen:</p>
+  <div class="mr-table-wrap" style="margin:16px 0">
+      <table class="mr-table" style="font-size:13.5px">
+        <thead><tr><th>Tool</th><th>Eingaben bleiben im Browser?</th><th>Lokale Speicherung auf deinem Gerät?</th><th>Wird etwas übertragen?</th></tr></thead>
+        <tbody>
+          <tr><td>Checkliste Todesfall</td><td>ja</td><td>ja — dein Abhak-Stand (localStorage, jederzeit löschbar)</td><td>nein</td></tr>
+          <tr><td>Bestattungskosten-Rechner</td><td>ja</td><td>nein</td><td>nur, wenn du aktiv das optionale Anfrage-Formular absendest</td></tr>
+          <tr><td>Kostenrechner (Schnell-Version)</td><td>ja</td><td>nein</td><td>nein</td></tr>
+          <tr><td>Angebotsprüfer</td><td>ja</td><td>nein</td><td>nein</td></tr>
+          <tr><td>Fristen-Radar</td><td>ja</td><td>ja — dein Abhak-Stand (localStorage)</td><td>nein</td></tr>
+          <tr><td>Beerdigungsplaner</td><td>ja</td><td>ja — dein Planungsstand (localStorage)</td><td>nur, wenn du aktiv das optionale Formular absendest</td></tr>
+          <tr><td>Vorsorge-Check</td><td>ja</td><td>nein</td><td>nur, wenn du aktiv das optionale Formular absendest</td></tr>
+          <tr><td>Notfallkarte</td><td>ja</td><td>nein</td><td>nein — auch der Druck erfolgt lokal</td></tr>
+          <tr><td>Trauerrede / Danksagung / Abschiedsbrief</td><td>ja (Grundfunktion)</td><td>nur Abschiedsbrief: dein Entwurf (localStorage)</td><td>nur der optionale KI-Entwurf: nach ausdrücklicher Einwilligung und Klick auf „Generieren" an unseren Server (Netlify) und den KI-Anbieter Groq, Inc. (USA)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--mr-text-muted);margin-top:8px">„Wird etwas übertragen? — nein" bezieht sich auf deine Eingaben. Unabhängig davon erfasst die anonyme, cookielose Reichweitenmessung (Umami) den Seitenbesuch selbst — nie deine Eingaben. Einstellungs-Flags (etwa deine Banner-Entscheidung oder KI-Einwilligung) speichern manche Seiten zusätzlich in localStorage; sie enthalten keine Eingaben.</p>
+  <p>„Lokale Speicherung" bedeutet: Die Daten liegen ausschließlich im Speicher deines eigenen Browsers (localStorage) und lassen sich dort jederzeit von dir löschen — wir haben darauf keinen Zugriff. Von „alles bleibt im Browser" gibt es zwei Ausnahmen, beide nur auf deine aktive Aktion hin: die optionalen KI-Textentwürfe (folgender Abschnitt) und das Absenden eines Kontaktformulars (Abschnitt 8).</p>
 
   <h2>7. KI-gestützte Textentwürfe (Trauerrede, Danksagung, Abschiedsbrief)</h2>
   <p>In den Tools Trauerrede, Danksagung und Abschiedsbrief bieten wir optional an, aus deinen Eingaben mit Hilfe künstlicher Intelligenz einen Textentwurf erstellen zu lassen. Erst wenn du im Tool ausdrücklich einwilligst und auf „Generieren“ klickst, werden die von dir eingegebenen Angaben — etwa der Name der verstorbenen Person, eure Beziehung, Charakter-Beschreibungen, Erinnerungen oder eigene Textentwürfe — an unsere Server-Funktion (gehostet bei Netlify, siehe Abschnitt 3) und von dort an den KI-Anbieter <strong>Groq, Inc. (USA)</strong> übermittelt. Dort verarbeitet ein Sprachmodell (Llama&nbsp;3.3) die Angaben und gibt den fertigen Textentwurf zurück. Die Übermittlung erfolgt verschlüsselt (HTTPS).</p>
@@ -87,7 +105,7 @@
   <p>Rechtsgrundlage der Verarbeitung deiner Eingaben ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Da Groq die Daten in den USA verarbeitet, liegt eine Übermittlung in ein Drittland vor; diese stützen wir auf deine ausdrückliche Einwilligung (Art. 49 Abs. 1 lit. a DSGVO), über die wir dich im Tool vor der ersten Nutzung informieren. Bitte beachte: In den USA besteht möglicherweise kein der EU gleichwertiges Datenschutzniveau. Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen — direkt im jeweiligen Tool über „KI-Einwilligung widerrufen“; da wir deine Eingaben nicht speichern, gibt es bei uns keine gespeicherten Daten, die nachträglich gelöscht werden müssten.</p>
 
   <h2>8. Kontaktformulare / Lead-Formulare</h2>
-  <p>Auf unseren Stadt-Seiten (z.B. /bestatter/muenchen/) bieten wir ein Kontaktformular an, über das du unverbindlich Informationen von Bestattern in deiner Nähe anfragen kannst. Wenn du dieses Formular absendest, werden folgende Daten verarbeitet:</p>
+  <p>Auf unseren Stadt-Seiten (z.B. /bestatter/muenchen/) sowie optional in einigen Tools (Bestattungskosten-Rechner, Beerdigungsplaner, Vorsorge-Check) bieten wir Kontaktformulare an, über die du unverbindlich eine Anfrage stellen kannst. Nur wenn du ein solches Formular aktiv absendest, werden die dort angegebenen Daten verarbeitet — bei der Bestatter-Anfrage etwa:</p>
   <ul style="padding-left:20px;margin:8px 0">
     <li>Postleitzahl</li>
     <li>Gewünschte Bestattungsart</li>
@@ -95,11 +113,11 @@
     <li>Name</li>
     <li>E-Mail-Adresse oder Telefonnummer</li>
   </ul>
-  <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Du gibst deine Einwilligung durch aktives Ankreuzen der DSGVO-Checkbox im Formular. Die Daten werden ausschließlich zur Vermittlung mit einem passenden Bestatter in deiner Region verwendet und nicht für andere Zwecke eingesetzt. Du kannst deine Einwilligung jederzeit widerrufen.</p>
+  <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Du gibst deine Einwilligung durch aktives Ankreuzen der DSGVO-Checkbox im Formular. Die Daten werden ausschließlich zur Bearbeitung deiner jeweiligen Anfrage verwendet und nicht für andere Zwecke eingesetzt. Technisch nimmt unser Hoster Netlify (siehe Abschnitt 3) die Formulardaten entgegen und speichert sie für uns; wir löschen sie, sobald die Anfrage bearbeitet ist. Du kannst deine Einwilligung jederzeit widerrufen.</p>
 
   <h2>9. Webanalyse (Umami)</h2>
   <p>Zur anonymen Reichweitenmessung nutzen wir <strong>Umami</strong> (gehostet über cloud.umami.is, EU). Umami arbeitet <strong>cookieless</strong> und ohne Speicherung deiner IP-Adresse in personenbeziehbarer Form. Erfasst werden ausschließlich aggregierte, anonyme Nutzungsdaten wie Seitenaufrufe, Verweisquelle und Gerätetyp. Es findet kein Cross-Site-Tracking und kein Fingerprinting statt; Eingaben in unsere Tools werden nicht übertragen.</p>
-  <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen, cookielosen Reichweitenmessung). Da keine personenbezogenen Daten verarbeitet werden, ist hierfür kein Einwilligungs-Banner erforderlich.</p>
+  <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen, cookielosen Reichweitenmessung); ein Einwilligungs-Banner ist dafür nicht erforderlich. Hinweis zum aktuellen Stand: Auf einem Teil unserer Tool-Seiten fragt derzeit dennoch ein Hinweis-Banner um Zustimmung, bevor Umami geladen wird — historisch strenger umgesetzt, wir vereinheitlichen das gerade. An Art und Umfang der Messung (anonym, cookielos, keine Eingaben) ändert das nichts.</p>
 
   <h2>10. Deine Rechte</h2>
   <p>Du hast folgende Rechte bezüglich deiner personenbezogenen Daten:</p>
