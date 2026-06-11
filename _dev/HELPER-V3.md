@@ -517,3 +517,31 @@ Bei Unsicherheit: User fragen ist okay, aber nicht für jede Triviale-Entscheidu
 - **Trust-Seiten (Methodik/Datenschutz):** Behauptungen gegen den Tool-CODE verifizieren lassen (Tool-Datei-URLs mitgeben) — „Matrix-Wahrheit".
 
 **Und umgekehrt gilt weiter:** Reviewer-Fakten selbst verifizieren, bevor man sie einbaut (diese Session: „toter PM-Link" war 200; VG-Münster-Az. stimmte erst nach eigener Suche). Reviewer irren auch.
+
+---
+
+## DER HELFER-V3-AUFTRAG — Neudefinition (Bolle, 11.06.2026)
+
+**Wenn Bolle „Helfer V3" sagt (egal in welcher Formulierung: „jag das durch Helfer V3", „mit Helfer V3", „Review"), ist der Auftrag NICHT „schick einen Review-Prompt".** Der Auftrag ist:
+
+> **Generiere einen auf DIESE Aufgabe maßgeschneiderten, super scharfen Prompt, der das Artefakt aus ALLEN für seinen Typ relevanten Winkeln gleichzeitig angreift — so scharf, dass Runde 1 alles findet, was sonst erst in Runde 2–3 auffliegt. Internes Qualitätsziel: das Artefakt auf echtes 85+-Niveau bringen (verifizierte Substanz, nicht Zahl). Die Zielzahl steht NIEMALS im Reviewer-Prompt (Anti-Anchoring) — sie steuert nur, wie kompromisslos der Prompt gebaut wird und wie lange iteriert wird.**
+
+### Verbindliches Vorgehen bei jedem Helfer-V3-Auftrag
+
+**Schritt 0 — Ist-Analyse VOR dem Prompt (5 Min, nicht überspringen):**
+Artefakt selbst lesen. Typ bestimmen (Stadtseite / Tool / Rechts-Sozialseite / Daten-Asset / Trust-Seite / Funnel-Seite / Mischtyp). Alle Stellen inventarisieren, an denen dieselbe Information vorkommt (Meta, OG, Keyfacts, Tabellen, Fließtext, FAQ sichtbar, JSON-LD, Hints) — dieses Inventar gehört in den Prompt. Kanonische Referenzen identifizieren, gegen die geprüft werden muss.
+
+**Schritt 1 — Prompt aus dem Baukasten generieren. Pflicht-Blöcke:**
+1. **Rolle + Fallhöhe:** unabhängiger, kritischer Reviewer; YMYL; konkrete Zielgruppe und was ihr ein Fehler real kostet.
+2. **Artefakt:** Commit-SHA-raw-URL (nie Branch). Bei Trust-/Matrix-Claims zusätzlich die URLs der Dateien, gegen die Claims verifiziert werden müssen (Tool-Code!).
+3. **Kanonische Referenzen explizit mitgeben:** Kostenmodell-Spannen, Site-Linien (z. B. BSG: §74-Antrag auch nachträglich), Soll-Reihenfolge, relevante Schwellen. Der Reviewer kann nur gegen das prüfen, was im Prompt steht.
+4. **Winkel-Katalog — ALLE für den Typ relevanten Winkel nummeriert beauftragen** (s. Linsen-Tabelle oben). Nie nur eine Dimension. Standard-Winkel die IMMER dazugehören: (a) Zahlen-Konsistenz über das komplette Stellen-Inventar, (b) sachlich-rechtliche Richtigkeit mit Recherche-Auftrag, (c) Nutzerführung/CTA-Konkurrenz, (d) Struktur (H-Hierarchie, FAQ↔JSON-LD-Parität, tote Links gegen Repo-Baum, Schema-Wahrheit), (e) Ton (YMYL: kein Tourismus-Ton, keine Überversprechen, keine Beschämung).
+5. **Verifikations-Verben, nicht Prüf-Floskeln:** „rechne nach", „recherchiere das Aktenzeichen", „prüfe jeden internen Link gegen den Repo-Baum über die raw-URL-Basis", „diffe sichtbare FAQ gegen JSON-LD", „bediene das Tool mit echten Events". Ein Prompt ohne Verifikations-Verben ist kein Helfer-V3-Prompt.
+6. **Verdikt-Format:** priorisierte Befundliste KRITISCH/HOCH/MITTEL/GERING + Score 0–100 mit Einzeiler + klares GO/NO-GO. Kein vorheriger Score, kein Zielscore im Prompt.
+
+**Schritt 2 — Iterieren bis:** GO **und** KRITISCH/HOCH = 0. Auflagen deterministisch per Skript fixen, Re-Review mit neuem SHA, Stichproben-Verdict genügt für Ein-Zeilen-Auflagen. MITTEL/GERING die bleiben → explizit als Backlog in SESSION-NOTES, damit nichts verdunstet.
+
+**Schritt 3 — Eigene Gegenprüfung:** Reviewer-Fakten vor Einbau selbst verifizieren (HTTP-Check, eigene Suche, Repo-Grep). Reviewer irren auch.
+
+### Warum so
+10./11.06.: Generische Prompts → 85+ auf Seiten mit UNESCO-Phantom, falschen Fristen, erfundenen Namen und drei einander widersprechenden Kostentabellen. Scharfe Prompts fanden all das in Runde 1 — aber erst NACHDEM die Seiten schon einmal „fertig" waren. Der maßgeschneiderte Erstprompt ist der Unterschied zwischen 1× und 3× anfassen.
