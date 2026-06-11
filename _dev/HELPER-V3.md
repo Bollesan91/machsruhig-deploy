@@ -496,3 +496,24 @@ Wenn du neu in das Projekt einsteigst und Helper-V3 nutzen sollst:
 9. Deploy NUR auf explizite User-Anweisung "deploy"
 
 Bei Unsicherheit: User fragen ist okay, aber nicht für jede Triviale-Entscheidung. Auto-Modus durchziehen.
+
+---
+
+## Scharfe Linsen je Aufgabentyp (Pflicht ab 11.06.2026)
+
+**Lehre aus dem Verdichtungs-Loop 10./11.06.:** Generische Content-Reviews vergaben 85+, während dieselben Seiten beim adversarialen, aufgabenspezifischen Review auf NO-GO 52–79 fielen — mit echten Fehlern (UNESCO-Melaten, SH 14→9 Tage, erfundene Namen, 3 widersprüchliche Kostentabellen auf einer Seite). Konsequenz von Bolle: **Helper-V3 je Aufgabe brutal scharf aufsetzen, damit nicht alles 3× angefasst wird.** Scores sind NUR innerhalb einer Review-Konversation vergleichbar (58→82 = Fortschritt); nie zwischen Sessions/Reviewern. Deploy-Kriterium ist KRITISCH/HOCH = 0, nicht die Zahl.
+
+**Pflicht-Bausteine in JEDEM Review-Prompt:**
+1. Commit-SHA-raw-URL (nie Branch).
+2. Kanonische Referenzwerte mitgeben (Kostenmodell-Spannen, Soll-Reihenfolge, Site-Regeln wie BSG-Linie Sozialbestattung) — der Reviewer kann nur gegen das prüfen, was er kennt.
+3. Explizite Verifikations-Aufträge: „rechne nach", „verifiziere Paragraphen/Aktenzeichen per Recherche", „prüfe interne Links gegen den Repo-Baum (raw-URL-Basis)", „diffe FAQ sichtbar vs. JSON-LD".
+4. Verdikt-Format: priorisierte Befundliste KRITISCH/HOCH/MITTEL/GERING + Score + GO/NO-GO. Kein Score-Anchoring.
+
+**Linsen je Artefakt:**
+- **Stadtseite:** Kosten-Konsistenz über ALLE Stellen (Keyfacts/Tabellen/Fließtext/FAQ/JSON-LD/Meta) gegen kanonisches Modell; lokale Behauptungen (Satzungen, Ämter, Promis) stichprobenartig recherchieren; Funnel-Reihenfolge; tote interne Links; Tourismus-Ton.
+- **Tool:** Doppel-Audit (SEO + Live-Validity). Validity = Output-basiert mit echten DOM-Events, Sichtbarkeit vor jedem Klick assertieren; Garbage-in-Tests (ignorierte Inputs).
+- **Rechts-/Sozialseite:** jede Fundstelle (§, Az., Urteil) einzeln verifizieren; falsch zugeordnete Fundstellen = schwerster Fehlertyp; Konsistenz zur Site-Linie (z. B. nachträglicher §74-Antrag).
+- **Daten-Asset:** Reproduzierbarkeits-Auftrag (Werte aus publizierten Faktoren nachrechnen lassen).
+- **Trust-Seiten (Methodik/Datenschutz):** Behauptungen gegen den Tool-CODE verifizieren lassen (Tool-Datei-URLs mitgeben) — „Matrix-Wahrheit".
+
+**Und umgekehrt gilt weiter:** Reviewer-Fakten selbst verifizieren, bevor man sie einbaut (diese Session: „toter PM-Link" war 200; VG-Münster-Az. stimmte erst nach eigener Suche). Reviewer irren auch.
