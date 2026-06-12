@@ -46,6 +46,16 @@
 - **YMYL-Texte (machsruhig komplett, Erbenradar-Recht): Haupt-Claude schreibt selbst.** Stufe-0-Verifikation ist nicht delegierbar.
 - Subagents erlaubt nur: read-only Explore, Recherche-Sammlung (Rohmaterial, kein Beleg), Plan ohne Code-Generierung. (Schreib-Agents für Nicht-YMYL: offen, Bolle-Entscheid steht aus — machsleicht-Verbot gilt bis dahin.)
 
+## Loop-Betrieb (autonome Abarbeitung mehrerer Artefakte)
+
+Bewährt in der Loop-Nacht 10./11.06. (13 Ränge unbeaufsichtigt):
+
+- **Aktivierung:** Bolle beauftragt einen Loop („Loop starten", `/loop`). Stopp-Kriterium IMMER vorab fixieren (Ziel erreicht ODER Bolle schreibt). Vor einem autonomen Stopp: PushNotification mit Einzeiler-Ergebnis.
+- **Taktung (zweigleisig):** Primäres Wecksignal = Background-Sleep (`sleep 180–260 && echo MARKER`, run_in_background → task-notification). **Zusätzlich IMMER ScheduleWakeup als Fallback** (Sentinel `<<autonomous-loop-dynamic>>`), Delay ~270 s während aktiver Reviews — bewusst unter dem 300-s-Prompt-Cache-Fenster. Bei Leerlauf/reinem Warten: 1200–1800 s.
+- **Pipeline-Regel:** Während ein Tab-Review läuft, arbeitet Haupt-Claude am nächsten Artefakt (Ist-Analyse, Fix-Skripte, Linter) — nie idle warten.
+- **Pro abgeschlossenem Artefakt:** Befund-Tabelle + SESSION-NOTES-Zeile, Review-Tabs schließen, Branch gemäß Branch-Trick-Matrix mergen/sammeln, Live-Verify nach Deploy (curl-Greps auf neue + entfernte Strings).
+- **Reviews lesen:** Tab-Status per JS (`data-is-streaming`, letzter `font-claude-response`-Block), URLs/Sonderzeichen vor Ausgabe strippen (Privacy-Filter). Senden: `execCommand('insertText')` + separater Send-Klick — nie Ctrl+V (Diktiermodus).
+
 ## Offenes Experiment (entscheidet die Reviewer-Frage empirisch)
 
 Gepaarter Test auf denselben 2–3 Artefakten: Tab-Reviewer vs. Recherche-befugte, zitatpflichtige Fable-Subagents. Metrik: **verifizierte MAJORs pro Welle** (+ Wandzeit, Token). Gewinner wird Stufe-2-Standard; erst danach werden die Subagent-Verbots-Memories angefasst.
