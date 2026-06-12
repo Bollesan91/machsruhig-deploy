@@ -1,0 +1,13 @@
+# Verbotene Strings (je Zeile; '#' = Kommentar). Treffer = FAIL.
+# Hinweis: Opt-In-Saetze sind NICHT pauschal verboten (auf Banner-Seiten wahr) -> Linter-Check L10 prueft konditional.
+# Quelle: LEKTIONEN.md — gefixte Fehlerklassen duerfen nicht zurueckkehren.
+Erben zu arm
+Ein Muss für Hamburg
+UNESCO-Kulturdenkmal Melaten
+Karl Oskar Ursius
+Röhnvater
+bundesrechtliche Rahmen ergibt sich aus Art.
+(300–400 %)
+Der Antrag sollte vor der Beauftragung des Bestatters gestellt werden
+ca. 70 % die häufigste
+Einzige Ausnahme sind die optionalen KI-Textentwürfe

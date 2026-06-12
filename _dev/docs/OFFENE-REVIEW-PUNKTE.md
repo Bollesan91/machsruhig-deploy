@@ -1,0 +1,29 @@
+# OFFENE-REVIEW-PUNKTE — geklärte False-Positives & bewusste Entscheidungen
+
+> Reviewer-Pflicht: Diese Punkte NICHT erneut als Finding melden (sie sind geprüft). Writer-Pflicht: verworfene Findings hier nachtragen (Datum, Beleg).
+
+## Geprüfte False-Positives
+
+- **berlin.de-PM-Link (pressemitteilung.1292194.php) ist NICHT tot** — HTTP 200, selbst gecurlt 11.06.2026. (Wir verlinken trotzdem die eigene BL-Seite, weil die PM die Reform-Etappe nicht paragraphenscharf belegt — das war der berechtigte Kern.)
+- **Senats-Broschüre-PDF (broschuere_fhinberlin.pdf), gesetze.berlin.de, Daten-und-Fakten-Seite**: alle 200 (11.06.2026).
+- **CHECK24-Nennung in Korridor-Quellzeilen** (München/Berlin) ist Quellenangabe einer Auswertung, KEIN Affiliate-Link — zulässig. (Affiliate-Links auf check24.de/sterbegeldversicherung sind dagegen aus allen Sozial-Kontexten entfernt.)
+- **Footer „Landesgesetze aller 16 BL (Stand Mai 2026)"** ist der Prüfstand der Gesetzes-Datenbasis, nicht das Seiten-Stand-Datum — kein Konsistenz-Finding gegen „Stand: Juni".
+- **Berlin 222 Friedhöfe / 182 geöffnet / 85 landeseigene**: quellenkonform mit der Senats-Seite (Reviewer-bestätigt 11.06.).
+- **Kostenrechner „Basis 3.700–9.300 unter Default-Summe"**: Scheinwiderspruch — die Einordnung rechnet lokale Posten vor dem Vergleich auf Faktor 1 zurück (NRW-Default ergibt exakt 3.700–9.300); dokumentiert in /methodik#kostenmodell.
+- **„Hört zu…" im claude.ai-Editor** ist der Diktiermodus (durch Ctrl+V ausgelöst), kein Seitenfehler — Paste via execCommand('insertText'), nicht Ctrl+V.
+
+## Bewusste Entscheidungen (kein Defekt)
+
+- **Umami-Doppel-Regime (Banner auf ~7 Tool-Seiten vs. Head-Load sonst)**: in Datenschutz §9 als Übergangszustand ehrlich deklariert; Vereinheitlichung ist eigener Arbeitsblock (ROADMAP-PBI). Bis dahin kein Finding.
+- **Frankfurt-Kosten defensiv** (keine lokalen Beträge, Gebührenordnungs-Verweis + Modell-Einordnung): bewusste Strategie, solange Satzungswerte nicht primärverifiziert sind.
+- **Seebestattungs-Block (Hamburg) vor dem Recht-Block**: bewusst (kostenrelevanter Stadt-USP).
+- **/sozialbestattung ohne Trailing-Slash**: flache .html-Dateien der Site haben kein Slash-Muster; funktioniert via Netlify. Stil-Vereinheitlichung = Backlog, kein Defekt.
+- **tracking.js-Header erwähnt „Plausible"**: window.plausible ist ein dokumentierter Shim auf Umami (Memory analytics_umami_not_plausible) — kosmetisches Backlog.
+
+## Offen (echte Backlogs — nicht als „neu" melden, aber Status darf geprüft werden)
+
+- Hamburg: jüdisches Sonderfeld auf Ohlsdorf, §-6-BestattG-Zitat (36 h), Altona „geschlossen 1877", Feuerbestattungs-Zeile in der Kostenbox.
+- Köln: Intro „vier Friedhofs-Essays" bei zwei gelieferten; „Trauerhalle ca. 198 €" unbelegt; Ruhezeit/Nutzungsdauer-Vermischung; Memorial-50 %/Innungs-Pauschale ohne Quelle; doppeltes Nav-JS.
+- Frankfurt: Hauptfriedhof-Doppelung in „Besonderheiten" + „Vorreiter"-Absatz vs. Novelle; Südfriedhof-Bestattetenzahl; Footer-München-Link; loser Textknoten nach der 6-Schritte-Sektion.
+- Berlin: Träger-Aufschlüsselung/Ehrenmäler-Abgleich; Erd-Korridor-Untergrenze 1.100 vs. landeseigen 939 erklären.
+- Site-weit: Consent-Vereinheitlichung; Fristen-Seite MITTEL 4–6 (§30-III-Testament-Satz, FAQ-Q6-Beweislast, Sicherungsmaßnahmen-Hinweis).
