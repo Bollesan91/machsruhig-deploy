@@ -20,24 +20,118 @@
 
 <script defer src="/js/tracking.js?v=20260609"></script>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org","@graph":[
-    {"@type":"Article","headline":"Digitaler Nachlass — Was passiert mit deinen Online-Konten?","description":"Umfassender Leitfaden zum digitalen Nachlass: Vorsorge zu Lebzeiten, Checkliste aller Konten, Anleitung für Angehörige und Vorlage für eine digitale Vollmacht.","author":{"@type":"Organization","name":"machsruhig.de"},"publisher":{"@type":"Organization","name":"machsruhig.de"},"datePublished":"2026-04-12","dateModified":"2026-04-12"},
-    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://machsruhig.de/"},{"@type":"ListItem","position":2,"name":"Vorsorge","item":"https://machsruhig.de/vorsorge/"},{"@type":"ListItem","position":3,"name":"Digitaler Nachlass","item":"https://machsruhig.de/vorsorge/digitaler-nachlass"}]},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Was ist ein digitaler Nachlass?","acceptedAnswer":{"@type":"Answer","text":"Der digitale Nachlass umfasst alle Online-Konten, Daten und digitalen Vermoegenswerte einer verstorbenen Person. Dazu gehoeren E-Mail-Konten, Social-Media-Profile, Cloud-Speicher, Online-Banking, Abonnements, Kryptowaehrungen und alle weiteren Accounts. Seit dem BGH-Urteil von 2018 sind digitale Konten vererbbar wie physische Gegenstaende."}},
-      {"@type":"Question","name":"Sind digitale Konten vererbbar?","acceptedAnswer":{"@type":"Answer","text":"Ja. Der Bundesgerichtshof hat 2018 (Az. III ZR 183/17) entschieden, dass digitale Konten vererbbar sind. Erben treten in den Nutzungsvertrag ein und haben Anspruch auf Zugang zu allen Inhalten, vergleichbar mit geerbten Briefen oder Tagebuechern. Die Plattformen muessen Erben Zugang gewaehren."}},
-      {"@type":"Question","name":"Was passiert mit Facebook nach dem Tod?","acceptedAnswer":{"@type":"Answer","text":"Facebook bietet zwei Optionen: Das Konto kann in einen Gedenkzustand versetzt werden (Profil bleibt sichtbar mit dem Vermerk 'In Erinnerung an'), oder es kann auf Wunsch der Familie dauerhaft geloescht werden. Zu Lebzeiten kann man einen Nachlasskontakt benennen, der das Gedenkprofil verwaltet. Der Antrag erfolgt ueber ein Online-Formular mit Nachweis (Sterbeurkunde)."}},
-      {"@type":"Question","name":"Wie loesche ich das Google-Konto eines Verstorbenen?","acceptedAnswer":{"@type":"Answer","text":"Google bietet zwei Wege: Falls der Verstorbene den Kontoinaktivitaet-Manager eingerichtet hat, werden Daten automatisch geteilt oder geloescht. Ohne Voreinstellung koennen Angehoerige ueber das Formular 'Antrag bezueglich des Kontos eines verstorbenen Nutzers' Zugang oder Loeschung beantragen. Dafuer werden Sterbeurkunde, Ausweis und Nachweis der Berechtigung benoetigt."}},
-      {"@type":"Question","name":"Was passiert mit Kryptowaehrungen nach dem Tod?","acceptedAnswer":{"@type":"Answer","text":"Kryptowaehrungen sind ein Sonderfall: Ohne Zugang zur Seed Phrase (Wiederherstellungsschluessel) oder zum privaten Schluessel sind sie unwiederbringlich verloren. Es gibt keine zentrale Stelle, die den Zugang wiederherstellen kann. Deshalb ist es besonders wichtig, die Seed Phrase sicher zu hinterlegen und einer Vertrauensperson den Aufbewahrungsort mitzuteilen."}},
-      {"@type":"Question","name":"Brauche ich einen Erbschein fuer Online-Konten?","acceptedAnswer":{"@type":"Answer","text":"In vielen Faellen ja. Die meisten Plattformen verlangen einen Erbschein oder ein notarielles Testament als Nachweis der Erbberechtigung. Zusaetzlich wird fast immer eine Sterbeurkunde verlangt. Einige Dienste akzeptieren auch eine Vorsorgevollmacht oder eine spezielle digitale Vollmacht, die den Zugang zu Online-Konten regelt."}},
-      {"@type":"Question","name":"Kann ich meinen digitalen Nachlass im Testament regeln?","acceptedAnswer":{"@type":"Answer","text":"Ja, du kannst deinen digitalen Nachlass im Testament erwaehnen. Du kannst eine Person bestimmen, die sich um deine digitalen Konten kuemmert, und festlegen, was mit Profilen, Daten und Abonnements passieren soll. Allerdings solltest du im Testament keine Passwoerter notieren, da Testamente oeffentlich werden koennen. Besser ist ein separates, versiegeltes Dokument oder ein Passwort-Manager."}},
-      {"@type":"Question","name":"Was ist ein Passwort-Manager und warum ist er wichtig?","acceptedAnswer":{"@type":"Answer","text":"Ein Passwort-Manager ist ein Programm, das alle Zugangsdaten verschluesselt speichert. Fuer den digitalen Nachlass ist er besonders wichtig, weil Erben mit einem einzigen Master-Passwort Zugang zu allen Konten erhalten. Ohne Passwort-Manager muessen Erben jedes Konto einzeln bei der Plattform beantragen, was Wochen bis Monate dauern kann."}}
-    ]}
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Digitaler Nachlass — Was passiert mit deinen Online-Konten?",
+      "description": "Umfassender Leitfaden zum digitalen Nachlass: Vorsorge zu Lebzeiten, Checkliste aller Konten, Anleitung für Angehörige und Vorlage für eine digitale Vollmacht.",
+      "author": {
+        "@type": "Organization",
+        "name": "machsruhig.de"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "machsruhig.de"
+      },
+      "datePublished": "2026-04-12",
+      "dateModified": "2026-04-12"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://machsruhig.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Vorsorge",
+          "item": "https://machsruhig.de/vorsorge/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Digitaler Nachlass",
+          "item": "https://machsruhig.de/vorsorge/digitaler-nachlass"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist ein digitaler Nachlass?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der digitale Nachlass umfasst alle Online-Konten, Daten und digitalen Vermögenswerte einer verstorbenen Person. Dazu gehören E-Mail-Konten, Social-Media-Profile, Cloud-Speicher, Online-Banking, Abonnements, Kryptowährungen, Domains und alle weiteren Accounts. Auch digitale Inhalte wie Fotos, Videos, Dokumente und Chatverläufe zählen dazu. Seit dem BGH-Urteil von 2018 ist klar: Digitale Konten sind vererbbar wie physische Gegenstände."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind digitale Konten vererbbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Der Bundesgerichtshof hat 2018 (Az. III ZR 183/17) in einem Grundsatzurteil entschieden, dass digitale Konten vererbbar sind. Erben treten in den Nutzungsvertrag ein und haben einen rechtlichen Anspruch auf Zugang zu allen Inhalten — vergleichbar mit geerbten Briefen oder Tagebüchern. Die Plattformen müssen Erben Zugang gewähren, wenn die Erbberechtigung nachgewiesen wird (Erbschein oder notarielles Testament plus Sterbeurkunde)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert mit Facebook nach dem Tod?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Facebook bietet zwei Optionen: Das Konto kann in einen Gedenkzustand versetzt werden — das Profil bleibt sichtbar, trägt den Hinweis \"In Erinnerung an\" und Freunde können weiter auf die Pinnwand schreiben. Alternativ kann die Familie die vollständige Löschung beantragen. Zu Lebzeiten kann man einen Nachlasskontakt benennen, der das Gedenkprofil verwalten darf (z.B. Profilbild ändern, Beiträge anheften). Der Antrag auf Gedenkzustand oder Löschung erfolgt über ein Online-Formular mit Sterbeurkunde als Nachweis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lösche ich das Google-Konto eines Verstorbenen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google bietet zwei Wege: Falls die verstorbene Person den Kontoinaktivität-Manager eingerichtet hat, werden Daten automatisch geteilt oder das Konto gelöscht — je nach Einstellung. Ohne Voreinstellung können Angehörige über das Google-Formular \"Antrag bezüglich des Kontos eines verstorbenen Nutzers\" Zugang oder Löschung beantragen. Dafür werden Sterbeurkunde, Ausweis und Nachweis der Berechtigung benötigt. Die Bearbeitungszeit beträgt mehrere Wochen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert mit Kryptowährungen nach dem Tod?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kryptowährungen sind ein besonderer Sonderfall im digitalen Nachlass. Ohne Zugang zur Seed Phrase (dem Wiederherstellungsschlüssel) oder zum privaten Schlüssel sind die Coins unwiederbringlich verloren — es gibt keine Bank oder zentrale Stelle, die den Zugang wiederherstellen kann. Deshalb ist es besonders wichtig, die Seed Phrase sicher zu hinterlegen (z.B. in einem Bankschließfach oder beim Notar) und der Vertrauensperson den Aufbewahrungsort mitzuteilen. Bei Kryptobörsen wie Coinbase oder Kraken können Erben mit Erbschein und Sterbeurkunde Zugang beantragen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich einen Erbschein für Online-Konten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In vielen Fällen ja. Die meisten Plattformen verlangen einen Erbschein oder ein notarielles Testament mit Eröffnungsprotokoll als Nachweis der Erbberechtigung. Zusätzlich wird fast immer eine Sterbeurkunde verlangt. Einige Dienste akzeptieren auch eine Vorsorgevollmacht oder eine spezielle digitale Vollmacht, die den Zugang zu Online-Konten regelt. Ein Erbschein wird beim Nachlassgericht beantragt und kostet je nach Nachlasswert zwischen 75 und mehreren Hundert Euro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich meinen digitalen Nachlass im Testament regeln?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, du kannst deinen digitalen Nachlass im Testament erwähnen und eine Person bestimmen, die sich um deine digitalen Konten kümmert. Du kannst festlegen, was mit Profilen, Daten und Abonnements passieren soll — ob gelöscht, gesichert oder in den Gedenkzustand versetzt. Allerdings solltest du im Testament keine Passwörter notieren, da Testamente bei der Eröffnung beim Nachlassgericht einsehbar werden können. Verweise stattdessen auf einen Passwort-Manager oder ein separates, versiegeltes Dokument."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist ein Passwort-Manager und warum ist er wichtig?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Passwort-Manager ist ein Programm, das alle Zugangsdaten verschlüsselt an einem Ort speichert. Du brauchst nur ein einziges Master-Passwort, um auf alle gespeicherten Logins zuzugreifen. Für den digitalen Nachlass ist das besonders wichtig, weil Erben mit dem Master-Passwort sofort Zugang zu allen Konten erhalten — ohne monatelange Anträge bei einzelnen Plattformen. Bekannte Passwort-Manager sind Bitwarden (kostenlos und Open Source), 1Password, KeePass und der integrierte Schlüsselbund von Apple. Das Master-Passwort sollte an einem sicheren Ort hinterlegt werden, z.B. in einem versiegelten Umschlag beim Notar oder im Bankschließfach."
+          }
+        }
+      ]
+    }
   ]
-}
-</script>
+}</script>
 
 <link rel="stylesheet" href="/assets/css/site.css?v=20260612">
 <style>

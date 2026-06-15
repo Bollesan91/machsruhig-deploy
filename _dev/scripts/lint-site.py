@@ -14,10 +14,12 @@ Checks (v1):
   L7  var(--mr-*) ohne Fallback auf Seiten OHNE site.css
   L8  verschachteltes @media
   L9  doppelte id="..."-Attribute
+  L10 Opt-In-Behauptung auf Head-Load-Seite (konditional)
+  L11 className= ohne Babel/JSX
 Aufruf: python _dev/scripts/lint-site.py [--quiet]
 Exit-Code 0 = gruen, 1 = FAILs vorhanden.
 """
-import io, os, re, sys, json
+import io, os, re, sys, json, html as _html
 try:
     sys.stdout.reconfigure(encoding='utf-8')
 except Exception:
@@ -34,7 +36,7 @@ def visible_text(html):
     return t
 
 def norm_spaces(s):
-    return re.sub(r'[\s ]+', ' ', s).strip()
+    return re.sub(r'[\s ]+', ' ', _html.unescape(s)).strip()
 
 def load_forbidden():
     p = os.path.join(ROOT, '_dev', 'config', 'lint-verboten.txt')
@@ -121,9 +123,18 @@ def main():
             nodes = data.get('@graph', [data]) if isinstance(data, dict) else data
             if isinstance(nodes, dict):
                 nodes = [nodes]
+            # JS-gerenderte FAQ (Babel/JSX, <details> nur in <script>) -> statisch nicht pruefbar
+            js_faq = ('text/babel' in html or 'className=' in html)
+            static_details = False
+            _spans = [(mm.start(), mm.end()) for mm in re.finditer(r'<script[^>]*>.*?</script>', html, re.S | re.I)]
+            for dm in re.finditer(r'<details', html):
+                if not any(a <= dm.start() < b for a, b in _spans):
+                    static_details = True; break
             for node in nodes:
                 if not isinstance(node, dict) or node.get('@type') != 'FAQPage':
                     continue
+                if js_faq and not static_details:
+                    continue  # L3 nicht statisch entscheidbar -> Browser-Smoke (Stufe 3)
                 for q in node.get('mainEntity', []):
                     name = norm_spaces(q.get('name', ''))
                     if name and name[:60] not in vis:
@@ -166,6 +177,10 @@ def main():
         if 'umami.is/script.js' in html and 'consent.js' not in html:
             if re.search(r'nur nach (deinem )?(Cookie-)?Opt-?In', html):
                 fails.append((rel, 'L10', 'behauptet Opt-In, laedt Umami aber direkt im Head'))
+
+        # L11 className= ohne Babel (Browser ignoriert das Attr -> CSS-Klasse wirkungslos)
+        if 'className=' in html and 'text/babel' not in html:
+            fails.append((rel, 'L11', 'className= ohne Babel/JSX (sollte class= sein)'))
 
         # L9 doppelte IDs
         ids = re.findall(r'\bid="([^"]+)"', html)

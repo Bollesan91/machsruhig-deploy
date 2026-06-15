@@ -22,8 +22,7 @@
 
 
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -42,59 +41,28 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://machsruhig.de/"},
-        {"@type": "ListItem", "position": 2, "name": "Vorsorge", "item": "https://machsruhig.de/vorsorge"},
-        {"@type": "ListItem", "position": 3, "name": "Brief an meine Liebsten", "item": "https://machsruhig.de/tools/abschiedsbrief"}
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
         {
-          "@type": "Question",
-          "name": "Muss ich alles ausfüllen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Schreib nur das, was sich richtig anfühlt. Ein einzelner Satz kann genauso wertvoll sein wie ein ganzer Brief. Es gibt kein Richtig oder Falsch."
-          }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://machsruhig.de/"
         },
         {
-          "@type": "Question",
-          "name": "Werden meine Worte gespeichert?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Dein Entwurf wird in deinem Browser gespeichert (localStorage) und nicht automatisch an einen Server gesendet. Einzige Ausnahme: Wenn du die optionale KI-Verfeinerung nutzt, werden deine Texte bei jeder Verfeinerung an Groq Inc. (USA) übermittelt — nur nach deiner Einwilligung. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur den Seitenbesuch erfassen, nicht deinen Brieftext."
-          }
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Vorsorge",
+          "item": "https://machsruhig.de/vorsorge"
         },
         {
-          "@type": "Question",
-          "name": "Wo bewahre ich den Brief auf?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Im Vorsorge-Ordner zu Hause, beim Notar oder bei einer Vertrauensperson. Wichtig ist, dass deine Liebsten den Brief finden können, wenn es soweit ist."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kann ich den Brief später ändern?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja, dein Entwurf bleibt im Browser gespeichert. Du kannst jederzeit zurückkommen und weiterschreiben oder Änderungen vornehmen."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ist das ein Testament?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. Dieser Brief hat keine rechtliche Wirkung. Er ist ein persönliches Schreiben an deine Angehörigen. Für ein rechtsgültiges Testament besuche unsere Seite zum Thema Testament."
-          }
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Brief an meine Liebsten",
+          "item": "https://machsruhig.de/tools/abschiedsbrief"
         }
       ]
     }
   ]
-}
-</script>
+}</script>
 
 <!-- R-A 11 Fix: React + ReactDOM + Babel-Standalone self-hosted unter /vendor/ — keine Drittanbieter-IP-Übertragung vor Consent mehr (vorher 3x unpkg.com) -->
 <script src="/vendor/react.production.min.js"></script>
