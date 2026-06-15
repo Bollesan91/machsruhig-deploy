@@ -27,3 +27,11 @@
 - Frankfurt: Hauptfriedhof-Doppelung in „Besonderheiten" + „Vorreiter"-Absatz vs. Novelle; Südfriedhof-Bestattetenzahl; Footer-München-Link; loser Textknoten nach der 6-Schritte-Sektion.
 - Berlin: Träger-Aufschlüsselung/Ehrenmäler-Abgleich; Erd-Korridor-Untergrenze 1.100 vs. landeseigen 939 erklären.
 - Site-weit: Consent-Vereinheitlichung; Fristen-Seite MITTEL 4–6 (§30-III-Testament-Satz, FAQ-Q6-Beweislast, Sicherungsmaßnahmen-Hinweis).
+
+## Triage-FPs Korrektheits-Sweep (15.06.2026)
+- **check24 auf /bestattungskosten-nach-bundesland** = Quellen-Citation (Friedhofsgebühren-Datenquelle `check24.de/sterbegeldversicherung/friedhofsgebuehren-deutschland`), KEIN Affiliate-CTA. Presse-Seite ohnehin nicht anfassen.
+- **berlin „nicht in allen Bundesländern"** = korrekte Verneinung (kein Pauschale-Fehler).
+- **/bestattung-in/ „bundesweit einheitlich sind nur Randbereiche"** = korrekt (kein Bundes-Bestattungsgesetz).
+- **checkliste-todesfall „5.000–15.000 €"** = Auslandsüberführungs-Kosten, nicht Bestattung.
+- **testament „2.000–5.000 €"** = Notarkosten nach Nachlasswert, nicht Bestattung.
+- **beerdigungsplaner JS-Kostenarray** (Grabtyp-Schätzwerte) = tool-intern, plausibel; eigene Tool-Validity-Sache, nicht der Korrektheits-Sweep.
