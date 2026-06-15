@@ -35,3 +35,9 @@
 - **checkliste-todesfall „5.000–15.000 €"** = Auslandsüberführungs-Kosten, nicht Bestattung.
 - **testament „2.000–5.000 €"** = Notarkosten nach Nachlasswert, nicht Bestattung.
 - **beerdigungsplaner JS-Kostenarray** (Grabtyp-Schätzwerte) = tool-intern, plausibel; eigene Tool-Validity-Sache, nicht der Korrektheits-Sweep.
+- **„Stiftung Warentest 7.000–8.000 €" ist KEIN Fabrikat-Defekt** (15.06. primärverifiziert: real, hannover belegt mit Finanztest 11/2023). NICHT als Finding melden. Offen ist nur die Konsistenz (s. Backlog unten).
+
+## Backlog: site-weite Kosten-Konsolidierung (Bolle-Entscheid nötig)
+- **Problem:** Kosten-Spannen driften über die Seiten — „7.000–8.000 €" (Legacy ~16 BL + mainz/dresden/muenster/karlsruhe/bielefeld/bremen/hannover/leipzig/stuttgart/wuppertal/bonn/saarland), „6.000–8.000 € (Stand 2026)" (neuere Seiten), per-Art-Varianten („Erd typisch 4.500–9.500" vs. kanonisch 3.700–9.300). Quellen gemischt (SW unbelegt / SW Finanztest 11/2023 / SW+Aeternitas / SW+Verbraucherzentrale).
+- **Entscheid offen (Bolle, redaktionell, YMYL):** Welche EINE Darstellung wird Standard? (a) eigenes Kostenmodell `/methodik#kostenmodell` als Single Source (LEKTIONEN #3) mit optionaler SW-Korroboration, oder (b) SW-Zahl als Headline mit working-Link, oder (c) beide klar getrennt. Exakte aktuelle SW-Zahl ist paywall-bedingt nicht voll primärverifizierbar → eigenes Modell ist die sicherere Single Source.
+- **Ein-Klick-fertig vorbereitet:** sobald Variante gewählt, deterministisches Skript (`_dev/audit/`) über alle ~53 Fundstellen (Body + faq-answer + JSON-LD, Parität-erhaltend), Asserts vor Write, Linter + Diff-Re-Check.
