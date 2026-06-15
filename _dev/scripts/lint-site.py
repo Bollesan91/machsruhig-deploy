@@ -16,6 +16,7 @@ Checks (v1):
   L9  doppelte id="..."-Attribute
   L10 Opt-In-Behauptung auf Head-Load-Seite (konditional)
   L11 className= ohne Babel/JSX
+  L12 uneinheitlicher Seiten-Stand (Monat)
 Aufruf: python _dev/scripts/lint-site.py [--quiet]
 Exit-Code 0 = gruen, 1 = FAILs vorhanden.
 """
@@ -177,6 +178,11 @@ def main():
         if 'umami.is/script.js' in html and 'consent.js' not in html:
             if re.search(r'nur nach (deinem )?(Cookie-)?Opt-?In', html):
                 fails.append((rel, 'L10', 'behauptet Opt-In, laedt Umami aber direkt im Head'))
+
+        # L12 page-Stand-Konsistenz (mehrere verschiedene Monats-Staende = Drift)
+        months = set(re.findall(r'Stand:?\s+(Januar|Februar|März|April|Mai|Juni|Juli|August|September|Oktober|November|Dezember)\s+20\d\d', html))
+        if len(months) > 1:
+            fails.append((rel, 'L12', 'uneinheitlicher Seiten-Stand: %s' % ', '.join(sorted(months))))
 
         # L11 className= ohne Babel (Browser ignoriert das Attr -> CSS-Klasse wirkungslos)
         if 'className=' in html and 'text/babel' not in html:

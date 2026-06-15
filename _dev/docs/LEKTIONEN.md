@@ -39,3 +39,12 @@
 21. **Check24-Sterbegeld-Affiliate nie im Sozialbestattungs-Kontext** (monetarisiert Zahlungsunfähige mit nutzlosem Produkt). Nur Vorsorge-Kontext.
 22. **Lead-Formulare:** mindestens ein Pflicht-Rückkanal (Email required); CTA-Texte konsistent; Datenschutz-Checkbox required.
 23. **Stand-Daten:** sichtbarer „Stand", JSON-LD dateModified und Quellen-Stand müssen zusammenpassen; Footer-„Landesgesetze Stand X" ist davon getrennt (Prüfstand der Gesetze).
+
+## Nachtrag 12.06.2026 (V4.1-Dogfood + externe Bewertung)
+
+24. **FAQPage-Schema auf JS-gerenderten Tool-Seiten** (Babel/JSX, FAQ im `<script>`-Template): statischer Linter kann Parität NICHT prüfen → Browser-Smoke nötig. Gefunden: 2 Tool-Seiten (abschiedsbrief, fristen-radar) hatten FAQPage-Schema für FAQ, die **gar nicht rendert** = echter Strukturdaten-Verstoß; danksagung rendert, hatte aber Wortdrift. Regel: FAQPage nur, wenn die FAQ auch (statisch oder gerendert) sichtbar ist.
+25. **Stand-Datum-Konsistenz pro Seite** ist mechanisierbar (Linter L12) — „Stand: <Monat 2026>" darf je Seite nur EINEN Monat haben; „Stand seit <Datum>" (Rechts-Gültigkeit, z. B. Vermögensfreibetrag 01.01.2023) ist ausgenommen. L12 fand sofort 3 weitere Seiten (kassel, angebotspruefer, was-tun) neben dem Eval-Fund (sozialbestattung).
+26. **Sichtbare Grammatik-/Rechtsfehler in Lead-Sätzen sind die teuersten Vertrauensbrecher** (Eval-Fund): „Ohne Testament entscheidet die Gesetze" (YMYL-Recht-Seite). Lead-Sätze von Recht-Seiten besonders scharf prüfen.
+27. **Vormundschaft: das Familiengericht entscheidet/bestellt den Vormund (§ 1774 BGB), das Jugendamt wird beteiligt und kann selbst Vormund werden** — NICHT „das Jugendamt entscheidet". (Primärverifiziert 12.06.)
+28. **Gemeinfreiheit-Überclaims:** „Bibelverse immer frei verwendbar" ist falsch — moderne Übersetzungen (Lutherbibel 2017, Einheitsübersetzung) sind urheberrechtlich geschützt. Bei „Public Domain"/„gemeinfrei"-Aussagen Übersetzung/Ausgabe qualifizieren.
+29. **JSX-Leak `className=` im ausgelieferten HTML**: bei den Babel-in-Browser-AI-Tools (trauerrede/danksagung/abschiedsbrief) by design; auf JEDER anderen Seite ein Bug (Browser ignoriert das Attribut → CSS-Klasse wirkungslos). Linter L11.
