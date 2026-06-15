@@ -11,7 +11,8 @@ files = [f for f in glob.glob(os.path.join(ROOT, '**', '*.html'), recursive=True
 blob = {os.path.relpath(f, ROOT).replace(os.sep, '/'): io.open(f, encoding='utf-8').read() for f in files}
 
 def pages_of(u):
-    return sorted(set(k for k, v in blob.items() if u in v))
+    # exakte href-Praesenz (vermeidet Substring-FP wie aachen-Bare-URL in laengerem Live-Link)
+    return sorted(set(k for k, v in blob.items() if ('href="' + u + '"') in v))
 
 def pname(p):
     return p.split('/')[-2] if p.endswith('/index.html') else p.rsplit('/', 1)[-1].replace('.html', '')
