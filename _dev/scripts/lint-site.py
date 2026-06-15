@@ -92,7 +92,7 @@ def euro_amounts(text):
 
 def main():
     forbidden = load_forbidden()
-    fails, warns = [], []
+    fails, warns, triages = [], [], []
     pages = []
     for dirpath, dirnames, filenames in os.walk(ROOT):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
@@ -188,6 +188,31 @@ def main():
         if 'className=' in html and 'text/babel' not in html:
             fails.append((rel, 'L11', 'className= ohne Babel/JSX (sollte class= sein)'))
 
+        # ===== TRIAGE (T-Codes: informational, kein Gate-Bruch) =====
+        # T1 Tourismus-Ton/Superlative (LEKTION 11) — auf Stadt-/BL-Seiten
+        if '/bestatter/' in rel or '/bestattung-in/' in rel:
+            for w in ['ein muss', 'weltgrößt', 'weltberühmt', 'atemberaubend', 'touristenmagnet',
+                      'geheimtipp', 'wahres juwel', 'perle ', 'schmuckstück', 'unvergesslich', 'einzigartig']:
+                if w in vis.lower():
+                    triages.append((rel, 'T1', 'Tourismus-Ton/Superlativ: "%s"' % w))
+        # T2 Bundesland-Pauschale (LEKTION 8)
+        for m2 in re.finditer(r'(.{0,18})(in allen Bundesländern|bundesweit einheitlich|überall in Deutschland gilt|in jedem Bundesland gilt)', html):
+            pre = m2.group(1).lower()
+            if 'nicht ' in pre or 'kein' in pre:   # korrekte Verneinung -> kein Befund
+                continue
+            post = html[m2.end():m2.end()+40].lower()
+            if 'nur ' in post or 'randbereich' in post:  # "bundesweit einheitlich sind nur Randbereiche" = korrekt
+                continue
+            triages.append((rel, 'T2', 'BL-Pauschale: "%s"' % m2.group(2)))
+        # T3 §-Kategorienfehler-Risiko (LEKTION 7): "bundesrecht" nahe Landesgesetz-Kürzel
+        if re.search(r'bundesrecht\w*[^.]{0,120}(BestattG|BestG|Friedhofs)', html):
+            triages.append((rel, 'T3', 'mögl. Landes/Bundesrecht-Kategorienfehler'))
+        # T4 Check24-Affiliate im Sozialbestattungs-Kontext (LEKTION 21)
+        si = html.find('Sozialbestattung')
+        if si >= 0:
+            win = html[si:si+3000]
+            if 'check24.de/sterbegeldversicherung/"' in win or ('rel="sponsored' in win and 'check24' in win):
+                triages.append((rel, 'T4', 'Check24-Affiliate-CTA im Sozial-Kontext'))
         # L9 doppelte IDs
         ids = re.findall(r'\bid="([^"]+)"', html)
         for dup in sorted({i for i in ids if ids.count(i) > 1}):
@@ -216,6 +241,15 @@ def main():
     by = {}
     for _, code, _ in fails:
         by[code] = by.get(code, 0) + 1
+    if triages:
+        by_page = {}
+        for rel, code, msg in triages:
+            by_page.setdefault(rel, []).append('%s %s' % (code, msg))
+        print('=== TRIAGE (informational, %d Treffer auf %d Seiten) ===' % (len(triages), len(by_page)))
+        for rel in sorted(by_page):
+            print('  ~ %s' % rel)
+            for m in by_page[rel]:
+                print('      %s' % m)
     print('--- lint-site: %d Seiten, %d FAILs, %d Bestands-WARNs %s' % (len(pages), len(fails), len(soft),
           ('(' + ', '.join('%s:%d' % kv for kv in sorted(by.items())) + ')') if by else ''))
     sys.exit(1 if fails else 0)

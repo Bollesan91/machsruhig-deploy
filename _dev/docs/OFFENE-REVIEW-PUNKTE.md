@@ -27,3 +27,17 @@
 - Frankfurt: Hauptfriedhof-Doppelung in „Besonderheiten" + „Vorreiter"-Absatz vs. Novelle; Südfriedhof-Bestattetenzahl; Footer-München-Link; loser Textknoten nach der 6-Schritte-Sektion.
 - Berlin: Träger-Aufschlüsselung/Ehrenmäler-Abgleich; Erd-Korridor-Untergrenze 1.100 vs. landeseigen 939 erklären.
 - Site-weit: Consent-Vereinheitlichung; Fristen-Seite MITTEL 4–6 (§30-III-Testament-Satz, FAQ-Q6-Beweislast, Sicherungsmaßnahmen-Hinweis).
+
+## Triage-FPs Korrektheits-Sweep (15.06.2026)
+- **check24 auf /bestattungskosten-nach-bundesland** = Quellen-Citation (Friedhofsgebühren-Datenquelle `check24.de/sterbegeldversicherung/friedhofsgebuehren-deutschland`), KEIN Affiliate-CTA. Presse-Seite ohnehin nicht anfassen.
+- **berlin „nicht in allen Bundesländern"** = korrekte Verneinung (kein Pauschale-Fehler).
+- **/bestattung-in/ „bundesweit einheitlich sind nur Randbereiche"** = korrekt (kein Bundes-Bestattungsgesetz).
+- **checkliste-todesfall „5.000–15.000 €"** = Auslandsüberführungs-Kosten, nicht Bestattung.
+- **testament „2.000–5.000 €"** = Notarkosten nach Nachlasswert, nicht Bestattung.
+- **beerdigungsplaner JS-Kostenarray** (Grabtyp-Schätzwerte) = tool-intern, plausibel; eigene Tool-Validity-Sache, nicht der Korrektheits-Sweep.
+- **„Stiftung Warentest 7.000–8.000 €" ist KEIN Fabrikat-Defekt** (15.06. primärverifiziert: real, hannover belegt mit Finanztest 11/2023). NICHT als Finding melden. Offen ist nur die Konsistenz (s. Backlog unten).
+
+## Backlog: site-weite Kosten-Konsolidierung (Bolle-Entscheid nötig)
+- **Problem:** Kosten-Spannen driften über die Seiten — „7.000–8.000 €" (Legacy ~16 BL + mainz/dresden/muenster/karlsruhe/bielefeld/bremen/hannover/leipzig/stuttgart/wuppertal/bonn/saarland), „6.000–8.000 € (Stand 2026)" (neuere Seiten), per-Art-Varianten („Erd typisch 4.500–9.500" vs. kanonisch 3.700–9.300). Quellen gemischt (SW unbelegt / SW Finanztest 11/2023 / SW+Aeternitas / SW+Verbraucherzentrale).
+- **Entscheid offen (Bolle, redaktionell, YMYL):** Welche EINE Darstellung wird Standard? (a) eigenes Kostenmodell `/methodik#kostenmodell` als Single Source (LEKTIONEN #3) mit optionaler SW-Korroboration, oder (b) SW-Zahl als Headline mit working-Link, oder (c) beide klar getrennt. Exakte aktuelle SW-Zahl ist paywall-bedingt nicht voll primärverifizierbar → eigenes Modell ist die sicherere Single Source.
+- **Ein-Klick-fertig vorbereitet:** sobald Variante gewählt, deterministisches Skript (`_dev/audit/`) über alle ~53 Fundstellen (Body + faq-answer + JSON-LD, Parität-erhaltend), Asserts vor Write, Linter + Diff-Re-Check.
