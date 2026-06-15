@@ -1,40 +1,25 @@
 # Tote externe Quelllinks — Sweep 15.06.2026
 
-> 74 harte 404 (selbst gecurlt 15.06. + WebFetch-stichprobenverifiziert: bsg.bund.de, aeternitas) von 821 Nicht-Wikipedia-Quelllinks. NICHT blind ersetzen — jede Ersatz-URL primaerverifizieren (LEKTIONEN #6), bei YMYL-Recht auch Claim<->Fundstelle erneut pruefen. Bereits gefixt: 6 test.de-Tote (Hub) + aeternitas-bestattungsgesetze (bestattung-in-Hub).
+> Ausgangslage: 74 harte 404 von 821 Nicht-Wikipedia-Quelllinks (curl + WebFetch-verifiziert). **19 gefixt** (test.de-Hub, aeternitas, BestG NRW/RLP, BSG- + LSG-NRW-Entscheidung, Nds/Bremen-Statut, VZ-Cluster), **55 verbleibend.**
 
-## P1 — YMYL/Recht/Quelle (zuerst, claim-kritisch)
-
-- [ ] `https://mwg.rlp.de/themen/gesundheit/bestattungsgesetz` — mainz,rheinland-pfalz
-- [ ] `https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=10000000000000000295` — bielefeld
-- [ ] `https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=10000000000000000327` — duisburg
-- [ ] `https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=36220110914100654580` — methodik
-- [ ] `https://verband.bestatter.de/verband/markenzeichen-der-bestatter/` — krefeld
-- [ ] `https://voris.wolterskluwer-online.de/browse/document/c30bf7d5-7a96-4c39-8a73-fc25b81b7e21` — hannover
-- [ ] `https://www.aeternitas.de/fuer-betroffene/bestattung/was-kostet-eine-bestattung` — aachen
-- [ ] `https://www.aeternitas.de/inhalt/bestattungsgesetze` — 
-- [ ] `https://www.aeternitas.de/inhalt/trauerbegleitung` — danksagung
+## — Bolle-Entscheid: gesponserte CTAs (Monetarisierung, NICHT raten)
+Tote `rel="sponsored"`-CTA-Buttons — Partner-URL/Affiliate-Tracking pruefen, evtl. Partnerschaft beendet:
 - [ ] `https://www.afilio.de/patientenverfuegung` — patientenverfuegung
-- [ ] `https://www.bestatter-nrw.de/bestatter-suche?plz=58095` — hagen
-- [ ] `https://www.bestatter.de/bestatter-finden/` — bochum
-- [ ] `https://www.bsg.bund.de/SharedDocs/Entscheidungen/DE/2011/2011_08_25_B_08_SO_20_10_R.html` — frankfurt,magdeburg
-- [ ] `https://www.caritas-nrw.de/rechtinformationsdienst/bestattungsrecht/bestattung-bestattungsrecht-bestattungsp` — bochum
-- [ ] `https://www.justiz.nrw/nrwe/lsgs/duesseldorf/lsg_nrw/` — dortmund
-- [ ] `https://www.lexsoft.de/cgi-bin/lexsoft/justizportal_nrw.cgi?xid=168754,5` — bremen
 - [ ] `https://www.smartlaw.de/vertraege/patientenverfuegung` — patientenverfuegung
 - [ ] `https://www.smartlaw.de/vertraege/testament` — testament
-- [ ] `https://www.verbraucherzentrale.de/beratung-brandenburg` — brandenburg
-- [ ] `https://www.verbraucherzentrale.de/beratung-mv` — mecklenburg-vorpommern
-- [ ] `https://www.verbraucherzentrale.de/beratung-sachsen-anhalt` — sachsen-anhalt
-- [ ] `https://www.verbraucherzentrale.de/beratung-thueringen` — thueringen,thüringen
-- [ ] `https://www.verbraucherzentrale.de/wissen/geld-versicherungen/sparen-und-anlegen/erbschaft-und-testament-die-wichtigsten-regeln-23802` — fristen-nach-todesfall
-- [ ] `https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/bestattungskosten-was-eine-beerdigung-kostet-13518` — aachen
-- [ ] `https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/todesfall-was-erben-jetzt-tun-muessen-11607` — was-tun-nach-todesfall
-- [ ] `https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/sterbefall-und-vorsorge` — bestatter-angebot-pruefen,bestatter-angebot-vergleichen,bestatter-rechnung-pruefen,bestattungskosten-versteckte-kosten,erdbestattung-angebot-pruefen,feuerbestattung-angebot-pruefen,seebestattung-angebot-pruefen,was-muss-im-kostenvoranschlag-stehen
 
-## P2 — Behoerde/Satzung/Friedhofsamt (meist Stadtseiten)
+## P1-Rest — Recht/Verzeichnis/News (verifiziert reparieren oder ent-linken)
+- [ ] `https://taspo.de/gruene-branche/neues-bestattungsgesetz-private-ascheverstreuung-in-bremen-ab-2015-erlaubt/` — bremen
+- [ ] `https://verband.bestatter.de/verband/markenzeichen-der-bestatter/` — krefeld
+- [ ] `https://www.bestatter-nrw.de/bestatter-suche?plz=58095` — hagen
+- [ ] `https://www.bestatter.de/bestatter-finden/` — bochum
+- [ ] `https://www.caritas-nrw.de/rechtinformationsdienst/bestattungsrecht/bestattung-bestattungsrecht-bestattungsp` — bochum
 
+## P2 — kommunale Friedhof/Standesamt-Links (39, eigene Fokus-Session pro Stadt)
+Niedrige Prio (einzelne Stadtseiten). Korrekt = je Stadt aktuelle Friedhof/Standesamt-Landingpage suchen+verifizieren ODER ent-linken. NICHT blind raten.
 - [ ] `https://friedhof-hagen.de/wbh-friedhoefe/waldfriedhof-loxbaum` — hagen
 - [ ] `https://service.moenchengladbach.de/suche/-/egov-bis-detail/dienstleistung/273115/show` — moenchengladbach,mönchengladbach
+- [ ] `https://vv.potsdam.de/vv/Infoblatt-zum-Bestattungsrecht_2025.pdf` — brandenburg
 - [ ] `https://www.aachen.de/de/stadt_buerger/aachener_stadtbetrieb/leistungen/friedhoefe_und_krematorium/` — aachen
 - [ ] `https://www.dresden.de/de/leben/gesellschaft/friedhoefe.php` — dresden
 - [ ] `https://www.dresden.de/de/leben/gesellschaft/friedhoefe/staedtische-friedhoefe/johannisfriedhof.php` — dresden
@@ -72,12 +57,9 @@
 - [ ] `https://www.wiesbaden.de/microsite/stadtlexikon/a-z/friedhof-biebrich.php` — wiesbaden
 - [ ] `https://www.wuppertal.de/rathaus-buergerservice/standesamt/` — wuppertal
 
-## P3 — Historie/Promi/nice-to-have (entfernen oder ersetzen)
-
+## P3 — Historie/Promi/nice-to-have (ent-linken ok)
 - [ ] `https://berliner-abendblatt.de/berlin-news/app-fuehrt-auf-stefan-heyms-spuren-durch-chemnitz-id321816` — chemnitz
 - [ ] `https://lev-touren.de/index.php/stationen-bunker-wiesdorf/karl-krekeler-strasse` — leverkusen
-- [ ] `https://taspo.de/gruene-branche/neues-bestattungsgesetz-private-ascheverstreuung-in-bremen-ab-2015-erlaubt/` — bremen
-- [ ] `https://vv.potsdam.de/vv/Infoblatt-zum-Bestattungsrecht_2025.pdf` — brandenburg
 - [ ] `https://www.friedwald.de/standort/lichtenau` — bielefeld
 - [ ] `https://www.hannover.de/Kultur-Freizeit/Architektur-Geschichte/Erinnerungskultur/ZeitZentrum-Zivilcourage/Aktuelles-Veranstaltungen/Meldungen-aus-2016/Enth%C3%BCllung-der-Gedenktafel-f%C3%BCr-die-Familie-Theodor-Lessing` — hannover
 - [ ] `https://www.hannover.de/Leben-in-der-Region-Hannover/Verwaltungen-Kommunen/Die-Verwaltung-der-Landeshauptstadt-Hannover/B%C3%BCrger%C3%A4mter-und-Standes%C3%A4mter` — hannover

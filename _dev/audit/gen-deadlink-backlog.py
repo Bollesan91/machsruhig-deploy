@@ -1,60 +1,71 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+"""Regeneriert das Dead-Link-Backlog aus _extres.txt + aktuellem Live-Stand.
+Markiert gefixt vs. verbleibend; Sonder-Bucket fuer gesponserte CTAs (Bolle-Entscheid)."""
 import io, re, glob, os
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 res = io.open(os.path.join(ROOT, '_dev/audit/_extres.txt'), encoding='utf-8')
 dead = [l.split(' ', 1)[1].strip() for l in res if l[:4] in ('404 ', '410 ')]
 files = [f for f in glob.glob(os.path.join(ROOT, '**', '*.html'), recursive=True)
          if os.sep + '_dev' + os.sep not in f]
-pmap = {u: [] for u in dead}
-for f in files:
-    t = io.open(f, encoding='utf-8').read()
-    rel = os.path.relpath(f, ROOT).replace(os.sep, '/')
-    for u in dead:
-        if u in t:
-            pmap[u].append(rel)
+blob = {os.path.relpath(f, ROOT).replace(os.sep, '/'): io.open(f, encoding='utf-8').read() for f in files}
+
+def pages_of(u):
+    return sorted(set(k for k, v in blob.items() if u in v))
 
 def pname(p):
-    return p.split('/')[-2] if p.endswith('/index.html') else p.split('/')[-1].replace('.html', '')
+    return p.split('/')[-2] if p.endswith('/index.html') else p.rsplit('/', 1)[-1].replace('.html', '')
 
-P1 = ['bsg.bund.de', 'mwg.rlp.de', 'aeternitas.de', 'verbraucherzentrale.de', 'caritas',
-      'recht.nrw.de', 'voris.', 'lexsoft.de', 'justiz.nrw', 'bestattungsdienst.freiburg',
-      'bestatterdeutschland', 'bestatter.de', 'bestatter-nrw', 'afilio', 'smartlaw',
-      'bremische-buergerschaft', 'bau.bremen', 'buerger.sachsen-anhalt', 'amt24.sachsen', 'bravors']
+remaining = [(u, pages_of(u)) for u in dead if pages_of(u)]
+fixed = len(dead) - len(remaining)
+
+SPONSORED = ['afilio.de', 'smartlaw.de']
 P2KEYS = ['friedhof', 'standesamt', 'satzung', 'friedhoefe', 'gebuehr', 'sterbefall',
           'krematorium', 'umweltbetrieb', 'produkte', 'ortsrecht', 'grabsuche',
-          'dienstleistung', 'leistung', 'amtsblatt']
+          'dienstleistung', 'leistung', 'amtsblatt', 'Infoblatt', 'aachener_stadtbetrieb']
 
-def prio(u):
-    if any(k in u for k in P1):
-        return 'P1'
+def bucket(u):
+    if any(k in u for k in SPONSORED):
+        return 'SPONSORED'
     if any(k in u for k in P2KEYS):
         return 'P2'
+    # Recht/Verzeichnis/News-Reste
+    if any(k in u for k in ['bestatter', 'caritas', 'taspo', 'voris', 'lexsoft', 'justiz', 'recht.', 'verband']):
+        return 'P1'
     return 'P3'
 
-buckets = {'P1': [], 'P2': [], 'P3': []}
-for u in dead:
-    buckets[prio(u)].append(u)
+buckets = {'SPONSORED': [], 'P1': [], 'P2': [], 'P3': []}
+for u, pgs in remaining:
+    buckets[bucket(u)].append((u, pgs))
 
-EMD = '—'
-BT = '`'
-lab = {
-    'P1': '## P1 ' + EMD + ' YMYL/Recht/Quelle (zuerst, claim-kritisch)',
-    'P2': '## P2 ' + EMD + ' Behoerde/Satzung/Friedhofsamt (meist Stadtseiten)',
-    'P3': '## P3 ' + EMD + ' Historie/Promi/nice-to-have (entfernen oder ersetzen)',
-}
+EMD, BT = '—', '`'
 out = []
 out.append('# Tote externe Quelllinks ' + EMD + ' Sweep 15.06.2026')
 out.append('')
-out.append('> 74 harte 404 (selbst gecurlt 15.06. + WebFetch-stichprobenverifiziert: bsg.bund.de, aeternitas) von 821 Nicht-Wikipedia-Quelllinks. NICHT blind ersetzen ' + EMD +
-           ' jede Ersatz-URL primaerverifizieren (LEKTIONEN #6), bei YMYL-Recht auch Claim<->Fundstelle erneut pruefen. Bereits gefixt: 6 test.de-Tote (Hub) + aeternitas-bestattungsgesetze (bestattung-in-Hub).')
+out.append('> Ausgangslage: 74 harte 404 von 821 Nicht-Wikipedia-Quelllinks (curl + WebFetch-verifiziert). '
+           + '**%d gefixt** (test.de-Hub, aeternitas, BestG NRW/RLP, BSG- + LSG-NRW-Entscheidung, Nds/Bremen-Statut, VZ-Cluster), **%d verbleibend.**' % (fixed, len(remaining)))
 out.append('')
-for k in ['P1', 'P2', 'P3']:
-    out.append(lab[k])
-    out.append('')
-    for u in sorted(buckets[k]):
-        pages = ','.join(sorted(set(pname(p) for p in pmap[u])))
-        out.append('- [ ] ' + BT + u + BT + ' ' + EMD + ' ' + pages)
-    out.append('')
+out.append('## ' + EMD + ' Bolle-Entscheid: gesponserte CTAs (Monetarisierung, NICHT raten)')
+out.append('Tote `rel="sponsored"`-CTA-Buttons ' + EMD + ' Partner-URL/Affiliate-Tracking pruefen, evtl. Partnerschaft beendet:')
+for u, pgs in buckets['SPONSORED']:
+    out.append('- [ ] ' + BT + u + BT + ' ' + EMD + ' ' + ','.join(pname(p) for p in pgs))
+out.append('')
+out.append('## P1-Rest ' + EMD + ' Recht/Verzeichnis/News (verifiziert reparieren oder ent-linken)')
+for u, pgs in sorted(buckets['P1']):
+    out.append('- [ ] ' + BT + u + BT + ' ' + EMD + ' ' + ','.join(sorted(set(pname(p) for p in pgs))))
+out.append('')
+out.append('## P2 ' + EMD + ' kommunale Friedhof/Standesamt-Links (' + str(len(buckets['P2'])) + ', eigene Fokus-Session pro Stadt)')
+out.append('Niedrige Prio (einzelne Stadtseiten). Korrekt = je Stadt aktuelle Friedhof/Standesamt-Landingpage suchen+verifizieren ODER ent-linken. NICHT blind raten.')
+for u, pgs in sorted(buckets['P2']):
+    out.append('- [ ] ' + BT + u + BT + ' ' + EMD + ' ' + ','.join(sorted(set(pname(p) for p in pgs))))
+out.append('')
+out.append('## P3 ' + EMD + ' Historie/Promi/nice-to-have (ent-linken ok)')
+for u, pgs in sorted(buckets['P3']):
+    out.append('- [ ] ' + BT + u + BT + ' ' + EMD + ' ' + ','.join(sorted(set(pname(p) for p in pgs))))
+out.append('')
 io.open(os.path.join(ROOT, '_dev/docs/DEAD-LINKS-2026-06-15.md'), 'w', encoding='utf-8', newline='\n').write('\n'.join(out))
-print('P1=%d P2=%d P3=%d total=%d' % (len(buckets['P1']), len(buckets['P2']), len(buckets['P3']), len(dead)))
+print('fixed=%d remaining=%d  SPONSORED=%d P1=%d P2=%d P3=%d'
+      % (fixed, len(remaining), len(buckets['SPONSORED']), len(buckets['P1']), len(buckets['P2']), len(buckets['P3'])))
+
+if __name__ == '__main__':
+    pass
