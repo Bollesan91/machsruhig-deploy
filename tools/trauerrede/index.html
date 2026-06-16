@@ -357,6 +357,31 @@
 <script type="text/babel">
 const {useState, useEffect} = React;
 
+// Pietäts-Schutz (G2): humorvolle Rede für ein Kind/Säugling nie zulassen — gilt auch im KI-Pfad,
+// nicht nur im Template-Pfad. Spiegelt die serverseitige Absicherung in ai-rede.js.
+function childSafeTone(tone, relationship, age) {
+  if (tone !== 'humorvoll') return tone;
+  const ageNum = parseInt(String(age || '').replace(/\D/g, ''), 10);
+  const rel = String(relationship || '').toLowerCase();
+  const istKind = (Number.isFinite(ageNum) && ageNum < 18) ||
+    /\b(kind|kindes|sohn|tochter|baby|säugling|saeugling|enkel|enkelin|enkelkind)\b/.test(rel);
+  return istKind ? 'wuerdevoll' : tone;
+}
+
+// Verständliche Fehlermeldung je Fehlertyp (M2/M3/G6) statt generischem „Verbindung fehlgeschlagen".
+function aiErrorMessage(err) {
+  if (err && (err.reason === 'timeout' || err.message === 'TIMEOUT')) {
+    return 'Die KI antwortet gerade nicht (Zeitüberschreitung). Bitte versuche es erneut — oder nutze die Vorlage-Variante.';
+  }
+  if (err && (err.message === 'RATE_LIMIT' || err.status === 429)) {
+    if (err.reason === 'rate_limit_day') return 'Das kostenlose KI-Tageslimit ist erreicht. Bitte morgen erneut — oder nutze die Vorlage-Variante.';
+    return 'Gerade sind viele Anfragen unterwegs. Bitte in etwa einer Minute erneut versuchen.';
+  }
+  if (err && err.status === 413) return 'Dein Text ist sehr lang. Bitte kürze ihn etwas und versuche es erneut.';
+  if (err && (err.status === 500 || err.message === 'service_unavailable')) return 'Der KI-Dienst ist gerade nicht erreichbar. Bitte später erneut versuchen — oder nutze die Vorlage-Variante.';
+  return 'Verbindung zur KI fehlgeschlagen. Bitte später erneut versuchen oder die Vorlage-Variante nutzen.';
+}
+
 // Quote Library - Public Domain
 const QUOTES = [
   {id:'goethe-1',text:'Was man tief in seinem Herzen besitzt, kann man nicht durch den Tod verlieren.',author:'Volksweisheit (häufig Goethe zugeschrieben, in seinem Werk nicht belegt)'},
@@ -587,7 +612,7 @@ function TrauerredeGenerator() {
           age: formData.age,
           relationship: formData.relationship,
           religion: formData.religion,
-          tone: selectedAiTone || formData.tone,
+          tone: childSafeTone(selectedAiTone || formData.tone, formData.relationship, formData.age),
           length: formData.length,
           character: formData.character,
           hobbies: formData.hobbies,
@@ -604,10 +629,8 @@ function TrauerredeGenerator() {
     } catch (err) {
       if (err.message === 'CONSENT_REQUIRED') {
         setShowConsent(true);
-      } else if (err.message === 'RATE_LIMIT') {
-        setAiError(`Zu viele Anfragen. Bitte in ${Math.ceil((err.retryAfter || 60) / 60)} Min erneut versuchen.`);
       } else {
-        setAiError('Verbindung zur KI fehlgeschlagen. Bitte später erneut versuchen oder die Vorlage-Variante nutzen.');
+        setAiError(aiErrorMessage(err));
       }
     } finally {
       setAiLoading(false);
@@ -636,7 +659,7 @@ function TrauerredeGenerator() {
           age: formData.age,
           relationship: formData.relationship,
           religion: formData.religion,
-          tone: selectedAiTone || formData.tone,
+          tone: childSafeTone(selectedAiTone || formData.tone, formData.relationship, formData.age),
           length: formData.length,
           character: formData.character,
           hobbies: formData.hobbies,
@@ -663,10 +686,8 @@ function TrauerredeGenerator() {
       if (err.message === 'CONSENT_REQUIRED') {
         setPendingSection(sectionKey);
         setShowConsent(true);
-      } else if (err.message === 'RATE_LIMIT') {
-        setAiError(`Zu viele Anfragen. Bitte in ${Math.ceil((err.retryAfter || 60) / 60)} Min erneut versuchen.`);
       } else {
-        setAiError('Verbindung zur KI fehlgeschlagen. Versuch es nochmal oder bearbeite den Abschnitt manuell.');
+        setAiError(aiErrorMessage(err));
       }
     } finally {
       setAiSectionLoading('');
@@ -818,6 +839,9 @@ function TrauerredeGenerator() {
   };
 
   const reset = () => {
+    if (typeof window !== 'undefined' && window.confirm && !window.confirm('Möchtest du wirklich neu anfangen? Deine bisherigen Eingaben und die erstellte Rede gehen dabei verloren.')) {
+      return;
+    }
     setStep(0);
     setFormData({
       name: '',
@@ -841,6 +865,7 @@ function TrauerredeGenerator() {
       hobbies: '',
       memory: '',
       meaning: '',
+      quoteFavorite: '',
       reflection: '',
       closing: '',
       quotes: ''
@@ -1084,6 +1109,10 @@ function TrauerredeGenerator() {
                   {QUOTES.slice(0,6).map(quote => (
                     <div
                       key={quote.id}
+                      role="button"
+                      tabIndex={0}
+                      aria-pressed={formData.selectedQuote === quote.id}
+                      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); updateFormData('selectedQuote', quote.id); } }}
                       onClick={() => updateFormData('selectedQuote', quote.id)}
                       className={`quote-card ${formData.selectedQuote === quote.id ? 'selected' : ''}`}
                     >
@@ -1099,6 +1128,10 @@ function TrauerredeGenerator() {
                     {QUOTES.slice(6).map(quote => (
                       <div
                         key={quote.id}
+                        role="button"
+                        tabIndex={0}
+                        aria-pressed={formData.selectedQuote === quote.id}
+                        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); updateFormData('selectedQuote', quote.id); } }}
                         onClick={() => updateFormData('selectedQuote', quote.id)}
                         className={`quote-card ${formData.selectedQuote === quote.id ? 'selected' : ''}`}
                       >
@@ -1212,7 +1245,7 @@ function TrauerredeGenerator() {
             <button
               className="btn btn-primary"
               onClick={handleNext}
-              disabled={!formData.name || !formData.relationship}
+              disabled={!formData.name.trim() || !formData.relationship}
             >
               {step === 4 ? '✨ Rede mit KI erstellen' : 'Weiter'}
             </button>
@@ -1250,7 +1283,7 @@ function TrauerredeGenerator() {
           <div className="mr-ai-section no-print">
             <h3>✨ Mit KI eine echte Rede generieren</h3>
             <p>
-              Die KI macht aus deinen Eingaben eine zusammenhängende Rede — korrigiert Tippfehler, baut Übergänge und glättet den Stil.
+              Die KI macht aus deinen Eingaben eine zusammenhängende Rede — sie korrigiert Tippfehler, baut Übergänge, glättet den Stil und formuliert deine Stichworte sprachlich aus. <strong>Bitte lies das Ergebnis danach genau durch und prüfe, ob jede Aussage wirklich stimmt</strong> — die KI kann Formulierungen hinzufügen.
               Deine Eingaben (Name, Charakter, Erinnerungen) werden bei jeder Generierung an <strong>Groq Inc. (USA)</strong> gesendet und nicht für KI-Training gespeichert.
               Keine KI? Nutze den Lesemodus — die Vorlage funktioniert auch ohne.
             </p>
@@ -1335,20 +1368,34 @@ function TrauerredeGenerator() {
 
           {/* Lesemodus: zusammenhängender Fließtext (KI-Output bevorzugt, sonst Template-Composed) */}
           {viewMode === 'lesen' && (
-            <article className="reading-mode" aria-label="Rede im Lesemodus">
+            <article className="reading-mode" aria-label="Rede im Lesemodus" aria-live="polite" aria-busy={aiLoading}>
               {/* Loading-State: während KI generiert, zeigen wir Spinner statt Template-Vorlage */}
               {aiLoading && !aiResult ? (
-                <div style={{textAlign:'center',padding:'40px 20px'}}>
+                <div role="status" style={{textAlign:'center',padding:'40px 20px'}}>
                   <span className="ai-spinner" style={{borderColor:'var(--mr-warm)',borderTopColor:'transparent',width:24,height:24,borderWidth:3,display:'inline-block',marginBottom:16}}></span>
                   <p style={{fontFamily:"'Fraunces',serif",fontSize:17,color:'var(--mr-text)',margin:0}}>✨ Die KI schreibt deine Rede …</p>
                   <p style={{fontSize:13,color:'var(--mr-text-muted)',marginTop:8}}>Dauert ca. 3–5 Sekunden. Llama 3.3 verarbeitet deine Eingaben.</p>
                 </div>
               ) : (
                 <>
-                  {aiResult && <span className="ai-badge">✨ Mit KI generiert</span>}
-                  {(aiResult || composedSpeech).split(/\n\n+/).filter(Boolean).map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
+                  {aiResult && <span className="ai-badge">✨ Mit KI generiert · direkt bearbeitbar</span>}
+                  {aiResult ? (
+                    /* G5: KI-Volltext direkt im Lesemodus editierbar (statt nur extern) — Edits landen in aiResult, Kopieren/Drucken nutzen denselben Wert */
+                    <div
+                      className="speech-content"
+                      contentEditable
+                      suppressContentEditableWarning
+                      role="textbox"
+                      aria-multiline="true"
+                      aria-label="Generierte Rede — hier direkt bearbeitbar"
+                      onBlur={(e) => setAiResult(e.currentTarget.innerText)}
+                      style={{fontFamily:"'Fraunces',Georgia,serif",fontSize:17,lineHeight:1.85,color:'var(--mr-text)',whiteSpace:'pre-wrap',outline:'none'}}
+                    >{aiResult}</div>
+                  ) : (
+                    composedSpeech.split(/\n\n+/).filter(Boolean).map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))
+                  )}
                   {!aiResult && composedSpeech && !window.mrAI?.hasConsent?.() && (
                     <p style={{fontSize:13,color:'var(--mr-text-muted)',fontStyle:'italic',marginTop:24,paddingTop:16,borderTop:'1px dashed var(--mr-border)'}}>
                       Das ist die Vorlage-Variante. Für eine zusammenhängende Rede mit Tippfehler-Korrektur klicke „✨ Mit KI verfeinern" oben.
@@ -1400,6 +1447,9 @@ function TrauerredeGenerator() {
             })()}
             <div
               className="speech-content"
+              role="textbox"
+              aria-multiline="true"
+              aria-label="Rede-Abschnitt — bearbeitbar"
               contentEditable
               onBlur={e => setSpeechData(prev => ({...prev, opening: e.currentTarget.textContent}))}
               suppressContentEditableWarning
@@ -1427,6 +1477,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, character: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1451,6 +1504,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, hobbies: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1475,6 +1531,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, memory: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1503,6 +1562,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, meaning: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1527,6 +1589,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, quoteFavorite: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1546,6 +1611,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, reflection: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1570,6 +1638,9 @@ function TrauerredeGenerator() {
               </div>
               <div
                 className="speech-content"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Rede-Abschnitt — bearbeitbar"
                 contentEditable
                 onBlur={e => setSpeechData(prev => ({...prev, quotes: e.currentTarget.textContent}))}
                 suppressContentEditableWarning
@@ -1616,6 +1687,9 @@ function TrauerredeGenerator() {
             })()}
             <div
               className="speech-content"
+              role="textbox"
+              aria-multiline="true"
+              aria-label="Rede-Abschnitt — bearbeitbar"
               contentEditable
               onBlur={e => setSpeechData(prev => ({...prev, closing: e.currentTarget.textContent}))}
               suppressContentEditableWarning

@@ -52,11 +52,18 @@
 
       window.dispatchEvent(new CustomEvent('mr-ai:loading', { detail: { type, section } }));
 
+      // Timeout/Abbruch: kein hängender Spinner bei Verbindungsloch (G6).
+      // Section-Calls sind kürzer (15s), Vollrede großzügiger (30s).
+      const ctrl = new AbortController();
+      const timeoutMs = section ? 15000 : 30000;
+      const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+
       try {
         const resp = await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(section ? { type, data, section } : { type, data }),
+          signal: ctrl.signal,
         });
 
         if (resp.status === 429) {
@@ -89,11 +96,20 @@
         }));
         return body.result;
       } catch (err) {
+        // Timeout/Abbruch in eine verständliche Meldung übersetzen (G6)
+        if (err && err.name === 'AbortError') {
+          const tErr = new Error('TIMEOUT');
+          tErr.reason = 'timeout';
+          window.dispatchEvent(new CustomEvent('mr-ai:error', { detail: tErr }));
+          throw tErr;
+        }
         if (err.message !== 'CONSENT_REQUIRED' && err.message !== 'RATE_LIMIT' && !err.status) {
           // Network/Parse-Error
           window.dispatchEvent(new CustomEvent('mr-ai:error', { detail: err }));
         }
         throw err;
+      } finally {
+        clearTimeout(timer);
       }
     },
   };

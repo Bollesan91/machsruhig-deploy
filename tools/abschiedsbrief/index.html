@@ -777,7 +777,7 @@ function App() {
           recipient, recipientName, senderName,
           sagen: texts.sagen, wichtig: texts.wichtig,
           praktisches: texts.praktisches, wuensche: texts.wuensche,
-          closing: closing === 'custom' ? customClosing : closing,
+          closing: closing === 'custom' ? customClosing : (CLOSINGS.find(c => c.id === closing)?.label || closing),
         },
       });
       setAiResult((result || '').trim());
@@ -831,8 +831,8 @@ function App() {
       React.createElement('p', null, 'Die KI poliert nur Sprache und Lesefluss deines Entwurfs — sie erfindet nichts dazu und ändert deine Aussagen nicht. Deine Texte gehen dafür an Groq (USA), werden aber nicht fürs KI-Training gespeichert. Ohne Opt-in passiert nichts.'),
       React.createElement('button', {className: 'mr-ai-btn', type: 'button', onClick: handlePolish, disabled: aiLoading},
         aiLoading ? 'Wird verfeinert…' : '✨ Entwurf verfeinern'),
-      aiError ? React.createElement('p', {className: 'mr-ai-error'}, aiError) : null,
-      aiResult ? React.createElement('div', {className: 'mr-ai-result'},
+      aiError ? React.createElement('p', {className: 'mr-ai-error', role: 'alert'}, aiError) : null,
+      aiResult ? React.createElement('div', {className: 'mr-ai-result', role: 'status', 'aria-live': 'polite'},
         React.createElement('h4', null, 'Verfeinerte Fassung'),
         React.createElement('textarea', {className: 'mr-ai-result-text', value: aiResult, readOnly: true, rows: 14}),
         React.createElement('div', {className: 'mr-ai-result-actions'},

@@ -829,6 +829,7 @@ function DanksagungGenerator() {
             {aiResults.formal && <span className="ai-badge no-print">✨ Mit KI generiert</span>}
             <textarea
               className="text-output"
+              aria-label="Formelle Variante der Danksagung — bearbeitbar"
               value={texts.formal}
               onChange={e => setTexts(prev => ({...prev, formal: e.target.value}))}
               rows={8}
@@ -855,6 +856,7 @@ function DanksagungGenerator() {
             {aiResults.personal && <span className="ai-badge no-print">✨ Mit KI generiert</span>}
             <textarea
               className="text-output"
+              aria-label="Persönliche Variante der Danksagung — bearbeitbar"
               value={texts.personal}
               onChange={e => setTexts(prev => ({...prev, personal: e.target.value}))}
               rows={8}
@@ -881,6 +883,7 @@ function DanksagungGenerator() {
             {aiResults.short && <span className="ai-badge no-print">✨ Mit KI generiert</span>}
             <textarea
               className="text-output"
+              aria-label="Kurze Variante der Danksagung — bearbeitbar"
               value={texts.short}
               onChange={e => setTexts(prev => ({...prev, short: e.target.value}))}
               rows={4}
