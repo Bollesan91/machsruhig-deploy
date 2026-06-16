@@ -141,7 +141,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">Trage die Gesamtsumme ein, die auf dem Angebot des Bestatters steht (inkl. Mehrwertsteuer).</p>
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:14px;line-height:1.5"><strong>Wichtig:</strong> Rechnet die Stadt die <strong>Friedhofsgebühren</strong> separat ab oder ist ein <strong>Grabstein</strong> nicht enthalten, trag hier <strong>nur die Bestatter-Summe</strong> ein — und hak die separaten Posten im nächsten Schritt an.</div>
     <div style="position:relative">
-      <input type="number" id="ap-gesamtsumme" class="ap-input" placeholder="z.B. 5800" min="500" max="50000" step="50" style="padding-right:48px" aria-label="Gesamtsumme im Angebot in Euro">
+      <input type="text" inputmode="numeric" id="ap-gesamtsumme" class="ap-input" placeholder="z.B. 5800" style="padding-right:48px" aria-label="Gesamtsumme im Angebot in Euro">
       <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--mr-text-muted);font-size:16px">€</span>
     </div>
     <p style="font-size:13px;color:var(--mr-text-muted);margin-top:8px">Eine ungefähre Zahl reicht — wir vergleichen mit typischen Preisrahmen.</p>
@@ -270,8 +270,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {key:'aufbahrung',label:'Aufbahrung (falls gewünscht)',pflicht:false,info:'Optional — falls Angehörige Abschied nehmen wollen'},
     {key:'krematorium',label:'Krematorium / Einäscherung',pflicht:true,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation']},
     {key:'zweite_lu',label:'Zweite Leichenschau (bei Feuerbestattung Pflicht)',pflicht:false,condBA:['feuerbestattung','seebestattung','baumbestattung','anonyme','direktkremation'],info:'Gesetzlich vorgeschrieben — meist im Krematoriumsposten enthalten, manchmal separat ausgewiesen'},
-    {key:'friedhof',label:'Friedhofsgebühren (Grabstelle, Beisetzung, Nutzungsrecht)',pflicht:true,excludeBA:['seebestattung'],info:'Kommunale Gebühren — bei Seebestattung entfällt'},
-    {key:'beisetzung',label:'Beisetzungs-Service auf dem Friedhof',pflicht:true,excludeBA:['seebestattung','anonyme']},
+    {key:'friedhof',label:'Friedhofsgebühren (Grabstelle, Beisetzung, Nutzungsrecht)',pflicht:true,excludeBA:['seebestattung','direktkremation'],info:'Kommunale Gebühren — bei See- und Direktkremation entfällt das Friedhofsgrab'},
+    {key:'beisetzung',label:'Beisetzungs-Service auf dem Friedhof',pflicht:true,excludeBA:['seebestattung','anonyme','direktkremation']},
     {key:'see_service',label:'Schiffs-/Boots-Service zur Seebestattung',pflicht:true,condBA:['seebestattung'],info:'See-Reederei-Kosten'},
     {key:'trauerhalle',label:'Trauerhalle / Trauerfeier-Räumlichkeit',pflicht:false},
     {key:'trauerfeier',label:'Trauerfeier-Gestaltung (Redner, Musik, Ablauf)',pflicht:false},
@@ -610,8 +610,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var klärungsTotal=visible.filter(function(p){return p.pflicht;}).length;
     var klärungsRatio=klärungsTotal>0?klärung.length/klärungsTotal:0;
     if(state.pauschal){
-      // Pauschale = vollständig per Definition; nur Hinweis, kein Downgrade.
-      completenessReasons.push('Du hast ein Komplettpaket / eine Pauschale. Falls du vergleichen willst: bitte den Bestatter um eine aufgeschlüsselte Variante — Pauschalen sind nicht automatisch schlecht.');
+      // V4: Eine Pauschale ohne Aufschlüsselung ist NICHT automatisch vollständig — die Vollständigkeit ist schlicht nicht prüfbar (genau der Fall, für den das Tool gebaut ist).
+      completenessStatus='yellow';
+      completenessReasons.push('Du hast eine Pauschale / ein Komplettpaket angegeben. Ob wirklich alle nötigen Leistungen enthalten sind, lässt sich ohne Aufschlüsselung nicht prüfen — bitte den Bestatter um eine aufgeschlüsselte Variante. Pauschalen sind nicht automatisch schlecht, aber die Vollständigkeit siehst nur du mit der Aufschlüsselung.');
     } else if(klärung.length>=3 && klärungsRatio>=0.5){
       completenessStatus='yellow';
       completenessReasons.push('Mehrere Posten sind nicht eindeutig ausgewiesen ('+klärung.length+' von '+klärungsTotal+'). Bei Discount-Angeboten ist das normal — frage einfach beim Bestatter nach, was inkludiert ist und was nicht.');
@@ -691,11 +692,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       red:{icon:'!',title:'Preis auffällig',text:'Die Summe weicht deutlich vom üblichen Rahmen ab. Lass dir das Angebot vor der Entscheidung Posten für Posten erklären und hol ein Vergleichsangebot ein.'}
     };
     var compMap={
-      green:{icon:'✓',title:'Angebot wirkt vollständig',text:state.pauschal?'Du hast ein Komplettpaket / eine Pauschale angegeben — als Paket gilt sie als vollständig.':'Die abgefragten Pflicht-Posten sind ausgewiesen.'},
+      green:{icon:'✓',title:'Angebot wirkt vollständig',text:'Die abgefragten Pflicht-Posten sind ausgewiesen.'},
       yellow:{icon:'?',title:'Ein paar Posten klären',text:'Einzelne Pflicht-Posten waren auf dem Angebot nicht eindeutig ausgewiesen — siehe Liste unten. Das ist <em>kein</em> Vorwurf — oft sind sie nur anders gebündelt.'},
       red:{icon:'!',title:'Mehrere Posten unklar',text:'Mehrere Pflicht-Posten sind nicht ausgewiesen — bitte vor der Entscheidung klären.'}
     };
     var ps=priceMap[result.priceStatus], cs=compMap[result.completenessStatus];
+    // V4 (A1): Pauschale -> Vollständigkeit ist nicht prüfbar, kein grünes Häkchen vortäuschen.
+    if(state.pauschal){
+      cs={icon:'?',title:'Vollständigkeit nicht prüfbar',text:'Eine Pauschale ohne Aufschlüsselung können wir nicht auf Vollständigkeit prüfen — genau hier lohnt es sich, vor der Unterschrift eine aufgeschlüsselte Variante zu verlangen.'};
+    }
     // R1e: Toleranzband ehrlich benennen — nicht "im Rahmen" behaupten, wenn die Summe
     // sichtbar unter der angezeigten Untergrenze liegt.
     if(result.priceStatus==='green'&&result.sum<result.rangeMin){
@@ -725,7 +730,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     } else {
       empf='Mit der Fragenliste unten nachfassen — die offenen Punkte sind schnell geklärt, oft harmlos.';
     }
-    html+='<p style="font-size:15px;line-height:1.6;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px;margin-bottom:24px"><strong>Unterm Strich:</strong> '+empf+'</p>';
+    html+='<p style="font-size:15px;line-height:1.6;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px;margin-bottom:16px"><strong>Unterm Strich:</strong> '+empf+'</p>';
+    // V4 (B2): existenzieller Ausweg für Zahlungsunfähige — ruhig, nicht alarmierend.
+    html+='<p style="font-size:14px;line-height:1.6;color:var(--mr-text-muted);border-left:3px solid var(--mr-border);padding:6px 16px;margin:0 0 24px"><strong style="color:var(--mr-text)">Kosten nicht tragbar?</strong> Wenn weder die Angehörigen noch der Nachlass die Bestattung bezahlen können, übernimmt das Sozialamt die Kosten einer einfachen Bestattung (Sozialbestattung nach § 74 SGB XII). <a href="/sozialbestattung" style="color:var(--mr-primary)">Was dir zusteht &rarr;</a></p>';
 
     // Was du beim Bestatter klären solltest (Zusammenfassung)
     if(result.reasons.length>0){
