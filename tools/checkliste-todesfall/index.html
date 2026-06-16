@@ -83,6 +83,15 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       <p style="font-size:17px;line-height:1.7;color:var(--mr-text-muted);max-width:600px">Ein Mensch ist gestorben, und du weißt nicht, wo du anfangen sollst. Diese Checkliste führt dich Schritt für Schritt — personalisiert nach deinem Bundesland.</p>
     </header>
 
+    <div role="alert" style="background:#fff5f2;border:1px solid #f0d0c4;border-left:4px solid var(--mr-urgent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
+      <strong style="color:var(--mr-urgent);display:block;margin-bottom:4px">Wenn es gerade erst passiert ist:</strong>
+      <ul style="list-style:none;margin:0;padding:0">
+        <li style="margin-bottom:4px"><strong>112</strong> — wenn unklar ist, ob noch Atmung oder Puls da sind, oder die Person gerade zusammengebrochen ist (Reanimation hat Vorrang).</li>
+        <li style="margin-bottom:4px"><strong>110</strong> — bei unnatürlichem Tod, Unfall oder Verdacht auf Fremdeinwirkung. Nichts verändern.</li>
+        <li>Sonst, wenn der Tod sicher eingetreten ist: <strong>Hausarzt</strong> oder <strong>116 117</strong> (ärztlicher Bereitschaftsdienst) für den Totenschein. Im Krankenhaus/Pflegeheim übernimmt das die Einrichtung.</li>
+      </ul>
+    </div>
+
     <div style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:0 0 24px;font-size:14px;line-height:1.6">
       <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Diese Checkliste läuft vollständig in deinem Browser. Deine Auswahl (Bundesland, Szenario, Erledigt-Status) wird ausschließlich lokal gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami) werden nur geladen, wenn du im Cookie-Banner unten zustimmst — und erfassen dann nur den Seitenbesuch, nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
     </div>
@@ -123,7 +132,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <div style="margin-bottom:24px;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px">
       <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:14px;line-height:1.5">
         <input type="checkbox" id="cl-foreign" style="width:18px;height:18px;accent-color:var(--mr-primary);cursor:pointer;margin-top:3px">
-        <span>Hatte die verstorbene Person ihren letzten Aufenthalt im Ausland, oder lebst du als Erbe im Ausland?<br><span style="font-size:13px;color:var(--mr-text-muted)">Wenn ja: Erbausschlagungsfrist verlängert sich auf <strong>6 Monate</strong> statt 6 Wochen (§ 1944 Abs. 3 BGB) — und der Auslands-Sonderfall wird in der Checkliste hervorgehoben.</span></span>
+        <span>Hatte die verstorbene Person ihren letzten Wohnsitz nur im Ausland, oder hältst du dich als Erbe bei Fristbeginn im Ausland auf?<br><span style="font-size:13px;color:var(--mr-text-muted)">Wenn ja: Erbausschlagungsfrist verlängert sich auf <strong>6 Monate</strong> statt 6 Wochen (§ 1944 Abs. 3 BGB) — und der Auslands-Sonderfall wird in der Checkliste hervorgehoben.</span></span>
       </label>
     </div>
 
@@ -168,7 +177,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
         <a href="/methodik">Methodik</a>
       </div>
     </div>
-    <div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Mai 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div>
+    <div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Juni 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div>
     <div class="mr-footer-bottom">
       <p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung. Angaben zu Bestattungsrecht variieren nach Bundesland.</p>
       <p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p>
@@ -181,33 +190,33 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   'use strict';
 
   var BUNDESLAENDER = [
-    {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:48,maxErd:4,maxEinaescherung:6},
-    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:null,maxEinaescherung:null,besonderheit:"BestV Bayern: keine starre Höchstfrist nach BestV festgelegt — typisch werden Erd-Bestattungen innerhalb 4–10 Tagen durchgeführt, im Einzelfall mit der zuständigen Behörde / Friedhofsverwaltung abgestimmt. Keine starre Höchstfrist für die Einäscherung.",quelle:"Bayerisches Bestattungsgesetz/BestV (nicht tagesaktuell gegen die aktuelle Fassung gegengeprüft — bei akutem Fristdruck Standesamt fragen)"},
-    {id:"be",name:"Berlin",ueberfuehrung:36,mindest:null,maxErd:null,maxEinaescherung:null,besonderheit:"Berlin: Die 48-Stunden-Wartefrist wurde mit Novelle des BestattG Berlin (2022) abgeschafft — keine starre Mindestfrist mehr; Bestattung kann auf Antrag früher erfolgen. Es gibt auch KEINE starre gesetzliche Höchstfrist; Friedhofssatzungen sehen Soll-Regelungen vor — Rücksprache mit Friedhof empfohlen.",quelle:"BestattG Berlin i.d.F. der Novelle 2022 (vgl. § 16 BestattG Berlin)"},
-    {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7,besonderheit:"Asche darf unter Bedingungen an Angehörige herausgegeben werden."},
-    {id:"hh",name:"Hamburg",ueberfuehrung:36,mindest:48,maxErd:5,maxEinaescherung:7},
-    {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
-    {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:24,maxErd:10,maxEinaescherung:10,besonderheit:"BestG NRW: frühestens 24 h, spätestens 10 Tage. Fristverlängerung beim Ordnungsamt möglich.",quelle:"§§ 13, 16 BestG NRW i.V.m. § 1 BestG NRW (Stand 2026)"},
-    {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10},
-    {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:6,maxEinaescherung:8},
-    {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"st",name:"Sachsen-Anhalt",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:10},
-    {id:"sh",name:"Schleswig-Holstein",ueberfuehrung:36,mindest:48,maxErd:6,maxEinaescherung:8},
-    {id:"th",name:"Thüringen",ueberfuehrung:36,mindest:48,maxErd:7,maxEinaescherung:10}
+    {id:"bw",name:"Baden-Württemberg",ueberfuehrung:36,mindest:null,maxErd:4,maxEinaescherung:4,besonderheit:"Seit 2014 keine starre Mindestfrist mehr — Bestattung möglich, sobald die Leichenschau abgeschlossen ist. Höchstfrist 96 Stunden (4 Tage); Sonn- und Feiertage bleiben unberücksichtigt.",quelle:"§ 37 BestattG BW (mit unserer Landesseite bestattung-in/baden-wuerttemberg abgeglichen)"},
+    {id:"by",name:"Bayern",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:8,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes; spätestens 8 Tage nach Feststellung des Todes — Samstage, Sonn- und Feiertage werden dabei nicht mitgerechnet. Urne: Beisetzung spätestens 3 Monate nach der Einäscherung.",quelle:"§ 19 Abs. 1 BestV Bayern (mit bestattung-in/bayern abgeglichen)"},
+    {id:"be",name:"Berlin",ueberfuehrung:36,mindest:null,maxErd:null,maxEinaescherung:null,besonderheit:"Berlin: Die 48-Stunden-Wartefrist (zuvor § 21 BestattG a.F.) wurde mit der Novelle des BestattG Berlin (Abgeordnetenhaus 2024) abgeschafft — keine starre Mindestfrist mehr; Bestattung kann auf Antrag früher erfolgen. Es gibt auch KEINE starre gesetzliche Höchstfrist; Friedhofssatzungen sehen Soll-Regelungen vor — Rücksprache mit Friedhof empfohlen.",quelle:"BestattG Berlin i.d.F. der Novelle 2024 (zuvor § 21 BestattG a.F.; mit bestattung-in/berlin abgeglichen)"},
+    {id:"bb",name:"Brandenburg",ueberfuehrung:24,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes; Bestattung innerhalb von 10 Tagen nach Feststellung des Todes. Die untere Bestattungsbehörde kann Ausnahmen zulassen.",quelle:"BbgBestG (mit bestattung-in/brandenburg abgeglichen)"},
+    {id:"hb",name:"Bremen",ueberfuehrung:36,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes. Die 10-Tage-Frist ist eine Behördenfrist (spätestens 10 Tage nach Einlieferung in eine Leichenhalle, § 16 Abs. 2 LeichenG). Asche darf unter Bedingungen an Angehörige herausgegeben werden.",quelle:"§ 16 Abs. 2 LeichenG Bremen (mit bestattung-in/bremen abgeglichen)"},
+    {id:"hh",name:"Hamburg",ueberfuehrung:36,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Mindestfrist 48 Stunden. Die 10-Tage-Frist ist eine Anzeige-/Behördenfrist: Angehörige müssen innerhalb von 10 Tagen die Bestattung veranlassen (§ 10 Abs. 1 BestattG).",quelle:"§ 10 Abs. 1 BestattG Hamburg (mit bestattung-in/hamburg abgeglichen)"},
+    {id:"he",name:"Hessen",ueberfuehrung:24,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Mindestfrist 48 Stunden; Höchstfrist seit der Novelle 2025 zehn Tage (vorher vier Tage).",quelle:"BestattG Hessen i.d.F. der Novelle 2025 (mit bestattung-in/hessen abgeglichen)"},
+    {id:"mv",name:"Mecklenburg-Vorpommern",ueberfuehrung:36,mindest:24,maxErd:10,maxEinaescherung:10,besonderheit:"Frühestens 24 Stunden nach Eintritt des Todes; Höchstfrist 10 Tage nach Todeseintritt (§ 11 Abs. 2 BestattG M-V). Überführung in eine Leichenhalle innerhalb von 36 Stunden (§ 8 Abs. 1).",quelle:"§ 11 Abs. 2 BestattG M-V (mit bestattung-in/mecklenburg-vorpommern abgeglichen)"},
+    {id:"ni",name:"Niedersachsen",ueberfuehrung:36,mindest:48,maxErd:8,maxEinaescherung:8,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes; innerhalb von 8 Tagen bestattet oder eingeäschert (§ 9 Abs. 2). Tage, an denen die Gemeinde keine Bestattungen durchführt, zählen nicht mit.",quelle:"§ 9 Abs. 2 BestattG Niedersachsen (mit bestattung-in/niedersachsen abgeglichen)"},
+    {id:"nw",name:"Nordrhein-Westfalen",ueberfuehrung:36,mindest:24,maxErd:10,maxEinaescherung:10,besonderheit:"BestG NRW: frühestens 24 h, spätestens 10 Tage. Fristverlängerung beim Ordnungsamt möglich. Urnenbeisetzung spätestens sechs Wochen nach der Einäscherung.",quelle:"§§ 13, 16 BestG NRW (mit bestattung-in/nordrhein-westfalen abgeglichen)"},
+    {id:"rp",name:"Rheinland-Pfalz",ueberfuehrung:36,mindest:48,maxErd:14,maxEinaescherung:14,besonderheit:"Die Bestattungsfrist wurde von 10 auf 14 Tage verlängert (§ 23 BestG). Frühestens 48 Stunden nach Eintritt des Todes.",quelle:"§ 23 BestG Rheinland-Pfalz (mit bestattung-in/rheinland-pfalz abgeglichen)"},
+    {id:"sl",name:"Saarland",ueberfuehrung:24,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Mindestfrist 48 Stunden; spätestens zehn Tage nach Eintritt des Todes (§ 29 SBestG, vorher 7 Tage). Urne: spätestens drei Monate nach der Einäscherung.",quelle:"§ 29 SBestG Saarland (mit bestattung-in/saarland abgeglichen)"},
+    {id:"sn",name:"Sachsen",ueberfuehrung:24,mindest:48,maxErd:8,maxEinaescherung:8,besonderheit:"Frühestens 48 Stunden nach Feststellung des Todes; innerhalb von 8 Werktagen (§ 19 SächsBestG). Die Behörde kann die 48-Stunden-Frist verkürzen und die 8-Tage-Frist verlängern.",quelle:"§ 19 SächsBestG (mit bestattung-in/sachsen abgeglichen)"},
+    {id:"st",name:"Sachsen-Anhalt",ueberfuehrung:24,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes; Erdbestattung innerhalb von 10 Tagen (§ 17 Abs. 2). Ausnahmen sind möglich.",quelle:"§ 17 Abs. 2 BestattG LSA (mit bestattung-in/sachsen-anhalt abgeglichen)"},
+    {id:"sh",name:"Schleswig-Holstein",ueberfuehrung:36,mindest:48,maxErd:9,maxEinaescherung:9,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes; innerhalb von 9 Tagen soll die Erdbestattung oder Einäscherung erfolgen (§ 16 Abs. 1).",quelle:"§ 16 Abs. 1 BestattG Schleswig-Holstein (mit bestattung-in/schleswig-holstein abgeglichen)"},
+    {id:"th",name:"Thüringen",ueberfuehrung:36,mindest:48,maxErd:10,maxEinaescherung:10,besonderheit:"Frühestens 48 Stunden nach Eintritt des Todes; Erdbestattung soll innerhalb von 10 Tagen nach Feststellung des Todes erfolgen (§ 17 Abs. 3). Ausnahmen möglich.",quelle:"§ 17 Abs. 3 ThürBestG (mit bestattung-in/thueringen abgeglichen)"}
   ];
 
   var SZENARIEN_LABELS = {zuhause:"Zu Hause", krankenhaus:"Im Krankenhaus / Hospiz", pflegeheim:"Im Pflegeheim", unbekannt:"Woanders / Unklar"};
 
   var SONDERFAELLE = [
     {id:"polizei",titel:"Unnatürlicher Tod / Verdacht auf Fremdeinwirkung",text:"Sofort Polizei rufen (110). Nichts verändern, nichts aufräumen. Die Bestattung kann sich verzögern, bis die Untersuchung abgeschlossen ist."},
-    {id:"ausland",titel:"Todesfall im Ausland — oder Erbe/Erblasser im Ausland",text:"Wenn der Tod im Ausland eingetreten ist: Deutsche Botschaft/Konsulat kontaktieren — hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe Reiseversicherung mit Rückholklausel. Auch wichtig: Wenn Erbe oder Erblasser im Ausland leben, verlängert sich die Erbausschlagungsfrist von 6 Wochen auf 6 Monate (§ 1944 Abs. 3 BGB) — und ein Erbschein nach internationalem Recht kann nötig sein. Bei Auslandsbezug rechtzeitig Notar/Fachanwalt für internationales Erbrecht hinzuziehen."},
-    {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt deines Wohnbezirks Kostenübernahme beantragen (§ 74 SGB XII). Der Antrag sollte VOR der Bestattung gestellt werden — sonst können nur die ortsüblichen Mindestkosten erstattet werden. Einfache Bestattungen werden in der Regel vollständig übernommen. Falls dir das Antragsverfahren überfordert: Caritas, Diakonie oder Sozialdienst der Kommune helfen kostenlos."},
+    {id:"ausland",titel:"Todesfall im Ausland — oder Erbe/Erblasser im Ausland",text:"Wenn der Tod im Ausland eingetreten ist: Deutsche Botschaft/Konsulat kontaktieren — hilft bei Überführung und Dokumenten. Kosten: 5.000–15.000 €. Prüfe Reiseversicherung mit Rückholklausel. Auch wichtig: Wenn der Erblasser seinen letzten Wohnsitz nur im Ausland hatte oder sich der Erbe bei Fristbeginn im Ausland aufhält, verlängert sich die Erbausschlagungsfrist von 6 Wochen auf 6 Monate (§ 1944 Abs. 3 BGB) — und ein Erbschein nach internationalem Recht kann nötig sein. Bei Auslandsbezug rechtzeitig Notar/Fachanwalt für internationales Erbrecht hinzuziehen."},
+    {id:"sozial",titel:"Kein Geld für die Bestattung",text:"Beim Sozialamt deines Wohnbezirks Kostenübernahme beantragen (§ 74 SGB XII): Die erforderlichen Kosten einer Bestattung werden übernommen, soweit es den Verpflichteten nicht zugemutet werden kann, sie zu tragen. Ein Antrag ist auch nach der Bestattung noch möglich — empfehlenswert ist trotzdem, ihn früh zu stellen und alle Rechnungen aufzubewahren. Übernommen werden die Kosten einer einfachen, ortsüblichen Bestattung. Falls dich das Antragsverfahren überfordert: Caritas, Diakonie oder Sozialdienst der Kommune helfen kostenlos."},
     {id:"selbststaendig",titel:"Verstorbener war Selbstständig / Unternehmer",text:"Zusätzliche Pflichten: Krankenkasse + DRV + Berufsgenossenschaft informieren (nicht nur als Privatperson). Handelsregister-Eintrag prüfen (GmbH/UG bei Gesellschafter-Tod). Steuerberater einbinden — Bilanzstichtag verschoben, Erbschaftsteuer-Schonregeln bei Betriebsvermögen prüfbar. Aufträge/Kunden informieren oder durch Erben fortführen lassen."},
-    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Wichtige Entscheidungen (Wohnungsauflösung, Bestattungsart) müssen einstimmig getroffen werden. Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."},
-    {id:"sternenkind",titel:"Sternenkind / Tot- oder Fehlgeburt",text:"Bei einer Tot- oder Fehlgeburt (sog. Sternenkind) gelten besondere Regeln: Ab 500g Körpergewicht ist die Bestattung Pflicht und ein Personenstandseintrag möglich; unter 500g gibt es ein Bestattungsrecht (Sammelbestattung in den Kliniken oder eigene Bestattung). Klinik-Sozialdienste begleiten den Prozess. Krisenbegleitung: Bundesverband Verwaiste Eltern (veid.de) und Sternenkinder-Initiativen vor Ort."},
+    {id:"erbengemeinschaft",titel:"Mehrere Erben / Erbengemeinschaft",text:"Wenn mehrere Personen erben (z. B. Geschwister), bilden sie automatisch eine Erbengemeinschaft. Maßnahmen der ordnungsmäßigen Verwaltung (z. B. laufende Kosten, übliche Wohnungsauflösung) können per Stimmenmehrheit nach Erbteilen beschlossen werden (§§ 2038, 745 BGB). Verfügungen über einzelne Nachlassgegenstände (z. B. Verkauf der Immobilie) und wesentliche Veränderungen brauchen dagegen die Zustimmung aller Miterben (§ 2040 BGB). Frühzeitig Notar/Anwalt einbinden — sonst stockt der Prozess. Auseinandersetzungsvertrag oder Teilungsplan empfohlen."},
+    {id:"sternenkind",titel:"Sternenkind / Tot- oder Fehlgeburt",text:"Bei einer Tot- oder Fehlgeburt (sog. Sternenkind) gelten besondere Regeln: Die Grenze von 500g Körpergewicht ist zunächst die personenstandsrechtliche Schwelle zwischen Totgeburt (ab 500g, wird beurkundet) und Fehlgeburt (unter 500g, Beurkundung auf Wunsch möglich, § 31 PStV). Ob daraus eine Bestattungspflicht folgt, richtet sich nach dem jeweiligen Landesbestattungsrecht: Für Totgeburten ab 500g besteht in der Regel Bestattungspflicht, für Fehlgeburten unter 500g meist ein Bestattungsrecht (Sammelbestattung über die Klinik oder eigene Bestattung). Klinik-Sozialdienste begleiten den Prozess. Krisenbegleitung: Bundesverband Verwaiste Eltern (veid.de) und Sternenkinder-Initiativen vor Ort."},
     {id:"unbekannte-angehoerige",titel:"Unbekannte oder zerstrittene Angehörige",text:"Wenn Angehörige nicht erreichbar sind oder die Familienkommunikation belastet ist: Das Standesamt klärt im Einzelfall, wer informationsberechtigt ist. Bei zerstrittenen Familien (z. B. nach Trennung) kann ein Vermittlungsverfahren über das Nachlassgericht helfen. Bestattungspflicht trifft im Zweifel die nächsten Angehörigen nach Bestattungsgesetz; ist niemand zu ermitteln, übernimmt die Gemeinde (Ordnungsbestattung)."}
   ];
 
@@ -251,7 +260,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     {q:"Wie schnell muss eine Bestattung stattfinden?",a:"Das hängt vom Bundesland ab. Frühestens nach 48 Stunden (Standardwert; einige Bundesländer und Einzelfälle lassen kürzere Fristen auf Antrag zu), spätestens je nach Bundesland zwischen 4 und 10 Tagen für eine Erdbestattung. Die Checkliste zeigt dir die für dein Bundesland modellierten Werte — verbindlich sind die jeweiligen Landesbestattungsgesetze."},
     {q:"Wer bezahlt die Bestattung?",a:"In erster Linie die Erben. Bei Sterbegeldversicherung oder Bestattungsvorsorge werden Kosten daraus gedeckt. Wenn niemand zahlen kann: Sozialamt (§74 SGB XII)."},
     {q:"Wie viele Sterbeurkunden brauche ich?",a:"Mindestens 5 beglaubigte Ausfertigungen (je ca. 12 €). Für Bank, Versicherungen, Rente, Finanzamt, Vermieter und ggf. Arbeitgeber."},
-    {q:"Werden meine Eingaben gespeichert?",a:"Deine Auswahl wird lokal in deinem Browser gespeichert (localStorage), damit du beim nächsten Besuch fortsetzen kannst. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben."},
+    {q:"Werden meine Eingaben gespeichert?",a:"Der Erledigt-Status deiner Aufgaben (welche Häkchen du gesetzt hast) wird lokal in deinem Browser gespeichert (localStorage). Bundesland und Szenario wählst du nach einem erneuten Besuch kurz wieder aus, dann erscheinen deine Häkchen wieder. Es werden keine Eingaben an einen Server gesendet. Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur nach deinem Opt-In im Cookie-Banner geladen werden — sie erfassen dann nur den Seitenbesuch, nicht deine Eingaben."},
     {q:"Kann ich die Checkliste ausdrucken?",a:"Ja. Nutze die Druckfunktion, um die Checkliste als PDF zu speichern oder auszudrucken. Du kannst auch einzelne Aufgaben per WhatsApp teilen."}
   ];
 
@@ -265,7 +274,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   function persistChecked(){ try { localStorage.setItem('cl-checked', JSON.stringify(state.checkedTasks)); } catch(e) {} }
 
   var foreignChk = $('#cl-foreign');
-  if (foreignChk) foreignChk.addEventListener('change', function(e){ state.isForeign = e.target.checked; });
+  if (foreignChk) {
+    state.isForeign = !!foreignChk.checked; // Browser-Autofill/Restore beim Laden übernehmen
+    foreignChk.addEventListener('change', function(e){ state.isForeign = e.target.checked; });
+  }
 
   // ===== Setup view =====
   $('#cl-bl').addEventListener('change', function(e){
@@ -293,7 +305,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += (bl.mindest != null ? 'Frühestens nach ' + bl.mindest + 'h (Standard; auf Antrag ggf. kürzer)' : 'Keine starre Mindestfrist (siehe Hinweis)');
     if (bl.besonderheit) html += '<div style="margin-top:6px;color:var(--mr-warm);font-size:13px">' + esc(bl.besonderheit) + '</div>';
     if (bl.quelle) html += '<div style="margin-top:4px;font-size:11.5px;color:var(--mr-text-muted)"><strong>Quelle:</strong> ' + esc(bl.quelle) + '</div>';
-    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)"><strong>Wichtig:</strong> Die hier dargestellten Werte sind unser Modell der jeweiligen Landesbestattungsgesetze (Stand Mai 2026, nicht alle 16 Bundesländer wurden tagesaktuell gegen ihre BestG-Fassung gegengeprüft) — verbindlich ist immer das Gesetz selbst. Auch in Bundesländern mit gesetzlicher Höchstfrist kann die Friedhofssatzung der Gemeinde abweichende (oft kürzere) Regelungen vorsehen. Die Tage-Angaben sind Kalendertage (Werktage-Bemessung gilt vereinzelt für einzelne Mindestfristen — bei Wochenend-/Feiertags-Lage kann sich der praktische Fristablauf verschieben). Im Zweifel: Rücksprache mit Bestatter oder Standesamt — dort wird die Anwendung im Einzelfall geklärt.</div>';
+    html += '<div style="margin-top:8px;font-size:12px;color:var(--mr-text-muted)"><strong>Wichtig:</strong> Die hier dargestellten Werte sind mit unseren primärquellen-geprüften Landesseiten (bestattung-in/&lt;bundesland&gt;) abgeglichen (Stand Juni 2026) — verbindlich ist immer das Gesetz selbst. Auch in Bundesländern mit gesetzlicher Höchstfrist kann die Friedhofssatzung der Gemeinde abweichende (oft kürzere) Regelungen vorsehen. Die Tage-Angaben sind Kalendertage (Werktage-Bemessung gilt vereinzelt für einzelne Mindestfristen — bei Wochenend-/Feiertags-Lage kann sich der praktische Fristablauf verschieben). Im Zweifel: Rücksprache mit Bestatter oder Standesamt — dort wird die Anwendung im Einzelfall geklärt.</div>';
     $('#cl-summary-box').innerHTML = html;
     $('#cl-summary').style.display = 'block';
   }
@@ -431,7 +443,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       h += '<div style="background:var(--mr-bg-card);border:2px solid var(--mr-success);border-radius:var(--mr-radius);padding:32px 28px;margin:40px 0;text-align:center">';
       h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px;color:var(--mr-success)">Du hast alles erledigt.</h2>';
       h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Nimm dir die Zeit, die du brauchst. Wenn du bei der weiteren Planung Unterstützung brauchst:</p>';
-      h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+      h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">';
       [['Beerdigung planen','/beerdigung-planen','Schritt für Schritt'],
        ['Bestattungskosten','/bestattungskosten','Was es kostet'],
        ['Bestatter finden','/bestatter','In deiner Nähe']].forEach(function(l){
@@ -458,7 +470,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     h += '<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
     h += '<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Du hast deinen Plan. Diese Tools helfen dir bei den nächsten Schritten:</p>';
-    h += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    h += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">';
     [{title:'Fristen-Radar',sub:'Welche Frist tickt wann?',href:'/tools/fristen-radar/'},
      {title:'Bestattungskosten',sub:'Realistische Schätzung',href:'/tools/bestattungskosten-rechner/'},
      {title:'Beerdigung planen',sub:'Trauerfeier vorbereiten',href:'/tools/beerdigungsplaner/'}].forEach(function(l){
@@ -475,7 +487,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     h += '<div style="background:#f4f0eb;border-radius:var(--mr-radius);padding:24px 28px;margin:40px 0">';
     h += '<h2 style="font-family:\'Fraunces\',serif;font-size:16px;font-weight:700;margin-bottom:12px">Quellen</h2>';
     h += '<ul style="list-style:none">';
-    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: Mai 2026)',
+    ['Jeweiliges Landesbestattungsgesetz des Bundeslandes (Stand: Juni 2026)',
      'Personenstandsgesetz (PStG) §28 — Anzeigepflicht beim Standesamt',
      'Bürgerliches Gesetzbuch (BGB) § 580 (Sonderkündigung) + § 573d Abs. 2 i.V.m. § 573c Abs. 1 (3-Monats-Frist bei Wohnraum)',
      'Sozialgesetzbuch XII §74 — Bestattungskosten bei Bedürftigkeit'].forEach(function(q){
