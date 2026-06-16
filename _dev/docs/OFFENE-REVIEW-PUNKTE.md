@@ -35,6 +35,11 @@
 - **checkliste-todesfall „5.000–15.000 €"** = Auslandsüberführungs-Kosten, nicht Bestattung.
 - **testament „2.000–5.000 €"** = Notarkosten nach Nachlasswert, nicht Bestattung.
 - **beerdigungsplaner JS-Kostenarray** (Grabtyp-Schätzwerte) = tool-intern, plausibel; eigene Tool-Validity-Sache, nicht der Korrektheits-Sweep.
+
+## Externes Review 16.06.2026 — geprüfte FPs
+- **Testament „Ohne Testament entscheidet die Gesetze"** = bereits gefixt (Seite sagt „greift die gesetzliche Erbfolge"). Reviewer war auf altem Stand. NICHT erneut melden.
+- **Patientenverfügung „schriftlich, handschriftlich unterschrieben"** = substanziell korrekt: § 1827 BGB verlangt Schriftform + eigenhändige Unterschrift; die Seite stellt an anderer Stelle ausdrücklich klar, dass der Text getippt sein darf und nur die Unterschrift handschriftlich erfolgen muss. Kein YMYL-Fehler, höchstens Keyfacts-Klarstellung (Backlog, kein Defekt).
+- **ZTR-Gebühr**: Reviewer nannte 12,50/15,50 € — real **18 €** (primärverifiziert 16.06.). Bei künftigen Testament-Reviews die 75 € (Verwahrung) + 18 € (ZTR) als gesetzt behandeln.
 - **„Stiftung Warentest 7.000–8.000 €" ist KEIN Fabrikat-Defekt** (15.06. primärverifiziert: real, hannover belegt mit Finanztest 11/2023). NICHT als Finding melden. Offen ist nur die Konsistenz (s. Backlog unten).
 
 ## Backlog: site-weite Kosten-Konsolidierung (Bolle-Entscheid nötig)
