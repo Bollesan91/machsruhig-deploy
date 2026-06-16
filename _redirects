@@ -213,3 +213,8 @@
 
 # Sozialbestattung Trailing-Slash-Fix
 /sozialbestattung/                  /sozialbestattung                 301
+
+# Alt-Duplikat Schnell-Kostenrechner stillgelegt (16.06.) -> korrektes BL-Modell-Tool.
+# Force (!), sonst serviert Netlify die noch existierende Datei statt zu redirecten.
+/tools/kostenrechner/*  /tools/bestattungskosten-rechner/  301!
+/tools/kostenrechner    /tools/bestattungskosten-rechner/  301!
