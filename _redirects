@@ -34,7 +34,7 @@
 /tools/checkliste-todesfall         /tools/checkliste-todesfall/          301
 /tools/danksagung                   /tools/danksagung/                    301
 /tools/fristen-radar                /tools/fristen-radar/                 301
-/tools/kostenrechner                /tools/kostenrechner/                 301
+/tools/kostenrechner                /tools/bestattungskosten-rechner/ 301!
 /tools/notfallkarte                 /tools/notfallkarte/                  301
 /tools/trauerrede                   /tools/trauerrede/                    301
 /tools/vorsorge-check               /tools/vorsorge-check/                301
@@ -167,7 +167,7 @@
 /bestatter-in/saarbruecken/         /bestatter/saarbruecken/          301
 
 # Tool-Shortcut
-/kostenrechner                      /tools/kostenrechner/             301
+/kostenrechner                      /tools/bestattungskosten-rechner/ 301!
 
 # 404-Stadt-Pages → /bestatter/ Hub (31 Cities die nicht existieren)
 /bestatter/gera/                    /bestatter/                       301
