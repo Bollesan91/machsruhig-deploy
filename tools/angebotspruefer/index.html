@@ -21,7 +21,7 @@
 <script defer src="/js/tracking.js?v=20260609"></script>
 <link rel="stylesheet" href="/assets/css/site.css?v=20260612">
 <style>
-:root{--ap-green:#5a8a5a;--ap-red:#c45e3a;--ap-yellow:#d4852e;}
+:root{--ap-green:#5a8a5a;--ap-red:#c45e3a;--ap-yellow:#b5660f;}
 /* Wizard */
 .ap-step{display:none}
 .ap-step.active{display:block}
@@ -165,7 +165,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
     <!-- V2.3: INFO-Posten — kein Range-Abzug, nur Klärung-Filter (Grabstein/Grabpflege kommen typischerweise später separat) -->
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:28px 0 8px">Posten, die typischerweise später separat geregelt werden</h3>
-    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:14px">Diese Posten sind meist <strong>nicht</strong> im Bestatter-Erstangebot enthalten. Markiere, wenn das bei dir zutrifft — wir nehmen sie dann von der Klärungs-Liste raus:</p>
+    <p style="font-size:13px;color:var(--mr-text-muted);margin-bottom:14px">Diese Posten sind meist <strong>nicht</strong> im Bestatter-Erstangebot enthalten und kommen typischerweise später separat dazu. Hak ab, was bei dir zutrifft:</p>
     <div id="ap-info-list" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:8px 20px"></div>
 
     <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:28px 0 8px">Komplettpaket oder Pauschale?</h3>
@@ -409,8 +409,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if(oldHint && oldHint.tagName==='P' && oldHint.textContent.indexOf('ungefähre Zahl')>=0) oldHint.remove();
     // M4: Strip German thousand-dots/commas, validate
     inp.addEventListener('input',function(){
-      var raw=inp.value.replace(/[.\s]/g,'').replace(/,\d*$/,'');
-      var v=parseInt(raw,10);
+      // V4 (N-3): Komma = Dezimal (1-2 Endziffern abschneiden), Punkt/Space = Tausender; danach muss reine Ziffernfolge bleiben (sonst NaN -> Fehler statt stillem Fehlparse wie "500abc"->500).
+      var raw=inp.value.trim().replace(/\s/g,'').replace(/,\d{1,2}$/,'').replace(/\./g,'');
+      var v=(/^\d+$/.test(raw))?parseInt(raw,10):NaN;
       if(isNaN(v)||v<500){
         state.gesamtsumme=0;
         $('#ap-next-3').disabled=true;
@@ -613,6 +614,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       // V4: Eine Pauschale ohne Aufschlüsselung ist NICHT automatisch vollständig — die Vollständigkeit ist schlicht nicht prüfbar (genau der Fall, für den das Tool gebaut ist).
       completenessStatus='yellow';
       completenessReasons.push('Du hast eine Pauschale / ein Komplettpaket angegeben. Ob wirklich alle nötigen Leistungen enthalten sind, lässt sich ohne Aufschlüsselung nicht prüfen — bitte den Bestatter um eine aufgeschlüsselte Variante. Pauschalen sind nicht automatisch schlecht, aber die Vollständigkeit siehst nur du mit der Aufschlüsselung.');
+    } else if(klärung.length>=4 && klärungsRatio>=0.75){
+      // V4 (N-1): die grosse Mehrheit der Pflicht-Posten unklar -> Vollstaendigkeit ROT (vorher konnte sie nie rot werden).
+      completenessStatus='red';
+      completenessReasons.push('Die meisten Pflicht-Posten ('+klärung.length+' von '+klärungsTotal+') sind nicht ausgewiesen — bitte unbedingt vor der Entscheidung klären, was im Preis enthalten ist und was separat dazukommt.');
     } else if(klärung.length>=3 && klärungsRatio>=0.5){
       completenessStatus='yellow';
       completenessReasons.push('Mehrere Posten sind nicht eindeutig ausgewiesen ('+klärung.length+' von '+klärungsTotal+'). Bei Discount-Angeboten ist das normal — frage einfach beim Bestatter nach, was inkludiert ist und was nicht.');
@@ -701,24 +706,30 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     if(state.pauschal){
       cs={icon:'?',title:'Vollständigkeit nicht prüfbar',text:'Eine Pauschale ohne Aufschlüsselung können wir nicht auf Vollständigkeit prüfen — genau hier lohnt es sich, vor der Unterschrift eine aufgeschlüsselte Variante zu verlangen.'};
     }
-    // R1e: Toleranzband ehrlich benennen — nicht "im Rahmen" behaupten, wenn die Summe
-    // sichtbar unter der angezeigten Untergrenze liegt.
+    // V4 (N-2): BA ohne ortsgebundenen Anteil (See/Baum/Direktkremation) -> Spanne bundesland-unabhaengig, kein "in [Bundesland]" behaupten.
+    var blRelevant=!(result.ba.lokalMin===0&&result.ba.lokalMax===0);
+    var ortLabel=blRelevant?('in '+esc(state.bundesland)):'bundesweit';
+    // R1e: Toleranzband ehrlich benennen — nicht "im Rahmen" behaupten, wenn die Summe sichtbar unter der Untergrenze liegt.
     if(result.priceStatus==='green'&&result.sum<result.rangeMin){
-      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt knapp unter dem üblichen Rahmen für '+esc(result.ba.name)+' in '+esc(state.bundesland)+' — das ist unauffällig.'};
-    }
-    if(result.priceStatus==='green'&&result.sum>result.rangeMax){
-      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt knapp über dem üblichen Rahmen für '+esc(result.ba.name)+' in '+esc(state.bundesland)+' — das ist unauffällig.'};
+      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt knapp unter dem üblichen Rahmen für '+esc(result.ba.name)+' '+ortLabel+' — das ist unauffällig.'};
+    } else if(result.priceStatus==='green'&&result.sum>result.rangeMax){
+      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt knapp über dem üblichen Rahmen für '+esc(result.ba.name)+' '+ortLabel+' — das ist unauffällig.'};
+    } else if(result.priceStatus==='green'&&result.rangeMax>result.rangeMin){
+      // V4 (W-1): Position innerhalb der gruenen Range einordnen — macht den Preis-Vergleich nutzbar.
+      var pos=(result.sum-result.rangeMin)/(result.rangeMax-result.rangeMin);
+      var lage=pos>=0.66?'im oberen Drittel des üblichen Rahmens':(pos<=0.34?'am günstigen Ende des üblichen Rahmens':'im mittleren Bereich des üblichen Rahmens');
+      ps={icon:ps.icon,title:ps.title,text:'Die Gesamtsumme liegt '+lage+' für '+esc(result.ba.name)+' '+ortLabel+'.'};
     }
 
     var html='';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:24px;font-weight:700;margin:32px 0 8px">Dein Angebots-Check</h2>';
     var rangeNote=result.separatList.length>0?' · <em style="color:var(--mr-text-muted)">(Rahmen angepasst um '+result.separatList.length+(result.separatList.length===1?' separat abgerechneten Posten':' separat abgerechnete Posten')+')</em>':'';
-    html+='<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">'+esc(result.ba.name)+' in '+esc(state.bundesland)+' · Angebots-Gesamtsumme: <strong>'+fmt(result.sum)+' €</strong> · vergleichbarer Rahmen: <strong>'+fmt(result.rangeMin)+'–'+fmt(result.rangeMax)+' €</strong>'+rangeNote+'</p>';
+    html+='<p style="font-size:14px;color:var(--mr-text-muted);margin-bottom:16px">'+esc(result.ba.name)+' '+ortLabel+' · Angebots-Gesamtsumme: <strong>'+fmt(result.sum)+' €</strong> · vergleichbarer Rahmen: <strong>'+fmt(result.rangeMin)+'–'+fmt(result.rangeMax)+' €</strong>'+rangeNote+'</p>';
 
     // Zwei Ampeln: Preis + Vollständigkeit (responsiv, stapeln auf schmal)
     html+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0">';
-    html+='<div class="ampel-box '+result.priceStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Preis-Einschätzung</div><div class="ampel-icon">'+ps.icon+'</div><div class="ampel-title" style="font-size:19px">'+ps.title+'</div><p class="ampel-text">'+ps.text+'</p></div>';
-    html+='<div class="ampel-box '+result.completenessStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Vollständigkeit</div><div class="ampel-icon">'+cs.icon+'</div><div class="ampel-title" style="font-size:19px">'+cs.title+'</div><p class="ampel-text">'+cs.text+'</p></div>';
+    html+='<div class="ampel-box '+result.priceStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Preis-Einschätzung</div><div class="ampel-icon" aria-hidden="true">'+ps.icon+'</div><div class="ampel-title" style="font-size:19px">'+ps.title+'</div><p class="ampel-text">'+ps.text+'</p></div>';
+    html+='<div class="ampel-box '+result.completenessStatus+'" style="margin:0"><div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--mr-text-muted);margin-bottom:6px;font-weight:600">Vollständigkeit</div><div class="ampel-icon" aria-hidden="true">'+cs.icon+'</div><div class="ampel-title" style="font-size:19px">'+cs.title+'</div><p class="ampel-text">'+cs.text+'</p></div>';
     html+='</div>';
 
     // R1b: Gesamt-Empfehlung aus beiden Ampeln
@@ -732,7 +743,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     }
     html+='<p style="font-size:15px;line-height:1.6;background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:8px;padding:14px 18px;margin-bottom:16px"><strong>Unterm Strich:</strong> '+empf+'</p>';
     // V4 (B2): existenzieller Ausweg für Zahlungsunfähige — ruhig, nicht alarmierend.
-    html+='<p style="font-size:14px;line-height:1.6;color:var(--mr-text-muted);border-left:3px solid var(--mr-border);padding:6px 16px;margin:0 0 24px"><strong style="color:var(--mr-text)">Kosten nicht tragbar?</strong> Wenn weder die Angehörigen noch der Nachlass die Bestattung bezahlen können, übernimmt das Sozialamt die Kosten einer einfachen Bestattung (Sozialbestattung nach § 74 SGB XII). <a href="/sozialbestattung" style="color:var(--mr-primary)">Was dir zusteht &rarr;</a></p>';
+    html+='<p style="font-size:14px;line-height:1.6;color:var(--mr-text-muted);border-left:3px solid var(--mr-border);padding:6px 16px;margin:0 0 24px"><strong style="color:var(--mr-text)">Kosten nicht tragbar?</strong> Wenn dir als bestattungspflichtiger Person nicht zugemutet werden kann, die Kosten zu tragen — weil weder du noch der Nachlass sie aufbringen können — übernimmt das Sozialamt die erforderlichen Kosten einer einfachen Bestattung (Sozialbestattung nach § 74 SGB XII). <a href="/sozialbestattung" style="color:var(--mr-primary)">Was dir zusteht &rarr;</a></p>';
 
     // Was du beim Bestatter klären solltest (Zusammenfassung)
     if(result.reasons.length>0){
@@ -787,7 +798,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html+='<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
     html+='<p style="font-size:15px;color:var(--mr-text-muted);margin-bottom:20px">Du hast deine Fragenliste. Diese Tools führen dich weiter:</p>';
-    html+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">';
+    html+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">';
     [{title:'Kostenrechner',sub:'Eigene Schätzung machen',href:'/tools/bestattungskosten-rechner/'},
      {title:'Beerdigung planen',sub:'Trauerfeier vorbereiten',href:'/tools/beerdigungsplaner/'},
      {title:'Checkliste Todesfall',sub:'Bürokratie sortieren',href:'/tools/checkliste-todesfall/'}].forEach(function(l){
