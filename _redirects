@@ -213,3 +213,7 @@
 
 # Sozialbestattung Trailing-Slash-Fix
 /sozialbestattung/                  /sozialbestattung                 301
+
+# Alt-Duplikat Schnell-Kostenrechner stillgelegt (16.06.) -> korrektes BL-Modell-Tool
+/tools/kostenrechner/*  /tools/bestattungskosten-rechner/  301
+/tools/kostenrechner    /tools/bestattungskosten-rechner/  301
