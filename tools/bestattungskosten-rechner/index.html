@@ -742,9 +742,12 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
       // Grabtyp als Multiplikator auf Friedhofsgebühren
       // (Einzel=1.0 Basis, Doppel=1.6, Reihen=0.7, Urne=0.5, Gemeinschaft=0.4)
-      if (key === 'friedhofsgebuehr' || key === 'friedhofsgebuehr_urne') {
+      if (key === 'friedhofsgebuehr') {
         var GRAB_MULT = {Einzelgrab:1.0, Doppelgrab:1.6, Reihengrab:0.7, Urnengrab:0.5, Gemeinschaftsgrab:0.4};
         qualityMult = GRAB_MULT[state.grabGrab] || 1.0;
+      } else if (key === 'friedhofsgebuehr_urne') {
+        // V1-Fix: Die Urnen-Friedhofsgebuehr ist bereits urnenspezifisch -> 'Urnengrab' ist die Basis (kein Doppelrabatt). Nur ein Gemeinschafts-Urnengrab ist guenstiger.
+        qualityMult = (state.grabGrab === 'Gemeinschaftsgrab') ? 0.6 : 1.0;
       }
 
       // V2: Regionalfaktor nur auf ortsgebundene Posten (Friedhof/Beisetzung)
@@ -765,10 +768,11 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       var years = model.grabpflege_jahre || 20;
       var yearMin = Math.round(model.grabpflege_jahresgebuehr.min * multiplier);
       var yearMax = Math.round(model.grabpflege_jahresgebuehr.max * multiplier);
-      var gpMin = yearMin * years;
-      var gpMax = yearMax * years;
+      // V5: Jahressumme aus dem ungerundeten Wert (lineare Methodik-Hochrechnung), nicht aus dem gerundeten Jahreswert.
+      var gpMin = Math.round(model.grabpflege_jahresgebuehr.min * multiplier * years);
+      var gpMax = Math.round(model.grabpflege_jahresgebuehr.max * multiplier * years);
       items.push({
-        name: 'Grabpflegegebühren (' + years + ' Jahre, ca. ' + yearMin + '–' + yearMax + ' €/Jahr)',
+        name: 'Grabpflegegebühren (' + years + ' Jahre, ca. ' + yearMin + '–' + yearMax + ' €/Jahr · regional angepasst)',
         category: 'Grabpflege',
         min: gpMin, max: gpMax, key: 'grabpflege'
       });
@@ -861,7 +865,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var html = '<div class="results-container">';
     html += '<div class="result-header">';
     html += '<h2>Deine geschätzten Bestattungskosten</h2>';
-    html += '<p class="result-total">' + esc(ba.name) + ' in ' + esc(state.bundesland) + '</p>';
+    var _regionWirkt = !(state.bestattungsart === 'seebestattung' || state.bestattungsart === 'baumbestattung');
+    html += '<p class="result-total">' + esc(ba.name) + (_regionWirkt ? (' in ' + esc(state.bundesland)) : ' <span style="font-weight:400;color:var(--mr-text-muted)">· bundesweit (keine ortsgebundenen Friedhofsgebühren)</span>') + '</p>';
     html += '</div>';
 
     html += '<div class="cost-range">';
@@ -897,7 +902,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       if (mid < basisMid * 0.85) lage = 'bewusst reduziert — ohne Extras bzw. mit günstigen Optionen';
       else if (mid > basisMid * 1.3) lage = hasExtras ? 'eher umfangreich — die gewählten Extras treiben die Summe' : 'am oberen Rand des Basis-Szenarios';
       else lage = 'im typischen Bereich des Basis-Szenarios';
-      html += '<p class="no-print" style="font-size:13.5px;color:var(--mr-text-muted);margin:10px 0 0;line-height:1.6">Zur Einordnung: Ohne Grabpflege und vor Regionalfaktor gerechnet liegt deine Auswahl <strong style="color:var(--mr-text)">' + lage + '</strong> (Komponentensumme ' + esc(basis.label) + ': ca. ' + fmt(basis.min) + '–' + fmt(basis.max) + ' €). Wie dein Bundesland liegt, zeigt der <a href="/bestattungskosten-nach-bundesland" style="color:var(--mr-primary)">Bundesland-Vergleich</a>.</p>';
+      html += '<p class="no-print" style="font-size:13.5px;color:var(--mr-text-muted);margin:10px 0 0;line-height:1.6">Zur Einordnung: Ohne Grabpflege und vor Regionalfaktor gerechnet liegt deine Auswahl <strong style="color:var(--mr-text)">' + lage + '</strong> (Komponentensumme ' + esc(basis.label) + ': ca. ' + fmt(basis.min) + '–' + fmt(basis.max) + ' €). Dein Bundesland wirkt über einen Regionalfaktor <strong style="color:var(--mr-text)">nur auf die ortsgebundenen Posten</strong> (Friedhof, Beisetzung, Grabpflege) — Bestatter, Sarg/Urne und Einäscherung bleiben bundesweit gleich. Wie dein Bundesland liegt, zeigt der <a href="/bestattungskosten-nach-bundesland" style="color:var(--mr-primary)">Bundesland-Vergleich</a>; wie diese Schätzung entsteht, das <a href="/methodik#kostenmodell" style="color:var(--mr-primary)">Kostenmodell</a>.</p>';
     }
 
     html += '<h3 style="font-family:\'Fraunces\',serif;font-size:18px;font-weight:700;margin:32px 0 16px">Kostenaufschlüsselung</h3>';
@@ -960,6 +965,8 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html += '<p><strong>Bundesweiter Durchschnitt (alle Bestattungsarten gemischt): 6.000–8.000 €</strong></p>';
     if (_baLow) {
       html += '<p><strong>Deine Wahl (' + esc(_baLabel) + ')</strong> liegt bewusst unter dem Durchschnitt — ohne kommunale Friedhofsgebühren und ohne klassisches Grab/Grabstein. Ein niedrigeres Ergebnis ist hier normal und kein Hinweis auf etwas „Lückenhaftes".</p>';
+    } else if (costs.maxTotal < 6000) {
+      html += '<p>Dass deine Schätzung <strong>unter dem bundesweiten Durchschnitt</strong> liegt, ist je nach Region und Auswahl völlig normal — ein günstiges Bundesland (niedriger Regionalfaktor) und schlichte Optionen senken die Summe. Das ist kein Hinweis auf etwas „Lückenhaftes".</p>';
     } else {
       html += '<p>Die Kosten variieren je nach Bestattungsart, Region und persönlichen Wünschen. Friedhofsgebühren und Bestatterleistungen sind die größten Posten. Die Friedhofsgebühren unterscheiden sich zwischen Kommunen teils um ein Vielfaches (Großstädte vs. ländliche Gemeinden).</p>';
     }
