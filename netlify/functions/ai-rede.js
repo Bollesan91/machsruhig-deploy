@@ -37,7 +37,7 @@ Eine Trauerrede ist KEINE Aufzählung von Fakten — sie ist ein Versuch, das We
 
 WICHTIGE REGELN:
 - Korrigiere stillschweigend Rechtschreib- und Grammatikfehler in den Eingaben.
-- Übernimm Fakten, Anekdoten und Charakter-Beschreibungen NUR aus den Eingaben — niemals erfinden, niemals romantisieren. Du formulierst aus, was dasteht; du fügst KEINE neuen Fakten hinzu: keine erfundenen Orte, Szenen, Jahreszeiten, Tätigkeiten, Personen, Gefühle oder Details, die nicht in den Eingaben stehen. Im Zweifel weglassen statt ausschmücken.
+- Übernimm Fakten, Anekdoten und Charakter-Beschreibungen NUR aus den Eingaben — niemals erfinden, niemals romantisieren. Du formulierst aus, was dasteht; du fügst KEINE neuen Fakten hinzu: keine erfundenen Orte, Szenen, Jahreszeiten, Tätigkeiten, Personen, Gefühle oder Details, die nicht in den Eingaben stehen. Erfinde insbesondere KEIN Alter, KEINE Jahres-/Datumsangaben und KEINE Zahlen — wenn kein Alter angegeben ist, nenne keines (schreibe nicht "X Jahre lang"). Im Zweifel weglassen statt ausschmücken.
 - Schreibe in zusammenhängenden Absätzen, NIE als Liste, NIE mit Zwischenüberschriften wie "Eröffnung:" oder "Erinnerung:".
 - "Ausmalen" heißt: dieselbe Information sprachlich schöner und zusammenhängend sagen — NICHT: neue Tatsachen ergänzen. Beispiel — Eingabe "er war guter Mann der tomatten geliebt hat" → erlaubt: "Er war ein guter Mensch, der seine Tomaten liebte." NICHT erlaubt: "…dessen Tomaten im Sommer überall in der Familie verteilt wurden, mit dem Stolz, mit dem er durch seinen Garten ging." (Sommer, Familie, Stolz, Garten standen nicht in der Eingabe.)
 - Tonalität strikt einhalten:
@@ -52,6 +52,7 @@ WICHTIGE REGELN:
 - Beginne direkt mit der Eröffnung (z.B. "Liebe Trauergemeinde…"), keine Meta-Kommentare ("Hier ist die Rede:", "Gerne, hier eine…").
 - Schreibe in der Sprache, die zur Beziehung passt: bei Kind/Enkel/Partner das "Du" zum Verstorbenen, bei distanzierterer Beziehung die respektvolle dritte Person.
 - Wenn ein Lieblingssatz/Zitat angegeben ist: arbeite ihn organisch ein, nicht als alleinstehenden Block.
+- Erfinde NIEMALS Zitate und schreibe niemandem (z.B. Goethe, Rilke, der Bibel) ein Zitat oder einen Ausspruch zu, der nicht ausdrücklich in den Eingaben steht — auch nicht als Schmuck oder Überleitung. Nur ein vom Nutzer angegebener Lieblingssatz/Spruch oder ein ausgewähltes Zitat darf vorkommen. Wenn keines angegeben ist, kommt KEIN Zitat in die Rede.
 - Ende mit Abschiedsformel passend zur Religion/Weltanschauung — christlich, jüdisch, muslimisch, weltlich.
 - Vermeide Floskeln: "in der schweren Stunde des Abschieds", "die lange Reise", "zu früh von uns gegangen", "im Herzen weiterleben". Konkret bleiben.
 - Beziehe dich auf konkrete Details aus den Eingaben — wenn der Garten erwähnt wird, dann der Garten konkret, nicht "ihr habt etwas geliebt".`,
@@ -325,7 +326,7 @@ exports.handler = async function (event) {
           { role: 'system', content: activePrompt },
           { role: 'user', content: userMessage },
         ],
-        temperature: 0.75,
+        temperature: 0.5,
         max_tokens: maxTokens,
       }),
     });
@@ -334,8 +335,21 @@ exports.handler = async function (event) {
       // Groq-Fehlertext NICHT an den Client durchreichen UND nicht loggen — OpenAI-kompatible
       // Error-Bodies können Fragmente der gesendeten (intimen) Nutzereingaben echoen (U4).
       // Nur der Status (frei von Nutzerdaten) wird geloggt, um die „kein Userinput-Logging"-Eigenschaft zu wahren.
+      const retryAfterHeader = parseInt(groqResp.headers.get('retry-after') || '', 10);
       await groqResp.text().catch(() => {});
       console.error('groq_api_error status', groqResp.status);
+      // Groqs eigenes Rate-Limit (429) bzw. Überlastung (503) als verständliches "kurz warten"
+      // an den Client durchreichen, statt generisch "Verbindung fehlgeschlagen" (Free-Tier-Throttling).
+      if (groqResp.status === 429 || groqResp.status === 503) {
+        return {
+          statusCode: 429,
+          headers: cors,
+          body: JSON.stringify({
+            error: 'rate_limit_upstream',
+            retryAfter: Number.isFinite(retryAfterHeader) ? retryAfterHeader : 60,
+          }),
+        };
+      }
       return {
         statusCode: 502,
         headers: cors,
