@@ -113,8 +113,10 @@ Wettbewerber-Beschwerden · Formulierung „geprüft" · Abgrenzung zur Qualitä
 - **Spätere Stufen (erst nach Partner-Masse):** lokale Transparenz-Karte (nie negativ markieren:
   „noch keine Transparenzdaten"), Anbieter-Daten-Cockpit. Teil der Architektur (Stufe 4/5), nicht
   des MVP.
-- **Geparkt (frühestens nach gefestigter Trust-Marke):** Zweitangebot-Vermittlung — einziger
-  echter Lead-/Geldfluss, höchstes Trust-Risiko; wenn überhaupt: opt-in, Partner-only, nie geranked.
+- **Geparkt (frühestens nach gefestigter Trust-Marke):** Zweitangebot-Vermittlung — die einzige
+  Erlöslinie, die *die trauernde Familie direkt* monetarisiert (per-Sterbefall-Vermittlungs-
+  provision) → höchstes Trust-Risiko. NICHT der einzige Geldfluss des Konzepts (der Motor sind die
+  B2B-Reports, s. Monetarisierung); wenn überhaupt: opt-in, Partner-only, nie geranked.
 - **Abgelehnt (mit Begründung):** Transparenz-Score/Stufen (liest sich als Qualitätsbewertung =
   Tabu, abmahn-anfälliger → bleibt binär); Branchenverband als Mit-Entwickler der Kriterien
   (Capture-Risiko → Kriterienhoheit bei machsruhig + Verbraucherseite).
