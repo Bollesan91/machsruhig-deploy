@@ -1,7 +1,9 @@
-# machsruhig Transparenz-Strategie — Gesamtkonzept v4 (Stand 18.06.2026)
+# machsruhig Transparenz-Strategie — Gesamtkonzept v5 (Stand 18.06.2026)
 
 > Kuratiertes, verbindliches Konzept: was wir bauen — als EINE Linie. Nicht-Kern bewusst
 > ausgegliedert (siehe „Außerhalb dieses Konzepts"). Teil von `datenstrategie-echte-angebote`.
+> v5: machsruhig ist BEIDES — Transparenz-Plattform UND **transparenter** Lead-Vermittler
+> (Zahlung kauft Zugang, nicht Rang; redaktionelle Mauer zum Benchmark).
 
 ## Was wir bauen (in einem Satz)
 **machsruhig wird der Transparenzstandard für Bestatter-Angebote** — der Ort, an dem Angehörige
@@ -47,10 +49,13 @@ ausgewiesen).
   Stand-Datum + jährliche Bestätigung · Kriterien öffentlich · Status entziehbar.
 - **Was AUSDRÜCKLICH NICHT geprüft wird (prominent):** nicht Trauer-/Beratungsqualität · nicht
   Preisniveau · nicht fachliche Durchführung · nicht Kundenzufriedenheit · keine Qualitätsbewertung.
-- **Kostenlos, neutral sortiert, kein Pay-to-Rank.** Optionales Badge mit neutralem Anchor
-  („Transparenzprofil bei machsruhig"), kein Pflicht-Dofollow, kein Quid-pro-quo — Backlinks sind
-  Bonus, nicht die Story.
-*Erfüllt alle vier Faktoren; ist der eigentliche B2B-Content- und Beziehungs-Hebel.*
+- **Kostenloser Status, neutral sortiert, kein Pay-to-Rank.** Der Partner-Status ist gratis;
+  bezahlt wird allenfalls der **Lead-Zugang** (s. Geschäftsmodell) — **nie ein besserer Rang**.
+- **Partner-Status = Eintrittskarte für die transparente Lead-Vermittlung:** Wer offenlegt, kommt
+  in den Lead-Pool. Damit wird Transparenz zum **Geschäfts-Anreiz statt zur Bitte** — der stärkste
+  Adoptions-Hebel (löst „warum sollte ein Bestatter mitmachen?").
+- **Optionales Badge** (neutraler Anchor, kein Pflicht-Dofollow, kein Quid-pro-quo) — Backlinks Bonus.
+*Erfüllt alle vier Faktoren; der eigentliche Beziehungs- UND Erlös-Hebel.*
 
 ### 3. machsruhig Kostenradar — das Datenprodukt (gated)
 Aggregierte, anonymisierte Preisspannen pro Stadt/Bestattungsart (inkl. Friedhofsgebühren als
@@ -90,16 +95,28 @@ Dashboards vor den Daten bauen. Regel: **erst der Brunnen, dann die Wasserhähne
 5. Datenerfassung erst Formular + einfache DB/Airtable (kein SaaS), manuell validiert.
 
 ## Trust-Leitplanken (nicht verhandelbar = Burggraben)
-Status nicht käuflich · Reihenfolge neutral · keine Nutzerdaten-Verkäufe, nie personenbezogene
-Sterbefalldaten · Kriterien/Vergabeprozess/Finanzierung öffentlich · Glaubwürdigkeit über
-Verbraucherzentrale/Aeternitas als Partner (nicht Branchenverband).
+Partner-**Status** nicht käuflich · keine Nutzerdaten-Verkäufe, nie personenbezogene Sterbefalldaten ·
+Kriterien/Vergabeprozess/Finanzierung öffentlich · Glaubwürdigkeit über Verbraucherzentrale/Aeternitas
+(nicht Branchenverband).
+**Regeln für transparentes Lead-Gen (damit „beides" trägt):** (a) für den Nutzer **als Vermittlung
+erkennbar** — keine getarnte Redaktion; (b) Auswahl/Reihenfolge nach **neutralen, offengelegten
+Kriterien** (Transparenz-Status, Nähe, Verfügbarkeit, Bestattungsart) — **Zahlung kauft Zugang, nicht
+Rang**; (c) nur Transparenz Partner im Lead-Pool; (d) **redaktionelle Mauer**: Kostenradar/„ist dein
+Angebot fair?" bleibt vom Lead-Geschäft unbeeinflusst. Genau diese Mauer können die Pay-to-Rank-
+Incumbents nicht ziehen — unser Unterschied ist nicht „kein Lead-Gen", sondern „Lead-Gen mit Mauer".
 **DSGVO:** Anbieter-Preise = Geschäftsdaten = der rechtlich EINFACHE Strom → zuerst angehen;
 sensible Nutzer-Uploads (Anonymisierung) später.
 
-## Monetarisierung (Ranking IMMER neutral)
-Stufe 1 dauerhaft kostenlos (Profil/Prüfung/Listing/Badge/Update — Geld hier zerstört Vertrauen).
-Stufe 2 optionaler Komfort (Cockpit/Export/Team/Inbox). Stufe 3 B2B-Reports (anonymisiert/
-aggregiert — hier liegt Geld).
+## Geschäftsmodell & Monetarisierung (Ranking IMMER neutral)
+machsruhig ist **beides: Transparenz-Plattform UND Lead-Vermittler — transparent.** Drei gesunde
+Erlöslinien:
+- **Transparente Lead-Vermittlung (Kern):** Familien, die es wollen, werden an Transparenz Partner
+  vermittelt; Bestatter zahlen für **Lead-Zugang** (Mitgliedschaft/Lead-Preis), **nicht für Rang**.
+  Reihenfolge neutral + offengelegt (s. Trust-Regeln). Lead-Gen ist zugleich der Adoptions-Anreiz.
+- **B2B-Reports** (anonymisiert/aggregiert) — zweite, skalierte Linie; Zeitreihe wird jährlich wertvoller.
+- **Optionale Bestatter-Komfort-Tools** (Cockpit/Export/Team/Inbox) — Ranking bleibt neutral.
+Gratis bleibt **Status/Profil/Prüfung** (Geld dort zerstört Vertrauen). Außerhalb des Konzepts läuft
+zusätzlich der Vorsorge-Affiliate. → Trust ist hier **Profit-Center, nicht Kostenstelle**.
 
 ## Vor großer Kommunikation: anwaltliche Prüfung
 UWG · Irreführung durch Prüfzeichen-Wirkung · Transparenz der Kriterien · Status-Entzug ·
@@ -113,10 +130,10 @@ Wettbewerber-Beschwerden · Formulierung „geprüft" · Abgrenzung zur Qualitä
 - **Spätere Stufen (erst nach Partner-Masse):** lokale Transparenz-Karte (nie negativ markieren:
   „noch keine Transparenzdaten"), Anbieter-Daten-Cockpit. Teil der Architektur (Stufe 4/5), nicht
   des MVP.
-- **Geparkt (frühestens nach gefestigter Trust-Marke):** Zweitangebot-Vermittlung — die einzige
-  Erlöslinie, die *die trauernde Familie direkt* monetarisiert (per-Sterbefall-Vermittlungs-
-  provision) → höchstes Trust-Risiko. NICHT der einzige Geldfluss des Konzepts (der Motor sind die
-  B2B-Reports, s. Monetarisierung); wenn überhaupt: opt-in, Partner-only, nie geranked.
+- **Lead-Vermittlung: hochgestuft zu KERN** (transparent, s. Geschäftsmodell) — *nicht mehr geparkt.*
+  Sorgfalt bleibt, weil sie den Sterbefall-Moment berührt: nur opt-in (die Familie will vermittelt
+  werden), nur Partner, Zahlung = Zugang nicht Rang, redaktionelle Mauer zum Benchmark. Tabu bleibt
+  allein die *intransparente/aggressive Pay-to-Rank-Variante* der Incumbents.
 - **Abgelehnt (mit Begründung):** Transparenz-Score/Stufen (liest sich als Qualitätsbewertung =
   Tabu, abmahn-anfälliger → bleibt binär); Branchenverband als Mit-Entwickler der Kriterien
   (Capture-Risiko → Kriterienhoheit bei machsruhig + Verbraucherseite).
