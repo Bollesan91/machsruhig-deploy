@@ -51,28 +51,54 @@ urls.append({
     "comment": "Startseite",
 })
 
-# Kern-Content
-core_pages = [
-    ("beerdigung-planen", "0.9", "monthly"),
-    ("bestattungsarten", "0.9", "monthly"),
-    ("bestattungskosten", "0.9", "monthly"),
-    ("trauerrede-schreiben", "0.85", "monthly"),
-    ("kondolenzschreiben", "0.8", "monthly"),
-    ("trauersprueche", "0.8", "monthly"),
-    ("vertraege-kuendigen", "0.8", "monthly"),
-    ("kindern-tod-erklaeren", "0.75", "monthly"),
-    ("methodik", "0.6", "monthly"),
-    ("ueber-uns", "0.6", "yearly"),
-    ("impressum", "0.3", "yearly"),
-    ("datenschutz", "0.3", "yearly"),
-]
-for slug, prio, cf in core_pages:
-    rel = f"{slug}.html"
-    if not (ROOT / rel).exists():
+# Kern-Content (Root-Landingpages) — AUTO-DISCOVERY statt Hardcode-Liste,
+# damit nie wieder valide Seiten still aus der Sitemap fallen (Drift-Bug 06-2026:
+# 19 Root-Seiten fehlten in der alten Hardcode-Liste). Prioritaet/changefreq per
+# Lookup; neue Root-Seiten bekommen den Default 0.7/monthly automatisch.
+ROOT_PRIO = {
+    "beerdigung-planen": ("0.9", "monthly"),
+    "bestattungsarten": ("0.9", "monthly"),
+    "bestattungskosten": ("0.9", "monthly"),
+    "bestattungskosten-nach-bundesland": ("0.8", "monthly"),
+    "trauerrede-schreiben": ("0.85", "monthly"),
+    "danksagung-nach-beerdigung": ("0.85", "monthly"),
+    "abschiedsbrief-schreiben": ("0.85", "monthly"),
+    "notfallkarte": ("0.85", "monthly"),
+    "fristen-nach-todesfall": ("0.85", "monthly"),
+    "was-tun-nach-todesfall": ("0.85", "monthly"),
+    "kondolenzschreiben": ("0.8", "monthly"),
+    "trauersprueche": ("0.8", "monthly"),
+    "vertraege-kuendigen": ("0.8", "monthly"),
+    "sozialbestattung": ("0.8", "monthly"),
+    "vorsorge-allein-leben": ("0.8", "monthly"),
+    "kindern-tod-erklaeren": ("0.75", "monthly"),
+    "bestatter-angebot-pruefen": ("0.7", "monthly"),
+    "bestatter-angebot-vergleichen": ("0.7", "monthly"),
+    "bestatter-rechnung-pruefen": ("0.7", "monthly"),
+    "bestattungskosten-versteckte-kosten": ("0.7", "monthly"),
+    "erdbestattung-angebot-pruefen": ("0.7", "monthly"),
+    "feuerbestattung-angebot-pruefen": ("0.7", "monthly"),
+    "seebestattung-angebot-pruefen": ("0.7", "monthly"),
+    "was-muss-im-kostenvoranschlag-stehen": ("0.7", "monthly"),
+    "methodik": ("0.6", "monthly"),
+    "ueber-uns": ("0.6", "yearly"),
+    "fuer-bestatter": ("0.5", "monthly"),
+    "kontakt": ("0.4", "yearly"),
+    "impressum": ("0.3", "yearly"),
+    "datenschutz": ("0.3", "yearly"),
+}
+EXCLUDE_ROOT = {"index.html", "404.html"}  # + alle danke-*.html (Conversion-Seiten, nicht in Sitemap)
+for fname in sorted(f for f in os.listdir(ROOT) if f.endswith(".html")):
+    if fname in EXCLUDE_ROOT or fname.startswith("danke-"):
         continue
+    p = ROOT / fname
+    if is_noindex(p):
+        continue
+    slug = fname[:-5]
+    prio, cf = ROOT_PRIO.get(slug, ("0.7", "monthly"))
     urls.append({
         "loc": f"https://machsruhig.de/{slug}",
-        "lastmod": git_lastmod(rel),
+        "lastmod": git_lastmod(fname),
         "changefreq": cf,
         "priority": prio,
     })
@@ -147,6 +173,9 @@ if (ROOT / "bestattung-in" / "index.html").exists():
 
 # BL-Pages
 for bl in sorted(os.listdir(ROOT / "bestattung-in")):
+    # Umlaut-Verzeichnisse sind Duplikate der ASCII-Kanons (baden-wuerttemberg, thueringen) → skip
+    if bl in {"baden-württemberg", "thüringen"}:
+        continue
     p = ROOT / "bestattung-in" / bl / "index.html"
     if not p.exists():
         continue
