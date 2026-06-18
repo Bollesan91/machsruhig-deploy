@@ -6,6 +6,7 @@
 
 **Stand:** 23.04.2026
 **Letzte Konsolidierung:** Inhalte aus 7 _dev/docs Dokumenten + Audit-Befunden + externem strategischen Audit (6,6/10) zusammengeführt.
+**Update 18.06.2026:** Neue strategische **Hauptsäule — Datentransparenz-Strategie** (Abschnitt 15). Detail-Konzept: `_dev/strategie/transparenz-partner-konzept.md` (v5). Vereint und hebt Kronjuwel 2 + M.5-Moats (Friedhofsgebühren-DB, Tool-Nutzungssignale) zur tragenden Geschäfts- und Autoritätssäule.
 
 ---
 
@@ -27,6 +28,7 @@
 14. [Markteroberungs-Erweiterung (Roadmap für Phase D-E)](#markteroberungs-erweiterung-roadmap-für-phase-d-e)
     - M.1 Off-Page-SEO & PR · M.2 Distribution (Newsletter + Pinterest)
     - M.3 Kronjuwelen · M.4 Markt-KPIs · M.5 Moats
+15. [Datentransparenz-Strategie — neue Hauptsäule (18.06.2026)](#datentransparenz-strategie-strategische-hauptsäule-ab-18062026)
 
 ---
 
@@ -237,6 +239,7 @@ Pro Seitentyp definiert. Vollständige Tabellen siehe `_dev/archiv/cta-hierarchi
 ## Monetarisierungsstrategie
 
 > **Aktueller Stand:** Vorbereitet, aber nicht aktiviert. Aktivierung in Phase F.
+> **Erweiterung 18.06.2026:** Die Kern-Monetarisierung entwickelt sich zur **transparenten Lead-Vermittlung** (Bestatter-Leads, aber *Zahlung kauft Zugang, nicht Rang* + redaktionelle Mauer zum Benchmark) plus **B2B-Daten-Reports** — siehe Abschnitt 15. Aktivierung bleibt Phase F; Authority-/Standard-Bausteine bauen schon vorher.
 
 ### Grundprinzipien
 
@@ -684,6 +687,41 @@ Moats sind die Aktiva, die mit jedem Monat schwerer kopierbar werden. Aktuell ha
 | **YMYL-Compliance-History** | Konsequente Quality-Gates über Jahre = Google-Vertrauen | A fortlaufend | Trust ist linear-zeitabhängig, nicht beschleunigbar |
 
 **Strategische Konsequenz:** Moats sind das, was Wettbewerber mit 500k Euro **nicht** kopieren können. Du baust sie unbewusst durch konsequente Phase-A-bis-F-Umsetzung — aber wenn du sie **bewusst** aufbaust (z.B. Datenbank von Anfang an strukturiert, nicht nur in HTML), wird Phase F um Faktoren wertvoller.
+
+**Update 18.06.2026:** Friedhofsgebühren-DB + Tool-Nutzungssignale (Datennetzwerk-Effekt) + Kronjuwel-2-Datenbank sind in der **Datentransparenz-Strategie (Abschnitt 15)** zu *einer* tragenden Säule vereint — „Datenbank von Anfang an strukturiert" wird dort zum *maschinenlesbaren Angebotsstandard*.
+
+---
+
+## Datentransparenz-Strategie (strategische Hauptsäule, ab 18.06.2026)
+
+> Detail-Konzept mit operativer Tiefe: `_dev/strategie/transparenz-partner-konzept.md` (v5).
+> Diese Sektion ist die strategische Einordnung in den Gesamtplan.
+
+**Die These.** machsruhig wird **der Transparenzstandard für Bestatter-Angebote** — nicht das größte Verzeichnis, nicht der billigste Vergleich, sondern der Ort, an dem Angehörige verstehen, ob ein Angebot nachvollziehbar aufgebaut ist, und an dem transparente Bestatter sichtbar werden. **Leitsatz: belohnt nicht den günstigsten Bestatter, sondern den verständlichsten.** Geprüft wird Transparenz der Darstellung, **nicht das Preisniveau**.
+
+**Warum das die Evolution dieses Papiers ist, kein Fremdkörper.** Es vereint drei bereits angelegte Fäden zu einer zentralen Säule: Kronjuwel 2 (Kostenrechner mit echter Datenbank — „Datenbank ist der Moat"), M.5 Friedhofsgebühren-Datenbank und M.5 Tool-Nutzungssignale (Datennetzwerk-Effekt). Aus „ein Moat unter vielen" wird die tragende Geschäfts- und Autoritätssäule.
+
+**Nordstern (Aufnahme-Kriterium für jeden Baustein):** muss *gleichzeitig* erzeugen — **Vertrauen** (Nutzer) · **Daten** (uns) · **Beziehung** (Bestatter) · **SEO/PR**.
+
+**Das Rückgrat — EIN Schema, drei Oberflächen (nur diese drei Namen):**
+1. **machsruhig Angebotsstandard** — freiwillige, *maschinenlesbare* Definition, wie ein verständliches Bestatter-Angebot aufgebaut ist (15 Posten, deckungsgleich mit dem Kostenmodell); als offene Spezifikation + Eingabe-Formular. *Das Fundament und der eigentliche Moat: wer Angebote in unserem Format ausgibt, dessen Schienen besitzen wir.*
+2. **machsruhig Transparenz Partner** — wer nach dem Standard offenlegt, bekommt ein öffentliches Transparenzprofil. Start als *Selbstverpflichtung* (nicht „Siegel" — UWG/BGH-Risiko), binäre objektive Kriterien, kostenlos, neutral. Prominent: „Was NICHT geprüft wird" (keine Qualitätsbewertung).
+3. **machsruhig Kostenradar** — aggregierte, anonymisierte Preisspannen pro Stadt + seriöser Jahresreport (PR-Arm). Streng gated bis genug Daten da sind. Die jährliche Partner-Bestätigung = longitudinale Echtpreis-Zeitreihe (granular — was Aeternitas/Destatis-Makrotrends nicht haben).
+
+**Geschäftsmodell — beides, transparent.** machsruhig ist Transparenz-Plattform UND Lead-Vermittler. Das Gift war nie Lead-Gen, sondern *intransparentes Pay-to-Rank*. Drei gesunde Erlöslinien:
+- **Transparente Lead-Vermittlung (Kern):** Bestatter zahlen für **Zugang** zum Lead-Pool, **nicht für Rang**; Auswahl nach neutralen, offengelegten Kriterien; für den Nutzer als Vermittlung erkennbar; nur Transparenz Partner im Pool. **Partner-Status = Eintrittskarte für Leads** → Transparenz wird Geschäfts-Anreiz statt Bitte (löst „warum sollte ein Bestatter mitmachen?").
+- **B2B-Markt-Reports** (anonymisiert/aggregiert) — skalierte zweite Linie (Bestatter, Versicherer); Zeitreihe wird jährlich wertvoller.
+- **Optionale Bestatter-Komfort-Tools** — Ranking bleibt neutral.
+
+Vier Trust-Regeln tragen das „beides": (a) als Vermittlung erkennbar; (b) Zahlung kauft Zugang, nicht Rang; (c) nur Partner im Pool; (d) **redaktionelle Mauer** zwischen Kostenradar/Benchmark und Lead-Geschäft. **Genau diese Mauer können die Pay-to-Rank-Incumbents nicht ziehen — das ist der USP.** Trust ist hier Profit-Center, nicht Kostenstelle.
+
+**Einordnung ins Phasenmodell (Leitplanke „Authority vor Leadgen" bleibt gültig).** *Standard + offene Spec* (keine PII, kein Backend, keine Rechtshürde) sind sofort baubar und zahlen auf die **Authority-Phase** ein (Original-Daten/Spec = Backlink-Magnet → adressiert das Cold-Start-Indexierungsproblem). Die **Lead-Aktivierung** bleibt an Phase F + anwaltliche Prüfung gebunden (Leitplanke 7). Reihenfolge: Standard → reibungsloses Onboarding → **Hamburg-Pilot** (Funnel 30→10→5→3→1) → Radar/Reports. Regel: **erst der Brunnen, dann die Wasserhähne** (keine leeren Dashboards vor Daten).
+
+**Wettbewerb (Ergänzung zur Tabelle in Abschnitt 10).** Lead-Gen-Vergleichsportale (bestatter-preisvergleich.de: 18 J., ~131k Angebote) haben mehr Rohdaten, aber **kein Benchmark** — ihr Pay-to-Rank-Modell verbietet ehrliche Transparenz (Innovator's Dilemma). Online-Bestatter (mymoria/Emmora–Ahorn) verkaufen eigene Preise. Aeternitas besitzt nur Makro-Trends. Der granulare, posten-/regions-scharfe Trust-First-Benchmark ist **frei** — der Moat ist Geschäftsmodell/Positionierung + Tempo, **nicht** Datenvolumen.
+
+**Trust-Leitplanken (nicht verhandelbar):** Status nicht käuflich; keine Nutzerdaten-Verkäufe, nie personenbezogene Sterbefalldaten (DSGVO: Anbieter-Preise = Geschäftsdaten = der einfache Strom, zuerst angehen); Kriterien/Vergabeprozess/Finanzierung öffentlich; vor großer Kommunikation **anwaltliche Prüfung** (UWG/Prüfzeichen).
+
+**Bewusst außerhalb dieser Säule** (Detail im Konzept-Doc): Consumer-Tool-Features (Fragenliste, Auftrag-Check, „Angebot des Monats") → allgemeine Tool-/Content-Roadmap; spätere Stufen (Transparenz-Karte, Anbieter-Cockpit) erst ab Partner-Masse; **abgelehnt:** Transparenz-Score (Qualitätsurteil-Tabu → bleibt binär), Verbands-Co-Creation der Kriterien (Capture-Risiko).
 
 ---
 
