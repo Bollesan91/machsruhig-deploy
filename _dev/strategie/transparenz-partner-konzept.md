@@ -138,6 +138,38 @@ Wettbewerber-Beschwerden · Formulierung „geprüft" · Abgrenzung zur Qualitä
 Textlich auf `transparenz-kriterien.html` bereits vorweggenommen; Visual + aktiver Anfragekanal
 bleiben bis zum Fachanwalt-Go gesperrt.
 
+## Sichtbarkeit OHNE Siegel — UWG-konformes Display-Design (erreicht das Ziel trotz der Blocker)
+Die zwei Blocker zwingen zu einem **besseren, ehrlicheren Produkt: Tatsache zeigen statt Zeichen
+verleihen.** Wo kein Siegel ist, kann kein Siegel irreführen.
+**Kernumkehr:** Nicht „machsruhig verleiht ein Prüfzeichen" (= Siegel-Risiko), sondern „machsruhig
+zeigt eine vom Nutzer selbst überprüfbare Tatsache" — das echte, nach dem Angebotsstandard
+offengelegte Angebot.
+1. **Transparenzprofil = Tatsachen-Anzeige, kein Emblem.** Das Profil zeigt das ECHTE Angebot im
+   Angebotsstandard-Format; der Beweis ist das sichtbare, aufgeschlüsselte Angebot selbst, nicht ein
+   Stempel. Label = beschreibende Tatsache + Stand-Datum: „Veröffentlicht Preisbeispiele nach dem
+   machsruhig-Angebotsstandard (Stand …)" + Link zu Kriterien. **KEIN „geprüft/zertifiziert ✓",
+   KEINE runde Siegel-/Prüfstempel-Optik, kein Award-Emblem.** (Reviewer: Text + verifizierbar = tragbar.)
+2. **Frei + redaktionell + für ALLE Qualifizierten (§ 5).** Jeder, der die Kriterien erfüllt,
+   erscheint — kostenlos, unabhängig von jeder Zahlung = redaktionelle Abbildung einer Tatsache,
+   keine bezahlte Platzierung. Sortierung: neutrale, **veröffentlichte** Logik (Region/Nähe/
+   alphabetisch/rotierend), nie nach Zahlung → auditierbar.
+3. **Anfragekanal = getrennte, gekennzeichnete, bezahlte Fläche (§ 5a).** „Anfrage senden" ist ein
+   eigenes Modul, unmittelbar gekennzeichnet („Vermittlung — machsruhig erhält hierfür ggf. eine
+   Vergütung"). Im Lead-Pool zu sein ist **unabhängig** vom Transparenz-Display → „transparent" heißt
+   nie „bezahlte Platzierung".
+4. **Selbst-Verifikation schlägt Empfehlung.** UX-Haltung: „hier ist das echte Angebot — urteile
+   selbst", nicht „wir bürgen". Umgeht den „empfohlen/neutrales Prüfzeichen"-Eindruck komplett.
+5. **Audit-Trail (Darlegungslast):** datierte Nachweise, dass Status ≠ Zahlung, Sortierlogik neutral,
+   „bestätigt" nur dokumentiert geprüft.
+**Naming-Option (Bolle-Entscheid):** Im VERBRAUCHER-Listing die Tatsachen-Formulierung führen
+(„legt Preise offen nach dem Angebotsstandard") statt des geladenen Worts „Partner" (Reviewer:
+„Partner" lehnt Richtung „empfohlen"). „Transparenz Partner" bleibt B2B-/Programmname; nur das
+verbraucherseitige Label wird Tatsache statt Beziehung.
+**→ Ziel voll erreicht:** Familien erkennen transparente Bestatter (sie lesen das echte Angebot) ·
+transparente Bestatter bekommen freie Sichtbarkeit (redaktionelles Profil) · Monetarisierung läuft
+getrennt + offengelegt (Anfragekanal + B2B-Reports) · Daten/Moat entstehen · nichts liest sich als
+Siegel oder bezahlte Empfehlung. Der Rechts-Constraint hat das Produkt ehrlicher gemacht.
+
 ## Außerhalb dieses Konzepts (bewusst ausgegliedert, nicht verloren)
 - **Consumer-Tool-Features** (treffen den Vier-Faktoren-Filter nicht voll — kein Daten/Beziehung):
   Fragenlisten-Generator, Bestattungsauftrag-Verständlichkeits-Check, „Angebot des Monats"-
