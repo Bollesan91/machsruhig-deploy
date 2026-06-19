@@ -161,10 +161,12 @@ offengelegte Angebot.
    selbst", nicht „wir bürgen". Umgeht den „empfohlen/neutrales Prüfzeichen"-Eindruck komplett.
 5. **Audit-Trail (Darlegungslast):** datierte Nachweise, dass Status ≠ Zahlung, Sortierlogik neutral,
    „bestätigt" nur dokumentiert geprüft.
-**Naming-Option (Bolle-Entscheid):** Im VERBRAUCHER-Listing die Tatsachen-Formulierung führen
-(„legt Preise offen nach dem Angebotsstandard") statt des geladenen Worts „Partner" (Reviewer:
-„Partner" lehnt Richtung „empfohlen"). „Transparenz Partner" bleibt B2B-/Programmname; nur das
-verbraucherseitige Label wird Tatsache statt Beziehung.
+**Naming — ENTSCHIEDEN (Bolle 19.06.): Tatsachen-Formulierung beim Verbraucher.** Im VERBRAUCHER-
+Listing/Profil führt die beschreibende Tatsache („Legt Preise offen nach dem Angebotsstandard"),
+NICHT das geladene Wort „Partner" (Reviewer: „Partner" lehnt Richtung „empfohlen"). „Transparenz
+Partner" bleibt B2B-/Programmname (fuer-bestatter, Kriterienseite); das verbraucherseitige Label ist
+Tatsache statt Beziehung. Gilt für die gated Profil-/Listing-Flächen; aktuelle Live-Seiten sind
+B2B-Kontext und unberührt.
 **→ Ziel voll erreicht:** Familien erkennen transparente Bestatter (sie lesen das echte Angebot) ·
 transparente Bestatter bekommen freie Sichtbarkeit (redaktionelles Profil) · Monetarisierung läuft
 getrennt + offengelegt (Anfragekanal + B2B-Reports) · Daten/Moat entstehen · nichts liest sich als
