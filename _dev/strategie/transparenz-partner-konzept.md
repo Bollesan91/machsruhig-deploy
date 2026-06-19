@@ -118,6 +118,18 @@ Erlöslinien:
 Gratis bleibt **Status/Profil/Prüfung** (Geld dort zerstört Vertrauen). Außerhalb des Konzepts läuft
 zusätzlich der Vorsorge-Affiliate. → Trust ist hier **Profit-Center, nicht Kostenstelle**.
 
+**MODELL BESTÄTIGT (Bolle 19.06.):**
+- **Gelistet sein + Transparenz-Partner-Status = dauerhaft gratis** (alle Kriterien-Erfüller).
+  Fürs Gelistetsein NIE Geld nehmen (= sonst Pay-for-Sichtbarkeit, Neutralität kippt).
+- **Bezahlt wird NUR der gelieferte Lead** (die vermittelte, qualifizierte Anfrage) — der Bestatter
+  zahlt erst, wenn machsruhig echten Wert liefert, nicht fürs Dabeisein.
+- **Im Pilot die Erreichbarkeit NICHT gaten:** Bestatter großzügig zeigen (transparent, auffindbar),
+  die vermittelte Anfrage ist der *bequeme/qualifizierte* Weg, nicht der einzige. Der bezahlte Lead
+  lebt davon, *besser* zu sein (vorqualifiziert, strukturiert), nicht davon, alternativlos zu sein.
+  Gating erst später erwägen, mit echtem Traffic — nie auf Kosten des frühen Vertrauens.
+- Offene Sub-Stellschraube für *später*: wie prominent der vermittelte Weg ggü. direktem Kontakt
+  steht (Trust ↔ Erlös). Nicht jetzt entscheiden.
+
 ## Vor großer Kommunikation: anwaltliche Prüfung
 UWG · Irreführung durch Prüfzeichen-Wirkung · Transparenz der Kriterien · Status-Entzug ·
 Wettbewerber-Beschwerden · Formulierung „geprüft" · Abgrenzung zur Qualitätsbewertung.
