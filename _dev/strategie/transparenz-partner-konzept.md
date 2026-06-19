@@ -172,6 +172,17 @@ transparente Bestatter bekommen freie Sichtbarkeit (redaktionelles Profil) · Mo
 getrennt + offengelegt (Anfragekanal + B2B-Reports) · Daten/Moat entstehen · nichts liest sich als
 Siegel oder bezahlte Empfehlung. Der Rechts-Constraint hat das Produkt ehrlicher gemacht.
 
+**Zwei Schärfungen aus dem Kohärenz-Reviewer (19.06.):**
+- **Das kostenlose Display muss SUBSTANZIELL wertvoll sein, nicht dekorativ.** Wenn nur zahlende
+  Partner Anfragen/Leads bekommen, gatet Geld faktisch die Erreichbarkeit — dann ist „Zahlung kauft
+  nur Zugang" eine Verharmlosung. Daher verbindlich: Das **kostenlose Transparenzprofil macht den
+  Bestatter sichtbar UND direkt erreichbar** (öffentlicher Kontakt); die Vergütung erkauft nur die
+  Bequemlichkeit einer vermittelten, strukturierten Anfrage — nie die Sichtbarkeit/Erreichbarkeit.
+  (Bolle-Bestätigung sinnvoll: ist das das gewollte Modell? Es ist die trust-feste Variante.)
+- **Programm-Reifegrad IMMER ehrlich kennzeichnen.** Operative Beschreibungen (Verzeichnis, „von uns
+  bestätigt", Entzug) im Präsens lesen sich als laufender Vollbetrieb — solange Pilot/im-Aufbau,
+  muss das überall dabeistehen (sonst Widerspruch zur „ehrlicher Stand"-Linie auf fuer-bestatter).
+
 ## Außerhalb dieses Konzepts (bewusst ausgegliedert, nicht verloren)
 - **Consumer-Tool-Features** (treffen den Vier-Faktoren-Filter nicht voll — kein Daten/Beziehung):
   Fragenlisten-Generator, Bestattungsauftrag-Verständlichkeits-Check, „Angebot des Monats"-
