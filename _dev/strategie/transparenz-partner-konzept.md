@@ -121,6 +121,22 @@ zusätzlich der Vorsorge-Affiliate. → Trust ist hier **Profit-Center, nicht Ko
 ## Vor großer Kommunikation: anwaltliche Prüfung
 UWG · Irreführung durch Prüfzeichen-Wirkung · Transparenz der Kriterien · Status-Entzug ·
 Wettbewerber-Beschwerden · Formulierung „geprüft" · Abgrenzung zur Qualitätsbewertung.
+**Zwei konkrete Launch-Blocker (UWG-Reviewer 19.06., case-law-belegt) — die Textseiten sind
+„rein textlich tragbar", aber diese GATED Phase-F-Elemente sind die echte Verstoß-Stelle:**
+1. **Badge-/Siegel-Optik (OLG Hamburg/Köln; BGH I ZR zu Prüfzeichen):** Ein rundes Siegel/
+   Prüfstempel-Visual + die Wörter „Partner"/„bestätigt" kippt die **Verkehrsauffassung** Richtung
+   neutrales Prüfzeichen — die Selbstbezeichnung „keine Siegel" rettet nicht (Verkehrsauffassung
+   schlägt Wortwahl). → Bis Anwalt: NUR Text + unmittelbar anliegender Disclaimer, KEINE
+   Prüfstempel-Optik, kein selbstverliehenes rundes Zeichen.
+2. **Neutralität vs. Vermittlungsvergütung (§ 5/§ 5a UWG):** Selbstverwaltetes Zeichen +
+   Monetarisierung markierter Anbieter = zentrale Neutralitäts-Exposition. Tragbar nur wenn (a)
+   der Status nachweisbar für ALLE Qualifizierten gilt (nicht nur zahlende) und (b) die
+   Provisionsbeziehung **am Anfragekanal selbst** offengelegt wird (§ 5a, sonst getarnte Werbung).
+   „Behaupten" genügt nicht — bei Abmahnung trägt der Betreiber die **Darlegungslast** → auditierbar
+   dokumentieren, dass Vergütung weder Status noch Rang berührt. „bestätigt" nur bei tatsächlich
+   dokumentierter Prüfung (§ 5).
+Textlich auf `transparenz-kriterien.html` bereits vorweggenommen; Visual + aktiver Anfragekanal
+bleiben bis zum Fachanwalt-Go gesperrt.
 
 ## Außerhalb dieses Konzepts (bewusst ausgegliedert, nicht verloren)
 - **Consumer-Tool-Features** (treffen den Vier-Faktoren-Filter nicht voll — kein Daten/Beziehung):
