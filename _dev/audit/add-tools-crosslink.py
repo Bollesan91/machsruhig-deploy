@@ -14,8 +14,8 @@ TOOLS = [
  ('notfallkarte',              'Notfallkarte',               'Wichtige Kontakte und Infos für den Ernstfall festhalten'),
  ('vorsorge-check',            'Vorsorge-Check',             'Welche Vorsorge-Dokumente dir noch fehlen'),
  ('trauerrede',                'Trauerrede-Generator',       'Eine Trauerrede entwerfen'),
- ('danksagung',                'Danksagung-Generator',       'Dankesworte nach der Beerdigung formulieren'),
- ('abschiedsbrief',            'Brief an meine Liebsten',    'Einen persönlichen Abschiedsbrief schreiben'),
+ ('danksagung',                'Danksagung-Generator',       'Dankesworte nach der Beerdigung entwerfen'),
+ ('abschiedsbrief',            'Abschiedsbrief schreiben',   'Einen persönlichen Brief an deine Liebsten verfassen'),
 ]
 
 # Stufe 3: alle Ziele existieren?
