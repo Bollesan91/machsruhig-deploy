@@ -18,16 +18,39 @@ TOOLS = [
  ('abschiedsbrief',            'Abschiedsbrief schreiben',   'Einen persönlichen Brief an deine Liebsten verfassen'),
 ]
 
+META = {slug: (title, desc) for slug, title, desc in TOOLS}
+
+# Kuratierte, thematisch nahe Geschwister je Tool (statt Vollmesh = weniger
+# Boilerplate, staerkeres Relevanzsignal; Reviewer-Empfehlung). Plus Hub-Link.
+CURATED = {
+ 'bestattungskosten-rechner': ['angebotspruefer','beerdigungsplaner','checkliste-todesfall'],
+ 'angebotspruefer':           ['bestattungskosten-rechner','beerdigungsplaner','checkliste-todesfall'],
+ 'checkliste-todesfall':      ['fristen-radar','beerdigungsplaner','bestattungskosten-rechner'],
+ 'fristen-radar':             ['checkliste-todesfall','beerdigungsplaner','bestattungskosten-rechner'],
+ 'beerdigungsplaner':         ['checkliste-todesfall','bestattungskosten-rechner','angebotspruefer'],
+ 'notfallkarte':              ['vorsorge-check','checkliste-todesfall','fristen-radar'],
+ 'vorsorge-check':            ['notfallkarte','bestattungskosten-rechner','checkliste-todesfall'],
+ 'trauerrede':                ['danksagung','abschiedsbrief'],
+ 'danksagung':                ['trauerrede','abschiedsbrief'],
+ 'abschiedsbrief':            ['trauerrede','danksagung','vorsorge-check'],
+}
+
 # Stufe 3: alle Ziele existieren?
 for slug, _, _ in TOOLS:
     assert os.path.isdir(os.path.join('tools', slug)), 'Tool-Verzeichnis fehlt: %s' % slug
+assert set(CURATED) == {s for s,_,_ in TOOLS}, 'CURATED deckt nicht alle Tools'
+for self_slug, sibs in CURATED.items():
+    assert self_slug not in sibs, 'Selbstlink in CURATED[%s]' % self_slug
+    for s in sibs:
+        assert s in META, 'Unbekanntes Tool in CURATED[%s]: %s' % (self_slug, s)
+assert os.path.isfile(os.path.join('tools', 'index.html')), 'Hub /tools/index.html fehlt'
 
 def block_for(self_slug):
     lis = []
-    for slug, title, desc in TOOLS:
-        if slug == self_slug:
-            continue
+    for slug in CURATED[self_slug]:
+        title, desc = META[slug]
         lis.append('<li><a href="/tools/%s/">%s</a> — %s</li>' % (slug, title, desc))
+    lis.append('<li><a href="/tools/"><strong>Alle kostenlosen Werkzeuge</strong></a> — Übersicht aller Helfer im Browser</li>')
     return ('<div class="mr-related no-print" aria-label="Weitere Werkzeuge">\n'
             '<h2>Weitere kostenlose Helfer</h2>\n<ul>\n'
             + '\n'.join(lis) + '\n</ul>\n</div>\n')
