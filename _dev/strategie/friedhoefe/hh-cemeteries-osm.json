@@ -1,0 +1,1195 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-24T17:11:14Z",
+    "timestamp_areas_base": "2026-05-12T07:36:16Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 5098256644,
+  "lat": 53.4795326,
+  "lon": 10.2452149,
+  "tags": {
+    "addr:city": "Hamburg",
+    "addr:housenumber": "200",
+    "addr:postcode": "21029",
+    "addr:street": "August-Bebel-Straße",
+    "amenity": "grave_yard",
+    "name": "Friedhof Bergedorf",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 7569857,
+  "center": {
+    "lat": 53.6090478,
+    "lon": 9.9100507
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Eidelstedt",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 8040929,
+  "center": {
+    "lat": 53.9138093,
+    "lon": 8.5001206
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "Friedhof der Namenlosen",
+    "website": "https://leuchtturmneuwerk.de/sehenswuerdigkeiten/die-insel-neuwerk/friedhof-der-namenlosen/",
+    "wikidata": "Q21205543"
+  }
+},
+{
+  "type": "way",
+  "id": 16507128,
+  "center": {
+    "lat": 53.5854071,
+    "lon": 9.8881983
+  },
+  "tags": {
+    "heritage": "4",
+    "heritage:operator": "dsa",
+    "landuse": "cemetery",
+    "name": "Friedhof Altona",
+    "natural": "wood",
+    "ref:dsa": "17706",
+    "start_date": "1923",
+    "wheelchair": "yes",
+    "wikidata": "Q18286210",
+    "wikipedia": "de:Friedhof Altona"
+  }
+},
+{
+  "type": "way",
+  "id": 20791623,
+  "center": {
+    "lat": 53.6178142,
+    "lon": 9.9565647
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Neuer Niendorfer Friedhof",
+    "religion": "christian",
+    "wikidata": "Q14547022",
+    "wikipedia": "de:Neuer Niendorfer Friedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 22725272,
+  "center": {
+    "lat": 53.5693117,
+    "lon": 9.9210515
+  },
+  "tags": {
+    "denomination": "protestant",
+    "landuse": "cemetery",
+    "name": "Evangelischer Friedhof Bornkamp",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=2605"
+  }
+},
+{
+  "type": "way",
+  "id": 22725306,
+  "center": {
+    "lat": 53.5708141,
+    "lon": 9.9297046
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Diebsteich",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 22804057,
+  "center": {
+    "lat": 53.6135759,
+    "lon": 10.0392080
+  },
+  "tags": {
+    "addr:city": "Hamburg",
+    "addr:housenumber": "68",
+    "addr:postcode": "22337",
+    "addr:street": "Ilandkoppel",
+    "barrier": "fence",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Ohlsdorf",
+    "religion": "jewish",
+    "wikidata": "Q1262883",
+    "wikipedia": "de:Jüdischer Friedhof Ohlsdorf"
+  }
+},
+{
+  "type": "way",
+  "id": 23066242,
+  "center": {
+    "lat": 53.5282574,
+    "lon": 9.8757862
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Neuer Friedhof Finkenwerder"
+  }
+},
+{
+  "type": "way",
+  "id": 23421441,
+  "center": {
+    "lat": 53.5783232,
+    "lon": 10.0689793
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Alter Wandsbeker Friedhof von 1850",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=2318"
+  }
+},
+{
+  "type": "way",
+  "id": 23589494,
+  "center": {
+    "lat": 53.5750480,
+    "lon": 10.0674982
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Wandsbek",
+    "religion": "jewish",
+    "wikidata": "Q1716773",
+    "wikipedia": "de:Jüdischer Friedhof Wandsbek"
+  }
+},
+{
+  "type": "way",
+  "id": 23798869,
+  "center": {
+    "lat": 53.4466738,
+    "lon": 9.9511303
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Neuer Friedhof Harburg",
+    "religion": "christian",
+    "wikidata": "Q117737133",
+    "wikimedia_commons": "Category:Neuer Friedhof Harburg"
+  }
+},
+{
+  "type": "way",
+  "id": 24002804,
+  "center": {
+    "lat": 53.5329710,
+    "lon": 10.1240224
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Neuer Steinbeker Friedhof",
+    "religion": "christian",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 24434359,
+  "center": {
+    "lat": 53.4490550,
+    "lon": 10.2278431
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Alter Friedhof Curslack",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 24733157,
+  "center": {
+    "lat": 53.5500034,
+    "lon": 9.9501154
+  },
+  "tags": {
+    "heritage": "4",
+    "heritage:operator": "dsa",
+    "historic": "heritage",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Altona",
+    "opening_hours": "Mo off; Tu 15:00-17:00; We off; Th 15:00-17:00; Fr off; Sa off; Su 14:00-17:00",
+    "ref:dsa": "16158",
+    "religion": "jewish",
+    "website": "https://www.jüdischer-friedhof-altona.de/",
+    "wikidata": "Q1414486",
+    "wikipedia": "de:Jüdischer Friedhof Altona"
+  }
+},
+{
+  "type": "way",
+  "id": 25407573,
+  "center": {
+    "lat": 53.5197925,
+    "lon": 9.8068413
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Neuenfelde",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=885"
+  }
+},
+{
+  "type": "way",
+  "id": 25416180,
+  "center": {
+    "lat": 53.4238687,
+    "lon": 9.9723474
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Sinstorf",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=668"
+  }
+},
+{
+  "type": "way",
+  "id": 25892973,
+  "center": {
+    "lat": 53.5936993,
+    "lon": 10.1544451
+  },
+  "tags": {
+    "addr:city": "Hamburg",
+    "addr:country": "DE",
+    "addr:housenumber": "11",
+    "addr:postcode": "22149",
+    "addr:street": "Am Friedhof",
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Rahlstedter Friedhof",
+    "phone": "+49 40 6722053",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=3467",
+    "website": "https://www.rahlstedterfriedhof.de/",
+    "wheelchair": "yes",
+    "wheelchair:description": "Büro Barierefrei, WC Behindertengerecht, Kapelle mit mobiler Holzrampe, Bei Anruf Leihrollstuhl kostenlos",
+    "wikidata": "Q2127412",
+    "wikipedia": "de:Rahlstedter Friedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 25901452,
+  "center": {
+    "lat": 53.5111546,
+    "lon": 10.0824353
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Moorfleet",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 26166820,
+  "center": {
+    "lat": 53.4184749,
+    "lon": 10.1981800
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Kirchwerder",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 26166846,
+  "center": {
+    "lat": 53.4165314,
+    "lon": 10.1953321
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Kirchwerder",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 26387577,
+  "center": {
+    "lat": 53.4272220,
+    "lon": 9.9933045
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Langenbek",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=1159"
+  }
+},
+{
+  "type": "way",
+  "id": 26465288,
+  "center": {
+    "lat": 53.5558070,
+    "lon": 10.0573402
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "Alter Hammer Friedhof",
+    "religion": "christian",
+    "wikidata": "Q437953",
+    "wikipedia": "de:Alter Hammer Friedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 26737895,
+  "center": {
+    "lat": 53.4874832,
+    "lon": 10.0159498
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "lutheran",
+    "name": "Friedhof Wilhelmsburg-Kirchdorf",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 26917188,
+  "center": {
+    "lat": 53.6682871,
+    "lon": 10.1581874
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Waldfriedhof Volksdorf",
+    "wikidata": "Q1266022",
+    "wikipedia": "de:Friedhof Volksdorf"
+  }
+},
+{
+  "type": "way",
+  "id": 27112589,
+  "center": {
+    "lat": 53.5849348,
+    "lon": 10.1129918
+  },
+  "tags": {
+    "denomination": "protestant",
+    "landuse": "cemetery",
+    "name": "Friedhof Tonndorf",
+    "opening_hours": "\"Sommer 08:00-20:00, Winter 08:00-18:00\"",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=2821",
+    "wikidata": "Q107208540"
+  }
+},
+{
+  "type": "way",
+  "id": 28417401,
+  "center": {
+    "lat": 53.5523746,
+    "lon": 10.1153629
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Schiffbek",
+    "religion": "christian",
+    "source": "ywms"
+  }
+},
+{
+  "type": "way",
+  "id": 30101023,
+  "center": {
+    "lat": 53.5701897,
+    "lon": 9.9125145
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Am Holstenkamp",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 32760488,
+  "center": {
+    "lat": 53.4883827,
+    "lon": 9.9397523
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Moorburg",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 32804727,
+  "center": {
+    "lat": 53.6695830,
+    "lon": 10.1288513
+  },
+  "tags": {
+    "barrier": "fence",
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Bergstedt",
+    "religion": "christian",
+    "website": "https://www.friedhof-bergstedt.de/"
+  }
+},
+{
+  "type": "way",
+  "id": 33707787,
+  "center": {
+    "lat": 53.5740792,
+    "lon": 9.8710237
+  },
+  "tags": {
+    "contact:website": "https://www.hamburg.de/altona/friedhoefe/2771802/friedhof-gross-flottbek/",
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Evangelischer Friedhof Groß Flottbek",
+    "opening_hours": "Apr-Sep Mo-Fr 08:00-21:00; Apr-Sep PH,Sa,Su 09:00-21:00, Oct-Mar Mo-Fr 08:00-19:00; Oct-Mar PH,Sa,Su 09:00-19:00",
+    "religion": "christian",
+    "start_date": "1908",
+    "wikidata": "Q26821519",
+    "wikipedia": "de:Friedhof Groß Flottbek"
+  }
+},
+{
+  "type": "way",
+  "id": 35458667,
+  "center": {
+    "lat": 53.5782240,
+    "lon": 9.9297432
+  },
+  "tags": {
+    "heritage": "4",
+    "heritage:operator": "dsa",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Langenfelde",
+    "ref:dsa": "19739",
+    "religion": "jewish",
+    "start_date": "1887",
+    "wikidata": "Q1716716",
+    "wikipedia": "de:Jüdischer Friedhof Langenfelde"
+  }
+},
+{
+  "type": "way",
+  "id": 37970601,
+  "center": {
+    "lat": 53.5900778,
+    "lon": 9.9225796
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Stellingen",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 38137976,
+  "center": {
+    "lat": 53.5058138,
+    "lon": 9.9177549
+  },
+  "tags": {
+    "barrier": "fence",
+    "check_date": "2024-03-06",
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Altenwerder Friedhof",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=632"
+  }
+},
+{
+  "type": "way",
+  "id": 38288136,
+  "center": {
+    "lat": 53.5468090,
+    "lon": 9.9568080
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Kirchgarten der St. Pauli Kirche"
+  }
+},
+{
+  "type": "way",
+  "id": 39543492,
+  "center": {
+    "lat": 53.5694145,
+    "lon": 9.9162408
+  },
+  "tags": {
+    "check_date": "2024-03-12",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Bahrenfeld",
+    "religion": "jewish",
+    "wikidata": "Q1716638",
+    "wikipedia": "de:Jüdischer Friedhof Bahrenfeld"
+  }
+},
+{
+  "type": "way",
+  "id": 40957852,
+  "center": {
+    "lat": 53.5537006,
+    "lon": 9.8412606
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Nienstedtener Friedhof",
+    "religion": "christian",
+    "wikidata": "Q1803781",
+    "wikipedia": "de:Nienstedtener Friedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 46822192,
+  "center": {
+    "lat": 53.6168366,
+    "lon": 10.0882087
+  },
+  "tags": {
+    "denomination": "protestant",
+    "landuse": "cemetery",
+    "name": "Friedhof Bramfeld",
+    "opening_hours": "08:00-sunset",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 49369111,
+  "center": {
+    "lat": 53.5880104,
+    "lon": 10.1090307
+  },
+  "tags": {
+    "denomination": "protestant",
+    "landuse": "cemetery",
+    "name": "Friedhof Hinschenfelde",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=2748"
+  }
+},
+{
+  "type": "way",
+  "id": 50566863,
+  "center": {
+    "lat": 53.4875847,
+    "lon": 10.0182125
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "lutheran",
+    "name": "Friedhof Kirchdorf-Amtshof",
+    "operator": "Stadt Hamburg",
+    "operator:type": "public",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 55697466,
+  "center": {
+    "lat": 53.5750368,
+    "lon": 9.8009207
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Blankenese",
+    "religion": "christian",
+    "wikidata": "Q41680828"
+  }
+},
+{
+  "type": "way",
+  "id": 58285645,
+  "center": {
+    "lat": 53.5303596,
+    "lon": 10.1279968
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Alter Steinbeker Friedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 60443446,
+  "center": {
+    "lat": 53.5717174,
+    "lon": 9.9162832
+  },
+  "tags": {
+    "check_date": "2024-03-12",
+    "denomination": "mennonite",
+    "landuse": "cemetery",
+    "name": "Mennonitenfriedhof",
+    "religion": "christian",
+    "wikidata": "Q1664659",
+    "wikipedia": "de:Mennonitenfriedhof Hamburg-Altona"
+  }
+},
+{
+  "type": "way",
+  "id": 61314450,
+  "center": {
+    "lat": 53.5135752,
+    "lon": 10.1263890
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Billwerder",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 71830213,
+  "center": {
+    "lat": 53.5902662,
+    "lon": 9.9265026
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Stellingen",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 82822264,
+  "center": {
+    "lat": 53.4828187,
+    "lon": 10.1279973
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Allermöhe-Reitbrook",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 83289977,
+  "center": {
+    "lat": 53.4439434,
+    "lon": 10.2209476
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Neuengamme",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 83289978,
+  "center": {
+    "lat": 53.4548468,
+    "lon": 10.2298726
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Neuer Friedhof Curslack",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 101565418,
+  "center": {
+    "lat": 53.4298117,
+    "lon": 10.2698704
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Altengamme",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 101813289,
+  "center": {
+    "lat": 53.4759937,
+    "lon": 10.0858886
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Ochsenwerder",
+    "religion": "christian",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=3692"
+  }
+},
+{
+  "type": "way",
+  "id": 102596861,
+  "center": {
+    "lat": 53.4374902,
+    "lon": 9.9820736
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Wilstorf",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 102621814,
+  "center": {
+    "lat": 53.4700573,
+    "lon": 9.8423026
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Fischbek"
+  }
+},
+{
+  "type": "way",
+  "id": 102632049,
+  "center": {
+    "lat": 53.4772586,
+    "lon": 9.8675281
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Alter Neugrabener Friedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 102713948,
+  "center": {
+    "lat": 53.5780784,
+    "lon": 10.1100997
+  },
+  "tags": {
+    "end_date": "1942",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Jenfeld",
+    "religion": "jewish",
+    "start_date": "1887",
+    "wikipedia": "de:Jüdischer Friedhof Jenfelder Straße"
+  }
+},
+{
+  "type": "way",
+  "id": 102713949,
+  "center": {
+    "lat": 53.5266724,
+    "lon": 9.8655703
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Lüneburger Friedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 102713950,
+  "center": {
+    "lat": 53.4642358,
+    "lon": 9.9736538
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Harburg",
+    "name:en": "Jewish Cemetery in Hamburg-Harburg",
+    "religion": "jewish",
+    "start_date": "C17",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=671",
+    "wikidata": "Q1716682",
+    "wikimedia_commons": "Category:Jüdischer Friedhof (Hamburg-Harburg)",
+    "wikipedia": "de:Jüdischer Friedhof Harburg"
+  }
+},
+{
+  "type": "way",
+  "id": 119550673,
+  "center": {
+    "lat": 53.6205802,
+    "lon": 10.0517507
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "Garten der Frauen",
+    "wikidata": "Q1494591",
+    "wikipedia": "de:Garten der Frauen"
+  }
+},
+{
+  "type": "way",
+  "id": 139274891,
+  "center": {
+    "lat": 53.5496898,
+    "lon": 9.9201834
+  },
+  "tags": {
+    "barrier": "fence",
+    "check_date": "2024-03-13",
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Friedhof Bernadottestraße",
+    "religion": "christian",
+    "start_date": "1860"
+  }
+},
+{
+  "type": "way",
+  "id": 148894727,
+  "center": {
+    "lat": 53.6155989,
+    "lon": 9.9497736
+  },
+  "tags": {
+    "denomination": "lutheran",
+    "landuse": "cemetery",
+    "name": "Alter Niendorfer Friedhof",
+    "religion": "christian",
+    "wikidata": "Q438118",
+    "wikipedia": "de:Alter Niendorfer Friedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 175345250,
+  "center": {
+    "lat": 53.5704173,
+    "lon": 10.1470598
+  },
+  "tags": {
+    "addr:city": "Hamburg",
+    "addr:country": "DE",
+    "addr:housenumber": "69",
+    "addr:street": "Barsbütteler Straße",
+    "amenity": "grave_yard",
+    "animal": "cemetery",
+    "name": "Tierfriedhof Jenfeld",
+    "website": "https://tierfriedhof-jenfeld.de/"
+  }
+},
+{
+  "type": "way",
+  "id": 185002891,
+  "center": {
+    "lat": 53.5280173,
+    "lon": 9.8654035
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "Alter Friedhof Finkenwerder"
+  }
+},
+{
+  "type": "way",
+  "id": 191589184,
+  "center": {
+    "lat": 53.5574380,
+    "lon": 10.0136424
+  },
+  "tags": {
+    "denomination": "roman_catholic",
+    "landuse": "cemetery",
+    "name": "Domherrenfriedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 192653827,
+  "center": {
+    "lat": 53.4980353,
+    "lon": 10.2000733
+  },
+  "tags": {
+    "cemetery:historic": "yes",
+    "landuse": "cemetery",
+    "leisure": "park",
+    "name": "Alter Lohbrügger Friedhof",
+    "source": "Bing",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=2009"
+  }
+},
+{
+  "type": "way",
+  "id": 324493033,
+  "center": {
+    "lat": 53.5710152,
+    "lon": 9.9142062
+  },
+  "tags": {
+    "check_date": "2024-03-12",
+    "denomination": "russian_orthodox",
+    "landuse": "cemetery",
+    "name": "Russisch Orthodoxer Friedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 361903734,
+  "center": {
+    "lat": 53.5470641,
+    "lon": 9.9427158
+  },
+  "tags": {
+    "cemetery:historic": "yes",
+    "historic": "memorial",
+    "image": "https://commons.wikimedia.org/wiki/File:Grabsteine_Struenseestra%C3%9Fe_Schleepark_Altona.JPG",
+    "landuse": "cemetery",
+    "memorial": "stone",
+    "name": "Grabsteine Struenseestraße",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=2454",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 524193870,
+  "center": {
+    "lat": 53.5929129,
+    "lon": 9.9366400
+  },
+  "tags": {
+    "denomination": "roman_catholic",
+    "landuse": "cemetery",
+    "name": "Kolumbarium Sankt Thomas Morus",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 892820170,
+  "center": {
+    "lat": 53.4775519,
+    "lon": 10.0043870
+  },
+  "tags": {
+    "description": "islamisches Gräberfeld",
+    "landuse": "cemetery",
+    "name": "Friedhof Finkenried",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 957221480,
+  "center": {
+    "lat": 53.4635697,
+    "lon": 9.9762064
+  },
+  "tags": {
+    "alt_name": "Alter Soldatenfriedhof",
+    "landuse": "cemetery",
+    "name": "Garnisonsfriedhof Hamburg-Harburg",
+    "wikidata": "Q122819980",
+    "wikimedia_commons": "Category:Soldatenfriedhof Harburg"
+  }
+},
+{
+  "type": "way",
+  "id": 1086473715,
+  "center": {
+    "lat": 53.5732034,
+    "lon": 10.0719259
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "historic": "yes",
+    "name": "Historischer Friedhof Wandsbek",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 1378446118,
+  "center": {
+    "lat": 53.7078870,
+    "lon": 10.1564846
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Waldfriedhof Wohldorf",
+    "wikidata": "Q124993286"
+  }
+},
+{
+  "type": "way",
+  "id": 1426275120,
+  "center": {
+    "lat": 53.6307989,
+    "lon": 10.0759915
+  },
+  "tags": {
+    "access": "yes",
+    "landuse": "cemetery",
+    "leisure": "garden",
+    "name": "Erinnerungsgärten",
+    "operator": "Friedhofsgärtner Genossenschaft Hamburg eG",
+    "website": "https://erinnerungsgärten.de/ohlsdorf.php"
+  }
+},
+{
+  "type": "way",
+  "id": 1496147092,
+  "center": {
+    "lat": 53.4484322,
+    "lon": 9.8712153
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Heidefriedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "relation",
+  "id": 1186753,
+  "center": {
+    "lat": 53.6222971,
+    "lon": 10.0589884
+  },
+  "tags": {
+    "addr:city": "Hamburg",
+    "addr:housenumber": "756",
+    "addr:postcode": "22337",
+    "addr:street": "Fuhlsbüttler Straße",
+    "dsa:criteria": "Ensembleteil",
+    "heritage": "4",
+    "heritage:operator": "dsa",
+    "historic": "yes",
+    "landuse": "cemetery",
+    "name": "Friedhof Ohlsdorf",
+    "phone": "+49 40 593880",
+    "ref:dsa": "29622",
+    "type": "multipolygon",
+    "website": "https://www.friedhof-hamburg.de/",
+    "wikidata": "Q562211",
+    "wikipedia": "de:Friedhof Ohlsdorf"
+  }
+},
+{
+  "type": "relation",
+  "id": 2316928,
+  "center": {
+    "lat": 53.4828053,
+    "lon": 10.2245760
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Alter Friedhof",
+    "type": "multipolygon",
+    "url": "http://grabsteine.genealogy.net/namelist.php?cem=4674"
+  }
+},
+{
+  "type": "relation",
+  "id": 2554241,
+  "center": {
+    "lat": 53.5562632,
+    "lon": 10.1284098
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Öjendorf",
+    "type": "multipolygon",
+    "wikidata": "Q1457488",
+    "wikipedia": "de:Friedhof Öjendorf"
+  }
+},
+{
+  "type": "relation",
+  "id": 5974561,
+  "center": {
+    "lat": 53.4806428,
+    "lon": 10.2521530
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Bergedorf",
+    "type": "multipolygon",
+    "wikidata": "Q1399761",
+    "wikipedia": "de:Friedhof Bergedorf"
+  }
+},
+{
+  "type": "relation",
+  "id": 10460648,
+  "center": {
+    "lat": 53.4773727,
+    "lon": 10.0062187
+  },
+  "tags": {
+    "contact:phone": "+49 40 7544571",
+    "landuse": "cemetery",
+    "name": "Friedhof Finkenriek",
+    "type": "multipolygon",
+    "wikidata": "Q23824547",
+    "wikipedia": "de:Friedhof Finkenriek"
+  }
+}
+
+  ]
+}
