@@ -13,7 +13,9 @@ um N, JSON-LD bleibt parsebar. Ein Write pro Datei.
 import io, os, re, sys, json, glob
 
 OPEN, CLOSE, ASCII = '„', '“', '"'          # „  "  "
-PAT = re.compile(OPEN + '([^' + OPEN + CLOSE + ASCII + '<>]*?)' + ASCII)
+PAT = re.compile(OPEN + '([^' + OPEN + CLOSE + ASCII + ']*?)' + ASCII)
+# Segmentiert HTML in Tags / <script> / <style> (= unantastbar) vs. sichtbaren Text.
+SEG = re.compile(r'(<script\b.*?</script>|<style\b.*?</style>|<[^>]*>)', re.S | re.I)
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
 
@@ -23,9 +25,24 @@ def jsonld_ok(html):
     return True
 
 
+def replace_text_only(src):
+    """Ersetzt „…" -> „…" NUR in sichtbaren Text-Knoten. Tags (Attribute!) und
+    script/style-Bloecke bleiben unberuehrt — so kann kein Attribut-Quote (class="…",
+    content="…", aria-label="…") zerstoert werden, selbst wenn ein „ im Attribut steht."""
+    out, n = [], 0
+    for i, seg in enumerate(SEG.split(src)):
+        if i % 2 == 1:                       # ungerade = Tag / script / style -> unangetastet
+            out.append(seg)
+        else:
+            seg, k = PAT.subn(OPEN + r'\1' + CLOSE, seg)
+            n += k
+            out.append(seg)
+    return ''.join(out), n
+
+
 def fix_file(fp):
     src = io.open(fp, encoding='utf-8').read()
-    new, n = PAT.subn(OPEN + r'\1' + CLOSE, src)
+    new, n = replace_text_only(src)
     if n == 0:
         return 0
     # Asserts

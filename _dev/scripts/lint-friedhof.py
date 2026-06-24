@@ -46,6 +46,9 @@ RECORD_GLOB = os.path.join(ROOT, '_dev', 'strategie', 'friedhoefe', '*-record.js
 QUIET = '--quiet' in sys.argv
 TODAY = date.today()
 
+# Quote-Fehlpaarung (F3): oeffnend „ (U+201E) … schliessend ASCII-" statt deutsch " (U+201C).
+MISQUOTE = re.compile('„[^„“"]*?"')
+
 # Wertungs-/Siegel-Phrasen (F7). Bewusst eng: "geprueft am" (Stand-Stempel) bleibt erlaubt.
 RATING_PHRASES = [
     'bester friedhof', 'schönster friedhof', 'schoenster friedhof', 'testsieger',
@@ -102,15 +105,13 @@ def load_records():
     return recs
 
 
-def match_record(stadt, slug, recs):
-    """Record fuer eine Friedhofseite: Dateiname '<stadt>-...' und slug in deckt_friedhoefe."""
-    cand = []
-    for r in recs:
-        if not r['file'].startswith(stadt + '-'):
-            continue
-        deckt = r['data'].get('deckt_friedhoefe') or []
-        if not slug or not deckt or slug in deckt:
-            cand.append(r)
+def match_record(slug, recs):
+    """Record fuer eine Friedhofseite: Friedhof-Slug steht in deckt_friedhoefe.
+    Bewusst NICHT vom Pfad-Segment 'stadt' abhaengig — sonst bricht die Zuordnung
+    bei verschachtelter Geografie (friedhoefe/<bundesland>/<stadt>/<friedhof>/)."""
+    if not slug:
+        return None
+    cand = [r for r in recs if slug in (r['data'].get('deckt_friedhoefe') or [])]
     return cand[0] if len(cand) == 1 else None
 
 
@@ -161,21 +162,25 @@ def main():
             ld_nodes.extend(n for n in nodes if isinstance(n, dict))
         for n in ld_nodes:
             ld_string_values(n, ld_values)
-        types = {n.get('@type') for n in ld_nodes}
+        types = set()
+        for n in ld_nodes:                      # @type kann String ODER Liste sein (gueltiges schema.org)
+            t = n.get('@type')
+            types.update(t if isinstance(t, list) else [t] if t else [])
         is_standalone = 'Cemetery' in types
 
-        # --- Pfad-Teile (stadt/slug) ---
-        parts = rel.split('/')  # friedhoefe/<stadt>/<slug>/index.html
-        stadt = parts[1] if len(parts) > 1 else ''
-        slug = parts[2] if len(parts) > 3 and parts[2] != 'index.html' else ''
+        # --- Friedhof-Slug = letztes echtes Pfad-Segment (robust gegen Pfad-Tiefe) ---
+        segs = [p for p in rel.split('/')[1:] if p and p != 'index.html']  # 'friedhoefe' + index.html raus
+        slug = segs[-1] if segs else ''
 
-        # ---- F3 ASCII-Anfuehrungszeichen (sichtbar + JSON-LD-Werte) ----
-        if '"' in vis_n:
-            snippet = vis_n[max(0, vis_n.find('"') - 25): vis_n.find('"') + 25]
-            fails.append((rel, 'F3', 'ASCII-" im sichtbaren Text (deutsche „ " nutzen): …%s…' % snippet.strip()))
+        # ---- F3 Anfuehrungszeichen-Paritaet: oeffnend „ aber schliessend ASCII-" ----
+        # Bewusst NUR diese Fehlpaarung (Lektion #3b) — ein einzelnes ASCII-" (Zoll-Mass,
+        # engl. Inschrift) ist KEIN Fehler und darf keine korrekte Seite blocken.
+        m_mq = MISQUOTE.search(vis_n)
+        if m_mq:
+            fails.append((rel, 'F3', 'deutsche „ mit ASCII-Schließzeichen statt “ : …%s…' % m_mq.group(0).strip()))
         for val in ld_values:
-            if '"' in val:
-                fails.append((rel, 'F3', 'ASCII-" in JSON-LD-Wert: "%s…"' % val[:40]))
+            if MISQUOTE.search(val):
+                fails.append((rel, 'F3', 'Quote-Fehlpaarung in JSON-LD-Wert: "%s…"' % val[:40]))
                 break
 
         # ---- F7 Bewertung/Siegel ----
@@ -185,7 +190,9 @@ def main():
                 fails.append((rel, 'F7', 'Wertungs-/Siegel-Phrase: "%s"' % ph))
 
         # ---- F6 Aktualitaet ----
-        has_fees = bool(re.search(r'class="fh-table"', html)) or '€' in vis_n
+        # An echte Gebuehren-Tabelle gebunden, NICHT an ein beilaeufiges € (sonst faellt
+        # eine Hub-/Uebersichtsseite mit € im Verweistext faelschlich durch).
+        has_fees = 'class="fh-table"' in html
         m_pruef = re.search(r'gepr[üu]ft am (\d{2})\.(\d{2})\.(\d{4})', vis_n)
         if has_fees:
             if not m_pruef:
@@ -259,9 +266,10 @@ def main():
                 fails.append((rel, 'F8', 'indexierte Seite fehlt in sitemap.xml: %s' % canon.group(1)))
 
             # F9 Record-Cross-Check (Tarifstelle -> Betrag)
-            rec = match_record(stadt, slug, recs)
+            rec = match_record(slug, recs)
             tbody = re.search(r'<tbody>(.*?)</tbody>', html, re.S)
-            seiten_tarife = []  # (tarifstelle, betrag)
+            seiten_tarife = []   # (tarifstelle, betrag)
+            unlabeled = 0        # €-Zeilen OHNE Tarifstelle = nicht gegen Record pruefbar
             if tbody:
                 for tr in re.findall(r'<tr>(.*?)</tr>', tbody.group(1), re.S):
                     tds = re.findall(r'<td[^>]*>(.*?)</td>', tr, re.S)
@@ -270,12 +278,20 @@ def main():
                     label, amount = norm_spaces(visible_text(tds[0])), norm_spaces(visible_text(tds[-1]))
                     ts = re.findall(r'\((\d{2,4})\)', label)
                     betrag = parse_eur(amount)
-                    if ts and betrag is not None:
+                    if betrag is None:
+                        continue
+                    if ts:
                         seiten_tarife.append((ts[-1], betrag))
-            if seiten_tarife:
+                    else:
+                        unlabeled += 1
+            if seiten_tarife or unlabeled:
                 if not rec:
                     warns.append((rel, 'W2', 'Standalone mit Gebuehren, aber kein Traeger-Record verknuepft'))
                 else:
+                    # Schlupfloch zu: jede €-Zeile MUSS eine Tarifstelle tragen, sonst ungeprueft
+                    if unlabeled:
+                        fails.append((rel, 'F9', '%d Gebuehrenzeile(n) ohne Tarifstelle — nicht gegen Record %s pruefbar'
+                                      % (unlabeled, rec['file'])))
                     for ts, betrag in seiten_tarife:
                         if ts in rec['tarif'] and rec['tarif'][ts] != betrag:
                             fails.append((rel, 'F9', 'Tarifstelle %s: Seite %d € ≠ Record %d € (%s)'
