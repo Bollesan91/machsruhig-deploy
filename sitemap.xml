@@ -309,6 +309,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://machsruhig.de/friedhoefe/nuernberg/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsruhig.de/friedhoefe/duisburg/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsruhig.de/friedhoefe/bochum/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://machsruhig.de/friedhoefe/koeln/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>

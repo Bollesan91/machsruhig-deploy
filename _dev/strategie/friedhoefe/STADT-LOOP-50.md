@@ -18,9 +18,9 @@
 - [x] 11 Bremen — reviewt (Riensberg-Lage→Schwachhausen MINOR gefixt)
 - [x] 12 Dresden — reviewt (0 Fix; SONDERFALL-Framing 4 kommunal/Mehrheit konfessionell korrekt)
 - [x] 13 Hannover — reviewt (0 Fix)
-- [~] 14 Nürnberg — Stufe0 (10 städt./Friedhofsverwaltung/~119 ha; Süd 62ha+West 38ha; Johannisfriedhof KIRCHLICH=Dürer, NICHT städtisch), Build offen
-- [~] 15 Duisburg — Stufe0 (17/Wirtschaftsbetriebe Duisburg WBD/Waldfriedhof 67ha 1920er), Build offen
-- [~] 16 Bochum — Stufe0 (24/Technischer Betrieb/Hauptfriedhof 46,5ha; 2. Karte-Notable noch suchen), Build offen
+- [x] 14 Nürnberg — reviewt (0 Fix; Johannis/Rochus kirchlich, Süd 62ha städtisch)
+- [x] 15 Duisburg — reviewt (Sternbuschweg-Lage MAJOR→Neudorf gefixt)
+- [x] 16 Bochum — reviewt (0 Fix)
 - [ ] 17 Wuppertal
 - [ ] 18 Bielefeld
 - [ ] 19 Bonn
