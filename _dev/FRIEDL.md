@@ -104,9 +104,37 @@
 
 ---
 
+## Datenschicht B: Bestatter-Verzeichnis (Umkreis)
+
+> Zweite Datenschicht neben Friedhof/Gebühren (A): pro Friedhof eine faktische Liste der Bestatter im Umkreis. **Ein kopiertes Verzeichnis ist kein Moat und § 87a-rechtswidrig — wir erheben selbst.**
+>
+> **Qualität vor Menge — KEIN Auto-Publish.** Reine Sammelskripte produzieren flachen, ungenauen, schwer prüfbaren Datenmüll (Projektlehre Bolle). Das Skript darf nur **erheben + rechnen** (Discovery via OSM, Distanz, Dedup) und einen **Kandidaten**-Satz erzeugen. **Veröffentlicht wird ausschließlich, was einzeln verifiziert ist** (aktiv? Adresse korrekt? real?). Lieber **8 geprüfte** Bestatter als 30 ungeprüfte. Erst wenn die Pro-Record-Qualität + der Prüfaufwand an EINEM Friedhof (Ohlsdorf) bewiesen sind, skalieren — sonst nicht.
+
+**Bestatter-Record:** `bestatter_id`, `name`, `strasse`,`plz`,`ort`,`geo`, `website`, `telefon`, `quelle` (Enum: osm | eigene_recherche | partner-selbstauskunft), `osm_id`, `status` (Enum: aktiv | geschlossen | umgezogen | ungeprüft), `geprueft_am`, `geprueft_via` (google | website | telefon | -). Zuordnung: `{friedhof_id, bestatter_id, distanz_km}` — **distanz_km rechnen wir selbst** (Haversine aus Koordinaten), nie aus fremder Quelle.
+
+**Stufe −1/0 — Erhebung:**
+1. **Primär OSM** (`shop=funeral_directors` / `office=funeral_directors`) per Overpass-Radius um die Friedhofs-Koordinaten. Lizenz **ODbL** → speicher-/anzeigbar **mit Nennung „Daten © OpenStreetMap-Mitwirkende"**.
+2. **Distanz selbst rechnen. Fremde Verzeichnisse** (bestattungsatlas o. ä.) **nur als Abdeckungs-Gegenprobe** („hat OSM jemanden übersehen?") — NIE als Quelle (§ 87a; ihre Zuordnung + km sind geschützt).
+3. **Aktiv-Status verifizieren** per Google/Website/Telefon — zum *Prüfen*, **nicht Google-Daten speichern** (Places-ToS verbietet Speicherung/Anzeige über place_id hinaus). Nur unser Feld `status` + `geprueft_am`.
+4. **Anreichern** der „nur Name"-Records (OSM ~⅓) über die eigene Website/Impressum des Bestatters (primär für Adresse/Inhaber).
+
+**Stufe 1 — Gates (lint-friedhof.py erweitern):**
+- **Provenienz:** jeder Record `quelle`; bei Anzeige zusätzlich `status` + `geprueft_am`; **ODbL-Attribution** auf jeder Seite mit OSM-Bestattern → sonst FAIL.
+- **Aktualität:** nur `status=aktiv` wird *angezeigt*; `ungeprüft`/`geschlossen` nie publik. `geprueft_am` > 12 Mon → Re-Check (Bestatter schließen/ziehen um — gleiche Staleness wie Satzungen).
+- **Neutralität (Recht/Firewall):** Reihenfolge **nach Distanz** (oder alphabetisch), **kein Ranking, keine Wertung, keine bezahlte Platzierung** (Listing bleibt gratis — vgl. Geschäftsmodell-Firewall). Keine „Empfehlung"-Sprache.
+- **Distanz-Eigenrechnung:** `distanz_km` muss aus `geo` ableitbar sein (Cross-Check), nicht fremdübernommen.
+- **Cap + Logging:** „nächste N" (Vorschlag 6–8) bzw. Radius geloggt (Stadt enger, Land weiter) — kein stiller Cap.
+
+**Stufe 2/3:** Stichprobe Aktiv-Status gegen Realität (Google/Website); „geschlossen" raus; Distanz-Stichprobe nachgerechnet.
+
+**Veröffentlichung — Block „Bestatter im Umkreis":** rein **faktisch** (Name, Ort, unsere km, Website-Link), **„automatisch erhoben, ohne Wertung oder Empfehlung"**, sichtbarer **Stand + „Fehler melden"**, **ODbL-Nennung**. Natürlicher Haken: wer transparent auftreten will → **Transparenz-Partner** (Brücke zur Strategie). Erst nach Aktiv-Prüfung anzeigen.
+
+---
+
 ## Anti-Patterns
 
-1. Thin-/Doorway-Pages → Aggregationszeile. 2. Sekundär-Zahlen als Beleg. 3. Erfundene/interpolierte Gebühren. 4. Fremde Verzeichnis-DB kopieren (§ 87a). 5. Boilerplate-Near-Duplicate. 6. Veraltete Satzung als gültig. 7. „geprüft"-/Siegel-Optik (wir geben amtliche Gebühren wieder, wir bewerten den Friedhof nicht).
+**A (Friedhof):** 1. Thin-/Doorway-Pages → Aggregationszeile. 2. Sekundär-Zahlen als Beleg. 3. Erfundene/interpolierte Gebühren. 4. Fremde Verzeichnis-DB kopieren (§ 87a). 5. Boilerplate-Near-Duplicate. 6. Veraltete Satzung als gültig. 7. „geprüft"-/Siegel-Optik (wir geben amtliche Gebühren wieder, wir bewerten den Friedhof nicht).
+**B (Bestatter):** 8. Google-Places-Daten speichern/anzeigen (ToS). 9. Bestatter-Liste mit Ranking/Wertung/bezahlter Platzierung (Neutralität/Firewall). 10. Geschlossene/ungeprüfte Bestatter anzeigen. 11. Fremde km/Zuordnung übernehmen statt selbst rechnen. 12. ODbL-Nennung weglassen.
 
 ## Gedächtnis
 `_dev/docs/LEKTIONEN-FRIEDHOF.md` (Muster je Träger-Typ/BL: Satzungs-Fundorte, Wahl- vs. Reihengrab, Jahres- vs. Ruhezeit-Gebühr) · `OFFENE-REVIEW-PUNKTE-FRIEDHOF.md` · Mechanisierbares → `lint-friedhof.py`. Beide Docs Pflichtteil jedes Bau-/Review-Prompts.
@@ -117,5 +145,11 @@
 - [ ] **Konsistenz:** Enums/Struktur/Arithmetik/Cross-Field grün; JSON-LD valide.
 - [ ] **Aktualität:** Stand + Gültig-ab sichtbar; `letzte_pruefung` < 12 Mon; in Q1-Sweep.
 - [ ] Linter 0 FAIL · (Stichprobe/Gold) Review 0 MAJOR · Beispielsumme nachgerechnet · Sitemap-Diff ok.
+
+## Definition of Done — Bestatter-Verzeichnis (Datenschicht B)
+- [ ] **Recht:** OSM-Quelle (ODbL) + Nennung „Daten © OpenStreetMap-Mitwirkende"; keine fremde DB (§ 87a); keine Google-Daten gespeichert; km selbst gerechnet.
+- [ ] **Qualität:** jeder ANGEZEIGTE Bestatter einzeln verifiziert (`status=aktiv`, Adresse geprüft); ungeprüfte/geschlossene nicht publik; kein Auto-Publish.
+- [ ] **Neutralität:** Sortierung nach Distanz/alphabetisch, kein Ranking/Wertung/bezahlte Platzierung; „ohne Wertung"-Hinweis + „Fehler melden" + Stand sichtbar.
+- [ ] **Bewährt vor Skalierung:** Pro-Record-Qualität an Ohlsdorf nachgewiesen.
 
 > Schwellen (vor Serienstart fixieren): Substanz 3 Grabarten ODER 5 Fakten · Aktualität WARN 12 / FAIL 18 Mon · Stichprobe 10 % + Gold je Träger-Typ + alle Grenzfälle · Near-Duplicate unique≥0,40 & Shingle-Jaccard<0,80.
