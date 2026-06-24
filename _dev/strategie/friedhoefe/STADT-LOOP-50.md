@@ -15,12 +15,12 @@
 - [x] 8 Leipzig — reviewt (0 Fix)
 - [x] 9 Dortmund — reviewt (5 MAJOR Westfriedhof→Südwestfriedhof gefixt)
 - [x] 10 Essen — reviewt (0 Fix)
-- [~] 11 Bremen — gebaut (13 städt./Umweltbetrieb/Osterholz 1920), Review offen
-- [~] 12 Dresden — gebaut (SONDERFALL: nur 4 kommunale/Eigenbetrieb, Mehrheit konfessionell; Heidefriedhof+Johannisfriedhof), Review offen
-- [~] 13 Hannover — Stufe0 fertig (19 städt., Fachbereich Umwelt+Stadtgrün, 5 Stadtfriedhöfe: Engesohde 1864/Lahe/Ricklingen 1908/Seelhorst/Stöcken 1891), Build offen
-- [ ] 14 Nürnberg
-- [ ] 15 Duisburg
-- [ ] 16 Bochum
+- [x] 11 Bremen — reviewt (Riensberg-Lage→Schwachhausen MINOR gefixt)
+- [x] 12 Dresden — reviewt (0 Fix; SONDERFALL-Framing 4 kommunal/Mehrheit konfessionell korrekt)
+- [x] 13 Hannover — reviewt (0 Fix)
+- [~] 14 Nürnberg — Stufe0 (10 städt./Friedhofsverwaltung/~119 ha; Süd 62ha+West 38ha; Johannisfriedhof KIRCHLICH=Dürer, NICHT städtisch), Build offen
+- [~] 15 Duisburg — Stufe0 (17/Wirtschaftsbetriebe Duisburg WBD/Waldfriedhof 67ha 1920er), Build offen
+- [~] 16 Bochum — Stufe0 (24/Technischer Betrieb/Hauptfriedhof 46,5ha; 2. Karte-Notable noch suchen), Build offen
 - [ ] 17 Wuppertal
 - [ ] 18 Bielefeld
 - [ ] 19 Bonn
