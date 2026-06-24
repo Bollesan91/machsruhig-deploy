@@ -1,0 +1,1168 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-06-24T19:14:09Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 3988127,
+  "center": {
+    "lat": 48.1536909,
+    "lon": 11.5701510
+  },
+  "tags": {
+    "BLfD:criteria": "Baudenkmal",
+    "alt_name": "Alter Nordfriedhof",
+    "architect": "Arnold Zenetti",
+    "description": "Der 1868 eröffnete Friedhof wurde bereits 1939 nach Umbauplänen des NS-Regimes für Beerdigungen geschlossen. Durch Kriegsschäden sind von den ursprünglich 9000 Familiengräbern noch etwa 800 erkennbar. Heute wird er als kleine Parkanlage genutzt.",
+    "end_date": "1939",
+    "heritage": "4",
+    "heritage:operator": "BLfD",
+    "heritage:website": "https://geoportal.bayern.de/denkmalatlas/",
+    "historic": "yes",
+    "landuse": "cemetery",
+    "name": "Alter nördlicher Friedhof",
+    "opening_hours": "24/7",
+    "ref:BLfD": "D-1-62-000-389",
+    "start_date": "1868-10-05",
+    "website": "https://stadt.muenchen.de/service/info/alter-nordlicher-friedhof/10309498/",
+    "wikidata": "Q438119",
+    "wikimedia_commons": "File:Alter Nordfriedhof Muenchen-1.jpg",
+    "wikipedia": "de:Alter Nordfriedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 4229645,
+  "center": {
+    "lat": 48.0765265,
+    "lon": 11.6484941
+  },
+  "tags": {
+    "image": "https://arweave.net/FXhXv9PPqgv5oGnNzGIU1SuJgM0pMqERNi2IFqhgjm0",
+    "landuse": "cemetery",
+    "name": "Friedhof Neubiberg",
+    "panoramax": "ed796828-8841-4449-ab4d-f737364fbfbc"
+  }
+},
+{
+  "type": "way",
+  "id": 4532285,
+  "center": {
+    "lat": 48.2327380,
+    "lon": 11.5751071
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Hochmutting",
+    "wikidata": "Q98745994",
+    "wikimedia_commons": "Category:Friedhof (Oberschleissheim)"
+  }
+},
+{
+  "type": "way",
+  "id": 4828862,
+  "center": {
+    "lat": 48.1755045,
+    "lon": 11.6030356
+  },
+  "tags": {
+    "TMC:cid_58:tabcd_1:Class": "Area",
+    "TMC:cid_58:tabcd_1:LCLversion": "9.00",
+    "TMC:cid_58:tabcd_1:LocationCode": "31833",
+    "addr:housenumber": "130",
+    "addr:postcode": "80805",
+    "addr:street": "Ungererstraße",
+    "fax": "+49 89 370039829",
+    "landuse": "cemetery",
+    "name": "Nordfriedhof",
+    "opening_hours": "Nov-Feb 08:00-17:00; Mar 08:00-18:00; Apr-Aug 08:00-20:00; Sep-Oct 08:00-19:00",
+    "operator": "Landeshauptstadt München Referat für Gesundheit und Umwelt Städtische Friedhöfe München",
+    "phone": "+49 89 370039820",
+    "website": "https://stadt.muenchen.de/service/info/nordfriedhof/10320861/",
+    "wikidata": "Q1030655",
+    "wikipedia": "de:Nordfriedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 8068523,
+  "center": {
+    "lat": 48.0611517,
+    "lon": 11.6500793
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Parkfriedhof",
+    "opening_hours": "Apr-Sep: 08:00-19:00; Oct-Mar 08:00-17:00",
+    "source": "survey",
+    "website": "https://www.ottobrunn.de/ottobrunn-erleben/ortsportrait/ortsplan"
+  }
+},
+{
+  "type": "way",
+  "id": 9962974,
+  "center": {
+    "lat": 48.2272616,
+    "lon": 11.6789616
+  },
+  "tags": {
+    "barrier": "wall",
+    "description": "Alter Friedhof",
+    "landuse": "cemetery",
+    "name": "Alter Friedhof Ismaning",
+    "opening_hours": "Apr 1-Sep 30: 08:00-20:00; Oct 1-Mar 31: 08:00-17:00",
+    "opening_hours:url": "https://ismaning.de/wohnen-leben/kirchen-friedhoefe/",
+    "website": "https://ismaning.de/wohnen-leben/kirchen-friedhoefe/",
+    "wikidata": "Q15782769",
+    "wikimedia_commons": "Category:Cemetery (Ismaning)"
+  }
+},
+{
+  "type": "way",
+  "id": 9962975,
+  "center": {
+    "lat": 48.2346601,
+    "lon": 11.6730377
+  },
+  "tags": {
+    "barrier": "fence",
+    "landcover": "trees",
+    "landuse": "cemetery",
+    "name": "Neuer Friedhof Ismaning",
+    "opening_hours": "Apr 1-Sep 30: 08:00-20:00; Oct 1-Mar 31: 08:00-17:00",
+    "opening_hours:url": "https://ismaning.de/wohnen-leben/kirchen-friedhoefe/",
+    "religion": "christian",
+    "website": "https://ismaning.de/wohnen-leben/kirchen-friedhoefe/"
+  }
+},
+{
+  "type": "way",
+  "id": 14152325,
+  "center": {
+    "lat": 48.0952196,
+    "lon": 11.4562935
+  },
+  "tags": {
+    "addr:city": "Neuried",
+    "addr:housenumber": "59",
+    "addr:street": "Lindenallee",
+    "landuse": "cemetery",
+    "name": "Friedhof an der Lindenallee",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 17946671,
+  "center": {
+    "lat": 48.1096571,
+    "lon": 11.5458236
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Alter Israelitischer Friedhof",
+    "name:de": "Alter Israelitischer Friedhof",
+    "name:en": "Old Jewish Cemetery",
+    "religion": "jewish",
+    "website": "https://www.ikg-m.de/kultus-und-religion/friedhofe/alter-israelitischer-friedhof/",
+    "wikidata": "Q437972",
+    "wikipedia": "de:Alter Israelitischer Friedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 18068423,
+  "center": {
+    "lat": 48.0984043,
+    "lon": 11.6416978
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Perlach",
+    "wikidata": "Q1457399",
+    "wikimedia_commons": "Category:Friedhof Perlach"
+  }
+},
+{
+  "type": "way",
+  "id": 18655678,
+  "center": {
+    "lat": 48.1191475,
+    "lon": 11.4478423
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "cemetery",
+    "name": "Waldfriedhof Gräfelfing",
+    "opening_hours": "mo-fr:08:00-20:00"
+  }
+},
+{
+  "type": "way",
+  "id": 19785622,
+  "center": {
+    "lat": 48.1775163,
+    "lon": 11.4569949
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Untermenzing"
+  }
+},
+{
+  "type": "way",
+  "id": 19930853,
+  "center": {
+    "lat": 48.1651981,
+    "lon": 11.4462015
+  },
+  "tags": {
+    "addr:city": "München",
+    "addr:country": "DE",
+    "addr:housenumber": "34",
+    "addr:postcode": "81245",
+    "addr:street": "Bergsonstraße",
+    "alt_name": "Waldfriedhof Obermenzing",
+    "barrier": "fence",
+    "landuse": "cemetery",
+    "name": "Friedhof Obermenzing",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar: 08:00-18:00; Apr-Aug: 08:00-20:00; Sep-Oct 08:00-19:00",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-obermenzing/10321072/",
+    "wikipedia": "de:Waldfriedhof Obermenzing"
+  }
+},
+{
+  "type": "way",
+  "id": 24338164,
+  "center": {
+    "lat": 48.1823007,
+    "lon": 11.6025962
+  },
+  "tags": {
+    "addr:city": "München",
+    "addr:housenumber": "37",
+    "addr:postcode": "80805",
+    "addr:street": "Garchinger Straße",
+    "barrier": "wall",
+    "landuse": "cemetery",
+    "name": "Neuer Israelitischer Friedhof",
+    "name:en": "New Jewish Cemetery",
+    "name:ru": "Новое еврейское кладбище",
+    "religion": "jewish",
+    "website": "https://www.ikg-m.de/kultus-und-religion/friedhofe/neuer-israelitischer-friedhof/",
+    "wikidata": "Q475118",
+    "wikipedia": "de:Neuer Israelitischer Friedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 26636089,
+  "center": {
+    "lat": 48.1316582,
+    "lon": 11.6809203
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Riem",
+    "wikidata": "Q1457410"
+  }
+},
+{
+  "type": "way",
+  "id": 26959859,
+  "center": {
+    "lat": 48.1999283,
+    "lon": 11.6501135
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Parkfriedhof",
+    "opening_hours": "APR-SEP 08:00-19:00; OCT-MAR 08:00-17:00"
+  }
+},
+{
+  "type": "way",
+  "id": 27425296,
+  "center": {
+    "lat": 48.0987471,
+    "lon": 11.4778236
+  },
+  "tags": {
+    "architect": "Helmut Schöner-Fedrigotti, Ludwig Roemer",
+    "barrier": "wall",
+    "cemetery": "war_cemetery",
+    "cemetery:capacity": "3543",
+    "cemetery:conflict": "WW1;WW2",
+    "description": "3540 Kriegstote der beiden Weltkriege, davon über 300 ausländische (vor allem russische). Kriegsgräberstätte mit pyramidenartiger Gedenkhalle und Ehrenfriedhof für 3543 Opfer der beiden Weltkriege aus 18 Nationen; 1960-1965 von Helmut Schöner-Fedrigotti,",
+    "heritage": "4",
+    "heritage:operator": "BLfD",
+    "heritage:website": "https://geoportal.bayern.de/denkmalatlas/",
+    "historic": "yes",
+    "landuse": "cemetery",
+    "name": "Kriegsgräberstätte am Waldfriedhof",
+    "official_name": "Kriegsgräberstätte München-Waldfriedhof",
+    "opening_hours": "Mar: 08:00-18:00; Apr-Aug: 08:00-20:00; Sep: 08:00-19:00; Oct: 08:00-18:00; Nov-Feb: 08:00-17:00",
+    "opening_hours:note": "genauer: Mar(bei Sommerzeit): 08:00-19:00; Oct(Normalzeit): 08:00-17:00 (Hinweisschild zu Öffnungszeiten mit Zusatz \"Bei Sommerzeit eine Stunde länger\")",
+    "operator": "Volksbund Deutsche Kriegsgräberfürsorge e. V.",
+    "ref:BLfD": "D-1-62-000-7948",
+    "religion": "christian",
+    "start_date": "1960..1965",
+    "wikidata": "Q41182515",
+    "wikimedia_commons": "File:Kriegsgräberstätte_Hadern_Gedenkhalle_München.jpg",
+    "wikipedia": "de:Waldfriedhof (München)#Kriegsgräberstätten"
+  }
+},
+{
+  "type": "way",
+  "id": 27425307,
+  "center": {
+    "lat": 48.0918766,
+    "lon": 11.4640323
+  },
+  "tags": {
+    "addr:city": "Neuried",
+    "addr:housenumber": "9",
+    "addr:street": "Gautinger Straße",
+    "barrier": "wall",
+    "landuse": "cemetery",
+    "name": "Friedhof an der Dorfkirche St. Nikolaus"
+  }
+},
+{
+  "type": "way",
+  "id": 27516694,
+  "center": {
+    "lat": 48.1370081,
+    "lon": 11.3671807
+  },
+  "tags": {
+    "barrier": "fence",
+    "denomination": "catholic",
+    "landuse": "cemetery",
+    "name": "Friedhof St. Martin",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 27667108,
+  "center": {
+    "lat": 48.1359559,
+    "lon": 11.6789388
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Riem Scholle 4"
+  }
+},
+{
+  "type": "way",
+  "id": 27717806,
+  "center": {
+    "lat": 48.1115935,
+    "lon": 11.4294208
+  },
+  "tags": {
+    "barrier": "wall",
+    "height": "1",
+    "landuse": "cemetery",
+    "material": "brick",
+    "name": "Friedhof von St. Georg"
+  }
+},
+{
+  "type": "way",
+  "id": 28003556,
+  "center": {
+    "lat": 48.2240741,
+    "lon": 11.4765233
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Karlsfeld"
+  }
+},
+{
+  "type": "way",
+  "id": 28952770,
+  "center": {
+    "lat": 48.1021979,
+    "lon": 11.4331439
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "landuse": "cemetery",
+    "name": "Friedhof Planegg",
+    "opening_hours": "Apr-Sep: 08:00-20:00; Oct-Mar: 08:00-18:00"
+  }
+},
+{
+  "type": "way",
+  "id": 28983981,
+  "center": {
+    "lat": 48.1183354,
+    "lon": 11.3700204
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Waldfriedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 30190486,
+  "center": {
+    "lat": 48.1793537,
+    "lon": 11.3733912
+  },
+  "tags": {
+    "barrier": "fence",
+    "denomination": "orthodox",
+    "landuse": "cemetery",
+    "name": "Russenfriedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 30653829,
+  "center": {
+    "lat": 48.1544971,
+    "lon": 11.4096111
+  },
+  "tags": {
+    "check_date": "2024-08-13",
+    "landuse": "cemetery",
+    "name": "Friedhof Aubing",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 30778484,
+  "center": {
+    "lat": 48.1841096,
+    "lon": 11.4066949
+  },
+  "tags": {
+    "email": "fh-pasing-obermenzing@muenchen.de",
+    "landuse": "cemetery",
+    "name": "Friedhof Lochhausen",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar: 08:00-18:00; Apr-Aug: 08:00-20:00; Sep-Oct 08:00-19:00",
+    "religion": "christian",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-lochhausen/10321445/"
+  }
+},
+{
+  "type": "way",
+  "id": 31959631,
+  "center": {
+    "lat": 48.2163535,
+    "lon": 11.5256265
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Feldmoching",
+    "name:de": "Friedhof Feldmoching",
+    "religion": "christian",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-feldmoching/10321344/",
+    "wikidata": "Q1457326",
+    "wikipedia": "de:Friedhof Feldmoching"
+  }
+},
+{
+  "type": "way",
+  "id": 31987753,
+  "center": {
+    "lat": 48.1001788,
+    "lon": 11.5451639
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "catholic",
+    "name": "St. Maria",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 32441776,
+  "center": {
+    "lat": 48.0949004,
+    "lon": 11.4183078
+  },
+  "tags": {
+    "addr:city": "Krailling",
+    "addr:housenumber": "12",
+    "addr:postcode": "82152",
+    "addr:street": "Friedenstraße",
+    "dog": "no",
+    "landuse": "cemetery",
+    "name": "Alter Friedhof",
+    "opening_hours": "Nov-Feb: 09:00-17:00; Mar-Apr: 08:00-19:00; May-Aug: 07:00-20:00; Sep-Oct: 08:00-19:00"
+  }
+},
+{
+  "type": "way",
+  "id": 32504623,
+  "center": {
+    "lat": 48.1665503,
+    "lon": 11.4509709
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Tierfriedhof \"Letzte Ruhe\"",
+    "note": "Der Friedhof wird zum 31.05.2025 geschlossen und rückgebaut",
+    "opening_hours": "sunrise-sunset"
+  }
+},
+{
+  "type": "way",
+  "id": 34959523,
+  "center": {
+    "lat": 48.1349981,
+    "lon": 11.6789543
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Riem Scholle 3"
+  }
+},
+{
+  "type": "way",
+  "id": 34959524,
+  "center": {
+    "lat": 48.1339723,
+    "lon": 11.6786419
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Riem Scholle 2"
+  }
+},
+{
+  "type": "way",
+  "id": 34959525,
+  "center": {
+    "lat": 48.1331032,
+    "lon": 11.6783478
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Riem Scholle 1"
+  }
+},
+{
+  "type": "way",
+  "id": 39229908,
+  "center": {
+    "lat": 48.1830225,
+    "lon": 11.3847494
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Gröbenzell"
+  }
+},
+{
+  "type": "way",
+  "id": 41181612,
+  "center": {
+    "lat": 48.1561633,
+    "lon": 11.6878643
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "Gemeindefriedhof"
+  }
+},
+{
+  "type": "way",
+  "id": 45181697,
+  "center": {
+    "lat": 48.0813994,
+    "lon": 11.6258214
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "catholic",
+    "name": "St. Georg",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 46620558,
+  "center": {
+    "lat": 48.1548878,
+    "lon": 11.5298945
+  },
+  "tags": {
+    "alt_name": "Winthirfriedhof",
+    "amenity": "grave_yard",
+    "denomination": "catholic",
+    "landuse": "cemetery",
+    "name": "Friedhof Neuhausen",
+    "religion": "christian",
+    "wikidata": "Q1296166",
+    "wikipedia": "de:Friedhof Neuhausen"
+  }
+},
+{
+  "type": "way",
+  "id": 52037615,
+  "center": {
+    "lat": 48.1778219,
+    "lon": 11.4609093
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Untermenzing",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 54309959,
+  "center": {
+    "lat": 48.2004041,
+    "lon": 11.4570958
+  },
+  "tags": {
+    "barrier": "fence",
+    "landuse": "cemetery",
+    "name": "Friedhof Allach"
+  }
+},
+{
+  "type": "way",
+  "id": 118742375,
+  "center": {
+    "lat": 48.0942130,
+    "lon": 11.4206297
+  },
+  "tags": {
+    "addr:city": "Krailling",
+    "addr:postcode": "82152",
+    "addr:street": "Ludwig-von-Nagel-Straße",
+    "barrier": "fence",
+    "bicycle": "no",
+    "check_date:opening_hours": "2025-01-01",
+    "dog": "no",
+    "landuse": "cemetery",
+    "name": "Parkfriedhof",
+    "opening_hours": "Jan,Feb,Nov,Dec 09:00-17:00; Mar,Apr,Sep,Oct 08:00-19:00; May,Jun,Jul,Aug 07:00-20:00"
+  }
+},
+{
+  "type": "way",
+  "id": 122538467,
+  "center": {
+    "lat": 48.1210686,
+    "lon": 11.7091652
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "Friedhof Gronsdorf"
+  }
+},
+{
+  "type": "way",
+  "id": 126763850,
+  "center": {
+    "lat": 48.0721865,
+    "lon": 11.3922598
+  },
+  "tags": {
+    "denomination": "jewish",
+    "landuse": "cemetery",
+    "name": "Jüdischer Friedhof Gauting",
+    "religion": "jewish",
+    "wikidata": "Q15655268",
+    "wikipedia": "de:Jüdischer Friedhof Gauting"
+  }
+},
+{
+  "type": "way",
+  "id": 126764790,
+  "center": {
+    "lat": 48.0738044,
+    "lon": 11.3931449
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Waldfriedhof Gauting",
+    "opening_hours": "Nov-Feb: Mo-Su 08:00-17:00; Mar,Oct: Mo-Su 07:00-18:00; Apr,Sep: Mo-Su 07:00-19:00; May-Aug: Mo-Su 07:00-20:00",
+    "phone": "+49 89 8501208",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 129320452,
+  "center": {
+    "lat": 48.1447815,
+    "lon": 11.4561243
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "roman_catholic",
+    "name": "Institutsfriedhof",
+    "religion": "christian"
+  }
+},
+{
+  "type": "way",
+  "id": 144159786,
+  "center": {
+    "lat": 48.0988416,
+    "lon": 11.6198197
+  },
+  "tags": {
+    "TMC:cid_58:tabcd_1:Class": "Area",
+    "TMC:cid_58:tabcd_1:LCLversion": "9.00",
+    "TMC:cid_58:tabcd_1:LocationCode": "31835",
+    "landuse": "cemetery",
+    "name": "Neuer Südfriedhof",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar 08:00-18:00; Apr-Aug: 08:00-20:00; Sep-Oct: 08:00-19:00",
+    "wikidata": "Q1472727",
+    "wikimedia_commons": "Category:Neuer Südfriedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 144159793,
+  "center": {
+    "lat": 48.1198198,
+    "lon": 11.5904392
+  },
+  "tags": {
+    "TMC:cid_58:tabcd_1:Class": "Area",
+    "TMC:cid_58:tabcd_1:LCLversion": "9.00",
+    "TMC:cid_58:tabcd_1:LocationCode": "31834",
+    "addr:city": "München",
+    "addr:housenumber": "1",
+    "addr:postcode": "81541",
+    "addr:street": "Sankt-Martins-Platz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ostfriedhof_Muenchen-2.jpg/800px-Ostfriedhof_Muenchen-2.jpg",
+    "landuse": "cemetery",
+    "name": "Ostfriedhof",
+    "opening_hours": "Nov-Feb 08:00-17:00; Mar 08:00-18:00; Apr-Aug 08:00-20:00; Sep-Oct 08:00-19:00",
+    "website": "https://stadt.muenchen.de/service/info/ostfriedhof/10309496/",
+    "wikidata": "Q2035479",
+    "wikipedia": "en:Ostfriedhof (Munich)"
+  }
+},
+{
+  "type": "way",
+  "id": 150945071,
+  "center": {
+    "lat": 48.1036866,
+    "lon": 11.4900595
+  },
+  "tags": {
+    "barrier": "wall",
+    "check_date:opening_hours": "2025-01-06",
+    "landuse": "cemetery",
+    "name": "Waldfriedhof",
+    "name:de": "Waldfriedhof",
+    "name:pl": "Cmentarz Leśny",
+    "name:ru": "Вальдфридхоф",
+    "name:uk": "Вальдфрідгоф",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar 08:00-18:00; Apr-Aug 08:00-20:00; Sep-Oct: 08:00-19:00",
+    "website": "https://stadt.muenchen.de/service/info/waldfriedhof/10320886/",
+    "wikidata": "Q253763",
+    "wikipedia": "de:Waldfriedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 152909940,
+  "center": {
+    "lat": 48.0639261,
+    "lon": 11.5221539
+  },
+  "tags": {
+    "barrier": "yes",
+    "landuse": "cemetery",
+    "name": "Friedhof Pullach",
+    "opening_hours": "Apr-Sep: 08:00-19:00;Oct-Mar: 08:00-17:30",
+    "website": "https://www.pullach.de/einrichtungen/friedhof/"
+  }
+},
+{
+  "type": "way",
+  "id": 156367641,
+  "center": {
+    "lat": 48.1343545,
+    "lon": 11.6043472
+  },
+  "tags": {
+    "alt_name": "Haidhauser Friedhof",
+    "amenity": "grave_yard",
+    "bicycle": "no",
+    "landuse": "cemetery",
+    "name": "Friedhof Haidhausen",
+    "opening_hours": "Nov-Feb Mo-Su 08:00-17:00; Mar Mo-Su 08:00-18:00; Apr-Aug Mo-Su 08:00-20:00; Sep-Oct Mo-Su 08:00-19:00",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-haidhausen/10321889/",
+    "wikidata": "Q87983379"
+  }
+},
+{
+  "type": "way",
+  "id": 156437063,
+  "center": {
+    "lat": 48.0990108,
+    "lon": 11.5963519
+  },
+  "tags": {
+    "barrier": "fence",
+    "check_date:opening_hours": "2022-06-14",
+    "description:pl": "Na cmentarzu Perlacher Forst przy Stadelheimer Straße znajdują się groby polskich żołnierzy Brygady Świętokrzyskiej Narodowych Sił Zbrojnyc",
+    "landuse": "cemetery",
+    "name": "Friedhof am Perlacher Forst",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar: 08:00-18:00; Apr-Aug: 08:00-20:00; Sep-Oct: 08:00-19:00",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-am-perlacher-forst/10320919/",
+    "wikidata": "Q1457460",
+    "wikimedia_commons": "Category:Friedhof am Perlacher Forst",
+    "wikipedia": "de:Friedhof am Perlacher Forst"
+  }
+},
+{
+  "type": "way",
+  "id": 158217827,
+  "center": {
+    "lat": 48.1622538,
+    "lon": 11.5068367
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Nymphenburg",
+    "religion": "christian",
+    "wikidata": "Q2006147"
+  }
+},
+{
+  "type": "way",
+  "id": 158410547,
+  "center": {
+    "lat": 48.0689727,
+    "lon": 11.5135644
+  },
+  "tags": {
+    "landcover": "trees",
+    "landuse": "cemetery",
+    "name": "Waldfriedhof Solln",
+    "website": "https://stadt.muenchen.de/service/info/waldfriedhof-solln/10321648/",
+    "wikidata": "Q1747665",
+    "wikipedia": "de:Waldfriedhof Solln"
+  }
+},
+{
+  "type": "way",
+  "id": 159179350,
+  "center": {
+    "lat": 48.1155736,
+    "lon": 11.5368290
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Sendlinger Friedhof",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-sendling/10321620/",
+    "wikidata": "Q98644034"
+  }
+},
+{
+  "type": "way",
+  "id": 160225878,
+  "center": {
+    "lat": 48.1276443,
+    "lon": 11.5645332
+  },
+  "tags": {
+    "BLfD:criteria": "Baudenkmal",
+    "addr:city": "München",
+    "addr:housenumber": "17",
+    "addr:postcode": "80337",
+    "addr:street": "Thalkirchner Straße",
+    "alt_name": "Alter Südfriedhof",
+    "description": "Historischer Friedhof von europäischem Rang mit zahlreichen kunstgeschichtlich bedeutsamen Grabmälern berühmter Persönlichkeiten. 1563 angelegt, ab 1789 Zentralfriedhof Münchens, seit 1943 keine Bestattungen mehr.",
+    "dog": "no",
+    "end_date": "1943",
+    "heritage": "4",
+    "heritage:operator": "BLfD",
+    "heritage:website": "https://geoportal.bayern.de/denkmalatlas/",
+    "historic": "yes",
+    "landcover": "trees",
+    "landuse": "cemetery",
+    "name": "Alter Südlicher Friedhof",
+    "ref:BLfD": "D-1-62-000-6817",
+    "religion": "christian",
+    "start_date": "1563",
+    "website": "https://stadt.muenchen.de/service/info/alter-sudlicher-friedhof/10321277/",
+    "wikidata": "Q438199",
+    "wikimedia_commons": "File:Alter Suedfriedhof-1.jpg",
+    "wikipedia": "de:Alter Südfriedhof (München)"
+  }
+},
+{
+  "type": "way",
+  "id": 161412518,
+  "center": {
+    "lat": 48.0787194,
+    "lon": 11.5177577
+  },
+  "tags": {
+    "heritage": "4",
+    "heritage:operator": "BLfD",
+    "landuse": "cemetery",
+    "name": "Friedhof Solln",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar 08:00-18:00; Apr-Aug 08:00-20:00; Sep-Oct: 08:00-19:00",
+    "ref:BLfD": "D-1-62-000-1885",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-solln/1073298/",
+    "wikidata": "Q1457425",
+    "wikipedia": "de:Friedhof Solln"
+  }
+},
+{
+  "type": "way",
+  "id": 195175697,
+  "center": {
+    "lat": 48.0921905,
+    "lon": 11.4076069
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof Stockdorf"
+  }
+},
+{
+  "type": "way",
+  "id": 198310835,
+  "center": {
+    "lat": 48.0976972,
+    "lon": 11.4885228
+  },
+  "tags": {
+    "cemetery": "war_cemetery",
+    "cemetery:capacity": "3249",
+    "cemetery:conflict": "WW1;WW2",
+    "description": "Der Soldatenfriedhof wurde 1922 als Friedhof für in Kriegsgefangenschaft verstorbene Italiener angelegt. Nach dem Zweiten Weltkrieg gab es auf vielen bayerischen Friedhöfe beigesetzte Italiener; sie wurden hier zusammengelegt.",
+    "historic": "yes",
+    "landuse": "cemetery",
+    "name": "Italienischer Militärfriedhof",
+    "name:de": "Italienischer Militärfriedhof",
+    "name:it": "Cimitero Militare Italiano",
+    "religion": "christian",
+    "start_date": "1922",
+    "wikidata": "Q98739480",
+    "wikimedia_commons": "File:Waldfriedhof 3.JPG",
+    "wikipedia": "de:Waldfriedhof (München)#Kriegsgräberstätten"
+  }
+},
+{
+  "type": "way",
+  "id": 282093612,
+  "center": {
+    "lat": 48.1926667,
+    "lon": 11.6163333
+  },
+  "tags": {
+    "landuse": "cemetery",
+    "name": "Friedhof St. Nikolaus"
+  }
+},
+{
+  "type": "way",
+  "id": 300696166,
+  "center": {
+    "lat": 48.1813861,
+    "lon": 11.5163842
+  },
+  "tags": {
+    "barrier": "wall",
+    "denomination": "catholic",
+    "landuse": "cemetery",
+    "name": "Friedhof an der Alten St. Martinskirche",
+    "religion": "christian",
+    "wikidata": "Q98740110"
+  }
+},
+{
+  "type": "way",
+  "id": 490165088,
+  "center": {
+    "lat": 48.0963783,
+    "lon": 11.5952380
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "name": "\"Displaced Persons\"-Grabanlage"
+  }
+},
+{
+  "type": "way",
+  "id": 490165091,
+  "center": {
+    "lat": 48.0961030,
+    "lon": 11.5952851
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "description:pl": "Na cmentarzu Perlacher Forst przy Stadelheimer Straße znajdują się groby polskich żołnierzy Brygady Świętokrzyskiej Narodowych Sił Zbrojnyc",
+    "name": "Polnische Soldatengräber",
+    "website": "https://www.erzbistum-muenchen.de/pfarrei/polnische-katholische-gemeinde-muenchen/cont/129528"
+  }
+},
+{
+  "type": "way",
+  "id": 553429497,
+  "center": {
+    "lat": 48.1446111,
+    "lon": 11.4560669
+  },
+  "tags": {
+    "BLfD:criteria": "Baudenkmal",
+    "amenity": "grave_yard",
+    "denomination": "roman_catholic",
+    "description": "Alter Pasinger Friedhof. Teile der Mauer und einzelne Grabkreuze und Grabsteine sind erhalten.",
+    "end_date": "~1903",
+    "heritage": "4",
+    "heritage:operator": "BLfD",
+    "heritage:website": "https://geoportal.bayern.de/denkmalatlas/",
+    "historic": "yes",
+    "name": "Alter Friedhof",
+    "ref:BLfD": "D-1-62-000-296",
+    "religion": "christian",
+    "start_date": "~C15",
+    "wikidata": "Q28062502",
+    "wikimedia_commons": "File:Alter Friedhof Pasing NW1.jpg",
+    "wikipedia": "de:Alter Friedhof (Pasing)"
+  }
+},
+{
+  "type": "way",
+  "id": 833593388,
+  "center": {
+    "lat": 48.0652489,
+    "lon": 11.5094833
+  },
+  "tags": {
+    "access": "permit",
+    "denomination": "catholic",
+    "image": "https://commons.wikimedia.org/wiki/File:Gut_Warnberg_9489.jpg#/media/File:Gut_Warnberg_9489.jpg",
+    "landuse": "cemetery",
+    "name": "Friedhof der Schwesternschaft",
+    "religion": "christian",
+    "wikidata": "Q14906750",
+    "wikipedia": "de:Gut Warnberg"
+  }
+},
+{
+  "type": "way",
+  "id": 1066028001,
+  "center": {
+    "lat": 48.1009107,
+    "lon": 11.4795233
+  },
+  "tags": {
+    "description": "Grabstätten der liberalen jüdischen Gemeine Beth Shalom mit ca. 25 Gräbern (2022).",
+    "landuse": "cemetery",
+    "name": "Neuer Jüdischer Friedhof",
+    "operator": "Beth Shalom München",
+    "religion": "jewish",
+    "wikipedia": "de:Neuer Jüdischer Friedhof (München)"
+  }
+},
+{
+  "type": "relation",
+  "id": 241562,
+  "center": {
+    "lat": 48.1715238,
+    "lon": 11.5220520
+  },
+  "tags": {
+    "TMC:cid_58:tabcd_1:Class": "Area",
+    "TMC:cid_58:tabcd_1:LCLversion": "9.00",
+    "TMC:cid_58:tabcd_1:LocationCode": "31836",
+    "addr:city": "München",
+    "addr:housenumber": "28",
+    "addr:postcode": "80637",
+    "addr:street": "Baldurstraße",
+    "landuse": "cemetery",
+    "name": "Westfriedhof",
+    "type": "multipolygon",
+    "website": "https://www.muenchen.de/leben/staedtische-friedhoefe/westfriedhof",
+    "wikidata": "Q1586434"
+  }
+},
+{
+  "type": "relation",
+  "id": 8001545,
+  "center": {
+    "lat": 48.1361929,
+    "lon": 11.4596610
+  },
+  "tags": {
+    "addr:housenumber": "1",
+    "addr:postcode": "81241",
+    "addr:street": "Lampertstraße",
+    "cemetery:capacity": "6500",
+    "description": "Die Verwaltung befindet sich am Friedhof Obermenzing, Bergsonstraße 32, 81245 München.",
+    "email": "fh-pasing-obermenzing@muenchen.de",
+    "landuse": "cemetery",
+    "name": "Friedhof Pasing",
+    "opening_hours": "Mar: 08:00-18:00; Apr-Aug: 08:00-20:00; Sep-Oct: 08:00-19:00; Nov-Feb: 08:00-17:00",
+    "operator": "Landeshauptstadt München",
+    "phone": "+49 89 89 14 65 59 21",
+    "start_date": "1903",
+    "type": "multipolygon",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-pasing/1073293/",
+    "wikidata": "Q1457397",
+    "wikimedia_commons": "File:Friedhof Pasing 2018b.jpg",
+    "wikipedia": "de:Friedhof Pasing"
+  }
+},
+{
+  "type": "relation",
+  "id": 16122909,
+  "center": {
+    "lat": 48.1479069,
+    "lon": 11.6015454
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "check_date": "2026-03-12",
+    "name": "Bogenhausener Friedhof",
+    "opening_hours": "Nov-Feb: 08:00-17:00; Mar: 08:00-18:00; Apr-Oct: 08:00-19:00",
+    "religion": "christian",
+    "type": "multipolygon",
+    "website": "https://stadt.muenchen.de/service/info/friedhof-bogenhausen/10321343/",
+    "wikidata": "Q890502",
+    "wikipedia": "de:Bogenhausener Friedhof"
+  }
+},
+{
+  "type": "relation",
+  "id": 18489170,
+  "center": {
+    "lat": 48.1214432,
+    "lon": 11.5415185
+  },
+  "tags": {
+    "amenity": "grave_yard",
+    "denomination": "catholic",
+    "designation": "alter Friedhof Sendling",
+    "name": "ehem. Friedhof Sankt Margaret",
+    "religion": "christian",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}
