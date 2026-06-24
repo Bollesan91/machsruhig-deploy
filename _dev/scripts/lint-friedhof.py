@@ -98,6 +98,8 @@ def load_records():
             continue
         tarif = {}
         for g in data.get('gebuehren', []):
+            if not isinstance(g, dict):
+                continue            # defekter Record-Eintrag darf den ganzen Lauf nicht killen
             ts, betrag = str(g.get('tarifstelle', '')).strip(), g.get('betrag')
             if ts and isinstance(betrag, (int, float)):
                 tarif[ts] = int(betrag)
@@ -111,7 +113,13 @@ def match_record(slug, recs):
     bei verschachtelter Geografie (friedhoefe/<bundesland>/<stadt>/<friedhof>/)."""
     if not slug:
         return None
-    cand = [r for r in recs if slug in (r['data'].get('deckt_friedhoefe') or [])]
+    cand = []
+    for r in recs:
+        deckt = r['data'].get('deckt_friedhoefe') or []
+        if isinstance(deckt, str):           # String statt Liste -> sonst Substring-Falschtreffer
+            deckt = [deckt]
+        if slug in deckt:
+            cand.append(r)
     return cand[0] if len(cand) == 1 else None
 
 
@@ -210,7 +218,7 @@ def main():
         # ---- F2 Provenienz sichtbar ----
         if 'class="fh-table"' in html and '€' in vis_n:
             has_validfrom = bool(re.search(r'g[üu]ltig ab', vis_n))
-            has_source = bool(re.search(r'Geb[üu]hrenordnung|Geb[üu]hren[üu]bersicht|Satzung', vis_n))
+            has_source = bool(re.search(r'(Geb[üu]hren|Entgelt)(ordnung|[üu]bersicht|satzung)|Friedhofssatzung|Satzung', vis_n))
             if not (has_validfrom and has_source):
                 fails.append((rel, 'F2', 'Gebuehren-Tabelle ohne Provenienz (gültig-ab + Gebührenordnung/Satzung sichtbar)'))
 
@@ -228,10 +236,10 @@ def main():
                 if '=' not in txt:
                     continue
                 # optionaler Multiplikations-Check: base x faktor = ergebnis
-                mul = re.search(r'(\d[\d.]*)\s*€?\s*/?\s*\w*\s*[×x]\s*(\d+)\s*=\s*(\d[\d.]*)', txt)
+                mul = re.search(r'(\d[\d.]*)\s*€?\s*/?\s*\w*\s*[×x]\s*(\d[\d.]*)\s*=\s*(\d[\d.]*)', txt)
                 rhs = parse_eur(txt.rsplit('=', 1)[1])
                 if mul:
-                    base, fak, erg = parse_eur(mul.group(1)), int(mul.group(2)), parse_eur(mul.group(3))
+                    base, fak, erg = parse_eur(mul.group(1)), parse_eur(mul.group(2)), parse_eur(mul.group(3))
                     if base is not None and erg is not None and base * fak != erg:
                         fails.append((rel, 'F1', 'Multiplikation falsch: %d × %d ≠ %d' % (base, fak, erg)))
                 if rhs is not None:
@@ -249,11 +257,11 @@ def main():
                     if not os.path.isfile(os.path.join(ROOT, p, 'index.html')):
                         fails.append((rel, 'F4', 'Breadcrumb zeigt auf fehlenden Hub: %s' % h))
 
-            # F5 Substanz-Gate
-            fee_rows = len(re.findall(r'<tbody>(.*?)</tbody>', html, re.S)
-                           and re.findall(r'<tr>', re.search(r'<tbody>(.*?)</tbody>', html, re.S).group(1)) or [])
-            facts = len(re.findall(r'<ul class="fh-facts">(.*?)</ul>', html, re.S)
-                        and re.findall(r'<li>', re.search(r'<ul class="fh-facts">(.*?)</ul>', html, re.S).group(1)) or [])
+            # F5 Substanz-Gate — ueber ALLE tbody/fh-facts-Bloecke, auch mit Klassen-Attribut
+            fee_rows = sum(len(re.findall(r'<tr[^>]*>', tb))
+                           for tb in re.findall(r'<tbody[^>]*>(.*?)</tbody>', html, re.S))
+            facts = sum(len(re.findall(r'<li[^>]*>', ul))
+                        for ul in re.findall(r'<ul class="fh-facts"[^>]*>(.*?)</ul>', html, re.S))
             if fee_rows < 3 and facts < 5:
                 fails.append((rel, 'F5', 'Substanz-Gate: nur %d Gebuehrenzeilen + %d Fakten (→ Aggregationszeile)'
                               % (fee_rows, facts)))
@@ -267,37 +275,44 @@ def main():
 
             # F9 Record-Cross-Check (Tarifstelle -> Betrag)
             rec = match_record(slug, recs)
-            tbody = re.search(r'<tbody>(.*?)</tbody>', html, re.S)
+            rec_keys = rec['tarif'] if rec else {}
             seiten_tarife = []   # (tarifstelle, betrag)
-            unlabeled = 0        # €-Zeilen OHNE Tarifstelle = nicht gegen Record pruefbar
-            if tbody:
-                for tr in re.findall(r'<tr>(.*?)</tr>', tbody.group(1), re.S):
+            unlabeled = 0        # €-Zeilen ohne gueltige Tarifstelle = nicht gegen Record pruefbar
+            for tb in re.findall(r'<tbody[^>]*>(.*?)</tbody>', html, re.S):   # ALLE tbody, auch mit Klasse
+                for tr in re.findall(r'<tr[^>]*>(.*?)</tr>', tb, re.S):       # <tr> auch mit Klasse
                     tds = re.findall(r'<td[^>]*>(.*?)</td>', tr, re.S)
                     if len(tds) < 2:
                         continue
-                    label, amount = norm_spaces(visible_text(tds[0])), norm_spaces(visible_text(tds[-1]))
-                    ts = re.findall(r'\((\d{2,4})\)', label)
-                    betrag = parse_eur(amount)
+                    label = norm_spaces(visible_text(tds[0]))
+                    # Betrag aus der Zelle, die einen €-Betrag traegt — nicht blind die letzte Spalte
+                    betrag = None
+                    for td in tds[1:]:
+                        if '€' in td:
+                            betrag = parse_eur(norm_spaces(visible_text(td)))
+                            if betrag is not None:
+                                break
                     if betrag is None:
                         continue
-                    if ts:
-                        seiten_tarife.append((ts[-1], betrag))
+                    # Tarifstelle = die Klammer-Zahl, die TATSAECHLICH im Record steht
+                    # (so kann eine Jahreszahl wie (2025) keine echte Tarifstelle verdecken)
+                    paren = re.findall(r'\((\d{2,4})\)', label)
+                    ts = next((p for p in paren if p in rec_keys), None)
+                    if ts is not None:
+                        seiten_tarife.append((ts, betrag))
                     else:
                         unlabeled += 1
             if seiten_tarife or unlabeled:
                 if not rec:
                     warns.append((rel, 'W2', 'Standalone mit Gebuehren, aber kein Traeger-Record verknuepft'))
                 else:
-                    # Schlupfloch zu: jede €-Zeile MUSS eine Tarifstelle tragen, sonst ungeprueft
+                    # Schlupfloch zu: jede €-Zeile braucht eine Tarifstelle, die IM RECORD steht
                     if unlabeled:
-                        fails.append((rel, 'F9', '%d Gebuehrenzeile(n) ohne Tarifstelle — nicht gegen Record %s pruefbar'
+                        fails.append((rel, 'F9', '%d Gebuehrenzeile(n) ohne gueltige Tarifstelle — nicht gegen Record %s pruefbar'
                                       % (unlabeled, rec['file'])))
-                    for ts, betrag in seiten_tarife:
-                        if ts in rec['tarif'] and rec['tarif'][ts] != betrag:
+                    for ts, betrag in seiten_tarife:   # ts ist garantiert ein Record-Key
+                        if rec['tarif'][ts] != betrag:
                             fails.append((rel, 'F9', 'Tarifstelle %s: Seite %d € ≠ Record %d € (%s)'
                                           % (ts, betrag, rec['tarif'][ts], rec['file'])))
-                        elif ts not in rec['tarif']:
-                            warns.append((rel, 'W2', 'Tarifstelle %s nicht im Record %s' % (ts, rec['file'])))
 
             standalone_shingles[rel] = shingles(vis_n)
 

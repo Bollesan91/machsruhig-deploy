@@ -29,6 +29,19 @@
 - **Standalone-Breadcrumb auf nicht gebauten Hub** (Lektion FRIEDHOF #3a) → Gate **F4**.
 - **Provenienz / Stand sichtbar** (gültig-ab + Quelle + „geprüft am") → Gates **F2/F6**.
 
+## Bekannte Linter-Grenzen (bewusst zurückgestellt, niedrige Wahrscheinlichkeit)
+
+Aus dem 2. Review (23.06.) — gefixt wurden M1–M6/c1/c2 + m3/m5; diese Rest-MINOR bleiben
+dokumentiert statt gefixt, weil sie die `.fh-calc`-/Tabellen-Konvention voraussetzen, die wir
+selbst generieren. Wenn eine künftige Seite sie verletzt, hier nachschlagen statt neu melden:
+- **F1**: Posten-Zeile ohne `=` (z. B. mit `:`) wird verworfen → mögliche False-FAIL. Konvention:
+  jede Posten-Zeile endet auf `= NNN €`, Summe in `<span class="sum">`.
+- **F1**: Dezimal-Komma in Beträgen (`12,50 €`) wird auf `12` gekürzt. Domäne ist ganz-Euro
+  (Record-Beträge sind int); Cent-Beträge in Rechenboxen vermeiden.
+- **F1**: mehrere Posten in EINER Zeile ohne `<br>` → nur der letzte zählt. Konvention: ein Posten je Zeile.
+- **F3**: ein Zoll-Maß `"` INNERHALB eines korrekten `„…"` (z. B. `„das 2" Rohr"`) kann MISQUOTE
+  auslösen. Selten auf Friedhofseiten; im Zweifel deutsche Quotes ohne eingebettetes ASCII-`"`.
+
 ## Offen (echte Backlogs — Status darf geprüft werden, nicht als „neu" melden)
 
 - **Aktualitäts-Monitoring / Change-Detection je Träger-Satzung** fehlt noch (PDF-Hash brüchig).

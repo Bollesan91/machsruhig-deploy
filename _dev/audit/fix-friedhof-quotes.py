@@ -15,7 +15,10 @@ import io, os, re, sys, json, glob
 OPEN, CLOSE, ASCII = '„', '“', '"'          # „  "  "
 PAT = re.compile(OPEN + '([^' + OPEN + CLOSE + ASCII + ']*?)' + ASCII)
 # Segmentiert HTML in Tags / <script> / <style> (= unantastbar) vs. sichtbaren Text.
-SEG = re.compile(r'(<script\b.*?</script>|<style\b.*?</style>|<[^>]*>)', re.S | re.I)
+# Der Tag-Zweig ist quote-bewusst: ein > INNERHALB eines Attributwerts ("a > b")
+# beendet das Tag NICHT — sonst gälte der Attribut-Rest als Text und ein „ im Attribut
+# könnte das schließende Attribut-Quote zerstören.
+SEG = re.compile(r'(<script\b.*?</script>|<style\b.*?</style>|<(?:"[^"]*"|\'[^\']*\'|[^>"\'])*>)', re.S | re.I)
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
 
