@@ -60,7 +60,9 @@ RATING_PHRASES = [
 def visible_text(html):
     t = re.sub(r'<script\b.*?</script>', ' ', html, flags=re.S | re.I)
     t = re.sub(r'<style\b.*?</style>', ' ', t, flags=re.S | re.I)
-    t = re.sub(r'<[^>]+>', ' ', t)
+    # quote-bewusst: ein > INNERHALB eines Attributwerts beendet das Tag NICHT
+    # (sonst leakt Attribut-Inhalt in den "sichtbaren" Text und loest F3/F7/F2 fehl aus)
+    t = re.sub(r'<(?:"[^"]*"|\'[^\']*\'|[^>"\'])*>', ' ', t)
     return t
 
 
@@ -68,12 +70,24 @@ def norm_spaces(s):
     return re.sub(r'[\s ]+', ' ', _html.unescape(s)).strip()
 
 
+def _eur(c):
+    """Cent -> Anzeige in € (ganzzahlig wenn moeglich, sonst mit Komma-Cent)."""
+    return ('%d' % (c // 100)) if c % 100 == 0 else ('%.2f' % (c / 100)).replace('.', ',')
+
+
 def parse_eur(s):
-    """'1.625', '2.828 €', '74' -> int. None wenn keine Zahl."""
-    m = re.search(r'\d[\d.]*', s)
+    """Geldbetrag -> ganzzahlige CENT. Bevorzugt die Zahl direkt vor € (sonst erste Zahl),
+    damit fuehrende Jahre/Fussnoten das Soll nicht verfaelschen.
+    '1.625 €'->162500, '12,50'->1250, '74'->7400. None wenn keine Zahl."""
+    m = (re.search(r'(\d[\d.]*(?:,\d{1,2})?)\s*€', s)
+         or re.search(r'(\d[\d.]*(?:,\d{1,2})?)', s))
     if not m:
         return None
-    return int(m.group(0).replace('.', ''))
+    whole, _, cents = m.group(1).partition(',')
+    val = int(whole.replace('.', '')) * 100
+    if cents:
+        val += int((cents + '00')[:2])
+    return val
 
 
 def ld_string_values(node, out):
@@ -96,8 +110,11 @@ def load_records():
             data = json.loads(io.open(fp, encoding='utf-8').read())
         except Exception:
             continue
+        if not isinstance(data, dict):
+            continue                # Record kein Objekt (z. B. Top-Level-Liste) -> kein Crash
+        geb = data.get('gebuehren', [])
         tarif = {}
-        for g in data.get('gebuehren', []):
+        for g in (geb if isinstance(geb, list) else []):
             if not isinstance(g, dict):
                 continue            # defekter Record-Eintrag darf den ganzen Lauf nicht killen
             ts, betrag = str(g.get('tarifstelle', '')).strip(), g.get('betrag')
@@ -201,18 +218,23 @@ def main():
         # An echte Gebuehren-Tabelle gebunden, NICHT an ein beilaeufiges € (sonst faellt
         # eine Hub-/Uebersichtsseite mit € im Verweistext faelschlich durch).
         has_fees = 'class="fh-table"' in html
-        m_pruef = re.search(r'gepr[üu]ft am (\d{2})\.(\d{2})\.(\d{4})', vis_n)
+        m_pruef = re.search(r'gepr(?:ü|ue|u)ft am (\d{1,2})\.(\d{1,2})\.(\d{4})', vis_n)
         if has_fees:
             if not m_pruef:
                 fails.append((rel, 'F6', '"geprüft am TT.MM.JJJJ" fehlt auf Gebuehren-Seite'))
             else:
-                d = date(int(m_pruef.group(3)), int(m_pruef.group(2)), int(m_pruef.group(1)))
-                months = (TODAY.year - d.year) * 12 + (TODAY.month - d.month)
-                if months > 18:
-                    fails.append((rel, 'F6', 'Pruefstand %s älter als 18 Monate (Verfall)' % d.isoformat()))
-                elif months > 12:
-                    warns.append((rel, 'W1', 'Pruefstand %s 12–18 Monate alt — Re-Verifikation faellig' % d.isoformat()))
-            if not re.search(r'g[üu]ltig ab \d{2}\.\d{2}\.\d{4}', vis_n):
+                try:
+                    d = date(int(m_pruef.group(3)), int(m_pruef.group(2)), int(m_pruef.group(1)))
+                except ValueError:
+                    d = None
+                    fails.append((rel, 'F6', 'ungültiges Prüf-Datum: %s' % m_pruef.group(0)))
+                if d is not None:
+                    months = (TODAY.year - d.year) * 12 + (TODAY.month - d.month)
+                    if months > 18:
+                        fails.append((rel, 'F6', 'Pruefstand %s älter als 18 Monate (Verfall)' % d.isoformat()))
+                    elif months > 12:
+                        warns.append((rel, 'W1', 'Pruefstand %s 12–18 Monate alt — Re-Verifikation faellig' % d.isoformat()))
+            if not re.search(r'g(?:ü|ue|u)ltig ab \d{1,2}\.\d{1,2}\.\d{4}', vis_n):
                 fails.append((rel, 'F6', 'Gebuehren ohne sichtbares "gültig ab TT.MM.JJJJ"'))
 
         # ---- F2 Provenienz sichtbar ----
@@ -239,14 +261,17 @@ def main():
                 mul = re.search(r'(\d[\d.]*)\s*€?\s*/?\s*\w*\s*[×x]\s*(\d[\d.]*)\s*=\s*(\d[\d.]*)', txt)
                 rhs = parse_eur(txt.rsplit('=', 1)[1])
                 if mul:
-                    base, fak, erg = parse_eur(mul.group(1)), parse_eur(mul.group(2)), parse_eur(mul.group(3))
+                    # base/erg = Geld (Cent); fak = reine Stueckzahl (Jahre/Stellen), NICHT Geld
+                    base, erg = parse_eur(mul.group(1)), parse_eur(mul.group(3))
+                    fak = int(mul.group(2).replace('.', ''))
                     if base is not None and erg is not None and base * fak != erg:
-                        fails.append((rel, 'F1', 'Multiplikation falsch: %d × %d ≠ %d' % (base, fak, erg)))
+                        fails.append((rel, 'F1', 'Multiplikation falsch: %s € × %d ≠ %s €'
+                                      % (_eur(base), fak, _eur(erg))))
                 if rhs is not None:
                     posten.append(rhs)
             if soll is not None and posten and sum(posten) != soll:
-                fails.append((rel, 'F1', 'Beispielsumme stimmt nicht: Σ%s = %d ≠ ausgewiesen %d'
-                              % (posten, sum(posten), soll)))
+                fails.append((rel, 'F1', 'Beispielsumme stimmt nicht: %s € ≠ ausgewiesen %s €'
+                              % (_eur(sum(posten)), _eur(soll))))
 
         # ===== nur Standalone-Friedhofseiten =====
         if is_standalone:
@@ -310,9 +335,9 @@ def main():
                         fails.append((rel, 'F9', '%d Gebuehrenzeile(n) ohne gueltige Tarifstelle — nicht gegen Record %s pruefbar'
                                       % (unlabeled, rec['file'])))
                     for ts, betrag in seiten_tarife:   # ts ist garantiert ein Record-Key
-                        if rec['tarif'][ts] != betrag:
-                            fails.append((rel, 'F9', 'Tarifstelle %s: Seite %d € ≠ Record %d € (%s)'
-                                          % (ts, betrag, rec['tarif'][ts], rec['file'])))
+                        if rec['tarif'][ts] * 100 != betrag:   # betrag in Cent, Record in ganz-Euro
+                            fails.append((rel, 'F9', 'Tarifstelle %s: Seite %s € ≠ Record %d € (%s)'
+                                          % (ts, _eur(betrag), rec['tarif'][ts], rec['file'])))
 
             standalone_shingles[rel] = shingles(vis_n)
 

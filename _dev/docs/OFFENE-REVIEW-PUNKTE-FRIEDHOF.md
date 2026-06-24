@@ -31,16 +31,20 @@
 
 ## Bekannte Linter-Grenzen (bewusst zurückgestellt, niedrige Wahrscheinlichkeit)
 
-Aus dem 2. Review (23.06.) — gefixt wurden M1–M6/c1/c2 + m3/m5; diese Rest-MINOR bleiben
-dokumentiert statt gefixt, weil sie die `.fh-calc`-/Tabellen-Konvention voraussetzen, die wir
-selbst generieren. Wenn eine künftige Seite sie verletzt, hier nachschlagen statt neu melden:
+Aus dem 2.+3. Review (23.06.) — gefixt: M1–M7/c1/c2/m3/m5 (Welle 2) sowie M2/M3/M6/m9/m10/m12
+(Welle 3: Datums-/Record-Crash, Cent-genaue Beträge, `>`-Attribut-Leak, einstellige Daten,
+Soll-Zahl vor €). Diese Rest-MINOR bleiben dokumentiert statt gefixt (niedrige Wahrscheinlichkeit,
+Konvention-gebunden) — wenn eine künftige Seite sie verletzt, hier nachschlagen statt neu melden:
 - **F1**: Posten-Zeile ohne `=` (z. B. mit `:`) wird verworfen → mögliche False-FAIL. Konvention:
   jede Posten-Zeile endet auf `= NNN €`, Summe in `<span class="sum">`.
-- **F1**: Dezimal-Komma in Beträgen (`12,50 €`) wird auf `12` gekürzt. Domäne ist ganz-Euro
-  (Record-Beträge sind int); Cent-Beträge in Rechenboxen vermeiden.
 - **F1**: mehrere Posten in EINER Zeile ohne `<br>` → nur der letzte zählt. Konvention: ein Posten je Zeile.
+- **F1**: `.fh-calc`-Box ganz ohne `<span class="sum">` → Arithmetik nicht prüfbar (übersprungen).
 - **F3**: ein Zoll-Maß `"` INNERHALB eines korrekten `„…"` (z. B. `„das 2" Rohr"`) kann MISQUOTE
   auslösen. Selten auf Friedhofseiten; im Zweifel deutsche Quotes ohne eingebettetes ASCII-`"`.
+- **F7**: Wertungs-Phrasen sind Substring-Treffer — eine Seite, die eine Phrase ausdrücklich
+  verneint/zitiert („wir bewerten nicht: …"), würde fälschlich anschlagen. Auf Friedhofseiten unüblich.
+- **F9**: mehrere passende Träger-Records für einen Slug → keine Prüfung (nur W2). Slug-Konvention
+  ist `…/<friedhof>/index.html`; Flat-File `…/<friedhof>.html` würde nicht matchen.
 
 ## Offen (echte Backlogs — Status darf geprüft werden, nicht als „neu" melden)
 
