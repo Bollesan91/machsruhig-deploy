@@ -62,6 +62,7 @@
 - **Arithmetik-Cross-Check (Recht/Konsistenz):** jede Beispielsumme = Σ ihrer belegten Posten (assert). Ruhezeit×Jahresgebühr + Beisetzung + Trauerhalle = ausgewiesene Spanne.
 - **Vokabular/Enum + Cross-Field:** Enums geprüft; Ruhezeit ∈ BL-gültige Werte; `bundesland`↔`ort`↔`geo` konsistent; Friedhof→Träger-Referenz existiert.
 - **Struktur:** identische Abschnittsfolge/Spalten/Disclaimer (generiert); JSON-LD `Cemetery` valide (ASCII-Quotes); Links + Trailing-Slash kanonisch; Sitemap nur Standalone-Seiten.
+- **CTA (dezent, Pflicht):** jede Friedhofseite trägt nach dem Gebühren-Abschnitt einen zurückhaltenden CTA-Block → **Kostenrechner** (primär) + **Angebotsprüfer** (sekundär; speist die Echtangebot-Datenschicht B). Ton hilfreich, nicht werblich (YMYL/Trauer).
 
 > Was der Linter fängt, ist kein Reviewer-Thema. Asserts VOR dem Write.
 
