@@ -63,6 +63,8 @@
 - **Vokabular/Enum + Cross-Field:** Enums geprüft; Ruhezeit ∈ BL-gültige Werte; `bundesland`↔`ort`↔`geo` konsistent; Friedhof→Träger-Referenz existiert.
 - **Struktur:** identische Abschnittsfolge/Spalten/Disclaimer (generiert); JSON-LD `Cemetery` valide (ASCII-Quotes); Links + Trailing-Slash kanonisch; Sitemap nur Standalone-Seiten.
 - **CTA (dezent, Pflicht):** jede Friedhofseite trägt nach dem Gebühren-Abschnitt einen zurückhaltenden CTA-Block → **Kostenrechner** (primär) + **Angebotsprüfer** (sekundär; speist die Echtangebot-Datenschicht B). Ton hilfreich, nicht werblich (YMYL/Trauer).
+- **Primärquellen sichtbar (Pflicht):** jede Friedhofseite verlinkt ihre Primärquellen offen in einem `mr-sources`-Block — **Gebührensatzung/-übersicht (amtlich)** + **offizielle Träger-Seite**. Sekundärquellen (Wikipedia) nur ergänzend kennzeichnen, nie alleiniger Beleg. Macht die Seite prüfbar (= unser Transparenz-Kern).
+- **Tab-Review Pflicht:** kein Friedhof-Standalone geht live ohne target-blinden claude.ai-Datensatz-Review (Stufe 2) — der web-recherchierende Reviewer fängt Staleness/Präzisionsfehler (veraltete Buslinien, strittige Zahlen, falsche Exklusivität), die Linter + Selbstprüfung nicht sehen.
 
 > Was der Linter fängt, ist kein Reviewer-Thema. Asserts VOR dem Write.
 
