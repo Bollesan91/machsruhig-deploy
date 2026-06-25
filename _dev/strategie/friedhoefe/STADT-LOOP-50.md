@@ -2,7 +2,29 @@
 
 ## 🎯 RE-SCORE-PASS (Bolle 25.06., NEU): Gate = Score ≥ 90 pro Stadt. Über ALLE Städte, 5 Tabs einzeln, Score je Stadt PFLICHT festhalten, fixen bis ≥90.
 - ⚠️ **CACHE-BUST PFLICHT:** claude.ai-Fetch cached früher geholte Seiten → Re-Review MUSS `?v=2` (o.ä. Query) an die URL hängen, sonst liest der Reviewer veralteten Cache! (Welle 1: Berlin/Hamburg 64 waren reine Cache-Artefakte — Live-Inhalt curl-verifiziert längst gefixt.)
-- SCORES (Re-Score, cache-bust): Welle 1 echte Fixes: München 84→(„eines der frühesten" raus), Köln 82→(Geusen aus städt. Liste), Frankfurt 83→(36 statt „37", aktiver Neuer Jüd. Friedhof Eckenheimer Landstr. ergänzt). commit f0f6d99. Berlin/Hamburg = Cache → mit ?v=2 neu scoren. RE-REVIEW mit ?v=2 ausstehend.
+### SCORE-TABELLE (Re-Score, cache-bust ?v=N). „Fix" = Funde behoben+gepusht, Confirm-Score im Schluss-Durchlauf.
+| Stadt | Score (vor Fix) | MAJOR-Fund | Fix |
+|---|---|---|---|
+| Berlin | 88 | – (MINOR-Lücke) | Friedhofspflicht-Hinweis ergänzt |
+| Hamburg | 78 | „keinen Friedhofszwang" FALSCH | korr. + Friedhofspflicht-Hinweis |
+| München | 89 | – | Träger Eigenbetrieb FBM (statt Gesundheitsref.) |
+| Köln | 82 | Geusenfriedhof (ev.) als städt. | aus städt. Liste entfernt |
+| Frankfurt | 83 | – (2 MINOR) | „37"→36; aktiver Neuer Jüd. Friedhof Eckenheimer Landstr. |
+| Stuttgart | 74 | „41 städt." falsch → 42 | 41→42 (6 Stellen) |
+| Düsseldorf | 89 | – (Golzheimer geschl.) | Golzheimer „seit 1897 geschlossen" |
+| Leipzig | 84 | Nordfriedhof „groß" falsch (7,3 ha) | „kleinerer, ~7 ha" |
+| Dortmund | 88 | – (jüd. aktiv fehlte) | aktiver jüd. Hauptfriedhof Rennweg ergänzt; Ostenfr./Wickede historisch; Träger korr. |
+| Essen | 87 | – (3 UNSICHER/MINOR) | Parkfriedhof Huttrop 1928/29 angelegt+1931 belegt; „Deutschlands"→Ruhrgebiet; Segeroth „nicht mehr regulär belegt" |
+| Bremen | 92 | – | PASS, kein Fix |
+| Dresden | 88 | – (Sargpflicht YMYL) | Sargpflicht-Novelle „noch nicht in Kraft"; „rund 58"→58; Alter Jüd. Fr. „geschlossen" |
+| Hannover | 80 | Strangriede seit 1924 geschl. als aktiv | historisch markiert; Liberale Jüd. Gem. Lahe ergänzt; „(einzige)" raus |
+| Nürnberg | 80 | „frei wählen/allen offen" falsch | Stadtteilfriedhöfe nur Einzugsbereich; Süd+West offen |
+| Duisburg | 70 | jüd. Sternbuschweg geschl. als aktiv + falscher Träger | aktiver jüd. Waldfriedhof (2018) ergänzt; Sternbuschweg-Feld geschl. |
+| Bochum | 64 | Blumenfriedhof aktiv falsch „geschl." + jüd. neu fehlt | Blumenfr. aktiv (nach Krieg geöffnet); neuer jüd. Fr. Hauptfriedhof Altenbochum ergänzt |
+| Wuppertal | 80 | Gebührensatzung-Bezug falsch (galt angebl. f. kirchl.) | auf Ronsdorf bezogen; Schöller „nie belegt" raus; kirchl. allen offen |
+- MUSTER (Re-Score-Fundtypen): (a) geschlossene Friedhöfe ohne „geschlossen"-Markierung (häufigster MAJOR, bes. jüd. Friedhöfe + NRW); (b) „städt. Friedhöfe allen offen/frei wählen"-Boilerplate falsch bei Einzugsbereich-/Neubelegungs-Sperren (Nürnberg/Bochum); (c) veraltete Zahlen/Träger; (d) fehlende Friedhofspflicht.
+- commits: f0f6d99/fe1baed/8ba3342 (Welle1-2), b66980d (Do/Es), 1f05b0e (Dd/H/N), b2ca776 (Du/Bo/Wu). Schluss-Confirm aller Fixes mit frischem ?v ausstehend.
+- OFFEN Re-Score (ab Welle 6): Bielefeld, Bonn, Münster, Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Chemnitz, Kiel, Halle, Magdeburg, Freiburg, Krefeld, Mainz, Lübeck, Oberhausen, Erfurt, Rostock, Kassel, Hagen, Hamm, Saarbrücken, Potsdam, Ludwigshafen, Mülheim, Oldenburg, Osnabrück, Leverkusen, Heidelberg + 2 Pillars + 3 Standalones. 3-breit Tabs 693/700/701.
 
 
 > Auftrag: Friedhof-Übersicht je Stadt, Friedl V4, eigener claude.ai-Tab-Reviewer PRO Stadt, Commits gesammelt, bis 3 Städte parallel (einzeln gebaut + reviewt). Keine Rückfragen. Stopp: alle 50 ODER Bolle schreibt.
