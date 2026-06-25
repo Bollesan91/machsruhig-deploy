@@ -98,7 +98,17 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Leverkusen MINOR:** Träger-Syntax — „darunter Reuschenberg" klar den 7 STÄDTISCHEN zugeordnet (war nahe „vier kath."). 7/4-Logik + Verwaltung Nobelstr. 91 bestätigt korrekt.
   - Linter grün (191/60).
 - GATE-BILANZ: 19 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 21. (⚠️ OFFEN: Saarbrücken + Ludwigshafen konfessionelle-Boilerplate nachprüfen.)
-- OFFEN SCHLUSS-Welle 18: Heidelberg + Stadtgottesacker-Standalone + Saarbrücken/Ludwigshafen-Nachprüfung; dann ✅ FINAL-GATE KOMPLETT → Bolle-Freigabe.
+- ✅ SCHLUSS-WELLE 18 (Heidelberg + Stadtgottesacker + S/LU-Nachprüfung):
+  - **Stadtgottesacker: SAUBER** (alle 5 Gräber + 94 Schwibbögen/1557/Nickel Hoffmann/Camposanto/kommunal bestätigt, kein MAJOR).
+  - **Saarbrücken + Ludwigshafen: bestätigt Wiesbaden-Typ** (Reviewer-Urteil NEIN: alles städtisch, jüd. Ausnahme, KEINE ev./kath. Kirchenfriedhöfe) → konfessionelle-Bullet entfernt.
+  - **Heidelberg MAJOR (Träger):** 17 Friedhöfe enthalten schon die 2 jüd. (Kultusgemeinde-Eigentum); ev./kath. Kirchenfriedhöfe NICHT belegt (heidelberg.de) → konfessionelle-Bullet entfernt; jüd. Friedhof am Bergfriedhof als eigenständig (1876, Jüd. Kultusgemeinde) präzisiert. (MINOR Ehrenfriedhof/Handschuhsheim/Kirchheim-Vollständigkeit gelassen, kuratiert.)
+  - Linter grün (191/60).
+
+## ✅✅ FINAL-RELEASE-GATE KOMPLETT (25.06.) — ALLE 50 Stadt-Übersichten + 2 Pillars + 3 Standalones durch (18 Wellen, je target-blind/frischer Tab/Fehler-Pflicht, jedes Finding selbst primärverifiziert, deployt, Linter durchgehend grün).
+- GATE-BILANZ: **~21 Fakten-MAJOR + 3 Vollständigkeits-MAJOR = ~24 MAJOR-Funde** + ~25 MINOR-Quickwins, alle gefixt + live.
+- Muster-Erkenntnis „Konfessionelle (ev./kath.)"-Boilerplate: FALSCH in Wiesbaden/Mainz/Saarbrücken/Ludwigshafen/Heidelberg (vollkommunal+jüd., zentraler Friedhof ersetzte Kirchhöfe) → entfernt; KORREKT in Aachen/Münster/Augsburg/Bonn/Braunschweig/Köln u.a. → belassen.
+- Mit diesem Push (ohne skip-netlify) gehen auch die 3 Standalones live (vorher skip-netlify) → tote Live-Links behoben.
+- → BEREIT FÜR BOLLE-FREIGABE. (Loop gestoppt; Freigabe = Bolle-Entscheidung.)
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
