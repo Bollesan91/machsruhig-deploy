@@ -100,7 +100,8 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 47 Oldenburg — REVIEWT (Score 74) + 3 Fixes (primär verifiziert): „mehrere"→genau ZWEI städt. (Bümmerstede 16ha + Waldfriedhof Ofenerdiek 10ha ergänzt); islam.+jesid.+buddhist. Grabfeld Bümmerstede ergänzt. jüd. Dedestraße+neu 2000 KORREKT. lint grün.
 - [x] 48 Osnabrück — REVIEWT (Score 80) + 2 Fixes: „11 kommunale"→13 (11 aktive + 2 historische); islam. Grabfeld Friedhof Nahne seit 2008 + Waschraum 2017 ergänzt. Heger 1925/27ha/Hasefriedhof 1808/jüd. KORREKT. lint grün (F3 gefixt).
 - [x] 49 Leverkusen — REVIEWT (Score 38!→ 4 echte Strukturfehler, alle primär gefixt): 9→7 städt. (Birkenberg ergänzt); 2→4 kath. (Rheindorf+Steinbüchel); Verwaltungssitz Manfort→Nobelstr. 91; jüd. Friedhof Opladen (1833-1939, seit 2016 wieder offen) ergänzt. islam. Reuschenberg KORREKT. lint grün. ← bestes Beispiel warum der Review Pflicht ist.
-- Nächste: 50 Heidelberg (+ Standalones + Muslim-Pass Altstädte).
+- [x] 50 Heidelberg — REVIEWT (Score 88, KEIN harter Fehler) + Fix: islam. Grabfeld Friedhof Pfaffengrund (Diebsweg, 1998, einziges muslim. Grabfeld HD, Waschraum, 2015/16 erweitert) ergänzt — heidelberg.de verifiziert. Bergfriedhof 1842/44/14,4ha/Erinnerungsgarten der Kulturen 2018/jüd. 2 KORREKT. lint grün. ✅ TOP-50 KOMPLETT (32–50 frisch + 1–31 Altbestand + 2 Pillars).
+- DANACH: Standalones (Alter Friedhof Bielefeld, jüd. Schwarzrheindorf Bonn) + Muslim-Pass Altstädte + ⛔ FINAL-RELEASE-GATE-Welle (s.o.).
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
