@@ -43,7 +43,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Bochum (sauber):** islam 1995/2025/168 + jüd. Wasserstr. 1917/1918 bestätigt; nur MINOR Klarheit → kein Eingriff.
   - Linter grün (191/60).
 - GATE-BILANZ bisher: 6 MAJOR gefunden+gefixt (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger-Abkommen, Nürnberg-Trägerschaft) + ~16 MINOR-Quickwins. Alle selbst primär verifiziert, deployt, Linter durchgehend grün.
-- OFFEN Welle 7+: Wiesbaden/Mannheim/Bonn/Bielefeld/Wuppertal/Münster/Karlsruhe/Augsburg/Mönchengladbach/Gelsenkirchen/Aachen/Braunschweig/Kiel/Chemnitz/Halle (Welle-5-9, schon brutal) + 32–50 (19 frisch gebaut) + Stadtgottesacker-Standalone (schon reviewt); dann Bolle-Freigabe.
+- ✅ WELLE 7 (Wiesbaden/Mannheim/Karlsruhe): 1 MAJOR (Wiesbaden), Mannheim+Karlsruhe sauber.
+  - **Wiesbaden MAJOR:** „Konfessionelle Friedhöfe (ev./kath.) — Kirchenfriedhöfe in Gemeinde-Trägerschaft" ERFUNDEN; Stadt Wiesbaden: städt. Friedhöfe konfessionsoffen, einziger nicht-kommunaler = Russisch-orthodoxer Friedhof am Neroberg (1856, Russisch-Orthodoxer Fonds e.V., Grab Jawlensky). Bullet+Lead+Handlungsempfehlung ersetzt. ⚠️ generische „Konfessionelle (ev./kath.)"-Boilerplate ggf. auf weiteren Seiten falsch — pro Stadt prüfen.
+  - **Mannheim (sauber):** 10 städt./Eigenbetrieb Friedhöfe Mannheim/jüd. neben Hauptfriedhof bestätigt; nur UNSICHER (Stadtteil Wohlgelegen vs Neckarstadt-Ost) + islam-Präzisierung → kein Eingriff.
+  - **Karlsruhe (sauber):** kein MAJOR; UNSICHER (jüd. 1873, „rund 28") + editorial (jüd. nur im System-Block) → kein Eingriff (Auswahl kuratiert).
+  - Linter grün (191/60).
+- GATE-BILANZ: 7 MAJOR (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger, Nürnberg-Träger, Wiesbaden-konfessionell) + ~17 MINOR. Alle selbst primär verifiziert, deployt.
+- OFFEN Welle 8+: Bonn/Bielefeld(Stadt)/Wuppertal/Münster/Augsburg/Mönchengladbach/Gelsenkirchen/Aachen/Braunschweig/Kiel/Chemnitz/Halle (Welle-5-9) + 32–50 (19) + Stadtgottesacker-Standalone; dann Bolle-Freigabe. ACHTUNG: „Konfessionelle (ev./kath.)"-Boilerplate je Stadt gegenprüfen (Wiesbaden-Lehre).
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
