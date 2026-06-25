@@ -81,7 +81,9 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 37 Oberhausen — REVIEWT (Score 78) + 3 Fixes selbst primär verifiziert: griech.-orthod. Grabfeld liegt am WESTFRIEDHOF (Lirich), NICHT Nordfriedhof (muslim. Grabfeld korrekt am Nordfriedhof); Westfriedhof (35ha, größter, multikonf.) als Card ergänzt; Holten „letzte Beisetzung 1924" entfernt (Quellenkonflikt 1924/1931). Träger SBO/5/Namen/Satzung 2026 KORREKT. lint grün.
 - [x] 38 Erfurt — REVIEWT (Score 74) + 4 Fixes (selbst primär verifiziert): Alter Cyriakstr.-Träger = Stadt Erfurt/Gedenkfläche (nicht Landesgemeinde); **Neuer Jüd. Friedhof 1878 = einziger aktiver Thüringens ergänzt**; islam. Grabfeld Hauptfriedhof seit 2000 ergänzt; „~70"→„zahlreiche" Steine (umstritten). Hauptfriedhof 57ha/53 Grabfelder/25 Ortsteil + UNESCO 2023 KORREKT. lint grün.
 - [x] 39 Rostock — REVIEWT + 3 Fixes: Reviewer-„nur 3 Friedhöfe" WIDERLEGT (rathaus-Liste = 4: Neuer Friedhof, Westfriedhof, Neuer Friedhof Warnemünde, RuheForst — meine 4 bleibt); **aktiver jüd. Friedhof Westfriedhof 1996/2018 + muslim. Gräberfeld Westfriedhof ergänzt** (Lindenpark nur historisch). Neuer Friedhof 44ha/1912 KORREKT. lint grün.
-- Nächste 2: 40 Kassel + 41 Hagen.
+- [x] 40 Kassel — REVIEWT (Score 84, SONDERFALL bestätigt, KEIN harter Fehler!) + Fix: islam. Grabfeld Westfriedhof (Heinrich-Schütz-Allee, seit 1986, nach Mekka, Waschraum, ~570 Bestattete) ergänzt. Keine kommunalen Friedhöfe/Ev. Stadtkirchenkreis/Hauptfriedhof Tannenheckerweg 40ha/jüd. Bettenhausen KORREKT. lint grün.
+- [x] 41 Hagen — REVIEWT (Score 80) + 3 Fixes (primär verifiziert): „älterer jüd. Friedhof Delstern" FALSCH→Böhmerstraße (ab 1820, 1966 aufgelassen→Umbettung Eilpe); Waldfriedhof Loxbaum (flächengrößter, 1976) ergänzt; jüd. Elsey/Hohenlimburg ergänzt. WBH/10/Delstern 10,7ha/islam. Vorhalle+Waschhaus/jüd. Eilpe 1920 KORREKT. lint grün.
+- Nächste 2: 42 Potsdam + 43 Saarbrücken.
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
