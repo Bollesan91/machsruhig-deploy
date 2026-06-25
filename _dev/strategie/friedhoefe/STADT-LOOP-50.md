@@ -22,6 +22,15 @@
 | Duisburg | 70 | jüd. Sternbuschweg geschl. als aktiv + falscher Träger | aktiver jüd. Waldfriedhof (2018) ergänzt; Sternbuschweg-Feld geschl. |
 | Bochum | 64 | Blumenfriedhof aktiv falsch „geschl." + jüd. neu fehlt | Blumenfr. aktiv (nach Krieg geöffnet); neuer jüd. Fr. Hauptfriedhof Altenbochum ergänzt |
 | Wuppertal | 80 | Gebührensatzung-Bezug falsch (galt angebl. f. kirchl.) | auf Ronsdorf bezogen; Schöller „nie belegt" raus; kirchl. allen offen |
+| Bielefeld | 89 | – (3 MINOR) | Neubelegungssperre-Hinweis; jüd. neben (nicht am) Johannisfriedhof |
+| Bonn | 78 | Schwarzrheindorf geschl. als aktiv + falscher Träger | geschlossen+Obhut Stadt; Römerstr.=Synagogengemeinde |
+| Münster | 70 | „frei wählen" falsch (nur Lauheide offen) | Stadtteilfr. bezirksgebunden; Einsteinstr. seit 2002 geschl.; Hohe Ward=Stadtteilfr. |
+| Mannheim | 88 | – (2 MINOR) | „allen offen"→Mannheimer Einwohner; Stadtrecht-Ziffer raus |
+| Karlsruhe | 90 | – (Quickwin) | orthodox jüd. ruhend vs. liberal aktiv (1897) |
+| Augsburg | 70 | Kriegshaber geschl. als aktiv + neuer jüd. fehlt | Neuer Ostfriedhof (2019) ergänzt; Kriegshaber Gedenkort; Hochfeld voll |
+| Wiesbaden | 88 | – (2 MINOR) | russ-orth. Träger=Gemeinde; Terra Levis ergänzt |
+| Aachen | 78 | aktiver jüd. Hüls (2007) fehlt + Träger pauschal | Hüls ergänzt; Lütticher belegt seit 1828; Ostfriedhof nur Urnen |
+| Freiburg | 72 | neuer jüd. St. Georgen fehlt + Alter Friedhof als aktiv | St. Georgen ergänzt; Alter Friedhof=Gedenkort |
 - MUSTER (Re-Score-Fundtypen): (a) geschlossene Friedhöfe ohne „geschlossen"-Markierung (häufigster MAJOR, bes. jüd. Friedhöfe + NRW); (b) „städt. Friedhöfe allen offen/frei wählen"-Boilerplate falsch bei Einzugsbereich-/Neubelegungs-Sperren (Nürnberg/Bochum); (c) veraltete Zahlen/Träger; (d) fehlende Friedhofspflicht.
 - commits: f0f6d99/fe1baed/8ba3342 (Welle1-2), b66980d (Do/Es), 1f05b0e (Dd/H/N), b2ca776 (Du/Bo/Wu). Schluss-Confirm aller Fixes mit frischem ?v ausstehend.
 - OFFEN Re-Score (ab Welle 6): Bielefeld, Bonn, Münster, Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Chemnitz, Kiel, Halle, Magdeburg, Freiburg, Krefeld, Mainz, Lübeck, Oberhausen, Erfurt, Rostock, Kassel, Hagen, Hamm, Saarbrücken, Potsdam, Ludwigshafen, Mülheim, Oldenburg, Osnabrück, Leverkusen, Heidelberg + 2 Pillars + 3 Standalones. 3-breit Tabs 693/700/701.
