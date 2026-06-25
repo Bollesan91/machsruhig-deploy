@@ -25,9 +25,10 @@
 - [x] 18 Bielefeld — reviewt parallel (Brackwede ist kirchlich→Schildesche MAJOR gefixt)
 - [x] 19 Bonn — reviewt parallel (Alter Friedhof 1715 statt 1787 MAJOR gefixt)
 - NEU: 3-Tab-Parallel-Review funktioniert! navigate akzeptiert tabId → 3 Reviews gleichzeitig. Ausleser: Block mit Stadt-Term+VERDIKT-Keyword (kleinster), NICHT ^N:-Regex.
-- [ ] 20 Münster
-- [ ] (21-50 wie Top-50-Liste oben: Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Kiel, Chemnitz, Halle, Magdeburg, Freiburg, Krefeld, Mainz, Lübeck, Oberhausen, Erfurt, Rostock, Kassel, Hagen, Potsdam, Saarbrücken, Hamm, Ludwigshafen, Mülheim a.d.R., Oldenburg, Osnabrück, Leverkusen, Heidelberg)
-- [ ] 20 Münster
+- [x] 20 Münster — reviewt parallel (2 MAJOR: kein „Zentralfriedhof" + Hörster aufgelassen → 6 echte Namen: Lauheide/Wolbeck/Angelmodde/Hohe Ward/Albachten/Nienberge)
+- [x] 21 Mannheim — reviewt parallel (0 MAJOR; Käfertal Nordosten MINOR)
+- [x] 22 Karlsruhe — reviewt parallel (Krematorium 1903 NICHT „früheste" MAJOR gefixt; Stadtteilfriedhof-Zahl präzisiert: FBA 11, gesamt ~28)
+- [ ] 23 Augsburg · 24 Wiesbaden · 25 Mönchengladbach · 26 Gelsenkirchen · 27 Aachen · 28 Braunschweig · 29 Kiel · 30 Chemnitz · 31 Halle · 32 Magdeburg · 33 Freiburg · 34 Krefeld · 35 Mainz · 36 Lübeck · 37 Oberhausen · 38 Erfurt · 39 Rostock · 40 Kassel · 41 Hagen · 42 Potsdam · 43 Saarbrücken · 44 Hamm · 45 Ludwigshafen · 46 Mülheim a.d.R. · 47 Oldenburg · 48 Osnabrück · 49 Leverkusen · 50 Heidelberg
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
