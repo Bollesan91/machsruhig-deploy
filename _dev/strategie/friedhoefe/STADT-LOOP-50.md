@@ -63,6 +63,7 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 30 Chemnitz — reviewt parallel (Nikolaifriedhof ist kirchlich/ev. MAJOR umsortiert; Krematorium am Urnenhain)
 - [x] 31 Halle — reviewt parallel (0 Fix; 14 kommunal, Gertraudenfriedhof 37ha, Stadtgottesacker Renaissance 1557)
 - [ ] 32 Magdeburg · 33 Freiburg · 34 Krefeld · 35 Mainz · 36 Lübeck · 37 Oberhausen · 38 Erfurt · 39 Rostock · 40 Kassel · 41 Hagen · 42 Potsdam · 43 Saarbrücken · 44 Hamm · 45 Ludwigshafen · 46 Mülheim a.d.R. · 47 Oldenburg · 48 Osnabrück · 49 Leverkusen · 50 Heidelberg
+  - 32 Magdeburg STUFE-0 SCHON RECHERCHIERT (24.06., primär): 16 städtische Friedhöfe, Träger = Eigenbetrieb Stadtgarten und Friedhöfe Magdeburg (LH Magdeburg), EINE gemeinsame Friedhofsgebührensatzung; Westfriedhof = Hauptfriedhof + zentrale Friedhofsverwaltung (Kapelle), dazu Südfriedhof; jüdisch: Israelitischer Friedhof Magdeburg, gegründet 1816 (Fermersleber Weg/Sudenburger Feldmark), ~2.300 Gräber/15.500 m², einer der größten Ostdeutschlands außer Berlin, klassizist. Grabmale, Träger Synagogengemeinde zu Magdeburg. → NÄCHSTER TICK: Übersicht bauen (Köln-Template), jüd. benannt, lint, eigener brutal+Score-Tab-Review.
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
