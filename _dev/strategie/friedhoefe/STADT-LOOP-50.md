@@ -14,7 +14,10 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] Münster (Score 86) — Amtsname „Umwelt und" gefixt; Zentralfriedhof (kirchl.) + jüd. Einsteinstr./Hohe-Ward ergänzt
 - [x] Karlsruhe (Score 80→fix) — „eingeweiht 1874"→eröffnet 1874/eingeweiht 1876; Kremat. 1903/04; jüd. orthodox+liberal (1873) ergänzt
 - [x] Augsburg (Score 80→fix) — kirchl. Träger erweitert (3); jüd. Haunstetter Str. 1867 + Kriegshaber ergänzt
-- [ ] Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Kiel, Chemnitz, Halle — brutal nachprüfen offen (MIT Score)
+- [x] Mönchengladbach (85) — jüd. Friedhof Rheydt/Eifelstr. ergänzt
+- [x] Gelsenkirchen (84) — jüd. Friedhof Wanner Str. 1874 ergänzt
+- [x] Aachen (77) — „28"→„rund 28" (operativ 27); jüd. Friedhof Lütticher Str. 1822 ergänzt
+- [ ] Braunschweig, Kiel, Chemnitz, Halle — brutal nachprüfen offen (MIT Score)
 - SYSTEMATISCHE LÜCKE entdeckt: ALLE Übersichten hatten generische „Jüdische Friedhöfe"-Zeile OHNE Namen → bei jeder Stadt die konkreten jüd. (+ wichtigen kirchl.) Friedhöfe nachtragen. Gilt evtl. auch Welle 1–4 (mit Bolle klären, nicht eigenmächtig ausweiten).
 - STANDALONE-Kandidaten (vergessene wichtige Friedhöfe → eigene Seite + Review, Bolle 25.06.): Stadtgottesacker Halle (Renaissance-Denkmal) ★, Alter Friedhof Bielefeld (1808), jüd. Friedhof Schwarzrheindorf Bonn (ältester, 1623)
 - (Essen war Welle 2/sequenziell, bonus-brutal geprüft: hielt stand)
