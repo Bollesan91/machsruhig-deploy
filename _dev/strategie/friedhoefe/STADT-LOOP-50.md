@@ -26,7 +26,12 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - Köln: KEIN MAJOR (Melaten 1810/Geusen 1576/Westfriedhof 1968/Lehmbacher Weg 1972 bestätigt); nur Gebührensatzungs-Datum UNSICHER (belegt-vertretbar, kein Fix). HH „rund 74" als OSM gelabelt (vertretbar). Berlin-jüdisch nennt Weißensee+Columbiadamm explizit (sauber).
   - Linter grün (191/60).
 - ✅ WELLE 3 (Stuttgart/Düsseldorf/Leipzig/Dortmund): KEIN MAJOR (Originale solide; Düsseldorf bestätigt W1-Itter-Fix; Leipzig Score 88; Dortmund „erstaunlich sauber"). 2 Quickwins gefixt: Dortmund „Ostfriedhof"→„Ostenfriedhof" (Konsistenz, = derselbe Friedhof); Stuttgart jüd. Friedhof Steinhaldenfeld ergänzt (Vollständigkeit). Stuttgart „41 städt." als KORREKT bestätigt (nicht 42). Übrige Punkte UNSICHER/belegt → kein Eingriff. Linter grün (191/60).
-- OFFEN Welle 4+: Essen/Bremen/Dresden/Hannover (restliche Originale), dann 14–50 + 2 Pillars; dann Bolle-Freigabe.
+- ✅ WELLE 4 (Essen/Bremen/Dresden; Hannover verschoben wg. Tab-815-Defekt): 1 MAJOR + 3 MINOR, je primär verifiziert + gefixt + live:
+  - **Essen MAJOR (YMYL):** jüd. Friedhof Segeroth als operativ dargestellt — ist aber GESCHLOSSEN (seit 1940ern, denkmalgeschützt); aktiv = Nachfolgefriedhof Parkfriedhof Huttrop (1931, bis heute belegt) → ergänzt + Segeroth als historisch gekennzeichnet. Essen Parkfriedhof „einer der größten"→„mit ~40 ha der größte".
+  - **Bremen MINOR:** 2. aktiver jüd. Friedhof (am Riensberger Friedhof, eingeweiht 2008) ergänzt; „13 städt." als korrekt bestätigt. Score 90.
+  - **Dresden MINOR:** „Friedhof in staatlicher Trägerschaft" im jüd.-Bullet klargestellt = Sowjetischer Garnisonsfriedhof. **Sachsen-Sargpflicht-Hedge BESTÄTIGT korrekt** (Novelle erst 24.03.2026 zur Anhörung, nicht in Kraft); 4 kommunale + jüd. 1751/1867 + islam korrekt.
+  - Linter grün (191/60).
+- OFFEN Welle 5+: Hannover (zuerst, gesunder Tab) + Städte 14–50 (Welle 5–9 wurden in REMEDIATION schon brutal geprüft → Bestätigungspass) + 2 Pillars (Überführung/Islam); dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
