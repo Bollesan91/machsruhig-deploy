@@ -4,6 +4,17 @@
 > Muster je Stadt: Stufe0 WebSearch (offizielle Stadt-Domain: Anzahl städt. Friedhöfe + EINE Gebührensatzung + Träger-Amt + 2 bedeutende) → build Übersicht (Köln-Template) → lint-site+lint-friedhof 0 FAIL → Tab-Review (KOMPAKT-Verdikt, volles Lesen) → Stufe3-Fixes → sammeln → Batch-Push → Live-Verify.
 > Linkziele prüfen: /bestatter/<stadt>/ + /bestattung-in/<bl>/ müssen existieren (sonst L1-FAIL).
 
+## REMEDIATION (Bolle 25.06.): Welle 5–9 BRUTAL nachprüfen
+KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT (fehlende Friedhöfe) + Namens-Ambiguität — Fakten hielten aber stand. Bolle-Entscheid: alle 15 mit adversarischem A/B/C-Prompt (Träger-Falle + Fehler-Pflicht + Lücken-Check) neu prüfen, fixen, neu deployen. Ab Stadt 32 generell dieser Prompt.
+- [x] Wiesbaden — re-reviewt brutal: sauber, KEIN FEHLER
+- [x] Mannheim — re-reviewt brutal: Fakten ok; LÜCKE jüd. Friedhof Mannheim → ergänzt (noch nicht committet)
+- [x] Bonn — Nordfriedhof 22/27ha relativiert; jüd. Friedhöfe (Schwarzrheindorf 1623 + Römerstr.) ergänzt
+- [x] Bielefeld — Alter Friedhof 1808/Friedhofs GmbH ergänzt (Karte); Johannisfriedhof Lage Gadderbaum korrigiert; jüd. Friedhof ergänzt
+- [x] Wuppertal — „nur einer kommunal"→wenige (Ronsdorf/Schöller/Cronenberg); „drei jüdische"→VIER (Krummacherstr. 2008 aktiv)
+- [ ] Münster, Karlsruhe, Augsburg, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Kiel, Chemnitz, Halle — brutal nachprüfen offen (ab jetzt MIT Score-Abfrage 0–100)
+- STANDALONE-Kandidaten (vergessene wichtige Friedhöfe → eigene Seite + Review, Bolle 25.06.): Stadtgottesacker Halle (Renaissance-Denkmal) ★, Alter Friedhof Bielefeld (1808), jüd. Friedhof Schwarzrheindorf Bonn (ältester, 1623)
+- (Essen war Welle 2/sequenziell, bonus-brutal geprüft: hielt stand)
+
 ## Status
 - [x] 1 Berlin — live (Übersicht + Weißensee + Dorotheenstädtischer)
 - [x] 2 Hamburg — live (Übersicht + Ohlsdorf + Öjendorf + jüd. Altona)
