@@ -31,7 +31,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Bremen MINOR:** 2. aktiver jüd. Friedhof (am Riensberger Friedhof, eingeweiht 2008) ergänzt; „13 städt." als korrekt bestätigt. Score 90.
   - **Dresden MINOR:** „Friedhof in staatlicher Trägerschaft" im jüd.-Bullet klargestellt = Sowjetischer Garnisonsfriedhof. **Sachsen-Sargpflicht-Hedge BESTÄTIGT korrekt** (Novelle erst 24.03.2026 zur Anhörung, nicht in Kraft); 4 kommunale + jüd. 1751/1867 + islam korrekt.
   - Linter grün (191/60).
-- OFFEN Welle 5+: Hannover (zuerst, gesunder Tab) + Städte 14–50 (Welle 5–9 wurden in REMEDIATION schon brutal geprüft → Bestätigungspass) + 2 Pillars (Überführung/Islam); dann Bolle-Freigabe.
+- ✅ WELLE 5 (Hannover Score 88 + 2 Pillars): 1 MAJOR + MINORs, je primär verifiziert + gefixt + live:
+  - **Pillar Überführung MAJOR (YMYL-Recht, Score 84):** Straßburger Abkommen (1973) als deutsche Rechtsgrundlage falsch — Deutschland hat es NIE ratifiziert (nur unterzeichnet 1974); maßgeblich ist allein das Berliner Abkommen (1937, in Kraft seit 1938; BDB: „Straßburger gilt für Deutschland nicht"). An 6 Stellen korrigiert (inkl. FAQ↔JSON-LD-Paar, Parität gehalten); Leichenpass-Aussteller belassen (Gesundheitsamt „in der Regel", Quellen nennen schon Standes-/Gesundheitsamt). Türkei-Kosten 4.000–7.000 € + DİTİB BESTÄTIGT.
+  - **Pillar Islam MINOR (Score 91):** Sargpflicht-Bucket — Hamburg (1998 erstes Land) im „generell erlaubt"-Block ergänzt. Sachsen/Sachsen-Anhalt-Stände, Ruhefrist-Konflikt (Berlin/Brandenburg/Thüringen dauerhaft; LSA/SH Religionsfreiheit), 127-Grabfelder, Columbiadamm 1866 BESTÄTIGT.
+  - **Hannover (Score 88):** kein MAJOR (nur MINOR Engesohde-Größe + jüd. 3-vs-4-Zählung; „darunter" deckt ab) → kein Eingriff.
+  - Linter grün (191/60).
+- OFFEN Welle 6+: Städte 14–50 Bestätigungspass (in REMEDIATION 25.06. bereits brutal geprüft + 3-Tab-Fakten-Review + Muslim-Claims W1 verifiziert → niedrigeres Risiko, größere Städte zuerst: Nürnberg/Duisburg/Bochum/Wuppertal …); dann Bolle-Freigabe.
+- GATE-BILANZ bisher: 5 MAJOR gefunden+gefixt (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger-Abkommen) + ~15 MINOR-Quickwins. Alle selbst primär verifiziert, deployt, Linter durchgehend grün.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
