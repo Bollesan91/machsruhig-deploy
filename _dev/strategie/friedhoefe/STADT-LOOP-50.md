@@ -31,6 +31,21 @@
 | Wiesbaden | 88 | – (2 MINOR) | russ-orth. Träger=Gemeinde; Terra Levis ergänzt |
 | Aachen | 78 | aktiver jüd. Hüls (2007) fehlt + Träger pauschal | Hüls ergänzt; Lütticher belegt seit 1828; Ostfriedhof nur Urnen |
 | Freiburg | 72 | neuer jüd. St. Georgen fehlt + Alter Friedhof als aktiv | St. Georgen ergänzt; Alter Friedhof=Gedenkort |
+| Mönchengladbach | 82 | 2. aktiver jüd. Hügelstraße fehlt | Hügelstraße ergänzt; Rheydt=Preyerstraße |
+| Gelsenkirchen | 72 | Wanner Str. geschl. als einziger + falscher Träger | Dördelmannshof (1927) ergänzt; Wanner=Landesverband geschl. |
+| Braunschweig | 84 | – (jüd. Status) | Hamburger Str. geschl. markiert; Helmstedter aktiv; kath. ergänzt |
+| Chemnitz | 89 | – (3 MINOR) | jüd. neben Matthäus-Fr.; Sargpflicht; ältester Stadtfriedhof |
+| Kiel | 78 | „5 städt." nur 3 gelistet | Meimersdorf+Russee ergänzt; jüd. wieder in Nutzung |
+| Halle | 80 | Stadtgottesacker geschl. als Bestattungsoption | als geschl. markiert; Krematorium=Verein; Nordfriedhof |
+| Magdeburg | 74 | Neuer Sudenburger (ev.) als städtisch | →Nordfriedhof; Südfr.-Chronologie; jüd. weiter aktiv |
+| Krefeld | 82 | 3. jüd. Grabfeld Fischeln fehlt | ergänzt; Status-Labels; islam. Transport-Sarg |
+| Mainz | 82 | „13" statt amtlich 14 (eigene Quelle) | 13→14 (6 Stellen); 2012=drittschönster |
+| Lübeck | 89 | – (jüd. Datum) | Vorwerk 2012→2014 |
+| Oberhausen | 78 | jüd. Westfr. als historisch — Dez-2025 reaktiviert | 4 neue Grabfelder ergänzt; Holten geschl. |
+| Erfurt | 91 | – (Quickwins) | Krematorium 1977; größter Thüringens |
+| Rostock | 88 | – (Krematorium) | Krematorium am Neuen Friedhof ergänzt |
+| Kassel | 82 | unbelegter „Vertrag" + neuer jüd. fehlt | Vertrag→Satzung; 2. jüd. Friedhof + Nordfriedhof ergänzt |
+| Hagen | 82 | „10 städt." (WBH zählt 9 + RuheForst) | neun kommunal + RuheForst; Loxbaum-Widerspruch; Zugang=Hagen-Bezug |
 - MUSTER (Re-Score-Fundtypen): (a) geschlossene Friedhöfe ohne „geschlossen"-Markierung (häufigster MAJOR, bes. jüd. Friedhöfe + NRW); (b) „städt. Friedhöfe allen offen/frei wählen"-Boilerplate falsch bei Einzugsbereich-/Neubelegungs-Sperren (Nürnberg/Bochum); (c) veraltete Zahlen/Träger; (d) fehlende Friedhofspflicht.
 - commits: f0f6d99/fe1baed/8ba3342 (Welle1-2), b66980d (Do/Es), 1f05b0e (Dd/H/N), b2ca776 (Du/Bo/Wu). Schluss-Confirm aller Fixes mit frischem ?v ausstehend.
 - OFFEN Re-Score (ab Welle 6): Bielefeld, Bonn, Münster, Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Chemnitz, Kiel, Halle, Magdeburg, Freiburg, Krefeld, Mainz, Lübeck, Oberhausen, Erfurt, Rostock, Kassel, Hagen, Hamm, Saarbrücken, Potsdam, Ludwigshafen, Mülheim, Oldenburg, Osnabrück, Leverkusen, Heidelberg + 2 Pillars + 3 Standalones. 3-breit Tabs 693/700/701.
