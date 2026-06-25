@@ -62,7 +62,8 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Braunschweig (sauber):** „Kernthese hält", kein MAJOR; kommunal/kirchlich (Hauptfriedhof ev./Stadtfriedhof+16 Ortsteile kommunal) bestätigt; nur MINOR (kath. Friedhof fehlt, hedged „Auswahl") → kein Eingriff.
   - Linter grün (191/60).
 - GATE-BILANZ: 9 Fakten-MAJOR + 2 Vollständigkeits-MAJOR (Aachen-Hüls, Halle-Laurentius) + ~18 MINOR. Träger-Boilerplate-Check je Stadt etabliert (Wiesbaden falsch, Aachen/Münster/Augsburg/Bonn korrekt).
-- OFFEN Welle 11+: Bielefeld(Stadt)/Mönchengladbach/Gelsenkirchen/Kiel/Chemnitz (Welle-5-9) + Rest 32–50 (magdeburg/freiburg/krefeld/mainz/luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg) + Stadtgottesacker; dann Bolle-Freigabe.
+- ✅ WELLE 11 (Bielefeld/Kiel/Chemnitz): KEIN MAJOR, alle sauber. Quickwins: Bielefeld „rund ein Dutzend"→„rund zehn" konfessionelle (Doppelzählung mit jüd. behoben); Kiel Ostfriedhof in städt. Übersicht ergänzt (war referenziert, fehlte). Kiel Eichhof-Falle (kirchlich) korrekt umschifft; Chemnitz Sargpflicht-Hedge weiter korrekt → kein Eingriff. Linter grün (191/60).
+- OFFEN Welle 12+: Mönchengladbach/Gelsenkirchen + 32–50 (magdeburg/freiburg/krefeld/mainz/luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg) + Stadtgottesacker; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
