@@ -24,6 +24,7 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - ✅ WELLE 5–9 KOMPLETT BRUTAL NACHGEPRÜFT (15/15). Scores 77–86. Hauptmuster: jüdische Friedhöfe waren überall ungenannt. Jetzt benannt.
 - SYSTEMATISCHE LÜCKE entdeckt: ALLE Übersichten hatten generische „Jüdische Friedhöfe"-Zeile OHNE Namen → bei jeder Stadt die konkreten jüd. (+ wichtigen kirchl.) Friedhöfe nachtragen. Gilt evtl. auch Welle 1–4 (mit Bolle klären, nicht eigenmächtig ausweiten).
 - STANDALONE-Kandidaten (vergessene wichtige Friedhöfe → eigene Seite + Review, Bolle 25.06.): Stadtgottesacker Halle (Renaissance-Denkmal) ★, Alter Friedhof Bielefeld (1808), jüd. Friedhof Schwarzrheindorf Bonn (ältester, 1623)
+  - [x] Stadtgottesacker Halle — GEBAUT + BRUTAL REVIEWT (Score 78). 2 MAJOR gefixt: (a) „vollendet 1594"→um 1590 (Fachquellen einig, Wikipedia falsch); (b) Nickel Hoffmann NICHT dort bestattet — nur Reliefporträt über innerem Eingang, Begräbnisort unbekannt → Bestattungsbehauptung entfernt. Alle 5 prominenten Gräber (Francke/Thomasius/R.Franz/Niemeyer/Wucherer) + Lebensdaten vom Reviewer bestätigt. Linter grün. DEPLOY.
 - (Essen war Welle 2/sequenziell, bonus-brutal geprüft: hielt stand)
 
 ## Status
