@@ -34,7 +34,10 @@
 - [x] 26 Gelsenkirchen — reviewt parallel (Friedhof Buer = Hauptfriedhof, MAJOR → Beckhausen)
 - [x] 27 Aachen — reviewt parallel (Westfriedhof NICHT größter/kein Krematorium dort, MAJOR gefixt; Krematorium auf Hüls)
 - [x] 28 Braunschweig — reviewt parallel (0 Fix; SONDERFALL: Hauptfriedhof evangelisch, kommunal = Stadtfriedhof 1914 + 16 Ortsteil)
-- [ ] 29 Kiel · 30 Chemnitz · 31 Halle · 32 Magdeburg · 33 Freiburg · 34 Krefeld · 35 Mainz · 36 Lübeck · 37 Oberhausen · 38 Erfurt · 39 Rostock · 40 Kassel · 41 Hagen · 42 Potsdam · 43 Saarbrücken · 44 Hamm · 45 Ludwigshafen · 46 Mülheim a.d.R. · 47 Oldenburg · 48 Osnabrück · 49 Leverkusen · 50 Heidelberg
+- [x] 29 Kiel — reviewt parallel (Teil-Sonderfall: Parkfriedhof Eichhof+Südfriedhof kirchlich; kirchliche „mehrere" statt 6)
+- [x] 30 Chemnitz — reviewt parallel (Nikolaifriedhof ist kirchlich/ev. MAJOR umsortiert; Krematorium am Urnenhain)
+- [x] 31 Halle — reviewt parallel (0 Fix; 14 kommunal, Gertraudenfriedhof 37ha, Stadtgottesacker Renaissance 1557)
+- [ ] 32 Magdeburg · 33 Freiburg · 34 Krefeld · 35 Mainz · 36 Lübeck · 37 Oberhausen · 38 Erfurt · 39 Rostock · 40 Kassel · 41 Hagen · 42 Potsdam · 43 Saarbrücken · 44 Hamm · 45 Ludwigshafen · 46 Mülheim a.d.R. · 47 Oldenburg · 48 Osnabrück · 49 Leverkusen · 50 Heidelberg
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
