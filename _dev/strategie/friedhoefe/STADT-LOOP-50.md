@@ -49,7 +49,8 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Karlsruhe (sauber):** kein MAJOR; UNSICHER (jüd. 1873, „rund 28") + editorial (jüd. nur im System-Block) → kein Eingriff (Auswahl kuratiert).
   - Linter grün (191/60).
 - GATE-BILANZ: 7 MAJOR (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger, Nürnberg-Träger, Wiesbaden-konfessionell) + ~17 MINOR. Alle selbst primär verifiziert, deployt.
-- OFFEN Welle 8+: Bonn/Bielefeld(Stadt)/Wuppertal/Münster/Augsburg/Mönchengladbach/Gelsenkirchen/Aachen/Braunschweig/Kiel/Chemnitz/Halle (Welle-5-9) + 32–50 (19) + Stadtgottesacker-Standalone; dann Bolle-Freigabe. ACHTUNG: „Konfessionelle (ev./kath.)"-Boilerplate je Stadt gegenprüfen (Wiesbaden-Lehre).
+- ✅ WELLE 8 (Bonn/Münster/Augsburg): KEIN MAJOR. Träger-Boilerplate-Check für Münster + Augsburg BESTANDEN (ev./kath. Kirchenfriedhöfe existieren wirklich, namentlich bestätigt — Münster: Mauritz/Roxel/Mecklenbeck u.a.; Augsburg: Hermanfriedhof/Kriegshaber/prot. Haunstetter Str.). Bonn ev./kath. ebenfalls bestätigt. 1 Quickwin: Bonn Zentralfriedhof Bad Godesberg (Plittersdorf) in Übersicht ergänzt (fehlte). Augsburg/Münster nur MINOR/UNSICHER → kein Eingriff. Linter grün (191/60).
+- OFFEN Welle 9+: SONDERFÄLLE zuerst (höchstes Träger-Risiko): Wuppertal (kirchl. Mehrheit), Kassel (KEINE kommunalen — Ev. Stadtkirchenkreis trägt alle 15), Potsdam (kirchl.); dann Bielefeld(Stadt)/Mönchengladbach/Gelsenkirchen/Aachen/Braunschweig/Kiel/Chemnitz/Halle + Rest 32–50 + Stadtgottesacker; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
