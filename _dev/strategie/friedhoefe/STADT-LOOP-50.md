@@ -75,7 +75,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Krefeld (sauber):** 11 städt. zu machsruhigs Gunsten aufgelöst (KBK selbst widersprüchlich 11/12); nur MINOR → kein Eingriff.
   - Linter grün (191/60).
 - GATE-BILANZ: 12 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 14. Konfessionelle-Boilerplate-Muster: Wiesbaden+Mainz FALSCH (vollkommunal+jüd.), Aachen/Münster/Augsburg/Bonn/Braunschweig KORREKT, Freiburg unklar.
-- OFFEN Welle 14+: luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
+- ✅ WELLE 14 (Lübeck/Oberhausen/Erfurt): 3 MAJOR, alle gefixt.
+  - **Lübeck MAJOR (YMYL):** Ehrenfriedhof als wählbarer/„allen offen" dargestellt — ist reine Gedenkstätte/Mahnmal (keine Bestattungen, nur 4 der 5 belegbar) → in Träger-Bullet + Übersicht gekennzeichnet.
+  - **Oberhausen MAJOR:** jüd. Friedhof Emscherstraße als eigenständiger, jüd.-Gemeinde-getragener Nachbarfriedhof — falsch: abgegrenztes jüd. Gräberfeld INNERHALB des kommunalen Westfriedhofs (KuLaDig/Steinheim) → Bullet + Westfriedhof-Card korrigiert.
+  - **Erfurt MAJOR:** UNESCO-Welterbe-Zuschreibung — die ~70 mittelalterl. Grabsteine sind NICHT eingeschrieben; Welterbe (2023) = nur Alte Synagoge + Mikwe + Steinernes Haus → Card klar getrennt.
+  - Linter grün (191/60).
+- GATE-BILANZ: 15 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 17. Alle selbst primär verifiziert, deployt.
+- OFFEN Welle 15+: rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
