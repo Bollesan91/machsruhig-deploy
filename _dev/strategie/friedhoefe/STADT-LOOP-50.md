@@ -83,7 +83,9 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 39 Rostock — REVIEWT + 3 Fixes: Reviewer-„nur 3 Friedhöfe" WIDERLEGT (rathaus-Liste = 4: Neuer Friedhof, Westfriedhof, Neuer Friedhof Warnemünde, RuheForst — meine 4 bleibt); **aktiver jüd. Friedhof Westfriedhof 1996/2018 + muslim. Gräberfeld Westfriedhof ergänzt** (Lindenpark nur historisch). Neuer Friedhof 44ha/1912 KORREKT. lint grün.
 - [x] 40 Kassel — REVIEWT (Score 84, SONDERFALL bestätigt, KEIN harter Fehler!) + Fix: islam. Grabfeld Westfriedhof (Heinrich-Schütz-Allee, seit 1986, nach Mekka, Waschraum, ~570 Bestattete) ergänzt. Keine kommunalen Friedhöfe/Ev. Stadtkirchenkreis/Hauptfriedhof Tannenheckerweg 40ha/jüd. Bettenhausen KORREKT. lint grün.
 - [x] 41 Hagen — REVIEWT (Score 80) + 3 Fixes (primär verifiziert): „älterer jüd. Friedhof Delstern" FALSCH→Böhmerstraße (ab 1820, 1966 aufgelassen→Umbettung Eilpe); Waldfriedhof Loxbaum (flächengrößter, 1976) ergänzt; jüd. Elsey/Hohenlimburg ergänzt. WBH/10/Delstern 10,7ha/islam. Vorhalle+Waschhaus/jüd. Eilpe 1920 KORREKT. lint grün.
-- Nächste 2: 42 Potsdam + 43 Saarbrücken.
+- [x] 42 Potsdam — REVIEWT + 2 Fixes (primär verifiziert): jüd. Pfingstberg „bis heute belegt"→präzisiert (noch nach Ritus möglich ABER historisch weitgehend belegt, letzte Beisetzung 2003); islam. Grabfeld Neuer Friedhof ergänzt. 15 städt./Neuer 26ha/Bornstedter Sonderfall UNESCO/Pfingstberg 1743 UNESCO 1999 KORREKT. lint grün.
+- [x] 43 Saarbrücken — REVIEWT + 2 Fixes (primär verifiziert): St. Johann „1917 geschlossen"→heute wieder aktiv (Urnenfeld U9); Waldfriedhof Burbach (zweitgrößter, 1875, 28,5ha) ergänzt. 24 städt./165ha/Hauptfriedhof 61ha größter SW-DE/islam. Grabfeld 1997+Bektaschi 2013/jüd. Goldene Bremm KORREKT. lint grün.
+- Nächste 2: 44 Hamm + 45 Ludwigshafen.
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
