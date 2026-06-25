@@ -81,7 +81,12 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Erfurt MAJOR:** UNESCO-Welterbe-Zuschreibung — die ~70 mittelalterl. Grabsteine sind NICHT eingeschrieben; Welterbe (2023) = nur Alte Synagoge + Mikwe + Steinernes Haus → Card klar getrennt.
   - Linter grün (191/60).
 - GATE-BILANZ: 15 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 17. Alle selbst primär verifiziert, deployt.
-- OFFEN Welle 15+: rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
+- ✅ WELLE 15 (Rostock/Hagen/Saarbrücken): KEIN bestätigter MAJOR gefixt.
+  - **Rostock (sauber):** 4 kommunale bestätigt; nur MINOR/UNSICHER (Gebühren-pauschal, konfessionelle UNSICHER, Puschkinplatz-Ehrenanlage fehlt) → kein Eingriff.
+  - **Hagen (sauber):** kein MAJOR; Quickwin RuheForst Philippshöhe (erster RuheForst NRWs) in Übersicht ergänzt. (Elsey/Loxbaum/Delstern-Krematorium MINOR → gelassen.)
+  - **Saarbrücken (OFFEN):** Reviewer flaggt konfessionelle-Boilerplate als MAJOR, aber „unbelegt" nicht widerlegt; meine Suche unschlüssig (meist städt. via Amt f. Stadtgrün, ABER Saarland hochkath. + kirchennahe Friedhöfe wie Eschringen). KEINE amtliche „alles-kommunal"-Aussage wie Mainz/Wiesbaden → Stufe-3: Bullet belassen, ⚠️ NACHPRÜFEN ob echte Kirchengemeinde-Friedhöfe existieren. Träger ZKE-Decoy korrekt umschifft (Amt f. Stadtgrün).
+  - Linter grün (191/60).
+- OFFEN Welle 16+: hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe. + Saarbrücken-Konfessionell nachprüfen.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
