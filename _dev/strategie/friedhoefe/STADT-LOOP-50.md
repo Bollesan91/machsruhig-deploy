@@ -69,7 +69,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Mönchengladbach (Score 94, sauber):** kein MAJOR; konfessionell untertreibt leicht (10 ev./kath. + 3 Grabeskirchen) + „größter" UNSICHER → kein Eingriff.
   - Linter grün (191/60).
 - GATE-BILANZ: 11 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 13. Alle selbst primär verifiziert, deployt.
-- OFFEN Welle 13+: freiburg/krefeld/mainz/luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
+- ✅ WELLE 13 (Freiburg/Krefeld/Mainz): 1 MAJOR (Mainz), Krefeld sauber, Freiburg Quickwin.
+  - **Mainz MAJOR (= Wiesbaden-Typ):** „Konfessionelle Friedhöfe (ev./kath.)" erfunden — Stadt Mainz: alle Friedhöfe vom Wirtschaftsbetrieb, einzige Ausnahme die 7 jüdischen (Hauptfriedhof 1803 war kommunaler Ersatz für die Kirchhöfe). Bullet gelöscht + Handlungsempfehlung + Meta korrigiert.
+  - **Freiburg:** Bergäcker (+ St. Georgen mit islam. Grabfeld) in Übersicht ergänzt (fehlten). Konfessionelle-Bullet UNSICHER (Suche unschlüssig, alle gelisteten = Eigenbetrieb) → belassen, nicht widerlegt.
+  - **Krefeld (sauber):** 11 städt. zu machsruhigs Gunsten aufgelöst (KBK selbst widersprüchlich 11/12); nur MINOR → kein Eingriff.
+  - Linter grün (191/60).
+- GATE-BILANZ: 12 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 14. Konfessionelle-Boilerplate-Muster: Wiesbaden+Mainz FALSCH (vollkommunal+jüd.), Aachen/Münster/Augsburg/Bonn/Braunschweig KORREKT, Freiburg unklar.
+- OFFEN Welle 14+: luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
