@@ -46,6 +46,20 @@
 | Rostock | 88 | – (Krematorium) | Krematorium am Neuen Friedhof ergänzt |
 | Kassel | 82 | unbelegter „Vertrag" + neuer jüd. fehlt | Vertrag→Satzung; 2. jüd. Friedhof + Nordfriedhof ergänzt |
 | Hagen | 82 | „10 städt." (WBH zählt 9 + RuheForst) | neun kommunal + RuheForst; Loxbaum-Widerspruch; Zugang=Hagen-Bezug |
+| Hamm | 74 | jüd. Gräberfeld als aktiv (geschl., keine Gemeinde seit 1945) | als historisch/geschlossen; jüd. aus Gebühren-Satz raus |
+| Saarbrücken | 91 | – (Quickwins) | jüd.=Synagogengemeinde; islam. 2018+jesidisch 2019; St. Johann seit 1984 |
+| Potsdam | 86 | jüd. Pfingstberg als „de facto geschl." (ist EINZIGE aktive BB) | klargestellt; meta darunter→dazu |
+| Ludwigshafen | 80 | jüd. Träger falsch (ist Abt./Stadt-Eigentum) | via Jüd. Kultusgemeinde Rheinpfalz |
+| Mülheim | 80 | „10 alle offen" (nur 8 aktiv) | Ehren-/Holthausener geschl.; Altstadtfr. seit 1988 Urnen |
+| Oldenburg | 80 | jüd. „bis 2014" erfunden (geschl. 2000) | alter jüd. 2000 geschl. (letzte Best. 2010); neuer Bümmerstede |
+| Osnabrück | 82 | alter jüd. Friedhof falsch verortet | →Magdalenenstr./Johannisfriedhof; 2.280m² raus |
+| Leverkusen | 96 | – (PASS, kein Fund) | kein Fix (1 UNSICHER beleg-hygiene) |
+| Heidelberg | 64 | jüd. Bergfriedhof Träger falsch + Zugang-Doppelzählung | Stadt-Eigentum seit 1954; Klingenteich ergänzt; Zugang differenziert |
+
+### ✅ ALLE 50 STÄDTE RE-GESCORT + GEFIXT (Welle 1–16, je primärverifiziert, Linter grün, gepusht).
+Commits Welle 14–16: 1887b14 (Hamm/Saarbr./Potsdam), 29a4caf (LU/MH/OL), [Welle16] (Osna/Lev/HD).
+Score-Verteilung vor Fix: 64–96; Leverkusen 96 = bester (kein Fund). Häufigster MAJOR-Typ über alle 50: jüd. Friedhof geschlossen↔aktiv vertauscht / falscher Träger. Zweithäufig: „allen offen"-Boilerplate trotz Bezirks-/Neubelegungssperre.
+OFFEN: Final-Confirm-Durchlauf (frisches ?v) über die gefixten <90-Städte; dann 2 Pillars (Überführung, islam. Bestattung) + 3 Standalones (Stadtgottesacker Halle, Alter Friedhof Bielefeld, jüd. Friedhof Schwarzrheindorf).
 - MUSTER (Re-Score-Fundtypen): (a) geschlossene Friedhöfe ohne „geschlossen"-Markierung (häufigster MAJOR, bes. jüd. Friedhöfe + NRW); (b) „städt. Friedhöfe allen offen/frei wählen"-Boilerplate falsch bei Einzugsbereich-/Neubelegungs-Sperren (Nürnberg/Bochum); (c) veraltete Zahlen/Träger; (d) fehlende Friedhofspflicht.
 - commits: f0f6d99/fe1baed/8ba3342 (Welle1-2), b66980d (Do/Es), 1f05b0e (Dd/H/N), b2ca776 (Du/Bo/Wu). Schluss-Confirm aller Fixes mit frischem ?v ausstehend.
 - OFFEN Re-Score (ab Welle 6): Bielefeld, Bonn, Münster, Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Chemnitz, Kiel, Halle, Magdeburg, Freiburg, Krefeld, Mainz, Lübeck, Oberhausen, Erfurt, Rostock, Kassel, Hagen, Hamm, Saarbrücken, Potsdam, Ludwigshafen, Mülheim, Oldenburg, Osnabrück, Leverkusen, Heidelberg + 2 Pillars + 3 Standalones. 3-breit Tabs 693/700/701.
