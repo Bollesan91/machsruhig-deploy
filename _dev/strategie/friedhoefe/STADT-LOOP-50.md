@@ -92,7 +92,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Ludwigshafen (OFFEN, wie Saarbrücken):** konfessionelle-Boilerplate MAJOR-geflaggt; Suche zeigt zentralen kommunalen Hauptfriedhof als Ersatz für volle Kirchhöfe (Mundenheim/Friesenheim) → lehnt zu all-kommunal, aber keine explizite Stadt-Aussage → belassen, ⚠️ NACHPRÜFEN.
   - Linter grün (191/60).
 - GATE-BILANZ: 17 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 19. ⚠️ OFFEN-Nachprüfung: Saarbrücken + Ludwigshafen konfessionelle-Boilerplate (evtl. wie Wiesbaden/Mainz falsch).
-- OFFEN Welle 17: oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
+- ✅ WELLE 17 (Oldenburg/Osnabrück/Leverkusen): 2 MAJOR + 1 MINOR, alle gefixt.
+  - **Oldenburg MAJOR (Vollständigkeit):** St.-Gertrudenkirchhof (ältester Friedhof Oldenburgs, ev.-luth., seit 1791, bis heute belegt) fehlte namentlich → im konf. Bullet benannt.
+  - **Osnabrück MAJOR (YMYL):** Hasefriedhof als wählbar dargestellt — beide historischen (Hase- + Johannisfriedhof, 1808) sind seit 1995 für Bestattungen GESCHLOSSEN (denkmalgeschützt, nicht entwidmet) → Übersicht klargestellt + Johannisfriedhof ergänzt.
+  - **Leverkusen MINOR:** Träger-Syntax — „darunter Reuschenberg" klar den 7 STÄDTISCHEN zugeordnet (war nahe „vier kath."). 7/4-Logik + Verwaltung Nobelstr. 91 bestätigt korrekt.
+  - Linter grün (191/60).
+- GATE-BILANZ: 19 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 21. (⚠️ OFFEN: Saarbrücken + Ludwigshafen konfessionelle-Boilerplate nachprüfen.)
+- OFFEN SCHLUSS-Welle 18: Heidelberg + Stadtgottesacker-Standalone + Saarbrücken/Ludwigshafen-Nachprüfung; dann ✅ FINAL-GATE KOMPLETT → Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
