@@ -56,7 +56,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Potsdam (sauber):** kein MAJOR, Träger-Zuordnung kommunal/kirchlich korrekt; nur MINOR (jüd. Träger-Formel, Superlativ „größter jüd. Friedhof Brandenburgs" halb belegt, fehlende Träger-Art) → kein Eingriff.
   - Linter grün (191/60).
 - GATE-BILANZ: 9 MAJOR (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger, Nürnberg-Träger, Wiesbaden-konfessionell, Wuppertal-Träger, Kassel-Altstädter) + ~18 MINOR. Alle selbst primär verifiziert, deployt.
-- OFFEN Welle 10+: Bielefeld(Stadt)/Mönchengladbach/Gelsenkirchen/Aachen/Braunschweig/Kiel/Chemnitz/Halle (Welle-5-9) + Rest 32–50 (magdeburg/freiburg/krefeld/mainz/luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg) + Stadtgottesacker; dann Bolle-Freigabe. Träger-Boilerplate je Stadt prüfen.
+- ✅ WELLE 10 (Aachen/Braunschweig/Halle): 2 Vollständigkeits-MAJOR gefixt, Braunschweig sauber.
+  - **Aachen:** Friedhof Hüls (größte Fläche, Krematorium, islam. Grabfeld) fehlte in „Bedeutende"/Übersicht → Card + Listeneintrag ergänzt. **Konfessionelle-Boilerplate vom Reviewer als MAJOR geflaggt, aber NICHT geändert** — eigene Primärsuche bestätigt konfessionelle Friedhöfe in Aachen (Westfriedhof I ev. 1889 / II kath. 1890 + histor. konfessionelle); Stufe-3: Reviewer irrt hier (≠ Wiesbaden). „rund 28" hedged korrekt.
+  - **Halle:** St.-Laurentiusfriedhof (Ev. Kirchengemeinde St. Laurentius, ~900 J., Ehrengräber, kulturhist. bedeutend) fehlte komplett → in konf. Bullet genannt + kirchliche Übersicht-Gruppe ergänzt. Krematorium-privat + 14 kommunal bestätigt.
+  - **Braunschweig (sauber):** „Kernthese hält", kein MAJOR; kommunal/kirchlich (Hauptfriedhof ev./Stadtfriedhof+16 Ortsteile kommunal) bestätigt; nur MINOR (kath. Friedhof fehlt, hedged „Auswahl") → kein Eingriff.
+  - Linter grün (191/60).
+- GATE-BILANZ: 9 Fakten-MAJOR + 2 Vollständigkeits-MAJOR (Aachen-Hüls, Halle-Laurentius) + ~18 MINOR. Träger-Boilerplate-Check je Stadt etabliert (Wiesbaden falsch, Aachen/Münster/Augsburg/Bonn korrekt).
+- OFFEN Welle 11+: Bielefeld(Stadt)/Mönchengladbach/Gelsenkirchen/Kiel/Chemnitz (Welle-5-9) + Rest 32–50 (magdeburg/freiburg/krefeld/mainz/luebeck/oberhausen/erfurt/rostock/hagen/saarbruecken/hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg) + Stadtgottesacker; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
