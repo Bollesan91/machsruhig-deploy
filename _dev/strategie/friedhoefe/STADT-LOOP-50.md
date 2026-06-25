@@ -25,7 +25,8 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Frankfurt MINOR:** 1961-Verknüpfung entkoppelt (Ur-Feld 1961 = Waldfriedhof Oberrad, nicht die 3 heutigen) → „heute … ; bereits 1961 … (zunächst auf dem Waldfriedhof Oberrad)".
   - Köln: KEIN MAJOR (Melaten 1810/Geusen 1576/Westfriedhof 1968/Lehmbacher Weg 1972 bestätigt); nur Gebührensatzungs-Datum UNSICHER (belegt-vertretbar, kein Fix). HH „rund 74" als OSM gelabelt (vertretbar). Berlin-jüdisch nennt Weißensee+Columbiadamm explizit (sauber).
   - Linter grün (191/60).
-- OFFEN Welle 3+: restliche ~46 Stadt-Übersichten (4er-Takt) + 2 Pillars; dann Bolle-Freigabe. Reihenfolge: Welle-1-9-Originale zuerst (Stuttgart/Düsseldorf/Leipzig/Dortmund/Essen/Bremen/Dresden/Hannover/München), dann 14–50.
+- ✅ WELLE 3 (Stuttgart/Düsseldorf/Leipzig/Dortmund): KEIN MAJOR (Originale solide; Düsseldorf bestätigt W1-Itter-Fix; Leipzig Score 88; Dortmund „erstaunlich sauber"). 2 Quickwins gefixt: Dortmund „Ostfriedhof"→„Ostenfriedhof" (Konsistenz, = derselbe Friedhof); Stuttgart jüd. Friedhof Steinhaldenfeld ergänzt (Vollständigkeit). Stuttgart „41 städt." als KORREKT bestätigt (nicht 42). Übrige Punkte UNSICHER/belegt → kein Eingriff. Linter grün (191/60).
+- OFFEN Welle 4+: Essen/Bremen/Dresden/Hannover (restliche Originale), dann 14–50 + 2 Pillars; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
