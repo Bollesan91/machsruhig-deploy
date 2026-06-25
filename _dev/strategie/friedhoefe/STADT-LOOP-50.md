@@ -37,7 +37,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Hannover (Score 88):** kein MAJOR (nur MINOR Engesohde-Größe + jüd. 3-vs-4-Zählung; „darunter" deckt ab) → kein Eingriff.
   - Linter grün (191/60).
 - OFFEN Welle 6+: Städte 14–50 Bestätigungspass (in REMEDIATION 25.06. bereits brutal geprüft + 3-Tab-Fakten-Review + Muslim-Claims W1 verifiziert → niedrigeres Risiko, größere Städte zuerst: Nürnberg/Duisburg/Bochum/Wuppertal …); dann Bolle-Freigabe.
-- GATE-BILANZ bisher: 5 MAJOR gefunden+gefixt (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger-Abkommen) + ~15 MINOR-Quickwins. Alle selbst primär verifiziert, deployt, Linter durchgehend grün.
+- ✅ WELLE 6 (Nürnberg/Duisburg/Bochum): 1 MAJOR (Nürnberg), Duisburg+Bochum sauber.
+  - **Nürnberg MAJOR:** St. Johannis/St. Rochus „getragen von kirchlichen Stiftungen" falsch (Rechtsform) → Träger = Evang.-Luth. Friedhofsverband Nürnberg (St. Johannis und St. Rochus); Epitaphien-Stiftung erhält nur Grabmale. Gefixt. (119-ha-Zahl vertretbar, Stadt selbst 119 vs 125 uneinheitlich → belassen.)
+  - **Duisburg (sauber):** 17 Friedhöfe/67 ha/jüd. Sternbuschweg 1882/islam 1990er bestätigt; W4-Fix („2021" raus) bestätigt clean. Nur UNSICHER (jüd. 1919-Erw.) + MINOR (Nordfriedhof Hamborn fehlt) → kein Eingriff.
+  - **Bochum (sauber):** islam 1995/2025/168 + jüd. Wasserstr. 1917/1918 bestätigt; nur MINOR Klarheit → kein Eingriff.
+  - Linter grün (191/60).
+- GATE-BILANZ bisher: 6 MAJOR gefunden+gefixt (München, Berlin-Friedhofspflicht, Hamburg-Finkenriek, Essen-Segeroth, Überführung-Straßburger-Abkommen, Nürnberg-Trägerschaft) + ~16 MINOR-Quickwins. Alle selbst primär verifiziert, deployt, Linter durchgehend grün.
+- OFFEN Welle 7+: Wiesbaden/Mannheim/Bonn/Bielefeld/Wuppertal/Münster/Karlsruhe/Augsburg/Mönchengladbach/Gelsenkirchen/Aachen/Braunschweig/Kiel/Chemnitz/Halle (Welle-5-9, schon brutal) + 32–50 (19 frisch gebaut) + Stadtgottesacker-Standalone (schon reviewt); dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
