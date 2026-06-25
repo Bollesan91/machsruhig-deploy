@@ -1,5 +1,10 @@
 # Friedhof-Übersichten — Top-50-Städte-Loop (Auftrag Bolle 24.06.2026)
 
+## 🎯 RE-SCORE-PASS (Bolle 25.06., NEU): Gate = Score ≥ 90 pro Stadt. Über ALLE Städte, 5 Tabs einzeln, Score je Stadt PFLICHT festhalten, fixen bis ≥90.
+- ⚠️ **CACHE-BUST PFLICHT:** claude.ai-Fetch cached früher geholte Seiten → Re-Review MUSS `?v=2` (o.ä. Query) an die URL hängen, sonst liest der Reviewer veralteten Cache! (Welle 1: Berlin/Hamburg 64 waren reine Cache-Artefakte — Live-Inhalt curl-verifiziert längst gefixt.)
+- SCORES (Re-Score, cache-bust): Welle 1 echte Fixes: München 84→(„eines der frühesten" raus), Köln 82→(Geusen aus städt. Liste), Frankfurt 83→(36 statt „37", aktiver Neuer Jüd. Friedhof Eckenheimer Landstr. ergänzt). commit f0f6d99. Berlin/Hamburg = Cache → mit ?v=2 neu scoren. RE-REVIEW mit ?v=2 ausstehend.
+
+
 > Auftrag: Friedhof-Übersicht je Stadt, Friedl V4, eigener claude.ai-Tab-Reviewer PRO Stadt, Commits gesammelt, bis 3 Städte parallel (einzeln gebaut + reviewt). Keine Rückfragen. Stopp: alle 50 ODER Bolle schreibt.
 > Muster je Stadt: Stufe0 WebSearch (offizielle Stadt-Domain: Anzahl städt. Friedhöfe + EINE Gebührensatzung + Träger-Amt + 2 bedeutende) → build Übersicht (Köln-Template) → lint-site+lint-friedhof 0 FAIL → Tab-Review (KOMPAKT-Verdikt, volles Lesen) → Stufe3-Fixes → sammeln → Batch-Push → Live-Verify.
 > Linkziele prüfen: /bestatter/<stadt>/ + /bestattung-in/<bl>/ müssen existieren (sonst L1-FAIL).
