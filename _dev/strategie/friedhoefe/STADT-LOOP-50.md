@@ -86,7 +86,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
   - **Hagen (sauber):** kein MAJOR; Quickwin RuheForst Philippshöhe (erster RuheForst NRWs) in Übersicht ergänzt. (Elsey/Loxbaum/Delstern-Krematorium MINOR → gelassen.)
   - **Saarbrücken (OFFEN):** Reviewer flaggt konfessionelle-Boilerplate als MAJOR, aber „unbelegt" nicht widerlegt; meine Suche unschlüssig (meist städt. via Amt f. Stadtgrün, ABER Saarland hochkath. + kirchennahe Friedhöfe wie Eschringen). KEINE amtliche „alles-kommunal"-Aussage wie Mainz/Wiesbaden → Stufe-3: Bullet belassen, ⚠️ NACHPRÜFEN ob echte Kirchengemeinde-Friedhöfe existieren. Träger ZKE-Decoy korrekt umschifft (Amt f. Stadtgrün).
   - Linter grün (191/60).
-- OFFEN Welle 16+: hamm/ludwigshafen/muelheim/oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe. + Saarbrücken-Konfessionell nachprüfen.
+- ✅ WELLE 16 (Hamm/Ludwigshafen/Mülheim): 2 MAJOR gefixt (Hamm+Mülheim), Ludwigshafen offen.
+  - **Hamm MAJOR (selbst eingebrockt):** Ostenfriedhof (1800) als einer der 12 STÄDTISCHEN gelistet — falsch: konfessioneller Gemeinschaftsfriedhof (kath. St. Agnes + Ev. Friedhof Hamm-Osten) mit histor. jüd. Teil, nicht unter den 12 Kommunalfriedhöfen (HammWiki). Lead/Meta/jüd.-Bullet/Übersicht korrigiert (Card war schon korrekt „multikonfessionell").
+  - **Mülheim MAJOR:** „ältester Friedhof Mülheims (1812)" falsch — jüd. Friedhof An der Gracht (~1720) ist ~90 J. älter + bis heute genutzt (Seite widersprach sich selbst) → „ältester STÄDTISCHER Friedhof".
+  - **Ludwigshafen (OFFEN, wie Saarbrücken):** konfessionelle-Boilerplate MAJOR-geflaggt; Suche zeigt zentralen kommunalen Hauptfriedhof als Ersatz für volle Kirchhöfe (Mundenheim/Friesenheim) → lehnt zu all-kommunal, aber keine explizite Stadt-Aussage → belassen, ⚠️ NACHPRÜFEN.
+  - Linter grün (191/60).
+- GATE-BILANZ: 17 Fakten-MAJOR + 2 Vollständigkeits-MAJOR = 19. ⚠️ OFFEN-Nachprüfung: Saarbrücken + Ludwigshafen konfessionelle-Boilerplate (evtl. wie Wiesbaden/Mainz falsch).
+- OFFEN Welle 17: oldenburg/osnabrueck/leverkusen/heidelberg + Stadtgottesacker; dann Bolle-Freigabe.
 
 ## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
 Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
