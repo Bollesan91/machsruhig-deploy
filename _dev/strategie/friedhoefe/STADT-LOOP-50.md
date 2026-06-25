@@ -85,7 +85,10 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 41 Hagen — REVIEWT (Score 80) + 3 Fixes (primär verifiziert): „älterer jüd. Friedhof Delstern" FALSCH→Böhmerstraße (ab 1820, 1966 aufgelassen→Umbettung Eilpe); Waldfriedhof Loxbaum (flächengrößter, 1976) ergänzt; jüd. Elsey/Hohenlimburg ergänzt. WBH/10/Delstern 10,7ha/islam. Vorhalle+Waschhaus/jüd. Eilpe 1920 KORREKT. lint grün.
 - [x] 42 Potsdam — REVIEWT + 2 Fixes (primär verifiziert): jüd. Pfingstberg „bis heute belegt"→präzisiert (noch nach Ritus möglich ABER historisch weitgehend belegt, letzte Beisetzung 2003); islam. Grabfeld Neuer Friedhof ergänzt. 15 städt./Neuer 26ha/Bornstedter Sonderfall UNESCO/Pfingstberg 1743 UNESCO 1999 KORREKT. lint grün.
 - [x] 43 Saarbrücken — REVIEWT + 2 Fixes (primär verifiziert): St. Johann „1917 geschlossen"→heute wieder aktiv (Urnenfeld U9); Waldfriedhof Burbach (zweitgrößter, 1875, 28,5ha) ergänzt. 24 städt./165ha/Hauptfriedhof 61ha größter SW-DE/islam. Grabfeld 1997+Bektaschi 2013/jüd. Goldene Bremm KORREKT. lint grün.
-- Nächste 2: 44 Hamm + 45 Ludwigshafen.
+- [x] 44 Hamm — REVIEWT (Score 90, KEIN Faktenfehler!) + 3 Ergänzungen (primär verifiziert): muslim. Grabfeld Parkfriedhof Herringen seit 1994; **Birkenallee = Deutschlands ERSTES Hindu-Grabfeld 2015** (+ größter Friedhof Hamms); „ältester"→„ältester bestehender". 12 städt./Ostenfriedhof 1.7.1800 multikonf./jüd. seit 1825 KORREKT. lint grün. (/bestatter/hamm/ fehlt → Hub.)
+- [x] 45 Ludwigshafen — REVIEWT (Score 88) + 2 Fixes: „Waschräume in Trauerhalle" = unbelegt → entfernt (nur Gebetstisch); „wird erweitert" entfernt. 9 städt./Hauptfriedhof 1855/56 >10.000 größter/islam. Grabfeld nach Mekka/jüd. 1858 KORREKT. lint grün (F3 gefixt). (/bestatter/ludwigshafen/ fehlt → Hub.)
+- SCORE-NACHTRAG (auf Bolle-Nachfrage komplettiert): 39 Rostock 64, 42 Potsdam 80, 43 Saarbrücken 83 (waren vorher nur als „reviewt" notiert). Volle Score-Tabelle siehe unten.
+- Nächste 2: 46 Mülheim a.d.R. + 47 Oldenburg.
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
