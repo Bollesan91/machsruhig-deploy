@@ -72,6 +72,9 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 31 Halle — reviewt parallel (0 Fix; 14 kommunal, Gertraudenfriedhof 37ha, Stadtgottesacker Renaissance 1557)
 - [ ] 32 Magdeburg · 33 Freiburg · 34 Krefeld · 35 Mainz · 36 Lübeck · 37 Oberhausen · 38 Erfurt · 39 Rostock · 40 Kassel · 41 Hagen · 42 Potsdam · 43 Saarbrücken · 44 Hamm · 45 Ludwigshafen · 46 Mülheim a.d.R. · 47 Oldenburg · 48 Osnabrück · 49 Leverkusen · 50 Heidelberg
   - 32 Magdeburg STUFE-0 SCHON RECHERCHIERT (24.06., primär): 16 städtische Friedhöfe, Träger = Eigenbetrieb Stadtgarten und Friedhöfe Magdeburg (LH Magdeburg), EINE gemeinsame Friedhofsgebührensatzung; Westfriedhof = Hauptfriedhof + zentrale Friedhofsverwaltung (Kapelle), dazu Südfriedhof; jüdisch: Israelitischer Friedhof Magdeburg, gegründet 1816 (Fermersleber Weg/Sudenburger Feldmark), ~2.300 Gräber/15.500 m², einer der größten Ostdeutschlands außer Berlin, klassizist. Grabmale, Träger Synagogengemeinde zu Magdeburg. → NÄCHSTER TICK: Übersicht bauen (Köln-Template), jüd. benannt, lint, eigener brutal+Score-Tab-Review.
+- [x] 32 Magdeburg — REVIEWT (Score 84) + 3 Fixes: Südfriedhof 20→18ha (zweitgrößter); islam. Grabfeld Westfriedhof 2009→2004 (offizielle Stadtquelle); LÜCKE Neuer Jüd. Friedhof Königstr./Groß Ottersleben 2018 (aktive Beisetzungen) ergänzt. Träger/16/Westfriedhof 62,5ha-größter/Schoch/jüd.1816 KORREKT. lint grün.
+- [x] 33 Freiburg — REVIEWT (Score 91, KEIN Kernfakt-Fehler) + 2 Fixes: islam. Grabfeld St. Georgen (nach Mekka) ergänzt; „Gebührensatzung"→„Friedhofssatzung nebst Gebührenordnung". Träger/17-8/Hauptfriedhof 1.11.1872-27ha-Brühl/Alter Friedhof denkmal/jüd.1870-900Steine KORREKT. lint grün.
+- STANDING (Bolle 25.06.): 2 Städte parallel nebenbei zu Pillars, je eigener claude.ai-Reviewer, brutal A/B/C/D+Score. Nächste: 34 Krefeld + 35 Mainz. Islam-Grabfeld pro Stadt proaktiv mitbenennen (verifiziert).
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
