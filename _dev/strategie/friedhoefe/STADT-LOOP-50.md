@@ -21,9 +21,12 @@
 - [x] 14 Nürnberg — reviewt (0 Fix; Johannis/Rochus kirchlich, Süd 62ha städtisch)
 - [x] 15 Duisburg — reviewt (Sternbuschweg-Lage MAJOR→Neudorf gefixt)
 - [x] 16 Bochum — reviewt (0 Fix)
-- [ ] 17 Wuppertal
-- [ ] 18 Bielefeld
-- [ ] 19 Bonn
+- [x] 17 Wuppertal — reviewt parallel (SONDERFALL: faktisch nur 1 kommunal = Friedhof Ronsdorf/Lohsiepenstr.; „wenige"→„nur einer" gefixt)
+- [x] 18 Bielefeld — reviewt parallel (Brackwede ist kirchlich→Schildesche MAJOR gefixt)
+- [x] 19 Bonn — reviewt parallel (Alter Friedhof 1715 statt 1787 MAJOR gefixt)
+- NEU: 3-Tab-Parallel-Review funktioniert! navigate akzeptiert tabId → 3 Reviews gleichzeitig. Ausleser: Block mit Stadt-Term+VERDIKT-Keyword (kleinster), NICHT ^N:-Regex.
+- [ ] 20 Münster
+- [ ] (21-50 wie Top-50-Liste oben: Mannheim, Karlsruhe, Augsburg, Wiesbaden, Mönchengladbach, Gelsenkirchen, Aachen, Braunschweig, Kiel, Chemnitz, Halle, Magdeburg, Freiburg, Krefeld, Mainz, Lübeck, Oberhausen, Erfurt, Rostock, Kassel, Hagen, Potsdam, Saarbrücken, Hamm, Ludwigshafen, Mülheim a.d.R., Oldenburg, Osnabrück, Leverkusen, Heidelberg)
 - [ ] 20 Münster
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
