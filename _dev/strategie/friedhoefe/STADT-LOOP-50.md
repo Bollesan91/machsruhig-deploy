@@ -12,6 +12,13 @@ Bolle-Impuls: muslimische Friedhöfe/Grabfelder fehlen komplett; Überführung i
 - FORTSCHRITT 25.06. (b2): Pillar `islamische-bestattung.html` GEBAUT (Ablauf Ghusl/Kafan, Sarg-vs-Tuch-Rechtslage je Land, Ruhefrist-Konflikt, ~127 Grabfelder/Columbiadamm 1866, Überführungs-Querverweis, 7 FAQ) → L1-FAIL `/friedhoefe/` (kein Hub) gefixt → /berlin/ → lint-site 170 S./0 FAIL → brutaler Review LÄUFT (Tab 693). NOCH NICHT committet. Offen danach: Islam-Grabfeld-Pass für später gebaute Städte; ggf. Inlinks von bestattungsarten/bestattungskosten zu den 2 neuen Pillars.
 - **Bauplan (Friedl, je eigener Review):** (1) Pillar „Überführung ins Ausland" ZUERST (Ablauf + ehrliche Kosten + Sterbekassen + Dokumenten-Checkliste). (2) Pillar „Islamische Bestattung in Deutschland" (Sargpflicht-je-Land-Tabelle primär verifiziert + Ruherecht-Konflikt + Grabfeld finden + Querverweis Pillar 1). (3) Islam-Vollständigkeit in Übersichten: Columbiadamm/Berlin + Öjendorf/Hamburg + pro Stadt islam. Grabfeld benennen (wie jüd.). Quellen Pillar 1: Auswärtiges Amt, Gesundheitsämter-Merkblätter, Konsulate, DİTİB.
 
+## ⛔ FINAL-RELEASE-GATE (Bolle 25.06., PFLICHT bevor „freigegeben")
+Wenn alle 50 Städte + 2 Pillars + Standalones durch sind: **EINE finale kritische claude.ai-Review-Welle über JEDE Seite** (alle 50 Stadt-Übersichten + Pillars + Standalones; auch die früh gebauten Welle-1-9-Städte, die nur die jüdisch-Remediation hatten, aber NIE den brutalen Per-Stadt-Review mit neuem Standard).
+- Reviewer target-blind, brutal A/B/C/D + Web-Recherche; jedes Finding selbst PRIMÄR verifizieren (Reviewer irrt in beide Richtungen).
+- **Gate: Score 90+ als Richtwert, ABER trotzdem die „klein aber fein"-YMYL-Quickwins einfangen** — Bolle-Beobachtung: selbst bei 90 waren noch YMYL-kritische Befunde drin (Hamm 90: Hindu/Herringen fehlten; Ludwigshafen 88: Waschräume falsch). Score = Telemetrie, nicht Stopp-Signal. Echtes Gate = 0 YMYL-kritische MAJORs + 0 falsche Ausstattungs-/Träger-Claims + 2 Linter grün.
+- Pro Seite Quickwins fixen (auch bei 90+), Diff-Re-Check, dann erst „freigegeben".
+- Batch über 4 Tabs (wie 4er-Takt). Reihenfolge: erst die nie-brutal-geprüften Altstädte (Welle 1–9 + Originale), dann die 32–50 als Bestätigungspass.
+
 ## REMEDIATION (Bolle 25.06.): Welle 5–9 BRUTAL nachprüfen
 KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT (fehlende Friedhöfe) + Namens-Ambiguität — Fakten hielten aber stand. Bolle-Entscheid: alle 15 mit adversarischem A/B/C-Prompt (Träger-Falle + Fehler-Pflicht + Lücken-Check) neu prüfen, fixen, neu deployen. Ab Stadt 32 generell dieser Prompt.
 - [x] Wiesbaden — re-reviewt brutal: sauber, KEIN FEHLER
@@ -88,7 +95,12 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] 44 Hamm — REVIEWT (Score 90, KEIN Faktenfehler!) + 3 Ergänzungen (primär verifiziert): muslim. Grabfeld Parkfriedhof Herringen seit 1994; **Birkenallee = Deutschlands ERSTES Hindu-Grabfeld 2015** (+ größter Friedhof Hamms); „ältester"→„ältester bestehender". 12 städt./Ostenfriedhof 1.7.1800 multikonf./jüd. seit 1825 KORREKT. lint grün. (/bestatter/hamm/ fehlt → Hub.)
 - [x] 45 Ludwigshafen — REVIEWT (Score 88) + 2 Fixes: „Waschräume in Trauerhalle" = unbelegt → entfernt (nur Gebetstisch); „wird erweitert" entfernt. 9 städt./Hauptfriedhof 1855/56 >10.000 größter/islam. Grabfeld nach Mekka/jüd. 1858 KORREKT. lint grün (F3 gefixt). (/bestatter/ludwigshafen/ fehlt → Hub.)
 - SCORE-NACHTRAG (auf Bolle-Nachfrage komplettiert): 39 Rostock 64, 42 Potsdam 80, 43 Saarbrücken 83 (waren vorher nur als „reviewt" notiert). Volle Score-Tabelle siehe unten.
-- Nächste 2: 46 Mülheim a.d.R. + 47 Oldenburg.
+- BOLLE 25.06.: ab jetzt 4 Städte parallel (4. Tab 1532784815 erstellt; frischer Tab reagiert träge auf execCommand → ggf. reload + erneut). 50 Heidelberg bleibt als 5. einzeln/mit Standalones.
+- [x] 46 Mülheim a.d.R. — REVIEWT (Score 92, KEIN Faktenfehler) + Lücke gefixt: Altstadtfriedhof (1812, ältester, denkmal) ergänzt. 10 städt./Hauptfriedhof 45ha-1915/islam. 1996/jüd. An der Gracht KORREKT. lint grün.
+- [x] 47 Oldenburg — REVIEWT (Score 74) + 3 Fixes (primär verifiziert): „mehrere"→genau ZWEI städt. (Bümmerstede 16ha + Waldfriedhof Ofenerdiek 10ha ergänzt); islam.+jesid.+buddhist. Grabfeld Bümmerstede ergänzt. jüd. Dedestraße+neu 2000 KORREKT. lint grün.
+- [x] 48 Osnabrück — REVIEWT (Score 80) + 2 Fixes: „11 kommunale"→13 (11 aktive + 2 historische); islam. Grabfeld Friedhof Nahne seit 2008 + Waschraum 2017 ergänzt. Heger 1925/27ha/Hasefriedhof 1808/jüd. KORREKT. lint grün (F3 gefixt).
+- [x] 49 Leverkusen — REVIEWT (Score 38!→ 4 echte Strukturfehler, alle primär gefixt): 9→7 städt. (Birkenberg ergänzt); 2→4 kath. (Rheindorf+Steinbüchel); Verwaltungssitz Manfort→Nobelstr. 91; jüd. Friedhof Opladen (1833-1939, seit 2016 wieder offen) ergänzt. islam. Reuschenberg KORREKT. lint grün. ← bestes Beispiel warum der Review Pflicht ist.
+- Nächste: 50 Heidelberg (+ Standalones + Muslim-Pass Altstädte).
 - [ ] 21 Mannheim
 - [ ] 22 Karlsruhe
 - [ ] 23 Augsburg
