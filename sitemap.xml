@@ -381,6 +381,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://machsruhig.de/friedhoefe/gelsenkirchen/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsruhig.de/friedhoefe/aachen/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://machsruhig.de/friedhoefe/braunschweig/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://machsruhig.de/friedhoefe/koeln/</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
