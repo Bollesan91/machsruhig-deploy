@@ -20,7 +20,8 @@ KOMPAKT-Parallel-Reviewer (Welle 5–9) hatte blinden Fleck bei VOLLSTÄNDIGKEIT
 - [x] Braunschweig (82) — jüd. Friedhöfe Hamburger Str. 1797 + Helmstedter Str. 1914 ergänzt
 - [x] Kiel (83) — jüd. Friedhof Michelsenstr. 1852 + Grabfelder Alter Urnenfriedhof ergänzt
 - [x] Chemnitz (80) — jüd. Friedhof Am Laubengang/Altendorf ergänzt; Städt. Friedhof = 3 Standorte/40,4 ha (statt 1×31)
-- [ ] Halle — brutal nachprüfen offen (MIT Score)
+- [x] Halle (84) — Krematorium Gertraudenfriedhof = privater Betreiber klargestellt; jüd. Friedhof Dessauer Str. 1929 ergänzt
+- ✅ WELLE 5–9 KOMPLETT BRUTAL NACHGEPRÜFT (15/15). Scores 77–86. Hauptmuster: jüdische Friedhöfe waren überall ungenannt. Jetzt benannt.
 - SYSTEMATISCHE LÜCKE entdeckt: ALLE Übersichten hatten generische „Jüdische Friedhöfe"-Zeile OHNE Namen → bei jeder Stadt die konkreten jüd. (+ wichtigen kirchl.) Friedhöfe nachtragen. Gilt evtl. auch Welle 1–4 (mit Bolle klären, nicht eigenmächtig ausweiten).
 - STANDALONE-Kandidaten (vergessene wichtige Friedhöfe → eigene Seite + Review, Bolle 25.06.): Stadtgottesacker Halle (Renaissance-Denkmal) ★, Alter Friedhof Bielefeld (1808), jüd. Friedhof Schwarzrheindorf Bonn (ältester, 1623)
 - (Essen war Welle 2/sequenziell, bonus-brutal geprüft: hielt stand)
