@@ -45,6 +45,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--today", help="Datum YYYY-MM-DD simulieren (Demo)")
     ap.add_argument("--page", help="nur Claims dieser page pruefen")
+    ap.add_argument("--strict", action="store_true", help="Drift/Ueberfaellig als Fehler werten (exit 1) - fuer CI/Cron")
     args = ap.parse_args()
     today = parse_date(args.today) if args.today else date.today()
 
@@ -109,7 +110,8 @@ def main():
     for x in fails:   print("  FAIL  " + x)
     for x in drift:   print("  WARN  Drift: " + x)
     for x in overdue: print("  WARN  Pruefung faellig: " + x)
-    sys.exit(1 if fails else 0)
+    hard = bool(fails) or (args.strict and (drift or overdue))
+    sys.exit(1 if hard else 0)
 
 if __name__ == "__main__":
     main()
