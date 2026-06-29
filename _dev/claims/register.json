@@ -1,0 +1,118 @@
+{
+  "_doc": "Claim-Register machsruhig.de — tragende YMYL-Claims (amtliche Daten-Schicht). Pflege-Regel: nur Gebuehren/Traeger/Fristen/Kontakt, NICHT Geschichts-Kontext. Pruefung: python _dev/scripts/lint-claims.py. source_type: amtlich|sekundaer|erfahrung|unsicher. assert_contains = Substring, der auf der Seite stehen MUSS (deterministische Drift-Bindung, kein Netz).",
+  "claims": [
+    {
+      "id": "muenchen-traeger-fbm",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Betreiber der staedtischen Friedhoefe",
+      "value": "Eigenbetrieb FBM (Friedhoefe und Bestattung Muenchen), seit 01.01.2026",
+      "source_url": "https://stadt.muenchen.de/service/info/stadtische-friedhofe-munchen/1081025/",
+      "source_type": "amtlich",
+      "assert_contains": "FBM",
+      "last_checked": "2026-06-29",
+      "interval_months": 12,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-gebuehrensatzung-801",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Friedhofsgebuehrensatzung",
+      "value": "Satzung Nr. 801, in Kraft seit 1.1.2021",
+      "source_url": "https://stadt.muenchen.de/rathaus/stadtrecht/vorschrift/801/version5/0.html",
+      "source_type": "amtlich",
+      "assert_contains": "801",
+      "last_checked": "2026-06-11",
+      "interval_months": 12,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-friedhofssatzung-800",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Friedhofssatzung (Ruhezeiten)",
+      "value": "Satzung Nr. 800, § 14 Ruhezeiten",
+      "source_url": "https://stadt.muenchen.de/rathaus/stadtrecht/vorschrift/800/version3/0.html",
+      "source_type": "amtlich",
+      "last_checked": "2026-06-11",
+      "interval_months": 12,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-grabzuschlag-50",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Gebuehrenzuschlag besonders gestaltete Friedhofsteile",
+      "value": "+50 Prozent nach § 4 Abs. 3 Satzung 801",
+      "source_url": "https://stadt.muenchen.de/rathaus/stadtrecht/vorschrift/801/version5/0.html",
+      "source_type": "amtlich",
+      "assert_contains": "50 Prozent",
+      "last_checked": "2026-06-11",
+      "interval_months": 12,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-sozialbestattung-74",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Sozialbestattung Rechtsgrundlage",
+      "value": "Kostenuebernahme nach § 74 SGB XII",
+      "source_url": "https://www.gesetze-im-internet.de/sgb_12/__74.html",
+      "source_type": "amtlich",
+      "last_checked": "2026-06-11",
+      "interval_months": 12,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-bestattungsfrist-bestv",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Bestattungsfrist Bayern",
+      "value": "Fristen nach § 18/§ 19 BestV Bayern",
+      "source_url": "https://www.gesetze-bayern.de/Content/Document/BayBestV",
+      "source_type": "amtlich",
+      "last_checked": "2026-06-11",
+      "interval_months": 12,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-krematorium-ostfriedhof",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Staedtisches Krematorium Standort/Jahr",
+      "value": "Krematorium auf dem Ostfriedhof, seit 1929",
+      "source_url": "https://de.wikipedia.org/wiki/Ostfriedhof_(M%C3%BCnchen)",
+      "source_type": "sekundaer",
+      "assert_contains": "1929",
+      "last_checked": "2026-06-11",
+      "interval_months": 24,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-waldfriedhof-erster",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Waldfriedhof historische Einordnung",
+      "value": "Waldfriedhof (1907), erster Waldfriedhof Deutschlands (Hans Graessel)",
+      "source_url": "https://de.wikipedia.org/wiki/Waldfriedhof_(M%C3%BCnchen)",
+      "source_type": "sekundaer",
+      "assert_contains": "erster Waldfriedhof",
+      "last_checked": "2026-06-11",
+      "interval_months": 24,
+      "owner": "redaktion"
+    },
+    {
+      "id": "muenchen-zweite-leichenschau",
+      "page": "/bestatter/muenchen/",
+      "file": "bestatter/muenchen/index.html",
+      "claim": "Zweite Leichenschau vor Feuerbestattung",
+      "value": "Pflicht in Bayern ab 1.4.2025",
+      "source_url": "https://www.hallo-muenchen.de/muenchen/bestatter-sorge-zweite-leichenschau-vor-feuerbestattung-wird-auch-pflicht-in-bayern-krematorien-93659704.html",
+      "source_type": "sekundaer",
+      "last_checked": "2026-06-11",
+      "interval_months": 6,
+      "owner": "redaktion"
+    }
+  ]
+}
