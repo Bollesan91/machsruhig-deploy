@@ -6,6 +6,12 @@
     "abgrenzung_grabnutzung": "OFFEN: Berlin splittet Grabnutzung in Verwaltungsgebuehr 52 + Friedhofsgrundgebuehr 520; Muenchen kennt keinen 'Wahlgrab'-Begriff (Lage-Tarif). Definition 'was zaehlt als Grabnutzung' muss festgelegt + dokumentiert werden.",
     "beisetzung_umfang": "OFFEN: Beisetzungsgebuehr spreizt 285 (Berlin) bis 1.665 (Muenchen) — teils weil Muenchen mehr buendelt. Pruefen, was jeweils inkludiert ist (Oeffnen/Schliessen vs. + Aufbahrung/Halle)."
   },
+  "_schema_friedhof_lotse_geplant": {
+    "zweck": "Per-FRIEDHOF-Datensatz (andere Granularitaet als die Stadt-Gebuehren oben) — treibt Long-Tail-Seiten + Friedhof-Lotse-USP. Erst befuellen, wenn Studien-Methodik steht.",
+    "felder_pro_friedhof": ["name","stadt","bundesland","stadtteil","traeger (staedtisch|ev|kath|juedisch|sonstige)","traeger_name","groesse_ha","grabarten (erd-wahl|erd-reihe|urne|rasen|baum|anonym|gemeinschaft)","sonderfelder (muslimisch|juedisch|kindergrab|sternenkind)","gebuehren_quelle (Satzungs-Link, falls Traeger abweichend von Stadt)","lage_geo","anfahrt_oepnv","besonderheit_kurz","quelle_url","last_checked","interval_months"],
+    "gate": "Eigene Seite NUR bei unterscheidenden Daten (Sonderfeld/abweichender Traeger) ODER echter Suchnachfrage; sonst Zeile auf der Stadt-Uebersicht. Daten = Substanz, kein Thin-Spam.",
+    "treibt": ["Stadt-gegen-Stadt-Studie","datengenerierte Long-Tail-Friedhofseiten (cron-aktuell)","Friedhof-Lotse (Filter Traeger/Grabart/Sonderfeld)","Funnel-Link zur Bestatter-Stadtseite"]
+  },
   "staedte": [
     {
       "stadt": "Hamburg", "bundesland": "Hamburg",
