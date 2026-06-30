@@ -1,0 +1,89 @@
+{
+  "_doc": "Friedhofsgebuehren-Register (Studien-Datensatz). Einheit: Erd-Wahlgrab Einzelstelle, regulaere Standardlage. ROH = wie in der Satzung (mit Zitat + Paragraph). Normierung (gemeinsame Nutzungszeit, netto->brutto, was zaehlt als Grabnutzung) ist METHODIK-Entscheidung, siehe _methodik_offen — bewusst noch NICHT gesetzt. Stand 5-Staedte-Test 30.06.2026.",
+  "_methodik_offen": {
+    "gemeinsame_nutzungszeit": "OFFEN: Pro-Jahr-Staedte (HH, M) muessen auf eine gemeinsame Periode projiziert werden (z.B. 20 oder 25 J.); Einmalsummen-Staedte (K, B, F) haben ihre eigene Nutzungszeit. Vergleich nur nach Normierung auf EINE Periode fair.",
+    "netto_brutto": "OFFEN: Koeln ist NETTO (ohne USt, § 1 Abs. 3); andere evtl. brutto/USt-frei. Vor Vergleich vereinheitlichen.",
+    "abgrenzung_grabnutzung": "OFFEN: Berlin splittet Grabnutzung in Verwaltungsgebuehr 52 + Friedhofsgrundgebuehr 520; Muenchen kennt keinen 'Wahlgrab'-Begriff (Lage-Tarif). Definition 'was zaehlt als Grabnutzung' muss festgelegt + dokumentiert werden.",
+    "beisetzung_umfang": "OFFEN: Beisetzungsgebuehr spreizt 285 (Berlin) bis 1.665 (Muenchen) — teils weil Muenchen mehr buendelt. Pruefen, was jeweils inkludiert ist (Oeffnen/Schliessen vs. + Aufbahrung/Halle)."
+  },
+  "staedte": [
+    {
+      "stadt": "Hamburg", "bundesland": "Hamburg",
+      "satzung_titel": "Gebuehrenuebersicht Hamburger Friedhoefe -AoeR- (Auszug Gebuehrenordnung FHH)",
+      "satzung_stand": "gueltig ab 01.01.2025 (Folgeversion 01.01.2026 existiert: 77 EUR/J)",
+      "satzung_url": "https://www.friedhof-hamburg.de/fileadmin/Ablage/Downloads/bestatter_online/gbo/Gebuehrenuebersicht_2025.pdf",
+      "grabnutzung_betrag_eur": 74, "grabnutzung_einheit": "pro_jahr",
+      "grabnutzung_paragraph": "Tarif 1011 (Sargwahlgrab Standardqualitaet)",
+      "grabnutzung_zitat": "101 Sargwahlgrabstaetten, je Grabstelle und Jahr - 1011 in Standardqualitaet ... 74",
+      "beisetzung_betrag_eur": 895, "beisetzung_paragraph": "Tarif 201",
+      "beisetzung_zitat": "201 Beisetzung eines Sarges oder Beisetzung eines Verstorbenen ohne Sarg 895",
+      "ruhezeit_jahre": 25, "ruhezeit_quelle": "§ 28 BestattG HH (NICHT Satzung) - Satzung nennt keine feste Nutzungszeit",
+      "netto_brutto": "unklar",
+      "ambiguitaeten": ["PRO-JAHR statt Einmalsumme (1.850 = 74x25 ist BERECHNET, keine Satzungszahl)", "5 Grabklassen (1011-1015), einfachste gewaehlt", "Nutzungszeit aus Gesetz, nicht Satzung", "je Grabstelle = Einzelstelle angenommen"],
+      "confidence": "hoch", "last_checked": "2026-06-30", "interval_months": 12
+    },
+    {
+      "stadt": "Muenchen", "bundesland": "Bayern",
+      "satzung_titel": "Friedhofsgebuehrensatzung Nr. 801 (Ruhezeit aus Friedhofssatzung 800 § 14)",
+      "satzung_stand": "in Kraft seit 01.07.2024 (Version 5, vom 27.05.2024)",
+      "satzung_url": "https://stadt.muenchen.de/rathaus/stadtrecht/vorschrift/801/version5/0.html",
+      "grabnutzung_betrag_eur": 59, "grabnutzung_einheit": "pro_jahr",
+      "grabnutzung_paragraph": "§ 4 Abs. 1 I.b) (84/J, 2. Reihe) i.V.m. § 4 Abs. 2 (-30% Einzel) + § 8 Abs. 2 (Aufrundung)",
+      "grabnutzung_zitat": "I. Erdgrabstaetten ... b) in der 2. und den folgenden Reihen 84,-- ; Einzelstelle -30% -> 58,80 -> aufgerundet 59",
+      "beisetzung_betrag_eur": 1665, "beisetzung_paragraph": "§ 6 Abs. 1 I.c)",
+      "beisetzung_zitat": "I. Sargbestattungen ... c) Beisetzung eines Sarges ... mit Oeffnen und Schliessen des Grabes 1.665,--",
+      "ruhezeit_jahre": 10, "ruhezeit_quelle": "Friedhofssatzung 800 § 14 - VARIABEL 10/15/20/30 J. je Friedhof",
+      "netto_brutto": "unklar",
+      "weitere_pflicht": [{"name": "Aufbahrung", "betrag_eur": 88}, {"name": "Trauerhalle", "betrag_eur": 233}],
+      "ambiguitaeten": ["KEIN 'Wahlgrab'-Begriff - Tarif nach Lage/Reihe (1. Reihe 134, 2.+ 84, Hecke 140, Mauer 160)", "PRO-JAHR", "Ruhezeit VARIABEL 10/15/20/30 je Friedhof - keine eindeutige Zahl", "Einzelstellen-Rabatt -30% angewendet", "Zonen-Zuschlag +50% NICHT angewendet (Standardlage)", "Aufbahrung/Halle strittig ob Pflicht"],
+      "confidence": "hoch", "last_checked": "2026-06-30", "interval_months": 12
+    },
+    {
+      "stadt": "Koeln", "bundesland": "Nordrhein-Westfalen",
+      "satzung_titel": "Friedhofsgebuehrensatzung der Stadt Koeln",
+      "satzung_stand": "Fassung 06.07.2023 (in Kraft seit 01.08.2023)",
+      "satzung_url": "https://www.stadt-koeln.de/mediaasset/content/satzungen/friedhofsgeb%C3%BChrensatzung_06_07_2023.pdf",
+      "grabnutzung_betrag_eur": 1945, "grabnutzung_einheit": "einmalsumme",
+      "grabnutzung_paragraph": "Gebuehrentarif zu § 1, Ziffer 1.6.1",
+      "grabnutzung_zitat": "1.6.1 Wahlgrabstaette fuer 25 bzw. 30 Jahre 1.945,00 EUR",
+      "beisetzung_betrag_eur": 775, "beisetzung_paragraph": "Ziffer 2.1.4",
+      "beisetzung_zitat": "2.1.4 Wahlgrabstaette 775,00 EUR",
+      "ruhezeit_jahre": 25, "ruhezeit_quelle": "Tarif nennt '25 bzw. 30 J.' - konkret aus Friedhofssatzung § 11",
+      "netto_brutto": "netto",
+      "ambiguitaeten": ["NETTO ohne USt (§ 1 Abs. 3) - andere evtl. brutto", "25 oder 30 J. friedhofsabhaengig", "Tieflage-Beisetzung 2.1.5 = 995 statt 775"],
+      "abweichung_check": "EXAKT deckungsgleich mit unserer Seite (1.945 + 775 = 2.720) - Cross-Check bestanden",
+      "confidence": "hoch", "last_checked": "2026-06-30", "interval_months": 12
+    },
+    {
+      "stadt": "Berlin", "bundesland": "Berlin",
+      "satzung_titel": "Friedhofsgebuehrenordnung (FriedGebO), landeseigene Friedhoefe Berlins",
+      "satzung_stand": "zuletzt geaendert 11.01.2011 (ALT; gesetze.berlin.de JS-gerendert, nicht maschinell bestaetigt - manuelle Sichtpruefung empfohlen)",
+      "satzung_url": "https://www.berlin.de/ba-charlottenburg-wilmersdorf/service/formulare/mdb-gebuehrenordnung_aktuell_.pdf",
+      "grabnutzung_betrag_eur": 520, "grabnutzung_einheit": "je_bestattungsfall_20j",
+      "grabnutzung_paragraph": "Tarifstelle 2.1.2 (Friedhofsgrundgebuehr)",
+      "grabnutzung_zitat": "2.1.2 in einer Wahl-, Familien- oder Urnenwandgrabstaette 520,00",
+      "beisetzung_betrag_eur": 285, "beisetzung_paragraph": "Tarifstelle 3.1.1.1",
+      "beisetzung_zitat": "3.1.1.1 in einer Erdwahl- oder Familiengrabstaette ... 285,00",
+      "ruhezeit_jahre": 20, "ruhezeit_quelle": "Senats-Broschuere: 'jeweils fuer eine Bestattung sowie 20 Jahre'",
+      "netto_brutto": "unklar",
+      "weitere_pflicht": [{"name": "Verwaltungsgebuehr Nutzungsrecht (TS 1.1)", "betrag_eur": 52}, {"name": "Feierhalle 30 Min (TS 3.2, optional)", "betrag_eur": 159}],
+      "ambiguitaeten": ["KEINE einzelne Grabnutzungs-Zeile - gesplittet in Verwaltung 52 + Grundgebuehr 520", "Stand 2011 - Aktualitaet nicht via Primaer-DB bestaetigt", "Feierhalle in amtl. Broschuere als Standard gefuehrt (Gesamt 1.016), rechtlich optional"],
+      "confidence": "hoch", "last_checked": "2026-06-30", "interval_months": 6
+    },
+    {
+      "stadt": "Frankfurt am Main", "bundesland": "Hessen",
+      "satzung_titel": "Friedhofs- und Bestattungsgebuehrenordnung der Stadt Frankfurt am Main",
+      "satzung_stand": "Gebuehrenverzeichnis in Kraft ab 01.01.2025 (Amtsblatt Nr. 52 v. 24.12.2024)",
+      "satzung_url": "https://friedhof-frankfurt.de/download/gebuehrenordnung-gueltig-ab-01-01-2025/",
+      "grabnutzung_betrag_eur": 1855, "grabnutzung_einheit": "einmalsumme",
+      "grabnutzung_paragraph": "Lfd. Nr. 5.1.1.1 (Erdwahlgrab Einzel)",
+      "grabnutzung_zitat": "5.1 Wahlgrabstaetten (Nutzungsdauer 25 Jahre) | 5.1.1.1 Als Einzelwahlgrabstaette ... 1.855,00",
+      "beisetzung_betrag_eur": 1659, "beisetzung_paragraph": "Lfd. Nr. 2.1.1",
+      "beisetzung_zitat": "2.1 Erdbestattungen | 2.1.1 Verstorbene ab dem vollendeten 5. Lebensjahr ... 1.659,00",
+      "ruhezeit_jahre": 25, "ruhezeit_quelle": "Satzung 5.1 'Nutzungsdauer 25 Jahre'",
+      "netto_brutto": "unklar",
+      "ambiguitaeten": ["Einzel 1.855 vs Doppel 2.971 - Einzel gewaehlt", "Gruft-Premium-Varianten (10.405/17.164, 60 J.) ausgeschlossen"],
+      "confidence": "hoch", "last_checked": "2026-06-30", "interval_months": 12
+    }
+  ]
+}
