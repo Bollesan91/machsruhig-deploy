@@ -25,8 +25,12 @@ Das „tiefe, geile Produkt": der **Friedhof-Daten-Lotse** — die Grundlage, di
 3. **Friedhof-Lotse** bauen (Filter: Träger / Grabart / Sonderfeld) + datengenerierte Long-Tail-Seiten, cron-aktuell.
 → Wenn Spur A frei wird, ist die **Studie als Partner-Asset schon fertig**. Wir verlieren keine Zeit.
 
-### Spur C — läuft gerade (Recherche)
-- [~] **Nischen-Suche** (Task `wrlft1u01`): profitable, wenig umkämpfte Nische im machsruhig-Kontext. Ergebnis kommt, dann entscheiden wir, ob eine davon Spur B ergänzt/schlägt.
+### Spur C — Nischen-Recherche FERTIG (30.06.)
+**Top-Nische = islamische Bestattung** — genau das, was du eh schon priorisiert hattest (unabhängig bestätigt). Sie braucht „welcher Friedhof hat ein muslimisches Grabfeld" — **also genau die Friedhof-Daten aus Spur B.** Konvergiert mit dem Build, keine neue Richtung nötig.
+- **Top-3 (offen + machbar):** (1) **islamische Bestattung** [bester Fit: wachsend, unbesetzt am Info-Layer, kein §34d/RDG-Gate, monetarisiert über denselben Bestatter-/Überführungs-Lead], (2) **digitaler-Nachlass-RATGEBER** (Columba besitzt nur die B2B-Abwicklung, der Verbraucher-Info-Layer ist offen — auf der Ratgeber-Seite von §5 RDG bleiben), (3) **Erbschaft/Erbenermittlung-Erklärinhalte** (Verbraucherschutz-Winkel, schwächste Monetarisierung — Autoritäts-Futter).
+- **Besetzt/gated (Finger weg):** Dokument-Erstellung (Afilio), digitaler-Nachlass-*Abwicklung* (Columba), Bestatter-Vergleich (überfüllt), Tierbestattung (Markt zu klein, ~100 Mio €).
+- **KORREKTUR zu meiner früheren Aussage:** Sterbegeld-Affiliate ist NICHT „easy money" — Vergleichs-/Ranking-Portale fallen unter **§34d-Erlaubnispflicht** (IHK), der „Tippgeber-Freilane" wurde widerlegt. Aufklärungs-Content dazu ok; Vergleich/Vermittlung nur mit Lizenz oder Partner.
+- Nicht geprüft (offen, evtl. Folge-Recherche): Naturbestattung/Friedwald, Trauerbegleitung, Vorsorge-Treuhand, Grabpflege.
 
 ---
 
