@@ -1,10 +1,11 @@
 {
   "_doc": "Friedhofsgebuehren-Register (Studien-Datensatz). Einheit: Erd-Wahlgrab Einzelstelle, regulaere Standardlage. ROH = wie in der Satzung (mit Zitat + Paragraph). Normierung (gemeinsame Nutzungszeit, netto->brutto, was zaehlt als Grabnutzung) ist METHODIK-Entscheidung, siehe _methodik_offen — bewusst noch NICHT gesetzt. Stand 5-Staedte-Test 30.06.2026.",
-  "_methodik_offen": {
-    "gemeinsame_nutzungszeit": "OFFEN: Pro-Jahr-Staedte (HH, M) muessen auf eine gemeinsame Periode projiziert werden (z.B. 20 oder 25 J.); Einmalsummen-Staedte (K, B, F) haben ihre eigene Nutzungszeit. Vergleich nur nach Normierung auf EINE Periode fair.",
-    "netto_brutto": "OFFEN: Koeln ist NETTO (ohne USt, § 1 Abs. 3); andere evtl. brutto/USt-frei. Vor Vergleich vereinheitlichen.",
-    "abgrenzung_grabnutzung": "OFFEN: Berlin splittet Grabnutzung in Verwaltungsgebuehr 52 + Friedhofsgrundgebuehr 520; Muenchen kennt keinen 'Wahlgrab'-Begriff (Lage-Tarif). Definition 'was zaehlt als Grabnutzung' muss festgelegt + dokumentiert werden.",
-    "beisetzung_umfang": "OFFEN: Beisetzungsgebuehr spreizt 285 (Berlin) bis 1.665 (Muenchen) — teils weil Muenchen mehr buendelt. Pruefen, was jeweils inkludiert ist (Oeffnen/Schliessen vs. + Aufbahrung/Halle)."
+  "_methodik_festgelegt": {
+    "stand": "30.06.2026, von Bolle bestaetigt",
+    "einheit": "Erd-Wahlgrab Einzelstelle, regulaere Standardlage (keine Premium-/Sonderzone).",
+    "regel_1_nutzungszeit": "Normiert auf 20 Jahre (Aeternitas-kompatibel zum Gegencheck). Pro-Jahr-Staedte: Jahressatz x 20. Einmalsummen-Staedte: Betrag / eigene Nutzungszeit x 20. ROH-Betrag + eigene Nutzungszeit werden IMMER zusaetzlich gespeichert/gezeigt.",
+    "regel_2_netto_brutto": "Satzungs-Betrag wie ausgewiesen; Netto-Faelle (z.B. Koeln) im Feld netto_brutto flaggen. Friedhofsgebuehren meist USt-frei.",
+    "regel_3_vergleichszahl": "Vergleichszahl = Grabnutzung (Grab-Nutzungsrecht) + Beisetzung (Oeffnen/Schliessen Erdbestattung). Aufbahrung/Trauerhalle/Feierhalle = optional, NICHT mitgezaehlt (separat unter weitere_pflicht)."
   },
   "_schema_friedhof_lotse_geplant": {
     "zweck": "Per-FRIEDHOF-Datensatz (andere Granularitaet als die Stadt-Gebuehren oben) — treibt Long-Tail-Seiten + Friedhof-Lotse-USP. Erst befuellen, wenn Studien-Methodik steht.",
