@@ -20,10 +20,10 @@ Diese Sachen brauchen erst deine Klärung:
 
 ### Spur B — bauen wir JETZT (braucht weder Anwalt noch Partner)
 Das „tiefe, geile Produkt": der **Friedhof-Daten-Lotse** — die Grundlage, die später ALLES trägt (Studie, Long-Tail, USP). Nutzt nur öffentliche Daten, **kein DSGVO-Gate**.
-1. **Methodik festklopfen** (3 Regeln: gemeinsame Nutzungszeit, netto→brutto, was zählt als Grabnutzung). → siehe `friedhofsgebuehren.json`.
-2. **50-Städte-Friedhofsgebühren-Register** sauber erheben (Primärquelle + Zitat + Prüfdatum). 5 Städte stehen schon, Methode erprobt.
-3. **Friedhof-Lotse** bauen (Filter: Träger / Grabart / Sonderfeld) + datengenerierte Long-Tail-Seiten, cron-aktuell.
-→ Wenn Spur A frei wird, ist die **Studie als Partner-Asset schon fertig**. Wir verlieren keine Zeit.
+1. ✅ **Methodik festgeklopft** (20-J-Normierung + roh, Netto-Flag, Grabnutzung+Beisetzung). → `friedhofsgebuehren.json`.
+2. ✅ **50-Städte-Register erhoben + 2x re-verifiziert** (01.07.): jede Stadt unabhängig aus der Satzung, dann unabhängiger Zweitcheck. 42 bestätigt, 4 korrigiert, **1 strittig (Mainz)**. Spread **Berlin 805 € → Mainz 4.714 €** (~6×). Belegt (Zitat+§+URL+Prüfdatum) je Stadt.
+3. ⏳ **Friedhof-Lotse** bauen (Filter: Träger / Grabart / Sonderfeld) + datengenerierte Long-Tail-Seiten, cron-aktuell — *nächster Build-Schritt*.
+→ Das Daten-Asset **steht**. Vor PUBLIKATION als Studie fehlt nur noch: Mainz auflösen + unabhängiger Reviewer über Methodik/Artefakt (Spur A / Partner-Zeitpunkt).
 
 ### Spur C — Nischen-Recherche FERTIG (30.06.)
 **Top-Nische = islamische Bestattung** — genau das, was du eh schon priorisiert hattest (unabhängig bestätigt). Sie braucht „welcher Friedhof hat ein muslimisches Grabfeld" — **also genau die Friedhof-Daten aus Spur B.** Konvergiert mit dem Build, keine neue Richtung nötig.
