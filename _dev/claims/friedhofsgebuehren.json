@@ -672,8 +672,8 @@
       "grabnutzung_betrag_eur": 2827,
       "grabnutzung_einheit": "einmalsumme",
       "grabnutzung_einheit_roh": "einmalsumme",
-      "grabnutzung_paragraph": "§ 7 (Wahlgräber), Ziffer 720",
-      "grabnutzung_zitat": "\"720 Einstellige Grabstätte für zwei Beisetzungen 2.827,00 €\" (unter § 7 Wahlgräber; abzugrenzen von \"710 Für das 30-jährige Nutzungsrecht an Wahlgräbern mit Doppelbelegung (Tiefgräber) ... 711 Einstellige Grabstätte 3.361,00 €\" = Tiefgrab, ausgeschlossen)",
+      "grabnutzung_paragraph": "§ 7 Pos. 720",
+      "grabnutzung_zitat": "§ 7 Wahlgräber, Pos. 720: Einstellige Grabstätte für zwei Beisetzungen 2.827,00 € (reguläres Wahlgrab)",
       "beisetzung_betrag_eur": 1887,
       "beisetzung_zitat": "\"320 Für die Durchführung einer Erdbestattung werden, inklusive dem Öffnen und Schließen der Grabstätte, folgende Gebühren erhoben: Für Verstorbene, die das 5. Lebensjahr vollendet haben ... 322 in ei",
       "ruhezeit_jahre": 20,
@@ -683,7 +683,8 @@
       "last_checked": "2026-07-01",
       "interval_months": 12,
       "korrektur_reverify": "Keine Korrektur noetig. Streitpunkt aufgeloest: Die Satzung fuehrt zwei einstellige Erd-Wahlgrab-Positionen. Ziff. 711 (3.361 EUR) faellt unter \"710 ... mit Doppelbelegung (Tiefgraeber)\" = TIEFGRAB (s",
-      "FLAG": "STRITTIG: Grabnutzung 2.827 (Voll-Lauf) vs. 3.361 (Stichprobe) — manuell aufloesen"
+      "aufgeloest": "01.07. selbst aus Satzung: 2.827 (Pos.720) korrekt; 3.361 (Pos.711) war Tiefgrab/Doppelbelegung unter Pos.710 -> regelkonform ausgeschlossen. Beisetzung 1.887 (Pos.322) bestätigt.",
+      "hinweis_nutzungszeit": "Nutzungszeit von Pos.720 nicht explizit in der Tarifzeile; Ruhezeit 20 J. angesetzt. Nutzungszeit-vs-Ruhezeit-Abgrenzung ist eine allgemeine Methodik-Feinheit fuer alle Einmalsummen-Staedte (vor Publikation pruefen)."
     },
     {
       "stadt": "Mannheim",
