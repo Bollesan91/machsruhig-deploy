@@ -105,3 +105,13 @@
 64. **Daten-Kaesten aus Registern: Labels muessen pro Stadt aus der SATZUNG stammen, nicht aus dem eigenen Methodik-Vokabular.** "Einfache Lage" war unsere Erhebungs-Kategorie — Koelns Tarif kennt keine Lagen (die eigene Bestatter-Seite nennt das sogar "haeufiges Missverstaendnis"). Universal-Label nur, wenn es keinen stadtspezifischen Begriff erfindet ("guenstigster regulaerer Tarif"). Zudem: Stand-Zeilen nie hart [:80] kappen (Satzabbruch), Zahlungsmodus bei pro-Jahr-Tarifen nennen (Voraus-Faelligkeit), und ausweisen, dass "Beisetzungsgebuehr" je Stadt anderes buendelt (Koeln 775 = Buendel vs. Chemnitz 297 = nur Oeffnen/Schliessen — NIE vergleichend zeigen).
 
 65. **Reviewer-Fetcher sieht gecachte Seiten (2. Vorfall):** "Kasten fehlt auf 3 von 4" war zum Reviewzeitpunkt live widerlegt (Cf-Cache-Status DYNAMIC, plain-URL frisch). Live-Behauptungen des Reviewers IMMER selbst per curl+Cache-Buster UND plain verifizieren, bevor man "Deploy kaputt" glaubt — aber die Satzungs-Nachrechnungen desselben Reviews waren Gold (12/12 Zahlen bestaetigt).
+
+## Nachtrag 02.07.2026 (2h-Loop: Kostenmodell-Vereinheitlichung + FAQ-Rollout, Welle Score 57)
+
+66. **"Vereinheitlicht" erst behaupten, wenn ALLE Zeilen der Tabelle geprueft sind.** Mein Sed fixte See/Baum/Anonym in 9 Tabellen — die Erd/Feuer-Zeilen DERSELBEN Tabellen trugen weiter Fantasiewerte (4.500-9.500/3.500-7.500 in 8 Satelliten). Bei Tabellen-Angleichung immer das komplette Zeilen-Inventar uniq-zaehlen (Format-Varianten! &euro; vs €, "Euro" ausgeschrieben, Meta-Description, FAQ-Schema), nicht nur die Zeilen, die man gerade anfasst. Und: krumme Varianten koennen LEGITIM sein (mit-Grabpflege-, regionalisierte Stadt-Spannen) — Kontext pruefen, nicht blind ersetzen (checkliste "5.000-15.000" war Auslands-UEBERFUEHRUNG, nicht Erdbestattung!).
+
+67. **Werte, auf die man "angleicht", muessen dokumentiert SEIN.** See/Baum/Anonym/Direkt-Spannen standen in keiner Methodik — Angleichung an undokumentierte Zahlen ist Zirkellogik. Erst Referenz beziffern (Methodik), dann angleichen.
+
+68. **Generierte FAQ: Frage muss die Antwort einloesen** ("Wer legt fest?" mit Dokument-Antwort = gebrochenes Versprechen; Gremium variiert je Stadt/AoeR -> Frage umformulieren statt Akteur raten) + Stand-Datum in die Antwort (Schema zirkuliert allein).
+
+69. **Schwesterseiten-Konsistenz ist Teil jedes Daten-Rollouts:** Potsdam-FAQ (25 J./1.700) kollidierte mit bestatter/potsdam-Bestand (20 J./1.360). Bei Register-Rollouts die Bestands-Zahlen derselben Stadt auf ALLEN Seitentypen gegen das Register greppen.

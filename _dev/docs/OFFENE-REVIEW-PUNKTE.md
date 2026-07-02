@@ -57,3 +57,6 @@
 - **Bewusst offen: Koeln 25-vs-30-Jahre-Variante** (gleiche 1.945 EUR kaufen auf § 11-Friedhoefen 30 J.) — Kasten nennt 25 (Untergrenze, konservativ). Bei Detail-Ausbau ergaenzen.
 - **Bewusst offen: chemnitz.de-Satzungs-PDF liefert curl-403** (WAF/Bot-Schutz, kein toter Link — bei Erhebung maschinell lesbar). Beobachten.
 - **Bewusst offen: zwei Pruefdaten je Seite** (Kopf vs. Kasten) — kosmetisch.
+- **02.07. (Loop-Welle) F7 UNSICHER: sozialbestattung.html "uebernommene Kosten oft 1.500-3.500 €"** — Sozialamts-Empirie ohne Quelle am Satz (zufaellig = alte Anonym-Spanne). Nicht angefasst; bei naechster Sozialbestattungs-Ueberarbeitung Quelle finden oder Formulierung entschaerfen.
+- **F11 Info: FAQPage-Rich-Results zeigt Google seit 08/2023 fast nur noch Behoerden/Gesundheit** — unsere FAQ-Bloecke zielen auf Content/AI-Answer-Extraktion, nicht SERP-Sterne. Erwartung entsprechend.
+- **Bewusst offen: Satelliten-Links ohne Trailing-Slash neben Bestands-Links mit Slash** — funktional egal (Netlify), nur Stil.
