@@ -89,11 +89,16 @@ window.plausible = window.plausible || function() { (window.plausible.q = window
   }, true);
 
   // === Tool Events (global API für React-Tools) ===
-  // React-Tools können diese Funktionen aufrufen:
-  // window.mrTrack.toolStep(stepName, stepNumber)
-  // window.mrTrack.toolExport(toolName, exportType)
-  // window.mrTrack.leadQualified(formName, city)
-  window.mrTrack = {
+  // Zwei Aufrufformen werden unterstützt (Fix 07/2026 — Tools rufen mrTrack
+  // teils als FUNKTION auf: window.mrTrack('toolStep', {tool:...}); vorher
+  // war mrTrack ein reines Objekt -> TypeError, Events gingen verloren und
+  // Print-Flows brachen ab):
+  //   window.mrTrack('eventName', {props})            (generisch, wie window.plausible)
+  //   window.mrTrack.toolStep(stepName, stepNumber)   (Methoden-API)
+  function mrTrackFn(eventName, props) {
+    track(eventName, Object.assign({ page: window.location.pathname }, props || {}));
+  }
+  window.mrTrack = Object.assign(mrTrackFn, {
     toolStep: function(stepName, stepNumber) {
       track('tool_step', {
         step: stepName,
@@ -139,7 +144,7 @@ window.plausible = window.plausible || function() { (window.plausible.q = window
         page: window.location.pathname
       });
     }
-  };
+  });
 
   // === Affiliate-Link Tracking (automatisch) ===
   // Trackt Klicks auf externe Links mit data-affiliate oder rel="sponsored"
