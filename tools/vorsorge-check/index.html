@@ -74,7 +74,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     <div class="vc-view active" data-step="0" id="vc-step-0">
       <div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:32px 0;font-size:14px;line-height:1.6">
         <strong style="color:var(--mr-text)">🔐 Deine Daten bleiben bei dir.</strong>
-        <p style="margin:8px 0 0;color:var(--mr-text-muted)">Dieser Check läuft komplett in deinem Browser. Deine Antworten werden nicht gespeichert und nicht an einen Server gesendet. Hinweis: Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur den Seitenbesuch erfassen, nicht deine Antworten.</p>
+        <p style="margin:8px 0 0;color:var(--mr-text-muted)">Dieser Check läuft komplett in deinem Browser. Deine Antworten werden nicht gespeichert und nicht an einen Server gesendet — es sei denn, du sendest am Ende das optionale Anfrage-Formular ab: dann übermitteln wir deine Check-Angaben (Situation, vorhandene Dokumente) zusammen mit deiner E-Mail-Adresse. Hinweis: Die Seite selbst nutzt anonyme Reichweiten-Statistiken (Umami), die nur den Seitenbesuch erfassen, nicht deine Antworten.</p>
       </div>
 
       <div style="margin:24px 0 8px">
@@ -164,7 +164,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
           <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">PLZ (optional)</span><input type="text" name="plz" pattern="[0-9]{5}" maxlength="5" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px"></label>
           <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Zeitrahmen (optional)</span><select name="zeitrahmen" style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px;background:#fff"><option value="">Bitte wählen</option><option value="akut">Akut</option><option value="planung">Planung</option><option value="vorsorge">Vorsorge</option></select></label>
         </div>
-        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#73655A"><input type="checkbox" name="datenschutz" required style="margin-top:3px"><span>Ich bin einverstanden, dass meine Email-Adresse zur Bearbeitung meiner Anfrage gespeichert wird. <a href="/datenschutz" target="_blank">Datenschutz</a></span></label>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#73655A"><input type="checkbox" name="datenschutz" required style="margin-top:3px"><span>Ich bin einverstanden, dass meine E-Mail-Adresse und meine Check-Angaben (Situation, vorhandene Dokumente) zur Bearbeitung meiner Anfrage gespeichert werden. <a href="/datenschutz" target="_blank">Datenschutz</a></span></label>
         <button type="submit" class="cta-primary" style="margin-top:8px;padding:14px 32px;background:#7A6B5D;color:#fff;border:none;border-radius:99px;font-weight:600;font-size:15px;cursor:pointer;font-family:inherit">Anfrage senden &mdash; kostenlos &amp; unverbindlich</button>
         <p style="font-size:12px;color:#73655A;text-align:center;margin-top:4px">Spamfrei · DSGVO-konform · Du kannst jederzeit widersprechen</p>
       </form>
@@ -174,7 +174,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 <div class="mr-related no-print" aria-label="Weitere Werkzeuge">
 <h2>Weitere kostenlose Helfer</h2>
 <ul>
-<li><a href="/tools/notfallkarte/">Notfallkarte</a> — Wichtige Kontakte und Infos für den Ernstfall festhalten</li>
+<li><a href="/notfallkarte">Notfallkarte</a> — Wichtige Kontakte und Infos für den Ernstfall festhalten</li>
 <li><a href="/tools/bestattungskosten-rechner/">Bestattungskosten-Rechner</a> — Kostenrahmen für deine Region berechnen</li>
 <li><a href="/tools/checkliste-todesfall/">Checkliste Todesfall</a> — Was nach einem Sterbefall zu regeln ist</li>
 <li><a href="/tools/"><strong>Alle kostenlosen Werkzeuge</strong></a> — Übersicht aller Helfer im Browser</li>
@@ -192,7 +192,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   var DOCUMENTS = [
     {id:'patientenverfuegung',name:'Patientenverfügung',icon:'📋',description:'Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.',why:'Du kannst nicht selbst entscheiden — wer entscheidet dann für dich? Eine zu unbestimmt formulierte Patientenverfügung kann zudem unwirksam sein (vgl. BGH XII ZB 61/16).',link:'/vorsorge/patientenverfuegung',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'dringend',
       selfCheck:['Sind konkrete Behandlungssituationen benannt — nicht nur „keine lebenserhaltenden Maßnahmen"? (Zu unbestimmte Formulierungen können unwirksam sein.)','Ist sie aktuell, also in den letzten rund 5 Jahren überprüft?','Ist sie eigenhändig unterschrieben?','Wissen deine Vertrauensperson und der Hausarzt, wo sie liegt?']},
-    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann das Betreuungsgericht eine Person einsetzen, die du nicht kennst. Auch Ehe- oder Lebenspartner sind nicht automatisch vertretungsbefugt.',link:'/vorsorge/patientenverfuegung',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',unverheiratet:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'},
+    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann das Betreuungsgericht eine Person einsetzen, die du nicht kennst. Auch Ehe- oder Lebenspartner sind nicht automatisch vertretungsbefugt.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',unverheiratet:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'},
       selfCheck:['Ist die Vollmacht über den Tod hinaus formuliert (transmortal)?','Ist sie im Zentralen Vorsorgeregister der Bundesnotarkammer eingetragen, damit Gerichte sie finden?','Deckt sie die wichtigen Bereiche ab (Gesundheit, Finanzen, Behörden, Aufenthalt)?']},
     {id:'betreuungsverfuegung',name:'Betreuungsverfügung',icon:'👤',description:'Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.',why:'Verhindert, dass das Gericht eine fremde Person bestellt.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
       selfCheck:['Ist die gewünschte Betreuerin / der gewünschte Betreuer namentlich benannt?','Sind, falls gewollt, bestimmte Personen ausdrücklich ausgeschlossen?']},

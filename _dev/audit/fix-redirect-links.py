@@ -35,24 +35,36 @@ def resolve(d, depth=0):
 
 changed = {}
 skipped_missing = set()
+skipped_shadowed = set()
 files = [f for f in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True)
          if os.sep+"_dev"+os.sep not in f and os.sep+"templates"+os.sep not in f]
 for f in files:
     html = open(f, encoding="utf-8").read()
     orig = html
+    n_repl = 0
     for src, dst in rules.items():
+        # LEKTION (Review 02.07.): Regel ist TOT/shadowed, wenn die Quelle selbst als Datei
+        # existiert (Netlify serviert die Datei, nicht den Redirect; ausser 301!-force).
+        # /notfallkarte-Fall: 26 Links wurden faelschlich umgebogen.
+        if target_exists(src):
+            skipped_shadowed.add(src); continue
         final = resolve(dst)
         if not target_exists(final):
             skipped_missing.add(f"{src} -> {final}"); continue
         if src == final: continue
-        html = html.replace(f'href="{src}"', f'href="{final}"')
+        before = html.count(f'href="{src}"')
+        if before:
+            html = html.replace(f'href="{src}"', f'href="{final}"')
+            n_repl += before
     if html != orig:
-        n = sum(1 for a, b in zip([orig], [html]))  # count files
-        changed[os.path.relpath(f, ROOT)] = len(re.findall(r'href="', orig)) - 0
+        changed[os.path.relpath(f, ROOT)] = n_repl
         if not DRY: open(f, "w", encoding="utf-8").write(html)
 
-print(f"=== {'DRY-RUN' if DRY else 'APPLY'} === Regeln: {len(rules)} | Dateien geaendert: {len(changed)}")
-for k in sorted(changed): print("  ", k)
+print(f"=== {'DRY-RUN' if DRY else 'APPLY'} === Regeln: {len(rules)} | Dateien geaendert: {len(changed)} | Ersetzungen: {sum(changed.values())}")
+for k in sorted(changed): print(f"   {k} ({changed[k]})")
+if skipped_shadowed:
+    print("-- SHADOWED Regeln (Quelldatei existiert, Redirect tot -> NICHT ersetzt):")
+    for s in sorted(skipped_shadowed): print("   !", s)
 if skipped_missing:
     print("-- Redirect-Ziele ohne lokale Datei (NICHT ersetzt):")
     for s in sorted(skipped_missing)[:10]: print("   ?", s)
