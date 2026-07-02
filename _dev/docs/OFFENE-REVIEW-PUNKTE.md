@@ -47,3 +47,9 @@
 - **Problem:** Kosten-Spannen driften über die Seiten — „7.000–8.000 €" (Legacy ~16 BL + mainz/dresden/muenster/karlsruhe/bielefeld/bremen/hannover/leipzig/stuttgart/wuppertal/bonn/saarland), „6.000–8.000 € (Stand 2026)" (neuere Seiten), per-Art-Varianten („Erd typisch 4.500–9.500" vs. kanonisch 3.700–9.300). Quellen gemischt (SW unbelegt / SW Finanztest 11/2023 / SW+Aeternitas / SW+Verbraucherzentrale).
 - **Entscheid offen (Bolle, redaktionell, YMYL):** Welche EINE Darstellung wird Standard? (a) eigenes Kostenmodell `/methodik#kostenmodell` als Single Source (LEKTIONEN #3) mit optionaler SW-Korroboration, oder (b) SW-Zahl als Headline mit working-Link, oder (c) beide klar getrennt. Exakte aktuelle SW-Zahl ist paywall-bedingt nicht voll primärverifizierbar → eigenes Modell ist die sicherere Single Source.
 - **Ein-Klick-fertig vorbereitet:** sobald Variante gewählt, deterministisches Skript (`_dev/audit/`) über alle ~53 Fundstellen (Body + faq-answer + JSON-LD, Parität-erhaltend), Asserts vor Write, Linter + Diff-Re-Check.
+
+## 02.07.2026 (Quick-Win-Review, Fable-5-Tab)
+- **False Positive: "Deploy haengt / live noch alter Stand (Hagen zeigt Iserlohn)"** — Reviewer-Fetch war indirekt/cached (machsruhig.de nicht in seiner Container-Whitelist); eigener curl-Verify zeigte die Aenderungen live VOR seiner Antwort. Kein Deploy-Problem.
+- **Bewusst nicht gefixt: lowercase-Percent-Umlaut-Redirects (%c3%b6 etc.) fehlen fuer moenchengladbach/baden-wuerttemberg/thueringen** (nur luebeck hat sie). Praktisch irrelevant (Clients normalisieren uppercase); bei Bedarf 6 Zeilen in _redirects.
+- **Bewusst offen: Checkliste-Breadcrumb verlinkt sich selbst** (Mittel-Glied) — kosmetisch, Bestandsverhalten, kein 404.
+- **Bewusst offen: Beerdigungsplaner sendet ggf. localStorage-Antworten aelterer Session mit** — durch neuen DS-Hinweis abgedeckt ("deine Plan-Antworten"); echte Loesung waere Session-Flag.
