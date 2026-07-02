@@ -60,3 +60,5 @@
 - **02.07. (Loop-Welle) F7 UNSICHER: sozialbestattung.html "uebernommene Kosten oft 1.500-3.500 €"** — Sozialamts-Empirie ohne Quelle am Satz (zufaellig = alte Anonym-Spanne). Nicht angefasst; bei naechster Sozialbestattungs-Ueberarbeitung Quelle finden oder Formulierung entschaerfen.
 - **F11 Info: FAQPage-Rich-Results zeigt Google seit 08/2023 fast nur noch Behoerden/Gesundheit** — unsere FAQ-Bloecke zielen auf Content/AI-Answer-Extraktion, nicht SERP-Sterne. Erwartung entsprechend.
 - **Bewusst offen: Satelliten-Links ohne Trailing-Slash neben Bestands-Links mit Slash** — funktional egal (Netlify), nur Stil.
+- **02.07. (Grabpflege-Welle) False Positives F17/F18:** "/bestattungskosten sagt 10-50 Euro/Jahr Grabpflege" und "Steuer-FAQ pauschal 'nicht absetzbar'" — beide Saetze existieren weder im Repo noch live (0 Treffer mit+ohne Cache-Buster); Live-FAQ hat die korrekte Par.-33-EStG-Antwort. Reviewer-Fetcher-Snapshot. NICHT fixen.
+- **Bewusst offen (Grabpflege): Eigenleistung unbeziffert, Sozialbestattung-deckt-keine-Grabpflege-Satz fehlt** — Reviewer-Anregungen ohne Score-Relevanz; bei naechster Ueberarbeitung.

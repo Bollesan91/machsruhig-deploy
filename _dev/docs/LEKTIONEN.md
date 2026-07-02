@@ -115,3 +115,11 @@
 68. **Generierte FAQ: Frage muss die Antwort einloesen** ("Wer legt fest?" mit Dokument-Antwort = gebrochenes Versprechen; Gremium variiert je Stadt/AoeR -> Frage umformulieren statt Akteur raten) + Stand-Datum in die Antwort (Schema zirkuliert allein).
 
 69. **Schwesterseiten-Konsistenz ist Teil jedes Daten-Rollouts:** Potsdam-FAQ (25 J./1.700) kollidierte mit bestatter/potsdam-Bestand (20 J./1.360). Bei Register-Rollouts die Bestands-Zahlen derselben Stadt auf ALLEN Seitentypen gegen das Register greppen.
+
+## Nachtrag 02.07.2026 (Grabpflege-Seite, Welle Score 82)
+
+70. **Urteile nie aus Sekundaer-Zusammenfassung paraphrasieren — Kernaussage gegen die offizielle PM pruefen.** Meine Wiedergabe von AG Muenchen 158 C 16069/22 ("Erben hoechstens ueber eine Auflage binden") verfehlte den Urteilskern (hoechstpersoenliche Auflage geht gerade NICHT auf die Erben der Verpflichteten ueber — und es ging um die Erben der Vermaechtnisnehmerin). Die korrekte Fassung war fuer die Seitenbotschaft sogar staerker. Regel: Az. + PM der Justiz selbst oeffnen, Parteien-Konstellation notieren, dann formulieren; PM in die Quellen verlinken.
+
+71. **Anfuehrungszeichen = Woertlichkeits-Versprechen.** "Grabstaetten muessen gepflegt werden" war Paraphrase in Zitat-Optik (echt: "Grabstaetten sind zu pflegen"). Nur zitieren, was man wortgenau vor sich hat.
+
+72. **Reviewer-Fetch-Halluzination (3. Vorfall, neue Qualitaet):** Reviewer zitierte von /bestattungskosten Saetze ("10-50 Euro/Jahr", "nicht steuerlich absetzbar"), die weder lokal noch live (mit UND ohne Cache-Buster) existieren — vermutlich Alt-Snapshot seines Fetchers. Kollateral-Findings auf NICHT-Ziel-Seiten IMMER erst im eigenen File/live verifizieren, bevor man dort fixt. Die Ziel-Seiten-Findings desselben Reviews waren dagegen exzellent (PM-Recherche, centgenaue Zahlenpruefung).
