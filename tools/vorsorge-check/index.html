@@ -59,7 +59,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 </nav>
 
 <div class="mr-content"><main id="main">
-<nav class="mr-breadcrumb" aria-label="Brotkrumen"><a href="/">Start</a> › <a href="/vorsorge">Vorsorge</a> › Vorsorge-Check</nav>
+<nav class="mr-breadcrumb" aria-label="Brotkrumen"><a href="/">Start</a> › <a href="/vorsorge/">Vorsorge</a> › Vorsorge-Check</nav>
 
   <header style="text-align:center;margin:40px 0 16px" class="no-print">
     <h1 style="font-family:'Fraunces',serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:var(--mr-text);margin:0 0 12px;line-height:1.2">Vorsorge-Check</h1>
@@ -154,6 +154,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       <p style="font-size:15px;color:#73655A;margin-bottom:20px;text-align:center">Optional: Trag Dich ein, dann melden wir uns persönlich mit Deiner Vorsorge-Auswertung und konkreten nächsten Schritten (Patientenverfügung, Vorsorgevollmacht, Testament). Kein Spam, kein Verkaufsdruck.</p>
       <form name="tool-lead-vorsorgecheck" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke-vorsorge-check?source=tool-lead-vorsorgecheck" style="display:grid;gap:12px">
         <input type="hidden" name="form-name" value="tool-lead-vorsorgecheck">
+        <input type="hidden" name="tool_ergebnis" id="vc-tool-ergebnis" value="">
         <p hidden style="display:none"><label>Lass dieses Feld leer: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <label style="display:block"><span style="display:block;font-size:13px;font-weight:600;margin-bottom:4px">Dein Name *</span><input type="text" name="name" required style="width:100%;padding:10px 12px;border:1px solid #E8E0D6;border-radius:8px;font-size:15px"></label>
@@ -191,13 +192,13 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   var DOCUMENTS = [
     {id:'patientenverfuegung',name:'Patientenverfügung',icon:'📋',description:'Legt fest, welche medizinischen Maßnahmen du im Notfall wünschst oder ablehnst.',why:'Du kannst nicht selbst entscheiden — wer entscheidet dann für dich? Eine zu unbestimmt formulierte Patientenverfügung kann zudem unwirksam sein (vgl. BGH XII ZB 61/16).',link:'/vorsorge/patientenverfuegung',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'dringend',
       selfCheck:['Sind konkrete Behandlungssituationen benannt — nicht nur „keine lebenserhaltenden Maßnahmen"? (Zu unbestimmte Formulierungen können unwirksam sein.)','Ist sie aktuell, also in den letzten rund 5 Jahren überprüft?','Ist sie eigenhändig unterschrieben?','Wissen deine Vertrauensperson und der Hausarzt, wo sie liegt?']},
-    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann das Betreuungsgericht eine Person einsetzen, die du nicht kennst. Auch Ehe- oder Lebenspartner sind nicht automatisch vertretungsbefugt.',link:'/vorsorge/vorsorgevollmacht',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',unverheiratet:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'},
+    {id:'vorsorgevollmacht',name:'Vorsorgevollmacht',icon:'🔑',description:'Bevollmächtigte Vertrauensperson regelt Finanzen und Alltag, wenn du es nicht kannst.',why:'Ohne Vollmacht kann das Betreuungsgericht eine Person einsetzen, die du nicht kennst. Auch Ehe- oder Lebenspartner sind nicht automatisch vertretungsbefugt.',link:'/vorsorge/patientenverfuegung',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'dringend',unverheiratet:'dringend',verheiratet:'empfohlen',kindern:'empfohlen',alleinerziehend:'dringend'},
       selfCheck:['Ist die Vollmacht über den Tod hinaus formuliert (transmortal)?','Ist sie im Zentralen Vorsorgeregister der Bundesnotarkammer eingetragen, damit Gerichte sie finden?','Deckt sie die wichtigen Bereiche ab (Gesundheit, Finanzen, Behörden, Aufenthalt)?']},
     {id:'betreuungsverfuegung',name:'Betreuungsverfügung',icon:'👤',description:'Wunsch für eine Betreuerin/Betreuer, falls eine gerichtliche Betreuung nötig ist.',why:'Verhindert, dass das Gericht eine fremde Person bestellt.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
       selfCheck:['Ist die gewünschte Betreuerin / der gewünschte Betreuer namentlich benannt?','Sind, falls gewollt, bestimmte Personen ausdrücklich ausgeschlossen?']},
     {id:'testament',name:'Testament',icon:'📜',description:'Dein Wille für Vermögen, Gegenstände und Erbschaft nach deinem Tod.',why:'Ohne Testament entscheidet die gesetzliche Erbfolge. Das gesetzliche Erbrecht des Partners (§ 1931 BGB) gilt nur bei Ehe oder eingetragener Lebenspartnerschaft — Partner ohne Trauschein erben kraft Gesetzes nichts. Auch Patenkinder oder Vereine werden ohne Testament nicht bedacht.',link:'/vorsorge/testament',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priorityBy:{single:'empfohlen',unverheiratet:'dringend',verheiratet:'dringend',kindern:'dringend',alleinerziehend:'dringend'},
       selfCheck:['Ist es entweder vollständig eigenhändig geschrieben — mit Ort, Datum und Unterschrift (§ 2247 BGB)?','Oder ist es notariell beurkundet?','Ist es sicher verwahrt (z. B. amtliche Verwahrung beim Nachlassgericht)?']},
-    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'#',situation:[],requireChildren:true,priority:'dringend',
+    {id:'sorgerechtsverfuegung',name:'Sorgerechtsverfügung',icon:'👨‍👧',description:'Bestimmt, wer im Todesfall die elterliche Sorge für minderjährige Kinder übernehmen soll.',why:'Ohne Benennung entscheidet das Familiengericht — möglicherweise gegen den Willen der Eltern. Eltern können einen Vormund per letztwilliger Verfügung benennen (§ 1782 BGB, seit der Vormundschaftsreform 2023).',link:'/vorsorge/sorgerechtsverfuegung',situation:[],requireChildren:true,priority:'dringend',
       selfCheck:['Sind die minderjährigen Kinder erfasst, für die sie gelten soll?','Ist der Wunsch-Vormund namentlich benannt?','Ist sie formgültig festgehalten (in einem Testament oder eigener letztwilliger Verfügung)?']},
     {id:'bestattungsverfuegung',name:'Bestattungsverfügung',icon:'⚰️',description:'Deine Wünsche für Bestattungsart, Grabstelle und Trauerfeier.',why:'Deine Familie weiß, wie du beerdigt werden möchtest.',link:'#',situation:['single','unverheiratet','verheiratet','kindern','alleinerziehend'],priority:'empfohlen',
       selfCheck:['Ist die Bestattungsart festgelegt (Erd-, Feuer-, See- oder andere Bestattung)?','Ist ein Ort oder Friedhof benannt?','Weiß die Person, die sich kümmern soll, von deinen Wünschen?']},
@@ -520,6 +521,19 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       enableBtn('#vc-next-0', false);
       enableBtn('#vc-next-2', false);
       setStep(0);
+    });
+  }
+
+  // Lead-Formular: Auswertung mitsenden (Versprechen "mit Deiner Vorsorge-Auswertung")
+  var vcLeadForm = document.querySelector('form[name="tool-lead-vorsorgecheck"]');
+  if (vcLeadForm) {
+    vcLeadForm.addEventListener('submit', function(){
+      try {
+        var f = document.getElementById('vc-tool-ergebnis');
+        if (f) f.value = state.situation
+          ? JSON.stringify({situation: state.situation, vorhandene_dokumente: state.ownedDocs, minderj_kinder: state.hasMinorChildren, auslandsbezug: state.auslandsbezug})
+          : 'kein Check abgeschlossen';
+      } catch(e) {}
     });
   }
 })();

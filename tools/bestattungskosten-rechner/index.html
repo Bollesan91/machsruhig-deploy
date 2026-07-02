@@ -361,6 +361,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       <p style="font-size:15px;color:#73655A;margin-bottom:20px;text-align:center">Dein Kostenrahmen steht bereits oben &mdash; kostenlos, ohne Anmeldung. Optional mailen wir Dir das Ergebnis zur späteren Referenz und leiten Deine Anfrage &mdash; sofern in Deiner Region ein passender Pilotpartner vorhanden ist &mdash; an einen Bestatter weiter. machsruhig baut dieses Netzwerk gerade auf; in vielen Regionen haben wir aktuell noch keinen Partner &mdash; dann melden wir uns trotzdem. Kein Newsletter, kein Spam.</p>
       <form name="tool-lead-bestattungskosten" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke-bestatter-anfrage?source=tool-lead-bestattungskosten" style="display:grid;gap:12px">
         <input type="hidden" name="form-name" value="tool-lead-bestattungskosten">
+        <input type="hidden" name="tool_ergebnis" id="bkr-tool-ergebnis" value="">
         <p hidden style="display:none"><label>Lass dieses Feld leer: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
           <label style="display:block">
@@ -1076,6 +1077,23 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 
   // Initial first track
   track('toolStep', {tool:'bestattungskosten-rechner', step:'schritt_1'});
+
+  // Lead-Formular: berechnetes Ergebnis mitsenden (Versprechen "wir mailen Dir das Ergebnis")
+  var leadForm = document.querySelector('form[name="tool-lead-bestattungskosten"]');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function(){
+      try {
+        var f = document.getElementById('bkr-tool-ergebnis');
+        if (!f) return;
+        if (state.bestattungsart && KOSTENMODELL[state.bestattungsart]) {
+          var r = calculateCosts();
+          f.value = state.bestattungsart + ' | ' + state.bundesland + ' | Spanne ' + fmt(r.minTotal) + '-' + fmt(r.maxTotal) + ' EUR';
+        } else {
+          f.value = 'kein Ergebnis berechnet';
+        }
+      } catch(e) {}
+    });
+  }
 })();
 </script>
 

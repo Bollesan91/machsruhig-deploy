@@ -208,8 +208,8 @@
 /cdn-cgi/l/email-protection*        /                                 301
 
 # Tool-URL ohne Trailing Slash (Page existiert mit Trailing)
-/tools/brief-an-meine-liebsten      /tools/brief-an-die-liebsten/     301
-/tools/brief-an-meine-liebsten/     /tools/brief-an-die-liebsten/     301
+/tools/brief-an-meine-liebsten      /tools/abschiedsbrief/            301
+/tools/brief-an-meine-liebsten/     /tools/abschiedsbrief/            301
 
 # Sozialbestattung Trailing-Slash-Fix
 /sozialbestattung/                  /sozialbestattung                 301
