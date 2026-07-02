@@ -53,3 +53,7 @@
 - **Bewusst nicht gefixt: lowercase-Percent-Umlaut-Redirects (%c3%b6 etc.) fehlen fuer moenchengladbach/baden-wuerttemberg/thueringen** (nur luebeck hat sie). Praktisch irrelevant (Clients normalisieren uppercase); bei Bedarf 6 Zeilen in _redirects.
 - **Bewusst offen: Checkliste-Breadcrumb verlinkt sich selbst** (Mittel-Glied) — kosmetisch, Bestandsverhalten, kein 404.
 - **Bewusst offen: Beerdigungsplaner sendet ggf. localStorage-Antworten aelterer Session mit** — durch neuen DS-Hinweis abgedeckt ("deine Plan-Antworten"); echte Loesung waere Session-Flag.
+- **02.07. (Daten-Review): False Positive "Kasten fehlt auf hamburg/muenchen/chemnitz"** — Reviewer-Fetch-Cache (2. Vorfall); plain-URLs + Cf-Cache-Status DYNAMIC bewiesen live. Zahlen-Nachrechnung des Reviews dagegen wertvoll: 12/12 bestaetigt, 0 falsche Zahlen.
+- **Bewusst offen: Koeln 25-vs-30-Jahre-Variante** (gleiche 1.945 EUR kaufen auf § 11-Friedhoefen 30 J.) — Kasten nennt 25 (Untergrenze, konservativ). Bei Detail-Ausbau ergaenzen.
+- **Bewusst offen: chemnitz.de-Satzungs-PDF liefert curl-403** (WAF/Bot-Schutz, kein toter Link — bei Erhebung maschinell lesbar). Beobachten.
+- **Bewusst offen: zwei Pruefdaten je Seite** (Kopf vs. Kasten) — kosmetisch.
