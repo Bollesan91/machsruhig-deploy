@@ -1075,6 +1075,27 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     });
   }
 
+  // Deep-Link: ?art=feuerbestattung&bl=BY (bl als Code oder voller Name).
+  // Nur Vorauswahl (simulierter Card-Klick + Select) — kein Auto-Weiter, ohne Parameter unveraendert.
+  try {
+    var q = new URLSearchParams(location.search);
+    var dlArt = (q.get('art') || '').toLowerCase();
+    var dlBl = q.get('bl') || '';
+    var BL_CODES = {BW:'Baden-Württemberg',BY:'Bayern',BE:'Berlin',BB:'Brandenburg',HB:'Bremen',HH:'Hamburg',HE:'Hessen',MV:'Mecklenburg-Vorpommern',NI:'Niedersachsen',NW:'Nordrhein-Westfalen',RP:'Rheinland-Pfalz',SL:'Saarland',SN:'Sachsen',ST:'Sachsen-Anhalt',SH:'Schleswig-Holstein',TH:'Thüringen'};
+    if (dlBl) {
+      var dlName = (REGIONAL_MULTIPLIERS[dlBl] !== undefined) ? dlBl : BL_CODES[dlBl.toUpperCase()];
+      if (dlName && REGIONAL_MULTIPLIERS[dlName] !== undefined) {
+        state.bundesland = dlName;
+        var dlSel = $('#bundesland-select');
+        if (dlSel) dlSel.value = dlName;
+      }
+    }
+    if (dlArt && KOSTENMODELL[dlArt]) {
+      var dlCard = document.querySelector('#bestattungsart-cards .bestattungsart-card[data-value="' + dlArt + '"]');
+      if (dlCard) dlCard.click();
+    }
+  } catch(e) {}
+
   // Initial first track
   track('toolStep', {tool:'bestattungskosten-rechner', step:'schritt_1'});
 

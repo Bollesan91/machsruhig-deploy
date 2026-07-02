@@ -875,6 +875,29 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   bindBackButtons();
   track('toolStart',{tool:'angebotspruefer'});
 
+  // Deep-Link: ?art=erdbestattung&bl=BY — Vorbefuellung von Regionalseiten aus.
+  // Ohne Parameter unveraendertes Verhalten.
+  try {
+    var q = new URLSearchParams(location.search);
+    var dlArt = (q.get('art') || '').toLowerCase();
+    var dlBl = (q.get('bl') || '').toUpperCase();
+    if (dlBl) {
+      var dlSel = $('#ap-bundesland');
+      var dlFound = BUNDESLAENDER.find(function(b){ return b.code === dlBl; });
+      if (dlSel && dlFound) {
+        dlSel.value = dlBl;
+        state.bundesland = dlFound.name;
+        state.bundeslandMult = dlFound.mult;
+        $('#ap-next-2').disabled = false;
+      }
+    }
+    if (dlArt && BESTATTUNGSARTEN[dlArt]) {
+      state.bestattungsart = dlArt;
+      state.posten = {}; state.separat = {}; state.info = {};
+      renderStep4();
+      setStep(2);
+    }
+  } catch(e) {}
 })();
 </script>
 <script>/*iter-18-navjs*/(function(){var b=document.querySelector(".mr-nav-toggle"),n=document.querySelector(".mr-nav");if(b&&n){b.setAttribute("aria-expanded","false");b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false")})}})();</script>
