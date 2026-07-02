@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# FAQ (sichtbar + FAQPage-Schema) auf die 50 Friedhof-Uebersichten, aus dem
+# 2x-verifizierten Register (gleiche Quelle wie der Gebuehren-Kasten -> drift-frei).
+# 2 Fragen je Stadt: Kosten Erd-Wahlgrab + wer legt Gebuehren fest.
+# Asserts VOR Write: JSON-LD parst, FAQPage==1, details +2, section-Balance.
+import os, re, sys, json, glob
+DRY = "--apply" not in sys.argv
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+REG = json.load(open(os.path.join(ROOT, "_dev", "claims", "friedhofsgebuehren.json"), encoding="utf-8"))
+
+def fold(s):
+    s = (s or "").lower()
+    for a, b in (("ä","ae"),("ö","oe"),("ü","ue"),("ß","ss")): s = s.replace(a, b)
+    return re.sub(r"[^a-z]", "", s)
+by = {fold(c["stadt"]): c for c in REG["staedte"]}
+def find_city(slug):
+    f = fold(slug)
+    if f in by: return by[f]
+    for k, v in by.items():
+        if k.startswith(f) or f.startswith(k): return v
+    return None
+
+def eur(n):
+    s = f"{n:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return s[:-3] if s.endswith(",00") else s
+
+def stadt_display(html):
+    m = re.search(r'<h1>Friedh&ouml;fe in ([^<]+)</h1>|<h1>Friedhöfe in ([^<]+)</h1>', html)
+    return (m.group(1) or m.group(2)).strip() if m else None
+
+def qa(c, stadt):
+    grab = eur(c["grabnutzung_betrag_eur"]); beis = eur(c["beisetzung_betrag_eur"]); ruhe = c["ruhezeit_jahre"]
+    if c["grabnutzung_einheit"] == "pro_jahr":
+        gesamt = eur(round(c["grabnutzung_betrag_eur"] * ruhe))
+        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € je Grabstelle und Jahr — bei {ruhe} Jahren Ruhezeit rund {gesamt} € —, die Beisetzung {beis} €. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
+    else:
+        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € einmalig für die Nutzungszeit von {ruhe} Jahren, die Beisetzung {beis} €. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
+    q1 = (f"Was kostet ein Erd-Wahlgrab in {stadt}?", kosten_a)
+    q2 = (f"Wer legt die Friedhofsgebühren in {stadt} fest?",
+          f"Die Gebühren der kommunalen Friedhöfe stehen in der amtlichen Gebührensatzung — verbindlich ist stets die aktuell gültige Fassung. Kirchliche und jüdische Friedhöfe rechnen nach eigenen Ordnungen ab.")
+    return [q1, q2]
+
+done=[];skip=[];err=[]
+for p in sorted(glob.glob(os.path.join(ROOT, "friedhoefe", "*", "index.html"))):
+    slug = os.path.basename(os.path.dirname(p))
+    html = open(p, encoding="utf-8").read()
+    if '"@type":"FAQPage"' in html or 'Häufige Fragen zu den Friedhöfen' in html:
+        skip.append(slug+"(schon)"); continue
+    c = find_city(slug); stadt = stadt_display(html)
+    if not c or not stadt: err.append(slug+": Register/H1 fehlt"); continue
+    qas = qa(c, stadt)
+    # 1) Sichtbare FAQ vor dem "Passend dazu"-Block
+    anchor = '  <div class="mr-related">'
+    if html.count(anchor) != 1: err.append(slug+": related-Anker!=1"); continue
+    vis = '  <div class="mr-faq">\n    <h2>Häufige Fragen zu den Friedhöfen in ' + stadt + '</h2>\n'
+    for q, a in qas:
+        vis += f'    <details><summary>{q}</summary><div class="faq-answer">{a}</div></details>\n'
+    vis += '  </div>\n\n'
+    new = html.replace(anchor, vis + anchor, 1)
+    # 2) FAQPage in @graph (vor dem @graph-Ende)
+    m = re.search(r'\n  \]\n\}\n</script>', new)
+    if not m: err.append(slug+": JSON-LD-Ende nicht gefunden"); continue
+    faq_node = ',\n    {"@type":"FAQPage","mainEntity":[' + ','.join(
+        json.dumps({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}, ensure_ascii=False)
+        for q, a in qas) + ']}'
+    new = new[:m.start()] + faq_node + new[m.start():]
+    # Asserts
+    jm = re.search(r'<script type="application/ld\+json">(.*?)</script>', new, re.S)
+    try:
+        data = json.loads(jm.group(1))
+        assert sum(1 for n in data.get("@graph", []) if n.get("@type") == "FAQPage") == 1
+    except Exception as e:
+        err.append(f"{slug}: JSON-LD kaputt: {e}"); continue
+    if new.count('<details') != html.count('<details') + 2: err.append(slug+": details-Count"); continue
+    if new.count('</div>') != html.count('</div>') + len(qas) + 1: err.append(slug+": div-Balance"); continue
+    if not DRY: open(p, "w", encoding="utf-8").write(new)
+    done.append(slug)
+print(f"=== {'DRY' if DRY else 'APPLY'} === ok {len(done)} | skip {len(skip)} | err {len(err)}")
+for e in err: print("  ERR", e)
