@@ -4,3 +4,30 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+# Interne Verzeichnisse duerfen NICHT oeffentlich ausgeliefert werden
+# (Strategie-Docs, Studien-Rohdaten, Templates). robots.txt verhindert nur
+# Crawling, nicht den Zugriff — daher harte 404s.
+[[redirects]]
+  from = "/_dev/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/templates/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/data/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.claude/*"
+  to = "/404.html"
+  status = 404
+  force = true
