@@ -31,22 +31,36 @@ def stadt_display(html):
 
 def qa(c, stadt):
     grab = eur(c["grabnutzung_betrag_eur"]); beis = eur(c["beisetzung_betrag_eur"]); ruhe = c["ruhezeit_jahre"]
+    # Review F10: Stand-Jahr in die Antwort (Schema/Snippet kann allein zirkulieren)
+    ym = re.findall(r'20\d\d', c.get("satzung_stand") or "")
+    stand = f" (Stand der Satzung: {ym[-1]}, geprüft 07/2026)" if ym else " (geprüft 07/2026)"
     if c["grabnutzung_einheit"] == "pro_jahr":
         gesamt = eur(round(c["grabnutzung_betrag_eur"] * ruhe))
-        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € je Grabstelle und Jahr — bei {ruhe} Jahren Ruhezeit rund {gesamt} € —, die Beisetzung {beis} €. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
+        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € je Grabstelle und Jahr — bei {ruhe} Jahren Ruhezeit rund {gesamt} € —, die Beisetzung {beis} €{stand}. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
     else:
-        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € einmalig für die Nutzungszeit von {ruhe} Jahren, die Beisetzung {beis} €. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
+        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € einmalig für die Nutzungszeit von {ruhe} Jahren, die Beisetzung {beis} €{stand}. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
     q1 = (f"Was kostet ein Erd-Wahlgrab in {stadt}?", kosten_a)
-    q2 = (f"Wer legt die Friedhofsgebühren in {stadt} fest?",
-          f"Die Gebühren der kommunalen Friedhöfe stehen in der amtlichen Gebührensatzung — verbindlich ist stets die aktuell gültige Fassung. Kirchliche und jüdische Friedhöfe rechnen nach eigenen Ordnungen ab.")
+    # Review F9: Frage passend zur Antwort (kein "Wer", das die Antwort nicht einloest;
+    # Gremium variiert je Stadt/Traeger — Stadtrat vs. AoeR-Verwaltungsrat — nicht raten)
+    q2 = (f"Wo sind die Friedhofsgebühren in {stadt} geregelt?",
+          f"In der amtlichen Gebührensatzung des kommunalen Friedhofsträgers — verbindlich ist stets die aktuell gültige Fassung. Kirchliche und jüdische Friedhöfe rechnen nach eigenen Ordnungen ab.")
     return [q1, q2]
 
+REFRESH = "--refresh" in sys.argv
+re_vis = re.compile(r'  <div class="mr-faq">\n    <h2>Häufige Fragen zu den Friedhöfen.*?</div>\n\n', re.S)
 done=[];skip=[];err=[]
 for p in sorted(glob.glob(os.path.join(ROOT, "friedhoefe", "*", "index.html"))):
     slug = os.path.basename(os.path.dirname(p))
     html = open(p, encoding="utf-8").read()
     if '"@type":"FAQPage"' in html or 'Häufige Fragen zu den Friedhöfen' in html:
-        skip.append(slug+"(schon)"); continue
+        if not REFRESH: skip.append(slug+"(schon)"); continue
+        h2 = re_vis.sub("", html, count=1)
+        i = h2.find(',\n    {"@type":"FAQPage"')
+        j = h2.find('\n  ]\n}\n</script>')
+        if i < 0 or j < 0 or j < i: err.append(slug+": Refresh-Anker fehlt"); continue
+        html = h2[:i] + h2[j:]
+        if 'FAQPage' in html or 'Häufige Fragen zu den Friedhöfen' in html:
+            err.append(slug+": Alt-FAQ nicht entfernbar"); continue
     c = find_city(slug); stadt = stadt_display(html)
     if not c or not stadt: err.append(slug+": Register/H1 fehlt"); continue
     qas = qa(c, stadt)
