@@ -109,7 +109,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   </div>
 
   <div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">
-    <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Der Angebots-Check läuft vollständig in deinem Browser. Deine Eingaben werden nicht gespeichert und nicht an einen Server gesendet. Anonyme Reichweiten-Statistiken (Umami) erfassen den Seitenbesuch und anonyme Nutzungsschritte (z. B. ob ein Check abgeschlossen wurde) — nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    <strong style="color:var(--mr-text)">Deine Daten bleiben bei dir.</strong> Der Angebots-Check läuft vollständig in deinem Browser. Deine Eingaben werden nicht gespeichert und nicht an einen Server gesendet — mit einer einzigen Ausnahme: Wenn du am Ende des Checks aktiv auf „Eckdaten anonym spenden“ klickst, übermittelst du genau die dort angezeigten anonymen Eckdaten (ohne Namen, Kontaktdaten oder Bestatter-Angaben) für unsere Preis-Transparenz-Auswertung. Anonyme Reichweiten-Statistiken (Umami) erfassen den Seitenbesuch und anonyme Nutzungsschritte (z. B. ob ein Check abgeschlossen wurde) — nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
   </div>
 
   <div class="ap-progress-label no-print"><span id="ap-step-label">Schritt 1 von 5</span><span id="ap-step-pct">20 %</span></div>
@@ -250,6 +250,10 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 </div>
 </main></div>
 
+<!-- Netlify-Registrierung: anonyme Daten-Spende. Absenden nur per aktivem Opt-in-Klick im Ergebnis-Schritt; keine Freitexte, keine personenbezogenen Felder. -->
+<form name="angebots-spende" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="text" name="bot-field"><input type="text" name="bestattungsart"><input type="text" name="bundesland"><input type="text" name="summe_gerundet"><input type="text" name="posten"><input type="text" name="separat"><input type="text" name="pauschal"><input type="text" name="ampel_preis"><input type="text" name="ampel_vollstaendigkeit"><input type="text" name="tool_version">
+</form>
 <footer class="mr-footer no-print"><div class="mr-footer-inner"><div class="mr-footer-grid"><div><h4>Über machsruhig.de</h4><p>Wir helfen dir, Vorsorge, Trauer und Bestattung Schritt für Schritt zu bewältigen — kostenlos, verständlich und in deinem Tempo.</p></div><div><h4>Themen</h4><a href="/tools/checkliste-todesfall/">Checkliste Todesfall</a><a href="/tools/bestattungskosten-rechner/">Kostenrechner</a><a href="/beerdigung-planen">Beerdigung planen</a><a href="/bestattungsarten">Bestattungsarten</a><a href="/bestatter/">Bestatter finden</a></div><div><h4>Rechtliches</h4><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/methodik">Methodik</a></div></div><div style="border-top:1px solid var(--mr-border);padding:20px 0 16px;font-size:13px;color:var(--mr-text-muted);display:flex;flex-wrap:wrap;gap:24px"><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Unsere Quellen</strong>BDB · Stiftung Warentest · Aeternitas e.V. · Verbraucherzentralen</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Bestattungsrecht</strong>Landesgesetze aller 16 BL (Stand Juni 2026) · BGB · PStG · SGB XII</div><div style="flex:1;min-width:220px"><strong style="color:var(--mr-text);display:block;margin-bottom:4px">Updates & Methodik</strong>Quartalsweise nach gesetzlichen Änderungen · <a href="/methodik" style="color:var(--mr-primary)">Methodik im Detail →</a></div></div><div class="mr-footer-bottom"><p>Alle Inhalte mit Sorgfalt erstellt, aber keine Rechtsberatung.</p><p style="margin-top:8px">machsruhig.de — Ein Projekt der mach's-Familie</p></div></div></footer>
 
 <script>
@@ -817,6 +821,21 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     html+='<strong style="color:var(--mr-text)">Wichtiger Hinweis:</strong> Diese Einschätzung basiert nur auf deinen Angaben und typischen Erfahrungswerten. Es ist keine Bewertung des Bestatters — sondern eine Hilfe, vor der Entscheidung die richtigen Fragen zu stellen. Im Zweifel: Lass dir das Angebot in einem persönlichen Gespräch erläutern, oder hole ein zweites Vergleichsangebot ein.';
     html+='</div>';
 
+    // Daten-Spende: aktives Opt-in, ausschliesslich anonyme Eckdaten (kein Personenbezug, keine Freitexte)
+    var spendeSumme=Math.round(result.sum/100)*100;
+    var spendePosten=Object.keys(state.posten).filter(function(k){return state.posten[k];}).sort();
+    var spendeSeparat=Object.keys(state.separat).filter(function(k){return state.separat[k];}).sort();
+    var ampelWort={green:'grün',yellow:'gelb',red:'rot'};
+    var spendeComp=state.pauschal?'nicht prüfbar':(ampelWort[result.completenessStatus]||result.completenessStatus);
+    html+='<div class="no-print" id="ap-spende" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin:24px 0">';
+    html+='<h3 style="font-family:\'Fraunces\',serif;font-size:17px;font-weight:700;margin-bottom:8px">Hilf mit, Bestattungspreise transparent zu machen</h3>';
+    html+='<p style="font-size:14px;line-height:1.6;margin-bottom:10px">Wenn du magst, spende die anonymen Eckdaten dieses Checks für unsere Preis-Transparenz-Auswertung. Gesendet würde genau das — nicht mehr:</p>';
+    html+='<p style="font-size:13px;background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:10px 14px;margin-bottom:10px">'+esc(result.ba.name)+' · '+esc(state.bundesland)+' · Summe gerundet '+fmt(spendeSumme)+' € · '+spendePosten.length+' Posten angekreuzt'+(state.pauschal?' · Pauschale':'')+(spendeSeparat.length>0?' · '+spendeSeparat.length+' separat abgerechnet':'')+' · Ampeln: Preis '+(ampelWort[result.priceStatus]||result.priceStatus)+', Vollständigkeit '+spendeComp+'</p>';
+    html+='<p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-bottom:14px">Keine Namen, keine Kontaktdaten, kein Bestatter-Name, keine Freitexte — und keine IP-Adresse im Datensatz. Veröffentlicht wird nur zusammengefasst ab mindestens 25 Datensätzen pro Gruppe. <a href="/datenschutz#daten-spende" style="color:var(--mr-primary)">Details in der Datenschutzerklärung</a></p>';
+    html+='<button type="button" class="btn btn-secondary" id="ap-spende-btn">Eckdaten anonym spenden</button>';
+    html+='<p id="ap-spende-err" style="display:none;font-size:13px;color:#a33;margin-top:8px">Senden hat nicht geklappt — du kannst es später noch einmal versuchen.</p>';
+    html+='</div>';
+
     // Tool-Kette: Nächster sinnvoller Schritt
     html+='<div class="no-print" style="background:var(--mr-bg-card);border:2px solid var(--mr-border);border-radius:var(--mr-radius);padding:32px 28px;text-align:center;margin:40px 0">';
     html+='<h2 style="font-family:\'Fraunces\',serif;font-size:20px;font-weight:700;margin-bottom:8px">Was kommt als Nächstes?</h2>';
@@ -857,6 +876,21 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       $$('#ap-info-list input[type="checkbox"]').forEach(function(cb){cb.checked=false;});renderStep4();
       setStep(1);
     });
+    // Daten-Spende senden (AJAX an Netlify Forms; nur auf aktiven Klick, Button danach gesperrt)
+    var spendeBtn=$('#ap-spende-btn');
+    if(spendeBtn){spendeBtn.addEventListener('click',function(){
+      spendeBtn.disabled=true;spendeBtn.textContent='Wird gesendet…';
+      var payload={'form-name':'angebots-spende','bot-field':'','bestattungsart':state.bestattungsart,'bundesland':state.bundesland,'summe_gerundet':String(spendeSumme),'posten':spendePosten.join(','),'separat':spendeSeparat.join(','),'pauschal':state.pauschal?'ja':'nein','ampel_preis':result.priceStatus,'ampel_vollstaendigkeit':state.pauschal?'nicht_pruefbar':result.completenessStatus,'tool_version':'ap-2026-07'};
+      var body=Object.keys(payload).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(payload[k]);}).join('&');
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).then(function(r){
+        if(!r.ok)throw new Error('HTTP '+r.status);
+        track('datenSpende',{tool:'angebotspruefer',art:state.bestattungsart});
+        $('#ap-spende').innerHTML='<strong style="color:var(--mr-text)">Danke fürs Mitmachen!</strong> <span style="font-size:14px;color:var(--mr-text-muted)">Deine anonymen Eckdaten sind eingegangen und fließen nur in zusammengefasste Auswertungen ein.</span>';
+      }).catch(function(){
+        spendeBtn.disabled=false;spendeBtn.textContent='Eckdaten anonym spenden';
+        $('#ap-spende-err').style.display='block';
+      });
+    });}
     // Tool-Kette tracking
     $$('a[data-next-step]',$('#ap-result')).forEach(function(a){
       a.addEventListener('click',function(){
