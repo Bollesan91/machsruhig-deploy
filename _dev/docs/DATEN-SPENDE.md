@@ -24,8 +24,16 @@ Häkchen, Button erst im Ergebnis-Schritt sichtbar. Die Karte zeigt VOR dem Klic
 
 **IP-Realität (03.07.2026 im Dashboard verifiziert):** Netlify speichert an JEDER Form-Submission die Absende-IP
 („Received … from <IP>") — nicht abschaltbar. Die DS-Texte sagen das ehrlich (Empfangs-Log, Art. 6 I f, fließt nicht
-in Auswertungen). NIE wieder „keine IP im Datensatz" behaupten. Ausbaustufe (falls Anwalt/Volumen es verlangt):
-eigene Netlify Function + Blobs, die Felder OHNE IP persistiert — dann wäre der gespeicherte Datensatz echt IP-frei.
+in Auswertungen). NIE wieder „keine IP im Datensatz" behaupten.
+
+## Beschlossene Ausbaustufe: Cloudflare Worker + D1 (Bolle, 03.07.2026)
+Ziel-Architektur für „richtige Speicherung": Worker-Endpunkt auf der Domain (same-origin) + D1-Datenbank.
+Gewinne: Persistenz OHNE IP (Anonymitäts-Claim wird wieder wörtlich wahr), SQL für Preis-Index/Stufe 1,
+server-seitige Validierung (Feld-Whitelist, Plausibilitätsfenster 500–50.000 €), kein 100/Monat-Limit,
+bestehendes CF-Rate-Limit deckt den Endpunkt. **Nicht jetzt bauen** — Trigger (einer reicht):
+(a) ~60+ Submissions/Monat, (b) Start Datenstrategie Stufe 1 (empirische Auswertung), (c) Anonymitäts-Story
+muss wasserdicht sein (Partner-/Anwaltsgespräch). Aufwand ~1 Session inkl. V4.1-Gates; Alt-Daten per CSV migrieren;
+DS-Texte dann zurückschärfen („keine IP im gespeicherten Datensatz" wieder zulässig).
 
 ## Harte Regeln (nicht verhandelbar — Design-Grundlage der DSGVO-Einschätzung)
 1. **Nie** Freitextfelder oder personenbezogene Felder ergänzen, ohne die komplette Rechtsbasis neu zu bewerten.
@@ -44,6 +52,17 @@ eigene Netlify Function + Blobs, die Felder OHNE IP persistiert — dann wäre d
 Alle Netlify-Forms der Site (bestatter-anfrage auf ~50 Seiten, 3 Tool-Lead-Formulare) waren seit jeher tot —
 POST → 404 von Netlify, weil „Form detection" (Pflicht-Toggle seit Ende 2023) nie eingeschaltet war.
 03.07. aktiviert (Bolle-Login, Claude-Klick) + Redeploy → 5 Formulare erkannt, Ende-zu-Ende verifiziert.
+
+## 30-Tage-Trennroutine (PFLICHT — oeffentlich zugesagt in DSE 6a + Tool-Karte!)
+Monatlich (Bolle, ~2 Min, Dashboard): Forms -> angebots-spende -> "Download as CSV" (Eckdaten-Archiv ohne IP-Spalte
+weiterverwenden) -> Submissions aelter 30 Tage loeschen (loescht IP+Zeitstempel). Gilt sinngemaess auch fuer die
+Lead-Formulare ("wir loeschen sie, sobald die Anfrage bearbeitet ist"). Widerrufs-Zusage: Nutzer kann sich binnen
+30 Tagen mit Absende-Zeitpunkt melden -> Submission gezielt loeschen.
+
+## Publikations-Regeln (Welle 03.07., M11/M12)
+- Nicht-ueberlappende Auswertungs-Zellen definieren (kein "BL gesamt" NEBEN "BL x Art" publizieren -> Differenzangriff).
+- Median statt Mittelwert, publizierte Werte auf 100 EUR runden.
+- Plausibilitaetsfenster 500-50.000 EUR; Ausreisser + auffaellige Serien (gleiche IP vor Trennung) verwerfen.
 
 ## Wo die Texte stehen (bei Änderung synchron halten!)
 - Tool: DS-Kasten oben + Spende-Karte im Ergebnis (`tools/angebotspruefer/index.html`)

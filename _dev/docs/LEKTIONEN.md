@@ -136,3 +136,16 @@ Submit Ende-zu-Ende verifiziert wurde (HTTP-Status + Datensatz in der Ziel-Inbox
 Submission sichtbar die Absende-IP ("Received ... from <IP>"). Vor jedem Datenschutz-Text zu einem Speicher-Feature:
 die tatsaechliche Ablage beim Dienstleister inspizieren (Dashboard/Export), nicht das eigene Payload-Schema.
 Gefixt im Folge-Commit (Empfangs-Log ehrlich benannt, Art. 6 I f, Auswertung ohne IP).
+
+## Lektion 75 (03.07.2026): Zaehlwoerter sind Wartungsschulden — Stellen-Inventar VOR jedem neuen Datenfluss
+"Zwei Ausnahmen"/"drei Ausnahmen"/"einzige Ausnahme" standen an 4 Stellen (DSE Par.2 + Par.6, Methodik-Box +
+Methodik-Absatz); mein Diff aenderte nur 2 davon -> DSE widersprach sich selbst (Par.2 "zwei" vs. Par.6 "drei").
+Regel: Bei jeder Aenderung an Datenfluss-Aussagen zuerst `grep -rn "Ausnahme" --include=*.html` (bzw. das jeweilige
+Zaehlwort) ueber die GANZE Site; besser Zaehlwoerter vermeiden ("nur auf deine aktive Aktion hin: ...").
+
+## Lektion 76 (03.07.2026): Anonymitaets-Claims phasenscharf formulieren (Roh-Phase vs. getrennte Phase)
+Solange die Roh-Submission mit IP+Zeitstempel beim Dienstleister liegt, sind "anonyme" Eckdaten nur pseudonym
+(EwG 26 S. 2: zuordenbar via Zusatzinfo beim Verantwortlichen selbst). Anonymitaet + "nicht loeschbar" gilt erst
+NACH der Trennung. DS-Texte brauchen: Rechtsgrundlage je Phase (Einwilligung fuer die Erhebung, 6 I f fuer den
+Empfangs-Log), feste Trennfrist, Widerrufsweg bis zur Trennung. Loesch-Unmoeglichkeit als "Feature" zu verkaufen,
+solange Loeschung faktisch moeglich ist, waere Rechtsverweigerung per Selbstdeklaration.

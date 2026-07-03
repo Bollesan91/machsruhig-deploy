@@ -62,3 +62,16 @@
 - **Bewusst offen: Satelliten-Links ohne Trailing-Slash neben Bestands-Links mit Slash** — funktional egal (Netlify), nur Stil.
 - **02.07. (Grabpflege-Welle) False Positives F17/F18:** "/bestattungskosten sagt 10-50 Euro/Jahr Grabpflege" und "Steuer-FAQ pauschal 'nicht absetzbar'" — beide Saetze existieren weder im Repo noch live (0 Treffer mit+ohne Cache-Buster); Live-FAQ hat die korrekte Par.-33-EStG-Antwort. Reviewer-Fetcher-Snapshot. NICHT fixen.
 - **Bewusst offen (Grabpflege): Eigenleistung unbeziffert, Sozialbestattung-deckt-keine-Grabpflege-Satz fehlt** — Reviewer-Anregungen ohne Score-Relevanz; bei naechster Ueberarbeitung.
+
+## Welle Daten-Spende 03.07.2026 (Score 58) — verworfene/eingeordnete Findings
+- **M4 "DSE ist live noch Alt-Stand, 6a fehlt" = FALSE POSITIVE Nr. 4 (Fetcher-Cache).** Zur Review-Zeit selbst
+  verifiziert: `curl datenschutz?cb=<rand> | grep` fand "6a. Freiwillige anonyme Daten-Spende" + "drei Ausnahmen"
+  (2 Treffer). Feature + DSE gingen im SELBEN Commit (a3a323e) live, ein Fenster gab es nie. Der wahre Kern des
+  Findings war M5 (Par.2 + Methodik-Box uebersehen) — der wurde gefixt. Regel bleibt: Live-Behauptungen von
+  Reviewern IMMER selbst mit Cache-Buster pruefen.
+- **M9 (Button "anonym spenden" vs. Hedge)**: akzeptiert nach M1-Fix — mit 30-Tage-Trennprozess ist "anonym"
+  fuer die Dauer-Phase korrekt; Karte+DSE erklaeren die Phasen.
+- **M11 (25er-Schwelle, Differenzangriffe)**: berechtigt fuer PUBLIKATIONEN — als Redaktionsregel in
+  DATEN-SPENDE.md aufgenommen (nicht-ueberlappende Zellen, Median, Rundung). Kein Site-Text-Fix noetig.
+- **M12 (Fake-Submissions)**: berechtigt — Plausibilitaetsfenster + IP-Zweckbindung (Missbrauchs-Abwehr) in
+  DATEN-SPENDE.md; Methodik-Transparenzsatz kommt mit der ersten Publikation.
