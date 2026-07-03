@@ -123,3 +123,16 @@
 71. **Anfuehrungszeichen = Woertlichkeits-Versprechen.** "Grabstaetten muessen gepflegt werden" war Paraphrase in Zitat-Optik (echt: "Grabstaetten sind zu pflegen"). Nur zitieren, was man wortgenau vor sich hat.
 
 72. **Reviewer-Fetch-Halluzination (3. Vorfall, neue Qualitaet):** Reviewer zitierte von /bestattungskosten Saetze ("10-50 Euro/Jahr", "nicht steuerlich absetzbar"), die weder lokal noch live (mit UND ohne Cache-Buster) existieren — vermutlich Alt-Snapshot seines Fetchers. Kollateral-Findings auf NICHT-Ziel-Seiten IMMER erst im eigenen File/live verifizieren, bevor man dort fixt. Die Ziel-Seiten-Findings desselben Reviews waren dagegen exzellent (PM-Recherche, centgenaue Zahlenpruefung).
+
+## Lektion 73 (03.07.2026): Netlify Form-Detection ist ein Site-Toggle — data-netlify allein tut NICHTS
+Alle Formulare der Site waren seit jeher tot (POST -> 404 mit x-nf-request-id), weil "Form detection" (Pflicht-Opt-in
+seit Ende 2023) nie aktiviert war. Kein Review, kein Linter, kein SEO-Audit hat es gesehen — erst der echte
+DOM-Submit-Smoke nach dem Daten-Spende-Build. Regel: Ein Formular-/Backend-Feature ist erst "live", wenn ein echter
+Submit Ende-zu-Ende verifiziert wurde (HTTP-Status + Datensatz in der Ziel-Inbox gesichtet). Plattform-Toggles
+(Netlify Forms, Functions-Env, Build-Flags) gehoeren in jede Go-Live-Checkliste eines Features.
+
+## Lektion 74 (03.07.2026): Dienstleister-Metadaten gehoeren zum "Datensatz" — DS-Zusagen gegen die echte Speicher-Ansicht pruefen
+"Keine IP-Adresse im Datensatz" war aus der eigenen Feld-Liste abgeleitet — Netlify speichert aber an jeder
+Submission sichtbar die Absende-IP ("Received ... from <IP>"). Vor jedem Datenschutz-Text zu einem Speicher-Feature:
+die tatsaechliche Ablage beim Dienstleister inspizieren (Dashboard/Export), nicht das eigene Payload-Schema.
+Gefixt im Folge-Commit (Empfangs-Log ehrlich benannt, Art. 6 I f, Auswertung ohne IP).
