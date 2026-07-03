@@ -55,9 +55,11 @@ POST → 404 von Netlify, weil „Form detection" (Pflicht-Toggle seit Ende 2023
 
 ## 30-Tage-Trennroutine (PFLICHT — oeffentlich zugesagt in DSE 6a + Tool-Karte!)
 Monatlich (Bolle, ~2 Min, Dashboard): Forms -> angebots-spende -> "Download as CSV" (Eckdaten-Archiv ohne IP-Spalte
-weiterverwenden) -> Submissions aelter 30 Tage loeschen (loescht IP+Zeitstempel). Gilt sinngemaess auch fuer die
-Lead-Formulare ("wir loeschen sie, sobald die Anfrage bearbeitet ist"). Widerrufs-Zusage: Nutzer kann sich binnen
-30 Tagen mit Absende-Zeitpunkt melden -> Submission gezielt loeschen.
+weiterverwenden) -> NUR Submissions aelter 30 Tage loeschen (loescht IP+Zeitstempel; nie juengere — sonst bricht
+das 30-Tage-Widerrufsfenster!). Oeffentliche Zusage (DSE 6a): Trennung fruehestens 30, spaetestens 60 Tage nach
+Eingang -> Monats-Kadenz haelt das mechanisch ein. Gilt sinngemaess auch fuer die Lead-Formulare ("wir loeschen sie,
+sobald die Anfrage bearbeitet ist"). Widerrufs-Zusage: Nutzer kann sich binnen 30 Tagen mit Absende-Zeitpunkt
+melden -> Submission gezielt loeschen (Bolle im Dashboard).
 
 ## Publikations-Regeln (Welle 03.07., M11/M12)
 - Nicht-ueberlappende Auswertungs-Zellen definieren (kein "BL gesamt" NEBEN "BL x Art" publizieren -> Differenzangriff).
