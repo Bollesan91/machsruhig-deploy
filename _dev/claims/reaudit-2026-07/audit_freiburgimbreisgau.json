@@ -1,0 +1,16 @@
+{
+  "slug": "freiburgimbreisgau",
+  "stadt": "Freiburg im Breisgau",
+  "grabtyp_name": "Erdwahlgrab, Einzelgrab an Wegen und in Feldern (Jahresgebuehr)",
+  "grabnutzung_eur": 74.4,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 1795,
+  "kapazitaet_beleg": "4.2 Jahresgebuehr fuer Wahlgrab zur Erdbestattung | 4.2.1 je Einzelgrab an Wegen und in Feldern",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "tarif_zitat": "4.2 Jahresgebuehr fuer Wahlgrab zur Erdbestattung 4.2.1 je Einzelgrab an Wegen und in Feldern ... 74,40",
+  "confidence": "mittel",
+  "notes": "Gebuehrensatzung = Anlage 'Gebuehrenverzeichnis' zur Friedhofssatzung Freiburg i.Br. vom 19.03.2024 (in Kraft 01.05.2024). GRABTYP: Standard-Einzel-Erd-Wahlgrab = Tarif 4.2.1 'je Einzelgrab an Wegen und in Feldern' unter Abschnitt 4.2 'Jahresgebuehr fuer Wahlgrab zur Erdbestattung' = 74,40 EUR/Jahr. Einheit pro_jahr belegt durch Ueberschrift 'Jahresgebuehr' UND § 18 Abs.1 FS: 'Das Nutzungsrecht ist jahresweise verlaengerbar'. Daher nutzungsdauer_jahre=1. 'an Wegen und in Feldern' = normale/regulaere Lage (keine Premium-/Sonderlage). Einzelgrab = einstellig = eine Sargbeisetzung; Doppelbelegung nur durch kostenpflichtige Tieferlegung (Tarif 1.3 = 336 EUR, § 18 Abs.3) moeglich, ist also nicht Standard. BEISETZUNG: Freiburg hat KEINE separate Oeffnen/Schliessen-Gebuehr; das 'Oeffnen und Schliessen des Grabes' ist ausdruecklich in der Grundgebuehr 1.1.1 (Erdbestattung, Personen ueber 10 Jahren) = 1.795,00 EUR enthalten (Zeile: 'Mit der Grundgebuehr sind ... das Oeffnen und Schliessen des Grabes ... abgegolten'). Daher beisetzung_eur=1795, deckt sich mit Register. REGISTER: grabnutzung 74,40 + einheit pro_jahr entsprechen dem korrekten Standard-Einzel-Erd-Wahlgrab -> register_stimmt=true. Hinweis: reg nutzungsdauer_angesetzt=20 ist nur eine Anzeige-/Hochrechnungs-Annahme fuer den Jahres-Tarif; die satzungsgemaesse Ruhezeit betraegt jedoch 15 Jahre (§ 14 Abs.1: 'Die Ruhezeit fuer Saerge und Aschenurnen betraegt 15 Jahre'). Fuer eine an der Ruhezeit orientierte Hochrechnung waeren 15 Jahre korrekt, nicht 20 - der Jahresbetrag selbst und die Einheit bleiben aber unveraendert korrekt. CONFIDENCE mittel, weil die PDF-Textextraktion im Abschnitt 4 (Grabnutzungsrechte) die Betragsspalte gegenueber den Zeilenlabels verschoben hat: nur die Werte 74,40 / 71,70 / 71,70 wurden extrahiert und stehen bei den Abschnitts-Ueberschriften statt bei den Einzelposten. Der Wert 74,40 fuer 4.2.1 stimmt jedoch mit dem bereits im Register hinterlegten Zitat ('4.2.1 je Einzelgrab an Wegen und in Feldern 74,40 €') ueberein und ist als kleiner Jahresbetrag plausibel. REIHENGRAB-BONUS: Tarif 4.1.1 'Erwachsenengrab fuer Erdbestattung (NZ 15 Jahre)' waere das guenstigste Erd-Reihengrab fuer eine Sargbeisetzung (§ 17 Abs.1: Reihengraeber sind Einzelgrabstaetten), aber sein Einmalbetrag wurde durch die Spaltenverschiebung NICHT verlaesslich extrahiert (die Werte 71,70 gehoeren wahrscheinlich zu den kleinen Wahlgrab-Jahresgebuehren, nicht zur einmaligen Reihengrab-Gebuehr) -> reihengrab_alt_eur=null gesetzt statt geraten."
+}

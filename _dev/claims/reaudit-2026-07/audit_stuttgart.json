@@ -1,0 +1,16 @@
+{
+  "slug": "stuttgart",
+  "stadt": "Stuttgart",
+  "grabtyp_name": "Wahlgrab (Erdbestattung), je Stelle, normale Lage",
+  "grabnutzung_eur": 2142,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 1248,
+  "tarif_zitat": "B 1.01 Wahlgrab Verleihung Nutzungsrecht 20 Jahre             2.142 EUR",
+  "kapazitaet_beleg": "B 1.01 Wahlgrab Verleihung Nutzungsrecht 20 Jahre             2.142 EUR / (je Stelle)",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 987,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Sauberer Treffer. B) Gebuehren fuer Grabstaetten -> 1. Wahlgraeber fuer Erdbestattungen: B 1.01 'Wahlgrab Verleihung Nutzungsrecht 20 Jahre (je Stelle) 2.142 EUR' = Standard-Einzel-Erd-Wahlgrab, normale Lage, Einmalsumme fuer 20 Jahre. B 1.03 (2.604 EUR) ist Sonderlage -> ausgeschlossen. Beisetzung = A 1.01 'Erdbestattung Erwachsene und Kinder ueber 10 Jahre 1.248 EUR'; Zeilen 19-21: 'Mit den Gebuehren A 1.01 bis A 1.03 sind das Oeffnen und Schliessen des Grabes sowie die Bestattung abgegolten.' Hinweis zu 'ab 5. Lebensjahr': Stuttgart staffelt anders ('Erwachsene und Kinder ueber 10 Jahre'), 1.248 EUR ist der Erwachsenen-/Standardtarif. Kapazitaet: Tarif ist 'je Stelle' (eine Grabstelle = ein Sarg); es gibt KEINE einschichtig/zweischichtig-Unterscheidung. A 1.09 belegt, dass ein weiterer Verstorbener in derselben Grabstelle nur eine ermaessigte Zusatzgebuehr (50%) ausloest -> B 1.01 deckt eine Sargbeisetzung. Register (grabnutzung 2142, einmalsumme, 20 Jahre, beisetzung 1248) stimmt exakt. Bonus-Reihengrab: B 3.01 'Reihengrab Erwachsene und Kinder ueber 10 Jahre (Ruhezeit 20 Jahre) 987 EUR' = guenstigstes Erd-Reihengrab fuer eine Sargbeisetzung, 20 Jahre."
+}

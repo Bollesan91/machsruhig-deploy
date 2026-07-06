@@ -1,0 +1,16 @@
+{
+  "slug": "dresden",
+  "stadt": "Dresden",
+  "grabtyp_name": "Erdwahlgrab (130 x 260 cm) je Stelle, 20 Jahre Nutzungszeit",
+  "grabnutzung_eur": 924.24,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 532.97,
+  "kapazitaet_beleg": "2.1.2.1 Erdwahlgrab (130 x 260 cm) je Stelle, für 20 Jahre Nutzungszeit 924,24",
+  "tarif_zitat": "2.1.2.1 Erdwahlgrab (130 x 260 cm) je Stelle, für 20 Jahre Nutzungszeit 924,24",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 780.15,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab in Dresden ist 2.1.2.1 'Erdwahlgrab (130 x 260 cm) je Stelle, fuer 20 Jahre Nutzungszeit' = 924,24 EUR (einmalsumme, 20 Jahre). Register (924,24 / einmalsumme / 20 J.) stimmt exakt. Die Satzung verwendet keine einschichtig/zweischichtig-Terminologie; 'je Stelle' = eine Grabstelle, Beisetzungsgebuehr wird separat je Erdbestattung erhoben (kein Doppel-/Familientarif). Guenstigere Erdgraeber (Muslimisches/Buddhistisches Grabfeld 924,24; Teichanlage/naturnahe Anlage 2.365,17) sind Sonderlagen/-felder und kein regulaeres Wahlgrab. Beisetzung = Abschnitt 3.1 'Gebuehren fuer die Grabherstellung einer Erdbestattung / Erdbestattung 532,97' (Standardgrab 130x260, Erwachsener; kleinere Werte 380,69/114,21 sind Kinder-/Fehlgeburten-Groessen). Register-Beisetzung (532,97) stimmt. REIHENGRAB (Bonus): 2.1.1.1 'Erdreihengrab (130 x 260 cm) fuer 20 Jahre Ruhefrist' hat in der PDF-Extraktion keinen direkt anliegenden Preis; der einzige verwaiste Erdgrab-Preis 780,15 steht in der Zeile der Abschnittsueberschrift '2. Gebuehren fuer die Ueberlassung von Grabstellen 780,15' (Layout-Versatz nach oben). 780,15 < 924,24 ist plausibel (Reihengrab guenstiger als Wahlgrab), daher als Erdreihengrab-Tarif angesetzt (20 Jahre). Diese Reihengrab-Zuordnung ist eine begruendete Layout-Inferenz, nicht 100% woertlich zeilengebunden."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "kiel",
+  "stadt": "Kiel",
+  "grabtyp_name": "Sargwahlgrab - traditionell (nicht re-verifizierbar)",
+  "grabnutzung_eur": 1767.2,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 654.6,
+  "kapazitaet_beleg": "NICHT BELEGBAR - Satzungstext unter txt_path ist eine 404-Fehlerseite ('Fehler 404: Die angeforderte Datei wurde nicht gefunden. Download BM'), enthaelt keine Grabtyp-/Kapazitaets-Angaben.",
+  "register_stimmt": false,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "tarif_zitat": "NICHT BELEGBAR - kein Satzungstext vorhanden (404-Fehlerseite). Register-Altzitat war: '1.1 Sargwahlgrab - traditionell | 25 | 1.767,20 EUR' (Anlage: Gebuehrenverzeichnis zur Gebuehrensatzung fuer die Friedhoefe) - konnte nicht gegen Primaerquelle geprueft werden.",
+  "confidence": "unsicher",
+  "notes": "RE-AUDIT NICHT MOEGLICH: Die Datei unter txt_path (kiel.txt) enthaelt nur eine HTTP-404-Fehlerseite ('Fehler 404: Die angeforderte Datei wurde nicht gefunden. Download BM'), 11 Zeilen, keinerlei Gebuehren-, Grabtyp- oder Kapazitaetsdaten. Grep nach Wahlgrab/Reihengrab/Erdgrab/Beisetzung/Sarg/EUR/Jahre/schichtig = 0 Treffer. Damit kann weder das STANDARD-EINZEL-ERD-WAHLGRAB, noch die Einzelbelegung (1 vs. 2 Beisetzungen), noch die Beisetzungsgebuehr, noch die Nutzungsdauer gegen die amtliche Satzung verifiziert werden. register_stimmt=false gesetzt, weil eine Bestaetigung ohne Primaerquelle nicht moeglich ist (nicht weil ein Fehler belegt waere). Die uebernommenen Zahlen (grabnutzung 1767,20 EUR / einmalsumme / 25 J / beisetzung 654,60 EUR) stammen unveraendert aus dem bestehenden Register-Eintrag und sind NICHT re-verifiziert. HINWEIS zur Einzelbelegung: Das Register-Altzitat nennt 'Sargwahlgrab - traditionell' ohne Angabe der zugelassenen Sargzahl - Falle 'einstellig/Familie' konnte nicht ausgeschlossen werden. EMPFEHLUNG: kiel.txt neu ziehen (amtliche Gebuehrensatzung/Gebuehrenverzeichnis der Landeshauptstadt Kiel) und Re-Audit wiederholen. reihengrab_alt = null, da kein Text zum Suchen vorhanden."
+}

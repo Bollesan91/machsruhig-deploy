@@ -1,0 +1,16 @@
+{
+  "slug": "magdeburg",
+  "stadt": "Magdeburg",
+  "grabtyp_name": "Erdwahlgrabstaette (fuer die Dauer von 20 Jahren)",
+  "grabnutzung_eur": 1424,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 603,
+  "kapazitaet_beleg": "(2) Erdwahlgrabstaette fuer die Dauer von 20 Jahren                         1.424,00        - bis zu zwei Urnen koennen je Stelle zusaetzlich beigesetzt werden",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1230,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "(2) Erdwahlgrabstaette fuer die Dauer von 20 Jahren                         1.424,00",
+  "confidence": "hoch",
+  "notes": "Grabnutzung: Standard-Einzel-Erd-Wahlgrab = Position I.(2) 'Erdwahlgrabstaette fuer die Dauer von 20 Jahren' 1.424,00 EUR, Einmalsumme, 20 Jahre. Einzelbelegung bestaetigt: Der Zusatz 'bis zu zwei Urnen koennen je Stelle zusaetzlich beigesetzt werden' betrifft ZUSAETZLICHE URNEN, nicht zusaetzliche Sargbeisetzungen -> bleibt ein Sarggrab. Ausgeschlossen: I.(3) 'Erdwahlgrabstaette in besonderer Lage' 1.959,00 (Premium/Sonderlage), sowie alle Gemeinschafts-/Urnen-/Naturgrab-Varianten. Register grabnutzung=1424 und nutzungsdauer=20 stimmen -> register_stimmt=true. ABER: Register-Feld beisetzung=1195 ist FALSCH -> 1.195,00 ist die Gesamtgebuehr 'Erdbestattung/Erwachsene' (Bestattungsleistung), NICHT das Oeffnen/Schliessen. Die per Aufgabe geforderte Gebuehr 'Oeffnen und Schliessen des Grabes einschl. Nachbereitung' fuer Erwachsene = II.(1) 603,00 EUR (Zeile direkt unter Erdbestattung/Erwachsene, woertlich so beschriftet). Empfehlung: Register-beisetzung von 1195 auf 603 korrigieren. Reihengrab-Bonus: I.(1) 'Erdreihengrabstaette fuer die Dauer von 20 Jahren' = 1.230,00 EUR (Wert wurde bei der Extraktion an den Spaltenkopf 'Anlage EURO 1.230,00' verschoben; einzige verwaiste Zahl, eindeutig der einzigen wertlosen Zeile (1) zugeordnet); Reihengrab = per Definition einstellig/eine Sargbeisetzung. Satzung Neufassung Stadtrat 18.01.2024, in Kraft ab 01.02.2024, Amtsblatt Nr. 02 vom 02.02.2024. Satz II.(1) enthaelt eine weitere verwaiste Zahl 160,00 (vermutlich Sonnabend-Zuschlag/zweite Kategorie), nicht relevant fuer normale-Lage-Beisetzung."
+}

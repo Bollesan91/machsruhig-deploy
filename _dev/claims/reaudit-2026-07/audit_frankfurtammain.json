@@ -1,0 +1,16 @@
+{
+  "slug": "frankfurtammain",
+  "stadt": "Frankfurt am Main",
+  "grabtyp_name": "Erdwahlgrabstaette als Einzelwahlgrabstaette",
+  "grabnutzung_eur": 1855.00,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 1659.00,
+  "kapazitaet_beleg": "5.1.1.1 | Als Einzelwahlgrabstaette | 1.855,00 (unter 5.1.1 Erdwahlgrabstaetten; im Gegensatz zu 5.1.1.2 Doppelwahlgrabstaette und 5.1.1.3 Mehrfachgrabstaette)",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1182.00,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "5.1 Wahlgrabstaetten (Nutzungsdauer fuer 25 Jahre - Ausnahme 5.1.1.4 und 5.1.1.5) | 5.1.1 Erdwahlgrabstaetten | 5.1.1.1 Als Einzelwahlgrabstaette 1.855,00",
+  "confidence": "hoch",
+  "notes": "Amtliche Friedhofs- und Bestattungsgebuehrenordnung der Stadt Frankfurt am Main, Amtsblatt 24.12.2024 / Nr. 52, S. 969-974, gueltig ab 01.01.2025. WICHTIG: Die gelieferte .txt-Datei war leer (nur 6 Form-Feed-Zeichen 0x0C); der Volltext wurde von mir aus der PDF (frankfurtammain.raw, Text als Vektor-Pfade, kein Textlayer) durch Rendern der 6 Seiten und visuelles Lesen rekonstruiert. GRABNUTZUNG: Tarif 5.1.1.1 'Als Einzelwahlgrabstaette' = 1.855,00 EUR, Einmalsumme fuer 25 Jahre (Ueberschrift 5.1 'Nutzungsdauer fuer 25 Jahre'). Erdwahlgrab (Abschnitt 5.1.1 Erdwahlgrabstaetten, also Sarg/Erde, nicht Urne), frei waehlbares Wahlgrab, Einzel = eine Grabstelle/eine Sargbeisetzung (im Gegensatz zu 5.1.1.2 Doppel und 5.1.1.3 Mehrfach). Guenstiger waere nur 5.1.1.6 (1.520 EUR) 'im gaertnerbetreuten Grabfeld oder in einem Gemeinschaftsgrabfeld' - das ist aber ein Sonder-/Gemeinschaftsgrabfeld (nicht frei waehlbar/regulaer), daher ausgeschlossen; 5.1.1.7/5.1.1.8 sind Rasen. BEISETZUNG: Tarif 2.1.1 'Verstorbene ab dem vollendeten 5. Lebensjahr' = 1.659,00 EUR (Abschnitt 2.1 Erdbestattungen); mit dieser Gebuehr ist laut Satzung u.a. 'Ausheben und Schliessen der Grabstaette' abgegolten. REGISTER: grabnutzung 1855 / einmalsumme / 25 Jahre und beisetzung 1659 stimmen exakt -> register_stimmt=true. Das reg-Zitat verweist auf '5.1.1 Erdwahlgrab', konsistent. REIHENGRAB-BONUS: guenstigstes Standard-Erd-Reihengrab (eine Sargbeisetzung) = 5.2.1.1 'Als Erdreihengrabstaette' 1.182,00 EUR, Nutzungsdauer 20 Jahre (Ueberschrift 5.2 'Reihengrabstaetten (Nutzungsdauer fuer 20 Jahre - Ausnahme 5.2.1.2 und 5.2.1.3)'); 5.2.1.2 ist Kinder bis 5 J., 5.2.1.4 Rasen, 5.2.1.5 gaertnerbetreut/Gemeinschaft -> ausgeschlossen."
+}

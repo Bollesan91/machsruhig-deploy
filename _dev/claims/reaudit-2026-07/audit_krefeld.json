@@ -1,0 +1,22 @@
+{
+  "slug": "krefeld",
+  "stadt": "Krefeld",
+  "grabtyp_name": "Wahlgrabstätte zur Einfachbelegung (Sarg/Erdbestattung)",
+  "grabnutzung_eur": 2760,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 30,
+  "beisetzung_eur": 1282,
+  "kapazitaet_beleg": "1.5 Wahlgrabstätte zur Einfachbelegung (nur Wiedererwerb und Verlängerung)................................................ 2.760,00",
+  "tarif_zitat": "1.5 Wahlgrabstätte zur Einfachbelegung (nur Wiedererwerb und Verlängerung)................................................ 2.760,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1860,
+  "reihengrab_alt_dauer": 30,
+  "confidence": "mittel",
+  "notes": "Erd-Wahlgrab: III.1 Sarggrabstätten. Günstigstes Einzel-Erd-Wahlgrab = 1.5 'Wahlgrabstätte zur Einfachbelegung' 2.760,00 EUR (Einfachbelegung = genau eine Sargbeisetzung). ACHTUNG: 1.5 ist laut Satzung '(nur Wiedererwerb und Verlängerung)' — für eine NEU zu erwerbende Einzelstelle steht faktisch nur 1.6 'Wahlgrabstätte zur Zweifachbelegung je Grabstelle' 3.450,00 EUR zur Verfügung (2 Beisetzungen, daher nicht als Einheit genommen). Nach strenger Regel (günstigster Tarif = Einzel-Erd-Wahlgrab) ist 1.5 der korrekte Wert und deckt sich mit dem Register. Nutzungsdauer 30 Jahre NICHT explizit an der Tarifzeile genannt, aber abgeleitet aus §5 III.3.1 ('...1/30 der Gebührensätze' pro Verlängerungsjahr) und III.3.2 (max. 30 Jahre) — Basis-Nutzungszeit für Wahlgräber = 30 Jahre. Beisetzung = I.1.1 Sargbestattung 'von Erwachsenen und Kindern ab 6 Jahren' 1.282,00 EUR (Krefelder Erwachsenen-Schwelle ist 'ab 6', nicht ab 5). Reihengrab-Alternative (1 Beisetzung): 1.2 Reihengrabstätte 1.860,00 EUR, 30 Jahre (1.1 Kinder-Reihengrab 380 EUR/20 J. ausgeschlossen). confidence 'mittel', da Nutzungsdauer nur abgeleitet und 1.5 Beschränkung auf Wiedererwerb/Verlängerung.",
+  "reg_check": {
+    "reg_grabnutzung": 2760,
+    "reg_einheit": "einmalsumme",
+    "reg_nutzungsdauer_angesetzt": 30,
+    "reg_beisetzung": 1282
+  }
+}

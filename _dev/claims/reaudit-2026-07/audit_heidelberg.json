@@ -1,0 +1,16 @@
+{
+  "slug": "heidelberg",
+  "stadt": "Heidelberg",
+  "grabtyp_name": "Erd-Wahlgrab, Einzelgrab in 2. und 3. Reihe (Nr. 4.2.3)",
+  "grabnutzung_eur": 2420,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 1190,
+  "kapazitaet_beleg": "4.2.3 Einzelgrab in 2. und 3. Reihe 2 420,00",
+  "register_stimmt": true,
+  "confidence": "hoch",
+  "tarif_zitat": "4.2 Wahlgraeber fuer Erdbestattungen mit einer Nutzungsdauer von 25 Jahren | 4.2.3 Einzelgrab in 2. und 3. Reihe 2 420,00",
+  "reihengrab_alt_eur": 1390,
+  "reihengrab_alt_dauer": 18,
+  "notes": "Lokale .txt-Extraktion war spaltenverschoben: die Euro-Betraege von Abschnitt 4 standen als abgekoppelte Zahlenspalte an falschen Zeilen. Primaerquelle (amtliche PDF heidelberg.de A 7.5, GebVerz-BGS) mit pdfplumber-Layout + pymupdf-Koordinaten re-extrahiert und die Zeilen korrekt gepaart. Standard-Einzel-Erd-Wahlgrab = guenstigstes EINZELGRAB in normaler Lage: 4.2.1 '1. Reihe' 2.750 ist die bevorzugte/teure Frontreihe; 4.2.5 'gaertnergepflegtes Gemeinschaftsgrabfeld' 2.730 ist ausgeschlossen (Gemeinschaft); 4.2.3 'Einzelgrab in 2. und 3. Reihe' 2.420 ist die regulaere Innenlage und guenstiger -> genommen. 'Einzelgrab' = genau eine Sargbeisetzung. Register-grabnutzung 2420 und Nutzungsdauer 25 sind KORREKT. ABER das gespeicherte Register-zitat ist falsch: es zitiert '4.2.1 Einzelgrab in 1. Reihe 2 750,00' - der Betrag 2420 gehoert zu 4.2.3, nicht zu 4.2.1. Zitat sollte korrigiert werden (Wert bleibt). Beisetzung 1190 = Nr. 2.1 'Erdbestattung im Reihen- oder Wahlgrab', enthaelt 'b) Ausheben und Schliessen des Grabes' (Oeffnen/Schliessen Erdbestattung, Erwachsener), stimmt. Bonus Reihengrab: 4.1.1 'Reihengrab fuer Erwachsene und Kinder ab 10 Jahre' 1.390,00, Ruhezeit/Nutzungsdauer 18 Jahre (Reihengrab = eine Beisetzung)."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "duesseldorf",
+  "stadt": "Düsseldorf",
+  "grabtyp_name": "Wahlgrabstätte, 20 Jahre, je Grabstelle (Erd-Wahlgrab, Einzelbelegung)",
+  "grabnutzung_eur": 2061.40,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 1469.38,
+  "tarif_zitat": "1.1.2.4  Wahlgrabstätte, 20 Jahre, je Grabstelle  2.061,40 EUR",
+  "kapazitaet_beleg": "2.1.5  Zwei gleichzeitige Sargbestattungen in eine Wahlgrabstätte  2.010,23 EUR",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1553.03,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab = Tarif 1.1.2.4 (Abschnitt 1.1.2 'Grabstätten für Verstorbene über 5 Jahre'): Wahlgrabstätte, 20 Jahre, je Grabstelle, 2.061,40 EUR (Einmalsumme). Frei wählbar/verlängerbar (Nach-/Wiedererwerb 1.3.1 = 103,07 EUR/Jahr). Einzelbelegung: Grundpreis gilt je Grabstelle für EINE Sargbeisetzung; zwei gleichzeitige Sargbestattungen sind ein separater höherer Tarif (2.1.5 = 2.010,23 EUR), und jede weitere Tiefbeisetzung löst den Zuschlag 1.1.2.12 (51,94 EUR/Jahr) aus — daher = 1 Beisetzung. Ausgeschlossen: 1.1.2.6/1.1.2.7 (mit Trennplatten, teurer), 1.1.2.8/1.1.2.9 (1. Größe ≥3 m), 1.1.2.10/1.1.2.11 (Sonderlage), 1.1.2.13 (Parkwahlgrab inkl. Pflege), 1.1.2.5 (30 Jahre, teurer). Beisetzung = 2.1.3 'Sargbestattung in Wahlgrabstätte' 1.469,38 EUR (Erwachsener). Register stimmt: grabnutzung 2061.40 / einmalsumme / 20 Jahre = 1.1.2.4; beisetzung 1469.38 = 2.1.3. Reihengrab-Alternative: Düsseldorf hat keine 'Reihengräber', aber die günstigste Einzelbelegungs-Sargstätte für Erwachsene ist 1.1.2.1 'Einzelgrabstätte, 20 Jahre' 1.553,03 EUR (Standard-Einzelgrab, nicht wählbar/verlängerbar). Anlässlich Bestattung dann Beisetzung 2.1.2 'Sargbestattung in Einzelgrabstätte' 1.038,30 EUR. Satzung: Gebührentarif zur Gebührensatzung für die Friedhöfe der Landeshauptstadt Düsseldorf (68.203.1), gültig ab 01.01.2026, zuletzt geändert 12.12.2025."
+}

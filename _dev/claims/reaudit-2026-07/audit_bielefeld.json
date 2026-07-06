@@ -1,0 +1,17 @@
+{
+  "slug": "bielefeld",
+  "stadt": "Bielefeld",
+  "grabtyp_name": "Wahlgrabstätte für Erdbestattungen (je Grabstelle und Jahr)",
+  "grabnutzung_eur": 70,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 819,
+  "kapazitaet_beleg": "3.1 Wahlgrabstätte für Erdbestattungen je Grabstelle und Jahr",
+  "tarif_zitat": "3.1 Wahlgrabstätte für Erdbestattungen je Grabstelle und Jahr",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 879,
+  "reihengrab_alt_dauer": null,
+  "confidence": "unsicher",
+  "reihengrab_alt_note": "4.12 Erdbestattung Reihengrab über 5 Jahre auf dem Sennefriedhof 879,00; auf den Stadtfriedhöfen 1.183,00 (Sektion-4-Preisspalte disloziert, Zuordnung unsicher)",
+  "notes": "PDF-Extraktions-Problem: In der Preisspalte von Abschnitt 3 (Nutzungsgebühren für Wahlgrabstätten) fehlen sämtliche EUR-Beträge im extrahierten Text komplett — Zeile 239 endet bei '...je Grabstelle und Jahr' OHNE Betrag. Der Register-Wert grabnutzung=70,00 EUR ist im Text NICHT primaerverifizierbar; das Register-Zitat '...je Grabstelle und Jahr 70,00 EUR' ist insoweit nicht wortwörtlich belegt (das '70,00 EUR' fehlt in der Extraktion). Grabtyp + Einheit sind belegt: 'Wahlgrabstätte für Erdbestattungen je Grabstelle und Jahr' (Zeile 239) = korrektes Einzel-Erd-Wahlgrab, pro_jahr. Keine einschichtig/zweischichtig/Familie/Doppel-Unterscheidung für das Wahlgrab — preis 'je Grabstelle' = eine Sargbeisetzung. Beisetzung=819 belegt: '1.2 Erdbestattungen in einer Wahlgrabstätte' / '1.21 für Verstorbene in einem Alter über 5 Jahre' 819,00 (Zeilen 158/160/161). register_stimmt=true bzgl. Grabtyp+Einheit (Erd-Wahlgrab, pro_jahr); der 70,00-Betrag konnte gegen den amtlichen Text nicht geprüft werden → confidence unsicher, vor Publikation Betrag an amtlicher Satzung/PDF (Seite 5, Abschnitt 3.1) nachverifizieren. Für pro_jahr-Tarif ist nutzungsdauer_jahre=1 gesetzt (Register-Feld nutzungsdauer_angesetzt=20 ist eine getrennte Anzeige-Annahme). Reihengrab (Abschnitt 4) ist eine Einmal-Erwerbsgebühr, ebenfalls Spalten-disloziert; günstigstes Erd-Reihengrab über 5 Jahre = 879,00 (Sennefriedhof), Dauer im Text nicht angegeben."
+}

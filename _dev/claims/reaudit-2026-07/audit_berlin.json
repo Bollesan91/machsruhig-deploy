@@ -1,0 +1,17 @@
+{
+  "slug": "berlin",
+  "stadt": "Berlin",
+  "grabtyp_name": "unbestimmbar - keine Satzungsdaten im Quelltext",
+  "grabnutzung_eur": 520,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 285,
+  "kapazitaet_beleg": "KEIN BELEG - Quelldatei enthaelt keinen Satzungsvolltext (nur JS-Ladeseite der Berliner Vorschriften-Datenbank)",
+  "tarif_zitat": "KEIN ZITAT MOEGLICH - txt_path und .raw enthalten nur die JavaScript-Platzhalterseite der juris-Datenbank (bsbe), kein Satzungsinhalt. Woertliches Zitat aus der Satzung nicht extrahierbar.",
+  "register_stimmt": false,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "confidence": "unsicher",
+  "notes": "Re-Audit nicht durchfuehrbar: Die unter txt_path gelieferte Datei (berlin.txt, 671 Byte) sowie die begleitende berlin.raw (5441 Byte) enthalten NUR die statische JavaScript-Ladeseite (React-SPA) der Berliner Vorschriften- und Rechtsprechungsdatenbank (juris GmbH, meta juris-version 'bsbe - V08_32_00'). Der eigentliche Gebuehrenordnungstext wird erst clientseitig per JS nachgeladen und ist im gelieferten Quelltext nicht vorhanden. Grep nach Wahlgrab/Reihengrab/Beisetzung/Grabstelle/520/285 => keine Treffer. Damit ist keine Primaerverifikation moeglich; Grabtyp, Kapazitaet (Einzel- vs. Doppelbelegung), Nutzungsdauer und Beisetzungsgebuehr koennen NICHT gegen die Satzung geprueft werden. register_stimmt=false gesetzt, weil 'true' eine bestaetigte Uebereinstimmung mit dem korrekten Einzel-Erd-Wahlgrab erfordert - diese Bestaetigung ist mit den vorliegenden Daten unmoeglich (nicht bestaetigt => nicht true). ACHTUNG zum Register-Zitat selbst: '2.1 je Bestattungsfall ... 2.1.2 in einer Wahl-, Familien- oder Urnenwandgrabstaette 520,00' beschreibt eine 'je-Bestattungsfall'-Gebuehr, die Wahl-, Familien- UND Urnenwandgrab zusammenfasst - das isoliert kein sauberes Einzel-Erd-Wahlgrab und traegt keine erkennbare Nutzungsdauer; die im Register angesetzten 20 Jahre sind aus diesem Zitat nicht belegt. Empfehlung: berlin.txt neu extrahieren (SPA gerendert bzw. amtliches PDF der Friedhofsgebuehrenordnung Berlin), dann Re-Audit wiederholen. Behaltene reg-Werte (520/einmalsumme/20/285) sind hier nur unveraendert durchgereicht, NICHT verifiziert.",
+  "confidence_reason": "Quelltext ohne Satzungsinhalt - Primaerverifikation unmoeglich"
+}

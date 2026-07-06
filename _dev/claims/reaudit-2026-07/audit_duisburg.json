@@ -1,0 +1,16 @@
+{
+  "slug": "duisburg",
+  "stadt": "Duisburg",
+  "grabtyp_name": "Wahlgrabstätte für Särge und Urnen eng liegend (Lfd. Nr. 7)",
+  "grabnutzung_eur": 1838,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 1029,
+  "kapazitaet_beleg": "7  Wahlgrabstätte für Särge und Urnen eng liegend   91,90   1.838",
+  "tarif_zitat": "II. Erwerb von Nutzungsrechten an Wahlgrabstätten je Stelle | 7 Wahlgrabstätte für Särge und Urnen eng liegend | jährliche Gebühr bei Verlängerung EUR 91,90 | Gebühr 2026 EUR 1.838",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1329,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Quelle: 'Gebührentarif zur Friedhofsgebührensatzung der WBD-AöR ab 01.01.2026' (Wirtschaftsbetriebe Duisburg). Die .txt-Extraktion war leer (2 Bytes 0x0c); die .raw ist ein 2-seitiges PDF, dessen Text zu Vektor-Kurven konvertiert ist (kein Textlayer, keine Rasterbilder) - per PyMuPDF als PNG gerendert und visuell gelesen.\n\nEINHEIT (Standard-Einzel-Erd-Wahlgrab): Abschnitt A.II 'Erwerb von Nutzungsrechten an Wahlgrabstätten je Stelle'. Günstigstes Sarg-Erd-Wahlgrab = Lfd. Nr. 7 'Wahlgrabstätte für Särge und Urnen eng liegend' = 1.838 EUR (Ersterwerb, einmalsumme). Kapazität = 1 Sarg: 'eng liegend' ist die einfach-tiefe Grabstelle (je Stelle = ein Sarg); die Tiefgrab-Varianten Nr. 8 (2.595) und Nr. 10 (2.781) sind die doppelt-tiefen Stellen für 2 gestapelte Särge (2:1) und wurden daher NICHT genommen. Nr. 9 'getrennt liegend' (1.983) ist teurer bei gleicher Einzelbelegung. Urnen dürfen zusätzlich beigesetzt werden, es bleibt aber genau eine Sargbeisetzung. Nr. 11 (Rasen) und Nr. 12-15 (Urnen/Baum/Kolumbarium) sind ausgeschlossen.\n\nNUTZUNGSDAUER = 20 Jahre. Im Gebührentarif nicht in Worten genannt, aber deterministisch belegt: bei ALLEN Wahlgrab-Zeilen gilt Gebühr-2026 = jährliche-Verlängerungsgebühr × 20 exakt (z.B. Nr.7: 91,90 × 20 = 1.838,00). Lfd. Nr. 17 bestätigt: 'Für den Wiedererwerb eines Nutzungsrechts an Wahlgrabstätten jeglicher Art ist für jedes Jahr des Wiedererwerbs 1/20 der ... für den Ersterwerb gültigen Gebühr zu zahlen.' -> Ersterwerbsgebühr deckt 20 Jahre. einheit = einmalsumme korrekt (1.838 ist die einmalige Ersterwerbsgebühr, 91,90 ist der jährliche Verlängerungssatz).\n\nBEISETZUNG (Öffnen/Schließen, Erdbestattung, Erwachsener ab 5. Lj., normale Lage) = Abschnitt B.I 'Erdbestattungen', Lfd. Nr. 20 'Bestattungen von Verstorbenen über 5 Jahren einschl. Grabanfertigung und Grabschließung' = 1.029 EUR. (Nr. 18 = Totgeburten/Kinder bis 2 J.; Nr. 19 = über 2 bis 5 J.; Nr. 21 = wie 20 am Samstag = Zuschlag, nicht normal.)\n\nREGISTER: grabnutzung 1.838 (Nr. 7) und nutzungsdauer 20 stimmen -> register_stimmt = true. Register-Zitat referenziert exakt Nr. 7 'Wahlgrabstätte für Saerge und Urnen eng liegend' mit 1.838 EUR und der jährlichen Gebühr - passt. Beisetzung 1.029 (Nr. 20) ebenfalls korrekt.\n\nBONUS Erd-Reihengrab (1 Sarg, Erwachsener): Lfd. Nr. 2 'Reihengrabstätte für Särge für Verstorbene über 5 Jahren' = 1.329 EUR, Nutzungsdauer 20 Jahre. (Nr. 1 = 732 EUR gilt nur für 'Verstorbene bis zu 5 Jahren' = Kinder, daher nicht der Erwachsenen-Standard. Nr. 3 Rasenreihengrab = Sonderform.)"
+}

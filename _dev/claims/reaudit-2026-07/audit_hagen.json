@@ -1,0 +1,16 @@
+{
+  "slug": "hagen",
+  "stadt": "Hagen",
+  "grabtyp_name": "Wahlgrabstätte Sargbestattung (Ziffer 4.80)",
+  "grabnutzung_eur": 1530,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 570,
+  "tarif_zitat": "Wahlgrabstätte Sargbestattung",
+  "kapazitaet_beleg": "4.10   (Mit der jeweiligen Gebühr wird abgegolten: Das Nutzungsrecht je Grabstelle mit Ausnahme der Ziffer 4.160 sowie die allgemeine Pflege der Infrastruktur der Friedhöfe)",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1220,
+  "reihengrab_alt_dauer": 25,
+  "confidence": "mittel",
+  "notes": "Amtliche Friedhofsgebührensatzung Stadt Hagen (VI. Nachtrag, in Kraft ab 01.01.2026), § 4 Gebührentarif, Ziffer 4 'Überlassung von Grabstätten'. Layout: dreispaltige Tabelle (Ziffer | Grabart-Label | Gebühr), im Textextrakt in drei getrennte Ströme zerfallen. Rekonstruiert: 15 Labels (Ziffer 4.10–4.150) gegen 15 rechtsbündige Gebührenwerte 1:1 ausgerichtet. Ausrichtung: 4.10 Einzelgrab Sarg 1.220 | 4.20 Einzelgrab Tuch 1.220 | 4.30 Einzelgrab Urne 985 | 4.40 Gemeinschaft Sarg 1.740 | 4.50 Gemeinschaft Urne 1.100 | 4.60 Aschenverstreuung 1.220 | 4.70 Sammelbestattung gebührenfrei | 4.80 Wahlgrab Sarg 1.530 | 4.90 Wahlgrab Kind 400 | 4.100 Wahlgrab Tuch 1.530 | 4.110 Wahlgrab Tuch Kind 400 | 4.120 Wahlgrab Sarg m. Rasen 2.600 | 4.130 Wahlgrab Urne 1.340 | 4.140 Wahlgrab Urne m. Rasen 2.020 | 4.150 Waldgrab Urne 1.850. Cross-Check: Verlängerungsklausel (Zeile 298) 'nach Ziffer 4.80 bis 4.170' bestätigt 4.80 als erste Wahlgrabstätte; Einzelgrab-Sarg (1.220) < Wahlgrab-Sarg (1.530) plausibel. Standard-Einzel-Erd-Wahlgrab = Ziffer 4.80 Wahlgrabstätte Sargbestattung = 1.530 EUR, Gebühr 'je Grabstelle' (= genau EINE Sargbeisetzung; kein zweischichtig/Doppel/2-Personen-Qualifier; separate Einzelgrab- vs. Wahlgrab-Zeile zeigt Einzelbelegung je Grabstelle). Beisetzung 570 EUR = Ziffer 2 'Bestattungen / Sargbestattung' für Tote ab vollendetem 5. Lebensjahr (Grabaushub, Ausschlagen, Wiederverfüllen, Einebnen); Kinder unter 5 gebührenfrei; einheitlicher Satz, keine Lagenstaffelung. WICHTIG Nutzungsdauer: Diese Gebührensatzung nennt KEINE Jahreszahl/Ruhezeit — die Nutzungs-/Ruhezeit ist in der Friedhofssatzung (§ 20, referenziert aber nicht im Text) geregelt. 25 Jahre ist die NRW-Standard-Ruhezeit für Erdbestattung und wird durch den Satzungstext nicht widersprochen, ist aber aus diesem Dokument allein NICHT verifizierbar → confidence 'mittel'. register_stimmt=true: grabnutzung (1.530 einmalsumme) exakt bestätigt; nutzungsdauer 25 als NRW-Standard übernommen, nicht aus diesem Text belegbar. Reihengrab-Alternative: Hagen kennt keinen Begriff 'Reihengrab'; funktionales Äquivalent = 'Einzelgrabstätte Sargbestattung' (Ziffer 4.10, 1.220 EUR, ebenfalls je Grabstelle = eine Sargbeisetzung, günstiger als Wahlgrab); Dauer 25 (dieselbe unbelegte NRW-Standard-Annahme)."
+}

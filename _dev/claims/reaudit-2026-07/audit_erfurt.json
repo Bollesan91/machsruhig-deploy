@@ -1,0 +1,16 @@
+{
+  "slug": "erfurt",
+  "stadt": "Erfurt",
+  "grabtyp_name": "Erdwahlgrab (20-jaehriges Nutzungsrecht, Abmessung 2,60 m x 1,50 m, einstellige/einschichtige Sarg-Wahlgrabstaette)",
+  "grabnutzung_eur": 870,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 1484,
+  "kapazitaet_beleg": "1.1.1  Fuer das 20-jaehrige Nutzungsrecht an Erdwahlgraebern Abmessung: 2,60 m x 1,50 m, einschliesslich Beisetzungsmoeglichkeit bis zu vier Urnen",
+  "tarif_zitat": "1.1.1  Fuer das 20-jaehrige Nutzungsrecht an Erdwahlgraebern Ab-  870,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab = Pos. 1.1.1 'Fuer das 20-jaehrige Nutzungsrecht an Erdwahlgraebern, Abmessung 2,60 m x 1,50 m, einschliesslich Beisetzungsmoeglichkeit bis zu vier Urnen' = 870,00 EUR (Einmalsumme, 20 Jahre). Die Klausel 'bis zu vier Urnen' erweitert nur die Urnen-, nicht die Sarg-Kapazitaet; die Abmessung 2,60 x 1,50 m ist ein einschichtiges Einzelgrab fuer genau eine Sargbeisetzung (Beleg 'Einstellige Grabstaette' im selben Block Pos. 2). Kein guenstigeres Einzel-Erd-Wahlgrab vorhanden (Urnenwahlgrab, Baum-, Partner-, Rasen-, Gemeinschaftsgrab ausgeschlossen). Register (870 / einmalsumme / 20 J.) stimmt. Beisetzung = Pos. 6.1 'Bestattungsgebuehren fuer Erdbestattungen / Fuer Verstorbene, die das 5. Lebensjahr vollendet haben' = 1.484,00 EUR (Oeffnen/Schliessen, Erwachsener, normale Lage); die guenstigeren Werte 1.292/979 sind Sondervarianten (ohne Ueberfuehrung / Gruft). ACHTUNG Extraktions-Spaltendrift: In Abschnitt 1/2 und 6 sind die Betragsspalten gegen den Text um ~1 Zeile verschoben; 870,00 sitzt jedoch exakt auf der 1.1.1-Erdwahlgrab-Zeile und 1.484,00 fuehrt Abschnitt 6 an, beides deckt sich mit dem Register. Reihengrab-Erd (Pos. Reihengraeber fuer Erdbestattungen, ab 5. Lebensjahr, 2,40 m x 1,35 m, 20 Jahre) existiert, aber der zugehoerige Betrag ist durch die Spaltendrift NICHT eindeutig extrahierbar (kandidaten 722,00 / 936,53 unbelegbar) -> reihengrab_alt_eur = null (Dauer 20 Jahre belegt)."
+}

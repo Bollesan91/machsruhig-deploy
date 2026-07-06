@@ -1,0 +1,16 @@
+{
+  "slug": "hallesaale",
+  "stadt": "Halle (Saale)",
+  "grabtyp_name": "Erdbestattungswahlgrab",
+  "grabnutzung_eur": 960,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 30,
+  "beisetzung_eur": 746,
+  "kapazitaet_beleg": "1.10 Erdbestattungswahlgrab                                   960,00",
+  "tarif_zitat": "1.10 Erdbestattungswahlgrab                                   960,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 643,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Erd-Wahlgrab-Position ist 1.10 'Erdbestattungswahlgrab' = 960,00 EUR, unter der Ueberschrift 'Fuer die folgenden Grabarten werden die Gebuehren fuer 30 Jahre erhoben' (Zeile 184). Einheit = einmalsumme, Nutzungsdauer = 30 Jahre. Register-Wert (960 / einmalsumme / 30) stimmt exakt. Die 960 EUR sind die reine Grabnutzungsgebuehr; die im Zitat des Registers erwaehnten +210 EUR FUG Pos. 5.1 = Friedhofsunterhaltungsgebuehr (7 EUR/Jahr x 30 Jahre), separat und NICHT Teil der Grabnutzung. Keine einstellig/zweistellig- oder Doppel-Unterscheidung: '1.10 Erdbestattungswahlgrab' ist ohne Kapazitaetszusatz aufgefuehrt und der einzige Erd-Wahlgrab-Typ (1.12 Heckengrab 1.020 EUR und 1.13 Sondergrab 930 EUR sind Sonderlagen, alle uebrigen 1.11/1.14-1.17 sind Urnengraeber) -> guenstigster Einzel-Erd-Wahlgrab. Beisetzung = 3.1.1 'Oeffnen und Schliessen des Grabes einschliesslich Anlegen des Ersthuegels' = 746,00 EUR (Erwachsener; 3.1.2 Kindergrab 588 EUR ist Kind). Bonus Reihengrab: 1.1 'Erdbestattungsreihengrab' = 643,00 EUR fuer 20 Jahre (Ueberschrift Zeile 132/133 'Fuer Reihengraeber ... werden die Gebuehren fuer 20 Jahre erhoben'), guenstigstes Erd-Reihengrab fuer eine Sargbeisetzung."
+}

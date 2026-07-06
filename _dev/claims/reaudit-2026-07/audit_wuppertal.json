@@ -1,0 +1,16 @@
+{
+  "slug": "wuppertal",
+  "stadt": "Wuppertal",
+  "grabtyp_name": "Sargwahlgrab (Erd-Wahlgrab, Einzelbelegung, je Grabstelle)",
+  "grabnutzung_eur": 2436.83,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 815.95,
+  "kapazitaet_beleg": "Die Nutzungsgebuehr beinhaltet die Ueberlassung der Grabstaette fuer die Dauer der Nutzungszeit je Grabstelle. Die Nutzungsdauer betraegt bei Wahlgraebern 20 Jahre",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1849.65,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "Wahlgraeber    Sargwahlgrab                                  2.436,83",
+  "confidence": "hoch",
+  "notes": "Zweiteiliger Tarif: (1) Nutzungsgebuehr Grabstaette + (2) Bestattungsgebuehr (Herrichten/Verfuellen/erste Aufmachung = Oeffnen/Schliessen). Standard-Einzel-Erd-Wahlgrab = 3.7 Sargwahlgrab: Nutzungsgebuehr 2.436,83 EUR fuer 20 Jahre (Section 3 Nutzungsgebuehren, 'Die Nutzungsdauer betraegt bei Wahlgraebern 20 Jahre', je Grabstelle). Beisetzung = 1.7 Sargwahlgrab Bestattungsgebuehr 815,95 EUR (Section 1, Erwachsener nach vollendetem 5. Lebensjahr; Kinder bis 5 J. = 1.1 = 412,21 EUR). Kein einschichtig/zweischichtig-Split und kein Doppel-Tarif vorhanden - Sargwahlgrab wird je Grabstelle vergeben = Einzelbelegung (1 Sarg). Betragszuordnung per pdfplumber-Koordinaten-Rekonstruktion verifiziert (Rohtext/-layout hatte die Betragsspalte vertikal verschoben und ordnete falsch zu). Netto-Betraege (zzgl. USt soweit Stadt als Unternehmerin). Register (grabnutzung 2436,83 / einmalsumme / 20 J / beisetzung 815,95) stimmt vollstaendig. Bonus Reihengrab: guenstigstes Erd-Reihengrab fuer Erwachsene mit 1 Sargbeisetzung = 3.2 Sargreihengrab nach vollendetem 5. Lebensjahr, Nutzungsgebuehr 1.849,65 EUR / 20 Jahre (zzgl. Bestattungsgebuehr 1.2 = 815,95 EUR)."
+}

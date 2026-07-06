@@ -1,0 +1,16 @@
+{
+  "slug": "oberhausen",
+  "stadt": "Oberhausen",
+  "grabtyp_name": "Wahlgrab (Sargwahlgrab, Erdbestattung), Tarifstelle 1.1",
+  "grabnutzung_eur": 2098,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 30,
+  "beisetzung_eur": 1328,
+  "kapazitaet_beleg": "1/30 der entsprechenden Tarifstelle",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 742,
+  "reihengrab_alt_dauer": 30,
+  "tarif_zitat": "Wahlgrab                                                    2.098",
+  "confidence": "hoch",
+  "notes": "WICHTIG: Der lokal extrahierte oberhausen.txt ist ZEILEN-VERSCHOBEN (PDF-Spalten-Offset ~2pt): Tarifstellen-Nummer und Wert/Label stehen versetzt, sodass Werte im .txt teils der falschen Nummer zugeordnet erscheinen (z.B. .txt-Zeile 78 'Verlaengerung ... 1.328' und Zeile 82 'Wahlgrab 469' sind FALSCH). Ich habe die Original-PDF (oberhausen.raw = %PDF-1.7, kopiert nach oberhausen_source.pdf) per pdfplumber wortkoordinaten-genau ausgewertet; Label und Wert teilen dieselbe PDF-Zeile (top), die Tarifstellen-Nummer liegt ~2pt darueber. Autoritatives Ergebnis: 1.1 Wahlgrab (Sarg-Erdbestattung) Nutzungsrecht = 2.098 EUR; 2. Grabbereitung 'Wahlgrab' = 1.328 EUR (NICHT 469 wie im .txt fehl-ausgerichtet). Nutzungsdauer 30 Jahre belegt durch Tarifstelle 1.20 'Verlaengerung des Nutzungsrechtes je angefangenes Jahr = 1/30 der entsprechenden Tarifstelle' (Nutzungsrecht = 30 Jahreseinheiten) sowie Abschnitt 3 Pflegegebuehren, wo Sarg-Positionen '30 Jahre' fuehren. EINHEIT: Die Gebuehrensatzung listet 'Wahlgrab' als EINE Nutzungsrechts-Einheit je Grabstelle; es gibt KEINEN separaten einstellig/zweistellig- oder ein-/zweischichtig-Tarif in dieser Anlage. Die genaue Sarg-Kapazitaet (Einzelbelegung) ist in der separaten Friedhofssatzung § 15 definiert (nicht in dieser Gebuehrensatzung enthalten); die Preisstruktur (Wahlgrab als Einzeleinheit, Vielfache = mehrere Grabstellen) und das reg-Zitat stuetzen Einzelbelegung. REG-ABGLEICH: reg grabnutzung=2098 OK, einheit=einmalsumme OK, nutzungsdauer=30 OK, beisetzung=1328 OK -> register_stimmt=true. Das reg-'zitat' schreibt 'Verlaengerung ... 1.328' zwar der falschen Zeile zu (Offset-Artefakt), aber der Wert 1.328 fuer die Grabbereitung/Beisetzung des Sarg-Wahlgrabs ist korrekt. BONUS Erd-Reihengrab fuer 1 Sarg: Tarifstelle 1.6 'Reihengrab Sarg' = 742 EUR Nutzungsrecht (30 Jahre); Grabbereitung Reihengrab Sarg (Tarifstelle 2.6) = 1.172 EUR. Ausgeschlossen: 1.5 'Reihengrab fuer Personen unter 5 Jahren' (Kindergrab, 483 EUR)."
+}

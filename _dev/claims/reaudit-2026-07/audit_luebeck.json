@@ -1,0 +1,17 @@
+{
+  "slug": "luebeck",
+  "stadt": "Lübeck",
+  "grabtyp_name": "Wahlgrabstätten für Särge, einstellig (Sargwahlgrab)",
+  "grabnutzung_eur": 1620,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 928,
+  "kapazitaet_beleg": "(1.1) Wahlgrabstätten für Särge                   1.620,- 2.100,-            2.420,-",
+  "tarif_zitat": "(1.1) Wahlgrabstätten für Särge                   1.620,- 2.100,-            2.420,-",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1040,
+  "reihengrab_alt_dauer": null,
+  "grabtyp_slug_hint": "erd-wahlgrab-einstellig",
+  "confidence": "hoch",
+  "notes": "Grabnutzung: Abschnitt A Grabplatzgebühren, Zeile (1.1) 'Wahlgrabstätten für Särge'. Spaltenkopf (Zeile 66-72) definiert Spalte 1 = 'einstellig', Spalte 2 = 'zweistellig übereinander', Spalte 3 = 'zweistellig nebeneinander'. Einstellig = genau EINE Sargbeisetzung = 1.620,- €. Das ist ein WAHLgrab (frei wählbar/verlängerbar), Erdbestattung (Sarg), normale Lage (Rasen-Variante (1.2) = 1.860 ausgeschlossen). Register-konform. Einheit = Einmalsumme; Nutzungsdauer 20 Jahre folgt aus §9 des Tarifs: Verlängerung 1/240 der Gebühr je angefangenem Monat => 240 Monate = 20 Jahre Grundnutzungszeit. Die Gebührensatzung selbst nennt keine explizite Ruhezeit (Verweis auf Friedhofssatzung), aber die 1/240-Regel belegt die 20-Jahres-Bemessung für Wahlgräber eindeutig. Beisetzung 928 € = SUMME aus zwei wörtlichen Positionen für Erwachsene (über 6 Jahre), Werktag, normale Lage: Abschnitt B (1) Bestattung 'bei Verstorbenen über 6 Jahre' = 370,00 € (Spalte Vorwerk/Waldhusen/Burgtor) PLUS Abschnitt C (1)a) 'bei Särgen mit Verstorbenen über 6 Jahre, 2,50 m tief' Grab öffnen und schließen = 558,00 €. 370 + 558 = 928. (Die 1,60-m-tief-Variante 472,00 € gilt nur für die obere/zweite Belegung eines zweischichtigen Grabes; 2,50 m tief ist das Standard-Einzelgrab.) Achtung Tabellen-Layout: Sowohl Abschnitt B als auch C sind bei der PDF-Extraktion verschoben; Werte über Spaltenreihenfolge und Positionsanzahl rekonstruiert. Reihengrab-Bonus: Abschnitt A (3.1) 'Grabstätte für Särge' unter (3) 'Reihengrabstätten für Särge' = 1.040,- € (Reihengrab = einstellig/eine Beisetzung). Nutzungsdauer des Reihengrabs steht nicht in dieser Gebührensatzung (Friedhofssatzung) => null."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "wiesbaden",
+  "stadt": "Wiesbaden",
+  "grabtyp_name": "Erdwahlgrab ausserhalb der Reihengraeberabteile, je Grabstelle (Nutzungsrecht 30 Jahre)",
+  "grabnutzung_eur": 3383,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 30,
+  "beisetzung_eur": 0,
+  "kapazitaet_beleg": "1.2.1    - je Grabstelle, Nutzungsrecht für 30 Jahre                            3.383,00 EUR",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 786,
+  "reihengrab_alt_dauer": 30,
+  "tarif_zitat": "1.2.1    - je Grabstelle, Nutzungsrecht für 30 Jahre                            3.383,00 EUR",
+  "confidence": "unsicher",
+  "notes": "GRABNUTZUNG bestaetigt: Standard-Einzel-Erd-Wahlgrab = Ziffer 1.2.1 unter '1.2 Erwerb von Nutzungsrechten an Wahlgraebern / a) Erdwahlgraeber ausserhalb der Reihengraeberabteile' = 3.383,00 EUR fuer 30 Jahre, je Grabstelle. Amount steht inline auf derselben Zeile, Pairing zuverlaessig. Einheit=einmalsumme, Nutzungsdauer=30 J. Die 20-Jahres-Variante 1.2.2 (2.844 EUR) ist explizit 'Tiefgraeber' (Doppelbelegung, 2 Saerge uebereinander; bestaetigt durch Rueckerstattungsregel Paragraf 4(2): Erdwahlgraeber 1/30, Erdwahlgraeber (Tiefgraeber) 1/20), daher NICHT die Einzelbelegung. 1.2.3 (1.357) = Kindergraeber, ausgeschlossen. REGISTER grabnutzung 3383 + nutzungsdauer 30 = KORREKT -> register_stimmt true. ABER: register-'zitat' bricht mitten ab und der register-Beisetzungswert 674 ist FALSCH. BEISETZUNG NICHT ERMITTELBAR: Die Satzung fuehrt die Beisetzung zweigeteilt (2.1 Erdbeisetzung: Leichenzelle/Ueberfuehrung/Einsenken; 2.2 Oeffnen und Schliessen des Grabes: Ausheben/Schliessen/Huegeln), jeweils Personen ab vollendetem 5. Lebensjahr (2.1.1 / 2.2.1). Im lokal extrahierten Volltext sind die EUR-Betraege der Zeilen 2.1 und 2.2 durch Spalten-Detachment VERLOREN gegangen - sie erscheinen nirgends. Der register-Wert 674 stammt nachweislich aus einer voellig anderen Zeile: '674,00 EUR' taucht nur im Block Baumgrabstaetten im Bestattungswald (Verlaengerung, Ziffer ~1.3.19ff) auf, nicht bei 2.2. beisetzung_eur=0 als Platzhalter (echter Wert aus diesem Text nicht belegbar; Original-PDF noetig). REIHENGRAB (Bonus, geringere Konfidenz): Erdreihengraeber (1.1.1 a) - Nutzungsrecht 30 J = 786,00 EUR bzw. 20 J = 484,00 EUR; die Betraege 786/484 floaten in Zeilen 153/154 ueber den Item-Bullets, Pairing per Spaltenposition inferiert (nicht inline), daher unsicher. Reihengrab ist inhaerent Einzelbelegung. confidence GESAMT 'unsicher' allein wegen der nicht ermittelbaren Beisetzungsgebuehr; die Grabnutzung selbst ist hoch belastbar."
+}

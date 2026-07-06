@@ -1,0 +1,20 @@
+{
+  "slug": "aachen",
+  "stadt": "Aachen",
+  "grabtyp_name": "Erd-Wahlgrab zur Sargbeisetzung - normale Lage",
+  "grabnutzung_eur": 121.00,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 798.00,
+  "kapazitaet_beleg": "(2) Es werden unterschieden ein- und mehrstellige Wahlgrabstaetten zur Sarg oder Urnenbeisetzung, als Einfach- oder Tiefgraeber. In einem Tiefgrab sind bei gleichzeitig laufenden Ruhezeiten zwei Beisetzungen uebereinander moeglich.",
+  "tarif_zitat": "2.1 Erd-Wahlgrab zur Sargbeisetzung - normale Lage, je Stelle und Jahr. 121,00 €",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1527.00,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Primaerverifiziert an der amtlichen Friedhofsgebuehrenordnung (17. Aenderungssatzung vom 17.12.2025, Anlage 1 zu §1) via pdfplumber-Geometrie-Extraktion aus dem offiziellen aachen.de-PDF. WICHTIG: Die gelieferte txt (txt_path) hat das Preis-Spaltenlayout zerlegt - die Zahl 121,00 stand darin faelschlich auf Urnenreihengrab/Gemeinschaftsgrab-Zeilen; das amtliche PDF bestaetigt jedoch 121,00 € korrekt fuer 2.1 Erd-Wahlgrab normale Lage. grabnutzung=121 und einheit=pro_jahr stimmen daher. beisetzung=798 = Tarif 5.1 'Beisetzung oder Einbettung eines Sarges in einem Erdgrab' (Erwachsener; keine Alters-/Lage-Differenzierung fuer Erwachsene). Grabtyp 2.1 ist Einfachgrab-Stelle = genau EINE Sargbeisetzung (Tiefgrab 2.4 waere die 2-Beisetzungen-Variante); erfuellt alle Kriterien: Wahlgrab, Erd/Sarg, Einzelbelegung, normale Lage, guenstigster passender Tarif (bevorzugte Lage 236, Sonderlage 278). Einheit pro_jahr -> nutzungsdauer_jahre=1. Ruhezeit fuer Erwachsene-Sarg je nach Friedhof 20-30 Jahre (§11: Ostfriedhof/Westfriedhof II 20 J, St. Laurentius/Verlautenheide 25 J, Waldfriedhof/Walheim/Westfriedhof I 30 J; Minimum 20). Register-nutzungsdauer_angesetzt=20 ist als Minimum-Ruhezeit plausibel. Reihengrab-Alternative: Tarif 1.1 'Reihengrab zur Sargbeisetzung fuer Verstorbene ab dem 5. Lebensjahr, fuer die Zeit der Ruhefrist' = 1.527,00 € Einmalsumme; Reihengrab ist per §15(1) einstellig = eine Sargbeisetzung; Dauer = Ruhezeit min. 20 Jahre.",
+  "quellen": [
+    "https://www.aachen.de/in-aachen-leben/politik-und-verwaltung/stadtrecht/umweltschutz-gruenflaechen-und-friedhoefe/16-aenderungssatzung-der-friedhofsgebuehrenordnung.pdf (Gebuehrenordnung, Anlage 1)",
+    "https://www.aachen.de/in-aachen-leben/politik-und-verwaltung/stadtrecht/umweltschutz-gruenflaechen-und-friedhoefe/671.pdf (Friedhofssatzung §11 Ruhezeiten, §15 Reihengrab, §16 Wahlgrab)"
+  ]
+}

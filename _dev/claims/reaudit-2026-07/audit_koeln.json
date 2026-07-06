@@ -1,0 +1,16 @@
+{
+  "slug": "koeln",
+  "stadt": "Köln",
+  "grabtyp_name": "Wahlgrabstätte (Sarg-Erdbestattung)",
+  "grabnutzung_eur": 1945.00,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 775.00,
+  "kapazitaet_beleg": "1.6 Sarg-, Urnen- und Gemeinschaftsgrabstätten",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "confidence": "hoch",
+  "tarif_zitat": "1.6.1 Wahlgrabstätte für 25 bzw. 30 Jahre                             1.945,00",
+  "notes": "Köln unterscheidet beim Erwerb des Nutzungsrechts NICHT nach Einzel-/Doppelbelegung — die Gebühr 1.6.1 gilt 'je Grabstelle' (Abschnitt 1 Überschrift: 'Gebühren für den Erwerb und Wiedererwerb von Nutzungsrechten (je Grabstelle)'), also pro einzelner Sarg-Grabstelle = eine Sargbeisetzung. 1.6.1 steht unter Überschrift 1.6 'Sarg-, Urnen- und Gemeinschaftsgrabstätten' und ist die Sarg-(Erd-)Wahlgrabstätte, abgegrenzt von 1.6.2 Urnenwahlgrabstätte. Nutzungsdauer '25 bzw. 30 Jahre' — die Einmalsumme 1.945,00 gilt unverändert für beide; konservativ die kürzere Standard-Ruhefrist 25 Jahre angesetzt (Wiedererwerb-Splits: 1.6.1.1 = 1/25 = 77,80 €, 1.6.1.2 = 1/30 = 64,83 €). Beisetzung: 2.1.4 'Wahlgrabstätte 775,00' = eine Sargbeisetzung, normale Lage (Grab öffnen/schließen laut 'Mit den Gebühren nach Ziffer 2.1.1 – 2.1.5 werden abgegolten: Graböffnen ... Absenken des Sarges und Grabschließen'). NICHT 2.1.5 'untere Bestattung' 995,00 (Tieflage) und NICHT 2.1.6 'obere Bestattung' 278,00 (Zweitbelegung). Register grabnutzung 1945 / einheit einmalsumme / nutzungsdauer 25 / beisetzung 775 stimmen alle → register_stimmt=true. KEIN Reihengrab in der Satzung (nur Wahl-, Urnenwahl-, Gemeinschafts-, Kinder-, Sonder-, anonyme/Baum-/Kolumbariumsgräber) → reihengrab_alt null."
+}

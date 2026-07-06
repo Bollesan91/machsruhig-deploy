@@ -1,0 +1,16 @@
+{
+  "slug": "rostock",
+  "stadt": "Rostock",
+  "grabtyp_name": "Erdwahlgrabstaette einstellig",
+  "grabnutzung_eur": 940,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 560,
+  "kapazitaet_beleg": "1 Erdwahlgrabstaette einstellig                                               940",
+  "tarif_zitat": "A  Gebuehr fuer den Erwerb des Nutzungsrechtes (20 Jahre) an einer   1 Erdwahlgrabstaette einstellig                                               940",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 940,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Sauberer, vollstaendiger Satzungstext (Anlage zur Friedhofsgebuehrensatzung Rostock, Stand 179. Ergaenzung 28.10.2015). Standard-Einzel-Erd-Wahlgrab = Gebuehrenbereich A.1 'Erdwahlgrabstaette einstellig' 940 EUR fuer 20 Jahre Nutzungsrecht (Einmalsumme). 'einstellig' = genau eine Grabstelle/eine Sargbeisetzung (Zeile 14 'je weitere Grabstelle 855' bestaetigt Preis je Grabstelle). Beisetzung = Gebuehrenbereich D.2 'Erdgrabstelle oeffnen und schliessen' 560 EUR; Kinderermaessigung (50 v.H. bis 6 Jahre, Zeile 133-135) bestaetigt, dass 560 der volle Erwachsenen-Tarif ist. Keine Sonderlage/Premium-Differenzierung in der Satzung. Register (940 / einmalsumme / 20 J / Beisetzung 560) stimmt exakt. Bonus Reihengrab: Gebuehrenbereich C.1 'Erdreihengrabstaette' 940 EUR fuer 20 Jahre (in Rostock preisgleich mit Wahlgrab; Reihengrab ist per Definition Einzelbelegung/eine Sargbeisetzung)."
+}

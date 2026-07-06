@@ -1,0 +1,16 @@
+{
+  "slug": "gelsenkirchen",
+  "stadt": "Gelsenkirchen",
+  "grabtyp_name": "Erdwahlgrab (2,50 m x 1,20 m), Einzelbelegung Sarg",
+  "grabnutzung_eur": 2717,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 1420,
+  "kapazitaet_beleg": "B.7 Gebuehr fuer die Erdbestattung in einem Wahlgrab 2,50 m x 1,20 m 1.420,00 (eine Erdbestattung je Grabbereitung; kein einschichtig/zweischichtig/2:1-Vermerk; Grab 2,50 m x 1,20 m je Grabstelle)",
+  "tarif_zitat": "A.3.1 Grundgebuehr fuer die Nutzung an einem Erdwahlgrab 2,50 m x 1,20 m 2.717,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 925,
+  "reihengrab_alt_dauer": 25,
+  "confidence": "hoch",
+  "notes": "Tabellen-Layout im TXT ist zeilenversetzt; per pdfplumber x-Koordinaten (Wertspalte x~485-500) sauber rekonstruiert. Korrekte Zuordnung im A.3-Block: A.3 (Kopfzeile 'an Wahlgraebern') ohne Wert; A.3.1 Erdwahlgrab 2,50 m x 1,20 m = 2.717,00 EUR (Grundgebuehr/Einmalsumme fuer die Nutzungszeit); A.3.1.1 Verlaengerung Erdwahlgrab pro Jahr = 109,00 EUR; A.3.2 Urnenwahlgrab = 1.489,00 EUR; A.3.2.1 Urnen-Verlaengerung/Jahr = 60,00 EUR. Grabnutzung 2717 + Einmalsumme bestaetigt. Nutzungszeit/Ruhezeit 25 Jahre NICHT in der Gebuehrensatzung, sondern primaerverifiziert ueber Friedhoefe-Gelsenkirchen: 'Bei Wahlgrabstaetten wird das Nutzungsrecht beim erstmaligen Erwerb zunaechst fuer 25 Jahre verliehen' und 'Saerge und Urnen ... 25 Jahre lang in der Erde ruhen' (Ausnahme Alter Friedhof Beckhausen: 30 Jahre). Verlaengerung 109 EUR/Jahr korrespondiert zu 2717/25=~108,7 -> konsistent. Beisetzung = B.7 (Grabbereitung Erdbestattung im Wahlgrab) 1.420,00 EUR, normale Lage, Erwachsener; keine Kinder-/Sonderlagen-Differenzierung in der Satzung. register_stimmt=true (2717 / einmalsumme / 25 Jahre / 1420 alle korrekt). Reihengrab-Bonus: guenstigstes Erd-Reihengrab fuer einen Sarg = A.1.2 Erdreihengrab 1,70 m x 0,90 m = 925,00 EUR (Kompaktformat, Einzelbelegung); grosses Format A.1.1 Erdreihengrab 2,50 m x 1,20 m = 1.394,00 EUR; Reihengrab-Nutzungszeit ebenfalls 25 Jahre (Ruhezeit). Grabbereitung Reihengrab: B.1 (2,50x1,20)=1.420,00 EUR bzw. B.2 (1,70x0,90)=1.127,00 EUR."
+}

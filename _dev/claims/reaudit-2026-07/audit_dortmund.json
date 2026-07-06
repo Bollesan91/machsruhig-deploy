@@ -1,0 +1,16 @@
+{
+  "slug": "dortmund",
+  "stadt": "Dortmund",
+  "grabtyp_name": "Wahlgrabstätte (Sargbeisetzung), Nutzungszeit 25 Jahre, je Grabstelle",
+  "grabnutzung_eur": 2650,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 950,
+  "kapazitaet_beleg": "2.2.1.1 Wahlgrabstätte (Nutzungszeit 25 Jahre) je Grabstelle 2.650 € — Gebühr ist je Grabstelle; eine Sargbeisetzung belegt eine Grabstelle. Dortmund.de (Sargbestattungen): 'Neben den hier möglichen Erdbestattungen können auf jeder Grabstelle zusätzlich bis zu zwei Urnen beigesetzt werden' und Nutzungsrecht 'für eine Dauer von 25 Jahren'. Mehrfachbelegung (Überbelegung) nur nach Ablauf der Ruhezeit, nicht gleichzeitig zweischichtig.",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1720,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "2.2.1.1 Wahlgrabstätte (Nutzungszeit 25 Jahre) je Grabstelle 2.650 €",
+  "confidence": "hoch",
+  "notes": "Lokale dortmund.txt war beim Extrahieren stark verschoben (Ziffern/Positionstexte/Beträge zeilenweise gegeneinander versetzt) — Beträge dort NICHT den Positionen zuzuordnen. Deshalb amtliche PDF (dosys01.digistadtdo.de, Gebührensatzung vom 15.12.2023, in Kraft 01.01.2024) mit pdfplumber positionsgenau re-extrahiert; Beträge über x-Koordinate der Gebührenspalte (~x527/534) verankert. Standard-Einzel-Erd-Wahlgrab = Ziffer 2.2.1.1 'Wahlgrabstätte (Nutzungszeit 25 Jahre) je Grabstelle' = 2.650 € (Einmalsumme, 25 Jahre). Günstigere Wahlgrab-Sargvariante existiert nicht; 2.2.1.2 (mit bodendeckender Bepflanzung/Pflege) = 4.900 € ist teurer. Beisetzung (Öffnen/Schließen Erdbestattung, ab 5. Lj., normale Lage) = Ziffer 1.1.1 'Sargbeisetzung im Reihengrab oder in einem Wahlgrab' = 950 €. Register grabnutzung=2650, einheit=einmalsumme, nutzungsdauer=25, beisetzung=950 alle korrekt → register_stimmt=true. Bonus Erd-Reihengrab Einzelbeisetzung Erwachsener: Ziffer 2.1.1.2 'für Verstorbene vom vollendeten 5. Lebensjahr an (Belegungszeit 20 Jahre) mit Erstherrichtung' = 1.720 € / 20 Jahre (Erdreihengrab lt. dortmund.de 'lediglich für jeweils eine Erdbeisetzung vorgesehen'; 2.1.1.1 = Kind unter 5 = 260 €, 2.1.1.3 mit Bepflanzung = 2.500 €)."
+}

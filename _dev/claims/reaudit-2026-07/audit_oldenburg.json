@@ -1,0 +1,16 @@
+{
+  "slug": "oldenburg",
+  "stadt": "Oldenburg",
+  "grabtyp_name": "Wahlgrab fuer Erdbestattungen, fuer Verstorbene ab dem fuenften Lebensjahr, je Stelle (3.2.3)",
+  "grabnutzung_eur": 1070,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 597,
+  "tarif_zitat": "3.2.3  Wahlgrab für Verstorbene ab dem fünften Lebensjahr je Stelle",
+  "kapazitaet_beleg": "5.1.2  Reihengrab und einstelliges Wahlgrab für Verstorbene ab dem fünften Lebensjahr",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1002,
+  "reihengrab_alt_dauer": 25,
+  "confidence": "mittel",
+  "notes": "SPALTEN-VERSATZ-FALLE: Der extrahierte Volltext hat die Euro-Werte gegen ihre Zeilen-Labels vertikal verschoben; die Zahl, die optisch auf einer Label-Zeile steht, gehoert NICHT zu dieser Zeile. Rekonstruktion ueber Positions-Zaehlung: In Abschnitt 3/4/5 gibt es exakt 30 bepreiste Leaf-Positionen (Kategorie-Header 3., 3.1, 3.2, 3.3, 3.4, 4., 5., 5.1, 5.2 sind unbepreist) und exakt 30 Zahlen in Dokument-Reihenfolge -> 1:1-Zuordnung. Daraus: 3.2.1 Wahlgrab bis 5.LJ einfach tief=455; 3.2.2 Verlaengerung je Jahr=29; 3.2.3 Wahlgrab ab 5.LJ je Stelle=1.070; 3.2.4 Verlaengerung je Stelle und Jahr=43. Beisetzung: 4.1 bis 5.LJ=170? -> Gegenprobe: 4.1=225, 4.2 (ab 5.LJ)=597, 4.3 Urnenbeisetzung=199. VERIFIKATION: Beide Register-Ankerwerte landen exakt auf der semantisch korrekten Zeile — grabnutzung 1070 = 3.2.3 (Standard-Einzel-Erd-Wahlgrab, je Stelle, Erwachsener, normale Lage) und beisetzung 597 = 4.2 (Beisetzung inkl. Graberstellung, ab 5. Lebensjahr, Erdbestattung). Plausibilitaet aller uebrigen Werte konsistent (Urnenwahlgrab 767 < Erd-Wahlgrab 1.070 < besondere Lage 1.526). EINHEIT: einmalsumme fuer den Erwerb des Nutzungsrechts (Verlaengerung 43 EUR je Stelle und Jahr separat, 3.2.4). NUTZUNGSDAUER: Diese Gebuehrensatzung nennt KEINE Nutzungszeit/Ruhezeit in Jahren — die Jahreszahl steht in der separaten Friedhofsordnung, nicht in diesem Text. 25 Jahre ist der uebliche Wahlgrab-Standard in Niedersachsen und wird vom Register angesetzt; aus DIESER Satzung nicht primaerverifizierbar (daher confidence=mittel). register_stimmt=true, weil Grabnutzung 1070 und Grabtyp exakt stimmen und die 25 Jahre nicht widersprochen werden; die Jahreszahl selbst ist aber extern. REIHENGRAB-Bonus: guenstigstes Erd-Reihengrab fuer eine erwachsene Sargbeisetzung = 3.1.2 'Reihengraeber fuer Erdbestattungen — fuer Verstorbene ab dem fuenften Lebensjahr' = 1.002 EUR (3.1.1 = Kind bis 5, 3.1.3 anonym, 3.1.4 Rasen-Premium); Dauer 25 J. ebenfalls nicht im Text, Standard angesetzt. KAPAZITAET: 3.2.3 ist 'je Stelle' = eine Grabstelle = eine Sargbeisetzung; Zeile 5.1.2 belegt woertlich die Existenz eines 'einstelligen Wahlgrab'. Satzung Stand 18.12.2023, gueltig ab 01.01.2024 (nichtamtliche konsolidierte Lesefassung; massgeblich Amtsblatt)."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "braunschweig",
+  "stadt": "Braunschweig",
+  "grabtyp_name": "Einzelgrab (Erdgrabstaette fuer die Dauer von 25 Jahren, Einzelbelegung / Wahlgrabcharakter mit Vorerwerb)",
+  "grabnutzung_eur": 1583,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 438.9,
+  "kapazitaet_beleg": "2.1.2 Einzelgrab 1.583,00 (Abgrenzung: 2.1.3 Doppelgrab 2.723,00). Einzelgrab = Einzelbelegung, 1 Sarg (Grabarten Braunschweig: Einzelgrabstaette 2 m2, 1 Sarg, Ruhezeit 25 Jahre, Wahlgrab mit freier Wahl/Vorerwerb).",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1144,
+  "reihengrab_alt_dauer": 25,
+  "tarif_zitat": "2 Ueberlassung von Grabstaetten einschliesslich Vorerwerb ohne Beisetzung / 2.1 Erdgrabstaetten fuer die Dauer von 25 Jahren / 2.1.2 Einzelgrab 1.583,00",
+  "confidence": "hoch",
+  "notes": "Original-TXT-Extraktion (braunschweig.txt) war Spalten-verschoben und unbrauchbar; Struktur ueber amtliche PDF (7.23 Friedhofsgebuehrensatzung, 22. Aenderung 17.12.2024) mit pdfplumber-Koordinaten rekonstruiert. Braunschweig verwendet den Begriff 'Wahlgrab' im Gebuehrentarif NICHT; Abschnitt 2 heisst 'Ueberlassung von Grabstaetten einschliesslich VORERWERB' - der Vorerwerb/freie Wahl ist das Wahlgrab-Merkmal. 2.1.2 Einzelgrab (25 J.) = das Standard-Einzel-Erd-Wahlgrab = 1.583,00 EUR. Bestaetigt durch braunschweig.de/grabarten: Einzelgrabstaette = Wahlgrab, 2 m2, 1 Sarg (+bis zu 4 Urnen darueber), Ruhezeit 25 Jahre, verlaengerbar. Beisetzung = 4.1.3 'fuer Erwachsene' 438,90 EUR (normale Lage, werktags; Samstag 4.1.4 = 759,00). Register (grabnutzung 1583 / einmalsumme / 25 J / beisetzung 438,90) stimmt exakt. Reihengrab-Alternative: 2.1.1 Erdreihengrab - ohne Vorerwerbsmoeglichkeit - 1.144,00 EUR (25 J, 1 Sarg). ZUSATZKOSTEN-HINWEIS (nicht im grabnutzung-Feld): Tarif Nr. 1 'Grundgebuehr fuer jede Neuvergabe ... je Jahr der Nutzung 32,90 EUR' wird zusaetzlich pro Jahr erhoben (25 x 32,90 = 822,50 ueber die Laufzeit); die 1.583,00 sind reine Ueberlassungsgebuehr nach 2.1.2, konsistent mit unserem Registeransatz."
+}

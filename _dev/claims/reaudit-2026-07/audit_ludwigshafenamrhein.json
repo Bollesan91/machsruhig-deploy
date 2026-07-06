@@ -1,0 +1,16 @@
+{
+  "slug": "ludwigshafenamrhein",
+  "stadt": "Ludwigshafen am Rhein",
+  "grabtyp_name": "Wahlgrab fuer Erdbestattungen (einstelliges Wahl- und Partnergrab, 30 Jahre)",
+  "grabnutzung_eur": 2469,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 30,
+  "beisetzung_eur": 1168,
+  "kapazitaet_beleg": "1. Erwerb eines 30jaehrigen Nutzungsrechtes an einem einstelligen Wahl- und Partnergrab fuer Erdbestattungen und Urnenbeisetzungen",
+  "tarif_zitat": "1.1 Wahlgrab fuer Erdbestattungen 2.469,00 EUR",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1198,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab = III.1.1 'Wahlgrab fuer Erdbestattungen' 2.469,00 EUR, unter dem Abschnitt III.1 'Erwerb eines 30jaehrigen Nutzungsrechtes an einem EINSTELLIGEN Wahl- und Partnergrab' -> einstellig = eine Grabstelle = eine Sargbeisetzung (mehrstellig waere Mehrfaches, siehe 1.14). Einmalsumme, 30 Jahre. Register grabnutzung=2469/einmalsumme/30 => stimmt. Beisetzung (Oeffnen/Schliessen Erdbestattung, Erwachsener ab 6 J.) = Abschnitt I.1.1 'Erwachsene und Kinder ueber 6 Jahre' = 1.168,00 EUR; Register beisetzung=1168 => stimmt. ACHTUNG: Die lokal extrahierte .txt-Datei hatte die Betragsspalte in Abschnitt I UND Abschnitt 5 um eine Zeile nach oben verschoben (dort erschien 1.168 in der Ueberschriftszeile 'I. Erdbestattung und Urnenbeisetzung' und 1.1 Erwachsene=97). Primaerverifikation gegen die amtliche PDF (ludwigshafen.de Ortsrecht 7-09, Stand 01.01.2026, Amtsblatt Nr. 82 vom 19.12.2025), sauber per pypdf geparst, ergibt die korrekte Zuordnung: I.1.1 Erwachsene und Kinder ueber 6 Jahre = 1.168,00 EUR; I.1.2 Kinder bis 6 J. = 584,00; I.2 Urnenbeisetzung = 541,00. Damit sind beide Registerwerte trotz txt-Layout-Verschiebung korrekt. Bonus Reihengrab: Abschnitt 5 'Erwerb eines 20jaehrigen Nutzungsrechtes an einem Reihengrab', 5.1.1 'Reihengrab fuer Erdbestattungen - Erwachsene und Kinder ueber 6 Jahre' = 1.198,00 EUR (20 Jahre). Quelle: https://ludwigshafen.de/fileadmin/ludwigshafen/verwaltung_und_politik/stadtverwaltung_rathaus/Ortsrecht/7-09.pdf"
+}

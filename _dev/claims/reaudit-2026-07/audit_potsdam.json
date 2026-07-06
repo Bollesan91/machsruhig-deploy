@@ -1,0 +1,16 @@
+{
+  "slug": "potsdam",
+  "stadt": "Potsdam",
+  "grabtyp_name": "Erdeinzelwahlgrabstätte",
+  "grabnutzung_eur": 68,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 767,
+  "kapazitaet_beleg": "1.4. Erdeinzelwahlgrabstätte – je Jahr 68,00",
+  "tarif_zitat": "1.4. Erdeinzelwahlgrabstätte – je Jahr 68,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1493,
+  "reihengrab_alt_dauer": 25,
+  "confidence": "hoch",
+  "notes": "Flat-Text (potsdam.txt) hatte die Wertespalte um eine Zeile nach unten verschoben, sodass 68,00 faelschlich neben 'Erddoppelwahlgrabstaette' erschien. Per Koordinaten-Reextraktion (pdfplumber, Y-Achse) aus dem Original-PDF (potsdam.raw) zweifelsfrei aufgeloest: 68,00 gehoert auf Zeile y=314 zur '1.4. Erdeinzelwahlgrabstaette – je Jahr'. Einzelwahlgrab = eine Sargbeisetzung, Wahlgrab (frei waehlbar/verlaengerbar), Erdbestattung, normale Lage -> korrekter Standard-Einzel-Erd-Wahlgrab. Pro-Jahr-Tarif -> einheit pro_jahr, nutzungsdauer_jahre 1. Beisetzung: Satzung fuehrt unter '2. Erdbestattungen' nur 'Gruft oeffnen und schliessen ... fuer Verstorbene bis 5 Jahre' (384,00) und '... ueber 5 Jahre' (767,00); kein separates Nicht-Gruft-Erdgrab-Oeffnen. Erwachsener (ueber 5 Jahre) = 767,00 (2.2). Bonus-Reihengrab: '1.2. Erdreihengrab fuer 25 Jahre' 1.493,00 (Einmalsumme, 25 Jahre, Reihengrab = eine Beisetzung). Register (grabnutzung 68, einheit pro_jahr) stimmt. Satzung vom 06.12.2023, Sonderamtsblatt Nr. 18/2023."
+}

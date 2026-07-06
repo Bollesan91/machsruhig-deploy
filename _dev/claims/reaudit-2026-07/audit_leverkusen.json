@@ -1,0 +1,16 @@
+{
+  "slug": "leverkusen",
+  "stadt": "Leverkusen",
+  "grabtyp_name": "Erdwahlgrab",
+  "grabnutzung_eur": 164.01,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 1270.98,
+  "kapazitaet_beleg": "1.3 Erdwahlgraeber                                      je Jahr        164,01",
+  "tarif_zitat": "1.3 Erdwahlgraeber                                      je Jahr        164,01",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 121.74,
+  "reihengrab_alt_dauer": 1,
+  "confidence": "hoch",
+  "notes": "Vorliegender Text = Anlage 7, 27. Aenderung der Gebuehrensatzung fuer die Friedhoefe der Stadt Leverkusen (Gebuehrentarif, in Kraft ab 01.01.2026), NUR die Neufassung der Gebuehrenbetraege. Grabnutzung: Tarif 1.3 'Erdwahlgraeber je Jahr 164,01' = Standard-Erd-Wahlgrab, PRO JAHR. Bewusst NICHT genommen: 1.4 'Erdwahlgraeber in besonderer Lage je Jahr 201,19' (Sonderlage, teurer). Der Tarif nennt fuer das Erdwahlgrab KEINE Schicht-/Belegungs-Restriktion (kein einschichtig/zweischichtig/einstellig) - es ist der regulaere, guenstigste Erd-Wahlgrab-Tarif in normaler Lage, daher Einzelbelegung angenommen. Beisetzung: Tarif 2.4 'Wahlgraeber oder Wahlgraeber in bes. Lage fuer Personen ueber 5 Jahre / Erdbestattungen / 1.270,98'; die Beisetzungsgebuehren decken laut Satzung 'Ausheben des Grabes, Benutzung des Sargwagens, Schliessen und Einebnen des Grabes' (Oeffnen/Schliessen, Erdbestattung, Erwachsener ab 5 J.). Register grabnutzung 164,01 pro_jahr + beisetzung 1270,98 stimmen exakt mit der Satzung ueberein -> register_stimmt=true. nutzungsdauer_angesetzt=20 im Register ist die angenommene Anzeige-Ruhefrist; sie steht NICHT in diesem Aenderungstext (nur die Grundsatzung von 1975 wuerde die Ruhezeit definieren), widerspricht aber der pro-Jahr-Einheit nicht. Reihengrab-Bonus: Tarif 1.1 'Erdreihengraeber fuer Personen ueber 5 Jahre je Jahr 121,74' (Reihengrab = eine Sargbeisetzung), guenstiger als Wahlgrab; Reihengrab-Beisetzung waere 2.1 = 1.126,11."
+}

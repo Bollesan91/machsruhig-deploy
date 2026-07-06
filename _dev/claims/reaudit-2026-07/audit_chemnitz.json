@@ -1,0 +1,16 @@
+{
+  "slug": "chemnitz",
+  "stadt": "Chemnitz",
+  "grabtyp_name": "Wahlgrabstelle (Lösestelle) — Erdbestattung, Gebührenverzeichnis 1.1.4",
+  "grabnutzung_eur": 570.00,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 297.20,
+  "kapazitaet_beleg": "6. Wahlgrabstellen (Lösestellen) sind Grabstellen mit weitergehenden Nutzungsrechten, in denen eine Erdbestattung und mehrere Urnen beigesetzt werden können.",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 423.00,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "1.1.4 Lösestelle für 20 Jahre 570,00 / Nachlösung pro Jahr 28,50",
+  "confidence": "hoch",
+  "notes": "Chemnitz verwendet KEINE 'Wahlgrab'-Bezeichnung im Gebührenverzeichnis, sondern 'Lösestelle'. § 22 Abs. 1 Nr. 6 der Friedhofssatzung (67.200) setzt beide ausdrücklich gleich: 'Wahlgrabstellen (Lösestellen)'. Die Lösestelle ist das frei wählbare, verlängerbare Einzel-Erd-Wahlgrab: § 23(1) 'Erdgräber, außer Reihengräber, können vom Erwerber ... ausgewählt werden'; § 24(4) 'An Wahlgräbern kann das Nutzungsrecht verlängert werden'; Vergabe/Erneuerung nur auf Antrag. Einzelbelegung = genau EINE Erdbestattung (ein Sarg) je Grabstelle ('in denen eine Erdbestattung und mehrere Urnen beigesetzt werden können'); die optionale Zusammenfassung 'bis 3 Stück' ändert den Einzelstellen-Tarif 1.1.4 (570,00) nicht. Randstelle (1.1.5, 899,00) wurde ausgeschlossen: 'in Sonderlage' UND 'für mindestens zwei Gräber' (§ 22 Abs. 1 Nr. 7) — also weder normale Lage noch Einzelbelegung. Beisetzung = 4.3 'Erdgrab öffnen und schließen 297,20' (Erwachsener; Kinder-Tarif 4.5 = 89,15 separat). Ruhezeit/Nutzungsdauer 20 Jahre (§ 16). Bonus-Reihengrab: 1.1.2 Reihengrab 'nur für 20 Jahre 423,00' — Einzel-Sargbeisetzung, aber KEIN Wahlgrab (der Reihe nach belegt, nicht verlängerbar, § 22 Abs. 1 Nr. 5). Register (570 / einmalsumme / 20 J / Beisetzung 297,20) stimmt exakt mit dem korrekten Einzel-Erd-Wahlgrab überein -> register_stimmt = true. Primärverifiziert gegen amtliche PDFs chemnitz.de: Gebührensatzung 67.210 (Stand Jan 2024) und Friedhofssatzung 67.200; lokal extrahierter Satzungs-Txt hatte zerrissenes Tabellen-Layout, per pdfplumber-Koordinaten korrekt rekonstruiert."
+}

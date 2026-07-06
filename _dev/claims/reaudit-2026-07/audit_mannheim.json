@@ -1,0 +1,16 @@
+{
+  "slug": "mannheim",
+  "stadt": "Mannheim",
+  "grabtyp_name": "Erdreihengrab (Ueberlassung fuer die Dauer der Ruhezeit, 15 Jahre)",
+  "grabnutzung_eur": 1035,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 15,
+  "beisetzung_eur": 1711,
+  "kapazitaet_beleg": "4.1.1 Fuer 2 Personen bis einschliesslich 3,00 m2",
+  "register_stimmt": false,
+  "confidence": "unsicher",
+  "reihengrab_alt_eur": 1035,
+  "reihengrab_alt_dauer": 15,
+  "tarif_zitat": "4.2 Erdreihengrab / 4.2.1 Ueberlassung eines Erdreihengrabes fuer die Dauer der Ruhezeit (15 Jahre)",
+  "notes": "Mannheim hat KEIN Einzel-Erd-Wahlgrab: alle Erdwahlgraeber (4.1.1-4.1.4) sind 'Fuer 2 Personen' bzw. '4 Personen' (zweischichtig, 2:1) - kleinstes 4.1.1 'Fuer 2 Personen bis einschliesslich 3,00 m2', erstmalige Ueberlassung 15 Jahre = 1.411,00 EUR (deckt sich mit unserem aktuellen Registerwert 1411). Da kein Einzel-Wahlgrab existiert, ist gemaess Regel das guenstigste Erd-Grab mit genau EINER Beisetzung anzusetzen = Erdreihengrab (4.2). Register haelt aktuell das 2-Personen-Wahlgrab (1411, 15 J) -> register_stimmt=false. Beisetzung: Mannheim buendelt 'Oeffnen und Schliessen des Grabes' in das Erdbestattungs-Gesamtpaket; fuer Reihengrab = 1.1.2 'Erdbestattung Reihengrab Erwachsene, Kinder ab 2 Jahre' = 1.711,00 EUR (Wahlgrab-Paket 1.1.1 = 1.984,00 EUR, aktueller reg-Beisetzungswert). WICHTIG - confidence unsicher: Der lokal extrahierte Volltext ist ein 2-spaltiges PDF mit vertikalem Betrags-Drift; die Grabnutzungsgebuehr des Erdreihengrabs (4.2.1) laesst sich nicht eindeutig zuordnen (Kandidaten benachbart: 517,00 / 1.035,00 / 69,00 / 2.070,00). 1.035,00 EUR fuer 15 J ist die plausibelste Zuordnung (4.2.1 steht auf gleicher Zeile), aber vor Publikation primaerverifizieren. Anker 4.1.1.1=1.411,00 (15 J, 2 Pers, 3,00 m2) ist zeilengenau belegt und damit sicher; die Reihengrab-Zahl NICHT. Wahlgrab-Alternative fuer Vergleichbarkeit: 4.1.1.1 = 1.411,00 EUR / 15 J (2 Personen, zweischichtig)."
+}

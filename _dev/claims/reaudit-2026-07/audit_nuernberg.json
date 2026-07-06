@@ -1,0 +1,16 @@
+{
+  "slug": "nuernberg",
+  "stadt": "Nürnberg",
+  "grabtyp_name": "Wahlgrab einfachtief/einfachbreit (Erd- und Urnenbestattungen)",
+  "grabnutzung_eur": 79,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 1569,
+  "kapazitaet_beleg": "4.1.1  Wahlgrab einfachtief/einfachbreit   79,00 €",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 99,
+  "reihengrab_alt_dauer": 1,
+  "tarif_zitat": "4.1  Wahlgräber Neuerwerb/Verlängerung | 4.1.1  Wahlgrab einfachtief/einfachbreit   79,00 €  (Abschnitt B Grabgebühren — Gebühr/Jahr; 4 Grabarten für Erd- und Urnenbestattungen)",
+  "confidence": "hoch",
+  "notes": "Amtliche Anlage zur Bestattungs- und Friedhofsgebührensatzung Nürnberg (740.071a, 84. Nachtrag August 2026), primärverifiziert via PDF-Koordinaten-Extraktion (pdfplumber) direkt von nuernberg.de. WICHTIG: Der lokal vorliegende txt-Extrakt (nuernberg.txt) ist um eine Zeile verschoben und ordnet Werte falsch zu — die amtliche PDF wurde koordinatengenau nachextrahiert. Grabtyp = 4.1.1 Wahlgrab einfachtief/einfachbreit = 79,00 €/Jahr: Wahlgrab (frei verlängerbar, Neuerwerb/Verlängerung), Abschnitt 4 'Grabarten für Erd- und Urnenbestattungen' (erdbestattungsfähig), 'einfachtief' = eine Sargschicht = genau EINE Erdbeisetzung (im Gegensatz zu 'doppelttief' bei 4.1.5/4.1.6 = zwei Schichten), 'einfachbreit' = kleinste/günstigste Breite. Günstigster Tarif, der alle Kriterien erfüllt; keine Sonder-/Premiumlagen im Tarif. Beisetzung = A 1.1.2 'Beisetzung einer/eines Erwachsenen' = 1.569,00 € (Öffnen/Schließen bei Erdbestattung, Erwachsener; Kind 475,00 €, Gruft 1.215,00 €). Register-Werte grabnutzung 79 €, einheit pro_jahr und beisetzung 1.569 € stimmen exakt. Einheit ist pro_jahr (Spaltenüberschrift 'B Grabgebühren — Gebühr/Jahr'), daher nutzungsdauer_jahre=1; das im Register angesetzte nutzungsdauer_angesetzt=20 ist nur eine Projektionsannahme (Wahlgräber sind jährlich frei verlängerbar; Ruhezeit Erwachsene laut Friedhofssatzung 740.070 = 12 Jahre). Bonus Reihengrab: 2.1.1 Reihengrab Erwachsene = 99,00 €/Jahr (Erdbestattung, einzelne Beisetzung, pro_jahr). Hinweis: Reihengrab (99 €/J) ist hier teurer als das Einzel-Wahlgrab einfachtief/einfachbreit (79 €/J)."
+}

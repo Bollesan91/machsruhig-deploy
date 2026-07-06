@@ -1,0 +1,17 @@
+{
+  "slug": "moenchengladbach",
+  "stadt": "Mönchengladbach",
+  "grabtyp_name": "Erdgrabstätte einstellig (Sarggrabstätte mit Verlängerungs- und Wiedererwerbsmöglichkeit)",
+  "grabnutzung_eur": 1659,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 937,
+  "kapazitaet_beleg": "1.1.8.1 Einstellige Erdgrabstätte im Grabfeld A 3 auf dem Hauptfriedhof mit der Möglichkeit einer Sargbeerdigung",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1659,
+  "reihengrab_alt_dauer": 25,
+  "tarif_zitat": "1.1.1 Erdgrabstätte einstellig — 25-jährige Nutzungsfrist bzw. 30-jährige Nutzungsfrist für die in § 10 Abs. 1 der Friedhofssatzung aufgeführten Erweiterungsflächen auf den Friedhöfen Giesenkirchen und Uedding — 1.659,00 €",
+  "confidence": "hoch",
+  "notes": "Mönchengladbach nutzt NICHT die Begriffe Wahlgrab/Reihengrab, sondern unterscheidet 1.1 'Sarggrabstätten MIT Verlängerungs- und Wiedererwerbsmöglichkeit' (= Wahlgrab-Äquivalent, verlängerbar/wiedererwerbbar) vs. 1.2.2 'OHNE Verlängerungs- und Wiedererwerbsmöglichkeit' (= Reihengrab-Äquivalent). Standard-Einzel-Erd-Wahlgrab = 1.1.1 Erdgrabstätte einstellig = 1.659,00 € Einmalsumme, 25 Jahre Nutzungsfrist (30 Jahre gilt AUSSCHLIESSLICH für die genannten Erweiterungsflächen Giesenkirchen/Uedding, nicht Standard). 'einstellig' = eine Grabstelle = EINE Sargbeisetzung (belegt durch Gegensatz 1.1.8.1 'Einstellige ... mit der Möglichkeit EINER Sargbeerdigung' vs. 1.1.8.2 'Zweistellige ... mit der Möglichkeit von ZWEI Sargbeerdigungen'). Memoriam-Feld (1.1.6) und Grabfeld A 3 (1.1.8.x) sind Sonderlagen, ausgeschlossen; kosten ohnehin gleich/mehr. beisetzung_eur = 2.1 Sargbestattung 937,00 € (Erwachsener; laut Satzung sind damit 'Das Öffnen und Schließen des Grabes' abgegolten). register_stimmt=true: reg grabnutzung 1659 einmalsumme + nutzungsdauer 25 stimmen exakt mit korrektem Einzel-Erd-Wahlgrab überein; auch reg-beisetzung 937 korrekt. Reihengrab-Äquivalent (1.2.2.1 Erdgrabstätte einstellig ohne Verlängerung) = ebenfalls 1.659,00 €, 25 Jahre (identischer Preis). WICHTIG zur Extraktion: Der txt unter txt_path ist ein zweispaltiger PDF-Extrakt mit VERSCHOBENER Preisspalte (Labels und Beträge stehen NICHT auf derselben Zeile); die naive Zeile suggeriert falsche Zuordnungen. Zur Auflösung wurde die amtliche mags-PDF (https://mags.de/.../mags_Friedhofsgebuehrensatzung.pdf, Fünfter Nachtrag 13.12.2024) mit 'pdftotext -raw' in Content-Stream-Reihenfolge geprüft — dort ist die Label→Preis-Zuordnung eindeutig und bestätigt: 1.1.1 Erdgrabstätte einstellig = 1.659,00 €.",
+  "reihengrab_alt_grabtyp": "1.2.2.1 Erdgrabstätte einstellig (ohne Verlängerungs- und Wiedererwerbsmöglichkeit)"
+}

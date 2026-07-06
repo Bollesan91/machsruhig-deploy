@@ -1,0 +1,16 @@
+{
+  "slug": "saarbruecken",
+  "stadt": "Saarbrücken",
+  "grabtyp_name": "Körperwahlgrab (je Stelle 1 Körper, 20 Jahre)",
+  "grabnutzung_eur": 720,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 1755,
+  "kapazitaet_beleg": "Körperwahlgrab, je Stelle 1 Körper für 20 Jahre                720,00 EUR",
+  "tarif_zitat": "Körperwahlgrab, je Stelle 1 Körper für 20 Jahre                720,00 EUR",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 600,
+  "reihengrab_alt_dauer": null,
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab = 'Körperwahlgrab, je Stelle 1 Körper für 20 Jahre' = 720,00 EUR (Abschnitt I.I Körpergrabstätten). Einzelbelegung explizit: 'je Stelle 1 Körper' = genau eine Sargbeisetzung. Tiefgrab (2 Körper, 1.020 EUR) korrekt ausgeschlossen. Einheit = Einmalsumme (Verlängerung 36,00 EUR/Jahr wird separat ausgewiesen), Nutzungsdauer 20 Jahre. Register (720 / einmalsumme / 20) stimmt exakt. Beisetzung = II.I Körperbestattung: 'Wahl-, Reihen-, Körpergemeinschafts-, anonymes- und Tiefgrab / obere Belegung je Bestattung 1.755,00 EUR' — normale (obere) Belegung, Erwachsener; die 'untere Belegung' 1.925 EUR gilt nur fürs Tiefgrab. Register-beisetzung 1755 korrekt. Reihengrab-Bonus: Tabelle ist im Extrakt spaltenverschoben; analog zum identisch aufgebauten Urnenreihengrab-Block (Preise 2 Zeilen nach oben verschoben) ist das Erd-Reihengrab für 'Verstorbene über 5 Jahre' = 600,00 EUR, überlassen 'für die Dauer der jeweiligen Ruhefrist' (keine feste Jahreszahl in der Satzung genannt, daher Dauer null). Reihengrab ist nicht verlängerbar (I: 'Eine Verlängerung von Urnen-, Körperreihengräbern ... ist generell ausgeschlossen')."
+}

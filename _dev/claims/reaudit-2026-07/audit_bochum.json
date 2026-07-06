@@ -1,0 +1,16 @@
+{
+  "slug": "bochum",
+  "stadt": "Bochum",
+  "grabtyp_name": "Familiengrabstaette fuer Sargbestattungen (Wahlgrab-Aequivalent, je Grabstelle)",
+  "grabnutzung_eur": 2505,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 1609,
+  "kapazitaet_beleg": "2.1     Familiengrabstätten für Sargbestattungen je Grabstelle     2.455,00 2.505,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "tarif_zitat": "2.1     Familiengrabstätten für Sargbestattungen je Grabstelle     2.455,00 2.505,00",
+  "confidence": "hoch",
+  "notes": "Bochum kennt bei Erd/Sarg nur zwei Grabtypen: Reihengrabstaette (Tarif 1.1) und Familiengrabstaette (Tarif 2.1/1.3.1). Die Familiengrabstaette ist das frei waehlbare, verlaengerbare Wahlgrab-Aequivalent (NRW-Terminologie; Nutzungsrecht nach Paragraf 4 Friedhofssatzung); ein Erdgrab namens 'Wahlgrab' existiert nicht (nur 'Rasenwahlgrab' 1.3.2 = Rasen-Variante, ausgeschlossen). Grabnutzung = Tarif 2.1 'Familiengrabstaetten fuer Sargbestattungen je Grabstelle' = 2.505,00 EUR (ab 1.1.2026; ab 1.1.2025: 2.455,00), Einmalsumme je Grabstelle = eine Sargbeisetzung pro Grabstelle. Nutzungsdauer 25 Jahre, belegt durch Tarif 2.9: '1/25 der Tarifziffern 2.1 ...' (Verlaengerung je angefangenem Jahr). Beisetzung/Oeffnen = Tarif 1.3.1 'Sargbestattung in einer Familiengrabstaette' = 1.609,00 EUR (ab 1.1.2026; ab 1.1.2025: 1.569,00) - Tabelle war layoutverschoben, Wert 1.569,00/1.609,00 in Zeile 317 gehoert zum Label 'Sargbestattung in einer Familiengrabstaette' (Zeile 319, Nr. 1.3.1). Ermaessigung 80% nur fuer Kinder unter 6 Jahren / Totgeburten (Paragraf 1 Abs. 4), also Erwachsenen-Tarif korrekt voll. Register (grabnutzung 2505 / einmalsumme / 25 J / beisetzung 1609) stimmt exakt. Reihengrab (Tarif 1.1): KEINE separate Grabnutzungsgebuehr - Ueberlassung des Grabes ist laut Paragraf 1 Abs. 3 in der Bestattungsgebuehr (1.1 = 2.695,00 EUR) enthalten; keine eigenstaendige Nutzungsrechts-/Nutzungsdauer-Zeile fuer Reihengraeber, daher reihengrab_alt = null."
+}

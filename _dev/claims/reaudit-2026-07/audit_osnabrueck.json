@@ -1,0 +1,16 @@
+{
+  "slug": "osnabrueck",
+  "stadt": "Osnabrück",
+  "grabtyp_name": "Erdwahlgrabstätte für die Erdbestattung (je Grabstelle je Jahr)",
+  "grabnutzung_eur": 74.0,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 450.0,
+  "tarif_zitat": "3.1 Erdwahlgrabstätten für die Erdbestattung, je Grabstelle je Jahr 74,00",
+  "kapazitaet_beleg": "Die Gebührenberechnung richtet sich nach der Anzahl der eingeräumten Grabstellen übereinander und/oder nebeneinander.",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1550.0,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Beisetzung = 1.2.1 'Erdbestattung für Verstorbene im Alter über 6 Jahre' in einer Wahlgrabstätte = 450,00 EUR (umfasst laut 1.2.6 Ausheben und Wiederverfüllen des Grabes, Dekoration der Kränze, Verwaltungsaufwand). ACHTUNG: Der lokal extrahierte osnabrueck.txt hat die Betragsspalte um eine Zeile nach oben verschoben (1.2.1 erschien dort fälschlich als 100,00). Kreuzverifiziert mit dem amtlichen PDF (informiert.osnabrueck.de II 2.15, Wirtschaftsjahr 2026) via PyMuPDF-Textlayer, der Label und Betrag korrekt paart: 1.1.1 Reihengrab=375,00, 1.2.1 Wahlgrab=450,00. Grabnutzung 3.1=74,00 je Grabstelle je Jahr (pro_jahr; eine Grabstelle = ein Sarg gem. §3.0). Register-Werte (74 pro_jahr, Beisetzung 450) sind korrekt. nutzungsdauer_jahre=1 wegen pro_jahr-Tarif; Register-Anzeigewert 20 Jahre entspricht der üblichen Erd-Ruhezeit. Reihengrab-Alternative: 4.1.1 Erdreihengrabstelle für Erwachsene = 1.550,00 EUR (Grabnutzung, Einmalsumme; Ruhezeit 20 Jahre); Beisetzung dort separat 1.1.1=375,00."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "augsburg",
+  "stadt": "Augsburg",
+  "grabtyp_name": "Familiengrab (Wahlgrab) - Grab im Inneren der Grabfelder je Grabstelle, Ersterwerb",
+  "grabnutzung_eur": 47.0,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 940.0,
+  "kapazitaet_beleg": "1.1.1 Gräber im Inneren der Grabfelder je Grabstelle - Ersterwerb   47,00 €",
+  "tarif_zitat": "1.1.1 Gräber im Inneren der Grabfelder je Grabstelle - Ersterwerb   47,00 €",
+  "register_stimmt": false,
+  "reihengrab_alt_eur": 59.0,
+  "reihengrab_alt_dauer": 15,
+  "confidence": "hoch",
+  "notes": "Primaerquelle: Anlage zur Friedhofsgebuehrensatzung der Stadt Augsburg (Gebuehrenverzeichnis), Fassung 01.01.2025. Lokale txt-Extraktion hatte in Abschnitt B die Betragsspalte gegen die Zeilen verschoben (Betraege standen physisch auf Nachbarzeilen); daher via Wayback (Snapshot 2025-05-17, id_ Raw-PDF, HTTP 200, application/pdf) das amtliche PDF re-extrahiert (pdfplumber, Spaltenpositionen) -> korrekte Zeilen-Betrag-Zuordnung. GRABTYP: Wahlgrab = 'Familiengraeber' (Friedhofssatzung 7510: 'Familiengraeber sind Grabstaetten ... an denen auf Antrag ein Nutzungsrecht ... verliehen ... wird'); Reihengraeber gewaehren kein Grabrecht. Normale Lage = 'im Inneren der Grabfelder' (Weg/Zaun/Hecke/Hang und Sonderlagen sind bevorzugte Lagen). Ersterwerb (nicht Verlaengerung) = Erstzuteilung fuer neue Bestattung. Einzelbelegung: Gebuehr 'je Grabstelle' = pro Grabstelle/Bestattung. => Grabnutzung 47,00 EUR/Jahr (Register-Wert korrekt). BEISETZUNG: A.1.1 'Personen ab dem 12. Lebensjahr' 940,00 EUR (Erdbestattung Erwachsener; Augsburg-Schwelle ist 12. Lj., nicht 5. Lj.) - Register-Wert korrekt. EINHEIT: Abschnitt-B-Ueberschrift 'B. Grabgebuehren je Jahr' => pro_jahr; §3(1)a Satzung: Grabgebuehr fuer die gesamte Ruhezeit im Voraus. NUTZUNGSDAUER: §7(1) Friedhofssatzung 7510 'Die Ruhezeit betraegt fuer Leichen ... 15 Jahre' (Erwachsene); der pro-Jahr-Satz deckt somit 15 Jahre Ruhezeit, nicht 20. register_stimmt=false, WEIL nutzungsdauer_angesetzt=20 die gesetzliche Ruhezeit (15 J.) nicht trifft; Grabnutzung (47), Einheit (pro_jahr) und Beisetzung (940) sind dagegen korrekt. BONUS Reihengrab (eine Sargbeisetzung, Erwachsener): B.1.2.1 'bei Personen ab dem vollendeten 6. Lebensjahr' 59,00 EUR/Jahr, Ruhezeit 15 J. (auch pro_jahr)."
+}

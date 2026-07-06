@@ -1,0 +1,16 @@
+{
+  "slug": "karlsruhe",
+  "stadt": "Karlsruhe",
+  "grabtyp_name": "Erdbestattungswahlgrab - an Wegen und in Feldern (Wahlgrab, pro Jahr, je Grabstelle)",
+  "grabnutzung_eur": 100,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 1463,
+  "kapazitaet_beleg": "(1) Die Gebuehrensaetze fuer Wahlgraeber beziehen sich auf jeweils eine Grabstelle. Bei mehr-",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 877,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "2        Gebühr für den Erwerb des Nutzungsrechtes ... an einem Wahlgrab (pro Jahr) | 2.1 Erdbestattungswahlgrab | 2.1.1 - an Wegen und in Feldern | 100,00",
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab = Ziffer 2.1.1 'Erdbestattungswahlgrab - an Wegen und in Feldern' = 100,00 EUR pro Jahr je Grabstelle (normale Lage). Register (grabnutzung 100, einheit pro_jahr) STIMMT. WICHTIGE FALLE: Der lokal extrahierte Volltext (karlsruhe.txt Zeile 156) zeigt auf der Zeile '2.1.1 - an Wegen und in Feldern' faelschlich '154,00'; das ist ein Zwei-Spalten-PDF-Ausrichtungsfehler. Per koordinaten-genauer Re-Extraktion des amtlichen Original-PDF (7-9_Friedhofsgebuehrensatzung.pdf, gueltig ab 01.01.2026, primaerverifiziert) ist die y-Zuordnung eindeutig: 2.1.1 (an Wegen/Feldern, normale Lage)=100,00; 2.1.1.1 (jede weitere)=62,00; 2.1.2 (an bevorzugten Plaetzen = Vorzugslage, ausgeschlossen)=154,00; 2.1.2.1=116,00; 2.2 Urnenwahlgrab=93,00; 2.2.1=55,00. Bevorzugte Plaetze (154,00) korrekt NICHT genommen. Nutzungsdauer_jahre=1, da pro-Jahr-Tarif; Register-angesetzt 20 Jahre entspricht der Ruhezeit (Erdbestattung Karlsruhe = 20 Jahre, Friedhofssatzung 7-8). Beisetzung: Karlsruhe hat KEINE separate Oeffnen/Schliessen-Zeile; die Erdbestattungsgebuehr Ziffer 4.1.1 'Erwachsene und Kinder ueber 10 Jahre' = 1.463,00 EUR ist die Paketgebuehr, die laut Paragraph 6(1) e) 'das Oeffnen und Schliessen des Grabes' und f) 'das Einsenken des Sarges' einschliesst (Erwachsener, ab 10 Jahre) => beisetzung 1463 STIMMT. Bonus-Reihengrab: guenstigstes Erd-Reihengrab fuer eine Sargbeisetzung = Ziffer 1.1.1 'Erdbestattungsreihengrab - Erwachsene und Kinder ueber 10 Jahre' = 877,00 EUR (Einmalsumme fuer die Ruhezeit = 20 Jahre)."
+}

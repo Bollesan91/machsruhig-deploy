@@ -1,0 +1,16 @@
+{
+  "slug": "bonn",
+  "stadt": "Bonn",
+  "grabtyp_name": "Wahlgrab gem. § 20 FS (Erd-Wahlgrab, Sargbestattung Normallage)",
+  "grabnutzung_eur": 181.67,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 1040.02,
+  "kapazitaet_beleg": "2.1.4. Sargbestattung in einem Wahlgrab gem. § 20 FS* in Normallage bei Verstorbenen nach dem 5. Lebensjahr: 1.040,02",
+  "tarif_zitat": "1.3.1. Wahlgrab gem. § 20 FS* oder Grüfte/Mausoleen gem. § 33 FS*: Die Gebühr wird berechnet, indem die Ruhefrist des jeweiligen Friedhofs mit dem Jahresbetrag multipliziert wird. 181,67",
+  "register_stimmt": false,
+  "reihengrab_alt_eur": 70.24,
+  "reihengrab_alt_dauer": 1,
+  "confidence": "mittel",
+  "notes": "Bonn rechnet grabnutzung nach dem pro-Jahr-Modell: Grabnutzungsgebuehr = Jahresbetrag x Ruhefrist des Friedhofs. Der Jahresbetrag fuer das Erd-Wahlgrab (Tarif 1.3.1, Wahlgrab gem. § 20 FS) ist 181,67 EUR/Jahr (im Text zweimal aufgefuehrt, Zeilen 390 und 392). REGISTER FALSCH: unser reg-Wert grabnutzung=82,20 entspricht NICHT dem Wahlgrab-Jahresbetrag, sondern der Bearbeitungs-/Verlaengerungsgebuehr (Tarif 1.1.2 'Verlaengerung ... jaehrlich 82,20' bzw. Tarif 1.20 Verlaengerung des Nutzungsrechts 1.3.1 Wahlgrab = 82,20/Jahr). Der korrekte Wahlgrab-Nutzungs-Jahresbetrag ist 181,67. Deshalb register_stimmt=false. Einheit pro_jahr ist korrekt, nutzungsdauer_jahre=1 (pro-Jahr-Tarif). Die tatsaechliche Nutzungs-/Ruhefrist variiert je Friedhof (Anlage: Erwachsene ab 5. LJ meist 20-30 Jahre, teils bis 40 Jahre; 20 Jahre z.B. Kessenich neu, Poppelsdorf, Zentralfriedhof). Beisetzung 1.040,02 EUR (Tarif 2.1.4, Erdbestattung Wahlgrab Normallage, ab 5. LJ) ist korrekt und passt zum reg-Wert. Bonn hat ein echtes Einzel-Erd-Wahlgrab (je Grabstelle), daher kein Reihengrab-Ersatz noetig. BONUS Reihengrab (Tarif 1.2 Reihengrab gem. § 18 FS, pro Jahr): Jahresbetrag im OCR-Tabellenlayout mehrdeutig (Kandidaten 70,24 / 101,27 in Zeilen 386/388; 82,20 auf der Label-Zeile 384 ist Uebertrag aus dem Verlaengerungs-Block darueber). Guenstigster plausibler Reihengrab-Jahresbetrag = 70,24 EUR/Jahr angesetzt; Reihengrab-Beisetzung waere 958,43 EUR (Tarif 2.1.1). Reihengrab-Wert unsicher wegen Tabellen-OCR."
+}

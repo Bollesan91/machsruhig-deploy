@@ -1,0 +1,16 @@
+{
+  "slug": "muelheimanderruhr",
+  "stadt": "Mülheim an der Ruhr",
+  "grabtyp_name": "Sarg-Erdgrabstätte, je Stelle (25-jährige Ruhezeit)",
+  "grabnutzung_eur": 2858,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 1022,
+  "kapazitaet_beleg": "1.1 Sarg-Erdgrabstätte, je Stelle",
+  "tarif_zitat": "1.1 Sarg-Erdgrabstätte, je Stelle                                                                                                     2.858,00      114,30",
+  "register_stimmt": false,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "confidence": "hoch",
+  "notes": "Mülheim kennt keinen Grabtyp 'Wahlgrab'. Das Sarg-Reihengrab wurde abgeschafft (Zeile: '- Sarg-Reihengrab (für Verstorbene in Särgen über 1,20 m) entfällt, da Verlagerung in Sarg-Erdgrabstätte'), daher gibt es KEIN Erd-Reihengrab -> reihengrab_alt = null. Das frei wählbare/verlängerbare Standard-Einzel-Erdgrab ist Ziffer 1.1 'Sarg-Erdgrabstätte, je Stelle' ('je Stelle' = genau eine Sargbeisetzung, nicht -stellig markiert wie die Urnengräber). KORREKTURBEDARF: Unser Registerwert grabnutzung=2603 ist FALSCH. Die Satzung ist eine schwer verrutschte 2-Spalten-Tabelle (Spalte 'Gebühr in EURO/Ruhezeit' + Spalte 'Gebühr in EURO/Jahr'); Umlaute als Ersatzzeichen. Der Wert 2.603,00 ist eine verrutschte Waisen-Zahl im Kopfbereich (2603/25=104,12 = die 104,10-Jahresgebühr einer anderen/Basis-Zeile), NICHT die 1.1-Zeile. Der korrekte Wert für 1.1 Sarg-Erdgrabstätte ist 2.858,00 €, zweifach unabhängig verifiziert: (a) auf der 1.1-Label-Zeile steht 2.858,00/114,30 und 2858/25=114,32≈114,30; (b) die Verlängerungsgebühr 1.21 'Verlängerung Sarg-Erdgrabstätte, je Stelle/Jahr = 114,30' × 25 Jahre = 2.857,50 ≈ 2.858,00. Nutzungsdauer 25 J (Abschnitt 'Sarg-Grabstätten mit 25-jähriger Ruhezeit') und beisetzung 1022 sind korrekt. Beisetzung=1.022,00 aus Abschnitt II '2.1 Einstelliges Grab für Verstorbene in Särgen über 1,20 m' (bestätigt durch lückenlose 1:1-Zuordnung der Section-II-Zahlenfolge 1.022/1.325/2.162/246/194/257/162/2.044/194 auf die Ziffern 2.1–2.9, physikalisch plausibel: Sarg>Urne, mehrstellig>einstellig). Familien-Erdgrabstätte (1.3) ist NICHT das Standardgrab (die auf der 1.3-Zeile gedruckte 2.858,00 ist verrutscht; wahrer Wert via 1.22 Verl. 198,60×25=4.965 höher). Amtliche Website (muelheim-ruhr.de) nur über Session-Redirects erreichbar, kein sauberer Fetch; Bewertung beruht auf dem primärverifizierten, arithmetisch selbstkonsistenten Volltext."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "hamburg",
+  "stadt": "Hamburg",
+  "grabtyp_name": "Sargwahlgrabstaette in Standardqualitaet (Nr. 1011)",
+  "grabnutzung_eur": 74,
+  "einheit": "pro_jahr",
+  "nutzungsdauer_jahre": 1,
+  "beisetzung_eur": 895,
+  "kapazitaet_beleg": "101   Sargwahlgrabstaetten, je Grabstelle und Jahr",
+  "tarif_zitat": "1011  in Standardqualitaet (mit weniger als 50 cm Abstand zur Nachbargrabstaette oder einfacher Gestaltungsqualitaet))                        74",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": null,
+  "reihengrab_alt_dauer": null,
+  "confidence": "hoch",
+  "notes": "Standard-Einzel-Erd-Wahlgrab = Nr. 1011 'Sargwahlgrabstaetten, je Grabstelle und Jahr - in Standardqualitaet' = 74 EUR/Jahr. Tarif ist explizit 'je Grabstelle und Jahr' -> einheit pro_jahr, nutzungsdauer_jahre 1. Kapazitaet: Abrechnung je Grabstelle (Sarg), keine zweischichtig/Doppel/2-Personen-Formulierung -> genau eine Sargbeisetzung je Grabstelle. Register (grabnutzung 74 / pro_jahr) stimmt mit 1011 ueberein -> register_stimmt=true (die im Register hinterlegte nutzungsdauer_angesetzt=20 ist nur ein Vergleichs-Multiplikator, kein Satzungswert). Guenstigere Alternative Nr. 1015 'auf dem Friedhof Ohlsdorf als Hamburger Grab' = 65 EUR wurde NICHT genommen: Sonderprodukt auf nur einem Friedhof (Ohlsdorf), nicht die regulaere Standardqualitaet/normale Lage. Beisetzung (Oeffnen/Schliessen) = Nr. 201 'Beisetzung eines Sarges oder Beisetzung eines Verstorbenen ohne Sarg' = 895 EUR (Erwachsener; Kinder unter 14 = Nr. 204 = 75 EUR). REIHENGRAB-BONUS: Abschnitt 11 'Ueberlassung von Reihen-Grabstaetten fuer die Dauer der Ruhezeit' ist im extrahierten Text tabellarisch zerrissen - Werte (1.415 / 1.210 / 1.380 / 1.600 / 1.350) sind nicht eindeutig ihren Zeilen (111 Grabstaette / 1112 Sargbeisetzung / 1113 Urnenbeisetzung / 112 Anonyme Grabstaette) zuzuordnen. Der Reihen-Sargbeisetzung-Wert liegt plausibel bei ca. 1.210 oder 1.380 EUR (Einmalsumme fuer die Ruhezeit), ist aber nicht deterministisch belegbar -> reihengrab_alt_eur=null gesetzt statt YMYL-Zahl zu raten."
+}

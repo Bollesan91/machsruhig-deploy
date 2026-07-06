@@ -1,0 +1,16 @@
+{
+  "slug": "leipzig",
+  "stadt": "Leipzig",
+  "grabtyp_name": "Erdwahlgrab einstellig",
+  "grabnutzung_eur": 968,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 446,
+  "kapazitaet_beleg": "3 a Erdwahlgrab einstellig",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 415,
+  "reihengrab_alt_dauer": 20,
+  "tarif_zitat": "3  Grabnutzungsgebühr für 20 Jahre / 3 a Erdwahlgrab einstellig ... 968,00 (§ 6 Nr. 3 a)",
+  "confidence": "hoch",
+  "notes": "Satzung § 6 'Vergabe von Grabstätten zur Erdbestattung': Preisspalte im lokal extrahierten Volltext ist innerhalb der Nummer-3-Gruppe um eine Zeile verschoben (968,00 erscheint im Rohtext auf der Kinderreihengrab-Zeile, 1.139,00 unter '3 a Erdwahlgrab einstellig'). Aufgelöst über amtlichen Auszug (Stadt Leipzig / Bestatter-Übersicht ab 01.09.2024), der die Werte je §-Referenz eindeutig zuordnet: § 6 Nr. 3 a Erdwahlgrab 1-stellig = 968,00 EUR (Verl. 48,00/Jahr), 3 b zweistellig = 1.649,00, 3 e Erb-/Wahl-/Wandstellen je m² = 778,00, 4 a Erdgemeinschaft = 1.139,00. Die Preis-Reihenfolge im Rohtext (415/837/203/125/968/1.649/2.614/3.422/778/1.139/429) stimmt exakt mit dem amtlichen Auszug überein. REGISTER STIMMT: grabnutzung 968, einheit einmalsumme (Grabnutzungsgebühr für 20 Jahre), nutzungsdauer 20 (§ 6 Nr. 3 Header), beisetzung 446 (§ 9 Nr. 1 a einfache tiefe Bestattung, Erwachsener, normale Lage, inkl. Trauerzugführer). 'einstellig' = eine Grabstelle = günstigstes Einzel-Erd-Wahlgrab; Kapazität max. 2 Särge nur optional via doppeltiefer Bestattung (Standard-Einzelgrab-Ruhezeitregelung), das echte Doppelprodukt ist separat 'zweistellig' (1.649). Zzgl. bei Neuerwerb Friedhofsnutzungs-/Unterhaltungsgebühr § 8 Nr. 1 = 420,00 (nicht Teil der Grabnutzung/Beisetzung). Bonus-Reihengrab: § 6 Nr. 1 a Erdreihengrab = 415,00 für 20 Jahre (nur eine Sargbestattung, ohne Verlängerung)."
+}

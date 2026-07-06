@@ -1,0 +1,16 @@
+{
+  "slug": "hamm",
+  "stadt": "Hamm",
+  "grabtyp_name": "Wahlgrabstaette (Erdbestattung), je Grabstelle, Nutzungszeit 30 Jahre (Ziffer 1.2.1)",
+  "grabnutzung_eur": 1166.00,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 30,
+  "beisetzung_eur": 711.00,
+  "tarif_zitat": "1.2      Wahlgrabstätten                                                                 1.482,00 | 1.2.1    für jede Grabstelle bei einer Nutzungszeit von 30 Jahren",
+  "kapazitaet_beleg": "1.2.1    für jede Grabstelle bei einer Nutzungszeit von 30 Jahren",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 945.00,
+  "reihengrab_alt_dauer": 25,
+  "confidence": "mittel",
+  "notes": "Satzung ist eine offset-verschobene Tabellen-Extraktion (Werte-Spalte gegenueber Label-Spalte vertikal verschoben). GRABNUTZUNG (hoch): Der auf der Header-Zeile 1.2 stehende Betrag 1.482,00 gehoert nicht zum Header; die 1:1-Zuordnung des Werte-Stroms zu den atomaren Tarifpositionen ergibt 1.2.1 (Wahlgrab, je Grabstelle, 30 Jahre) = 1.166,00 EUR. Dreifach bestaetigt: (a) 1.166,00 ist der einzige Wert in Zeile 41, (b) exakter Registerwert, (c) Verlaengerungs-Cross-Check 1.4.1 'je Wahlgrabstelle nach Ziffer 1.2.1' = 38,90 EUR/Jahr x 30 = 1.167 ~ 1.166; analog 1.2.2 (50J)=1.482 (29,64x50=1.482), 1.2.3 (30J Rasen)=1.733,83 (57,83x30), 1.2.4 (Baumwahl 30J)=2.290,75 (76,40x30). Hamm kennt keine ein-/zweischichtig-Unterscheidung; Gebuehr ist schlicht 'je Grabstelle' = Einzelbelegung/ein Sarg. Register (grabnutzung 1166, einmalsumme, 30 Jahre) ist KORREKT -> register_stimmt true. BEISETZUNG (mittel): Abschnitt 2 'Oeffnen und Schliessen des Grabes' ist stark verschoben und enthaelt einen unerklaerten Restwert (134,00). Die vier Werte 596,00/709,24/711,00/846,09 bilden konsistent Kind-normal<Erwachsen-normal und normal<Rasen(inkl.USt). Der Erwachsenen-normal-Oeffnungssatz ist eindeutig 711,00 EUR (Zeile 85, Ziffer 2.1.2 'fuer einen Verstorbenen vom vollendeten 5. Lebensjahr ab'). Oeffnen/Schliessen ist grabtyp-unabhaengige Handarbeit; der Wahlgrab-Wert der naiven Gleiche-Zeile-Lesung (2.2 = 134,00) ist physikalisch unplausibel (unter jedem Vergleichswert, sogar unter Kindsatz) und daher Extraktions-Artefakt. 711,00 als Erwachsenen-Erdbestattung normale-Lage-Beisetzung ist der belastbare Wert und deckt sich mit dem Register. Genaue Ziffer-Attribution (2.1.2 Reihengrab vs 2.2 Wahlgrab) bleibt wegen Mangling offen, Betrag 711,00 ist aber in beiden konsistenten Modellen der Erwachsenen-normal-Satz. REIHENGRAB-Bonus: guenstigstes Erd-Reihengrab fuer Erwachsene (ab 5. Lj) = Ziffer 1.1.3.1, 25 Jahre = 945,00 EUR (Reihengrab ist einstellig/ein Sarg). Werte 995,00 (30J) und 1.198,00 (50J) sind teurer. Satzung: 11. Aenderungssatzung, in Kraft ab 01.04.2026."
+}

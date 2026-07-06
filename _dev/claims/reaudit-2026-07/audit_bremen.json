@@ -1,0 +1,16 @@
+{
+  "slug": "bremen",
+  "stadt": "Bremen",
+  "grabtyp_name": "Erdwahlgrabstelle Familie zwei Quadratmeter einschichtig fuer einen Sarg (2:1) (Gebuehrenziffer 00.09.02)",
+  "grabnutzung_eur": 1502,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 1072,
+  "kapazitaet_beleg": "00.09.04  Erdwahlgrabstelle Familie zwei Quadratmeter einschichtig für    1 975 | 00.10     einen Sarg (2:1)",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1333,
+  "reihengrab_alt_dauer": 25,
+  "tarif_zitat": "00.09.02  Memoriam-Garten (gärtnerbetreutes Grabfeld), Abschluss          1 502",
+  "confidence": "hoch",
+  "notes": "Satzung: Ortsgesetz zur Neuregelung der Gebuehrenordnung fuer die stadteigenen Friedhoefe in Bremen vom 16.12.2025 (Brem. GBl. Nr. 154, gueltig ab 01.01.2026). ACHTUNG: Der TXT-Volltext ist stark spaltenzerrissen; Gebuehrenziffer-, Beschreibungs- und Preisspalte sind gegeneinander vertikal verschoben. Korrekte Zuordnung ueber (a) den vom Gesetz selbst genannten Ziffernbereich 'Erdbestattungsgrabstellen ... Gebuehrenziffern 00.09.02 bis 00.10.01 und 00.11 bis 00.13' und (b) Sequenz-Alignment Beschreibung<->Preis plus Kapazitaets-Monotonie-Check.\n\nGRABTYP: Guenstigstes Einzel-Erd-WAHLGRAB = Gebuehrenziffer 00.09.02 'Erdwahlgrabstelle Familie zwei Quadratmeter einschichtig fuer einen Sarg (2:1)' = 1.502 EUR. Trotz Wort 'Familie' ist die Kapazitaet explizit 'einschichtig fuer EINEN Sarg (2:1)' = genau 1 Sargbeisetzung (2 qm : 1 Sarg). Bestaetigt durch Kapazitaets-Monotonie: 00.09.02 (2qm/1 Sarg)=1502 < 00.09.04 (2qm zweischichtig/2 Saerge 2:2)=1975 < 00.10 (4qm/2 Saerge 4:2)=2794 < 00.10.01 (4qm/4 Saerge 4:4)=3725. 00.09.03 (2.253) ist 'besondere Lage im Grabfeld Mensch und Tier' -> Sonderlage, ausgeschlossen.\n\nNUTZUNGSDAUER: 25 Jahre. Die 20-Jahres-Angabe (Z.59) gilt ausdruecklich NUR fuer Urnen. Fuer Erdbestattungsgrabstellen wird die Verlaengerung mit 'ein Fuenfundzwanzigstel oder ein Dreissigstel' berechnet (Z.230-232); Standard-Ruhefrist fuer Saerge = 25 Jahre ('laengere Ruhefrist als 25 Jahre' als Ausnahme, Z.235-238). einheit=einmalsumme.\n\nBEISETZUNG: 1.072 EUR = Sarg-Beisetzung 'in einschichtiger Lage oder obere Beisetzung in einem zweischichtig nutzbaren Grab' (Erwachsener, normale Lage; Gebuehrenziffer 01.00.00), inkl. Befoerderung + Oeffnen/Schliessen des Grabes. Bestaetigt via Sequenz-Alignment der Bestattungs-Preise (Kinder-Erdwahlgrab 567/850, dann Sarg-Beisetzung 1072/1176/528: obere=1072, untere Beisetzung=1176, Sarg bis 1,20m=528). Ziffern 01.00.00/01.00.01/01.00.02 sind laut Z.259-260 die drei Sarg-Beisetzungsstufen.\n\nREGISTER: grabnutzung 1502 + nutzungsdauer 25 + einheit einmalsumme + beisetzung 1072 stimmen alle mit der Satzung ueberein -> register_stimmt=true.\n\nREIHENGRAB (Bonus): guenstigstes Einzel-Erd-Reihengrab = 'Erdreihengrabstelle zwei Quadratmeter mit begrenzter Laufzeit (25/30 Jahre)' = 1.333 EUR (Reihengrab = per definitionem 1 Beisetzung). Laufzeit als '(25/30 Jahre)' angegeben; hier 25 als Untergrenze angesetzt. Memoriam-Reihengrab 25J (1.332) waere minimal guenstiger, verlangt aber zwingend einen gesonderten Pflegevertrag (nicht like-for-like)."
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "essen",
+  "stadt": "Essen",
+  "grabtyp_name": "Wahlgrab (Sarggrabstaette, Erdbestattung)",
+  "grabnutzung_eur": 2050,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 25,
+  "beisetzung_eur": 720,
+  "kapazitaet_beleg": "Wahlgraeber                                  25 Jahre                             2.050,00",
+  "tarif_zitat": "Wahlgraeber                                  25 Jahre                             2.050,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1400,
+  "reihengrab_alt_dauer": 25,
+  "confidence": "hoch",
+  "notes": "Sarggrabstaetten-Tabelle (Erdbestattung), Zeile 'Wahlgraeber | 25 Jahre | 2.050,00 EUR' = Standard-Einzel-Erd-Wahlgrab, verlaengerbar ('Verlaengerung Sarggrabstaetten: Wahlgraeber je Grabstelle / Jahr 82,00'). Kein einstellig/zweistellig- bzw. Doppel-Split, keine '(2:1)'-Angabe; Gebuehr ist je Grabstelle => Einzelbelegung. Beisetzung = Grabbereitung 'Wahlgraeber fuer Erwachsene vom 4. Lebensjahr 720,00' (Erst-Sargbeisetzung/Oeffnen; die 'Beibestattung Wahlgraeber Sarg 765,00' waere eine Zubeisetzung ins bestehende Grab, nicht die Erstbelegung). Register (2050 / einmalsumme / 25 Jahre / 720) stimmt vollstaendig. Bonus Reihengrab: guenstigstes Erd-Reihengrab fuer eine Sargbeisetzung = 'Reihengrab fuer Erwachsene vom 4. Lebensjahr | 25 Jahre | 1.400,00'. Umlaute im Volltext als Ersatzzeichen; Zitate hier mit ae/oe/ue transliteriert."
+}

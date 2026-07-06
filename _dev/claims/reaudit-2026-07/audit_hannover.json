@@ -1,0 +1,16 @@
+{
+  "slug": "hannover",
+  "stadt": "Hannover",
+  "grabtyp_name": "Erdwahlgrabstätte, je Grabstelle, Standard (angehörigengepflegt), 20 Jahre",
+  "grabnutzung_eur": 2522,
+  "einheit": "einmalsumme",
+  "nutzungsdauer_jahre": 20,
+  "beisetzung_eur": 748,
+  "kapazitaet_beleg": "2.1.1 Erdwahlgrabstätten – je Grabstelle",
+  "tarif_zitat": "2.1.1 Erdwahlgrabstätten – je Grabstelle a) Standard 2.522,00",
+  "register_stimmt": true,
+  "reihengrab_alt_eur": 1513,
+  "reihengrab_alt_dauer": 20,
+  "confidence": "hoch",
+  "notes": "Grabnutzung/Einheit/Dauer/Beisetzung des Registers alle korrekt (register_stimmt=true). ACHTUNG PDF-Tabellen-Falle: Die naive Text-Extraktion (hannover.txt/pdftotext -layout) hat die Preisspalte gegen die Labels verschoben — dort erschien faelschlich 'a) Standard = 3.152,00' und 'Normaltiefe = 1.012,00'. Per exakter Koordinaten-Extraktion (pdfplumber, Preisspalte bei x≈476, Zeilen-Y-Match) korrigiert: 2.1.1 a) Standard = 2.522,00 € (b) Besondere Lage = 3.152,00 €; c)+d) Kinder = je 378,00 €). Werte 1.538/2.144/2.043/2.900/3.732 gehoeren zu 2.1.2 Urnenwahlgrabstaetten. Einheit einmalsumme, §2 (2.1): 'fuer die Dauer von 20 Jahren'; Preis 'je Grabstelle'. Guenstigstes Einzel-Erd-Wahlgrab in normaler/Standard-Lage = 2.522 € (Besondere Lage 3.152 € teurer, Kinder nicht anwendbar). Beisetzung Erwachsener §4 (1) 1.2 'In einer Erdwahlgrabstaette in Normaltiefe (1,80 m) = 748,00 €' (per Koordinaten; naive Extraktion zeigte hier faelschlich 1.012). Kapazitaet: Preis je Grabstelle; optionale Tiefenbelegung (2,40 m) erlaubt eine zweite tiefere Beisetzung, aber Basis = eine Sargbeisetzung in Normaltiefe. Reihengrab-Bonus: 1.1.1 Erdreihengrab (angehoerigengepflegt) = 1.513,00 € / 20 Jahre (pflegefreie Varianten Rasen 1.639/anonym 1.740 teurer). Satzung Neufassung, in Kraft seit 01.04.2025."
+}
