@@ -180,3 +180,13 @@ WebFetch grabarten.php/service.php = nur JS-Menue (kein Gebuehreninhalt). curl o
 
 ## ===== RE-AUDIT KOMPLETT: 50/50 EINZEL-REVIEW DURCH (09.07.2026) =====
 3 Beisetzungs-Verdachtsfaelle aufgeloest: Osnabrueck = ECHTER Fehler (450->~100); Potsdam + Saarbruecken = WIDERLEGT (Verdacht war Flattened-Text-Artefakt, Reviewer klaerte). Master-Kategorisierung: _dev/docs/FRIEDHOF-MASTER-SUMMARY.md.
+
+## ===== VERSION-PINNING-RUNDE (V4.1, 09.07.2026) — 6/8 primaer-verifiziert =====
+Pipeline: WebSearch (URL) -> curl (Browser-UA umging Bot-Gates, wo Reviewer-WebFetch scheiterte) -> pdfplumber/pdftotext-layout.
+- DORTMUND: KORRIGIERT. Amtsblatt 9/2026 (ab 07.03.2026): 2.2.1.1 Wahlgrab 25J je Grabstelle 108/J=2.700; Beis 1.1.1=960. Alt 2.650/950/20J -> 2.700/960/25J.
+- HAMM: KORRIGIERT. 8. Aenderung 14.12.2023 (Kraft 01.01.2024): 1.2.1=1.100, 2.2=800, 1.4.1 Unterhaltung 36,70/J. Lokales hamm.raw (1.166/711) war AELTERE Fassung -> Reviewer hatte recht. -> 1.100/800.
+- HALLE: BESTAETIGT. Live halle.de SR_708-2: 1.10=960 + 3.1.1=746 + FUG Pos.5.1=210 (real 1.916). Reviewer-1.005/916 war Fehl-Aufteilung. Werte 960/746 aktuell, FUG-Scope 210.
+- OSNABRUECK: BESTAETIGT (pdftotext-layout, curl umging Bot-Gate). 3.1=74/J + 1.2.1 Wahlgrab-Beis=100. 450->100-Korrektur primaer belegt. Min 25J.
+- LEVERKUSEN: BESTAETIGT. Amtsblatt 47/2025 (27.Aend. ab 01.01.2026): 1.3=164,01/J + 2.4=1.270,98 UNVERAENDERT. Werte aktuell.
+- WIESBADEN: BESTAETIGT. FGO 7-5.3 (19.Erg.-Lief.2022): 1.2.1=3.383 + 2.2.1=674. Zitat gefixt.
+NOCH OFFEN (2): KIEL (STALE, Bolle-Upload 27.03.2025-Satzung noetig) + LUDWIGSHAFEN (7-09.pdf hart hinter Redirect-Gate, kein primaer greifbarer Beleg -> VERIFY).

@@ -6,7 +6,11 @@
 
 ## Geprüfte False-Positives
 
-- *(noch keine — Datei neu angelegt 23.06.2026 mit `lint-friedhof.py`)*
+Aus dem 50/50-Einzel-Review (09.07.2026) — Reviewer irrte, Primärquelle bestätigte UNSEREN Wert. **Nicht erneut melden:**
+
+- **Hagen — Grabnutzung 1.530 + Beisetzung 570 sind KORREKT.** Ein Reviewer meldete 1.465/535/30J als „aktuell". Das war eine ÄLTERE Fassung. Primärquelle `hagen.raw` = VI. Nachtrag (beschlossen 11.12.2025, neuer als die Reviewer-Quelle); pdfplumber-Koordinaten: „4.80 Wahlgrabstätte Sargbestattung = 1.530" + Beisetzung 570 (Grabaushub ab 5. Lj). Reviewer nutzte veraltete Web-Fassung.
+- **Potsdam — Beisetzung 767 ist KORREKT für Erwachsene.** Verdacht „767 = Gruft-Sonderfall" ist falsch: 2.1 (384) / 2.2 (767) unterscheiden das ALTER (bis 5 J / über 5 J), NICHT den Grabtyp. „Gruft öffnen und schließen" ist in Potsdam der generische Sammelbegriff für das Öffnen/Schließen JEDER Erdgrabstelle.
+- **Saarbrücken — Beisetzung 1.755 ist KORREKT.** Verdacht „1.755 = Tiefgrab-Oberbelegung (2. Körper)" ist falsch: „obere Belegung" = die REGEL-/Standardtiefe; die Zeile (Ziff. II.I Körperbestattung) nennt ausdrücklich das Wahlgrab. Die 1.100 stehen unter Aschebeisetzung (Urne ins Körpergrab) = falsche Zeile für einen Sarg. Untere Belegung (tiefe Erstbelegung Tiefgrab) = 1.925.
 
 ## Bewusste Entscheidungen (kein Defekt)
 
@@ -18,6 +22,10 @@
   KEIN Konsistenz-Finding, sondern Single-Source-Prinzip (Lektion FRIEDHOF #1).
 - **Hallengebühren je Standort verschieden** trotz gemeinsamer Ordnung (Tarifstellen 3011/3012/3013):
   beabsichtigt, nicht widersprüchlich — die Stufe richtet sich nach dem Standort.
+- **München + Nürnberg Ruhezeit = 10 Jahre** (nicht 20): bewusst, so in der Satzung. Jahresmodell × 10 für die 20-J-Normalisierung anpassen — keine „Laufzeit-Fehler"-Meldung.
+- **Karlsruhe / Münster / Rostock: KEIN Scope-Zuschlag** (Leichen-/Trauerhalle etc.). Diese Leistungen sind bereits in der Bestattungsgebühr enthalten (Karlsruhe §6 Abs 1; Rostock Anlage A). Sie obendrauf zu rechnen wäre Doppelzählung — kein „fehlende Pflichtgebühr"-Finding.
+- **Heidelberg: 2.420 (4.2.3 Einzelgrab 2./3. Reihe)** bewusst als repräsentative Standard-Position gewählt statt 4.2.1 (1. Reihe, 2.750). Beide sind Einzel-Wahlgräber; die günstigere Regel-Lage ist vertretbar.
+- **Krefeld: 3.450 (1.6 Zweifachbelegung je Grabstelle)** bewusst als Grabnutzung: ein NEUES Einzel-(Einfachbeleg-)Wahlgrab ist in Krefeld nicht erwerbbar (1.5/2.760 nur Wiedererwerb). Kein „falscher Grabtyp"-Finding — es ist das einzige neu kaufbare Sarg-Wahlgrab.
 
 ## Linter-mechanisiert (nicht mehr Reviewer-Thema — `lint-friedhof.py` fängt es)
 

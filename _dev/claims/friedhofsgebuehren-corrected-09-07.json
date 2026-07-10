@@ -292,22 +292,30 @@
    "bundesland": "NRW",
    "satzung_stand": "Gebührensatzung nebst Gebührentarif für die Friedhöfe der Stadt Dortmund vom 15.12.2023 (Ratsbeschluss 14.12.2023); in Kraft ab 01.01.2024 (§ 5). Zum Prüfzeitpunkt 01.07.2026 aktue",
    "satzung_url": "https://dosys01.digistadtdo.de/dosys/ortsrechtweb.nsf/70f520a9de07a861c1256b0b002d90cf/7ebb83bc6db90919c1258a8d00321b98/$FILE/Geb%C3%BChrensatzung%20nebst%20Geb%C3%BChrentarif%20f%C3%BCr%20die%20Friedh%C3%B6fe%20der%20Stadt%20Dortmund.pdf",
-   "grabnutzung_betrag_eur": 2650,
+   "grabnutzung_betrag_eur": 2700,
    "grabnutzung_einheit": "einmalsumme",
    "grabnutzung_einheit_roh": "einmalsumme",
    "grabnutzung_paragraph": "Gebührentarif Ziffer 2.2.1.1 (Wahlgrabstätten / Sargbeisetzungen)",
    "grabnutzung_zitat": "2.2.1.1 Wahlgrabstätte (Nutzungszeit 25 Jahre) je Grabstelle 2.650 €",
-   "beisetzung_betrag_eur": 950,
+   "beisetzung_betrag_eur": 960,
    "beisetzung_zitat": "1.1.1 im Reihengrab oder in einem Wahlgrab 950 € (unter 1.1 Sargbeisetzung)",
-   "ruhezeit_jahre": 20,
+   "ruhezeit_jahre": 25,
    "netto_brutto": "Kommunale Friedhofsgebühren als hoheitliche Leistu",
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "korrektur_reverify": "Keine Korrektur noetig - unsere Werte stimmen. STRITTIG-AUFLOESUNG: Im Sarg-Wahlgrab-Tarif (2.2.1) gibt es zwei Zeilen: 2.2.1.1 = 2.650 EUR (reine Grabnutzung, Nutzungszeit 25 J, je Grabstelle) und 2.",
-   "_version_status": "VERIFY",
-   "_version_note": "Maerz-2026-Fassung existiert; 2.650/950 gegen aktuelle Fassung pruefen."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: Amtsblatt Dortmund 9/2026 (ab 07.03.2026), 2.2.1.1 Wahlgrabstaette 25J je Grabstelle 108/J=2.700; Beisetzung 1.1.1 (Reihen-/Wahlgrab) 960. Alt 2.650/950/20J ersetzt.",
+   "_korrektur_09_07": [
+    {
+     "pin": "Dortmund",
+     "alt": "2650/950/20J",
+     "neu": "2700/960/25J",
+     "quelle": "Amtsblatt 9/2026 ab 07.03.2026"
+    }
+   ]
   },
   {
    "stadt": "Dresden",
@@ -498,21 +506,21 @@
      "grund": "1.10 Erdbestattungswahlgrab im 30-Jahre-Block (eigenes PDF S.4). ACHTUNG: Werte 960/746 = Basisfassung 2015 (stale), s. _version_status."
     }
    ],
-   "_version_status": "STALE",
-   "_version_note": "Werte 960/746 = Basisfassung 2015. Aktuell (Reviewer): Nutzung ~1.005 + Beis. 916 + FUG 180 Pflicht. Re-Collect Lesefassung 2020.",
-   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsunterhaltungsgebuehr (FUG) 180 - 'Bestandteil aller Grabarten'."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: Live halle.de Ortsrecht SR_708-2 zeigt 1.10 Erdbestattungswahlgrab 960 + 3.1.1 Oeffnen/Schliessen 746 (30J-Block). Reviewer-Behauptung '1.005/916' war Fehl-Aufteilung der 1.916-Summe (960+210 FUG+746). Werte aktuell.",
+   "_pflicht_zusatz_hinweis": "Pflicht: FUG (Friedhofsunterhaltungsgebuehr) Pos. 5.1 = 210 EUR fuer Erdbestattungswahlgrab (real 960+210+746 = 1.916)."
   },
   {
    "stadt": "Hamm",
    "bundesland": "NRW",
    "satzung_stand": "11. Änderungssatzung der Friedhofsgebührensatzung vom 20.06.2007, in Kraft ab 01.04.2026 (§ 4 Gebührentarif neu gefasst). Ruhezeit aus Friedhofssatzung § 6.",
    "satzung_url": "https://www.hamm.de/fileadmin/user_upload/Medienarchiv_neu/Dokumente/Rathaus/Ortsrecht/11._Aenderung_Friedhofsgebuehrensatzung.pdf",
-   "grabnutzung_betrag_eur": 1166,
+   "grabnutzung_betrag_eur": 1100,
    "grabnutzung_einheit": "einmalsumme",
    "grabnutzung_einheit_roh": "einmalsumme (Nutzungszeit 30 Jahre)",
    "grabnutzung_paragraph": "§ 4 Gebührentarif, Ziffer 1.2.1 (Wahlgrabstätten, für jede Grabstelle bei einer Nutzungszeit von 30 Jahren)",
    "grabnutzung_zitat": "\"1.2 Wahlgrabstätten / 1.2.1 für jede Grabstelle bei einer Nutzungszeit von 30 Jahren ... 1.166,00\" (§ 4, koordinaten-verifiziert Ziff. 1.2.1 → 1.166,00 EUR)",
-   "beisetzung_betrag_eur": 711,
+   "beisetzung_betrag_eur": 800,
    "beisetzung_zitat": "\"2. Gebühren für Bestattungen — Öffnen und Schließen des Grabes sowie Anlage der Grabstätte / 2.2 bei einer Wahlgrabstätte [für einen Verstorbenen vom vollendeten 5. Lebensjahr ab] ... 711,00\" (§ 4 Zi",
    "ruhezeit_jahre": 30,
    "netto_brutto": "Netto/USt-frei — die regulären Erdgrab-/Beisetzung",
@@ -527,10 +535,17 @@
      "alt": 25,
      "neu": 30,
      "grund": "Ziffer 1.2.1 'fuer jede Grabstelle bei Nutzungszeit 30 Jahre' (Koordinaten+Reviewer). Werte 1.166+711 ok."
+    },
+    {
+     "pin": "Hamm",
+     "alt": "1166/711",
+     "neu": "1100/800",
+     "quelle": "8. Aenderung 14.12.2023 in Kraft 01.01.2024"
     }
    ],
-   "_version_status": "VERIFY",
-   "_version_note": "Struktur/Laufzeit fix. Exakte Euro-Werte Versionskonflikt: mein PDF 1.166/711 (2023-§4-Neufassung) vs Reviewer-Web 1.100/800. Aktuelle Fassung pinnen."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: 8. Aenderung Hamm vom 14.12.2023 (in Kraft 01.01.2024, Westf. Anzeiger Nr.295 20.12.2023). 1.2.1 Wahlgrabstaette 30J = 1.100; 2.2 bei Wahlgrabstaette = 800. Lokales hamm.raw (1.166/711) war AELTERE Fassung. Reviewer hatte recht.",
+   "_pflicht_zusatz_hinweis": "Pflicht: 1.4.1 Unterhaltung 36,70 EUR/Jahr je Wahlgrabstelle (jaehrlich)."
   },
   {
    "stadt": "Hannover",
@@ -689,7 +704,7 @@
     }
    ],
    "_version_status": "VERIFY",
-   "_version_note": "Werte = Fassung Ende 2020; Stadtrat-Aenderungen 07.11.2022 + 11.12.2023 - konsolidierte Fassung pruefen."
+   "_version_note": "Werte = Fassung Ende 2020; Stadtrat-Aenderungen 07.11.2022 + 11.12.2023 - konsolidierte Fassung pruefen. | 09.07. Primaer-Fetch 7-09.pdf gescheitert (HTML-Gate, bot-blockiert). Werte 2.469/1.168 (2020er Anlage) NICHT primaer bestaetigbar - bleibt VERIFY. Bolle/manuell noetig."
   },
   {
    "stadt": "Lübeck",
@@ -926,8 +941,8 @@
      "grund": "Ersterwerb Wahlgrab min. 25 Jahre (Reviewer); Ruhezeit 20J."
     }
    ],
-   "_version_status": "VERIFY",
-   "_version_note": "Beisetzung 100 tentativ (Ziffer 1.2 gg. 2026-PDF, bot-blockiert); 74/J evtl. Altfassung 2025 - 2026-Kalkulation pruefen."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07. (pdftotext -layout auf amtl. Ortsrecht II_2-15.pdf, curl-Browser-UA umging das Bot-Gate): 3.1 Erdwahlgrabstaette je Grabstelle je Jahr = 74; 1.2.1 Erdbestattung Wahlgrabstaette ueber 6J = 100 (NICHT 1.1 Reihengrab 450/82). Min 25J Ersterwerb. Residual: evtl. 2025er-Tarif, 2026 marginal pruefen."
   },
   {
    "stadt": "Potsdam",
@@ -1011,7 +1026,7 @@
   {
    "stadt": "Wiesbaden",
    "bundesland": "HE",
-   "satzung_stand": "19. Ergaenzungslieferung 2022; Gebuehrenordnung beschlossen 25.09.1996, in Kraft ab 01.01.1997, zuletzt geaendert durch Satzung vom 27.01.2022 (veroeffentlicht 31.01.2022). Ordnung",
+   "satzung_stand": "Friedhofsgebuehrenordnung 7-5.3, 19. Ergaenzungslieferung 2022 (i.d.F. der Aenderung vom 27.01.2022, veroeff. 31.01.2022); Vorgaengerordnung 3.9.1992 ist AUSSER KRAFT",
    "satzung_url": "https://www.wiesbaden.de/medien/downloads/rathaus/7-5.3-Friedhofsgebuehrenordnung.pdf",
    "grabnutzung_betrag_eur": 3383,
    "grabnutzung_einheit": "einmalsumme",
@@ -1027,8 +1042,8 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "korrektur_reverify": "Keine Korrektur noetig - alle Werte stimmen. Hinweis (kein Fehler): Die vollstaendige Erdbestattungs-Beisetzung besteht in Wiesbaden aus zwei getrennten Posten - 2.1.1 Erdbeisetzung 435,00 EUR PLUS 2.",
-   "_version_status": "CITATION",
-   "_version_note": "Werte 3.383/674 korrekt+aktuell. Fassungszitat korrigieren: NICHT '3. September 1992' (ausser Kraft, Vor-Euro), sondern i.d.F. 27.01.2022 (19. Erg.-Lief.)."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07. (amtl. FGO 7-5.3): 1.2.1 je Grabstelle 30J = 3.383 + 2.2.1 ab 5.Lj = 674. Zitat korrigiert (war tote 1992er-Vorgaengerordnung). 1.3.1 (112) laut Reviewer KEIN Pflichtaufschlag."
   },
   {
    "stadt": "Wuppertal",
@@ -1116,8 +1131,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Stichprobe 30.06.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_version_status": "VERIFY",
-   "_version_note": "Werte = Fassung 01.05.2023; 27. Aenderung ab 01.01.2026 existiert (Rat 15.12.2025), neue Saetze pinnen."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: Amtsblatt Leverkusen 47/2025 (27. Aenderung ab 01.01.2026), 1.3 Erdwahlgraeber 164,01/J + 2.4 Wahlgraeber Erdbestattung 1.270,98 - UNVERAENDERT ggue. 2023. Werte aktuell."
   },
   {
    "stadt": "Chemnitz",

@@ -11,7 +11,9 @@
 | Kassel | 1.908 / 20 J | 1.908 / **30 J** (+ Beis. prüfen) | Laufzeit falsch |
 | Mannheim | 1.411 (2 Pers.) | Reihengrab 1.035 | 2-Personen-Grab |
 | Krefeld | 2.760 (Ersterwerb) | **3.450** (1.6 Zweifachbeleg. je Grabstelle) | kein neues Einzel-Wahlgrab; 2.760 nur Wiedererwerb |
-| Osnabrück | Beis. 450 (Reihengrab-Zeile) | **~100** (1.2.1 Wahlgrab, tentativ) + Grabnutzung 74×**25J**=1.850 | 450 war Ziffer 1.1 Reihengrab; gg. 2026-PDF pinnen (bot-blockiert) |
+| Osnabrück | Beis. 450 (Reihengrab-Zeile) | **100** (1.2.1 Wahlgrab) + Grabnutzung 74/J×**25J** | 450 war Ziffer 1.1 Reihengrab — PRIMÄR bestätigt (pdftotext-layout) |
+| Dortmund | 2.650 / 950 / 20 J | **2.700 / 960 / 25 J** | Amtsblatt 9/2026 (primär) — Altfassung ersetzt |
+| Hamm | 1.166 / 711 | **1.100 / 800** | 8. Änderung 2024 (primär) — lokales PDF war stale, Reviewer hatte recht |
 
 *(Saarbrücken 720+1.755 & Potsdam 68/J+767: mein Beisetzungs-Verdacht widerlegt — Werte stimmen, s. Sektion F.)*
 
@@ -22,18 +24,18 @@
 | Halle | 20 J | **30 J** (+ Staleness, s.u.) |
 | Ludwigshafen | 20 J | **30 J** (2.469 + 1.168) |
 
-## C. VERSION / STALENESS — Live-Fassung pinnen vor Freigabe
-| Stadt | Problem | Aktion |
+## C. VERSION / STALENESS — Pinning-Runde 09.07. (6/8 PRIMÄR-VERIFIZIERT)
+| Stadt | Status | Ergebnis (Primärquelle) |
 |---|---|---|
-| Halle | lokales PDF = Basisfassung 2015; aktuell ~1.005 + 916 + FUG 180 | Re-Collect 2020er-Lesefassung |
-| Kiel | lokaler Download = 404; Werte unbelegt | **BOLLE: Satzung 27.03.2025 hochladen** |
-| Hamm | Werte-Versionskonflikt (mein PDF 1.166 vs Web 1.100) | aktuelle Fassung pinnen |
-| Dortmund | März-2026-Fassung existiert | 2.650 gegen aktuell prüfen |
-| Leverkusen | Werte = 2023er; 27. Änderung ab 01.01.2026 | 2026-Sätze pinnen |
-| Ludwigshafen | 2020er-Fassung; Änderungen 2022/2023 | konsolidierte Fassung prüfen |
-| Mönchengladbach | 5. Nachtrag 13.12.2024; 6.-Nachtrag-2026-Restrisiko | live-PDF vor Go-live |
-| Gelsenkirchen | Altfassung (25. ÄS) kursiert noch | /2026/01/-Fassung verdrahten (Werte ok) |
-| Osnabrück | Werte evtl. Altfassung (2025); Beis.-Zeile falsch | Re-Collect 2026-PDF, Ziffer 1.2 ablesen |
+| Dortmund | ✅ PINNED | Amtsblatt 9/2026 → korrigiert 2.700/960/25J |
+| Hamm | ✅ PINNED | 8. Änderung 2024 → korrigiert 1.100/800 (mein PDF war stale) |
+| Halle | ✅ PINNED | Live SR_708-2 → 960/746 aktuell + FUG 210 (Reviewer-Zahlen waren Fehl-Aufteilung) |
+| Osnabrück | ✅ PINNED | Ortsrecht II_2-15 (curl+layout) → 74/J + 100 bestätigt |
+| Leverkusen | ✅ PINNED | Amtsblatt 47/2025 → 164,01/1.270,98 unverändert |
+| Wiesbaden | ✅ PINNED | FGO 7-5.3 2022 → 3.383/674 + Zitat gefixt |
+| **Kiel** | 🔴 OFFEN (STALE) | 404-Gate; **BOLLE: Satzung 27.03.2025 hochladen** |
+| **Ludwigshafen** | 🟠 OFFEN (VERIFY) | 7-09.pdf hart hinter Redirect-Gate; 2.469/1.168 nicht primär bestätigbar |
+| Gelsenkirchen / MG | ✓ OK_NOTE | Werte ok; nur aktuelle Quelle verdrahten (kosmetisch) |
 
 ## D. SCOPE — Pflicht-Zusatzgebühren, die das 2-Komponenten-Modell weglässt
 (Global-Decision #1: Caveat verschärfen + bekannte Zusatzgebühren je Stadt notieren)
