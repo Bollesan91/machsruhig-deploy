@@ -654,7 +654,7 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "_version_status": "STALE",
-   "_version_note": "Lokaler Download war 404, Werte 1.767,20/654,60 UNBELEGT. Bolle: Satzung 27.03.2025 hochladen, dann Re-Review. NICHT freigeben."
+   "_version_note": "STALE - 09.07. erschoepfend versucht (curl Browser-UA, Cookie-Jar-Session, fid-Download bcf1f2a6/62f058c1 aus Bekanntmachungen, Grabarten-Merkblatt): download.php liefert 'Fehler 404 Datei nicht gefunden'; Merkblatt bildbasiert (kein Text); kiel.de-Zahlen nur 2017 (veraltet). AUTOMATISIERT NICHT GREIFBAR. => BOLLE: Gebuehrensatzung 27.03.2025 im Browser manuell laden + hochladen. Werte 1.767,20/654,60 bis dahin UNBELEGT."
   },
   {
    "stadt": "Leipzig",
@@ -680,7 +680,7 @@
    "stadt": "Ludwigshafen am Rhein",
    "bundesland": "RP",
    "satzung_stand": "Friedhof- und Bestattungsgebuehrenordnung (Ortsrecht 7-09) vom 17.12.2020, in Kraft ab 01.01.2021; Anlage/Gebuehrentarif zuletzt geaendert durch Amtsblatt Nr. 82 vom 19.12.2025 mit",
-   "satzung_url": "https://www.ludwigshafen.de/fileadmin/ludwigshafen/verwaltung_und_politik/stadtverwaltung_rathaus/Ortsrecht/7-09.pdf",
+   "satzung_url": "https://ludwigshafen.de/fileadmin/ludwigshafen/verwaltung_und_politik/stadtverwaltung_rathaus/Ortsrecht/7-09.pdf",
    "grabnutzung_betrag_eur": 2469,
    "grabnutzung_einheit": "einmalsumme",
    "grabnutzung_einheit_roh": "einmalsumme",
@@ -703,8 +703,8 @@
      "grund": "30jaehriges Nutzungsrecht (Satzung, einstelliges Wahlgrab). ACHTUNG: Werte evtl. 2020er-Fassung, s. _version_status."
     }
    ],
-   "_version_status": "VERIFY",
-   "_version_note": "Werte = Fassung Ende 2020; Stadtrat-Aenderungen 07.11.2022 + 11.12.2023 - konsolidierte Fassung pruefen. | 09.07. Primaer-Fetch 7-09.pdf gescheitert (HTML-Gate, bot-blockiert). Werte 2.469/1.168 (2020er Anlage) NICHT primaer bestaetigbar - bleibt VERIFY. Bolle/manuell noetig."
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: live Ortsrecht 7-09.pdf (neuer fileadmin-Pfad, alter war 404): 1.1 Wahlgrab Erdbestattung 2.469 (30j einstellig) + Beisetzung 1.1 ab 6J = 1.168. Werte aktuell (unveraendert)."
   },
   {
    "stadt": "Lübeck",
