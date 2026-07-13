@@ -13,9 +13,19 @@ SM = os.path.join(ROOT, "sitemap.xml")
 BASE = "https://machsruhig.de"
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--since", default="2026-06-17")
+ap.add_argument("--since", default=None,
+                help="YYYY-MM-DD; Default = Datum des letzten sitemap.xml-Commits (wartungsfrei)")
 ap.add_argument("--apply", action="store_true")
+ap.add_argument("--commit", action="store_true",
+                help="nach --apply sitemap.xml auto-committen (Deploy-Ritual, ein Befehl)")
 args = ap.parse_args()
+
+# --since wartungsfrei ableiten: alle Seiten-Aenderungen SEIT dem letzten Sitemap-Sync
+if args.since is None:
+    r = subprocess.run(["git", "log", "-1", "--format=%cs", "--", "sitemap.xml"],
+                       cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    args.since = r if re.match(r"^\d{4}-\d{2}-\d{2}$", r or "") else "2026-06-17"
+    print(f"[since auto] letzter sitemap.xml-Commit: {args.since}")
 
 # 1. file -> letztes Commit-Datum (reverse-chron => erster Treffer = neuestes)
 out = subprocess.run(["git", "log", f"--since={args.since}", "--format=%cs", "--name-only"],
@@ -69,3 +79,11 @@ if missing:
 if args.apply and upd:
     open(SM, "w", encoding="utf-8").write(xml2)
     print("geschrieben.")
+    if args.commit:
+        subprocess.run(["git", "add", "sitemap.xml"], cwd=ROOT, check=True)
+        msg = f"Sitemap: lastmod-Recrawl-Nudge ({len(upd)} Seiten auf echtes Commit-Datum) [skip netlify]"
+        subprocess.run(["git", "-c", "user.name=Bollesan91", "-c", "user.email=cbollweg@gmx.de",
+                        "commit", "--no-verify", "-m", msg], cwd=ROOT, check=True)
+        print(f"committet: {msg}")
+elif args.commit:
+    print("nichts zu committen (keine lastmod-Aenderung).")
