@@ -5,7 +5,7 @@
 
 ## Wo stehen wir — in 4 Sätzen
 1. Die Website ist **gebaut und sauber** (~196 Seiten, Linter 0 FAIL); Google indexiert langsam mehr (26→45 Seiten Mitte Juni), aber **Cold-Start-Autorität bleibt DAS Engpass-Problem** — der Fix ist geliehene Glaubwürdigkeit (Institution + Fach-Reviewer), nicht mehr Content.
-2. Das **Friedhofsgebühren-Daten-Asset ist jetzt echt belastbar**: Nach Fund eines systematischen Einheiten-Fehlers (Einzelstelle ≠ Einzelbelegung — „Mainz 4.714" war falsch!) wurden alle **50 Städte einzeln reviewt und 49 primär gegen die amtliche Satzung gepinnt**; die Live-Boxen sind korrigiert regeneriert (Branch, noch nicht deployed).
+2. Das **Friedhofsgebühren-Daten-Asset ist jetzt echt belastbar**: Nach Fund eines systematischen Einheiten-Fehlers (Einzelstelle ≠ Einzelbelegung — „Mainz 4.714" war falsch!) wurden alle **50 Städte einzeln reviewt und primär gegen die amtliche Satzung gepinnt (50/50, seit 16.07.)**; die Live-Boxen sind korrigiert regeneriert (Branch, noch nicht deployed).
 3. Der **Friedhof-Lotse/Index bleibt in der Schublade** bis ein institutioneller Ko-Autor steht — als Solo-Publikation zu schwach, als gemeinsame Studie der Backlink-Hebel.
 4. Geld-These unverändert: **Vorsorge-Marge + Transparenz-Partner-Modell** (Lead-Zugang statt Pay-to-Rank) — wartet auf anwaltliche Prüfung, Hamburg-Pilot danach.
 
@@ -14,7 +14,7 @@
 ## Drei Spuren
 
 ### Spur A — wartet auf DICH (nichts erzwingen; wenn erledigt, kurz Bescheid sagen)
-- [ ] **Kiel-Satzung hochladen** (5 Min): „Gebührensatzung Friedhöfe LH Kiel, 27.03.2025" aus kiel.de/Ortsrecht im Browser laden → mir geben. Automatisiert nachweislich nicht greifbar (404-Gate). Dann sind **50/50** gepinnt.
+- [x] ~~Kiel-Satzung hochladen~~ **ERLEDIGT 16.07.**: Upload bestätigte 1.767,20/654,60/25J → **50/50 primär gepinnt, alle 50 Boxen generiert.**
 - [ ] **Deploy-Go Friedhof-Boxen** (nach Kiel + Review-Findings): Merge auf main → lastmod-Befehl → GSC-Re-Submit.
 - [ ] **Anwalt** klären: (1) UWG/Prüfzeichen fürs Transparenz-Partner-Modell, (2) DSGVO spätere Nutzer-Daten, (3) §34d/Tippgeber Vorsorge, (4) Bestattungsrecht-Anwalt als benannter Fach-Reviewer.
 - [ ] **Partner ansprechen** (Verbraucherzentrale/Aeternitas-Umfeld) — Exposé fertig in `PARTNER-OUTREACH.md`. Jetzt stärker: das Daten-Asset ist primär-verifiziert. Mensch-zu-Mensch, KEIN Funnel-Gimmick.

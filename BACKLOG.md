@@ -5,14 +5,14 @@
 > Alles ab „ARCHIV" unten ist der April-Masterplan (Phasen A–F) — **abgearbeitet/überholt**, nur noch als Historie.
 
 ## ✅ Aktueller Stand (13.07.2026, Kurzfassung)
-Bauphase fertig (~196 Seiten, Linter 0 FAIL). Friedhofsgebühren-Register komplett re-auditiert: **50/50 einzeln reviewt, 49/50 primär gegen amtliche Satzung gepinnt**, Live-Boxen korrigiert regeneriert (Branch `friedhof-lotse`, noch nicht deployed). Engpass unverändert: Cold-Start-Autorität → institutioneller Ko-Autor.
+Bauphase fertig (~196 Seiten, Linter 0 FAIL). Friedhofsgebühren-Register komplett re-auditiert: **50/50 einzeln reviewt är gepinnt (16.07.)**, Live-Boxen korrigiert regeneriert (Branch `friedhof-lotse`, noch nicht deployed). Engpass unverändert: Cold-Start-Autorität → institutioneller Ko-Autor.
 
 ## 🔥 Offenes Backlog (priorisiert)
 
 **P0 — Friedhof-Deploy fertigmachen**
-- [ ] BOLLE: Kiel-Satzung (27.03.2025) hochladen → ich pinne, dann 50/50. *(5 Min)*
-- [ ] Stufe-2-Review-Findings der Box-Welle einarbeiten (Diff-Re-Check).
-- [ ] BOLLE: Deploy-Go → Merge main → `update-sitemap-lastmod.py --apply --commit` → GSC-Re-Submit.
+- [x] ~~Kiel-Satzung hochladen~~ ERLEDIGT 16.07. → **50/50 primär gepinnt, alle Boxen generiert**.
+- [x] ~~Stufe-2-Review-Findings einarbeiten~~ ERLEDIGT 13.07. (5 MAJOR gefixt, Gates grün).
+- [ ] **BOLLE: Deploy-Go** → Merge `friedhof-lotse` → main → `update-sitemap-lastmod.py --apply --commit` → GSC-Re-Submit. *(Der letzte Schritt!)*
 
 **P1 — Autorität (der eigentliche Hebel)**
 - [ ] BOLLE: Anwalt (UWG/Prüfzeichen Transparenz-Partner, DSGVO, §34d, Fach-Reviewer Bestattungsrecht).
