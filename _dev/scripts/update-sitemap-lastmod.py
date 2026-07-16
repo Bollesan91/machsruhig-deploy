@@ -28,7 +28,8 @@ if args.since is None:
     print(f"[since auto] letzter sitemap.xml-Commit: {args.since}")
 
 # 1. file -> letztes Commit-Datum (reverse-chron => erster Treffer = neuestes)
-out = subprocess.run(["git", "log", f"--since={args.since}", "--format=%cs", "--name-only"],
+# git parst nackte Daten als "heute + JETZIGE Uhrzeit" -> explizit Mitternacht, sonst faellt der Commit-Tag selbst raus
+out = subprocess.run(["git", "log", f"--since={args.since} 00:00:00", "--format=%cs", "--name-only"],
                      cwd=ROOT, capture_output=True, text=True).stdout
 date_re = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 fdate, cur = {}, None
