@@ -1,13 +1,42 @@
-# machsruhig.de — BACKLOG (Operativer Masterplan)
+# machsruhig.de — BACKLOG
 
-> **Operative Tickets** — strategische Grundlagen siehe [STRATEGIE.md](./STRATEGIE.md), Session-Gedächtnis siehe [SESSION-NOTES.md](./SESSION-NOTES.md).
->
-> Dieser Plan integriert drei Audits:
-> 1. **Internes Vollaudit** (`_dev/audit-all-pages.py`, 714 Zeilen, 98 Seiten, 9 Kategorien, Ø 59.0/100)
-> 2. **Substanzanalyse Stadtseiten** (`_dev/stadt-quality-analysis.py`, Tier-Klassifizierung GOLD/SILVER/BRONZE/GENERIC)
-> 3. **Externes strategisches Audit** (6,6/10, Schwerpunkt E-E-A-T, Authority vor Leadgen)
->
-> Stand: 23. April 2026
+> **Operativ aktuell: der Abschnitt direkt hier drunter (Stand 13.07.2026).**
+> Eine-Seite-Überblick: [`_dev/strategie/FAHRPLAN.md`](./_dev/strategie/FAHRPLAN.md) · Strategie: [STRATEGIE.md](./STRATEGIE.md)
+> Alles ab „ARCHIV" unten ist der April-Masterplan (Phasen A–F) — **abgearbeitet/überholt**, nur noch als Historie.
+
+## ✅ Aktueller Stand (13.07.2026, Kurzfassung)
+Bauphase fertig (~196 Seiten, Linter 0 FAIL). Friedhofsgebühren-Register komplett re-auditiert: **50/50 einzeln reviewt, 49/50 primär gegen amtliche Satzung gepinnt**, Live-Boxen korrigiert regeneriert (Branch `friedhof-lotse`, noch nicht deployed). Engpass unverändert: Cold-Start-Autorität → institutioneller Ko-Autor.
+
+## 🔥 Offenes Backlog (priorisiert)
+
+**P0 — Friedhof-Deploy fertigmachen**
+- [ ] BOLLE: Kiel-Satzung (27.03.2025) hochladen → ich pinne, dann 50/50. *(5 Min)*
+- [ ] Stufe-2-Review-Findings der Box-Welle einarbeiten (Diff-Re-Check).
+- [ ] BOLLE: Deploy-Go → Merge main → `update-sitemap-lastmod.py --apply --commit` → GSC-Re-Submit.
+
+**P1 — Autorität (der eigentliche Hebel)**
+- [ ] BOLLE: Anwalt (UWG/Prüfzeichen Transparenz-Partner, DSGVO, §34d, Fach-Reviewer Bestattungsrecht).
+- [ ] BOLLE: Partner-Ansprache Ko-Autor (Exposé fertig: `_dev/strategie/PARTNER-OUTREACH.md`) — Datenbasis ist jetzt studienfest.
+- [ ] Studien-/Pressetext nach Ko-Autor-Zusage (Daten-PR-Seite ist live).
+
+**P2 — Content-Builds (unabhängig von A/Anwalt)**
+- [ ] Islam-Pillar + Überführung ins Ausland (Prio vor Städte 32–50; nutzt Friedhof-Grabfeld-Daten).
+- [ ] Brieffunnel-Bestatter-Akquise Hamburg-Pilot konzipieren (echter personalisierter Daten-Payload; Ton „Chance statt Scham"; nach UWG-Check).
+- [ ] Digitaler-Nachlass-Ratgeber / Erbschafts-Erklärinhalte (nachrangig).
+
+**P3 — Hygiene/Offenes**
+- [ ] `datenschutz-ki-abschnitt`-Branch: Merge-Status prüfen; ZDR Groq-Console + AV-Verträge (BOLLE).
+- [ ] Umami/Consent-Architektur konsistent machen (Head-Load vs. Opt-in).
+- [ ] Session-Start-Pflichtcheck etabliert: `git ls-files --deleted` (Temp-Cleanup-Falle).
+- [ ] Claim-Register Monats-Cron (PAT braucht workflow-Scope, BOLLE).
+
+---
+---
+
+# 🗄️ ARCHIV — Operativer Masterplan vom 23.04.2026 (überholt, nur Historie)
+
+> Dieser Plan integrierte drei Audits (Vollaudit Ø 59/100 · Substanzanalyse · externes Audit 6,6/10).
+> Die Phasen A–F sind seit ~10.06.2026 abgearbeitet bzw. durch FAHRPLAN/STRATEGIE Abschnitt 15 ersetzt.
 
 ---
 

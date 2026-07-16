@@ -723,6 +723,8 @@ Vier Trust-Regeln tragen das „beides": (a) als Vermittlung erkennbar; (b) Zahl
 
 **Bewusst außerhalb dieser Säule** (Detail im Konzept-Doc): Consumer-Tool-Features (Fragenliste, Auftrag-Check, „Angebot des Monats") → allgemeine Tool-/Content-Roadmap; spätere Stufen (Transparenz-Karte, Anbieter-Cockpit) erst ab Partner-Masse; **abgelehnt:** Transparenz-Score (Qualitätsurteil-Tabu → bleibt binär), Verbands-Co-Creation der Kriterien (Capture-Risiko).
 
+**Status-Nachtrag 13.07.2026 — der „Brunnen" ist real.** Das Friedhofsgebühren-Register hat den vollen Härtetest hinter sich: ein systematischer Einheiten-Fehler (Einzelstelle ≠ Einzelbelegung; „teuerste Stadt Mainz 4.714 €" war falsch → korrekt Reihengrab 2.507 €) wurde gefunden, alle **50 Städte einzeln reviewt und 49 primär gegen die amtliche Satzung gepinnt** (nur Kiel wartet auf manuellen Satzungs-Abruf). Die per-Stadt-Boxen sind mit Einheit-B-Labels, Pflicht-Zusatzgebühren (13 Städte) und USt-Kennzeichnung regeneriert (Branch, vor Deploy). Konsequenzen: (a) die Datenbasis ist **studien- und partnerfest** — die Ko-Autor-Ansprache (M.1/Spur A) kann sich auf primär-verifizierte Daten stützen; (b) Lehre fürs Datenmodell: **jährliche Unterhaltungs-/Grundgebühren sind der größte blinde Fleck** von 2-Komponenten-Preismodellen — der Angebotsstandard (Oberfläche 1) muss solche Pflicht-Nebenposten als eigenes Feld führen; (c) Erhebungs-Playbook etabliert (Koordinaten-Extraktion, Primär-Pinning, Einzel-Review-Gate) → wiederverwendbar für den Kostenradar. Operativer Stand: `_dev/strategie/FAHRPLAN.md`.
+
 ---
 
 ## Verweise
