@@ -34,12 +34,20 @@ def qa(c, stadt):
     # Review F10: Stand-Jahr in die Antwort (Schema/Snippet kann allein zirkulieren)
     ym = re.findall(r'20\d\d', c.get("satzung_stand") or "")
     stand = f" (Stand der Satzung: {ym[-1]}, geprüft 07/2026)" if ym else " (geprüft 07/2026)"
-    if c["grabnutzung_einheit"] == "pro_jahr":
+    # Re-Audit 07/2026: Grabtyp je Stadt (Einheit B) statt "Einzelstelle"; kein Superlativ-Claim
+    # (Review 13.07. M1); Berlin-Grundgebuehr-Sonderfall (M2); Pflicht-Zusaetze benannt.
+    grabtyp = (c.get("grabtyp_einheit") or "Erd-Wahlgrab").strip()
+    zusatz = f" Zusätzlich fällt an: {c['_pflicht_zusatz_box']}." if c.get("_pflicht_zusatz_box") else ""
+    schluss = (" Einfachere Grabarten können günstiger sein. Das ist nicht der Gesamtpreis einer "
+               "Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
+    if c.get("_grabzeile_sonder"):  # Berlin: kein separates Nutzungsrechts-Entgelt
+        kosten_a = (f"Auf den landeseigenen (städtischen) Friedhöfen fallen je Bestattungsfall die Friedhofsgrundgebühr für eine Wahlgrabstätte plus die Verwaltungsgebühr für das Nutzungsrecht an — zusammen {grab} €; das schließt das Nutzungsrecht für die 20-jährige Ruhezeit ein. Die Erdbestattung kostet {beis} €{stand}.{zusatz}{schluss}")
+    elif c["grabnutzung_einheit"] == "pro_jahr":
         gesamt = eur(round(c["grabnutzung_betrag_eur"] * ruhe))
-        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € je Grabstelle und Jahr — bei {ruhe} Jahren Ruhezeit rund {gesamt} € —, die Beisetzung {beis} €{stand}. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
+        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung ({grabtyp}) {grab} € je Grabstelle und Jahr — bei {ruhe} Jahren Ruhezeit insgesamt rund {gesamt} € —, die Beisetzung {beis} €{stand}.{zusatz}{schluss}")
     else:
-        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung für ein Erd-Wahlgrab (Einzelstelle, günstigster regulärer Tarif) {grab} € einmalig für die Nutzungszeit von {ruhe} Jahren, die Beisetzung {beis} €{stand}. Das ist nicht der Gesamtpreis einer Bestattung: Bestatterleistungen, Sarg und Grabmal kommen hinzu.")
-    q1 = (f"Was kostet ein Erd-Wahlgrab in {stadt}?", kosten_a)
+        kosten_a = (f"Laut amtlicher Gebührensatzung kostet die Grabnutzung ({grabtyp}) {grab} € einmalig für die Nutzungszeit von {ruhe} Jahren, die Beisetzung {beis} €{stand}.{zusatz}{schluss}")
+    q1 = (f"Was kostet ein Grab in {stadt}?", kosten_a)
     # Review F9: Frage passend zur Antwort (kein "Wer", das die Antwort nicht einloest;
     # Gremium variiert je Stadt/Traeger — Stadtrat vs. AoeR-Verwaltungsrat — nicht raten)
     q2 = (f"Wo sind die Friedhofsgebühren in {stadt} geregelt?",
