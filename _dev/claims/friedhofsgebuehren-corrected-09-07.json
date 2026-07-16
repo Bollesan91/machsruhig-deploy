@@ -39,7 +39,7 @@
   {
    "stadt": "Hamburg",
    "bundesland": "HH",
-   "satzung_stand": "gültig ab 01.01.2025 (Gebührenübersicht 2025, erstellt 18.12.2024); Ruhezeit § 28 BestattG HA 2020",
+   "satzung_stand": "Gebührenübersicht 2025/2026, gültig ab 01.01.2025",
    "satzung_url": "https://www.friedhof-hamburg.de/fileadmin/Ablage/Downloads/bestatter_online/gbo/Gebuehrenuebersicht_2025.pdf ; Ruhezeit: https://www.landesrecht-hamburg.de/bsha/document/jlr-BestattGHA2020rahmen (§ 28)",
    "grabnutzung_betrag_eur": 74,
    "grabnutzung_einheit": "pro_jahr",
@@ -54,7 +54,7 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "grabtyp_einheit": "Sargwahlgrab, je Grabstelle (Standardqualität, Jahresgebühr)"
+   "grabtyp_einheit": "Sargwahlgrab, je Grabstelle (Standardqualität = einfache Lage; Jahresgebühr)"
   },
   {
    "stadt": "München",
@@ -76,8 +76,9 @@
    "interval_months": 12,
    "korrektur_reverify": "Grabnutzung MUSS von 59 EUR auf 84 EUR/Jahr korrigiert werden. Grund: (1) Falscher Grabtyp — 59,-- ist das Urnenerdgrab (Ziff. II b), nicht das Sarg-/Erd-Wahlgrab. Das Erd-Wahlgrab liegt bei 134,-- (1",
    "_ust_hinweis": "Einige 2024er-Positionen auf 'Preise + USt' umgestellt; §4/§6 teils netto - vor Live pruefen.",
-   "grabtyp_einheit": "Erdgrabstätte (2. und folgende Reihen), Jahresgebühr",
-   "_ust_box": "Einzelne Zusatzleistungen können Umsatzsteuer enthalten."
+   "grabtyp_einheit": "Erdgrabstätte (2. und folgende Reihen = einfachere Lage), Jahresgebühr",
+   "_ust_box": "Einzelne Zusatzleistungen können Umsatzsteuer enthalten.",
+   "_zahlmodus_box": "wird für die gesamte Ruhezeit im Voraus erhoben"
   },
   {
    "stadt": "Köln",
@@ -120,10 +121,10 @@
    "_review_06_07": [
     "Grabnutzung 520->572 (+52 Verwaltung/Nutzungsrecht; Friedl-Review). Studien-Reviewer-These 'fehlende Nutzungsrechtsgebuehr' widerlegt. Beis. 285 bestaetigt."
    ],
-   "grabtyp_einheit": "Wahlgrabstätte (landeseigene Friedhöfe)",
+   "grabtyp_einheit": "Wahlgrabstätte (landeseigene, d. h. städtische Friedhöfe)",
    "_version_status": "OK_PINNED",
    "_version_note": "PRIMAER-VERIFIZIERT 13.07. (GebO landeseigene Friedhoefe, unveraendert seit 2008 = AKTUELL): 2.1.2 Friedhofsgrundgebuehr Wahlgrab je Bestattungsfall 520 + 1.1 Verwaltungsgebuehr Nutzungsrecht 52 = 572; 3.1.1.1 Erdbestattung Erdwahl-/Familiengrab 285. Berlin hat KEIN separates Nutzungsrecht-Entgelt -> Box-Label 'Friedhofsgrundgebuehr + Verwaltungsgebuehr' statt 'Grabnutzung'.",
-   "_grabzeile_sonder": "Friedhofsgrundgeb&uuml;hr (Wahlgrabst&auml;tte, je Bestattungsfall) + Verwaltungsgeb&uuml;hr Nutzungsrecht: <strong>572 &euro;</strong> (520 + 52)"
+   "_grabzeile_sonder": "Friedhofsgrundgeb&uuml;hr (Wahlgrabst&auml;tte, je Bestattungsfall) + Verwaltungsgeb&uuml;hr Nutzungsrecht: <strong>572 &euro;</strong> (520 + 52) &mdash; schlie&szlig;t das Nutzungsrecht f&uuml;r die 20-j&auml;hrige Ruhezeit ein"
   },
   {
    "stadt": "Frankfurt am Main",
@@ -356,7 +357,7 @@
    "interval_months": 12,
    "_ust_hinweis": "Betraege NETTO (924,24/532,97); Satzung sieht USt vor - mit 19% ~1.100/634. USt-Behandlung vor Live klaeren.",
    "grabtyp_einheit": "Erd-Wahlgrab, je Stelle",
-   "_ust_box": "Beträge laut Satzung netto; je nach USt-Behandlung können bis zu 19 % hinzukommen."
+   "_ust_box": "Die Satzung weist Nettobeträge aus; mit 19 % Umsatzsteuer wären es rund 1.100 € (Grabnutzung) und 634 € (Beisetzung)."
   },
   {
    "stadt": "Düsseldorf",
@@ -1172,8 +1173,8 @@
     }
    ],
    "_pflicht_zusatz_hinweis": "Quasi-Standard: Verbau von Hand 285 + Abfuhr Erdaushub 171.",
-   "grabtyp_einheit": "Sarg-Wahlgrabstätte (Zweifachbelegung), je Grabstelle — einzige neu erwerbbare Wahlgrabart",
-   "_pflicht_zusatz_box": "im Regelfall Verbau von Hand 285 € + Abfuhr des Erdaushubs 171 €"
+   "grabtyp_einheit": "Sarg-Wahlgrabstätte (Zweifachbelegung: Platz für 2 Beisetzungen übereinander — der Preis gilt für die gesamte Stelle; einzige neu erwerbbare Wahlgrabart)",
+   "_pflicht_zusatz_box": "im Regelfall Verbau von Hand (Absichern der Grabwände) 285 € + Abfuhr des Erdaushubs 171 €"
   },
   {
    "stadt": "Leverkusen",

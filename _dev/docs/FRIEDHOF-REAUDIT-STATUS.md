@@ -190,3 +190,14 @@ Pipeline: WebSearch (URL) -> curl (Browser-UA umging Bot-Gates, wo Reviewer-WebF
 - LEVERKUSEN: BESTAETIGT. Amtsblatt 47/2025 (27.Aend. ab 01.01.2026): 1.3=164,01/J + 2.4=1.270,98 UNVERAENDERT. Werte aktuell.
 - WIESBADEN: BESTAETIGT. FGO 7-5.3 (19.Erg.-Lief.2022): 1.2.1=3.383 + 2.2.1=674. Zitat gefixt.
 NOCH OFFEN (2): KIEL (STALE, Bolle-Upload 27.03.2025-Satzung noetig) + LUDWIGSHAFEN (7-09.pdf hart hinter Redirect-Gate, kein primaer greifbarer Beleg -> VERIFY).
+
+## STUFE-2-REVIEW-WELLE DARSTELLUNG (13.07.) — 5 MAJOR, alle gefixt + Diff-Re-Check
+Reviewer bestaetigte: alle Rechen-Checks korrekt, Fussnoten-Kern ehrlich, Mainz-Label = "Goldstandard-Muster".
+- M1 Kopfzeilen-Claim "guenstigster regulaerer Tarif" nicht haltbar (Hamburg-Reihengrab evtl. < 1.850) -> FIX: Superlativ raus ("Tarif fuer eine Sargbestattung") + Footer-Satz "Einfachere Grabarten ... koennen guenstiger sein". Unit B (Wahlgrab primaer) bleibt.
+- M2 Berlin ohne Laufzeit -> FIX: "schliesst das Nutzungsrecht fuer die 20-jaehrige Ruhezeit ein".
+- M3 Dresden USt zu vage -> FIX: konkret "mit 19% ... rund 1.100 (Grabnutzung) und 634 (Beisetzung)".
+- M4 Template-Leck "je nach Stadt im Voraus faellig" -> FIX: Klausel raus; Zahlmodus nur wo belegt (_zahlmodus_box, Muenchen §4(4)).
+- M5 Krefeld Zweifachbelegung vs 1 Sarg -> FIX: "Platz fuer 2 Beisetzungen uebereinander - Preis gilt fuer die gesamte Stelle".
+- MINOR-Glossen: Hamburg "Standardqualitaet = einfache Lage" + Stand "2025/2026"; Muenchen "= einfachere Lage"; Berlin "d.h. staedtische"; Krefeld "Verbau (Absichern der Grabwaende)".
+- UNSICHERs aufgeloest: Hamburg-Reihengrab-Preisfrage (durch M1-Fix gegenstandslos); Dresden-Traeger-USt (durch konkrete Netto/Brutto-Angabe); Berlin 2.-Beisetzung ("je Bestattungsfall" steht im Kasten).
+Gates nach Fixes: lint-friedhof 0 / lint-site 0 / deleted-check 0.

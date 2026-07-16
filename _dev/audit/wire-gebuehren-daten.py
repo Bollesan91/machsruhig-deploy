@@ -47,10 +47,10 @@ def block(c):
         grab_zeile = c["_grabzeile_sonder"]
     elif einheit == "pro_jahr":
         gesamt = eur(round(c["grabnutzung_betrag_eur"] * ruhe))
-        # Review 02.07.: Zahlungsmodus nennen (z.B. Muenchen § 4(4): fuer die gesamte Ruhezeit im Voraus)
+        # Review 13.07. M4: kein "je nach Stadt"-Templatesatz im Stadt-Kasten; Zahlmodus nur wo BELEGT (_zahlmodus_box)
+        zm = f"; {esc(c['_zahlmodus_box'])}" if c.get("_zahlmodus_box") else ""
         grab_zeile = (f"Grabnutzung: <strong>{grab} &euro; je Grabstelle und Jahr</strong> "
-                      f"(bei {ruhe} Jahren Ruhezeit rund {gesamt} &euro; &mdash; je nach Stadt "
-                      f"f&uuml;r die gesamte Nutzungszeit im Voraus f&auml;llig)")
+                      f"(bei {ruhe} Jahren Ruhezeit insgesamt rund {gesamt} &euro;{zm})")
     else:
         grab_zeile = f"Grabnutzung: <strong>{grab} &euro;</strong> einmalig f&uuml;r die Nutzungszeit ({ruhe} Jahre)"
     netto = ' Betr&auml;ge netto (USt f&auml;llt bei kommunalen Friedhofsgeb&uuml;hren i.&thinsp;d.&thinsp;R. nicht an).' \
@@ -81,12 +81,12 @@ def block(c):
     # Review 02.07.: KEIN erfundenes Lage-Label ("einfache Lage" existiert z.B. in Koeln nicht);
     # + Fussnote, dass der Umfang der Beisetzungsgebuehr je Stadt verschieden ist.
     return f'''    <div class="fh-gebuehren-beispiel" style="background:var(--mr-bg-card,#FFFDF9);border:1px solid var(--mr-border,#E8E0D6);border-left:4px solid var(--mr-accent,#866E45);border-radius:8px;padding:14px 18px;margin:14px 0">
-      <strong style="font-size:14px">Beispiel aus der Satzung: {grabtyp} &mdash; g&uuml;nstigster regul&auml;rer Tarif f&uuml;r eine Sargbestattung</strong>
+      <strong style="font-size:14px">Beispiel aus der Satzung: {grabtyp} &mdash; Tarif f&uuml;r eine Sargbestattung</strong>
       <ul style="margin:8px 0 6px 18px;font-size:14px;line-height:1.7;padding:0">
         <li>{grab_zeile}</li>
         <li>Beisetzungsgeb&uuml;hr (Erdbestattung): <strong>{beis} &euro;</strong></li>{zusatz}
       </ul>
-      <p style="font-size:12.5px;color:var(--mr-text-muted,#73655A);margin:6px 0 0;line-height:1.6">Direkt aus der <a href="{url}" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary,#866E45)">amtlichen Geb&uuml;hrensatzung</a>{para_txt} &middot; Stand: {stand} &middot; von machsruhig gepr&uuml;ft am 13.07.2026.{netto} Was die Beisetzungsgeb&uuml;hr umfasst, unterscheidet sich je Stadt (teils nur Grab &ouml;ffnen/schlie&szlig;en, teils ein Leistungsb&uuml;ndel), und je nach Stadt k&ouml;nnen weitere Pflicht-Friedhofsgeb&uuml;hren (z.&thinsp;B. Grund-, Verwaltungs- oder j&auml;hrliche Unterhaltungsgeb&uuml;hren) hinzukommen. Das ist <strong>nicht</strong> der Gesamtpreis einer Bestattung &mdash; Bestatterleistungen, Sarg/Urne und Grabmal kommen hinzu (<a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary,#866E45)">Kostenrechner</a>).</p>
+      <p style="font-size:12.5px;color:var(--mr-text-muted,#73655A);margin:6px 0 0;line-height:1.6">Direkt aus der <a href="{url}" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary,#866E45)">amtlichen Geb&uuml;hrensatzung</a>{para_txt} &middot; Stand: {stand} &middot; von machsruhig gepr&uuml;ft am 13.07.2026.{netto} Was die Beisetzungsgeb&uuml;hr umfasst, unterscheidet sich je Stadt (teils nur Grab &ouml;ffnen/schlie&szlig;en, teils ein Leistungsb&uuml;ndel), und je nach Stadt k&ouml;nnen weitere Pflicht-Friedhofsgeb&uuml;hren (z.&thinsp;B. Grund-, Verwaltungs- oder j&auml;hrliche Unterhaltungsgeb&uuml;hren) hinzukommen. Einfachere Grabarten (z.&thinsp;B. Reihen-, Rasen- oder anonyme Gr&auml;ber) k&ouml;nnen g&uuml;nstiger sein. Das ist <strong>nicht</strong> der Gesamtpreis einer Bestattung &mdash; Bestatterleistungen, Sarg/Urne und Grabmal kommen hinzu (<a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary,#866E45)">Kostenrechner</a>).</p>
     </div>
 '''
 
