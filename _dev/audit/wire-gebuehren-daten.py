@@ -62,12 +62,21 @@ def block(c):
     zusatz = ""
     if c.get("_pflicht_zusatz_box"):
         zusatz = f"\n        <li>Zus&auml;tzlich f&auml;llt hier an: <strong>{esc(c['_pflicht_zusatz_box'])}</strong></li>"
-    para = (c.get("grabnutzung_paragraph") or "").strip()
-    # Review 02.07.: Paragraph deckt nur die Grabnutzung — so labeln
-    para_txt = f" (Grabnutzung: {para})" if para and len(para) <= 60 else ""
+    def de_ascii(s):
+        # Register-Felder tragen teils ASCII-Transliterationen -> fuer Anzeige zurueckwandeln (Wort-Map, safe)
+        for a, b in (("veroeffentlicht","veröffentlicht"),("Veroeffentlicht","Veröffentlicht"),
+                     ("geaendert","geändert"),("Gebuehren","Gebühren"),("gebuehren","gebühren"),
+                     ("Gebuehr","Gebühr"),("gueltig","gültig"),("Aenderung","Änderung"),
+                     ("Saeule","Säule"),("fuer ","für "),("Staedt","Städt"),("staetten","stätten"),("Staetten","Stätten")):
+            s = s.replace(a, b)
+        return s
+    para = de_ascii((c.get("grabnutzung_paragraph") or "").strip())
+    # Review 02.07.: Paragraph deckt nur die Grabnutzung — so labeln (Berlin: Grundgebuehr-System -> "Beleg")
+    para_label = "Beleg" if c.get("_grabzeile_sonder") else "Grabnutzung"
+    para_txt = f" ({para_label}: {esc(para)})" if para and len(para) <= 60 else ""
     url = c.get("satzung_url", "").split(" ")[0]
     # Review 02.07.: Stand nicht mitten im Satz kappen — an Semikolon/Klammer schneiden, cap 130
-    stand = (c.get("satzung_stand") or "").split(";")[0].split(" (")[0].strip()
+    stand = de_ascii((c.get("satzung_stand") or "").split(";")[0].split(" (")[0].strip())
     if len(stand) > 130: stand = stand[:130].rsplit(" ", 1)[0] + " &hellip;"
     # Review 02.07.: KEIN erfundenes Lage-Label ("einfache Lage" existiert z.B. in Koeln nicht);
     # + Fussnote, dass der Umfang der Beisetzungsgebuehr je Stadt verschieden ist.
