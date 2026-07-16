@@ -53,7 +53,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Sargwahlgrab, je Grabstelle (Standardqualität, Jahresgebühr)"
   },
   {
    "stadt": "München",
@@ -74,7 +75,9 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "korrektur_reverify": "Grabnutzung MUSS von 59 EUR auf 84 EUR/Jahr korrigiert werden. Grund: (1) Falscher Grabtyp — 59,-- ist das Urnenerdgrab (Ziff. II b), nicht das Sarg-/Erd-Wahlgrab. Das Erd-Wahlgrab liegt bei 134,-- (1",
-   "_ust_hinweis": "Einige 2024er-Positionen auf 'Preise + USt' umgestellt; §4/§6 teils netto - vor Live pruefen."
+   "_ust_hinweis": "Einige 2024er-Positionen auf 'Preise + USt' umgestellt; §4/§6 teils netto - vor Live pruefen.",
+   "grabtyp_einheit": "Erdgrabstätte (2. und folgende Reihen), Jahresgebühr",
+   "_ust_box": "Einzelne Zusatzleistungen können Umsatzsteuer enthalten."
   },
   {
    "stadt": "Köln",
@@ -93,7 +96,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Wahlgrabstätte (Sarg-Erdbestattung)"
   },
   {
    "stadt": "Berlin",
@@ -115,7 +119,11 @@
    "interval_months": 12,
    "_review_06_07": [
     "Grabnutzung 520->572 (+52 Verwaltung/Nutzungsrecht; Friedl-Review). Studien-Reviewer-These 'fehlende Nutzungsrechtsgebuehr' widerlegt. Beis. 285 bestaetigt."
-   ]
+   ],
+   "grabtyp_einheit": "Wahlgrabstätte (landeseigene Friedhöfe)",
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 13.07. (GebO landeseigene Friedhoefe, unveraendert seit 2008 = AKTUELL): 2.1.2 Friedhofsgrundgebuehr Wahlgrab je Bestattungsfall 520 + 1.1 Verwaltungsgebuehr Nutzungsrecht 52 = 572; 3.1.1.1 Erdbestattung Erdwahl-/Familiengrab 285. Berlin hat KEIN separates Nutzungsrecht-Entgelt -> Box-Label 'Friedhofsgrundgebuehr + Verwaltungsgebuehr' statt 'Grabnutzung'.",
+   "_grabzeile_sonder": "Friedhofsgrundgeb&uuml;hr (Wahlgrabst&auml;tte, je Bestattungsfall) + Verwaltungsgeb&uuml;hr Nutzungsrecht: <strong>572 &euro;</strong> (520 + 52)"
   },
   {
    "stadt": "Frankfurt am Main",
@@ -135,7 +143,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur noetig — Werte bestaetigt. Hinweis zur Einheit: Es gibt zwei regulaere Grabtypen. Verwendeter Wert = Wahlgrab (5.1.1.1 Einzelwahlgrabstaette, 1.855,00 EUR, Nutzungsdauer 25 Jahre) gema"
+   "korrektur_reverify": "Keine Korrektur noetig — Werte bestaetigt. Hinweis zur Einheit: Es gibt zwei regulaere Grabtypen. Verwendeter Wert = Wahlgrab (5.1.1.1 Einzelwahlgrabstaette, 1.855,00 EUR, Nutzungsdauer 25 Jahre) gema",
+   "grabtyp_einheit": "Einzel-Wahlgrabstätte (Erdbestattung)"
   },
   {
    "stadt": "Aachen",
@@ -155,7 +164,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Vollständigkeit (kein Fehler): Die Ruhezeit ist in Aachen friedhofsabhängig und reicht von 20 J. (z. B. Forst, Ostfriedhof, Westfriedhof II) über 25 J. (Modalwert, u"
+   "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Vollständigkeit (kein Fehler): Die Ruhezeit ist in Aachen friedhofsabhängig und reicht von 20 J. (z. B. Forst, Ostfriedhof, Westfriedhof II) über 25 J. (Modalwert, u",
+   "grabtyp_einheit": "Erd-Wahlgrab (normale Lage)"
   },
   {
    "stadt": "Augsburg",
@@ -179,7 +189,11 @@
    "_review_06_07": [
     "MAJOR OFFEN: 47 ist Familiengrab (2 Best.), kein Einzelgrab; + fehlende Unterhaltsgeb 34/J. Neu-Erhebung noetig (Reihengrab? 59/J + Unterhalt)."
    ],
-   "_pflicht_zusatz_hinweis": "Pflicht: Unterhaltsgebuehr 34 EUR/Jahr (jaehrlich)."
+   "_pflicht_zusatz_hinweis": "Pflicht: Unterhaltsgebuehr 34 EUR/Jahr (jaehrlich).",
+   "grabtyp_einheit": "Erdgrabstätte im Inneren der Grabfelder, je Grabstelle (verlängerbar)",
+   "_version_status": "OK_PINNED",
+   "_version_note": "PRIMAER-VERIFIZIERT 13.07. (7511_ANL_2025, gueltig ab 01.01.2025): 1.1.1 Graeber im Inneren je Grabstelle Ersterwerb 47/J + A.1.1 Erdbestattung ab 12. Lj 940. Je-Stelle-Preis (wie Koeln) = Einzelnutzung fair, Kapazitaet kennzeichnen. 994 war Grabmal-Fundament (4.5.1), NICHT Beisetzung.",
+   "_pflicht_zusatz_box": "Friedhofsunterhaltsgebühr 34 € pro Jahr"
   },
   {
    "stadt": "Bielefeld",
@@ -199,7 +213,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur noetig - alle drei Werte stimmen. Hinweis zur Einheit: Unser Wert nutzt konsequent das Wahlgrab (Einzelstelle). Die Grabnutzung 70 EUR/Jahr (Tarif 3.1) und die Beisetzung 819 EUR (Tari"
+   "korrektur_reverify": "Keine Korrektur noetig - alle drei Werte stimmen. Hinweis zur Einheit: Unser Wert nutzt konsequent das Wahlgrab (Einzelstelle). Die Grabnutzung 70 EUR/Jahr (Tarif 3.1) und die Beisetzung 819 EUR (Tari",
+   "grabtyp_einheit": "Wahlgrabstätte für Erdbestattungen, je Grabstelle (Jahresgebühr)"
   },
   {
    "stadt": "Bochum",
@@ -218,7 +233,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Familiengrabstätte für Sargbestattungen, je Grabstelle (Wahlgrab)"
   },
   {
    "stadt": "Bonn",
@@ -242,7 +258,7 @@
     "alt_grabnutzung": 82.2,
     "alt_beisetzung": 1040.02
    },
-   "grabtyp_einheit": "Wahlgrab gem. Par.20 FS",
+   "grabtyp_einheit": "Erd-Wahlgrab (§ 20 Friedhofssatzung, Jahresgebühr)",
    "_review_06_07": [
     "REVERT auf 82,20/J: meine Korrektur 181,67 war eine Grabkammer (kein Erdgrab); Original 82,20 = Wahlgrab Par.20 korrekt (Friedl-Review). Beisetzung 1.040,02 bestaetigt."
    ]
@@ -265,7 +281,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur noetig - alle Werte stimmen exakt mit der offiziellen Satzung ueberein (Grab 1.583 EUR / Beisetzung 438,90 EUR / Ruhezeit 25 J.)."
+   "korrektur_reverify": "Keine Korrektur noetig - alle Werte stimmen exakt mit der offiziellen Satzung ueberein (Grab 1.583 EUR / Beisetzung 438,90 EUR / Ruhezeit 25 J.).",
+   "grabtyp_einheit": "Erdgrabstätte, Einzelgrab (25 Jahre)"
   },
   {
    "stadt": "Bremen",
@@ -285,7 +302,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine inhaltliche Korrektur der Werte noetig (1502/1072/25 alle bestaetigt). ABER: Quell-URL aktualisieren — die alte Anhaltspunkt-URL .../Gebuehrenordnung_FH.pdf ist tot (HTTP 404). Neue kanonische U"
+   "korrektur_reverify": "Keine inhaltliche Korrektur der Werte noetig (1502/1072/25 alle bestaetigt). ABER: Quell-URL aktualisieren — die alte Anhaltspunkt-URL .../Gebuehrenordnung_FH.pdf ist tot (HTTP 404). Neue kanonische U",
+   "grabtyp_einheit": "Erd-Wahlgrabstelle, einschichtig (1 Sarg)"
   },
   {
    "stadt": "Dortmund",
@@ -315,7 +333,8 @@
      "neu": "2700/960/25J",
      "quelle": "Amtsblatt 9/2026 ab 07.03.2026"
     }
-   ]
+   ],
+   "grabtyp_einheit": "Wahlgrabstätte (Sargbeisetzung), je Grabstelle"
   },
   {
    "stadt": "Dresden",
@@ -335,7 +354,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_ust_hinweis": "Betraege NETTO (924,24/532,97); Satzung sieht USt vor - mit 19% ~1.100/634. USt-Behandlung vor Live klaeren."
+   "_ust_hinweis": "Betraege NETTO (924,24/532,97); Satzung sieht USt vor - mit 19% ~1.100/634. USt-Behandlung vor Live klaeren.",
+   "grabtyp_einheit": "Erd-Wahlgrab, je Stelle",
+   "_ust_box": "Beträge laut Satzung netto; je nach USt-Behandlung können bis zu 19 % hinzukommen."
   },
   {
    "stadt": "Düsseldorf",
@@ -355,7 +376,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Konsistenz: In Düsseldorf ist die \"Einzelgrabstätte\" der reihengrab-artige, stadtzugewiesene Grabtyp (keine Lagenwahl), die \"Wahlgrabstätte\" der frei wählbare — die "
+   "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Konsistenz: In Düsseldorf ist die \"Einzelgrabstätte\" der reihengrab-artige, stadtzugewiesene Grabtyp (keine Lagenwahl), die \"Wahlgrabstätte\" der frei wählbare — die ",
+   "grabtyp_einheit": "Wahlgrabstätte, je Grabstelle"
   },
   {
    "stadt": "Duisburg",
@@ -374,7 +396,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Wahlgrabstätte für Särge, eng liegend"
   },
   {
    "stadt": "Erfurt",
@@ -394,7 +417,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsunterhaltung ~506 EUR."
+   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsunterhaltung ~506 EUR.",
+   "grabtyp_einheit": "Erd-Wahlgrab, einstellig",
+   "_pflicht_zusatz_box": "Friedhofsunterhaltungsgebühr rund 506 €"
   },
   {
    "stadt": "Essen",
@@ -414,7 +439,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur nötig — alle Werte stimmen mit der aktuellen Satzung 7.04 (Stand 05.02.2024) überein."
+   "korrektur_reverify": "Keine Korrektur nötig — alle Werte stimmen mit der aktuellen Satzung 7.04 (Stand 05.02.2024) überein.",
+   "grabtyp_einheit": "Wahlgrab (Sarggrabstätte)"
   },
   {
    "stadt": "Freiburg im Breisgau",
@@ -435,7 +461,9 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "korrektur_reverify": "Keine Abweichung — alle drei Werte korrekt. Hinweis zur Quelle: Die im Auftrag genannte Anhaltspunkt-URL (OrtsR_17_06.pdf im '/documents/'-Pfad ohne Token) liefert 404; die aktuell gueltige Fassung li",
-   "_pflicht_zusatz_hinweis": "Pflicht: Verwaltungsgebuehr Erdbestattung 72,28."
+   "_pflicht_zusatz_hinweis": "Pflicht: Verwaltungsgebuehr Erdbestattung 72,28.",
+   "grabtyp_einheit": "Erd-Wahlgrab, Einzelgrab (Jahresgebühr)",
+   "_pflicht_zusatz_box": "Verwaltungsgebühr Erdbestattung 72,28 €"
   },
   {
    "stadt": "Gelsenkirchen",
@@ -457,7 +485,8 @@
    "interval_months": 12,
    "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Absicherung: Eine WebFetch-Zusammenfassung des komprimierten Satzungs-PDF behauptete faelschlich '20 Jahre' Ruhezeit; die tatsaechliche Primaerquelle § 10 Abs. 1 FS ",
    "_version_status": "OK_NOTE",
-   "_version_note": "Werte 2.717/1.420 = aktuelle 26. AeS (01.01.2026). Alte 25. AeS (2.872/1.320) kursiert noch - /2026/01/-Quelle verdrahten."
+   "_version_note": "Werte 2.717/1.420 = aktuelle 26. AeS (01.01.2026). Alte 25. AeS (2.872/1.320) kursiert noch - /2026/01/-Quelle verdrahten.",
+   "grabtyp_einheit": "Erd-Wahlgrab (2,50 m × 1,20 m)"
   },
   {
    "stadt": "Hagen",
@@ -477,7 +506,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Klarheit: Die Wahlgrab-NUTZUNGSZEIT beträgt laut § 15 Abs. 1b Friedhofssatzung 30 Jahre (nicht 25). Die 25 Jahre sind die RUHEZEIT (§ 11 Abs. 1). Unser gespeicherter"
+   "korrektur_reverify": "Keine Korrektur nötig. Hinweis zur Klarheit: Die Wahlgrab-NUTZUNGSZEIT beträgt laut § 15 Abs. 1b Friedhofssatzung 30 Jahre (nicht 25). Die 25 Jahre sind die RUHEZEIT (§ 11 Abs. 1). Unser gespeicherter",
+   "grabtyp_einheit": "Wahlgrabstätte Sargbestattung"
   },
   {
    "stadt": "Halle (Saale)",
@@ -508,7 +538,9 @@
    ],
    "_version_status": "OK_PINNED",
    "_version_note": "PRIMAER-VERIFIZIERT 09.07.: Live halle.de Ortsrecht SR_708-2 zeigt 1.10 Erdbestattungswahlgrab 960 + 3.1.1 Oeffnen/Schliessen 746 (30J-Block). Reviewer-Behauptung '1.005/916' war Fehl-Aufteilung der 1.916-Summe (960+210 FUG+746). Werte aktuell.",
-   "_pflicht_zusatz_hinweis": "Pflicht: FUG (Friedhofsunterhaltungsgebuehr) Pos. 5.1 = 210 EUR fuer Erdbestattungswahlgrab (real 960+210+746 = 1.916)."
+   "_pflicht_zusatz_hinweis": "Pflicht: FUG (Friedhofsunterhaltungsgebuehr) Pos. 5.1 = 210 EUR fuer Erdbestattungswahlgrab (real 960+210+746 = 1.916).",
+   "grabtyp_einheit": "Erdbestattungswahlgrab",
+   "_pflicht_zusatz_box": "Friedhofsunterhaltungsgebühr (FUG) 210 €"
   },
   {
    "stadt": "Hamm",
@@ -545,7 +577,9 @@
    ],
    "_version_status": "OK_PINNED",
    "_version_note": "PRIMAER-VERIFIZIERT 09.07.: 8. Aenderung Hamm vom 14.12.2023 (in Kraft 01.01.2024, Westf. Anzeiger Nr.295 20.12.2023). 1.2.1 Wahlgrabstaette 30J = 1.100; 2.2 bei Wahlgrabstaette = 800. Lokales hamm.raw (1.166/711) war AELTERE Fassung. Reviewer hatte recht.",
-   "_pflicht_zusatz_hinweis": "Pflicht: 1.4.1 Unterhaltung 36,70 EUR/Jahr je Wahlgrabstelle (jaehrlich)."
+   "_pflicht_zusatz_hinweis": "Pflicht: 1.4.1 Unterhaltung 36,70 EUR/Jahr je Wahlgrabstelle (jaehrlich).",
+   "grabtyp_einheit": "Wahlgrabstätte, je Grabstelle",
+   "_pflicht_zusatz_box": "Unterhaltungsgebühr 36,70 € pro Jahr je Wahlgrabstelle"
   },
   {
    "stadt": "Hannover",
@@ -564,7 +598,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Erd-Wahlgrabstätte, je Grabstelle (Standard)"
   },
   {
    "stadt": "Heidelberg",
@@ -585,7 +620,9 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "korrektur_reverify": "Grabnutzung = 2.420 € Einmalsumme (Nr. 4.2.3 Einzelgrab 2. u. 3. Reihe), NICHT 2.750 €. Grund: strittiger Punkt sind die drei Einzelgrab-Tarife unter Nr. 4.2 — 4.2.1 1. Reihe 2.750 €, 4.2.3 2./3. Reih",
-   "_pflicht_zusatz_hinweis": "Regel-Zusatz: Leichenhalle 260."
+   "_pflicht_zusatz_hinweis": "Regel-Zusatz: Leichenhalle 260.",
+   "grabtyp_einheit": "Erd-Wahlgrab, Einzelgrab (2./3. Reihe)",
+   "_pflicht_zusatz_box": "Leichenhallenbenutzung 260 € (Regelfall)"
   },
   {
    "stadt": "Karlsruhe",
@@ -605,7 +642,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur noetig - unsere Werte sind exakt korrekt. WICHTIGER HINWEIS zur Extraktion: Der 'pdftotext -layout'-Auszug war um eine Zeile verschoben und wies faelschlich 154,00 EUR (= 'an bevorzugt"
+   "korrektur_reverify": "Keine Korrektur noetig - unsere Werte sind exakt korrekt. WICHTIGER HINWEIS zur Extraktion: Der 'pdftotext -layout'-Auszug war um eine Zeile verschoben und wies faelschlich 154,00 EUR (= 'an bevorzugt",
+   "grabtyp_einheit": "Erdbestattungswahlgrab an Wegen und in Feldern (Jahresgebühr)"
   },
   {
    "stadt": "Kassel",
@@ -630,7 +668,7 @@
     "alt_grabnutzung": 1908,
     "alt_beisetzung": 1560
    },
-   "grabtyp_einheit": "Wahlgrabstaette 1 Stelle (Beisetzung je-nach-Leistung, pruefen)",
+   "grabtyp_einheit": "Wahlgrabstätte, 1 Stelle",
    "_review_06_07": [
     "Beisetzung 2107->1560 (2107 buendelte Trauerhalle; Friedl-Review)"
    ]
@@ -654,7 +692,8 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "_version_status": "STALE",
-   "_version_note": "STALE - 09.07. erschoepfend versucht (curl Browser-UA, Cookie-Jar-Session, fid-Download bcf1f2a6/62f058c1 aus Bekanntmachungen, Grabarten-Merkblatt): download.php liefert 'Fehler 404 Datei nicht gefunden'; Merkblatt bildbasiert (kein Text); kiel.de-Zahlen nur 2017 (veraltet). AUTOMATISIERT NICHT GREIFBAR. => BOLLE: Gebuehrensatzung 27.03.2025 im Browser manuell laden + hochladen. Werte 1.767,20/654,60 bis dahin UNBELEGT."
+   "_version_note": "STALE - 09.07. erschoepfend versucht (curl Browser-UA, Cookie-Jar-Session, fid-Download bcf1f2a6/62f058c1 aus Bekanntmachungen, Grabarten-Merkblatt): download.php liefert 'Fehler 404 Datei nicht gefunden'; Merkblatt bildbasiert (kein Text); kiel.de-Zahlen nur 2017 (veraltet). AUTOMATISIERT NICHT GREIFBAR. => BOLLE: Gebuehrensatzung 27.03.2025 im Browser manuell laden + hochladen. Werte 1.767,20/654,60 bis dahin UNBELEGT.",
+   "grabtyp_einheit": "Sargwahlgrab traditionell (WERTE UNBESTÄTIGT)"
   },
   {
    "stadt": "Leipzig",
@@ -674,7 +713,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsnutzung/-unterhaltung 420 (20J) + Grundherstellung Erdgrab 82 = +502."
+   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsnutzung/-unterhaltung 420 (20J) + Grundherstellung Erdgrab 82 = +502.",
+   "grabtyp_einheit": "Erd-Wahlgrab, einstellig",
+   "_pflicht_zusatz_box": "Friedhofsnutzungs- und -unterhaltungsgebühr 420 € (20 Jahre) + Grundherstellung des Grabes 82 €"
   },
   {
    "stadt": "Ludwigshafen am Rhein",
@@ -704,7 +745,8 @@
     }
    ],
    "_version_status": "OK_PINNED",
-   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: live Ortsrecht 7-09.pdf (neuer fileadmin-Pfad, alter war 404): 1.1 Wahlgrab Erdbestattung 2.469 (30j einstellig) + Beisetzung 1.1 ab 6J = 1.168. Werte aktuell (unveraendert)."
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: live Ortsrecht 7-09.pdf (neuer fileadmin-Pfad, alter war 404): 1.1 Wahlgrab Erdbestattung 2.469 (30j einstellig) + Beisetzung 1.1 ab 6J = 1.168. Werte aktuell (unveraendert).",
+   "grabtyp_einheit": "Einstelliges Wahlgrab für Erdbestattungen"
   },
   {
    "stadt": "Lübeck",
@@ -724,7 +766,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Kein Fehler bei Grabnutzung (1.620) und Ruhezeit (20 J). Bei Beisetzung: unser 928 EUR verwendet die tiefere Öffnung 2,50 m (558,00). Nach der Regel \"günstigster regulärer Tarif\" wäre streng genommen "
+   "korrektur_reverify": "Kein Fehler bei Grabnutzung (1.620) und Ruhezeit (20 J). Bei Beisetzung: unser 928 EUR verwendet die tiefere Öffnung 2,50 m (558,00). Nach der Regel \"günstigster regulärer Tarif\" wäre streng genommen ",
+   "grabtyp_einheit": "Wahlgrabstätte für Särge, einstellig"
   },
   {
    "stadt": "Magdeburg",
@@ -744,7 +787,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_pflicht_zusatz_hinweis": "Friedhofsunterhaltung 48,90 EUR/Jahr (Pflicht, jaehrlich) ~978/20J + Graburkunde 17."
+   "_pflicht_zusatz_hinweis": "Friedhofsunterhaltung 48,90 EUR/Jahr (Pflicht, jaehrlich) ~978/20J + Graburkunde 17.",
+   "grabtyp_einheit": "Erd-Wahlgrabstätte",
+   "_pflicht_zusatz_box": "Friedhofsunterhaltungsgebühr 48,90 € pro Jahr (über 20 Jahre rund 978 €)"
   },
   {
    "stadt": "Mainz",
@@ -771,7 +816,7 @@
     "alt_grabnutzung": 2827,
     "alt_beisetzung": 1887
    },
-   "grabtyp_einheit": "Reihengrab (kein Einzel-Wahlgrab in Mainz; alle Wahlgraeber = 2 Beisetzungen)"
+   "grabtyp_einheit": "Reihengrab — Mainz bietet kein Einzel-Wahlgrab (Wahlgräber = 2 Beisetzungen)"
   },
   {
    "stadt": "Mannheim",
@@ -796,7 +841,7 @@
     "alt_grabnutzung": 1411,
     "alt_beisetzung": 1984
    },
-   "grabtyp_einheit": "Reihengrab (Wahlgrab nur als 2-Personen-Grab)",
+   "grabtyp_einheit": "Reihengrab — Wahlgrab nur als 2-Personen-Grab",
    "_review_06_07": [
     "Grabnutzung 1035->1012 (1035 war Urnennische 4.7.1.1; korrekt Erdreihengrab 4.2.1; Friedl-Review)"
    ]
@@ -820,7 +865,8 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "_version_status": "OK_NOTE",
-   "_version_note": "Werte 1.659/937 aktuell (5. Nachtrag 13.12.2024). 6.-Nachtrag-2026-Restrisiko: live-PDF vor Go-live pruefen."
+   "_version_note": "Werte 1.659/937 aktuell (5. Nachtrag 13.12.2024). 6.-Nachtrag-2026-Restrisiko: live-PDF vor Go-live pruefen.",
+   "grabtyp_einheit": "Erdgrabstätte, einstellig (verlängerbar)"
   },
   {
    "stadt": "Mülheim an der Ruhr",
@@ -844,7 +890,7 @@
     "alt_grabnutzung": 2603,
     "alt_beisetzung": 1022
    },
-   "grabtyp_einheit": "Sarg-Erdgrabstaette je Stelle",
+   "grabtyp_einheit": "Sarg-Erdgrabstätte, je Stelle",
    "_review_06_07": [
     "REVERT auf 2.603: meine Korrektur 2.858 war das Familiengrab; Einzelgrab = 2.603 (Friedl-Review). Beisetzung 1.022 bestaetigt."
    ]
@@ -867,7 +913,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur nötig — Werte bestätigt."
+   "korrektur_reverify": "Keine Korrektur nötig — Werte bestätigt.",
+   "grabtyp_einheit": "Wahlgrab, je Grabstelle"
   },
   {
    "stadt": "Oberhausen",
@@ -887,7 +934,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Grabnutzung: 2.098 EUR (statt 2.079) — Wahlgrab Sarg, Einzelstelle, günstigster regulärer Wahlgrab-Tarif in Standardlage (kein Lagezuschlag im Tarif; Reihengrab Sarg 742 EUR ist ein Reihengrab und per"
+   "korrektur_reverify": "Grabnutzung: 2.098 EUR (statt 2.079) — Wahlgrab Sarg, Einzelstelle, günstigster regulärer Wahlgrab-Tarif in Standardlage (kein Lagezuschlag im Tarif; Reihengrab Sarg 742 EUR ist ein Reihengrab und per",
+   "grabtyp_einheit": "Wahlgrab (Sarg, Erdbestattung)"
   },
   {
    "stadt": "Oldenburg",
@@ -907,7 +955,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_pflicht_zusatz_hinweis": "Pflicht: Grabumrandung 192 (5.1.2, §16 Abs 3 Zwangsleistung)."
+   "_pflicht_zusatz_hinweis": "Pflicht: Grabumrandung 192 (5.1.2, §16 Abs 3 Zwangsleistung).",
+   "grabtyp_einheit": "Wahlgrab für Erdbestattungen, je Stelle",
+   "_pflicht_zusatz_box": "Grabumrandung 192 € (wird verpflichtend von der Friedhofsverwaltung verlegt)"
   },
   {
    "stadt": "Osnabrück",
@@ -942,7 +992,8 @@
     }
    ],
    "_version_status": "OK_PINNED",
-   "_version_note": "PRIMAER-VERIFIZIERT 09.07. (pdftotext -layout auf amtl. Ortsrecht II_2-15.pdf, curl-Browser-UA umging das Bot-Gate): 3.1 Erdwahlgrabstaette je Grabstelle je Jahr = 74; 1.2.1 Erdbestattung Wahlgrabstaette ueber 6J = 100 (NICHT 1.1 Reihengrab 450/82). Min 25J Ersterwerb. Residual: evtl. 2025er-Tarif, 2026 marginal pruefen."
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07. (pdftotext -layout auf amtl. Ortsrecht II_2-15.pdf, curl-Browser-UA umging das Bot-Gate): 3.1 Erdwahlgrabstaette je Grabstelle je Jahr = 74; 1.2.1 Erdbestattung Wahlgrabstaette ueber 6J = 100 (NICHT 1.1 Reihengrab 450/82). Min 25J Ersterwerb. Residual: evtl. 2025er-Tarif, 2026 marginal pruefen.",
+   "grabtyp_einheit": "Erd-Wahlgrabstätte, je Grabstelle (Jahresgebühr)"
   },
   {
    "stadt": "Potsdam",
@@ -961,7 +1012,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Erd-Einzelwahlgrabstätte (Jahresgebühr)"
   },
   {
    "stadt": "Rostock",
@@ -980,7 +1032,8 @@
    "confidence": "hoch",
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
-   "interval_months": 12
+   "interval_months": 12,
+   "grabtyp_einheit": "Erd-Wahlgrabstätte, einstellig"
   },
   {
    "stadt": "Saarbrücken",
@@ -1000,7 +1053,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "Keine Korrektur noetig — alle Werte korrekt."
+   "korrektur_reverify": "Keine Korrektur noetig — alle Werte korrekt.",
+   "grabtyp_einheit": "Körperwahlgrab, je Stelle (1 Körper)"
   },
   {
    "stadt": "Stuttgart",
@@ -1021,7 +1075,9 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "korrektur_reverify": "Keine Korrektur noetig — alle Werte bestaetigt.",
-   "_pflicht_zusatz_hinweis": "Pflicht: Verwaltungsgebuehr Erdbestattung ~135."
+   "_pflicht_zusatz_hinweis": "Pflicht: Verwaltungsgebuehr Erdbestattung ~135.",
+   "grabtyp_einheit": "Wahlgrab (Erdbestattung), je Stelle",
+   "_pflicht_zusatz_box": "Verwaltungsgebühr Erdbestattung rund 135 €"
   },
   {
    "stadt": "Wiesbaden",
@@ -1043,7 +1099,8 @@
    "interval_months": 12,
    "korrektur_reverify": "Keine Korrektur noetig - alle Werte stimmen. Hinweis (kein Fehler): Die vollstaendige Erdbestattungs-Beisetzung besteht in Wiesbaden aus zwei getrennten Posten - 2.1.1 Erdbeisetzung 435,00 EUR PLUS 2.",
    "_version_status": "OK_PINNED",
-   "_version_note": "PRIMAER-VERIFIZIERT 09.07. (amtl. FGO 7-5.3): 1.2.1 je Grabstelle 30J = 3.383 + 2.2.1 ab 5.Lj = 674. Zitat korrigiert (war tote 1992er-Vorgaengerordnung). 1.3.1 (112) laut Reviewer KEIN Pflichtaufschlag."
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07. (amtl. FGO 7-5.3): 1.2.1 je Grabstelle 30J = 3.383 + 2.2.1 ab 5.Lj = 674. Zitat korrigiert (war tote 1992er-Vorgaengerordnung). 1.3.1 (112) laut Reviewer KEIN Pflichtaufschlag.",
+   "grabtyp_einheit": "Erd-Wahlgrab, je Grabstelle"
   },
   {
    "stadt": "Wuppertal",
@@ -1063,7 +1120,8 @@
    "verifikation": "2x re-verifiziert (Erhebung + Zweitcheck 01.07.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "korrektur_reverify": "KORREKTUR ERFORDERLICH — alle drei Werte. Grabnutzung: 1.505,85 → 2.436,83 EUR (Einmalsumme, Sargwahlgrab, Ziffer 3.7). Beisetzung: 1.365,18 → 815,95 EUR (Sargwahlgrab, Ziffer 1.7). Ruhezeit/Nutzungsd"
+   "korrektur_reverify": "KORREKTUR ERFORDERLICH — alle drei Werte. Grabnutzung: 1.505,85 → 2.436,83 EUR (Einmalsumme, Sargwahlgrab, Ziffer 3.7). Beisetzung: 1.365,18 → 815,95 EUR (Sargwahlgrab, Ziffer 1.7). Ruhezeit/Nutzungsd",
+   "grabtyp_einheit": "Sargwahlgrab, je Grabstelle"
   },
   {
    "stadt": "Nürnberg",
@@ -1083,7 +1141,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Stichprobe 30.06.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_pflicht_zusatz_hinweis": "Zusatz: Annahme 59."
+   "_pflicht_zusatz_hinweis": "Zusatz: Annahme 59.",
+   "grabtyp_einheit": "Wahlgrab einfachtief/einfachbreit (Jahresgebühr)",
+   "_pflicht_zusatz_box": "Annahmegebühr 59 €"
   },
   {
    "stadt": "Krefeld",
@@ -1111,7 +1171,9 @@
      "grund": "kein neues Einzel-Wahlgrab erwerbbar; 1.5 (2.760) nur Wiedererwerb/Verlaengerung. Neu-Erwerb Sarg-Wahlgrab = 1.6 Zweifachbelegung je Grabstelle 3.450 (Reviewer bestaetigt, 09.07.)"
     }
    ],
-   "_pflicht_zusatz_hinweis": "Quasi-Standard: Verbau von Hand 285 + Abfuhr Erdaushub 171."
+   "_pflicht_zusatz_hinweis": "Quasi-Standard: Verbau von Hand 285 + Abfuhr Erdaushub 171.",
+   "grabtyp_einheit": "Sarg-Wahlgrabstätte (Zweifachbelegung), je Grabstelle — einzige neu erwerbbare Wahlgrabart",
+   "_pflicht_zusatz_box": "im Regelfall Verbau von Hand 285 € + Abfuhr des Erdaushubs 171 €"
   },
   {
    "stadt": "Leverkusen",
@@ -1132,7 +1194,8 @@
    "last_checked": "2026-07-01",
    "interval_months": 12,
    "_version_status": "OK_PINNED",
-   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: Amtsblatt Leverkusen 47/2025 (27. Aenderung ab 01.01.2026), 1.3 Erdwahlgraeber 164,01/J + 2.4 Wahlgraeber Erdbestattung 1.270,98 - UNVERAENDERT ggue. 2023. Werte aktuell."
+   "_version_note": "PRIMAER-VERIFIZIERT 09.07.: Amtsblatt Leverkusen 47/2025 (27. Aenderung ab 01.01.2026), 1.3 Erdwahlgraeber 164,01/J + 2.4 Wahlgraeber Erdbestattung 1.270,98 - UNVERAENDERT ggue. 2023. Werte aktuell.",
+   "grabtyp_einheit": "Erd-Wahlgrab (Jahresgebühr)"
   },
   {
    "stadt": "Chemnitz",
@@ -1152,7 +1215,9 @@
    "verifikation": "2x re-verifiziert (Erhebung + Stichprobe 30.06.)",
    "last_checked": "2026-07-01",
    "interval_months": 12,
-   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsgrundgebuehr 85/20J + Einlieferung 25 + Annahme 31 = ~141."
+   "_pflicht_zusatz_hinweis": "Pflicht: Friedhofsgrundgebuehr 85/20J + Einlieferung 25 + Annahme 31 = ~141.",
+   "grabtyp_einheit": "Wahlgrabstelle (Erdbestattung)",
+   "_pflicht_zusatz_box": "Friedhofsgrundgebühr 85 € (20 Jahre) + Einlieferung 25 € + Annahme 31 €"
   }
  ],
  "_korrektur_09_07": {

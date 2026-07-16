@@ -31,11 +31,21 @@ def eur(n):
     s = f"{n:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
     return s[:-3] if s.endswith(",00") else s
 
+def esc(s):
+    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;") \
+        .replace("ä","&auml;").replace("ö","&ouml;").replace("ü","&uuml;") \
+        .replace("Ä","&Auml;").replace("Ö","&Ouml;").replace("Ü","&Uuml;").replace("ß","&szlig;") \
+        .replace("×","&times;").replace("§","&sect;").replace("—","&mdash;").replace("–","&ndash;")
+
 def block(c):
     grab = eur(c.get("grabnutzung_betrag_eur")); beis = eur(c.get("beisetzung_betrag_eur"))
     ruhe = c.get("ruhezeit_jahre"); einheit = c.get("grabnutzung_einheit")
     if not grab or not beis or not ruhe: return None
-    if einheit == "pro_jahr":
+    # Re-Audit 07/2026: Grabtyp je Stadt benannt (Einheit B) statt pauschal "Einzelstelle"
+    grabtyp = esc((c.get("grabtyp_einheit") or "Erd-Wahlgrab").strip())
+    if c.get("_grabzeile_sonder"):          # Berlin: Grundgebuehr-System, kein Nutzungsrechts-Entgelt
+        grab_zeile = c["_grabzeile_sonder"]
+    elif einheit == "pro_jahr":
         gesamt = eur(round(c["grabnutzung_betrag_eur"] * ruhe))
         # Review 02.07.: Zahlungsmodus nennen (z.B. Muenchen § 4(4): fuer die gesamte Ruhezeit im Voraus)
         grab_zeile = (f"Grabnutzung: <strong>{grab} &euro; je Grabstelle und Jahr</strong> "
@@ -45,6 +55,13 @@ def block(c):
         grab_zeile = f"Grabnutzung: <strong>{grab} &euro;</strong> einmalig f&uuml;r die Nutzungszeit ({ruhe} Jahre)"
     netto = ' Betr&auml;ge netto (USt f&auml;llt bei kommunalen Friedhofsgeb&uuml;hren i.&thinsp;d.&thinsp;R. nicht an).' \
         if (c.get("netto_brutto") or "").strip().lower().startswith("netto") else ""
+    if c.get("_ust_box"):
+        netto = " " + esc(c["_ust_box"])
+    # Re-Audit 07/2026 (Scope-Decision #1): bekannte Pflicht-Zusatzgebuehren je Stadt benennen
+    # (_pflicht_zusatz_box = nutzerlesbare Fassung; interne Notiz _pflicht_zusatz_hinweis wird NICHT gerendert)
+    zusatz = ""
+    if c.get("_pflicht_zusatz_box"):
+        zusatz = f"\n        <li>Zus&auml;tzlich f&auml;llt hier an: <strong>{esc(c['_pflicht_zusatz_box'])}</strong></li>"
     para = (c.get("grabnutzung_paragraph") or "").strip()
     # Review 02.07.: Paragraph deckt nur die Grabnutzung — so labeln
     para_txt = f" (Grabnutzung: {para})" if para and len(para) <= 60 else ""
@@ -55,17 +72,19 @@ def block(c):
     # Review 02.07.: KEIN erfundenes Lage-Label ("einfache Lage" existiert z.B. in Koeln nicht);
     # + Fussnote, dass der Umfang der Beisetzungsgebuehr je Stadt verschieden ist.
     return f'''    <div class="fh-gebuehren-beispiel" style="background:var(--mr-bg-card,#FFFDF9);border:1px solid var(--mr-border,#E8E0D6);border-left:4px solid var(--mr-accent,#866E45);border-radius:8px;padding:14px 18px;margin:14px 0">
-      <strong style="font-size:14px">Beispiel aus der Satzung: Erd-Wahlgrab, Einzelstelle (g&uuml;nstigster regul&auml;rer Tarif)</strong>
+      <strong style="font-size:14px">Beispiel aus der Satzung: {grabtyp} &mdash; g&uuml;nstigster regul&auml;rer Tarif f&uuml;r eine Sargbestattung</strong>
       <ul style="margin:8px 0 6px 18px;font-size:14px;line-height:1.7;padding:0">
         <li>{grab_zeile}</li>
-        <li>Beisetzungsgeb&uuml;hr (Erdbestattung): <strong>{beis} &euro;</strong></li>
+        <li>Beisetzungsgeb&uuml;hr (Erdbestattung): <strong>{beis} &euro;</strong></li>{zusatz}
       </ul>
-      <p style="font-size:12.5px;color:var(--mr-text-muted,#73655A);margin:6px 0 0;line-height:1.6">Direkt aus der <a href="{url}" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary,#866E45)">amtlichen Geb&uuml;hrensatzung</a>{para_txt} &middot; Stand: {stand} &middot; von machsruhig gepr&uuml;ft am 01.07.2026.{netto} Was die Beisetzungsgeb&uuml;hr umfasst, unterscheidet sich je Stadt (teils nur Grab &ouml;ffnen/schlie&szlig;en, teils ein Leistungsb&uuml;ndel). Das ist <strong>nicht</strong> der Gesamtpreis einer Bestattung &mdash; Bestatterleistungen, Sarg/Urne und Grabmal kommen hinzu (<a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary,#866E45)">Kostenrechner</a>).</p>
+      <p style="font-size:12.5px;color:var(--mr-text-muted,#73655A);margin:6px 0 0;line-height:1.6">Direkt aus der <a href="{url}" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary,#866E45)">amtlichen Geb&uuml;hrensatzung</a>{para_txt} &middot; Stand: {stand} &middot; von machsruhig gepr&uuml;ft am 13.07.2026.{netto} Was die Beisetzungsgeb&uuml;hr umfasst, unterscheidet sich je Stadt (teils nur Grab &ouml;ffnen/schlie&szlig;en, teils ein Leistungsb&uuml;ndel), und je nach Stadt k&ouml;nnen weitere Pflicht-Friedhofsgeb&uuml;hren (z.&thinsp;B. Grund-, Verwaltungs- oder j&auml;hrliche Unterhaltungsgeb&uuml;hren) hinzukommen. Das ist <strong>nicht</strong> der Gesamtpreis einer Bestattung &mdash; Bestatterleistungen, Sarg/Urne und Grabmal kommen hinzu (<a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary,#866E45)">Kostenrechner</a>).</p>
     </div>
 '''
 
 re_geb_h2 = re.compile(r'<h2>Geb&uuml;hren|<h2>Gebühren')
-re_block = re.compile(r'    <div class="fh-gebuehren-beispiel".*?\n    </div>\n', re.S)
+# robust: Alt-Blöcke haben je nach Wiring-Version 4- oder 6-Space-Indent und
+# inline-</div> (Box enthält keine verschachtelten divs -> non-greedy bis erstes </div> safe)
+re_block = re.compile(r'[ \t]*<div class="fh-gebuehren-beispiel".*?</div>[ \t]*\r?\n?', re.S)
 REFRESH = "--refresh" in sys.argv
 done=[];skip=[];err=[]
 for p in sorted(glob.glob(os.path.join(ROOT, "friedhoefe", "*", "index.html"))):
@@ -78,6 +97,9 @@ for p in sorted(glob.glob(os.path.join(ROOT, "friedhoefe", "*", "index.html"))):
         html = html2
     c = find_city(slug)
     if not c: err.append(slug+": kein Register-Eintrag"); continue
+    # Re-Audit 07/2026: STALE-Staedte (Werte unbelegt) NICHT regenerieren, bis Quelle gepinnt
+    if c.get("_version_status") == "STALE":
+        skip.append(slug+"(STALE - Werte unbelegt, wartet auf Quelle)"); continue
     b = block(c)
     if not b: err.append(slug+": unvollstaendige Daten"); continue
     m = re_geb_h2.search(html)

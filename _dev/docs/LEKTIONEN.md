@@ -149,3 +149,6 @@ Solange die Roh-Submission mit IP+Zeitstempel beim Dienstleister liegt, sind "an
 NACH der Trennung. DS-Texte brauchen: Rechtsgrundlage je Phase (Einwilligung fuer die Erhebung, 6 I f fuer den
 Empfangs-Log), feste Trennfrist, Widerrufsweg bis zur Trennung. Loesch-Unmoeglichkeit als "Feature" zu verkaufen,
 solange Loeschung faktisch moeglich ist, waere Rechtsverweigerung per Selbstdeklaration.
+
+## Lektion (13.07.2026) — Windows-Temp-Cleanup frisst den /tmp-Klon
+Der Arbeits-Klon in AppData\Local\Temp verlor mid-session 162 getrackte Dateien (favicon, assets/css, fonts, _headers, Bundesland-CSVs...) - Windows raeumt lange nicht angefasste Temp-Dateien weg. Symptom: lint-site explodiert mit "toter interner Link"-FAILs auf Kern-Assets; frueher dasselbe Phaenomen mit 749 fehlenden _dev-Files. FIX: `git ls-files --deleted -z | xargs -0 git restore --` (NUL-separiert wegen Umlaut-Quoting!). PFLICHT ab jetzt: diesen Check bei Session-Start UND vor jedem Lint/Deploy laufen lassen. Und deshalb NIE `git add -A` (wuerde die Cleanup-Loeschungen committen!). Die "2 pre-existing lint-FAILs" (bestattungskosten-index CSVs) waren AUCH nur dieses Phaenomen - kein echter Site-Defekt.
