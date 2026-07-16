@@ -109,7 +109,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
   </div>
 
   <div class="no-print" style="background:var(--mr-safety);border:1px solid var(--mr-border);border-left:4px solid var(--mr-accent);border-radius:8px;padding:16px 20px;margin:24px 0;font-size:14px;line-height:1.6">
-    <strong style="color:var(--mr-text)">Dein Check läuft vollständig in deinem Browser.</strong> Deine Eingaben werden nicht gespeichert und nicht an einen Server gesendet — mit einer einzigen Ausnahme in diesem Tool: Wenn du am Ende des Checks aktiv auf „Eckdaten anonym spenden“ klickst, übermittelst du genau die dort angezeigten anonymen Eckdaten (ohne Namen, Kontaktdaten oder Bestatter-Angaben) für unsere Preis-Transparenz-Auswertung. Anonyme Reichweiten-Statistiken (Umami) erfassen den Seitenbesuch und anonyme Nutzungsschritte (z. B. ob ein Check abgeschlossen wurde) — nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
+    <strong style="color:var(--mr-text)">Dein Check läuft vollständig in deinem Browser.</strong> Deine Eingaben werden nicht gespeichert und nicht an einen Server gesendet — mit einer einzigen Ausnahme in diesem Tool: Wenn du am Ende des Checks aktiv auf „Eckdaten spenden“ klickst, übermittelst du genau die dort angezeigten Eckdaten (ohne Namen, Kontaktdaten oder Bestatter-Angaben) für unsere Preis-Transparenz-Auswertung. Anonyme Reichweiten-Statistiken (Umami) erfassen den Seitenbesuch und anonyme Nutzungsschritte (z. B. ob ein Check abgeschlossen wurde) — nicht deine Eingaben. <a href="/datenschutz" style="color:var(--mr-primary)">Datenschutzerklärung</a>
   </div>
 
   <div class="ap-progress-label no-print"><span id="ap-step-label">Schritt 1 von 5</span><span id="ap-step-pct">20 %</span></div>
@@ -250,7 +250,7 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
 </div>
 </main></div>
 
-<!-- Netlify-Registrierung: anonyme Daten-Spende. Absenden nur per aktivem Opt-in-Klick im Ergebnis-Schritt; keine Freitexte, keine personenbezogenen Felder. -->
+<!-- Netlify-Registrierung: Daten-Spende (Eckdaten ohne Personenbezug). Absenden nur per aktivem Opt-in-Klick im Ergebnis-Schritt; keine Freitexte, keine personenbezogenen Felder. -->
 <form name="angebots-spende" data-netlify="true" data-netlify-honeypot="bot-field" hidden aria-hidden="true">
   <input type="text" name="bot-field"><input type="text" name="bestattungsart"><input type="text" name="bundesland"><input type="text" name="summe_gerundet"><input type="text" name="posten"><input type="text" name="separat"><input type="text" name="pauschal"><input type="text" name="ampel_preis"><input type="text" name="ampel_vollstaendigkeit"><input type="text" name="tool_version">
 </form>
@@ -829,13 +829,13 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
     var spendeComp=state.pauschal?'nicht prüfbar':(ampelWort[result.completenessStatus]||result.completenessStatus);
     html+='<div class="no-print" id="ap-spende" style="background:var(--mr-bg-card);border:1px solid var(--mr-border);border-radius:var(--mr-radius);padding:20px 24px;margin:24px 0">';
     html+='<h3 style="font-family:\'Fraunces\',serif;font-size:17px;font-weight:700;margin-bottom:8px">Hilf mit, Bestattungspreise transparent zu machen</h3>';
-    html+='<p style="font-size:14px;line-height:1.6;margin-bottom:10px">Wenn du magst, spende die anonymen Eckdaten dieses Checks für unsere Preis-Transparenz-Auswertung. Gesendet wird nur das Folgende — im Aufklapper siehst du jedes Feld im Wortlaut:</p>';
+    html+='<p style="font-size:14px;line-height:1.6;margin-bottom:10px">Wenn du magst, spende die Eckdaten dieses Checks – ohne Namen und ohne Angaben zu deiner Person – für unsere Preis-Transparenz-Auswertung. Gesendet wird nur das Folgende — im Aufklapper siehst du jedes Feld im Wortlaut:</p>';
     html+='<p style="font-size:13px;background:var(--mr-safety);border:1px solid var(--mr-border);border-radius:8px;padding:10px 14px;margin-bottom:10px">'+esc(result.ba.name)+' · '+esc(state.bundesland)+' · Summe gerundet '+fmt(spendeSumme)+' € · '+spendePosten.length+' Posten angekreuzt'+(state.pauschal?' · Pauschale':'')+(spendeSeparat.length>0?' · '+spendeSeparat.length+' separat abgerechnet':'')+' · Ampeln: Preis '+(ampelWort[result.priceStatus]||result.priceStatus)+', Vollständigkeit '+spendeComp+'</p>';
     html+='<details style="font-size:13px;color:var(--mr-text-muted);margin:0 0 10px"><summary style="cursor:pointer">Alle Felder im Wortlaut anzeigen — genau das wird übertragen</summary><ul style="padding-left:20px;margin-top:6px;line-height:1.7">';
     [['bestattungsart',state.bestattungsart],['bundesland',state.bundesland],['summe_gerundet',String(spendeSumme)],['posten',spendePosten.length>0?spendePosten.join(', '):'(leer)'],['separat',spendeSeparat.length>0?spendeSeparat.join(', '):'(leer)'],['pauschal',state.pauschal?'ja':'nein'],['ampel_preis',result.priceStatus],['ampel_vollstaendigkeit',state.pauschal?'nicht_pruefbar':result.completenessStatus],['tool_version','ap-2026-07']].forEach(function(f){html+='<li><code>'+esc(f[0])+'</code>: '+esc(f[1])+'</li>';});
     html+='</ul></details>';
     html+='<p style="font-size:13px;color:var(--mr-text-muted);line-height:1.6;margin-bottom:14px">Keine Namen, keine Kontaktdaten, kein Bestatter-Name, keine Freitexte. Beim Empfang protokolliert unser Hoster technisch die Absende-IP und den Empfangszeitpunkt; beides nutzen wir nur zur Missbrauchs-Abwehr und dafür, deine Spende auf Wunsch innerhalb von 30 Tagen wieder zu löschen. Spätestens 60 Tage nach Eingang löschen wir IP und Zeitstempel. In die inhaltliche Auswertung fließen nur die Eckdaten oben ein. Veröffentlicht wird nur zusammengefasst ab mindestens 25 Datensätzen pro Gruppe. <a href="/datenschutz#daten-spende" style="color:var(--mr-primary)">Details in der Datenschutzerklärung</a></p>';
-    html+='<button type="button" class="btn btn-secondary" id="ap-spende-btn">Eckdaten anonym spenden</button>';
+    html+='<button type="button" class="btn btn-secondary" id="ap-spende-btn">Eckdaten spenden</button>';
     html+='<p id="ap-spende-err" style="display:none;font-size:13px;color:#a33;margin-top:8px">Senden hat nicht geklappt — du kannst es gleich noch einmal versuchen.</p>';
     html+='</div>';
 
@@ -888,9 +888,9 @@ a[data-next-step]:focus-visible{outline:none;border-color:var(--mr-accent);box-s
       fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).then(function(r){
         if(!r.ok)throw new Error('HTTP '+r.status);
         track('datenSpende',{tool:'angebotspruefer',art:state.bestattungsart});
-        $('#ap-spende').innerHTML='<strong style="color:var(--mr-text)">Danke fürs Mitmachen!</strong> <span style="font-size:14px;color:var(--mr-text-muted)">Deine anonymen Eckdaten sind eingegangen und fließen nur in zusammengefasste Auswertungen ein.</span>';
+        $('#ap-spende').innerHTML='<strong style="color:var(--mr-text)">Danke fürs Mitmachen!</strong> <span style="font-size:14px;color:var(--mr-text-muted)">Deine Eckdaten sind eingegangen und fließen nur in zusammengefasste Auswertungen ein.</span>';
       }).catch(function(){
-        spendeBtn.disabled=false;spendeBtn.textContent='Eckdaten anonym spenden';
+        spendeBtn.disabled=false;spendeBtn.textContent='Eckdaten spenden';
         $('#ap-spende-err').style.display='block';
       });
     });}

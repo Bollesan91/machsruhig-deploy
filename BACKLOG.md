@@ -4,15 +4,15 @@
 > Eine-Seite-Überblick: [`_dev/strategie/FAHRPLAN.md`](./_dev/strategie/FAHRPLAN.md) · Strategie: [STRATEGIE.md](./STRATEGIE.md)
 > Alles ab „ARCHIV" unten ist der April-Masterplan (Phasen A–F) — **abgearbeitet/überholt**, nur noch als Historie.
 
-## ✅ Aktueller Stand (13.07.2026, Kurzfassung)
-Bauphase fertig (~196 Seiten, Linter 0 FAIL). Friedhofsgebühren-Register komplett re-auditiert: **50/50 einzeln reviewt är gepinnt (16.07.)**, Live-Boxen korrigiert regeneriert (Branch `friedhof-lotse`, noch nicht deployed). Engpass unverändert: Cold-Start-Autorität → institutioneller Ko-Autor.
+## ✅ Aktueller Stand (16.07.2026, Kurzfassung)
+Bauphase fertig (~196 Seiten, Linter 0 FAIL). **Friedhof-Boxen sind LIVE (Deploy 16.07.):** 50/50 primär gepinnt, Boxen+FAQ regeneriert, lastmod gebumpt, live-verifiziert. Externes YMYL-Audit (16.07.) eingegangen: 72h-Liste komplett abgearbeitet (Triage: `_dev/docs/AUDIT-YMYL-EXTERN-2026-07-16.md`). Engpass unverändert: Cold-Start-Autorität → institutioneller Ko-Autor.
 
 ## 🔥 Offenes Backlog (priorisiert)
 
-**P0 — Friedhof-Deploy fertigmachen**
-- [x] ~~Kiel-Satzung hochladen~~ ERLEDIGT 16.07. → **50/50 primär gepinnt, alle Boxen generiert**.
-- [x] ~~Stufe-2-Review-Findings einarbeiten~~ ERLEDIGT 13.07. (5 MAJOR gefixt, Gates grün).
-- [ ] **BOLLE: Deploy-Go** → Merge `friedhof-lotse` → main → `update-sitemap-lastmod.py --apply --commit` → GSC-Re-Submit. *(Der letzte Schritt!)*
+**P0 — erledigt 16.07.**
+- [x] ~~Friedhof-Deploy~~ **LIVE 16.07.** (Merge → main, lastmod, live-verify; GSC-Re-Submit noch sinnvoll → BOLLE, 2 Min).
+- [x] ~~Externes YMYL-Audit, 72h-Liste~~ ERLEDIGT 16.07.: §649-BGB-Falschclaim (2 Seiten), §5→§12-PAngV (5 Seiten), Kostentragungs-Pauschale, BGH-Digitalnachlass-Scope + Bank-Warnung, Datenspende-Wording, 112/116117 (4 Seiten), vorsorge-ordner-FAQ, Bremen-Gebühren auf Ortsgesetz 12/2025. 3 Findings als False Positives verworfen (dokumentiert).
+- [ ] Audit-30d-Punkte (BOLLE): Jurist-Vollprüfung, Fach-Reviewer/Prüferprofile, Sterbegeld-Affiliate-Kennzeichnung, Löschfristen, ZDR Groq.
 
 **P1 — Autorität (der eigentliche Hebel)**
 - [ ] BOLLE: Anwalt (UWG/Prüfzeichen Transparenz-Partner, DSGVO, §34d, Fach-Reviewer Bestattungsrecht).
