@@ -201,3 +201,6 @@ Reviewer bestaetigte: alle Rechen-Checks korrekt, Fussnoten-Kern ehrlich, Mainz-
 - MINOR-Glossen: Hamburg "Standardqualitaet = einfache Lage" + Stand "2025/2026"; Muenchen "= einfachere Lage"; Berlin "d.h. staedtische"; Krefeld "Verbau (Absichern der Grabwaende)".
 - UNSICHERs aufgeloest: Hamburg-Reihengrab-Preisfrage (durch M1-Fix gegenstandslos); Dresden-Traeger-USt (durch konkrete Netto/Brutto-Angabe); Berlin 2.-Beisetzung ("je Bestattungsfall" steht im Kasten).
 Gates nach Fixes: lint-friedhof 0 / lint-site 0 / deleted-check 0.
+
+## ===== 16.07.2026: KIEL GEPINNT — 50/50 KOMPLETT, DEPLOY-READY =====
+Bolle-Upload amtl. Gebuehrensatzung 27.03.2025 (in Kraft 01.04.2025): 1.1 Sargwahlgrab traditionell 25J = 1.767,20 + 6.1 Oeffnen/Schliessen inkl. Kondukt = 654,60. Register war korrekt. Kiel-Box generiert (50/50). Alle Gates gruen. Es fehlt NUR noch: Bolle-Deploy-Go (Merge main + lastmod-Befehl + GSC-Re-Submit).
