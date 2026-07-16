@@ -67,7 +67,7 @@ def block(c):
         for a, b in (("veroeffentlicht","veröffentlicht"),("Veroeffentlicht","Veröffentlicht"),
                      ("geaendert","geändert"),("Gebuehren","Gebühren"),("gebuehren","gebühren"),
                      ("Gebuehr","Gebühr"),("gueltig","gültig"),("Aenderung","Änderung"),
-                     ("Saeule","Säule"),("fuer ","für "),("Staedt","Städt"),("staetten","stätten"),("Staetten","Stätten")):
+                     ("Saeule","Säule"),("fuer ","für "),("Staedt","Städt"),("staetten","stätten"),("Staetten","Stätten"),("graeber","gräber"),("Graeber","Gräber")):
             s = s.replace(a, b)
         return s
     para = de_ascii((c.get("grabnutzung_paragraph") or "").strip())
@@ -86,7 +86,7 @@ def block(c):
         <li>{grab_zeile}</li>
         <li>Beisetzungsgeb&uuml;hr (Erdbestattung): <strong>{beis} &euro;</strong></li>{zusatz}
       </ul>
-      <p style="font-size:12.5px;color:var(--mr-text-muted,#73655A);margin:6px 0 0;line-height:1.6">Direkt aus der <a href="{url}" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary,#866E45)">amtlichen Geb&uuml;hrensatzung</a>{para_txt} &middot; Stand: {stand} &middot; von machsruhig gepr&uuml;ft am 13.07.2026.{netto} Was die Beisetzungsgeb&uuml;hr umfasst, unterscheidet sich je Stadt (teils nur Grab &ouml;ffnen/schlie&szlig;en, teils ein Leistungsb&uuml;ndel), und je nach Stadt k&ouml;nnen weitere Pflicht-Friedhofsgeb&uuml;hren (z.&thinsp;B. Grund-, Verwaltungs- oder j&auml;hrliche Unterhaltungsgeb&uuml;hren) hinzukommen. Einfachere Grabarten (z.&thinsp;B. Reihen-, Rasen- oder anonyme Gr&auml;ber) k&ouml;nnen g&uuml;nstiger sein. Das ist <strong>nicht</strong> der Gesamtpreis einer Bestattung &mdash; Bestatterleistungen, Sarg/Urne und Grabmal kommen hinzu (<a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary,#866E45)">Kostenrechner</a>).</p>
+      <p style="font-size:12.5px;color:var(--mr-text-muted,#73655A);margin:6px 0 0;line-height:1.6">Direkt aus der <a href="{url}" rel="nofollow noopener" target="_blank" style="color:var(--mr-primary,#866E45)">amtlichen Geb&uuml;hrensatzung</a>{para_txt} &middot; Stand: {stand} &middot; von machsruhig gepr&uuml;ft am 16.07.2026.{netto} Was die Beisetzungsgeb&uuml;hr umfasst, unterscheidet sich je Stadt (teils nur Grab &ouml;ffnen/schlie&szlig;en, teils ein Leistungsb&uuml;ndel), und je nach Stadt k&ouml;nnen weitere Pflicht-Friedhofsgeb&uuml;hren (z.&thinsp;B. Grund-, Verwaltungs- oder j&auml;hrliche Unterhaltungsgeb&uuml;hren) hinzukommen. Einfachere Grabarten (z.&thinsp;B. Reihen-, Rasen- oder anonyme Gr&auml;ber) k&ouml;nnen g&uuml;nstiger sein. Das ist <strong>nicht</strong> der Gesamtpreis einer Bestattung &mdash; Bestatterleistungen, Sarg/Urne und Grabmal kommen hinzu (<a href="/tools/bestattungskosten-rechner/" style="color:var(--mr-primary,#866E45)">Kostenrechner</a>).</p>
     </div>
 '''
 
