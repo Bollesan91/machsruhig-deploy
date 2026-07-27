@@ -12,6 +12,8 @@ Bauphase fertig (~196 Seiten, Linter 0 FAIL). **Friedhof-Boxen sind LIVE (Deploy
 **P0 — erledigt 16.07.**
 - [x] ~~Friedhof-Deploy~~ **LIVE 16.07.** (Merge → main, lastmod, live-verify; GSC-Re-Submit noch sinnvoll → BOLLE, 2 Min).
 - [x] ~~Externes YMYL-Audit, 72h-Liste~~ ERLEDIGT 16.07.: §649-BGB-Falschclaim (2 Seiten), §5→§12-PAngV (5 Seiten), Kostentragungs-Pauschale, BGH-Digitalnachlass-Scope + Bank-Warnung, Datenspende-Wording, 112/116117 (4 Seiten), vorsorge-ordner-FAQ, Bremen-Gebühren auf Ortsgesetz 12/2025. 3 Findings als False Positives verworfen (dokumentiert).
+- [x] ~~Vollflächiges Audit 07/2026, Bucket B (ohne Bolle)~~ ERLEDIGT 27.07.: Byline institutionell→**Namensautor Marie-Therese Bollweg** + ehrliches Status-Label „nicht extern fachlich geprüft" site-weit (90 Seiten sichtbar, JSON-LD Person 51 Seiten); **falsche Fachpool-Review-Behauptung** (darmstadt/kiel/regensburg) entfernt; Beispielprofil noindex + aus Sitemap. Triage: `_dev/docs/AUDIT-VOLLFLAECHIG-2026-07.md`.
+- [ ] **Audit Bucket C (BOLLE, organisatorisch)**: externe Fachprüfung/Ko-Autor (dann Label→„fachlich geprüft, Name, Datum" hochstufen — System steht bereit), Sterbegeld-Neutralität ausbauen, Bio/Erfahrung, Telefon+Beschwerdeweg, Stadtseiten-Skalierung drosseln + Quality-Gate, Rollen-Trennung Info/Vermittlung.
 - [ ] Audit-30d-Punkte (BOLLE): Jurist-Vollprüfung, Fach-Reviewer/Prüferprofile, Sterbegeld-Affiliate-Kennzeichnung, Löschfristen, ZDR Groq.
 
 **P1 — Autorität (der eigentliche Hebel)**
