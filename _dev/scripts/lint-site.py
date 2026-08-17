@@ -188,6 +188,14 @@ def main():
         if 'className=' in html and 'text/babel' not in html:
             fails.append((rel, 'L11', 'className= ohne Babel/JSX (sollte class= sein)'))
 
+        # L13 Anbieterkennzeichnung (§ 5 DDG): Impressum + Datenschutz muessen von JEDER
+        # Seite leicht erkennbar und staendig verfuegbar sein. Am 10.08.2026 fehlten sie auf
+        # 40 Seiten (alle 17 Bundesland-Seiten, 21 Stadt-Seiten, 2 Danke-Seiten) -> abmahnfaehig.
+        if 'href="/impressum' not in html:
+            fails.append((rel, 'L13', 'kein Impressum-Link (§ 5 DDG: von jeder Seite erreichbar)'))
+        if 'href="/datenschutz' not in html:
+            fails.append((rel, 'L13', 'kein Datenschutz-Link (Art. 13 DSGVO)'))
+
         # ===== TRIAGE (T-Codes: informational, kein Gate-Bruch) =====
         # T1 Tourismus-Ton/Superlative (LEKTION 11) — auf Stadt-/BL-Seiten
         if '/bestatter/' in rel or '/bestattung-in/' in rel:
