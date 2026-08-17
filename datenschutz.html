@@ -73,8 +73,9 @@
   <h2>4. Schriftarten (Self-Hosted)</h2>
   <p>Wir verwenden die Schriftarten DM Sans und Fraunces. Diese werden direkt von unserem eigenen Server ausgeliefert (Self-Hosting). Es findet keine Verbindung zu Google-Servern oder anderen externen Schrift-Diensten statt. Es werden keine personenbezogenen Daten an Dritte übermittelt.</p>
 
-  <h2>5. Cookies</h2>
+  <h2>5. Cookies und lokale Speicherung</h2>
   <p>Unsere Website verwendet keine Cookies. Wir setzen kein Google Analytics, kein Facebook Pixel und keine Werbe- oder Tracking-Cookies ein.</p>
+  <p>Einige Tools speichern deinen Bearbeitungsstand lokal in deinem Browser (localStorage) — etwa den Abhak-Stand der Checkliste oder deinen Planungsstand. Diese Daten verlassen dein Gerät nicht und du kannst sie jederzeit selbst löschen. Wir stützen diese Speicherung auf § 25 Abs. 2 Nr. 2 TDDDG: Sie ist unbedingt erforderlich, damit wir dir den von dir ausdrücklich gewünschten Dienst (ein Tool, das deinen Stand behält) bereitstellen können. Eine Einwilligung ist dafür nicht erforderlich. Welches Tool was lokal speichert, steht in der Tabelle in Abschnitt 6.</p>
 
   <h2>6. Interaktive Tools</h2>
   <p>Unsere Tools laufen vollständig in deinem Browser. Was mit deinen Eingaben im Einzelnen geschieht — ob sie lokal auf deinem Gerät gespeichert werden und in welchen Fällen (nur auf deine aktive Aktion hin) etwas übertragen wird — zeigt die folgende Tabelle verbindlich pro Tool:</p>
@@ -125,6 +126,22 @@
   <p>Zur anonymen Reichweitenmessung nutzen wir <strong>Umami</strong> (gehostet über cloud.umami.is, EU). Umami arbeitet <strong>cookieless</strong> und ohne Speicherung deiner IP-Adresse in personenbeziehbarer Form. Erfasst werden ausschließlich aggregierte, anonyme Nutzungsdaten wie Seitenaufrufe, Verweisquelle und Gerätetyp. Es findet kein Cross-Site-Tracking und kein Fingerprinting statt; Eingaben in unsere Tools werden nicht übertragen.</p>
   <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der anonymen, cookielosen Reichweitenmessung); ein Einwilligungs-Banner ist dafür nicht erforderlich. Hinweis zum aktuellen Stand: Auf einem Teil unserer Tool-Seiten fragt derzeit dennoch ein Hinweis-Banner um Zustimmung, bevor Umami geladen wird — historisch strenger umgesetzt, wir vereinheitlichen das gerade. An Art und Umfang der Messung (anonym, cookielos, keine Eingaben) ändert das nichts.</p>
 
+  <h2>9a. Speicherdauer im Überblick</h2>
+  <p>Wie lange Daten gespeichert werden, hängt davon ab, worum es geht. Diese Übersicht fasst zusammen, was in den Abschnitten oben im Einzelnen steht:</p>
+  <div class="mr-table-wrap">
+    <table class="mr-table">
+      <thead><tr><th>Was</th><th>Wie lange</th></tr></thead>
+      <tbody>
+        <tr><td>Lokale Tool-Daten (localStorage)</td><td>bleiben auf deinem Gerät, bis du sie löschst — wir haben keinen Zugriff darauf</td></tr>
+        <tr><td>Server-Logs beim Hoster (Netlify)</td><td>verarbeitet Netlify in eigener Verantwortung nach dessen Vorgaben; wir haben darauf keinen Zugriff und können einzelne Einträge nicht löschen</td></tr>
+        <tr><td>Kontakt- und Anfrageformulare</td><td>bis deine Anfrage erledigt ist, danach löschen wir sie; gesetzliche Aufbewahrungspflichten bleiben unberührt</td></tr>
+        <tr><td>Freiwillige Daten-Spende (Angebotsprüfer)</td><td>frühestens 30, spätestens 60 Tage nach Eingang trennen wir die Eckdaten von den technischen Empfangsdaten und löschen die ursprüngliche Übermittlung samt IP und Zeitstempel (Abschnitt 6a)</td></tr>
+        <tr><td>KI-Textentwürfe (Groq)</td><td>wir speichern weder Eingaben noch Ergebnisse; Groq behält sich nach eigenen Angaben eine kurzzeitige Protokollierung von bis zu 30 Tagen zur Fehleranalyse vor (Abschnitt 7)</td></tr>
+        <tr><td>Reichweitenmessung (Umami)</td><td>cookielos und ohne personenbeziehbare Speicherung deiner IP-Adresse (Abschnitt 9)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
   <h2>10. Deine Rechte</h2>
   <p>Du hast folgende Rechte bezüglich deiner personenbezogenen Daten:</p>
   <ul style="padding-left:20px;margin:8px 0">
@@ -146,9 +163,13 @@
     <a href="https://datenschutz-hamburg.de" target="_blank" rel="noopener">datenschutz-hamburg.de</a>
   </p>
 
+  <h2>11a. Keine automatisierte Entscheidungsfindung, kein Datenschutzbeauftragter</h2>
+  <p>Wir setzen keine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO ein. Unsere Tools rechnen zwar automatisch (etwa der Kostenrechner oder die Ampel im Angebotsprüfer), aber diese Ergebnisse sind unverbindliche Orientierung — sie entfalten dir gegenüber keine rechtliche Wirkung und niemand entscheidet auf dieser Grundlage über dich.</p>
+  <p>Ein Datenschutzbeauftragter ist nicht bestellt, weil die gesetzlichen Voraussetzungen dafür (Art. 37 DSGVO, § 38 BDSG) hier nicht vorliegen. Für alle Datenschutzfragen erreichst du direkt die in Abschnitt 1 genannte verantwortliche Stelle.</p>
+
   <h2>12. Änderungen</h2>
   <p>Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, um sie an geänderte Rechtslagen oder Änderungen unserer Website anzupassen.</p>
-  <p style="margin-top:16px;font-size:13px;color:#73655A">Stand: Juni 2026</p>
+  <p style="margin-top:16px;font-size:13px;color:#73655A">Stand: August 2026</p>
 </main>
 <footer class="mr-footer no-print">
   <p><a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></p>
