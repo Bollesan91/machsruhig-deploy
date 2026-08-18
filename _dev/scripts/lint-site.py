@@ -200,7 +200,7 @@ def main():
         # T1 Tourismus-Ton/Superlative (LEKTION 11) — auf Stadt-/BL-Seiten
         if '/bestatter/' in rel or '/bestattung-in/' in rel:
             for w in ['ein muss', 'weltgrößt', 'weltberühmt', 'atemberaubend', 'touristenmagnet',
-                      'geheimtipp', 'wahres juwel', 'perle ', 'schmuckstück', 'unvergesslich', 'einzigartig']:
+                      'geheimtipp', 'hidden gem', 'must see', 'wahres juwel', 'perle ', 'schmuckstück', 'unvergesslich', 'einzigartig']:
                 if w in vis.lower():
                     triages.append((rel, 'T1', 'Tourismus-Ton/Superlativ: "%s"' % w))
         # T2 Bundesland-Pauschale (LEKTION 8)
