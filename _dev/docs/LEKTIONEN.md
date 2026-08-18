@@ -160,3 +160,24 @@ Externes Audit fand: Nuernberg-Seite zitierte "§ 5 PAngV = Preisverzeichnis-Pfl
 ## Lektion (27.07.2026) — Autoren-Byline lebt in 6+ Oberflächen (Lesson 16 in groß)
 Site-weite Autoren-Umstellung (institutionell -> Namensautor + Status-Label). Strikte Muster fingen nur einen Bruchteil: von 203 "machsruhig Redaktion"-Roh-Treffern waren die meisten _dev-Archive; live existierten PARALLEL >=6 Byline-Oberflaechen mit UNTERSCHIEDLICHEN Strings: JSON-LD author inline (3 Namensvarianten) + author als @id-Referenz auf eine #redaktion-Entitaet + reviewedBy-Knoten + sichtbar <strong> in mr-article-meta + <meta name="author"> + <p class="stand">...Recherche: + <p class="meta"> Klartext (ohne <strong>) + Prosa "von der ... Redaktion" + kiel-mr-author-Block + darmstadt-Hero. Drei Legacy-Seiten behaupteten sogar einen "Bestattungsfachpool"-Review, den es nicht gibt (falsches E-E-A-T).
 LEHREN: (1) Fuer JSON-LD-Aenderungen NICHT regexen sondern PARSEN+WALKEN (Struktur variiert: inline vs @id-ref, Key-Reihenfolge, description-Feld) - dann reserialisieren, Validitaet garantiert. (2) Sichtbare Bylines VOR dem Ersetzen nach Container klassifizieren (grep Kontext, uniq -c) - eine generische <strong>-Regel macht aus Prosa "Von der Redaktion: Name" Murks. (3) grep -ho | grep -v /_dev/ filtert NICHT nach Pfad (kein Pfad im -o-Output) -> Zaehl-Artefakte; fuer Datei-Scope immer grep -rl. (4) Per-Datei-Assert "kein Rest-String X" faengt genau die uebersehene Oberflaeche (hier: meta-author + class=stand + class=meta kamen erst durch den Assert-Fehler ans Licht). Skript: _dev/audit/fix-authorship.py.
+
+## Lektion (17.08.2026) - Boilerplate-Metrik ohne Plausi-Check erzeugt Fehlalarm
+Nach dem GSC-Befund "gecrawlt, nicht indexiert" habe ich den Boilerplate-Anteil der Cluster
+gemessen (8-Wort-Phrasen, die in >=3 Seiten vorkommen) und fuer friedhoefe/ 42 Prozent
+ermittelt - daraus "duennstes Cluster, Verdichtung noetig" abgeleitet und Arbeit vorgeschlagen.
+Bolle widersprach aus dem Bauch ("ich bin selbstbewusst, dass die differenziert sind") und
+hatte RECHT. Die Gegenprobe (welche Phrasen sind eigentlich geteilt?) zeigte: ausnahmslos
+Pflicht-Caveats ("Friedhofsgebuehren sind nur ein Teil", "einfachere Grabarten koennen
+guenstiger sein"), Cross-Link-/CTA-Bloecke und Struktur-Formulierungen. KEIN einziger
+substanzieller Inhalt war geteilt - Traegerschaft, Friedhofsnamen, Hektar, Jahreszahlen,
+islamische Grabfelder, Gebuehren sind je Stadt recherchiert und einzigartig.
+URSACHE des Artefakts: Der Anteil ist laengennormiert. Kurze Seiten (832 Woerter) haben
+denselben absoluten Pflichtblock wie lange - dadurch steigt der PROZENTsatz, ohne dass die
+Seite schlechter waere. bestatter/ mit 4.450 Woertern kam auf 12,7 Prozent bei identischer
+Bloecke-Logik.
+REGEL: Bei jeder Aehnlichkeits-/Duplicate-Metrik VOR der Ableitung von Arbeit ausgeben,
+WELCHE Phrasen geteilt werden. Sind es Caveats/Navigation/CTA -> harmlos, Metrik verwerfen.
+Sind es Fachaussagen -> echtes Finding. Besseres Mass ist die absolute Zahl EINZIGARTIGER
+Woerter je Seite (friedhoefe/ median 478, bestatter/ median 3.853), nicht der Prozentsatz.
+Passt zu [[feedback_sanity_before_presenting]]: Detail-Verifikation ersetzt keine
+Sinn-Verifikation - und Bolles Fachauge schlaegt die Kennzahl.
