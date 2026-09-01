@@ -181,3 +181,26 @@ Sind es Fachaussagen -> echtes Finding. Besseres Mass ist die absolute Zahl EINZ
 Woerter je Seite (friedhoefe/ median 478, bestatter/ median 3.853), nicht der Prozentsatz.
 Passt zu [[feedback_sanity_before_presenting]]: Detail-Verifikation ersetzt keine
 Sinn-Verifikation - und Bolles Fachauge schlaegt die Kennzahl.
+
+## Lektion (25.08.2026) - "Gefunden, nicht indexiert" ist ein VERLINKUNGS-Problem, kein Content-Problem
+Ausgangslage: 143 nicht indexierte Seiten, Indexierungsquote 27,8 Prozent. Die Versuchung war,
+Content zu verdichten. Die GSC-Aufschluesselung zeigte aber die entscheidende Trennung:
+  86 "Gefunden - zurzeit nicht indexiert"  = Google kennt die URL, hat sie NIE geholt  -> Crawl/Discovery
+  21 "Gecrawlt - zurzeit nicht indexiert"  = geholt und abgelehnt                      -> Trust/Qualitaet
+  20 Weiterleitung/noindex/canonical       = korrekt ausgeschlossen
+Die 86 waren die Mehrheit - und die loest man NICHT mit Text, sondern mit internen Links.
+DIAGNOSE (mechanisch, reproduzierbar): eingehende Content-Links je URL zaehlen und dabei
+<footer> und <nav> ausschneiden (sonst zaehlen Boilerplate-Links jede Seite kuenstlich hoch).
+Befund: der Friedhofs-Cluster (67 Seiten) hing an EINEM Hub mit 2 Content-Links, jede Stadtseite
+hatte genau 2. Die 16 Bundesland-Seiten verlinkten auf /bestatter/<stadt>/, aber auf NULL
+/friedhoefe/<stadt>/-Seiten.
+FIX (17.08.): je Bundesland-Seite ein Absatz mit Links auf die Friedhofs-Staedte des Landes
+(Zuordnung aus dem verifizierten Register) -> 66 neue Links, Hub 2->18.
+WIRKUNG (25.08., also ~8 Tage spaeter): 92 -> 142 indexierte Seiten (+50), nicht indexiert
+118 -> 72. Quote 43,8 -> 66,4 Prozent. Seit Anfang August insgesamt +87 Seiten.
+REGELN: (1) Vor jeder Content-Massnahme die GSC-Gruende aufschluesseln - "gefunden" und
+"gecrawlt" verlangen komplett verschiedene Antworten. (2) Verlinkungsanalyse gehoert zum
+Standard-Diagnosewerkzeug, nicht nur Lint und Content. (3) Wirkung braucht ~1 Woche, nicht Tage.
+(4) ACHTUNG Nebenwirkung: Jede Sammel-Aenderung schickt die betroffenen Seiten zurueck in die
+Neubewertung (nachweisbar: Crawl-Daten 15.-18.08. folgten exakt unseren Deploys vom 10./17./18.).
+Also wenige gebuendelte Deploys statt vieler kleiner - danach Ruhe geben.
